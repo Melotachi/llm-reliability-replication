@@ -1,0 +1,309 @@
+{
+  "run_id": "mbpp_iterative_repair_week4_pilot",
+  "timestamp": "2026-07-26T23:08:40.717556",
+  "config": {
+    "dataset": "mbpp",
+    "model": "Salesforce/codegen-350M-mono",
+    "source_results": "results\\mbpp_uncertainty_20260726_230817.json",
+    "available_source_failures": 7,
+    "selected_failures": 7,
+    "max_repair_iterations": 3,
+    "temperature": 0.2,
+    "seed": 42,
+    "use_error_context": true
+  },
+  "summary": {
+    "completed_failures": 7,
+    "successful_repairs": 0,
+    "repair_success_rate": 0.0,
+    "success_after_one_iteration": 0,
+    "additional_successes_from_iteration_2_plus": 0,
+    "initial_failure_categories": {
+      "name_error": 1,
+      "syntax_error": 1,
+      "type_error": 1,
+      "assertion_error": 4
+    },
+    "final_failure_categories": {
+      "name_error": 1,
+      "syntax_error": 1,
+      "type_error": 1,
+      "assertion_error": 4
+    }
+  },
+  "records": [
+    {
+      "task_id": "MBPP/18",
+      "sample_index": 0,
+      "initial_code": "\"\"\"Write a function to remove characters from the first string which are present in the second string.\"\"\"\ndef str_to_list(string):\n    \"\"\"Convert string to list of characters.\"\"\"\n    return list(string)\n",
+      "initial_error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\nNameError: name 'remove_dirty_chars' is not defined\n",
+      "initial_failure_category": "name_error",
+      "attempts_used": 3,
+      "success_iteration": null,
+      "final_passed": false,
+      "final_code": "\"\"\"Write a function to remove characters from the first string which are present in the second string.\"\"\"\ndef str_to_list(string):\n    \"\"\"Convert string to list of characters.\"\"\"\n    return [char for char in string if char not in string]\n",
+      "final_error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\nNameError: name 'remove_dirty_chars' is not defined\n",
+      "final_failure_category": "name_error",
+      "trace": [
+        {
+          "iteration": 0,
+          "passed": false,
+          "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\nNameError: name 'remove_dirty_chars' is not defined\n",
+          "code": "\"\"\"Write a function to remove characters from the first string which are present in the second string.\"\"\"\ndef str_to_list(string):\n    \"\"\"Convert string to list of characters.\"\"\"\n    return list(string)\n"
+        },
+        {
+          "iteration": 1,
+          "passed": false,
+          "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\nNameError: name 'remove_dirty_chars' is not defined\n",
+          "code": "\"\"\"Write a function to remove characters from the first string which are present in the second string.\"\"\"\ndef str_to_list(string):\n    \"\"\"Convert string to list of characters.\"\"\"\n    return [char for char in string if char not in string]\n"
+        },
+        {
+          "iteration": 2,
+          "passed": false,
+          "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\nNameError: name 'remove_dirty_chars' is not defined\n",
+          "code": "\"\"\"Write a function to remove characters from the first string which are present in the second string.\"\"\"\ndef str_to_list(string):\n    \"\"\"Convert string to list of characters.\"\"\"\n    return [char for char in string if char not in string]\n"
+        },
+        {
+          "iteration": 3,
+          "passed": false,
+          "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\nNameError: name 'remove_dirty_chars' is not defined\n",
+          "code": "\"\"\"Write a function to remove characters from the first string which are present in the second string.\"\"\"\ndef str_to_list(string):\n    \"\"\"Convert string to list of characters.\"\"\"\n    return [char for char in string if char not in string]\n"
+        }
+      ]
+    },
+    {
+      "task_id": "MBPP/14",
+      "sample_index": 0,
+      "initial_code": "\"\"\"Write a python function to find the volume of a triangular prism.\"\"\"\ndef find_Volume(...):\n    \"\"\"Find the volume of a triangular prism.\"\"\"\n    pass\n",
+      "initial_error_message": "Traceback (most recent call last):\n  File \"<string>\", line 9, in <module>\n    exec(payload[\"code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 2\n    def find_Volume(...):\n                    ^^^\nSyntaxError: invalid syntax\n",
+      "initial_failure_category": "syntax_error",
+      "attempts_used": 3,
+      "success_iteration": null,
+      "final_passed": false,
+      "final_code": "\"\"\"Write a python function to find the volume of a triangular prism.\"\"\"\ndef find_Volume(...):\n    \"\"\"Find the volume of a triangular prism.\"\"\"\n    pass\n",
+      "final_error_message": "Traceback (most recent call last):\n  File \"<string>\", line 9, in <module>\n    exec(payload[\"code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 2\n    def find_Volume(...):\n                    ^^^\nSyntaxError: invalid syntax\n",
+      "final_failure_category": "syntax_error",
+      "trace": [
+        {
+          "iteration": 0,
+          "passed": false,
+          "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 9, in <module>\n    exec(payload[\"code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 2\n    def find_Volume(...):\n                    ^^^\nSyntaxError: invalid syntax\n",
+          "code": "\"\"\"Write a python function to find the volume of a triangular prism.\"\"\"\ndef find_Volume(...):\n    \"\"\"Find the volume of a triangular prism.\"\"\"\n    pass\n"
+        },
+        {
+          "iteration": 1,
+          "passed": false,
+          "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 9, in <module>\n    exec(payload[\"code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 2\n    def find_Volume(...):\n                    ^^^\nSyntaxError: invalid syntax\n",
+          "code": "\"\"\"Write a python function to find the volume of a triangular prism.\"\"\"\ndef find_Volume(...):\n    \"\"\"Find the volume of a triangular prism.\"\"\"\n    pass\n"
+        },
+        {
+          "iteration": 2,
+          "passed": false,
+          "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 9, in <module>\n    exec(payload[\"code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 2\n    def find_Volume(...):\n                    ^^^\nSyntaxError: invalid syntax\n",
+          "code": "\"\"\"Write a python function to find the volume of a triangular prism.\"\"\"\ndef find_Volume(...):\n    \"\"\"Find the volume of a triangular prism.\"\"\"\n    pass\n"
+        },
+        {
+          "iteration": 3,
+          "passed": false,
+          "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 9, in <module>\n    exec(payload[\"code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 2\n    def find_Volume(...):\n                    ^^^\nSyntaxError: invalid syntax\n",
+          "code": "\"\"\"Write a python function to find the volume of a triangular prism.\"\"\"\ndef find_Volume(...):\n    \"\"\"Find the volume of a triangular prism.\"\"\"\n    pass\n"
+        }
+      ]
+    },
+    {
+      "task_id": "MBPP/17",
+      "sample_index": 0,
+      "initial_code": "\"\"\"Write a function to find the perimeter of a square.\"\"\"\ndef square_perimeter(a):\n    \"\"\"Return the perimeter of a square.\"\"\"\n    return (a[0] + a[1] + a[2]) * 2\n",
+      "initial_error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 4, in square_perimeter\nTypeError: 'int' object is not subscriptable\n",
+      "initial_failure_category": "type_error",
+      "attempts_used": 3,
+      "success_iteration": null,
+      "final_passed": false,
+      "final_code": "\"\"\"Write a function to find the perimeter of a square.\"\"\"\ndef square_perimeter(a):\n    \"\"\"Return the perimeter of a square.\"\"\"\n    return (a[0] + a[1] + a[2]) * 2\n",
+      "final_error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 4, in square_perimeter\nTypeError: 'int' object is not subscriptable\n",
+      "final_failure_category": "type_error",
+      "trace": [
+        {
+          "iteration": 0,
+          "passed": false,
+          "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 4, in square_perimeter\nTypeError: 'int' object is not subscriptable\n",
+          "code": "\"\"\"Write a function to find the perimeter of a square.\"\"\"\ndef square_perimeter(a):\n    \"\"\"Return the perimeter of a square.\"\"\"\n    return (a[0] + a[1] + a[2]) * 2\n"
+        },
+        {
+          "iteration": 1,
+          "passed": false,
+          "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 4, in square_perimeter\nTypeError: 'int' object is not subscriptable\n",
+          "code": "\"\"\"Write a function to find the perimeter of a square.\"\"\"\ndef square_perimeter(a):\n    \"\"\"Return the perimeter of a square.\"\"\"\n    return (a[0] + a[1] + a[2]) * 2\n"
+        },
+        {
+          "iteration": 2,
+          "passed": false,
+          "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 4, in square_perimeter\nTypeError: 'int' object is not subscriptable\n",
+          "code": "\"\"\"Write a function to find the perimeter of a square.\"\"\"\ndef square_perimeter(a):\n    \"\"\"Return the perimeter of a square.\"\"\"\n    return (a[0] + a[1] + a[2]) * 2\n"
+        },
+        {
+          "iteration": 3,
+          "passed": false,
+          "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 4, in square_perimeter\nTypeError: 'int' object is not subscriptable\n",
+          "code": "\"\"\"Write a function to find the perimeter of a square.\"\"\"\ndef square_perimeter(a):\n    \"\"\"Return the perimeter of a square.\"\"\"\n    return (a[0] + a[1] + a[2]) * 2\n"
+        }
+      ]
+    },
+    {
+      "task_id": "MBPP/12",
+      "sample_index": 0,
+      "initial_code": "\"\"\"Write a function to sort a given matrix in ascending order according to the sum of its rows.\"\"\"\ndef sort_matrix(M):\n    \"\"\"Sort a given matrix in ascending order according to the sum of its rows.\n\n    Args:\n        M (list): Matrix to sort.\n\n    Returns:\n        list: Matrix sorted according to the sum of its rows.\n    \"\"\"\n    n = len(M)\n    for i in range(n):\n        for j in range(n-i-1):\n            if M[j][i] > M[j+1][i]:\n                M[j], M[j+1] = M[j+1], M[j]\n    return M\n",
+      "initial_error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 2, in <module>\n    import json\n           ^^^^\nAssertionError\n",
+      "initial_failure_category": "assertion_error",
+      "attempts_used": 3,
+      "success_iteration": null,
+      "final_passed": false,
+      "final_code": "\"\"\"Write a function to sort a given matrix in ascending order according to the sum of its rows.\"\"\"\ndef sort_matrix(M):\n    \"\"\"Sort a given matrix in ascending order according to the sum of its rows.\n\n    Args:\n        M (list): Matrix to sort.\n\n    Returns:\n        list: Matrix sorted according to the sum of its rows.\n    \"\"\"\n    n = len(M)\n    for i in range(n):\n        for j in range(n-i-1):\n            if M[j][i] > M[j+1][i]:\n                M[j], M[j+1] = M[j+1], M[j]\n    return M\n",
+      "final_error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 2, in <module>\n    import json\n           ^^^^\nAssertionError\n",
+      "final_failure_category": "assertion_error",
+      "trace": [
+        {
+          "iteration": 0,
+          "passed": false,
+          "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 2, in <module>\n    import json\n           ^^^^\nAssertionError\n",
+          "code": "\"\"\"Write a function to sort a given matrix in ascending order according to the sum of its rows.\"\"\"\ndef sort_matrix(M):\n    \"\"\"Sort a given matrix in ascending order according to the sum of its rows.\n\n    Args:\n        M (list): Matrix to sort.\n\n    Returns:\n        list: Matrix sorted according to the sum of its rows.\n    \"\"\"\n    n = len(M)\n    for i in range(n):\n        for j in range(n-i-1):\n            if M[j][i] > M[j+1][i]:\n                M[j], M[j+1] = M[j+1], M[j]\n    return M\n"
+        },
+        {
+          "iteration": 1,
+          "passed": false,
+          "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 2, in <module>\n    import json\n           ^^^^\nAssertionError\n",
+          "code": "\"\"\"Write a function to sort a given matrix in ascending order according to the sum of its rows.\"\"\"\ndef sort_matrix(M):\n    \"\"\"Sort a given matrix in ascending order according to the sum of its rows.\n\n    Args:\n        M (list): Matrix to sort.\n\n    Returns:\n        list: Matrix sorted according to the sum of its rows.\n    \"\"\"\n    n = len(M)\n    for i in range(n):\n        for j in range(n-i-1):\n            if M[j][i] > M[j+1][i]:\n                M[j], M[j+1] = M[j+1], M[j]\n    return M\n"
+        },
+        {
+          "iteration": 2,
+          "passed": false,
+          "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 2, in <module>\n    import json\n           ^^^^\nAssertionError\n",
+          "code": "\"\"\"Write a function to sort a given matrix in ascending order according to the sum of its rows.\"\"\"\ndef sort_matrix(M):\n    \"\"\"Sort a given matrix in ascending order according to the sum of its rows.\n\n    Args:\n        M (list): Matrix to sort.\n\n    Returns:\n        list: Matrix sorted according to the sum of its rows.\n    \"\"\"\n    n = len(M)\n    for i in range(n):\n        for j in range(n-i-1):\n            if M[j][i] > M[j+1][i]:\n                M[j], M[j+1] = M[j+1], M[j]\n    return M\n"
+        },
+        {
+          "iteration": 3,
+          "passed": false,
+          "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 2, in <module>\n    import json\n           ^^^^\nAssertionError\n",
+          "code": "\"\"\"Write a function to sort a given matrix in ascending order according to the sum of its rows.\"\"\"\ndef sort_matrix(M):\n    \"\"\"Sort a given matrix in ascending order according to the sum of its rows.\n\n    Args:\n        M (list): Matrix to sort.\n\n    Returns:\n        list: Matrix sorted according to the sum of its rows.\n    \"\"\"\n    n = len(M)\n    for i in range(n):\n        for j in range(n-i-1):\n            if M[j][i] > M[j+1][i]:\n                M[j], M[j+1] = M[j+1], M[j]\n    return M\n"
+        }
+      ]
+    },
+    {
+      "task_id": "MBPP/13",
+      "sample_index": 0,
+      "initial_code": "\"\"\"Write a function to count the most common words in a dictionary.\"\"\"\ndef count_common(words):\n    \"\"\"Count the most common words in a dictionary.\"\"\"\n    counts = {}\n    for word in words:\n        if word in counts:\n            counts[word] += 1\n        else:\n            counts[word] = 1\n    return counts\n",
+      "initial_error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\nAssertionError\n",
+      "initial_failure_category": "assertion_error",
+      "attempts_used": 3,
+      "success_iteration": null,
+      "final_passed": false,
+      "final_code": "\"\"\"Write a function to count the most common words in a dictionary.\"\"\"\ndef count_common(words):\n    \"\"\"Count the most common words in a dictionary.\"\"\"\n    counts = {}\n    for word in words:\n        if word in counts:\n            counts[word] += 1\n        else:\n            counts[word] = 1\n    return counts\n",
+      "final_error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\nAssertionError\n",
+      "final_failure_category": "assertion_error",
+      "trace": [
+        {
+          "iteration": 0,
+          "passed": false,
+          "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\nAssertionError\n",
+          "code": "\"\"\"Write a function to count the most common words in a dictionary.\"\"\"\ndef count_common(words):\n    \"\"\"Count the most common words in a dictionary.\"\"\"\n    counts = {}\n    for word in words:\n        if word in counts:\n            counts[word] += 1\n        else:\n            counts[word] = 1\n    return counts\n"
+        },
+        {
+          "iteration": 1,
+          "passed": false,
+          "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\nAssertionError\n",
+          "code": "\"\"\"Write a function to count the most common words in a dictionary.\"\"\"\ndef count_common(words):\n    \"\"\"Count the most common words in a dictionary.\"\"\"\n    counts = {}\n    for word in words:\n        if word in counts:\n            counts[word] += 1\n        else:\n            counts[word] = 1\n    return counts\n"
+        },
+        {
+          "iteration": 2,
+          "passed": false,
+          "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\nAssertionError\n",
+          "code": "\"\"\"Write a function to count the most common words in a dictionary.\"\"\"\ndef count_common(words):\n    \"\"\"Count the most common words in a dictionary.\"\"\"\n    counts = {}\n    for word in words:\n        if word in counts:\n            counts[word] += 1\n        else:\n            counts[word] = 1\n    return counts\n"
+        },
+        {
+          "iteration": 3,
+          "passed": false,
+          "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\nAssertionError\n",
+          "code": "\"\"\"Write a function to count the most common words in a dictionary.\"\"\"\ndef count_common(words):\n    \"\"\"Count the most common words in a dictionary.\"\"\"\n    counts = {}\n    for word in words:\n        if word in counts:\n            counts[word] += 1\n        else:\n            counts[word] = 1\n    return counts\n"
+        }
+      ]
+    },
+    {
+      "task_id": "MBPP/15",
+      "sample_index": 0,
+      "initial_code": "\"\"\"Write a function to split a string at lowercase letters.\"\"\"\ndef split_lowerstring(text):\n    \"\"\"Split a string at lowercase letters.\n\n    >>> split_lowerstring('The quick brown fox jumps over the lazy dog.')\n    ['The', 'quick', 'brown', 'fox', 'jumps', 'over', 'the', 'lazy', 'dog.']\n    \"\"\"\n    return [word.lower() for word in text.split()]\n",
+      "initial_error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\nAssertionError\n",
+      "initial_failure_category": "assertion_error",
+      "attempts_used": 3,
+      "success_iteration": null,
+      "final_passed": false,
+      "final_code": "\"\"\"Write a function to split a string at lowercase letters.\"\"\"\ndef split_lowerstring(text):\n    \"\"\"Split a string at lowercase letters.\n\n    >>> split_lowerstring('The quick brown fox jumps over the lazy dog.')\n    ['The', 'quick', 'brown', 'fox', 'jumps', 'over', 'the', 'lazy', 'dog.']\n    \"\"\"\n    return [word.lower() for word in text.split()]\n",
+      "final_error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\nAssertionError\n",
+      "final_failure_category": "assertion_error",
+      "trace": [
+        {
+          "iteration": 0,
+          "passed": false,
+          "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\nAssertionError\n",
+          "code": "\"\"\"Write a function to split a string at lowercase letters.\"\"\"\ndef split_lowerstring(text):\n    \"\"\"Split a string at lowercase letters.\n\n    >>> split_lowerstring('The quick brown fox jumps over the lazy dog.')\n    ['The', 'quick', 'brown', 'fox', 'jumps', 'over', 'the', 'lazy', 'dog.']\n    \"\"\"\n    return [word.lower() for word in text.split()]\n"
+        },
+        {
+          "iteration": 1,
+          "passed": false,
+          "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\nAssertionError\n",
+          "code": "\"\"\"Write a function to split a string at lowercase letters.\"\"\"\ndef split_lowerstring(text):\n    \"\"\"Split a string at lowercase letters.\n\n    >>> split_lowerstring('The quick brown fox jumps over the lazy dog.')\n    ['The', 'quick', 'brown', 'fox', 'jumps', 'over', 'the', 'lazy', 'dog.']\n    \"\"\"\n    return [word.lower() for word in text.split()]\n"
+        },
+        {
+          "iteration": 2,
+          "passed": false,
+          "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\nAssertionError\n",
+          "code": "\"\"\"Write a function to split a string at lowercase letters.\"\"\"\ndef split_lowerstring(text):\n    \"\"\"Split a string at lowercase letters.\n\n    >>> split_lowerstring('The quick brown fox jumps over the lazy dog.')\n    ['The', 'quick', 'brown', 'fox', 'jumps', 'over', 'the', 'lazy', 'dog.']\n    \"\"\"\n    return [word.lower() for word in text.split()]\n"
+        },
+        {
+          "iteration": 3,
+          "passed": false,
+          "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\nAssertionError\n",
+          "code": "\"\"\"Write a function to split a string at lowercase letters.\"\"\"\ndef split_lowerstring(text):\n    \"\"\"Split a string at lowercase letters.\n\n    >>> split_lowerstring('The quick brown fox jumps over the lazy dog.')\n    ['The', 'quick', 'brown', 'fox', 'jumps', 'over', 'the', 'lazy', 'dog.']\n    \"\"\"\n    return [word.lower() for word in text.split()]\n"
+        }
+      ]
+    },
+    {
+      "task_id": "MBPP/16",
+      "sample_index": 0,
+      "initial_code": "\"\"\"Write a function to find sequences of lowercase letters joined with an underscore.\"\"\"\ndef text_lowercase_underscore(text):\n    \"\"\"Return a list of all lowercase and underscore sequences in text.\"\"\"\n    return [word.lower() for word in text.split()]\n",
+      "initial_error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\nAssertionError\n",
+      "initial_failure_category": "assertion_error",
+      "attempts_used": 3,
+      "success_iteration": null,
+      "final_passed": false,
+      "final_code": "\"\"\"Write a function to find sequences of lowercase letters joined with an underscore.\"\"\"\ndef text_lowercase_underscore(text):\n    \"\"\"Return a list of all lowercase and underscore sequences in text.\"\"\"\n    return [word.lower() for word in text.split()]\n",
+      "final_error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\nAssertionError\n",
+      "final_failure_category": "assertion_error",
+      "trace": [
+        {
+          "iteration": 0,
+          "passed": false,
+          "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\nAssertionError\n",
+          "code": "\"\"\"Write a function to find sequences of lowercase letters joined with an underscore.\"\"\"\ndef text_lowercase_underscore(text):\n    \"\"\"Return a list of all lowercase and underscore sequences in text.\"\"\"\n    return [word.lower() for word in text.split()]\n"
+        },
+        {
+          "iteration": 1,
+          "passed": false,
+          "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\nAssertionError\n",
+          "code": "\"\"\"Write a function to find sequences of lowercase letters joined with an underscore.\"\"\"\ndef text_lowercase_underscore(text):\n    \"\"\"Return a list of all lowercase and underscore sequences in text.\"\"\"\n    return [word.lower() for word in text.split()]\n"
+        },
+        {
+          "iteration": 2,
+          "passed": false,
+          "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\nAssertionError\n",
+          "code": "\"\"\"Write a function to find sequences of lowercase letters joined with an underscore.\"\"\"\ndef text_lowercase_underscore(text):\n    \"\"\"Return a list of all lowercase and underscore sequences in text.\"\"\"\n    return [word.lower() for word in text.split()]\n"
+        },
+        {
+          "iteration": 3,
+          "passed": false,
+          "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\nAssertionError\n",
+          "code": "\"\"\"Write a function to find sequences of lowercase letters joined with an underscore.\"\"\"\ndef text_lowercase_underscore(text):\n    \"\"\"Return a list of all lowercase and underscore sequences in text.\"\"\"\n    return [word.lower() for word in text.split()]\n"
+        }
+      ]
+    }
+  ]
+}

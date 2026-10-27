@@ -1,0 +1,114 @@
+{
+  "analysis": "week7_reliability_ceiling",
+  "source_results_file": "results/humaneval_deepseek60_merged_20260712.json",
+  "source_run_id": "humaneval_deepseek60_merged_20260712",
+  "config": {
+    "seed": 42,
+    "n_permutations": 200,
+    "metrics": [
+      "lexical_diversity",
+      "token_jaccard_diversity",
+      "token_cosine_diversity",
+      "ast_node_diversity",
+      "pairwise_distance",
+      "parse_failure_rate"
+    ],
+    "representation": "full"
+  },
+  "source_config": {
+    "dataset": "humaneval",
+    "model": "deepseek-ai/deepseek-coder-1.3b-base",
+    "n_samples": 10,
+    "n_problems": 60,
+    "problem_offset": 0,
+    "seed": 42,
+    "mode": "uncertainty",
+    "codebert_model": null,
+    "use_error_context": false,
+    "max_repair_iterations": 1,
+    "temperature": 0.7,
+    "merged_from": [
+      "humaneval_uncertainty_20260711_042224",
+      "humaneval_uncertainty_20260712_061253"
+    ],
+    "note": "deepseek-coder-1.3b HumanEval 0-59, identical protocol both halves"
+  },
+  "reliabilities": {
+    "pass_rate": {
+      "reliability_mean": 0.9023973901737373,
+      "reliability_std": 0.02122582243330105,
+      "n_permutations_used": 200
+    },
+    "lexical_diversity": {
+      "reliability_mean": 0.8919555183277204,
+      "reliability_std": 0.026718795558020283,
+      "n_permutations_used": 200
+    },
+    "token_jaccard_diversity": {
+      "reliability_mean": 0.772144471048025,
+      "reliability_std": 0.038513518323956525,
+      "n_permutations_used": 200
+    },
+    "token_cosine_diversity": {
+      "reliability_mean": 0.8220566499302666,
+      "reliability_std": 0.03785785360511063,
+      "n_permutations_used": 200
+    },
+    "ast_node_diversity": {
+      "reliability_mean": 0.8400948086106446,
+      "reliability_std": 0.029539911265913675,
+      "n_permutations_used": 200
+    },
+    "pairwise_distance": {
+      "reliability_mean": 0.799136807642586,
+      "reliability_std": 0.07092608184610491,
+      "n_permutations_used": 200
+    },
+    "parse_failure_rate": {
+      "reliability_mean": null,
+      "reliability_std": null,
+      "n_permutations_used": 0
+    }
+  },
+  "ceiling_table": {
+    "lexical_diversity": {
+      "metric_reliability": 0.8919555183277204,
+      "observed_pearson_r": -0.6358981979264737,
+      "observed_spearman_rho": -0.5644864625602601,
+      "ceiling": 0.8971612630346887,
+      "percent_of_ceiling": 70.8789182198437
+    },
+    "token_jaccard_diversity": {
+      "metric_reliability": 0.772144471048025,
+      "observed_pearson_r": -0.508377195367172,
+      "observed_spearman_rho": -0.48303907697810006,
+      "ceiling": 0.8347341825460478,
+      "percent_of_ceiling": 60.90288453463777
+    },
+    "token_cosine_diversity": {
+      "metric_reliability": 0.8220566499302666,
+      "observed_pearson_r": -0.5878543705328463,
+      "observed_spearman_rho": -0.5712316838408344,
+      "ceiling": 0.8612907612833417,
+      "percent_of_ceiling": 68.25271986627729
+    },
+    "ast_node_diversity": {
+      "metric_reliability": 0.8400948086106446,
+      "observed_pearson_r": -0.7402462105639988,
+      "observed_spearman_rho": -0.738233771291376,
+      "ceiling": 0.8706890161181264,
+      "percent_of_ceiling": 85.018439059253
+    },
+    "pairwise_distance": {
+      "metric_reliability": 0.799136807642586,
+      "observed_pearson_r": -0.763299263039699,
+      "observed_spearman_rho": -0.80275138266931,
+      "ceiling": 0.8491990164905053,
+      "percent_of_ceiling": 89.88461458589468
+    },
+    "parse_failure_rate": {
+      "ceiling": null,
+      "percent_of_ceiling": null
+    }
+  }
+}

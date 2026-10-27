@@ -1,0 +1,47 @@
+{
+  "run_id": "humaneval_repair_20260703_020110",
+  "timestamp": "2026-07-03T02:01:10.458719",
+  "config": {
+    "dataset": "humaneval",
+    "model": "Salesforce/codegen-350M-mono",
+    "n_samples": 1,
+    "n_problems": 1,
+    "seed": 42,
+    "mode": "repair",
+    "use_error_context": false,
+    "max_repair_iterations": 1
+  },
+  "summary": {
+    "mean_pass_at_1": 1.0,
+    "mean_pass_at_5": null,
+    "mean_initial_pass_rate": 1.0,
+    "mean_post_repair_pass_rate": 1.0,
+    "repair_success_rate": 0.0
+  },
+  "per_problem": [
+    {
+      "task_id": "HumanEval/0",
+      "prompt_length": 348,
+      "uncertainty": {},
+      "samples": [
+        {
+          "code": "from typing import List\n\n\ndef has_close_elements(numbers: List[float], threshold: float) -> bool:\n    \"\"\" Check if in given list of numbers, are any two numbers closer to each other than\n    given threshold.\n    >>> has_close_elements([1.0, 2.0, 3.0], 0.5)\n    False\n    >>> has_close_elements([1.0, 2.8, 3.0, 4.0, 5.0, 2.0], 0.3)\n    True\n    \"\"\"\n    for i in range(len(numbers) - 1):\n        for j in range(i + 1, len(numbers)):\n            if abs(numbers[i] - numbers[j]) < threshold:\n                return True\n    return False\n\n",
+          "passed": true,
+          "error_message": "",
+          "failure_category": "",
+          "repaired_code": "from typing import List\n\n\ndef has_close_elements(numbers: List[float], threshold: float) -> bool:\n    \"\"\" Check if in given list of numbers, are any two numbers closer to each other than\n    given threshold.\n    >>> has_close_elements([1.0, 2.0, 3.0], 0.5)\n    False\n    >>> has_close_elements([1.0, 2.8, 3.0, 4.0, 5.0, 2.0], 0.3)\n    True\n    \"\"\"\n    for i in range(len(numbers) - 1):\n        for j in range(i + 1, len(numbers)):\n            if abs(numbers[i] - numbers[j]) < threshold:\n                return True\n    return False\n\n",
+          "repaired_passed": true,
+          "repaired_failure_category": ""
+        }
+      ],
+      "initial_pass_rate": 1.0,
+      "post_repair_pass_rate": 1.0,
+      "failure_types": [],
+      "pass_at_1": 1.0,
+      "pass_at_5": null,
+      "n_samples": 1,
+      "n_initial_pass": 1,
+      "n_post_repair_pass": 1
+    }
+  ]
+}

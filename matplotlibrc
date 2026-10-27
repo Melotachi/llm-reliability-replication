@@ -1,0 +1,12 @@
+# Force the non-interactive backend for anything run from the repository root.
+#
+# The analysis scripts and chart builders draw figures in batch; under an
+# interactive backend on a desktop macOS session they open windows and block.
+# This file is the environment of record for those runs, so it is tracked
+# rather than left to each machine's default.
+#
+# It does NOT reach the execution subprocesses in src/evaluation.py — those run
+# with cwd=<scratch>, so a matplotlibrc in the repository root is out of scope
+# for them. They get the same setting through _headless_env(), which pins
+# MPLBACKEND in the child's environment instead.
+backend: Agg

@@ -1,0 +1,4850 @@
+{
+  "analysis": "week7_crash_control_diagnostic",
+  "source_results_file": "results/humaneval_deepseek60_merged_20260712.json",
+  "source_run_id": "humaneval_deepseek60_merged_20260712",
+  "config": {
+    "seed": 42,
+    "probe_source": "evalplus",
+    "probe_cap": 12,
+    "execution_timeout": 5.0
+  },
+  "source_config": {
+    "dataset": "humaneval",
+    "model": "deepseek-ai/deepseek-coder-1.3b-base",
+    "n_samples": 10,
+    "n_problems": 60,
+    "problem_offset": 0,
+    "seed": 42,
+    "mode": "uncertainty",
+    "codebert_model": null,
+    "use_error_context": false,
+    "max_repair_iterations": 1,
+    "temperature": 0.7,
+    "merged_from": [
+      "humaneval_uncertainty_20260711_042224",
+      "humaneval_uncertainty_20260712_061253"
+    ],
+    "note": "deepseek-coder-1.3b HumanEval 0-59, identical protocol both halves"
+  },
+  "summary": {
+    "n_samples": 600,
+    "n_supported": 527,
+    "frac_supported": 0.8783333333333333,
+    "pass_rate_all": 0.495,
+    "pass_rate_supported": 0.5351043643263758,
+    "mean_crash_rate": 0.13444444444444442,
+    "frac_samples_all_crash": 0.12166666666666667,
+    "auc_all_samples": {
+      "crash_rate": 0.5897645320087563,
+      "execution_self": 0.9181195897367515,
+      "nocrash_self": 0.7728995121734396
+    },
+    "auc_supported_only": {
+      "crash_rate": 0.5251483572152266,
+      "execution_self": 0.9140541322912143,
+      "nocrash_self": 0.8974019394992039
+    }
+  },
+  "per_sample": [
+    {
+      "task_id": "HumanEval/0",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.3240740740740741,
+      "nocrash_self": 0.3240740740740741,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/0",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.3240740740740741,
+      "nocrash_self": 0.3240740740740741,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/0",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.3611111111111111,
+      "nocrash_self": 0.3611111111111111,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/0",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.3240740740740741,
+      "nocrash_self": 0.3240740740740741,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/0",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.3240740740740741,
+      "nocrash_self": 0.3240740740740741,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/0",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8611111111111112,
+      "nocrash_self": 0.8611111111111112,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/0",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8888888888888888,
+      "nocrash_self": 0.8888888888888888,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/0",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.3240740740740741,
+      "nocrash_self": 0.3240740740740741,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/0",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.3240740740740741,
+      "nocrash_self": 0.3240740740740741,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/0",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8888888888888888,
+      "nocrash_self": 0.8888888888888888,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/1",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.6666666666666666,
+      "nocrash_self": 0.6666666666666666,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/1",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 1.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/1",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8888888888888888,
+      "nocrash_self": 0.8888888888888888,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/1",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.6666666666666666,
+      "nocrash_self": 0.6666666666666666,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/1",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.9907407407407407,
+      "nocrash_self": 0.9907407407407407,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/1",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.6666666666666666,
+      "nocrash_self": 0.6666666666666666,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/1",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.6666666666666666,
+      "nocrash_self": 0.6666666666666666,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/1",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 1.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/1",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.9907407407407407,
+      "nocrash_self": 0.9907407407407407,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/1",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8888888888888888,
+      "nocrash_self": 0.8888888888888888,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/2",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.5555555555555556,
+      "nocrash_self": 0.1111111111111111,
+      "nocrash_support": 0.5555555555555556
+    },
+    {
+      "task_id": "HumanEval/2",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.5555555555555556,
+      "nocrash_self": 0.1111111111111111,
+      "nocrash_support": 0.5555555555555556
+    },
+    {
+      "task_id": "HumanEval/2",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.5555555555555556,
+      "nocrash_self": 0.1111111111111111,
+      "nocrash_support": 0.5555555555555556
+    },
+    {
+      "task_id": "HumanEval/2",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8666666666666667,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "HumanEval/2",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.5555555555555556,
+      "nocrash_self": 0.1111111111111111,
+      "nocrash_support": 0.5555555555555556
+    },
+    {
+      "task_id": "HumanEval/2",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8666666666666667,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "HumanEval/2",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.5555555555555556,
+      "nocrash_support": 0.5555555555555556
+    },
+    {
+      "task_id": "HumanEval/2",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.5555555555555556,
+      "nocrash_self": 0.1111111111111111,
+      "nocrash_support": 0.5555555555555556
+    },
+    {
+      "task_id": "HumanEval/2",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8666666666666667,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "HumanEval/2",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8666666666666667,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "HumanEval/3",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.4166666666666667,
+      "nocrash_self": 0.4166666666666667,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/3",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.7777777777777778,
+      "nocrash_self": 0.7777777777777778,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/3",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.7777777777777778,
+      "nocrash_self": 0.7777777777777778,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/3",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.5925925925925927,
+      "nocrash_self": 0.5925925925925927,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/3",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.41666666666666674,
+      "nocrash_self": 0.41666666666666674,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/3",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.5462962962962963,
+      "nocrash_self": 0.5462962962962963,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/3",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.41666666666666674,
+      "nocrash_self": 0.41666666666666674,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/3",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.41666666666666674,
+      "nocrash_self": 0.41666666666666674,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/3",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.41666666666666674,
+      "nocrash_self": 0.41666666666666674,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/3",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.7777777777777778,
+      "nocrash_self": 0.7777777777777778,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/4",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8888888888888888,
+      "nocrash_self": 0.8888888888888888,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/4",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 1.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/4",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.4351851851851852,
+      "nocrash_self": 0.4351851851851852,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/4",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.4351851851851852,
+      "nocrash_self": 0.4351851851851852,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/4",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.4351851851851852,
+      "nocrash_self": 0.4351851851851852,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/4",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.4351851851851852,
+      "nocrash_self": 0.4351851851851852,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/4",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.4351851851851852,
+      "nocrash_self": 0.4351851851851852,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/4",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.4351851851851852,
+      "nocrash_self": 0.4351851851851852,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/4",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.9444444444444444,
+      "nocrash_self": 0.9444444444444444,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/4",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8888888888888888,
+      "nocrash_self": 0.8888888888888888,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/5",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.7685185185185186,
+      "nocrash_self": 0.7425925925925926,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/5",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8703703703703703,
+      "nocrash_self": 0.8444444444444444,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/5",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 1.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/5",
+      "passed": 0,
+      "crash_rate": 0.5833333333333334,
+      "execution_self": 0.8666666666666667,
+      "nocrash_self": 0.6888888888888888,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/5",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8703703703703703,
+      "nocrash_self": 0.8444444444444444,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/5",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8703703703703703,
+      "nocrash_self": 0.8444444444444444,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/5",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8703703703703703,
+      "nocrash_self": 0.8444444444444444,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/5",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8518518518518519,
+      "nocrash_self": 0.825925925925926,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/5",
+      "passed": 0,
+      "crash_rate": 0.25,
+      "execution_self": 0.9962962962962963,
+      "nocrash_self": 1.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/5",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.7685185185185186,
+      "nocrash_self": 0.7425925925925926,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/6",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.9796296296296296,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "HumanEval/6",
+      "passed": 0,
+      "crash_rate": 0.9166666666666666,
+      "execution_self": 0.9796296296296296,
+      "nocrash_self": 0.8888888888888888,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/6",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8888888888888888,
+      "nocrash_self": 0.7777777777777778,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/6",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.8888888888888888,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/6",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.8888888888888888,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/6",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.7777777777777778,
+      "nocrash_self": 0.6666666666666666,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/6",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.8888888888888888,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/6",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.7777777777777778,
+      "nocrash_self": 0.6666666666666666,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/6",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.7777777777777778,
+      "nocrash_self": 0.6666666666666666,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/6",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8888888888888888,
+      "nocrash_self": 0.7777777777777778,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/7",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/7",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/7",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/7",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/7",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/7",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/7",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/7",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/7",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/7",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/8",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.4351851851851852,
+      "nocrash_self": 0.21296296296296294,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "HumanEval/8",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.4351851851851852,
+      "nocrash_self": 0.21296296296296294,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "HumanEval/8",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.7777777777777778,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "HumanEval/8",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.9555555555555555,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "HumanEval/8",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.4351851851851852,
+      "nocrash_self": 0.21296296296296294,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "HumanEval/8",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.9555555555555555,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "HumanEval/8",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.9444444444444444,
+      "nocrash_self": 0.7222222222222222,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "HumanEval/8",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.4351851851851852,
+      "nocrash_self": 0.21296296296296294,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "HumanEval/8",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.4351851851851852,
+      "nocrash_self": 0.21296296296296294,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "HumanEval/8",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.4351851851851852,
+      "nocrash_self": 0.21296296296296294,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "HumanEval/9",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.7685185185185186,
+      "nocrash_self": 0.7685185185185186,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/9",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.5740740740740741,
+      "nocrash_self": 0.5740740740740741,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/9",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.37962962962962965,
+      "nocrash_self": 0.37962962962962965,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/9",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.37962962962962965,
+      "nocrash_self": 0.37962962962962965,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/9",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.9351851851851851,
+      "nocrash_self": 0.9351851851851851,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/9",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.3796296296296296,
+      "nocrash_self": 0.3796296296296296,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/9",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.6851851851851852,
+      "nocrash_self": 0.6851851851851852,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/9",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.3796296296296296,
+      "nocrash_self": 0.3796296296296296,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/9",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.3796296296296296,
+      "nocrash_self": 0.3796296296296296,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/9",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8611111111111112,
+      "nocrash_self": 0.8611111111111112,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/10",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.9444444444444444,
+      "nocrash_self": 0.6111111111111112,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "HumanEval/10",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.911111111111111,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "HumanEval/10",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.911111111111111,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "HumanEval/10",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.6666666666666666,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "HumanEval/10",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.6666666666666666,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "HumanEval/10",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.6666666666666666,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "HumanEval/10",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.6666666666666666,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "HumanEval/10",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.6666666666666666,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "HumanEval/10",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.911111111111111,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "HumanEval/10",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.9444444444444444,
+      "nocrash_self": 0.6111111111111112,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "HumanEval/11",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.7222222222222222,
+      "nocrash_self": 0.7222222222222222,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/11",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.4444444444444444,
+      "nocrash_self": 0.4444444444444444,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/11",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.4444444444444444,
+      "nocrash_self": 0.4444444444444444,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/11",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.7222222222222222,
+      "nocrash_self": 0.7222222222222222,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/11",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.7222222222222222,
+      "nocrash_self": 0.7222222222222222,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/11",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.4444444444444444,
+      "nocrash_self": 0.4444444444444444,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/11",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.4444444444444444,
+      "nocrash_self": 0.4444444444444444,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/11",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.7222222222222222,
+      "nocrash_self": 0.7222222222222222,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/11",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.4444444444444444,
+      "nocrash_self": 0.4444444444444444,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/11",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.4444444444444444,
+      "nocrash_self": 0.4444444444444444,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/12",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.027777777777777776,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/12",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.027777777777777776,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/12",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.027777777777777776,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/12",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.027777777777777776,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/12",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.027777777777777776,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/12",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.027777777777777776,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/12",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.027777777777777776,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/12",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.027777777777777776,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/12",
+      "passed": 0,
+      "crash_rate": 0.25,
+      "execution_self": 0.25,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/12",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.027777777777777776,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/13",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.6018518518518519,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.4444444444444444
+    },
+    {
+      "task_id": "HumanEval/13",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.6018518518518519,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.4444444444444444
+    },
+    {
+      "task_id": "HumanEval/13",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.8796296296296295,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "HumanEval/13",
+      "passed": 1,
+      "crash_rate": 0.4166666666666667,
+      "execution_self": 0.6944444444444444,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.4444444444444444
+    },
+    {
+      "task_id": "HumanEval/13",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.6018518518518519,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.4444444444444444
+    },
+    {
+      "task_id": "HumanEval/13",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.9018518518518519,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "HumanEval/13",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.6018518518518519,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.4444444444444444
+    },
+    {
+      "task_id": "HumanEval/13",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.9018518518518519,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "HumanEval/13",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.9018518518518519,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "HumanEval/13",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8796296296296297,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "HumanEval/14",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.5555555555555556,
+      "nocrash_self": 0.4444444444444444,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/14",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "HumanEval/14",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8888888888888888,
+      "nocrash_self": 0.7777777777777778,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/14",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.8888888888888888,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/14",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.5555555555555556,
+      "nocrash_self": 0.4444444444444444,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/14",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.5555555555555556,
+      "nocrash_self": 0.4444444444444444,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/14",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.5555555555555556,
+      "nocrash_self": 0.4444444444444444,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/14",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.8888888888888888,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/14",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8888888888888888,
+      "nocrash_self": 0.7777777777777778,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/14",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.5555555555555556,
+      "nocrash_self": 0.4444444444444444,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/15",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/15",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/15",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/15",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/15",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/15",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/15",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/15",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/15",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/15",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/16",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.1111111111111111,
+      "nocrash_self": 0.1111111111111111,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/16",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.1111111111111111,
+      "nocrash_self": 0.1111111111111111,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/16",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.1111111111111111,
+      "nocrash_self": 0.1111111111111111,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/16",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.1111111111111111,
+      "nocrash_self": 0.1111111111111111,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/16",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.1111111111111111,
+      "nocrash_self": 0.1111111111111111,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/16",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.1111111111111111,
+      "nocrash_self": 0.1111111111111111,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/16",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 1.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/16",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.1111111111111111,
+      "nocrash_self": 0.1111111111111111,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/16",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.1111111111111111,
+      "nocrash_self": 0.1111111111111111,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/16",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.1111111111111111,
+      "nocrash_self": 0.1111111111111111,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/17",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.7777777777777778,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "HumanEval/17",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.4444444444444444,
+      "nocrash_self": 0.2222222222222222,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "HumanEval/17",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.4444444444444444,
+      "nocrash_self": 0.2222222222222222,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "HumanEval/17",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.4444444444444444,
+      "nocrash_self": 0.2222222222222222,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "HumanEval/17",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.4444444444444444,
+      "nocrash_self": 0.2222222222222222,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "HumanEval/17",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.9777777777777779,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "HumanEval/17",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.4444444444444444,
+      "nocrash_self": 0.2222222222222222,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "HumanEval/17",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.9777777777777779,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "HumanEval/17",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.7777777777777778,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "HumanEval/17",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.4444444444444444,
+      "nocrash_self": 0.2222222222222222,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "HumanEval/18",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.9777777777777779,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "HumanEval/18",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.26851851851851855,
+      "nocrash_self": 0.046296296296296294,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "HumanEval/18",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.26851851851851855,
+      "nocrash_self": 0.046296296296296294,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "HumanEval/18",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.26851851851851855,
+      "nocrash_self": 0.046296296296296294,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "HumanEval/18",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.26851851851851855,
+      "nocrash_self": 0.046296296296296294,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "HumanEval/18",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.9777777777777779,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "HumanEval/18",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.3611111111111111,
+      "nocrash_self": 0.1388888888888889,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "HumanEval/18",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.2685185185185185,
+      "nocrash_self": 0.046296296296296294,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "HumanEval/18",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.4166666666666667,
+      "nocrash_self": 0.19444444444444445,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "HumanEval/18",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.26851851851851855,
+      "nocrash_self": 0.046296296296296294,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "HumanEval/19",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8888888888888888,
+      "nocrash_self": 0.7777777777777778,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/19",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8888888888888888,
+      "nocrash_self": 0.7777777777777778,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/19",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "HumanEval/19",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.8888888888888888,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/19",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8888888888888888,
+      "nocrash_self": 0.7777777777777778,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/19",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.8888888888888888,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/19",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.8888888888888888,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/19",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.8888888888888888,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/19",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.8888888888888888,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/19",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8888888888888888,
+      "nocrash_self": 0.7777777777777778,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/20",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8703703703703705,
+      "nocrash_self": 0.8703703703703705,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/20",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.9537037037037036,
+      "nocrash_self": 0.9537037037037036,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/20",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8703703703703705,
+      "nocrash_self": 0.8703703703703705,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/20",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.5462962962962963,
+      "nocrash_self": 0.5462962962962963,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/20",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.5462962962962963,
+      "nocrash_self": 0.5462962962962963,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/20",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.5462962962962963,
+      "nocrash_self": 0.5462962962962963,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/20",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.5462962962962963,
+      "nocrash_self": 0.5462962962962963,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/20",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.925925925925926,
+      "nocrash_self": 0.925925925925926,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/20",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.9074074074074073,
+      "nocrash_self": 0.9074074074074073,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/20",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.5462962962962963,
+      "nocrash_self": 0.5462962962962963,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/21",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.2222222222222222,
+      "nocrash_self": 0.2222222222222222,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/21",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.2222222222222222,
+      "nocrash_self": 0.2222222222222222,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/21",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.2222222222222222,
+      "nocrash_self": 0.2222222222222222,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/21",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8888888888888888,
+      "nocrash_self": 0.8888888888888888,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/21",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.2222222222222222,
+      "nocrash_self": 0.2222222222222222,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/21",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.2222222222222222,
+      "nocrash_self": 0.2222222222222222,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/21",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8888888888888888,
+      "nocrash_self": 0.8888888888888888,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/21",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.2222222222222222,
+      "nocrash_self": 0.2222222222222222,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/21",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.2222222222222222,
+      "nocrash_self": 0.2222222222222222,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/21",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.2222222222222222,
+      "nocrash_self": 0.2222222222222222,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/22",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.12962962962962962,
+      "nocrash_self": 0.12962962962962962,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/22",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.17592592592592593,
+      "nocrash_self": 0.17592592592592593,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/22",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.12962962962962962,
+      "nocrash_self": 0.12962962962962962,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/22",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.12962962962962962,
+      "nocrash_self": 0.12962962962962962,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/22",
+      "passed": 0,
+      "crash_rate": 0.16666666666666666,
+      "execution_self": 1.0,
+      "nocrash_self": 1.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/22",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.12962962962962962,
+      "nocrash_self": 0.12962962962962962,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/22",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.17592592592592593,
+      "nocrash_self": 0.17592592592592593,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/22",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.12962962962962962,
+      "nocrash_self": 0.12962962962962962,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/22",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.12962962962962962,
+      "nocrash_self": 0.12962962962962962,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/22",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.12962962962962962,
+      "nocrash_self": 0.12962962962962962,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/23",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.1111111111111111,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/23",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.1111111111111111,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/23",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.1111111111111111,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/23",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.1111111111111111,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/23",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.1111111111111111,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/23",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.1111111111111111,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/23",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.1111111111111111,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/23",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.1111111111111111,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/23",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.1111111111111111,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/23",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "HumanEval/24",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.9166666666666666,
+      "nocrash_self": 0.8055555555555556,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/24",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8981481481481483,
+      "nocrash_self": 0.7870370370370371,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/24",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.7592592592592593,
+      "nocrash_self": 0.6481481481481483,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/24",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.7592592592592593,
+      "nocrash_self": 0.6481481481481483,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/24",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.8703703703703705,
+      "nocrash_self": 0.7592592592592593,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/24",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.8703703703703705,
+      "nocrash_self": 0.7592592592592593,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/24",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8888888888888888,
+      "nocrash_self": 0.7777777777777778,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/24",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "HumanEval/24",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.7592592592592593,
+      "nocrash_self": 0.6481481481481483,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/24",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8888888888888888,
+      "nocrash_self": 0.7777777777777778,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/25",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6888888888888888,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "HumanEval/25",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6888888888888888,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "HumanEval/25",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.1111111111111111,
+      "nocrash_support": 0.1111111111111111
+    },
+    {
+      "task_id": "HumanEval/25",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6888888888888888,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "HumanEval/25",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6888888888888888,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "HumanEval/25",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6888888888888888,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "HumanEval/25",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6888888888888888,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "HumanEval/25",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6888888888888888,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "HumanEval/25",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6888888888888888,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "HumanEval/25",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.1111111111111111,
+      "nocrash_support": 0.1111111111111111
+    },
+    {
+      "task_id": "HumanEval/26",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.6851851851851852,
+      "nocrash_self": 0.6851851851851852,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/26",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.6666666666666666,
+      "nocrash_self": 0.6666666666666666,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/26",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.6851851851851852,
+      "nocrash_self": 0.6851851851851852,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/26",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.6666666666666666,
+      "nocrash_self": 0.6666666666666666,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/26",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 1.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/26",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.75,
+      "nocrash_self": 0.75,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/26",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.6666666666666666,
+      "nocrash_self": 0.6666666666666666,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/26",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.75,
+      "nocrash_self": 0.75,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/26",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.6851851851851852,
+      "nocrash_self": 0.6851851851851852,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/26",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.6666666666666666,
+      "nocrash_self": 0.6666666666666666,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/27",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/27",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/27",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/27",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/27",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/27",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/27",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/27",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/27",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/27",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/28",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/28",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/28",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/28",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/28",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/28",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/28",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/28",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/28",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/28",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/29",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/29",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/29",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/29",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/29",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/29",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/29",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/29",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/29",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/29",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/30",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.14814814814814814,
+      "nocrash_self": 0.14814814814814814,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/30",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.14814814814814814,
+      "nocrash_self": 0.14814814814814814,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/30",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.14814814814814814,
+      "nocrash_self": 0.14814814814814814,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/30",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.14814814814814814,
+      "nocrash_self": 0.14814814814814814,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/30",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.5925925925925926,
+      "nocrash_self": 0.5925925925925926,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/30",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.14814814814814814,
+      "nocrash_self": 0.14814814814814814,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/30",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.14814814814814814,
+      "nocrash_self": 0.14814814814814814,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/30",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.14814814814814814,
+      "nocrash_self": 0.14814814814814814,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/30",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.14814814814814814,
+      "nocrash_self": 0.14814814814814814,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/30",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.5925925925925926,
+      "nocrash_self": 0.5925925925925926,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/31",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.35185185185185186,
+      "nocrash_self": 0.14814814814814814,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/31",
+      "passed": 0,
+      "crash_rate": 0.3333333333333333,
+      "execution_self": 0.5185185185185185,
+      "nocrash_self": 0.1111111111111111,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/31",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.35185185185185186,
+      "nocrash_self": 0.14814814814814814,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/31",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.8888888888888888,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/31",
+      "passed": 0,
+      "crash_rate": 0.5,
+      "execution_self": 0.6425925925925926,
+      "nocrash_self": 0.16666666666666666,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/31",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.9703703703703703,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "HumanEval/31",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.35185185185185186,
+      "nocrash_self": 0.14814814814814814,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/31",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.35185185185185186,
+      "nocrash_self": 0.14814814814814814,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/31",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.5277777777777777,
+      "nocrash_self": 0.35185185185185186,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/31",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.35185185185185186,
+      "nocrash_self": 0.14814814814814814,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/32",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.9907407407407407,
+      "nocrash_self": 0.4351851851851852,
+      "nocrash_support": 0.4444444444444444
+    },
+    {
+      "task_id": "HumanEval/32",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.9907407407407407,
+      "nocrash_self": 0.4351851851851852,
+      "nocrash_support": 0.4444444444444444
+    },
+    {
+      "task_id": "HumanEval/32",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.4444444444444444,
+      "nocrash_support": 0.4444444444444444
+    },
+    {
+      "task_id": "HumanEval/32",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8777777777777778,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "HumanEval/32",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.4444444444444444,
+      "nocrash_support": 0.4444444444444444
+    },
+    {
+      "task_id": "HumanEval/32",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8777777777777778,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "HumanEval/32",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8777777777777778,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "HumanEval/32",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8777777777777778,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "HumanEval/32",
+      "passed": 0,
+      "crash_rate": 0.5,
+      "execution_self": 0.9444444444444444,
+      "nocrash_self": 0.4444444444444444,
+      "nocrash_support": 0.4444444444444444
+    },
+    {
+      "task_id": "HumanEval/32",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.9000000000000001,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "HumanEval/33",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.7777777777777778,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "HumanEval/33",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.9907407407407407,
+      "nocrash_self": 0.7685185185185185,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "HumanEval/33",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.9777777777777779,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "HumanEval/33",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.9907407407407407,
+      "nocrash_self": 0.7685185185185185,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "HumanEval/33",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.7777777777777778,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "HumanEval/33",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.7777777777777778,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "HumanEval/33",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.7777777777777778,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "HumanEval/33",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.7777777777777778,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "HumanEval/33",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.9777777777777779,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "HumanEval/33",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.7777777777777778,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "HumanEval/34",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "HumanEval/34",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.6111111111111112,
+      "nocrash_self": 0.5,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/34",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.6111111111111112,
+      "nocrash_self": 0.5,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/34",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.6111111111111112,
+      "nocrash_self": 0.5,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/34",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.7314814814814814,
+      "nocrash_self": 0.6203703703703703,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/34",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.8611111111111112,
+      "nocrash_self": 0.75,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/34",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.6111111111111112,
+      "nocrash_self": 0.5,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/34",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.7314814814814814,
+      "nocrash_self": 0.6203703703703703,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/34",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.7314814814814814,
+      "nocrash_self": 0.6203703703703703,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/34",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.8888888888888888,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/35",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.2222222222222222,
+      "nocrash_self": 0.2222222222222222,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/35",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.2222222222222222,
+      "nocrash_self": 0.2222222222222222,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/35",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.2222222222222222,
+      "nocrash_self": 0.2222222222222222,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/35",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 1.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/35",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.2222222222222222,
+      "nocrash_self": 0.2222222222222222,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/35",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.2222222222222222,
+      "nocrash_self": 0.2222222222222222,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/35",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.2222222222222222,
+      "nocrash_self": 0.2222222222222222,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/35",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.2222222222222222,
+      "nocrash_self": 0.2222222222222222,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/35",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.2222222222222222,
+      "nocrash_self": 0.2222222222222222,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/35",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 1.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/36",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.7037037037037037,
+      "nocrash_self": 0.6925925925925926,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/36",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.5277777777777778,
+      "nocrash_self": 0.5111111111111111,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/36",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.5555555555555556,
+      "nocrash_self": 0.5370370370370371,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/36",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8240740740740741,
+      "nocrash_self": 0.8240740740740741,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/36",
+      "passed": 0,
+      "crash_rate": 0.16666666666666666,
+      "execution_self": 0.5555555555555556,
+      "nocrash_self": 0.4666666666666667,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/36",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8333333333333334,
+      "nocrash_self": 0.8333333333333334,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/36",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.75,
+      "nocrash_self": 0.7407407407407407,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/36",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.5277777777777778,
+      "nocrash_self": 0.5111111111111111,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/36",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.5277777777777778,
+      "nocrash_self": 0.5111111111111111,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/36",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8240740740740741,
+      "nocrash_self": 0.8240740740740741,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/37",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.9629629629629629,
+      "nocrash_self": 0.8518518518518517,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/37",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.9629629629629629,
+      "nocrash_self": 0.8518518518518517,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/37",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.9814814814814815,
+      "nocrash_self": 0.8703703703703705,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/37",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8888888888888888,
+      "nocrash_self": 0.7777777777777778,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/37",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.8888888888888888,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/37",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.9814814814814814,
+      "nocrash_self": 0.8703703703703703,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/37",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "HumanEval/37",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.9722222222222222,
+      "nocrash_self": 0.8611111111111112,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/37",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.9537037037037037,
+      "nocrash_self": 0.8425925925925927,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/37",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8888888888888888,
+      "nocrash_self": 0.7777777777777778,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/38",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.7129629629629629,
+      "nocrash_self": 0.6018518518518517,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/38",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.8888888888888888,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/38",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.9722222222222222,
+      "nocrash_self": 0.8611111111111112,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/38",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.8888888888888888,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/38",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.9629629629629629,
+      "nocrash_self": 0.8518518518518519,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/38",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.7129629629629629,
+      "nocrash_self": 0.6018518518518517,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/38",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.7129629629629629,
+      "nocrash_self": 0.6018518518518517,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/38",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.8888888888888888,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/38",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "HumanEval/38",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.7962962962962963,
+      "nocrash_self": 0.6851851851851851,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/39",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.9166666666666666,
+      "nocrash_self": 0.25,
+      "nocrash_support": 0.5555555555555556
+    },
+    {
+      "task_id": "HumanEval/39",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.9907407407407407,
+      "nocrash_self": 0.5462962962962963,
+      "nocrash_support": 0.5555555555555556
+    },
+    {
+      "task_id": "HumanEval/39",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.7592592592592592,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "HumanEval/39",
+      "passed": 0,
+      "crash_rate": 0.8333333333333334,
+      "execution_self": 0.7166666666666667,
+      "nocrash_self": 0.16666666666666666,
+      "nocrash_support": 0.5555555555555556
+    },
+    {
+      "task_id": "HumanEval/39",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.7592592592592592,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "HumanEval/39",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.7592592592592592,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "HumanEval/39",
+      "passed": 0,
+      "crash_rate": 0.8333333333333334,
+      "execution_self": 0.7444444444444445,
+      "nocrash_self": 0.3333333333333333,
+      "nocrash_support": 0.5555555555555556
+    },
+    {
+      "task_id": "HumanEval/39",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.9351851851851853,
+      "nocrash_self": 0.29629629629629634,
+      "nocrash_support": 0.5555555555555556
+    },
+    {
+      "task_id": "HumanEval/39",
+      "passed": 0,
+      "crash_rate": 0.75,
+      "execution_self": 0.725925925925926,
+      "nocrash_self": 0.2037037037037037,
+      "nocrash_support": 0.5555555555555556
+    },
+    {
+      "task_id": "HumanEval/39",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.7592592592592592,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "HumanEval/40",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.4907407407407407,
+      "nocrash_self": 0.4907407407407407,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/40",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.4259259259259259,
+      "nocrash_self": 0.4259259259259259,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/40",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.4259259259259259,
+      "nocrash_self": 0.4259259259259259,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/40",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.4259259259259259,
+      "nocrash_self": 0.4259259259259259,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/40",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.7314814814814814,
+      "nocrash_self": 0.7314814814814814,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/40",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.7314814814814814,
+      "nocrash_self": 0.7314814814814814,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/40",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.7314814814814814,
+      "nocrash_self": 0.7314814814814814,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/40",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.42592592592592593,
+      "nocrash_self": 0.42592592592592593,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/40",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.42592592592592593,
+      "nocrash_self": 0.42592592592592593,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/40",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 1.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/41",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.911111111111111,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "HumanEval/41",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.911111111111111,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "HumanEval/41",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.6666666666666666,
+      "nocrash_self": 0.3333333333333333,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "HumanEval/41",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.6666666666666666,
+      "nocrash_self": 0.3333333333333333,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "HumanEval/41",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.911111111111111,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "HumanEval/41",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8888888888888888,
+      "nocrash_self": 0.5555555555555556,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "HumanEval/41",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.6666666666666666,
+      "nocrash_self": 0.3333333333333333,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "HumanEval/41",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8888888888888888,
+      "nocrash_self": 0.5555555555555556,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "HumanEval/41",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.6666666666666666,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "HumanEval/41",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.6666666666666666,
+      "nocrash_self": 0.3333333333333333,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "HumanEval/42",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/42",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/42",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/42",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/42",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/42",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/42",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/42",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/42",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/42",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/43",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.39814814814814814,
+      "nocrash_self": 0.39814814814814814,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/43",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.287037037037037,
+      "nocrash_self": 0.287037037037037,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/43",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.287037037037037,
+      "nocrash_self": 0.287037037037037,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/43",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.287037037037037,
+      "nocrash_self": 0.287037037037037,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/43",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.287037037037037,
+      "nocrash_self": 0.287037037037037,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/43",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 1.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/43",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.287037037037037,
+      "nocrash_self": 0.287037037037037,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/43",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.287037037037037,
+      "nocrash_self": 0.287037037037037,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/43",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.45370370370370366,
+      "nocrash_self": 0.45370370370370366,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/43",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 1.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/44",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.574074074074074,
+      "nocrash_self": 0.24074074074074073,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "HumanEval/44",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.574074074074074,
+      "nocrash_self": 0.24074074074074073,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "HumanEval/44",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8888888888888888,
+      "nocrash_self": 0.5555555555555556,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "HumanEval/44",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8888888888888888,
+      "nocrash_self": 0.5555555555555556,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "HumanEval/44",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.574074074074074,
+      "nocrash_self": 0.24074074074074073,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "HumanEval/44",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.9555555555555557,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "HumanEval/44",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.9555555555555557,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "HumanEval/44",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.5833333333333334,
+      "nocrash_self": 0.25,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "HumanEval/44",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.5833333333333334,
+      "nocrash_self": 0.25,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "HumanEval/44",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.9555555555555557,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "HumanEval/45",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/45",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/45",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/45",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/45",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/45",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/45",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/45",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/45",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/45",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/46",
+      "passed": 1,
+      "crash_rate": 0.08333333333333333,
+      "execution_self": 0.8759259259259259,
+      "nocrash_self": 0.6464646464646465,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "HumanEval/46",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.8796296296296295,
+      "nocrash_self": 0.6481481481481481,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "HumanEval/46",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.7777777777777778,
+      "nocrash_self": 0.5555555555555556,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "HumanEval/46",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.7777777777777778,
+      "nocrash_self": 0.5555555555555556,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "HumanEval/46",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.9722222222222222,
+      "nocrash_self": 0.7491582491582491,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "HumanEval/46",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.9759259259259259,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "HumanEval/46",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.9759259259259259,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "HumanEval/46",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.7777777777777778,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "HumanEval/46",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.9722222222222222,
+      "nocrash_self": 0.7491582491582491,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "HumanEval/46",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.7777777777777778,
+      "nocrash_self": 0.5555555555555556,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "HumanEval/47",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.4444444444444444,
+      "nocrash_self": 0.33333333333333337,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/47",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.6574074074074074,
+      "nocrash_self": 0.5462962962962963,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/47",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.4444444444444444,
+      "nocrash_self": 0.33333333333333337,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/47",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.8888888888888888,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/47",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.4444444444444444,
+      "nocrash_self": 0.33333333333333337,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/47",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "HumanEval/47",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.4444444444444444,
+      "nocrash_self": 0.33333333333333337,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/47",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.4444444444444444,
+      "nocrash_self": 0.33333333333333337,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/47",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.9074074074074076,
+      "nocrash_self": 0.7962962962962963,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/47",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.6574074074074074,
+      "nocrash_self": 0.5462962962962963,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/48",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/48",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/48",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/48",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/48",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/48",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/48",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/48",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/48",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/48",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/49",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.4444444444444444,
+      "nocrash_self": 0.4444444444444444,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/49",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 1.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/49",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.7777777777777778,
+      "nocrash_self": 0.7777777777777778,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/49",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.4444444444444444,
+      "nocrash_self": 0.4444444444444444,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/49",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.4444444444444444,
+      "nocrash_self": 0.4444444444444444,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/49",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.4444444444444444,
+      "nocrash_self": 0.4444444444444444,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/49",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.7777777777777778,
+      "nocrash_self": 0.7777777777777778,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/49",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.4444444444444444,
+      "nocrash_self": 0.4444444444444444,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/49",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.4444444444444444,
+      "nocrash_self": 0.4444444444444444,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/49",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.7777777777777778,
+      "nocrash_self": 0.7777777777777778,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/50",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/50",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/50",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/50",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/50",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/50",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/50",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/50",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/50",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/50",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/51",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.05555555555555555,
+      "nocrash_self": 0.05555555555555555,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/51",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.05555555555555555,
+      "nocrash_self": 0.05555555555555555,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/51",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.05555555555555555,
+      "nocrash_self": 0.05555555555555555,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/51",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.05555555555555555,
+      "nocrash_self": 0.05555555555555555,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/51",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.5,
+      "nocrash_self": 0.5,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/51",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.05555555555555555,
+      "nocrash_self": 0.05555555555555555,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/51",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.05555555555555555,
+      "nocrash_self": 0.05555555555555555,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/51",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.05555555555555555,
+      "nocrash_self": 0.05555555555555555,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/51",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.05555555555555555,
+      "nocrash_self": 0.05555555555555555,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/51",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.05555555555555555,
+      "nocrash_self": 0.05555555555555555,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/52",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.3148148148148148,
+      "nocrash_self": 0.3148148148148148,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/52",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.36111111111111116,
+      "nocrash_self": 0.36111111111111116,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/52",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.4537037037037038,
+      "nocrash_self": 0.4537037037037038,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/52",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.4537037037037038,
+      "nocrash_self": 0.4537037037037038,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/52",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.3148148148148148,
+      "nocrash_self": 0.3148148148148148,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/52",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.4537037037037038,
+      "nocrash_self": 0.4537037037037038,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/52",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.6851851851851851,
+      "nocrash_self": 0.6851851851851851,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/52",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 1.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/52",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.3148148148148148,
+      "nocrash_self": 0.3148148148148148,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/52",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.3148148148148148,
+      "nocrash_self": 0.3148148148148148,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/53",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/53",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/53",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/53",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/53",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/53",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/53",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/53",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/53",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/53",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/54",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.14814814814814814,
+      "nocrash_self": 0.07407407407407407,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/54",
+      "passed": 0,
+      "crash_rate": 0.6666666666666666,
+      "execution_self": 0.6666666666666666,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/54",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.08333333333333333,
+      "nocrash_self": 0.009259259259259259,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/54",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.08333333333333333,
+      "nocrash_self": 0.009259259259259259,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/54",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.08333333333333333,
+      "nocrash_self": 0.009259259259259259,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/54",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.08333333333333333,
+      "nocrash_self": 0.009259259259259259,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/54",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.08333333333333333,
+      "nocrash_self": 0.009259259259259259,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/54",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.08333333333333333,
+      "nocrash_self": 0.009259259259259259,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/54",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.08333333333333333,
+      "nocrash_self": 0.009259259259259259,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/54",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.08333333333333333,
+      "nocrash_self": 0.009259259259259259,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/55",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "HumanEval/55",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "HumanEval/55",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "HumanEval/55",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "HumanEval/55",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "HumanEval/55",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8000000000000002,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "HumanEval/55",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "HumanEval/55",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "HumanEval/55",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "HumanEval/55",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "HumanEval/56",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.5833333333333335,
+      "nocrash_self": 0.45238095238095244,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/56",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.3148148148148148,
+      "nocrash_self": 0.1574074074074074,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/56",
+      "passed": 0,
+      "crash_rate": 0.4166666666666667,
+      "execution_self": 0.5740740740740741,
+      "nocrash_self": 0.1746031746031746,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/56",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.8888888888888888,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/56",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.9907407407407407,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "HumanEval/56",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.3148148148148148,
+      "nocrash_self": 0.1574074074074074,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/56",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.3148148148148148,
+      "nocrash_self": 0.1574074074074074,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/56",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.3148148148148148,
+      "nocrash_self": 0.1574074074074074,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/56",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.3148148148148148,
+      "nocrash_self": 0.1574074074074074,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/56",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.3148148148148148,
+      "nocrash_self": 0.1574074074074074,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/57",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.10185185185185186,
+      "nocrash_self": 0.10185185185185186,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/57",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.10185185185185186,
+      "nocrash_self": 0.10185185185185186,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/57",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.4722222222222222,
+      "nocrash_self": 0.4722222222222222,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/57",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.10185185185185186,
+      "nocrash_self": 0.10185185185185186,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/57",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.10185185185185186,
+      "nocrash_self": 0.10185185185185186,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/57",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.5462962962962963,
+      "nocrash_self": 0.5462962962962963,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/57",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.10185185185185186,
+      "nocrash_self": 0.10185185185185186,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/57",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.10185185185185186,
+      "nocrash_self": 0.10185185185185186,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/57",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.10185185185185186,
+      "nocrash_self": 0.10185185185185186,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/57",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.10185185185185186,
+      "nocrash_self": 0.10185185185185186,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "HumanEval/58",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.2685185185185185,
+      "nocrash_self": 0.15740740740740738,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/58",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.9259259259259258,
+      "nocrash_self": 0.8148148148148148,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/58",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.3055555555555555,
+      "nocrash_self": 0.19444444444444445,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/58",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.2685185185185185,
+      "nocrash_self": 0.15740740740740738,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/58",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.2685185185185185,
+      "nocrash_self": 0.15740740740740738,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/58",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.3055555555555556,
+      "nocrash_self": 0.19444444444444445,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/58",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.3055555555555556,
+      "nocrash_self": 0.19444444444444445,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/58",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.26851851851851855,
+      "nocrash_self": 0.15740740740740738,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/58",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "HumanEval/58",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.2685185185185185,
+      "nocrash_self": 0.15740740740740738,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "HumanEval/59",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.3333333333333333,
+      "nocrash_support": 0.3333333333333333
+    },
+    {
+      "task_id": "HumanEval/59",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.9907407407407407,
+      "nocrash_self": 0.32407407407407407,
+      "nocrash_support": 0.3333333333333333
+    },
+    {
+      "task_id": "HumanEval/59",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "HumanEval/59",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8888888888888888,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "HumanEval/59",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "HumanEval/59",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.9907407407407407,
+      "nocrash_self": 0.32407407407407407,
+      "nocrash_support": 0.3333333333333333
+    },
+    {
+      "task_id": "HumanEval/59",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "HumanEval/59",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "HumanEval/59",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "HumanEval/59",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.3333333333333333,
+      "nocrash_support": 0.3333333333333333
+    }
+  ]
+}

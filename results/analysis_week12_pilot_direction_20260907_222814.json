@@ -1,0 +1,3006 @@
+{
+  "analysis": "week12_pilot_gate_direction",
+  "timestamp": "2026-09-07T22:28:14.423294",
+  "figures": [
+    "reports/figures/week12_pilot_direction_p_pass.png",
+    "reports/figures/week12_pilot_direction_initial_chars.png"
+  ],
+  "cohorts": [
+    {
+      "analysis": "week12_pilot_gate_direction",
+      "cohort_name": "mbpp",
+      "timestamp": "2026-09-07T22:28:13.566605",
+      "config": {
+        "source_results": "results/mbpp_uncertainty_20260712_024909.json",
+        "predictor_results": "results/predictor_mbpp_20260712_212240.json",
+        "sample_index": 0,
+        "epsilons": [
+          0.1,
+          0.2,
+          0.3,
+          0.5
+        ],
+        "pilot_sizes": [
+          5,
+          10,
+          15,
+          20,
+          30,
+          40,
+          50,
+          75
+        ],
+        "n_seeds": 200,
+        "n_draws": 400,
+        "first_seed": 0,
+        "score_columns": [
+          "p_pass",
+          "initial_chars"
+        ],
+        "budget_fractions": [
+          0.25,
+          0.4,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "calls_note": "renormalized to stop-on-pass before any comparison"
+      },
+      "arms": {
+        "none": {
+          "pool_file": "results/mbpp_week9_arm_resample_sample0_qwen15b.json",
+          "by_score": {
+            "p_pass": {
+              "policies": {
+                "score_column": "p_pass",
+                "n_coordinates": 54,
+                "total_repair_calls": 124,
+                "total_repairable": 27,
+                "full_data_allocation_auc": 0.48148148148148145,
+                "full_data_direction": "risk",
+                "budget_fractions": [
+                  0.25,
+                  0.4,
+                  0.5,
+                  0.75,
+                  1.0
+                ],
+                "budget_calls": [
+                  31,
+                  50,
+                  62,
+                  93,
+                  124
+                ],
+                "policies": {
+                  "risk": {
+                    "added_at_budget": [
+                      10,
+                      13,
+                      15,
+                      18,
+                      27
+                    ],
+                    "attempts_at_budget": [
+                      16,
+                      24,
+                      29,
+                      40,
+                      54
+                    ],
+                    "stochastic": false
+                  },
+                  "inverted": {
+                    "added_at_budget": [
+                      8,
+                      11,
+                      12,
+                      17,
+                      27
+                    ],
+                    "attempts_at_budget": [
+                      13,
+                      21,
+                      25,
+                      38,
+                      54
+                    ],
+                    "stochastic": false
+                  },
+                  "random": {
+                    "added_at_budget": [
+                      6.665,
+                      10.79,
+                      13.4,
+                      20.065,
+                      27.0
+                    ],
+                    "added_at_budget_std": [
+                      1.960098192597278,
+                      2.2630747971926253,
+                      2.3871515373581875,
+                      2.129188157738831,
+                      0.0
+                    ],
+                    "attempts_at_budget": [
+                      13.195,
+                      21.345,
+                      26.605,
+                      40.095,
+                      54.0
+                    ],
+                    "stochastic": true
+                  },
+                  "pilot@0.10": {
+                    "added_at_budget": [
+                      7.485,
+                      12.515,
+                      13.4,
+                      17.43,
+                      27.0
+                    ],
+                    "added_at_budget_std": [
+                      2.019944523841431,
+                      1.4247542325312033,
+                      1.322400740544622,
+                      1.0727787616078088,
+                      0.0
+                    ],
+                    "attempts_at_budget": [
+                      14.185,
+                      22.55,
+                      27.13,
+                      39.005,
+                      54.0
+                    ],
+                    "sign_agreement_rate": 0.58,
+                    "undefined_pilot_rate": 0.01,
+                    "stochastic": true
+                  },
+                  "pilot@0.20": {
+                    "added_at_budget": [
+                      6.875,
+                      11.895,
+                      14.12,
+                      17.865,
+                      27.0
+                    ],
+                    "added_at_budget_std": [
+                      2.1170224183031197,
+                      1.9884023030043403,
+                      1.6306116865648328,
+                      1.282575533838066,
+                      0.0
+                    ],
+                    "attempts_at_budget": [
+                      13.39,
+                      22.25,
+                      27.26,
+                      39.03,
+                      54.0
+                    ],
+                    "sign_agreement_rate": 0.54,
+                    "undefined_pilot_rate": 0.0,
+                    "stochastic": true
+                  },
+                  "pilot@0.30": {
+                    "added_at_budget": [
+                      6.665,
+                      11.08,
+                      14.305,
+                      18.485,
+                      27.0
+                    ],
+                    "added_at_budget_std": [
+                      1.960098192597278,
+                      2.2868643911956372,
+                      2.201410009550868,
+                      1.5691033831891634,
+                      0.0
+                    ],
+                    "attempts_at_budget": [
+                      13.195,
+                      21.86,
+                      27.335,
+                      39.22,
+                      54.0
+                    ],
+                    "sign_agreement_rate": 0.545,
+                    "undefined_pilot_rate": 0.0,
+                    "stochastic": true
+                  },
+                  "pilot@0.50": {
+                    "added_at_budget": [
+                      6.665,
+                      10.79,
+                      13.395,
+                      19.485,
+                      27.0
+                    ],
+                    "added_at_budget_std": [
+                      1.960098192597278,
+                      2.2630747971926253,
+                      2.4369383130700175,
+                      1.6472224223045027,
+                      0.0
+                    ],
+                    "attempts_at_budget": [
+                      13.195,
+                      21.345,
+                      26.6,
+                      39.895,
+                      54.0
+                    ],
+                    "sign_agreement_rate": 0.57,
+                    "undefined_pilot_rate": 0.0,
+                    "stochastic": true
+                  }
+                }
+              },
+              "sign_resolution": {
+                "score_column": "p_pass",
+                "full_data_auc": 0.48148148148148145,
+                "full_data_direction": "risk",
+                "by_pilot_size": [
+                  {
+                    "pilot_size": 5,
+                    "sign_agreement_rate": 0.6625,
+                    "undefined_rate": 0.0575,
+                    "mean_pilot_auc": 0.47855879752431474
+                  },
+                  {
+                    "pilot_size": 10,
+                    "sign_agreement_rate": 0.5425,
+                    "undefined_rate": 0.0025,
+                    "mean_pilot_auc": 0.48651738473167044
+                  },
+                  {
+                    "pilot_size": 15,
+                    "sign_agreement_rate": 0.555,
+                    "undefined_rate": 0.0,
+                    "mean_pilot_auc": 0.4867254782254782
+                  },
+                  {
+                    "pilot_size": 20,
+                    "sign_agreement_rate": 0.5625,
+                    "undefined_rate": 0.0,
+                    "mean_pilot_auc": 0.4866119720557221
+                  },
+                  {
+                    "pilot_size": 30,
+                    "sign_agreement_rate": 0.595,
+                    "undefined_rate": 0.0,
+                    "mean_pilot_auc": 0.48220591641402405
+                  },
+                  {
+                    "pilot_size": 40,
+                    "sign_agreement_rate": 0.63,
+                    "undefined_rate": 0.0,
+                    "mean_pilot_auc": 0.48496384715360724
+                  },
+                  {
+                    "pilot_size": 50,
+                    "sign_agreement_rate": 0.755,
+                    "undefined_rate": 0.0,
+                    "mean_pilot_auc": 0.48436651576241796
+                  }
+                ]
+              }
+            },
+            "initial_chars": {
+              "policies": {
+                "score_column": "initial_chars",
+                "n_coordinates": 54,
+                "total_repair_calls": 124,
+                "total_repairable": 27,
+                "full_data_allocation_auc": 0.46021947873799723,
+                "full_data_direction": "risk",
+                "budget_fractions": [
+                  0.25,
+                  0.4,
+                  0.5,
+                  0.75,
+                  1.0
+                ],
+                "budget_calls": [
+                  31,
+                  50,
+                  62,
+                  93,
+                  124
+                ],
+                "policies": {
+                  "risk": {
+                    "added_at_budget": [
+                      6,
+                      10,
+                      14,
+                      21,
+                      27
+                    ],
+                    "attempts_at_budget": [
+                      13,
+                      21,
+                      26,
+                      40,
+                      54
+                    ],
+                    "stochastic": false
+                  },
+                  "inverted": {
+                    "added_at_budget": [
+                      6,
+                      9,
+                      13,
+                      21,
+                      27
+                    ],
+                    "attempts_at_budget": [
+                      14,
+                      22,
+                      28,
+                      40,
+                      54
+                    ],
+                    "stochastic": false
+                  },
+                  "random": {
+                    "added_at_budget": [
+                      6.665,
+                      10.79,
+                      13.4,
+                      20.065,
+                      27.0
+                    ],
+                    "added_at_budget_std": [
+                      1.960098192597278,
+                      2.2630747971926253,
+                      2.3871515373581875,
+                      2.129188157738831,
+                      0.0
+                    ],
+                    "attempts_at_budget": [
+                      13.195,
+                      21.345,
+                      26.605,
+                      40.095,
+                      54.0
+                    ],
+                    "stochastic": true
+                  },
+                  "pilot@0.10": {
+                    "added_at_budget": [
+                      6.065,
+                      9.21,
+                      11.865,
+                      20.725,
+                      27.0
+                    ],
+                    "added_at_budget_std": [
+                      1.629124067138735,
+                      1.0494794115064285,
+                      1.123872969806333,
+                      0.6941065621343671,
+                      0.0
+                    ],
+                    "attempts_at_budget": [
+                      13.18,
+                      21.27,
+                      26.005,
+                      39.765,
+                      54.0
+                    ],
+                    "sign_agreement_rate": 0.59,
+                    "undefined_pilot_rate": 0.01,
+                    "stochastic": true
+                  },
+                  "pilot@0.20": {
+                    "added_at_budget": [
+                      6.35,
+                      9.855,
+                      11.95,
+                      20.565,
+                      27.0
+                    ],
+                    "added_at_budget_std": [
+                      1.6797642811421503,
+                      1.5117546130408375,
+                      1.4344995450412725,
+                      1.0446201011750131,
+                      0.0
+                    ],
+                    "attempts_at_budget": [
+                      13.095,
+                      21.31,
+                      26.335,
+                      39.75,
+                      54.0
+                    ],
+                    "sign_agreement_rate": 0.615,
+                    "undefined_pilot_rate": 0.0,
+                    "stochastic": true
+                  },
+                  "pilot@0.30": {
+                    "added_at_budget": [
+                      6.67,
+                      10.315,
+                      12.265,
+                      20.18,
+                      27.0
+                    ],
+                    "added_at_budget_std": [
+                      1.9749944341884553,
+                      2.1514924117899996,
+                      1.7027246861380496,
+                      1.3214884253338948,
+                      0.0
+                    ],
+                    "attempts_at_budget": [
+                      13.2,
+                      21.37,
+                      26.355,
+                      39.74,
+                      54.0
+                    ],
+                    "sign_agreement_rate": 0.63,
+                    "undefined_pilot_rate": 0.0,
+                    "stochastic": true
+                  },
+                  "pilot@0.50": {
+                    "added_at_budget": [
+                      6.665,
+                      10.79,
+                      13.355,
+                      19.3,
+                      27.0
+                    ],
+                    "added_at_budget_std": [
+                      1.960098192597278,
+                      2.2630747971926253,
+                      2.3250817243971507,
+                      1.9231465004808026,
+                      0.0
+                    ],
+                    "attempts_at_budget": [
+                      13.195,
+                      21.345,
+                      26.595,
+                      39.53,
+                      54.0
+                    ],
+                    "sign_agreement_rate": 0.695,
+                    "undefined_pilot_rate": 0.0,
+                    "stochastic": true
+                  }
+                }
+              },
+              "sign_resolution": {
+                "score_column": "initial_chars",
+                "full_data_auc": 0.46021947873799723,
+                "full_data_direction": "risk",
+                "by_pilot_size": [
+                  {
+                    "pilot_size": 5,
+                    "sign_agreement_rate": 0.6775,
+                    "undefined_rate": 0.0575,
+                    "mean_pilot_auc": 0.46595932802829354
+                  },
+                  {
+                    "pilot_size": 10,
+                    "sign_agreement_rate": 0.615,
+                    "undefined_rate": 0.0025,
+                    "mean_pilot_auc": 0.452906223893066
+                  },
+                  {
+                    "pilot_size": 15,
+                    "sign_agreement_rate": 0.65,
+                    "undefined_rate": 0.0,
+                    "mean_pilot_auc": 0.455813138019388
+                  },
+                  {
+                    "pilot_size": 20,
+                    "sign_agreement_rate": 0.655,
+                    "undefined_rate": 0.0,
+                    "mean_pilot_auc": 0.45496014575702076
+                  },
+                  {
+                    "pilot_size": 30,
+                    "sign_agreement_rate": 0.7225,
+                    "undefined_rate": 0.0,
+                    "mean_pilot_auc": 0.4544904713213343
+                  },
+                  {
+                    "pilot_size": 40,
+                    "sign_agreement_rate": 0.8425,
+                    "undefined_rate": 0.0,
+                    "mean_pilot_auc": 0.45486919156972866
+                  },
+                  {
+                    "pilot_size": 50,
+                    "sign_agreement_rate": 0.9725,
+                    "undefined_rate": 0.0,
+                    "mean_pilot_auc": 0.4578957228880218
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "code_only": {
+          "pool_file": "results/mbpp_week9_arm_code_only_sample0_qwen15b.json",
+          "by_score": {
+            "p_pass": {
+              "policies": {
+                "score_column": "p_pass",
+                "n_coordinates": 54,
+                "total_repair_calls": 140,
+                "total_repairable": 14,
+                "full_data_allocation_auc": 0.675,
+                "full_data_direction": "inverted",
+                "budget_fractions": [
+                  0.25,
+                  0.4,
+                  0.5,
+                  0.75,
+                  1.0
+                ],
+                "budget_calls": [
+                  35,
+                  56,
+                  70,
+                  105,
+                  140
+                ],
+                "policies": {
+                  "risk": {
+                    "added_at_budget": [
+                      2,
+                      3,
+                      4,
+                      7,
+                      14
+                    ],
+                    "attempts_at_budget": [
+                      13,
+                      20,
+                      25,
+                      38,
+                      54
+                    ],
+                    "stochastic": false
+                  },
+                  "inverted": {
+                    "added_at_budget": [
+                      7,
+                      8,
+                      10,
+                      12,
+                      14
+                    ],
+                    "attempts_at_budget": [
+                      15,
+                      23,
+                      29,
+                      41,
+                      54
+                    ],
+                    "stochastic": false
+                  },
+                  "random": {
+                    "added_at_budget": [
+                      3.695,
+                      5.98,
+                      7.32,
+                      10.675,
+                      14.0
+                    ],
+                    "added_at_budget_std": [
+                      1.6570164506087257,
+                      1.8834374646950944,
+                      1.9459015040121077,
+                      1.6038192482024034,
+                      0.0
+                    ],
+                    "attempts_at_budget": [
+                      13.345,
+                      21.495,
+                      26.865,
+                      40.32,
+                      54.0
+                    ],
+                    "stochastic": true
+                  },
+                  "pilot@0.10": {
+                    "added_at_budget": [
+                      3.78,
+                      6.005,
+                      7.24,
+                      9.835,
+                      14.0
+                    ],
+                    "added_at_budget_std": [
+                      2.290816272855573,
+                      2.2405524713526397,
+                      3.1259008751729533,
+                      2.241180369188563,
+                      0.0
+                    ],
+                    "attempts_at_budget": [
+                      13.445,
+                      21.595,
+                      26.92,
+                      39.86,
+                      54.0
+                    ],
+                    "sign_agreement_rate": 0.58,
+                    "undefined_pilot_rate": 0.12,
+                    "stochastic": true
+                  },
+                  "pilot@0.20": {
+                    "added_at_budget": [
+                      4.51,
+                      6.83,
+                      7.8,
+                      10.44,
+                      14.0
+                    ],
+                    "added_at_budget_std": [
+                      1.7764229203542155,
+                      2.239683215216521,
+                      2.336083567032824,
+                      2.0315105650425243,
+                      0.0
+                    ],
+                    "attempts_at_budget": [
+                      13.98,
+                      22.18,
+                      27.125,
+                      40.27,
+                      54.0
+                    ],
+                    "sign_agreement_rate": 0.715,
+                    "undefined_pilot_rate": 0.015,
+                    "stochastic": true
+                  },
+                  "pilot@0.30": {
+                    "added_at_budget": [
+                      3.695,
+                      6.545,
+                      8.43,
+                      11.27,
+                      14.0
+                    ],
+                    "added_at_budget_std": [
+                      1.6570164506087257,
+                      2.0928149397066376,
+                      2.160657819057723,
+                      1.9967561633507975,
+                      0.0
+                    ],
+                    "attempts_at_budget": [
+                      13.345,
+                      21.995,
+                      27.62,
+                      40.65,
+                      54.0
+                    ],
+                    "sign_agreement_rate": 0.865,
+                    "undefined_pilot_rate": 0.005,
+                    "stochastic": true
+                  },
+                  "pilot@0.50": {
+                    "added_at_budget": [
+                      3.695,
+                      5.98,
+                      7.75,
+                      11.9,
+                      14.0
+                    ],
+                    "added_at_budget_std": [
+                      1.6570164506087257,
+                      1.8834374646950944,
+                      2.2589854084028262,
+                      1.5433436259429374,
+                      0.0
+                    ],
+                    "attempts_at_budget": [
+                      13.345,
+                      21.495,
+                      27.205,
+                      40.985,
+                      54.0
+                    ],
+                    "sign_agreement_rate": 0.96,
+                    "undefined_pilot_rate": 0.0,
+                    "stochastic": true
+                  }
+                }
+              },
+              "sign_resolution": {
+                "score_column": "p_pass",
+                "full_data_auc": 0.675,
+                "full_data_direction": "inverted",
+                "by_pilot_size": [
+                  {
+                    "pilot_size": 5,
+                    "sign_agreement_rate": 0.505,
+                    "undefined_rate": 0.1925,
+                    "mean_pilot_auc": 0.6738906088751291
+                  },
+                  {
+                    "pilot_size": 10,
+                    "sign_agreement_rate": 0.7275,
+                    "undefined_rate": 0.025,
+                    "mean_pilot_auc": 0.6640515873015873
+                  },
+                  {
+                    "pilot_size": 15,
+                    "sign_agreement_rate": 0.865,
+                    "undefined_rate": 0.0025,
+                    "mean_pilot_auc": 0.6764111925390122
+                  },
+                  {
+                    "pilot_size": 20,
+                    "sign_agreement_rate": 0.9325,
+                    "undefined_rate": 0.0,
+                    "mean_pilot_auc": 0.6750512728714354
+                  },
+                  {
+                    "pilot_size": 30,
+                    "sign_agreement_rate": 0.9825,
+                    "undefined_rate": 0.0,
+                    "mean_pilot_auc": 0.6691047259358517
+                  },
+                  {
+                    "pilot_size": 40,
+                    "sign_agreement_rate": 1.0,
+                    "undefined_rate": 0.0,
+                    "mean_pilot_auc": 0.6748860599443769
+                  },
+                  {
+                    "pilot_size": 50,
+                    "sign_agreement_rate": 1.0,
+                    "undefined_rate": 0.0,
+                    "mean_pilot_auc": 0.6774582979214557
+                  }
+                ]
+              }
+            },
+            "initial_chars": {
+              "policies": {
+                "score_column": "initial_chars",
+                "n_coordinates": 54,
+                "total_repair_calls": 140,
+                "total_repairable": 14,
+                "full_data_allocation_auc": 0.38392857142857145,
+                "full_data_direction": "risk",
+                "budget_fractions": [
+                  0.25,
+                  0.4,
+                  0.5,
+                  0.75,
+                  1.0
+                ],
+                "budget_calls": [
+                  35,
+                  56,
+                  70,
+                  105,
+                  140
+                ],
+                "policies": {
+                  "risk": {
+                    "added_at_budget": [
+                      4,
+                      7,
+                      9,
+                      13,
+                      14
+                    ],
+                    "attempts_at_budget": [
+                      13,
+                      22,
+                      27,
+                      42,
+                      54
+                    ],
+                    "stochastic": false
+                  },
+                  "inverted": {
+                    "added_at_budget": [
+                      1,
+                      4,
+                      5,
+                      10,
+                      14
+                    ],
+                    "attempts_at_budget": [
+                      12,
+                      21,
+                      26,
+                      40,
+                      54
+                    ],
+                    "stochastic": false
+                  },
+                  "random": {
+                    "added_at_budget": [
+                      3.695,
+                      5.98,
+                      7.32,
+                      10.675,
+                      14.0
+                    ],
+                    "added_at_budget_std": [
+                      1.6570164506087257,
+                      1.8834374646950944,
+                      1.9459015040121077,
+                      1.6038192482024034,
+                      0.0
+                    ],
+                    "attempts_at_budget": [
+                      13.345,
+                      21.495,
+                      26.865,
+                      40.32,
+                      54.0
+                    ],
+                    "stochastic": true
+                  },
+                  "pilot@0.10": {
+                    "added_at_budget": [
+                      3.245,
+                      4.625,
+                      7.695,
+                      11.97,
+                      14.0
+                    ],
+                    "added_at_budget_std": [
+                      1.4987348098148496,
+                      1.1580502588446022,
+                      1.8867363009564249,
+                      1.1470302489297302,
+                      0.0
+                    ],
+                    "attempts_at_budget": [
+                      13.22,
+                      20.645,
+                      26.815,
+                      41.155,
+                      54.0
+                    ],
+                    "sign_agreement_rate": 0.76,
+                    "undefined_pilot_rate": 0.12,
+                    "stochastic": true
+                  },
+                  "pilot@0.20": {
+                    "added_at_budget": [
+                      3.74,
+                      5.355,
+                      6.33,
+                      11.865,
+                      14.0
+                    ],
+                    "added_at_budget_std": [
+                      1.5506199116975004,
+                      1.8618019584970138,
+                      2.0027870028773584,
+                      1.1890518159884909,
+                      0.0
+                    ],
+                    "attempts_at_budget": [
+                      13.46,
+                      21.125,
+                      26.34,
+                      41.01,
+                      54.0
+                    ],
+                    "sign_agreement_rate": 0.785,
+                    "undefined_pilot_rate": 0.015,
+                    "stochastic": true
+                  },
+                  "pilot@0.30": {
+                    "added_at_budget": [
+                      3.695,
+                      5.75,
+                      6.71,
+                      11.465,
+                      14.0
+                    ],
+                    "added_at_budget_std": [
+                      1.6570164506087257,
+                      1.8314669958216336,
+                      1.7525000089606377,
+                      1.637738052818045,
+                      0.0
+                    ],
+                    "attempts_at_budget": [
+                      13.345,
+                      21.465,
+                      26.49,
+                      40.73,
+                      54.0
+                    ],
+                    "sign_agreement_rate": 0.835,
+                    "undefined_pilot_rate": 0.005,
+                    "stochastic": true
+                  },
+                  "pilot@0.50": {
+                    "added_at_budget": [
+                      3.695,
+                      5.98,
+                      7.44,
+                      11.22,
+                      14.0
+                    ],
+                    "added_at_budget_std": [
+                      1.6570164506087257,
+                      1.8834374646950944,
+                      2.0116245091540184,
+                      1.665976406475996,
+                      0.0
+                    ],
+                    "attempts_at_budget": [
+                      13.345,
+                      21.495,
+                      26.96,
+                      40.445,
+                      54.0
+                    ],
+                    "sign_agreement_rate": 0.92,
+                    "undefined_pilot_rate": 0.0,
+                    "stochastic": true
+                  }
+                }
+              },
+              "sign_resolution": {
+                "score_column": "initial_chars",
+                "full_data_auc": 0.38392857142857145,
+                "full_data_direction": "risk",
+                "by_pilot_size": [
+                  {
+                    "pilot_size": 5,
+                    "sign_agreement_rate": 0.81,
+                    "undefined_rate": 0.1925,
+                    "mean_pilot_auc": 0.3789989680082559
+                  },
+                  {
+                    "pilot_size": 10,
+                    "sign_agreement_rate": 0.77,
+                    "undefined_rate": 0.025,
+                    "mean_pilot_auc": 0.390050468050468
+                  },
+                  {
+                    "pilot_size": 15,
+                    "sign_agreement_rate": 0.8425,
+                    "undefined_rate": 0.0025,
+                    "mean_pilot_auc": 0.3867870864863346
+                  },
+                  {
+                    "pilot_size": 20,
+                    "sign_agreement_rate": 0.885,
+                    "undefined_rate": 0.0,
+                    "mean_pilot_auc": 0.3825123657474277
+                  },
+                  {
+                    "pilot_size": 30,
+                    "sign_agreement_rate": 0.9775,
+                    "undefined_rate": 0.0,
+                    "mean_pilot_auc": 0.3789000294504822
+                  },
+                  {
+                    "pilot_size": 40,
+                    "sign_agreement_rate": 0.9925,
+                    "undefined_rate": 0.0,
+                    "mean_pilot_auc": 0.3824125011828745
+                  },
+                  {
+                    "pilot_size": 50,
+                    "sign_agreement_rate": 1.0,
+                    "undefined_rate": 0.0,
+                    "mean_pilot_auc": 0.38367165468777314
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "error": {
+          "pool_file": "results/mbpp_week7_repair_all_sample0_qwen15b.json",
+          "by_score": {
+            "p_pass": {
+              "policies": {
+                "score_column": "p_pass",
+                "n_coordinates": 54,
+                "total_repair_calls": 147,
+                "total_repairable": 10,
+                "full_data_allocation_auc": 0.5181818181818182,
+                "full_data_direction": "inverted",
+                "budget_fractions": [
+                  0.25,
+                  0.4,
+                  0.5,
+                  0.75,
+                  1.0
+                ],
+                "budget_calls": [
+                  37,
+                  59,
+                  74,
+                  110,
+                  147
+                ],
+                "policies": {
+                  "risk": {
+                    "added_at_budget": [
+                      4,
+                      4,
+                      5,
+                      7,
+                      10
+                    ],
+                    "attempts_at_budget": [
+                      15,
+                      22,
+                      28,
+                      40,
+                      54
+                    ],
+                    "stochastic": false
+                  },
+                  "inverted": {
+                    "added_at_budget": [
+                      3,
+                      4,
+                      5,
+                      6,
+                      10
+                    ],
+                    "attempts_at_budget": [
+                      13,
+                      21,
+                      26,
+                      39,
+                      54
+                    ],
+                    "stochastic": false
+                  },
+                  "random": {
+                    "added_at_budget": [
+                      2.66,
+                      4.245,
+                      5.24,
+                      7.59,
+                      10.0
+                    ],
+                    "added_at_budget_std": [
+                      1.4714707372738565,
+                      1.6149350065488346,
+                      1.614133555712907,
+                      1.3970176417845577,
+                      0.0
+                    ],
+                    "attempts_at_budget": [
+                      13.445,
+                      21.445,
+                      26.94,
+                      40.12,
+                      54.0
+                    ],
+                    "stochastic": true
+                  },
+                  "pilot@0.10": {
+                    "added_at_budget": [
+                      2.705,
+                      4.095,
+                      4.5,
+                      6.825,
+                      10.0
+                    ],
+                    "added_at_budget_std": [
+                      1.1596113540588984,
+                      0.7270612700813195,
+                      0.6497003561364416,
+                      0.5439248765746827,
+                      0.0
+                    ],
+                    "attempts_at_budget": [
+                      13.645,
+                      21.605,
+                      26.965,
+                      39.735,
+                      54.0
+                    ],
+                    "sign_agreement_rate": 0.325,
+                    "undefined_pilot_rate": 0.255,
+                    "stochastic": true
+                  },
+                  "pilot@0.20": {
+                    "added_at_budget": [
+                      2.545,
+                      4.285,
+                      4.665,
+                      6.925,
+                      10.0
+                    ],
+                    "added_at_budget_std": [
+                      1.4276434530882454,
+                      1.0436575614288615,
+                      0.978551385503261,
+                      0.6569114577449406,
+                      0.0
+                    ],
+                    "attempts_at_budget": [
+                      13.355,
+                      21.54,
+                      26.865,
+                      39.705,
+                      54.0
+                    ],
+                    "sign_agreement_rate": 0.415,
+                    "undefined_pilot_rate": 0.085,
+                    "stochastic": true
+                  },
+                  "pilot@0.30": {
+                    "added_at_budget": [
+                      2.66,
+                      3.935,
+                      5.09,
+                      7.095,
+                      10.0
+                    ],
+                    "added_at_budget_std": [
+                      1.4714707372738565,
+                      1.5106905472823484,
+                      1.1306155214246938,
+                      0.7674109707255622,
+                      0.0
+                    ],
+                    "attempts_at_budget": [
+                      13.445,
+                      21.385,
+                      26.96,
+                      39.775,
+                      54.0
+                    ],
+                    "sign_agreement_rate": 0.465,
+                    "undefined_pilot_rate": 0.01,
+                    "stochastic": true
+                  },
+                  "pilot@0.50": {
+                    "added_at_budget": [
+                      2.66,
+                      4.245,
+                      5.18,
+                      7.055,
+                      10.0
+                    ],
+                    "added_at_budget_std": [
+                      1.4714707372738565,
+                      1.6149350065488346,
+                      1.5490635848633678,
+                      1.0713139445742297,
+                      0.0
+                    ],
+                    "attempts_at_budget": [
+                      13.445,
+                      21.445,
+                      26.9,
+                      39.85,
+                      54.0
+                    ],
+                    "sign_agreement_rate": 0.515,
+                    "undefined_pilot_rate": 0.0,
+                    "stochastic": true
+                  }
+                }
+              },
+              "sign_resolution": {
+                "score_column": "p_pass",
+                "full_data_auc": 0.5181818181818182,
+                "full_data_direction": "inverted",
+                "by_pilot_size": [
+                  {
+                    "pilot_size": 5,
+                    "sign_agreement_rate": 0.2875,
+                    "undefined_rate": 0.3375,
+                    "mean_pilot_auc": 0.5188679245283019
+                  },
+                  {
+                    "pilot_size": 10,
+                    "sign_agreement_rate": 0.4475,
+                    "undefined_rate": 0.1025,
+                    "mean_pilot_auc": 0.5083643940398815
+                  },
+                  {
+                    "pilot_size": 15,
+                    "sign_agreement_rate": 0.4975,
+                    "undefined_rate": 0.0375,
+                    "mean_pilot_auc": 0.5189238548848939
+                  },
+                  {
+                    "pilot_size": 20,
+                    "sign_agreement_rate": 0.5425,
+                    "undefined_rate": 0.0025,
+                    "mean_pilot_auc": 0.5161973532280539
+                  },
+                  {
+                    "pilot_size": 30,
+                    "sign_agreement_rate": 0.5675,
+                    "undefined_rate": 0.0,
+                    "mean_pilot_auc": 0.5172172863741566
+                  },
+                  {
+                    "pilot_size": 40,
+                    "sign_agreement_rate": 0.6125,
+                    "undefined_rate": 0.0,
+                    "mean_pilot_auc": 0.5201896570696032
+                  },
+                  {
+                    "pilot_size": 50,
+                    "sign_agreement_rate": 0.82,
+                    "undefined_rate": 0.0,
+                    "mean_pilot_auc": 0.5234021334148142
+                  }
+                ]
+              }
+            },
+            "initial_chars": {
+              "policies": {
+                "score_column": "initial_chars",
+                "n_coordinates": 54,
+                "total_repair_calls": 147,
+                "total_repairable": 10,
+                "full_data_allocation_auc": 0.5568181818181818,
+                "full_data_direction": "inverted",
+                "budget_fractions": [
+                  0.25,
+                  0.4,
+                  0.5,
+                  0.75,
+                  1.0
+                ],
+                "budget_calls": [
+                  37,
+                  59,
+                  74,
+                  110,
+                  147
+                ],
+                "policies": {
+                  "risk": {
+                    "added_at_budget": [
+                      2,
+                      3,
+                      5,
+                      6,
+                      10
+                    ],
+                    "attempts_at_budget": [
+                      13,
+                      21,
+                      26,
+                      39,
+                      54
+                    ],
+                    "stochastic": false
+                  },
+                  "inverted": {
+                    "added_at_budget": [
+                      4,
+                      5,
+                      5,
+                      8,
+                      10
+                    ],
+                    "attempts_at_budget": [
+                      15,
+                      23,
+                      28,
+                      40,
+                      54
+                    ],
+                    "stochastic": false
+                  },
+                  "random": {
+                    "added_at_budget": [
+                      2.66,
+                      4.245,
+                      5.24,
+                      7.59,
+                      10.0
+                    ],
+                    "added_at_budget_std": [
+                      1.4714707372738565,
+                      1.6149350065488346,
+                      1.614133555712907,
+                      1.3970176417845577,
+                      0.0
+                    ],
+                    "attempts_at_budget": [
+                      13.445,
+                      21.445,
+                      26.94,
+                      40.12,
+                      54.0
+                    ],
+                    "stochastic": true
+                  },
+                  "pilot@0.10": {
+                    "added_at_budget": [
+                      2.13,
+                      3.53,
+                      4.47,
+                      6.8,
+                      10.0
+                    ],
+                    "added_at_budget_std": [
+                      0.8524867555227521,
+                      1.4350599238096726,
+                      1.031708345683393,
+                      1.0370038015466052,
+                      0.0
+                    ],
+                    "attempts_at_budget": [
+                      13.245,
+                      21.69,
+                      26.765,
+                      39.37,
+                      54.0
+                    ],
+                    "sign_agreement_rate": 0.355,
+                    "undefined_pilot_rate": 0.255,
+                    "stochastic": true
+                  },
+                  "pilot@0.20": {
+                    "added_at_budget": [
+                      2.445,
+                      4.01,
+                      4.58,
+                      7.14,
+                      10.0
+                    ],
+                    "added_at_budget_std": [
+                      1.2668859459319928,
+                      1.356132544181038,
+                      1.5049666518283977,
+                      1.2642752705795504,
+                      0.0
+                    ],
+                    "attempts_at_budget": [
+                      13.305,
+                      21.785,
+                      27.15,
+                      39.555,
+                      54.0
+                    ],
+                    "sign_agreement_rate": 0.52,
+                    "undefined_pilot_rate": 0.085,
+                    "stochastic": true
+                  },
+                  "pilot@0.30": {
+                    "added_at_budget": [
+                      2.66,
+                      3.785,
+                      5.015,
+                      7.27,
+                      10.0
+                    ],
+                    "added_at_budget_std": [
+                      1.4714707372738565,
+                      1.3850512027253195,
+                      1.4851949434671874,
+                      1.2748435710522552,
+                      0.0
+                    ],
+                    "attempts_at_budget": [
+                      13.445,
+                      21.325,
+                      27.205,
+                      39.81,
+                      54.0
+                    ],
+                    "sign_agreement_rate": 0.605,
+                    "undefined_pilot_rate": 0.01,
+                    "stochastic": true
+                  },
+                  "pilot@0.50": {
+                    "added_at_budget": [
+                      2.66,
+                      4.245,
+                      5.165,
+                      7.065,
+                      10.0
+                    ],
+                    "added_at_budget_std": [
+                      1.4714707372738565,
+                      1.6149350065488346,
+                      1.536090122460791,
+                      1.2880490486618876,
+                      0.0
+                    ],
+                    "attempts_at_budget": [
+                      13.445,
+                      21.445,
+                      26.9,
+                      39.93,
+                      54.0
+                    ],
+                    "sign_agreement_rate": 0.61,
+                    "undefined_pilot_rate": 0.0,
+                    "stochastic": true
+                  }
+                }
+              },
+              "sign_resolution": {
+                "score_column": "initial_chars",
+                "full_data_auc": 0.5568181818181818,
+                "full_data_direction": "inverted",
+                "by_pilot_size": [
+                  {
+                    "pilot_size": 5,
+                    "sign_agreement_rate": 0.2775,
+                    "undefined_rate": 0.3375,
+                    "mean_pilot_auc": 0.5226415094339623
+                  },
+                  {
+                    "pilot_size": 10,
+                    "sign_agreement_rate": 0.5025,
+                    "undefined_rate": 0.1025,
+                    "mean_pilot_auc": 0.548263308573197
+                  },
+                  {
+                    "pilot_size": 15,
+                    "sign_agreement_rate": 0.5625,
+                    "undefined_rate": 0.0375,
+                    "mean_pilot_auc": 0.5485997681971708
+                  },
+                  {
+                    "pilot_size": 20,
+                    "sign_agreement_rate": 0.62,
+                    "undefined_rate": 0.0025,
+                    "mean_pilot_auc": 0.5467279918632225
+                  },
+                  {
+                    "pilot_size": 30,
+                    "sign_agreement_rate": 0.6775,
+                    "undefined_rate": 0.0,
+                    "mean_pilot_auc": 0.5475978692453802
+                  },
+                  {
+                    "pilot_size": 40,
+                    "sign_agreement_rate": 0.8075,
+                    "undefined_rate": 0.0,
+                    "mean_pilot_auc": 0.5538061660042499
+                  },
+                  {
+                    "pilot_size": 50,
+                    "sign_agreement_rate": 0.9625,
+                    "undefined_rate": 0.0,
+                    "mean_pilot_auc": 0.5558641846791184
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "analysis": "week12_pilot_gate_direction",
+      "cohort_name": "humaneval",
+      "timestamp": "2026-09-07T22:28:14.298503",
+      "config": {
+        "source_results": "results/humaneval_uncertainty_merged164_20260711.json",
+        "predictor_results": "results/predictor_humaneval_20260712_215312.json",
+        "sample_index": 0,
+        "epsilons": [
+          0.1,
+          0.2,
+          0.3,
+          0.5
+        ],
+        "pilot_sizes": [
+          5,
+          10,
+          15,
+          20,
+          30,
+          40,
+          50,
+          75
+        ],
+        "n_seeds": 200,
+        "n_draws": 400,
+        "first_seed": 0,
+        "score_columns": [
+          "p_pass",
+          "initial_chars"
+        ],
+        "budget_fractions": [
+          0.25,
+          0.4,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "calls_note": "renormalized to stop-on-pass before any comparison"
+      },
+      "arms": {
+        "none": {
+          "pool_file": "results/humaneval_week9_arm_resample_sample0_qwen15b.json",
+          "by_score": {
+            "p_pass": {
+              "policies": {
+                "score_column": "p_pass",
+                "n_coordinates": 148,
+                "total_repair_calls": 304,
+                "total_repairable": 91,
+                "full_data_allocation_auc": 0.5417389627915944,
+                "full_data_direction": "inverted",
+                "budget_fractions": [
+                  0.25,
+                  0.4,
+                  0.5,
+                  0.75,
+                  1.0
+                ],
+                "budget_calls": [
+                  76,
+                  122,
+                  152,
+                  228,
+                  304
+                ],
+                "policies": {
+                  "risk": {
+                    "added_at_budget": [
+                      21,
+                      33,
+                      43,
+                      68,
+                      91
+                    ],
+                    "attempts_at_budget": [
+                      36,
+                      58,
+                      73,
+                      111,
+                      148
+                    ],
+                    "stochastic": false
+                  },
+                  "inverted": {
+                    "added_at_budget": [
+                      22,
+                      39,
+                      47,
+                      70,
+                      91
+                    ],
+                    "attempts_at_budget": [
+                      36,
+                      60,
+                      74,
+                      111,
+                      148
+                    ],
+                    "stochastic": false
+                  },
+                  "random": {
+                    "added_at_budget": [
+                      23.025,
+                      36.88,
+                      45.74,
+                      67.8,
+                      91.0
+                    ],
+                    "added_at_budget_std": [
+                      3.7796566008171304,
+                      4.314938408290051,
+                      4.3804499436179745,
+                      3.7976453958688428,
+                      0.0
+                    ],
+                    "attempts_at_budget": [
+                      37.05,
+                      59.46,
+                      73.985,
+                      110.525,
+                      148.0
+                    ],
+                    "stochastic": true
+                  },
+                  "pilot@0.10": {
+                    "added_at_budget": [
+                      23.595,
+                      36.355,
+                      45.25,
+                      68.385,
+                      91.0
+                    ],
+                    "added_at_budget_std": [
+                      2.6676877232811047,
+                      3.2929000827194668,
+                      3.258926666108855,
+                      2.2632690813673406,
+                      0.0
+                    ],
+                    "attempts_at_budget": [
+                      37.0,
+                      58.97,
+                      73.725,
+                      110.845,
+                      148.0
+                    ],
+                    "sign_agreement_rate": 0.59,
+                    "undefined_pilot_rate": 0.0,
+                    "stochastic": true
+                  },
+                  "pilot@0.20": {
+                    "added_at_budget": [
+                      23.275,
+                      35.695,
+                      45.33,
+                      68.275,
+                      91.0
+                    ],
+                    "added_at_budget_std": [
+                      3.232898570297117,
+                      3.114558939390082,
+                      3.8490486979768117,
+                      2.8583607418681893,
+                      0.0
+                    ],
+                    "attempts_at_budget": [
+                      36.73,
+                      58.72,
+                      73.52,
+                      110.785,
+                      148.0
+                    ],
+                    "sign_agreement_rate": 0.67,
+                    "undefined_pilot_rate": 0.0,
+                    "stochastic": true
+                  },
+                  "pilot@0.30": {
+                    "added_at_budget": [
+                      23.025,
+                      37.07,
+                      44.855,
+                      68.305,
+                      91.0
+                    ],
+                    "added_at_budget_std": [
+                      3.7796566008171304,
+                      3.6374793857020054,
+                      3.845505762947745,
+                      3.2765306753228574,
+                      0.0
+                    ],
+                    "attempts_at_budget": [
+                      37.05,
+                      59.2,
+                      73.41,
+                      110.75,
+                      148.0
+                    ],
+                    "sign_agreement_rate": 0.705,
+                    "undefined_pilot_rate": 0.0,
+                    "stochastic": true
+                  },
+                  "pilot@0.50": {
+                    "added_at_budget": [
+                      23.025,
+                      36.88,
+                      45.79,
+                      68.15,
+                      91.0
+                    ],
+                    "added_at_budget_std": [
+                      3.7796566008171304,
+                      4.314938408290051,
+                      4.4592966522946,
+                      3.263549259448097,
+                      0.0
+                    ],
+                    "attempts_at_budget": [
+                      37.05,
+                      59.46,
+                      73.94,
+                      110.5,
+                      148.0
+                    ],
+                    "sign_agreement_rate": 0.845,
+                    "undefined_pilot_rate": 0.0,
+                    "stochastic": true
+                  }
+                }
+              },
+              "sign_resolution": {
+                "score_column": "p_pass",
+                "full_data_auc": 0.5417389627915944,
+                "full_data_direction": "inverted",
+                "by_pilot_size": [
+                  {
+                    "pilot_size": 5,
+                    "sign_agreement_rate": 0.405,
+                    "undefined_rate": 0.085,
+                    "mean_pilot_auc": 0.5437158469945356
+                  },
+                  {
+                    "pilot_size": 10,
+                    "sign_agreement_rate": 0.5725,
+                    "undefined_rate": 0.01,
+                    "mean_pilot_auc": 0.5537983004649671
+                  },
+                  {
+                    "pilot_size": 15,
+                    "sign_agreement_rate": 0.5975,
+                    "undefined_rate": 0.005,
+                    "mean_pilot_auc": 0.5466565999606201
+                  },
+                  {
+                    "pilot_size": 20,
+                    "sign_agreement_rate": 0.6275,
+                    "undefined_rate": 0.0,
+                    "mean_pilot_auc": 0.5466487546299805
+                  },
+                  {
+                    "pilot_size": 30,
+                    "sign_agreement_rate": 0.6875,
+                    "undefined_rate": 0.0,
+                    "mean_pilot_auc": 0.5482834927895028
+                  },
+                  {
+                    "pilot_size": 40,
+                    "sign_agreement_rate": 0.6975,
+                    "undefined_rate": 0.0,
+                    "mean_pilot_auc": 0.5429377636386019
+                  },
+                  {
+                    "pilot_size": 50,
+                    "sign_agreement_rate": 0.7325,
+                    "undefined_rate": 0.0,
+                    "mean_pilot_auc": 0.5422649814754098
+                  },
+                  {
+                    "pilot_size": 75,
+                    "sign_agreement_rate": 0.83,
+                    "undefined_rate": 0.0,
+                    "mean_pilot_auc": 0.5456203805926753
+                  }
+                ]
+              }
+            },
+            "initial_chars": {
+              "policies": {
+                "score_column": "initial_chars",
+                "n_coordinates": 148,
+                "total_repair_calls": 304,
+                "total_repairable": 91,
+                "full_data_allocation_auc": 0.44929631771737033,
+                "full_data_direction": "risk",
+                "budget_fractions": [
+                  0.25,
+                  0.4,
+                  0.5,
+                  0.75,
+                  1.0
+                ],
+                "budget_calls": [
+                  76,
+                  122,
+                  152,
+                  228,
+                  304
+                ],
+                "policies": {
+                  "risk": {
+                    "added_at_budget": [
+                      30,
+                      39,
+                      44,
+                      72,
+                      91
+                    ],
+                    "attempts_at_budget": [
+                      41,
+                      62,
+                      73,
+                      113,
+                      148
+                    ],
+                    "stochastic": false
+                  },
+                  "inverted": {
+                    "added_at_budget": [
+                      19,
+                      35,
+                      47,
+                      60,
+                      91
+                    ],
+                    "attempts_at_budget": [
+                      34,
+                      58,
+                      75,
+                      106,
+                      148
+                    ],
+                    "stochastic": false
+                  },
+                  "random": {
+                    "added_at_budget": [
+                      23.025,
+                      36.88,
+                      45.74,
+                      67.8,
+                      91.0
+                    ],
+                    "added_at_budget_std": [
+                      3.7796566008171304,
+                      4.314938408290051,
+                      4.3804499436179745,
+                      3.7976453958688428,
+                      0.0
+                    ],
+                    "attempts_at_budget": [
+                      37.05,
+                      59.46,
+                      73.985,
+                      110.525,
+                      148.0
+                    ],
+                    "stochastic": true
+                  },
+                  "pilot@0.10": {
+                    "added_at_budget": [
+                      25.195,
+                      37.735,
+                      43.505,
+                      66.39,
+                      91.0
+                    ],
+                    "added_at_budget_std": [
+                      3.598851715247755,
+                      3.9104003830527243,
+                      1.920525210828313,
+                      4.60804409177677,
+                      0.0
+                    ],
+                    "attempts_at_budget": [
+                      38.335,
+                      60.23,
+                      73.405,
+                      109.915,
+                      148.0
+                    ],
+                    "sign_agreement_rate": 0.65,
+                    "undefined_pilot_rate": 0.0,
+                    "stochastic": true
+                  },
+                  "pilot@0.20": {
+                    "added_at_budget": [
+                      25.03,
+                      39.84,
+                      46.125,
+                      67.63,
+                      91.0
+                    ],
+                    "added_at_budget_std": [
+                      4.293163901064929,
+                      4.968685862074589,
+                      3.4986537252845182,
+                      3.6633592514282736,
+                      0.0
+                    ],
+                    "attempts_at_budget": [
+                      38.52,
+                      61.195,
+                      74.725,
+                      110.62,
+                      148.0
+                    ],
+                    "sign_agreement_rate": 0.725,
+                    "undefined_pilot_rate": 0.0,
+                    "stochastic": true
+                  },
+                  "pilot@0.30": {
+                    "added_at_budget": [
+                      23.025,
+                      38.46,
+                      48.295,
+                      68.255,
+                      91.0
+                    ],
+                    "added_at_budget_std": [
+                      3.7796566008171304,
+                      4.645027600244715,
+                      4.863769760320387,
+                      3.4495611839492053,
+                      0.0
+                    ],
+                    "attempts_at_budget": [
+                      37.05,
+                      60.78,
+                      75.59,
+                      110.95,
+                      148.0
+                    ],
+                    "sign_agreement_rate": 0.77,
+                    "undefined_pilot_rate": 0.0,
+                    "stochastic": true
+                  },
+                  "pilot@0.50": {
+                    "added_at_budget": [
+                      23.025,
+                      36.88,
+                      46.38,
+                      67.51,
+                      91.0
+                    ],
+                    "added_at_budget_std": [
+                      3.7796566008171304,
+                      4.314938408290051,
+                      5.012105947618301,
+                      3.203311728532013,
+                      0.0
+                    ],
+                    "attempts_at_budget": [
+                      37.05,
+                      59.46,
+                      74.485,
+                      110.68,
+                      148.0
+                    ],
+                    "sign_agreement_rate": 0.89,
+                    "undefined_pilot_rate": 0.0,
+                    "stochastic": true
+                  }
+                }
+              },
+              "sign_resolution": {
+                "score_column": "initial_chars",
+                "full_data_auc": 0.44929631771737033,
+                "full_data_direction": "risk",
+                "by_pilot_size": [
+                  {
+                    "pilot_size": 5,
+                    "sign_agreement_rate": 0.68,
+                    "undefined_rate": 0.085,
+                    "mean_pilot_auc": 0.4581056466302367
+                  },
+                  {
+                    "pilot_size": 10,
+                    "sign_agreement_rate": 0.63,
+                    "undefined_rate": 0.01,
+                    "mean_pilot_auc": 0.4469660894660895
+                  },
+                  {
+                    "pilot_size": 15,
+                    "sign_agreement_rate": 0.6525,
+                    "undefined_rate": 0.005,
+                    "mean_pilot_auc": 0.4493427424520389
+                  },
+                  {
+                    "pilot_size": 20,
+                    "sign_agreement_rate": 0.66,
+                    "undefined_rate": 0.0,
+                    "mean_pilot_auc": 0.45102233134968955
+                  },
+                  {
+                    "pilot_size": 30,
+                    "sign_agreement_rate": 0.72,
+                    "undefined_rate": 0.0,
+                    "mean_pilot_auc": 0.44617653770650606
+                  },
+                  {
+                    "pilot_size": 40,
+                    "sign_agreement_rate": 0.72,
+                    "undefined_rate": 0.0,
+                    "mean_pilot_auc": 0.4514037032894461
+                  },
+                  {
+                    "pilot_size": 50,
+                    "sign_agreement_rate": 0.735,
+                    "undefined_rate": 0.0,
+                    "mean_pilot_auc": 0.4525556223829643
+                  },
+                  {
+                    "pilot_size": 75,
+                    "sign_agreement_rate": 0.8625,
+                    "undefined_rate": 0.0,
+                    "mean_pilot_auc": 0.44839303724189816
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "code_only": {
+          "pool_file": "results/humaneval_week9_arm_code_only_sample0_qwen15b.json",
+          "by_score": {
+            "p_pass": {
+              "policies": {
+                "score_column": "p_pass",
+                "n_coordinates": 148,
+                "total_repair_calls": 352,
+                "total_repairable": 65,
+                "full_data_allocation_auc": 0.6481927710843374,
+                "full_data_direction": "inverted",
+                "budget_fractions": [
+                  0.25,
+                  0.4,
+                  0.5,
+                  0.75,
+                  1.0
+                ],
+                "budget_calls": [
+                  88,
+                  141,
+                  176,
+                  264,
+                  352
+                ],
+                "policies": {
+                  "risk": {
+                    "added_at_budget": [
+                      11,
+                      17,
+                      20,
+                      38,
+                      65
+                    ],
+                    "attempts_at_budget": [
+                      33,
+                      54,
+                      66,
+                      104,
+                      148
+                    ],
+                    "stochastic": false
+                  },
+                  "inverted": {
+                    "added_at_budget": [
+                      27,
+                      40,
+                      45,
+                      54,
+                      65
+                    ],
+                    "attempts_at_budget": [
+                      44,
+                      69,
+                      81,
+                      114,
+                      148
+                    ],
+                    "stochastic": false
+                  },
+                  "random": {
+                    "added_at_budget": [
+                      16.32,
+                      25.995,
+                      32.635,
+                      48.625,
+                      65.0
+                    ],
+                    "added_at_budget_std": [
+                      3.300312152131604,
+                      3.9880443186400507,
+                      4.100713873383119,
+                      3.354195602630162,
+                      0.0
+                    ],
+                    "attempts_at_budget": [
+                      36.715,
+                      58.96,
+                      73.725,
+                      110.615,
+                      148.0
+                    ],
+                    "stochastic": true
+                  },
+                  "pilot@0.10": {
+                    "added_at_budget": [
+                      20.67,
+                      33.205,
+                      39.945,
+                      51.33,
+                      65.0
+                    ],
+                    "added_at_budget_std": [
+                      4.755435926839027,
+                      8.444496587308524,
+                      9.209563251120105,
+                      7.520898855721298,
+                      0.0
+                    ],
+                    "attempts_at_budget": [
+                      39.885,
+                      64.225,
+                      78.535,
+                      112.08,
+                      148.0
+                    ],
+                    "sign_agreement_rate": 0.805,
+                    "undefined_pilot_rate": 0.0,
+                    "stochastic": true
+                  },
+                  "pilot@0.20": {
+                    "added_at_budget": [
+                      17.125,
+                      33.0,
+                      41.02,
+                      53.8,
+                      65.0
+                    ],
+                    "added_at_budget_std": [
+                      3.286851374765673,
+                      5.30099071047694,
+                      6.488459023721469,
+                      5.875594698864672,
+                      0.0
+                    ],
+                    "attempts_at_budget": [
+                      37.405,
+                      63.715,
+                      79.735,
+                      113.495,
+                      148.0
+                    ],
+                    "sign_agreement_rate": 0.905,
+                    "undefined_pilot_rate": 0.0,
+                    "stochastic": true
+                  },
+                  "pilot@0.30": {
+                    "added_at_budget": [
+                      16.32,
+                      29.49,
+                      40.465,
+                      55.22,
+                      65.0
+                    ],
+                    "added_at_budget_std": [
+                      3.300312152131604,
+                      4.293257539620415,
+                      3.6586477717304167,
+                      2.5404466825213374,
+                      0.0
+                    ],
+                    "attempts_at_budget": [
+                      36.715,
+                      61.38,
+                      79.11,
+                      114.445,
+                      148.0
+                    ],
+                    "sign_agreement_rate": 0.99,
+                    "undefined_pilot_rate": 0.0,
+                    "stochastic": true
+                  },
+                  "pilot@0.50": {
+                    "added_at_budget": [
+                      16.32,
+                      25.995,
+                      32.645,
+                      54.695,
+                      65.0
+                    ],
+                    "added_at_budget_std": [
+                      3.300312152131604,
+                      3.9880443186400507,
+                      4.041117189677072,
+                      2.3450953843733187,
+                      0.0
+                    ],
+                    "attempts_at_budget": [
+                      36.715,
+                      58.96,
+                      73.765,
+                      114.36,
+                      148.0
+                    ],
+                    "sign_agreement_rate": 1.0,
+                    "undefined_pilot_rate": 0.0,
+                    "stochastic": true
+                  }
+                }
+              },
+              "sign_resolution": {
+                "score_column": "p_pass",
+                "full_data_auc": 0.6481927710843374,
+                "full_data_direction": "inverted",
+                "by_pilot_size": [
+                  {
+                    "pilot_size": 5,
+                    "sign_agreement_rate": 0.545,
+                    "undefined_rate": 0.0875,
+                    "mean_pilot_auc": 0.6342465753424658
+                  },
+                  {
+                    "pilot_size": 10,
+                    "sign_agreement_rate": 0.75,
+                    "undefined_rate": 0.0,
+                    "mean_pilot_auc": 0.6445070436507936
+                  },
+                  {
+                    "pilot_size": 15,
+                    "sign_agreement_rate": 0.815,
+                    "undefined_rate": 0.0,
+                    "mean_pilot_auc": 0.6383714174714175
+                  },
+                  {
+                    "pilot_size": 20,
+                    "sign_agreement_rate": 0.84,
+                    "undefined_rate": 0.0,
+                    "mean_pilot_auc": 0.6357674115814741
+                  },
+                  {
+                    "pilot_size": 30,
+                    "sign_agreement_rate": 0.9225,
+                    "undefined_rate": 0.0,
+                    "mean_pilot_auc": 0.6415948167881179
+                  },
+                  {
+                    "pilot_size": 40,
+                    "sign_agreement_rate": 0.9725,
+                    "undefined_rate": 0.0,
+                    "mean_pilot_auc": 0.6469237845739851
+                  },
+                  {
+                    "pilot_size": 50,
+                    "sign_agreement_rate": 0.9875,
+                    "undefined_rate": 0.0,
+                    "mean_pilot_auc": 0.6489880877886824
+                  },
+                  {
+                    "pilot_size": 75,
+                    "sign_agreement_rate": 1.0,
+                    "undefined_rate": 0.0,
+                    "mean_pilot_auc": 0.6504048040732124
+                  }
+                ]
+              }
+            },
+            "initial_chars": {
+              "policies": {
+                "score_column": "initial_chars",
+                "n_coordinates": 148,
+                "total_repair_calls": 352,
+                "total_repairable": 65,
+                "full_data_allocation_auc": 0.3001853568118628,
+                "full_data_direction": "risk",
+                "budget_fractions": [
+                  0.25,
+                  0.4,
+                  0.5,
+                  0.75,
+                  1.0
+                ],
+                "budget_calls": [
+                  88,
+                  141,
+                  176,
+                  264,
+                  352
+                ],
+                "policies": {
+                  "risk": {
+                    "added_at_budget": [
+                      28,
+                      42,
+                      45,
+                      59,
+                      65
+                    ],
+                    "attempts_at_budget": [
+                      44,
+                      68,
+                      81,
+                      116,
+                      148
+                    ],
+                    "stochastic": false
+                  },
+                  "inverted": {
+                    "added_at_budget": [
+                      6,
+                      12,
+                      20,
+                      37,
+                      65
+                    ],
+                    "attempts_at_budget": [
+                      31,
+                      52,
+                      66,
+                      103,
+                      148
+                    ],
+                    "stochastic": false
+                  },
+                  "random": {
+                    "added_at_budget": [
+                      16.32,
+                      25.995,
+                      32.635,
+                      48.625,
+                      65.0
+                    ],
+                    "added_at_budget_std": [
+                      3.300312152131604,
+                      3.9880443186400507,
+                      4.100713873383119,
+                      3.354195602630162,
+                      0.0
+                    ],
+                    "attempts_at_budget": [
+                      36.715,
+                      58.96,
+                      73.725,
+                      110.615,
+                      148.0
+                    ],
+                    "stochastic": true
+                  },
+                  "pilot@0.10": {
+                    "added_at_budget": [
+                      22.45,
+                      35.695,
+                      43.12,
+                      57.7,
+                      65.0
+                    ],
+                    "added_at_budget_std": [
+                      4.5795591282398815,
+                      6.557973013839814,
+                      6.549816829691695,
+                      5.507418477967448,
+                      0.0
+                    ],
+                    "attempts_at_budget": [
+                      40.64,
+                      64.93,
+                      79.73,
+                      115.06,
+                      148.0
+                    ],
+                    "sign_agreement_rate": 0.935,
+                    "undefined_pilot_rate": 0.0,
+                    "stochastic": true
+                  },
+                  "pilot@0.20": {
+                    "added_at_budget": [
+                      18.065,
+                      34.77,
+                      43.49,
+                      58.545,
+                      65.0
+                    ],
+                    "added_at_budget_std": [
+                      3.3923909832026395,
+                      3.3918465642740814,
+                      4.175773632171131,
+                      3.375640642714168,
+                      0.0
+                    ],
+                    "attempts_at_budget": [
+                      37.535,
+                      64.34,
+                      80.085,
+                      115.56,
+                      148.0
+                    ],
+                    "sign_agreement_rate": 0.98,
+                    "undefined_pilot_rate": 0.0,
+                    "stochastic": true
+                  },
+                  "pilot@0.30": {
+                    "added_at_budget": [
+                      16.32,
+                      30.91,
+                      40.26,
+                      58.06,
+                      65.0
+                    ],
+                    "added_at_budget_std": [
+                      3.300312152131604,
+                      3.659076962992925,
+                      2.8868789984616248,
+                      1.7754325681422263,
+                      0.0
+                    ],
+                    "attempts_at_budget": [
+                      36.715,
+                      61.98,
+                      78.56,
+                      115.49,
+                      148.0
+                    ],
+                    "sign_agreement_rate": 1.0,
+                    "undefined_pilot_rate": 0.0,
+                    "stochastic": true
+                  },
+                  "pilot@0.50": {
+                    "added_at_budget": [
+                      16.32,
+                      25.995,
+                      32.975,
+                      55.33,
+                      65.0
+                    ],
+                    "added_at_budget_std": [
+                      3.300312152131604,
+                      3.9880443186400507,
+                      4.384116488750575,
+                      2.323379102140094,
+                      0.0
+                    ],
+                    "attempts_at_budget": [
+                      36.715,
+                      58.96,
+                      73.89,
+                      114.39,
+                      148.0
+                    ],
+                    "sign_agreement_rate": 1.0,
+                    "undefined_pilot_rate": 0.0,
+                    "stochastic": true
+                  }
+                }
+              },
+              "sign_resolution": {
+                "score_column": "initial_chars",
+                "full_data_auc": 0.3001853568118628,
+                "full_data_direction": "risk",
+                "by_pilot_size": [
+                  {
+                    "pilot_size": 5,
+                    "sign_agreement_rate": 0.86,
+                    "undefined_rate": 0.0875,
+                    "mean_pilot_auc": 0.2743150684931507
+                  },
+                  {
+                    "pilot_size": 10,
+                    "sign_agreement_rate": 0.875,
+                    "undefined_rate": 0.0,
+                    "mean_pilot_auc": 0.2932281746031746
+                  },
+                  {
+                    "pilot_size": 15,
+                    "sign_agreement_rate": 0.9175,
+                    "undefined_rate": 0.0,
+                    "mean_pilot_auc": 0.3022146867021867
+                  },
+                  {
+                    "pilot_size": 20,
+                    "sign_agreement_rate": 0.945,
+                    "undefined_rate": 0.0,
+                    "mean_pilot_auc": 0.3050382740523365
+                  },
+                  {
+                    "pilot_size": 30,
+                    "sign_agreement_rate": 0.9875,
+                    "undefined_rate": 0.0,
+                    "mean_pilot_auc": 0.3024855186716682
+                  },
+                  {
+                    "pilot_size": 40,
+                    "sign_agreement_rate": 0.995,
+                    "undefined_rate": 0.0,
+                    "mean_pilot_auc": 0.30041313400050773
+                  },
+                  {
+                    "pilot_size": 50,
+                    "sign_agreement_rate": 1.0,
+                    "undefined_rate": 0.0,
+                    "mean_pilot_auc": 0.2988557498847563
+                  },
+                  {
+                    "pilot_size": 75,
+                    "sign_agreement_rate": 1.0,
+                    "undefined_rate": 0.0,
+                    "mean_pilot_auc": 0.2976176573213247
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "error": {
+          "pool_file": "results/humaneval_week8_repair_all_sample0_qwen15b.json",
+          "by_score": {
+            "p_pass": {
+              "policies": {
+                "score_column": "p_pass",
+                "n_coordinates": 148,
+                "total_repair_calls": 368,
+                "total_repairable": 54,
+                "full_data_allocation_auc": 0.706461780929866,
+                "full_data_direction": "inverted",
+                "budget_fractions": [
+                  0.25,
+                  0.4,
+                  0.5,
+                  0.75,
+                  1.0
+                ],
+                "budget_calls": [
+                  92,
+                  147,
+                  184,
+                  276,
+                  368
+                ],
+                "policies": {
+                  "risk": {
+                    "added_at_budget": [
+                      7,
+                      9,
+                      14,
+                      30,
+                      54
+                    ],
+                    "attempts_at_budget": [
+                      34,
+                      53,
+                      67,
+                      106,
+                      148
+                    ],
+                    "stochastic": false
+                  },
+                  "inverted": {
+                    "added_at_budget": [
+                      24,
+                      36,
+                      40,
+                      47,
+                      54
+                    ],
+                    "attempts_at_budget": [
+                      42,
+                      66,
+                      80,
+                      114,
+                      148
+                    ],
+                    "stochastic": false
+                  },
+                  "random": {
+                    "added_at_budget": [
+                      13.465,
+                      21.315,
+                      26.815,
+                      40.055,
+                      54.0
+                    ],
+                    "added_at_budget_std": [
+                      3.0815996302905795,
+                      3.531021888616587,
+                      3.6105338627229835,
+                      3.3687859226974965,
+                      0.0
+                    ],
+                    "attempts_at_budget": [
+                      36.645,
+                      58.665,
+                      73.57,
+                      110.42,
+                      148.0
+                    ],
+                    "stochastic": true
+                  },
+                  "pilot@0.10": {
+                    "added_at_budget": [
+                      20.815,
+                      30.715,
+                      35.965,
+                      45.085,
+                      54.0
+                    ],
+                    "added_at_budget_std": [
+                      5.265873347371048,
+                      7.621958162516755,
+                      7.761117815672155,
+                      6.883654443132827,
+                      0.0
+                    ],
+                    "attempts_at_budget": [
+                      40.26,
+                      63.22,
+                      78.36,
+                      112.845,
+                      148.0
+                    ],
+                    "sign_agreement_rate": 0.88,
+                    "undefined_pilot_rate": 0.0,
+                    "stochastic": true
+                  },
+                  "pilot@0.20": {
+                    "added_at_budget": [
+                      15.56,
+                      30.105,
+                      36.765,
+                      47.435,
+                      54.0
+                    ],
+                    "added_at_budget_std": [
+                      3.2230950511182126,
+                      4.200260221658683,
+                      4.938798808246972,
+                      4.619793008045482,
+                      0.0
+                    ],
+                    "attempts_at_budget": [
+                      37.745,
+                      62.91,
+                      78.44,
+                      113.935,
+                      148.0
+                    ],
+                    "sign_agreement_rate": 0.955,
+                    "undefined_pilot_rate": 0.0,
+                    "stochastic": true
+                  },
+                  "pilot@0.30": {
+                    "added_at_budget": [
+                      13.465,
+                      26.39,
+                      35.56,
+                      47.91,
+                      54.0
+                    ],
+                    "added_at_budget_std": [
+                      3.0815996302905795,
+                      4.337275619440731,
+                      3.2246537736319842,
+                      2.2286169855634026,
+                      0.0
+                    ],
+                    "attempts_at_budget": [
+                      36.645,
+                      60.935,
+                      77.85,
+                      114.27,
+                      148.0
+                    ],
+                    "sign_agreement_rate": 0.995,
+                    "undefined_pilot_rate": 0.0,
+                    "stochastic": true
+                  },
+                  "pilot@0.50": {
+                    "added_at_budget": [
+                      13.465,
+                      21.315,
+                      26.845,
+                      46.49,
+                      54.0
+                    ],
+                    "added_at_budget_std": [
+                      3.0815996302905795,
+                      3.531021888616587,
+                      3.634145023282815,
+                      2.102857591529026,
+                      0.0
+                    ],
+                    "attempts_at_budget": [
+                      36.645,
+                      58.665,
+                      73.595,
+                      113.615,
+                      148.0
+                    ],
+                    "sign_agreement_rate": 1.0,
+                    "undefined_pilot_rate": 0.0,
+                    "stochastic": true
+                  }
+                }
+              },
+              "sign_resolution": {
+                "score_column": "p_pass",
+                "full_data_auc": 0.706461780929866,
+                "full_data_direction": "inverted",
+                "by_pilot_size": [
+                  {
+                    "pilot_size": 5,
+                    "sign_agreement_rate": 0.6025,
+                    "undefined_rate": 0.1125,
+                    "mean_pilot_auc": 0.6978873239436619
+                  },
+                  {
+                    "pilot_size": 10,
+                    "sign_agreement_rate": 0.8425,
+                    "undefined_rate": 0.01,
+                    "mean_pilot_auc": 0.7138476030142697
+                  },
+                  {
+                    "pilot_size": 15,
+                    "sign_agreement_rate": 0.905,
+                    "undefined_rate": 0.0,
+                    "mean_pilot_auc": 0.6953836510711511
+                  },
+                  {
+                    "pilot_size": 20,
+                    "sign_agreement_rate": 0.925,
+                    "undefined_rate": 0.0,
+                    "mean_pilot_auc": 0.6943640177632824
+                  },
+                  {
+                    "pilot_size": 30,
+                    "sign_agreement_rate": 0.97,
+                    "undefined_rate": 0.0,
+                    "mean_pilot_auc": 0.7008713723341988
+                  },
+                  {
+                    "pilot_size": 40,
+                    "sign_agreement_rate": 0.9925,
+                    "undefined_rate": 0.0,
+                    "mean_pilot_auc": 0.7046721593784104
+                  },
+                  {
+                    "pilot_size": 50,
+                    "sign_agreement_rate": 0.9975,
+                    "undefined_rate": 0.0,
+                    "mean_pilot_auc": 0.7082864973813473
+                  },
+                  {
+                    "pilot_size": 75,
+                    "sign_agreement_rate": 1.0,
+                    "undefined_rate": 0.0,
+                    "mean_pilot_auc": 0.7097994696456459
+                  }
+                ]
+              }
+            },
+            "initial_chars": {
+              "policies": {
+                "score_column": "initial_chars",
+                "n_coordinates": 148,
+                "total_repair_calls": 368,
+                "total_repairable": 54,
+                "full_data_allocation_auc": 0.2637903861308117,
+                "full_data_direction": "risk",
+                "budget_fractions": [
+                  0.25,
+                  0.4,
+                  0.5,
+                  0.75,
+                  1.0
+                ],
+                "budget_calls": [
+                  92,
+                  147,
+                  184,
+                  276,
+                  368
+                ],
+                "policies": {
+                  "risk": {
+                    "added_at_budget": [
+                      27,
+                      37,
+                      40,
+                      51,
+                      54
+                    ],
+                    "attempts_at_budget": [
+                      45,
+                      67,
+                      80,
+                      115,
+                      148
+                    ],
+                    "stochastic": false
+                  },
+                  "inverted": {
+                    "added_at_budget": [
+                      3,
+                      8,
+                      14,
+                      27,
+                      54
+                    ],
+                    "attempts_at_budget": [
+                      32,
+                      52,
+                      67,
+                      103,
+                      148
+                    ],
+                    "stochastic": false
+                  },
+                  "random": {
+                    "added_at_budget": [
+                      13.465,
+                      21.315,
+                      26.815,
+                      40.055,
+                      54.0
+                    ],
+                    "added_at_budget_std": [
+                      3.0815996302905795,
+                      3.531021888616587,
+                      3.6105338627229835,
+                      3.3687859226974965,
+                      0.0
+                    ],
+                    "attempts_at_budget": [
+                      36.645,
+                      58.665,
+                      73.57,
+                      110.42,
+                      148.0
+                    ],
+                    "stochastic": true
+                  },
+                  "pilot@0.10": {
+                    "added_at_budget": [
+                      22.6,
+                      32.45,
+                      38.16,
+                      49.485,
+                      54.0
+                    ],
+                    "added_at_budget_std": [
+                      4.226026086338329,
+                      5.856534382625476,
+                      5.667007576699706,
+                      5.194679825789296,
+                      0.0
+                    ],
+                    "attempts_at_budget": [
+                      42.075,
+                      65.055,
+                      79.39,
+                      114.63,
+                      148.0
+                    ],
+                    "sign_agreement_rate": 0.95,
+                    "undefined_pilot_rate": 0.0,
+                    "stochastic": true
+                  },
+                  "pilot@0.20": {
+                    "added_at_budget": [
+                      16.265,
+                      32.15,
+                      39.565,
+                      50.605,
+                      54.0
+                    ],
+                    "added_at_budget_std": [
+                      3.416597825837508,
+                      2.674559091076189,
+                      2.9013556006818675,
+                      1.9565570724845844,
+                      0.0
+                    ],
+                    "attempts_at_budget": [
+                      37.99,
+                      65.01,
+                      80.205,
+                      115.435,
+                      148.0
+                    ],
+                    "sign_agreement_rate": 0.995,
+                    "undefined_pilot_rate": 0.0,
+                    "stochastic": true
+                  },
+                  "pilot@0.30": {
+                    "added_at_budget": [
+                      13.465,
+                      28.04,
+                      36.125,
+                      49.745,
+                      54.0
+                    ],
+                    "added_at_budget_std": [
+                      3.0815996302905795,
+                      3.436195161210965,
+                      2.4920728592235,
+                      1.638106211391372,
+                      0.0
+                    ],
+                    "attempts_at_budget": [
+                      36.645,
+                      62.57,
+                      79.005,
+                      115.385,
+                      148.0
+                    ],
+                    "sign_agreement_rate": 1.0,
+                    "undefined_pilot_rate": 0.0,
+                    "stochastic": true
+                  },
+                  "pilot@0.50": {
+                    "added_at_budget": [
+                      13.465,
+                      21.315,
+                      27.19,
+                      46.925,
+                      54.0
+                    ],
+                    "added_at_budget_std": [
+                      3.0815996302905795,
+                      3.531021888616587,
+                      3.9550108157581336,
+                      2.0396509209658857,
+                      0.0
+                    ],
+                    "attempts_at_budget": [
+                      36.645,
+                      58.665,
+                      73.79,
+                      113.965,
+                      148.0
+                    ],
+                    "sign_agreement_rate": 1.0,
+                    "undefined_pilot_rate": 0.0,
+                    "stochastic": true
+                  }
+                }
+              },
+              "sign_resolution": {
+                "score_column": "initial_chars",
+                "full_data_auc": 0.2637903861308117,
+                "full_data_direction": "risk",
+                "by_pilot_size": [
+                  {
+                    "pilot_size": 5,
+                    "sign_agreement_rate": 0.89,
+                    "undefined_rate": 0.1125,
+                    "mean_pilot_auc": 0.2482394366197183
+                  },
+                  {
+                    "pilot_size": 10,
+                    "sign_agreement_rate": 0.93,
+                    "undefined_rate": 0.01,
+                    "mean_pilot_auc": 0.24780483405483403
+                  },
+                  {
+                    "pilot_size": 15,
+                    "sign_agreement_rate": 0.95,
+                    "undefined_rate": 0.0,
+                    "mean_pilot_auc": 0.262798757030007
+                  },
+                  {
+                    "pilot_size": 20,
+                    "sign_agreement_rate": 0.97,
+                    "undefined_rate": 0.0,
+                    "mean_pilot_auc": 0.26533029154260773
+                  },
+                  {
+                    "pilot_size": 30,
+                    "sign_agreement_rate": 0.9975,
+                    "undefined_rate": 0.0,
+                    "mean_pilot_auc": 0.26501598154973716
+                  },
+                  {
+                    "pilot_size": 40,
+                    "sign_agreement_rate": 1.0,
+                    "undefined_rate": 0.0,
+                    "mean_pilot_auc": 0.2656031128934104
+                  },
+                  {
+                    "pilot_size": 50,
+                    "sign_agreement_rate": 1.0,
+                    "undefined_rate": 0.0,
+                    "mean_pilot_auc": 0.2642387711252244
+                  },
+                  {
+                    "pilot_size": 75,
+                    "sign_agreement_rate": 1.0,
+                    "undefined_rate": 0.0,
+                    "mean_pilot_auc": 0.2606429528010146
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

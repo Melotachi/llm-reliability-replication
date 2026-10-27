@@ -1,0 +1,1091 @@
+{
+  "analysis": "week7_capability_sweep",
+  "source_results_files": [
+    "results/humaneval_uncertainty_20260827_194450.json",
+    "results/humaneval_uncertainty_20260822_071639.json",
+    "results/humaneval_uncertainty_20260827_200356.json",
+    "results/humaneval_uncertainty_20260822_073415.json",
+    "results/humaneval_uncertainty_20260827_192505.json",
+    "results/humaneval_uncertainty_20260831_212704.json",
+    "results/humaneval_uncertainty_20260901_004849.json"
+  ],
+  "config": {
+    "seed": 42,
+    "representation": "full",
+    "headline_metric": "ast_node_diversity",
+    "consensus_feature": "ast_node_diversity",
+    "tracked_metrics": [
+      "lexical_diversity",
+      "token_jaccard_diversity",
+      "token_cosine_diversity",
+      "ast_node_diversity",
+      "pairwise_distance"
+    ]
+  },
+  "protocol_conflicts": {
+    "dtype_resolved": {
+      "humaneval_uncertainty_20260827_194450": "torch.float32",
+      "humaneval_uncertainty_20260822_071639": "torch.float32",
+      "humaneval_uncertainty_20260827_200356": "torch.float32",
+      "humaneval_uncertainty_20260822_073415": "torch.float32",
+      "humaneval_uncertainty_20260827_192505": "torch.float32",
+      "humaneval_uncertainty_20260831_212704": "torch.float16",
+      "humaneval_uncertainty_20260901_004849": "torch.float16"
+    }
+  },
+  "protocol_unrecorded": {},
+  "cells": [
+    {
+      "run_id": "humaneval_uncertainty_20260827_194450",
+      "model": "Salesforce/codegen-350M-mono",
+      "config": {
+        "dataset": "humaneval",
+        "model": "Salesforce/codegen-350M-mono",
+        "n_samples": 10,
+        "n_problems": 60,
+        "problem_offset": 0,
+        "task_ids_file": null,
+        "temperature": 0.7,
+        "seed": 42,
+        "mode": "uncertainty",
+        "device_requested": "cuda",
+        "dtype_requested": "float32",
+        "device_resolved": "cuda",
+        "dtype_resolved": "torch.float32",
+        "dtype_actual": "torch.float32",
+        "codebert_model": null,
+        "tree_edit_distance": false,
+        "use_error_context": false,
+        "max_repair_iterations": 3,
+        "repair_candidates": 1
+      },
+      "pass_at_1": 0.21666666666666667,
+      "n_solved": 34,
+      "n_problems": 60,
+      "correlations": {
+        "lexical_diversity": {
+          "pearson_r": -0.7199174451897964,
+          "spearman_rho": -0.6125212449439236
+        },
+        "token_jaccard_diversity": {
+          "pearson_r": -0.4529375641695637,
+          "spearman_rho": -0.37014361350697966
+        },
+        "token_cosine_diversity": {
+          "pearson_r": -0.33985949240585445,
+          "spearman_rho": -0.3450921631061764
+        },
+        "ast_node_diversity": {
+          "pearson_r": -0.6076266094402603,
+          "spearman_rho": -0.6073656978415121
+        },
+        "pairwise_distance": {
+          "pearson_r": -0.4316666732484651,
+          "spearman_rho": -0.5731561063542943
+        }
+      },
+      "consensus": {
+        "feature": "ast_node_diversity",
+        "quartiles": [
+          {
+            "group": 1,
+            "n_problems": 15,
+            "frac_solved": 0.9333333333333333,
+            "mean_pass_rate": 0.5333333333333333,
+            "task_ids_all_fail": [
+              "HumanEval/38"
+            ]
+          },
+          {
+            "group": 2,
+            "n_problems": 15,
+            "frac_solved": 0.6666666666666666,
+            "mean_pass_rate": 0.21333333333333332,
+            "task_ids_all_fail": [
+              "HumanEval/32",
+              "HumanEval/6",
+              "HumanEval/20",
+              "HumanEval/5",
+              "HumanEval/10"
+            ]
+          },
+          {
+            "group": 3,
+            "n_problems": 15,
+            "frac_solved": 0.3333333333333333,
+            "mean_pass_rate": 0.060000000000000005,
+            "task_ids_all_fail": [
+              "HumanEval/37",
+              "HumanEval/2",
+              "HumanEval/44",
+              "HumanEval/14",
+              "HumanEval/46",
+              "HumanEval/49",
+              "HumanEval/26",
+              "HumanEval/3",
+              "HumanEval/21",
+              "HumanEval/33"
+            ]
+          },
+          {
+            "group": 4,
+            "n_problems": 15,
+            "frac_solved": 0.3333333333333333,
+            "mean_pass_rate": 0.05999999999999999,
+            "task_ids_all_fail": [
+              "HumanEval/36",
+              "HumanEval/39",
+              "HumanEval/24",
+              "HumanEval/1",
+              "HumanEval/56",
+              "HumanEval/57",
+              "HumanEval/19",
+              "HumanEval/40",
+              "HumanEval/17",
+              "HumanEval/41"
+            ]
+          }
+        ],
+        "spread": 0.6000000000000001,
+        "confidently_wrong": {
+          "n_problems": 6,
+          "n_all_fail": 1,
+          "rate": 0.16666666666666666,
+          "task_ids": [
+            "HumanEval/38"
+          ]
+        }
+      },
+      "mean_parse_failure_rate": 0.015000000000000001
+    },
+    {
+      "run_id": "humaneval_uncertainty_20260822_071639",
+      "model": "Qwen/Qwen2.5-Coder-0.5B",
+      "config": {
+        "dataset": "humaneval",
+        "model": "Qwen/Qwen2.5-Coder-0.5B",
+        "n_samples": 10,
+        "n_problems": 60,
+        "problem_offset": 0,
+        "task_ids_file": null,
+        "temperature": 0.7,
+        "seed": 42,
+        "mode": "uncertainty",
+        "device_requested": "cuda",
+        "dtype_requested": "float32",
+        "device_resolved": "cuda",
+        "dtype_resolved": "torch.float32",
+        "codebert_model": null,
+        "tree_edit_distance": false,
+        "use_error_context": false,
+        "max_repair_iterations": 3,
+        "repair_candidates": 1
+      },
+      "pass_at_1": 0.43333333333333335,
+      "n_solved": 45,
+      "n_problems": 60,
+      "correlations": {
+        "lexical_diversity": {
+          "pearson_r": -0.6088401138602846,
+          "spearman_rho": -0.6160126394535514
+        },
+        "token_jaccard_diversity": {
+          "pearson_r": -0.43106571106899716,
+          "spearman_rho": -0.38750218570080314
+        },
+        "token_cosine_diversity": {
+          "pearson_r": -0.5072048361744401,
+          "spearman_rho": -0.5095131192926025
+        },
+        "ast_node_diversity": {
+          "pearson_r": -0.6355337228984086,
+          "spearman_rho": -0.6266104243949853
+        },
+        "pairwise_distance": {
+          "pearson_r": -0.6538248275745334,
+          "spearman_rho": -0.7083701620393839
+        }
+      },
+      "consensus": {
+        "feature": "ast_node_diversity",
+        "quartiles": [
+          {
+            "group": 1,
+            "n_problems": 15,
+            "frac_solved": 0.8666666666666667,
+            "mean_pass_rate": 0.76,
+            "task_ids_all_fail": [
+              "HumanEval/38",
+              "HumanEval/19"
+            ]
+          },
+          {
+            "group": 2,
+            "n_problems": 15,
+            "frac_solved": 0.9333333333333333,
+            "mean_pass_rate": 0.5133333333333333,
+            "task_ids_all_fail": [
+              "HumanEval/32"
+            ]
+          },
+          {
+            "group": 3,
+            "n_problems": 15,
+            "frac_solved": 0.7333333333333333,
+            "mean_pass_rate": 0.3133333333333333,
+            "task_ids_all_fail": [
+              "HumanEval/10",
+              "HumanEval/17",
+              "HumanEval/20",
+              "HumanEval/49"
+            ]
+          },
+          {
+            "group": 4,
+            "n_problems": 15,
+            "frac_solved": 0.4666666666666667,
+            "mean_pass_rate": 0.14666666666666667,
+            "task_ids_all_fail": [
+              "HumanEval/6",
+              "HumanEval/1",
+              "HumanEval/37",
+              "HumanEval/46",
+              "HumanEval/36",
+              "HumanEval/33",
+              "HumanEval/39",
+              "HumanEval/41"
+            ]
+          }
+        ],
+        "spread": 0.4,
+        "confidently_wrong": {
+          "n_problems": 6,
+          "n_all_fail": 0,
+          "rate": 0.0,
+          "task_ids": []
+        }
+      },
+      "mean_parse_failure_rate": 0.03333333333333333
+    },
+    {
+      "run_id": "humaneval_uncertainty_20260827_200356",
+      "model": "deepseek-ai/deepseek-coder-1.3b-base",
+      "config": {
+        "dataset": "humaneval",
+        "model": "deepseek-ai/deepseek-coder-1.3b-base",
+        "n_samples": 10,
+        "n_problems": 60,
+        "problem_offset": 0,
+        "task_ids_file": null,
+        "temperature": 0.7,
+        "seed": 42,
+        "mode": "uncertainty",
+        "device_requested": "cuda",
+        "dtype_requested": "float32",
+        "device_resolved": "cuda",
+        "dtype_resolved": "torch.float32",
+        "dtype_actual": "torch.float32",
+        "codebert_model": null,
+        "tree_edit_distance": false,
+        "use_error_context": false,
+        "max_repair_iterations": 3,
+        "repair_candidates": 1
+      },
+      "pass_at_1": 0.44666666666666666,
+      "n_solved": 47,
+      "n_problems": 60,
+      "correlations": {
+        "lexical_diversity": {
+          "pearson_r": -0.6180791746008208,
+          "spearman_rho": -0.6545662630158742
+        },
+        "token_jaccard_diversity": {
+          "pearson_r": -0.3839969001730685,
+          "spearman_rho": -0.3549101457031727
+        },
+        "token_cosine_diversity": {
+          "pearson_r": -0.5056683306074731,
+          "spearman_rho": -0.5354764984610182
+        },
+        "ast_node_diversity": {
+          "pearson_r": -0.6418801251112707,
+          "spearman_rho": -0.6340283917079266
+        },
+        "pairwise_distance": {
+          "pearson_r": -0.6752784130873125,
+          "spearman_rho": -0.7081104889353382
+        }
+      },
+      "consensus": {
+        "feature": "ast_node_diversity",
+        "quartiles": [
+          {
+            "group": 1,
+            "n_problems": 15,
+            "frac_solved": 0.8666666666666667,
+            "mean_pass_rate": 0.7,
+            "task_ids_all_fail": [
+              "HumanEval/38",
+              "HumanEval/36"
+            ]
+          },
+          {
+            "group": 2,
+            "n_problems": 15,
+            "frac_solved": 0.9333333333333333,
+            "mean_pass_rate": 0.5,
+            "task_ids_all_fail": [
+              "HumanEval/32"
+            ]
+          },
+          {
+            "group": 3,
+            "n_problems": 15,
+            "frac_solved": 0.8666666666666667,
+            "mean_pass_rate": 0.4466666666666666,
+            "task_ids_all_fail": [
+              "HumanEval/10",
+              "HumanEval/24"
+            ]
+          },
+          {
+            "group": 4,
+            "n_problems": 15,
+            "frac_solved": 0.4666666666666667,
+            "mean_pass_rate": 0.14000000000000004,
+            "task_ids_all_fail": [
+              "HumanEval/17",
+              "HumanEval/33",
+              "HumanEval/37",
+              "HumanEval/39",
+              "HumanEval/19",
+              "HumanEval/1",
+              "HumanEval/6",
+              "HumanEval/41"
+            ]
+          }
+        ],
+        "spread": 0.4,
+        "confidently_wrong": {
+          "n_problems": 6,
+          "n_all_fail": 0,
+          "rate": 0.0,
+          "task_ids": []
+        }
+      },
+      "mean_parse_failure_rate": 0.02166666666666667
+    },
+    {
+      "run_id": "humaneval_uncertainty_20260822_073415",
+      "model": "Qwen/Qwen2.5-Coder-1.5B",
+      "config": {
+        "dataset": "humaneval",
+        "model": "Qwen/Qwen2.5-Coder-1.5B",
+        "n_samples": 10,
+        "n_problems": 60,
+        "problem_offset": 0,
+        "task_ids_file": null,
+        "temperature": 0.7,
+        "seed": 42,
+        "mode": "uncertainty",
+        "device_requested": "cuda",
+        "dtype_requested": "float32",
+        "device_resolved": "cuda",
+        "dtype_resolved": "torch.float32",
+        "codebert_model": null,
+        "tree_edit_distance": false,
+        "use_error_context": false,
+        "max_repair_iterations": 3,
+        "repair_candidates": 1
+      },
+      "pass_at_1": 0.595,
+      "n_solved": 53,
+      "n_problems": 60,
+      "correlations": {
+        "lexical_diversity": {
+          "pearson_r": -0.6741778566474176,
+          "spearman_rho": -0.7018752851681617
+        },
+        "token_jaccard_diversity": {
+          "pearson_r": -0.5275862422967472,
+          "spearman_rho": -0.6134936851386784
+        },
+        "token_cosine_diversity": {
+          "pearson_r": -0.46737196941436593,
+          "spearman_rho": -0.5511839585921527
+        },
+        "ast_node_diversity": {
+          "pearson_r": -0.672711573621731,
+          "spearman_rho": -0.7162681837265039
+        },
+        "pairwise_distance": {
+          "pearson_r": -0.6000577596632541,
+          "spearman_rho": -0.6636606165470441
+        }
+      },
+      "consensus": {
+        "feature": "ast_node_diversity",
+        "quartiles": [
+          {
+            "group": 1,
+            "n_problems": 15,
+            "frac_solved": 1.0,
+            "mean_pass_rate": 0.9533333333333334,
+            "task_ids_all_fail": []
+          },
+          {
+            "group": 2,
+            "n_problems": 15,
+            "frac_solved": 1.0,
+            "mean_pass_rate": 0.6266666666666667,
+            "task_ids_all_fail": []
+          },
+          {
+            "group": 3,
+            "n_problems": 15,
+            "frac_solved": 0.7333333333333333,
+            "mean_pass_rate": 0.4733333333333334,
+            "task_ids_all_fail": [
+              "HumanEval/37",
+              "HumanEval/32",
+              "HumanEval/6",
+              "HumanEval/18"
+            ]
+          },
+          {
+            "group": 4,
+            "n_problems": 15,
+            "frac_solved": 0.8,
+            "mean_pass_rate": 0.3266666666666667,
+            "task_ids_all_fail": [
+              "HumanEval/39",
+              "HumanEval/54",
+              "HumanEval/1"
+            ]
+          }
+        ],
+        "spread": 0.19999999999999996,
+        "confidently_wrong": {
+          "n_problems": 6,
+          "n_all_fail": 0,
+          "rate": 0.0,
+          "task_ids": []
+        }
+      },
+      "mean_parse_failure_rate": 0.02166666666666667
+    },
+    {
+      "run_id": "humaneval_uncertainty_20260827_192505",
+      "model": "Qwen/Qwen2.5-Coder-3B",
+      "config": {
+        "dataset": "humaneval",
+        "model": "Qwen/Qwen2.5-Coder-3B",
+        "n_samples": 10,
+        "n_problems": 60,
+        "problem_offset": 0,
+        "task_ids_file": null,
+        "temperature": 0.7,
+        "seed": 42,
+        "mode": "uncertainty",
+        "device_requested": "cuda",
+        "dtype_requested": "float32",
+        "device_resolved": "cuda",
+        "dtype_resolved": "torch.float32",
+        "dtype_actual": "torch.float32",
+        "codebert_model": null,
+        "tree_edit_distance": false,
+        "use_error_context": false,
+        "max_repair_iterations": 3,
+        "repair_candidates": 1
+      },
+      "pass_at_1": 0.6033333333333334,
+      "n_solved": 53,
+      "n_problems": 60,
+      "correlations": {
+        "lexical_diversity": {
+          "pearson_r": -0.4732211680257806,
+          "spearman_rho": -0.5281030879942237
+        },
+        "token_jaccard_diversity": {
+          "pearson_r": -0.3876653073144804,
+          "spearman_rho": -0.43510913333756074
+        },
+        "token_cosine_diversity": {
+          "pearson_r": -0.37390466688029655,
+          "spearman_rho": -0.412869498539814
+        },
+        "ast_node_diversity": {
+          "pearson_r": -0.5855628446214052,
+          "spearman_rho": -0.6252037845342131
+        },
+        "pairwise_distance": {
+          "pearson_r": -0.5338761347838382,
+          "spearman_rho": -0.614745585913605
+        }
+      },
+      "consensus": {
+        "feature": "ast_node_diversity",
+        "quartiles": [
+          {
+            "group": 1,
+            "n_problems": 15,
+            "frac_solved": 0.9333333333333333,
+            "mean_pass_rate": 0.8066666666666668,
+            "task_ids_all_fail": [
+              "HumanEval/19"
+            ]
+          },
+          {
+            "group": 2,
+            "n_problems": 15,
+            "frac_solved": 0.9333333333333333,
+            "mean_pass_rate": 0.6933333333333335,
+            "task_ids_all_fail": [
+              "HumanEval/20"
+            ]
+          },
+          {
+            "group": 3,
+            "n_problems": 15,
+            "frac_solved": 0.8666666666666667,
+            "mean_pass_rate": 0.5733333333333334,
+            "task_ids_all_fail": [
+              "HumanEval/36",
+              "HumanEval/24"
+            ]
+          },
+          {
+            "group": 4,
+            "n_problems": 15,
+            "frac_solved": 0.8,
+            "mean_pass_rate": 0.33999999999999997,
+            "task_ids_all_fail": [
+              "HumanEval/32",
+              "HumanEval/41",
+              "HumanEval/39"
+            ]
+          }
+        ],
+        "spread": 0.1333333333333333,
+        "confidently_wrong": {
+          "n_problems": 6,
+          "n_all_fail": 0,
+          "rate": 0.0,
+          "task_ids": []
+        }
+      },
+      "mean_parse_failure_rate": 0.03833333333333334
+    },
+    {
+      "run_id": "humaneval_uncertainty_20260831_212704",
+      "model": "Qwen/Qwen2.5-Coder-3B",
+      "config": {
+        "dataset": "humaneval",
+        "model": "Qwen/Qwen2.5-Coder-3B",
+        "n_samples": 10,
+        "n_problems": 60,
+        "problem_offset": 0,
+        "task_ids_file": null,
+        "temperature": 0.7,
+        "seed": 42,
+        "mode": "uncertainty",
+        "device_requested": "cuda",
+        "dtype_requested": "float16",
+        "device_resolved": "cuda",
+        "dtype_resolved": "torch.float16",
+        "device_map_requested": "none",
+        "device_map_resolved": null,
+        "dtype_actual": "torch.float16",
+        "codebert_model": null,
+        "tree_edit_distance": false,
+        "use_error_context": false,
+        "max_repair_iterations": 3,
+        "repair_candidates": 1
+      },
+      "pass_at_1": 0.6016666666666667,
+      "n_solved": 54,
+      "n_problems": 60,
+      "correlations": {
+        "lexical_diversity": {
+          "pearson_r": -0.48912237877783926,
+          "spearman_rho": -0.5271562618956996
+        },
+        "token_jaccard_diversity": {
+          "pearson_r": -0.4270537203477452,
+          "spearman_rho": -0.47444378051163966
+        },
+        "token_cosine_diversity": {
+          "pearson_r": -0.3596931572500078,
+          "spearman_rho": -0.4432037691796773
+        },
+        "ast_node_diversity": {
+          "pearson_r": -0.5956969311902628,
+          "spearman_rho": -0.6565774173318005
+        },
+        "pairwise_distance": {
+          "pearson_r": -0.523358416827113,
+          "spearman_rho": -0.6352750281293833
+        }
+      },
+      "consensus": {
+        "feature": "ast_node_diversity",
+        "quartiles": [
+          {
+            "group": 1,
+            "n_problems": 15,
+            "frac_solved": 0.9333333333333333,
+            "mean_pass_rate": 0.8200000000000002,
+            "task_ids_all_fail": [
+              "HumanEval/19"
+            ]
+          },
+          {
+            "group": 2,
+            "n_problems": 15,
+            "frac_solved": 0.9333333333333333,
+            "mean_pass_rate": 0.7000000000000001,
+            "task_ids_all_fail": [
+              "HumanEval/20"
+            ]
+          },
+          {
+            "group": 3,
+            "n_problems": 15,
+            "frac_solved": 0.8,
+            "mean_pass_rate": 0.48666666666666664,
+            "task_ids_all_fail": [
+              "HumanEval/36",
+              "HumanEval/32",
+              "HumanEval/24"
+            ]
+          },
+          {
+            "group": 4,
+            "n_problems": 15,
+            "frac_solved": 0.9333333333333333,
+            "mean_pass_rate": 0.4000000000000001,
+            "task_ids_all_fail": [
+              "HumanEval/39"
+            ]
+          }
+        ],
+        "spread": 0.0,
+        "confidently_wrong": {
+          "n_problems": 6,
+          "n_all_fail": 0,
+          "rate": 0.0,
+          "task_ids": []
+        }
+      },
+      "mean_parse_failure_rate": 0.041666666666666664
+    },
+    {
+      "run_id": "humaneval_uncertainty_20260901_004849",
+      "model": "Qwen/Qwen2.5-Coder-7B",
+      "config": {
+        "dataset": "humaneval",
+        "model": "Qwen/Qwen2.5-Coder-7B",
+        "n_samples": 10,
+        "n_problems": 60,
+        "problem_offset": 0,
+        "task_ids_file": null,
+        "temperature": 0.7,
+        "seed": 42,
+        "mode": "uncertainty",
+        "device_requested": "cuda",
+        "dtype_requested": "float16",
+        "device_resolved": "cuda",
+        "dtype_resolved": "torch.float16",
+        "device_map_requested": "auto",
+        "device_map_resolved": {
+          "model.embed_tokens": "0",
+          "model.layers.0": "0",
+          "model.layers.1": "0",
+          "model.layers.2": "0",
+          "model.layers.3": "0",
+          "model.layers.4": "0",
+          "model.layers.5": "0",
+          "model.layers.6": "0",
+          "model.layers.7": "0",
+          "model.layers.8": "0",
+          "model.layers.9": "0",
+          "model.layers.10": "0",
+          "model.layers.11": "0",
+          "model.layers.12": "0",
+          "model.layers.13": "0",
+          "model.layers.14": "0",
+          "model.layers.15": "0",
+          "model.layers.16": "0",
+          "model.layers.17": "0",
+          "model.layers.18": "0",
+          "model.layers.19": "0",
+          "model.layers.20": "0",
+          "model.layers.21": "0",
+          "model.layers.22": "0",
+          "model.layers.23": "0",
+          "model.layers.24": "0",
+          "model.layers.25": "0",
+          "model.layers.26": "0",
+          "model.layers.27": "cpu",
+          "model.norm": "cpu",
+          "model.rotary_emb": "cpu",
+          "lm_head": "cpu"
+        },
+        "dtype_actual": "torch.float16",
+        "codebert_model": null,
+        "tree_edit_distance": false,
+        "use_error_context": false,
+        "max_repair_iterations": 3,
+        "repair_candidates": 1
+      },
+      "pass_at_1": 0.7,
+      "n_solved": 59,
+      "n_problems": 60,
+      "correlations": {
+        "lexical_diversity": {
+          "pearson_r": -0.4308202009444977,
+          "spearman_rho": -0.4690881981511517
+        },
+        "token_jaccard_diversity": {
+          "pearson_r": -0.4959727627092604,
+          "spearman_rho": -0.45704181031479535
+        },
+        "token_cosine_diversity": {
+          "pearson_r": -0.464903252596874,
+          "spearman_rho": -0.416164724001348
+        },
+        "ast_node_diversity": {
+          "pearson_r": -0.6451114861452474,
+          "spearman_rho": -0.6676496096455615
+        },
+        "pairwise_distance": {
+          "pearson_r": -0.6617907578890355,
+          "spearman_rho": -0.6284500601449796
+        }
+      },
+      "consensus": {
+        "feature": "ast_node_diversity",
+        "quartiles": [
+          {
+            "group": 1,
+            "n_problems": 15,
+            "frac_solved": 1.0,
+            "mean_pass_rate": 0.9400000000000001,
+            "task_ids_all_fail": []
+          },
+          {
+            "group": 2,
+            "n_problems": 15,
+            "frac_solved": 1.0,
+            "mean_pass_rate": 0.7466666666666668,
+            "task_ids_all_fail": []
+          },
+          {
+            "group": 3,
+            "n_problems": 15,
+            "frac_solved": 1.0,
+            "mean_pass_rate": 0.6599999999999999,
+            "task_ids_all_fail": []
+          },
+          {
+            "group": 4,
+            "n_problems": 15,
+            "frac_solved": 0.9333333333333333,
+            "mean_pass_rate": 0.45333333333333325,
+            "task_ids_all_fail": [
+              "HumanEval/39"
+            ]
+          }
+        ],
+        "spread": 0.06666666666666665,
+        "confidently_wrong": {
+          "n_problems": 6,
+          "n_all_fail": 0,
+          "rate": 0.0,
+          "task_ids": []
+        }
+      },
+      "mean_parse_failure_rate": 0.021666666666666667
+    }
+  ],
+  "prereg_scoring": {
+    "confidently_wrong_rate": {
+      "label": "P1 confidently-wrong rate",
+      "tolerance": 0.1,
+      "rows": [
+        {
+          "model": "Salesforce/codegen-350M-mono",
+          "pass_at_1": 0.21666666666666667,
+          "predicted": 0.1754,
+          "observed": 0.16666666666666666,
+          "deviation": -0.008733333333333343,
+          "within_tolerance": true,
+          "fit_was_derived_from_this_cell": true
+        },
+        {
+          "model": "Qwen/Qwen2.5-Coder-0.5B",
+          "pass_at_1": 0.43333333333333335,
+          "predicted": 0.03889999999999999,
+          "observed": 0.0,
+          "deviation": -0.03889999999999999,
+          "within_tolerance": true,
+          "fit_was_derived_from_this_cell": false
+        },
+        {
+          "model": "deepseek-ai/deepseek-coder-1.3b-base",
+          "pass_at_1": 0.44666666666666666,
+          "predicted": 0.030500000000000027,
+          "observed": 0.0,
+          "deviation": -0.030500000000000027,
+          "within_tolerance": true,
+          "fit_was_derived_from_this_cell": true
+        },
+        {
+          "model": "Qwen/Qwen2.5-Coder-1.5B",
+          "pass_at_1": 0.595,
+          "predicted": 0.0,
+          "observed": 0.0,
+          "deviation": 0.0,
+          "within_tolerance": true,
+          "fit_was_derived_from_this_cell": false
+        },
+        {
+          "model": "Qwen/Qwen2.5-Coder-3B",
+          "pass_at_1": 0.6033333333333334,
+          "predicted": 0.0,
+          "observed": 0.0,
+          "deviation": 0.0,
+          "within_tolerance": true,
+          "fit_was_derived_from_this_cell": false
+        },
+        {
+          "model": "Qwen/Qwen2.5-Coder-3B",
+          "pass_at_1": 0.6016666666666667,
+          "predicted": 0.0,
+          "observed": 0.0,
+          "deviation": 0.0,
+          "within_tolerance": true,
+          "fit_was_derived_from_this_cell": false
+        },
+        {
+          "model": "Qwen/Qwen2.5-Coder-7B",
+          "pass_at_1": 0.7,
+          "predicted": 0.0,
+          "observed": 0.0,
+          "deviation": 0.0,
+          "within_tolerance": true,
+          "fit_was_derived_from_this_cell": false
+        }
+      ],
+      "n_held_out": 5,
+      "n_held_out_within_tolerance": 5
+    },
+    "ast_abs_spearman": {
+      "label": "P3 |Spearman rho| of ast_node_diversity",
+      "tolerance": 0.12,
+      "rows": [
+        {
+          "model": "Salesforce/codegen-350M-mono",
+          "pass_at_1": 0.21666666666666667,
+          "predicted": 0.5511166666666667,
+          "observed": 0.6073656978415121,
+          "deviation": 0.056249031174845365,
+          "within_tolerance": true,
+          "fit_was_derived_from_this_cell": true
+        },
+        {
+          "model": "Qwen/Qwen2.5-Coder-0.5B",
+          "pass_at_1": 0.43333333333333335,
+          "predicted": 0.6982333333333334,
+          "observed": 0.6266104243949853,
+          "deviation": -0.0716229089383481,
+          "within_tolerance": true,
+          "fit_was_derived_from_this_cell": false
+        },
+        {
+          "model": "deepseek-ai/deepseek-coder-1.3b-base",
+          "pass_at_1": 0.44666666666666666,
+          "predicted": 0.7072866666666667,
+          "observed": 0.6340283917079266,
+          "deviation": -0.07325827495874015,
+          "within_tolerance": true,
+          "fit_was_derived_from_this_cell": true
+        },
+        {
+          "model": "Qwen/Qwen2.5-Coder-1.5B",
+          "pass_at_1": 0.595,
+          "predicted": 0.8080050000000001,
+          "observed": 0.7162681837265039,
+          "deviation": -0.09173681627349617,
+          "within_tolerance": true,
+          "fit_was_derived_from_this_cell": false
+        },
+        {
+          "model": "Qwen/Qwen2.5-Coder-3B",
+          "pass_at_1": 0.6033333333333334,
+          "predicted": 0.8136633333333334,
+          "observed": 0.6252037845342131,
+          "deviation": -0.1884595487991203,
+          "within_tolerance": false,
+          "fit_was_derived_from_this_cell": false
+        },
+        {
+          "model": "Qwen/Qwen2.5-Coder-3B",
+          "pass_at_1": 0.6016666666666667,
+          "predicted": 0.8125316666666667,
+          "observed": 0.6565774173318005,
+          "deviation": -0.15595424933486612,
+          "within_tolerance": false,
+          "fit_was_derived_from_this_cell": false
+        },
+        {
+          "model": "Qwen/Qwen2.5-Coder-7B",
+          "pass_at_1": 0.7,
+          "predicted": 0.8793,
+          "observed": 0.6676496096455615,
+          "deviation": -0.21165039035443844,
+          "within_tolerance": false,
+          "fit_was_derived_from_this_cell": false
+        }
+      ],
+      "n_held_out": 5,
+      "n_held_out_within_tolerance": 2
+    },
+    "P2_spread_band": {
+      "label": "P2 quartile spread stays in [0.40, 0.70] with no capability trend",
+      "band": [
+        0.4,
+        0.7
+      ],
+      "rows": [
+        {
+          "model": "Salesforce/codegen-350M-mono",
+          "pass_at_1": 0.21666666666666667,
+          "spread": 0.6000000000000001,
+          "in_band": true
+        },
+        {
+          "model": "Qwen/Qwen2.5-Coder-0.5B",
+          "pass_at_1": 0.43333333333333335,
+          "spread": 0.4,
+          "in_band": true
+        },
+        {
+          "model": "deepseek-ai/deepseek-coder-1.3b-base",
+          "pass_at_1": 0.44666666666666666,
+          "spread": 0.4,
+          "in_band": true
+        },
+        {
+          "model": "Qwen/Qwen2.5-Coder-1.5B",
+          "pass_at_1": 0.595,
+          "spread": 0.19999999999999996,
+          "in_band": false
+        },
+        {
+          "model": "Qwen/Qwen2.5-Coder-3B",
+          "pass_at_1": 0.6033333333333334,
+          "spread": 0.1333333333333333,
+          "in_band": false
+        },
+        {
+          "model": "Qwen/Qwen2.5-Coder-3B",
+          "pass_at_1": 0.6016666666666667,
+          "spread": 0.0,
+          "in_band": false
+        },
+        {
+          "model": "Qwen/Qwen2.5-Coder-7B",
+          "pass_at_1": 0.7,
+          "spread": 0.06666666666666665,
+          "in_band": false
+        }
+      ],
+      "trend_vs_pass_at_1": {
+        "pearson_r": -0.941632054588837,
+        "p_value": 0.0015316979050644507
+      }
+    },
+    "P4_parse_failure": {
+      "label": "P4 mean parse-failure rate < 0.005",
+      "ceiling": 0.005,
+      "rows": [
+        {
+          "model": "Salesforce/codegen-350M-mono",
+          "pass_at_1": 0.21666666666666667,
+          "mean_parse_failure_rate": 0.015000000000000001,
+          "below_ceiling": false
+        },
+        {
+          "model": "Qwen/Qwen2.5-Coder-0.5B",
+          "pass_at_1": 0.43333333333333335,
+          "mean_parse_failure_rate": 0.03333333333333333,
+          "below_ceiling": false
+        },
+        {
+          "model": "deepseek-ai/deepseek-coder-1.3b-base",
+          "pass_at_1": 0.44666666666666666,
+          "mean_parse_failure_rate": 0.02166666666666667,
+          "below_ceiling": false
+        },
+        {
+          "model": "Qwen/Qwen2.5-Coder-1.5B",
+          "pass_at_1": 0.595,
+          "mean_parse_failure_rate": 0.02166666666666667,
+          "below_ceiling": false
+        },
+        {
+          "model": "Qwen/Qwen2.5-Coder-3B",
+          "pass_at_1": 0.6033333333333334,
+          "mean_parse_failure_rate": 0.03833333333333334,
+          "below_ceiling": false
+        },
+        {
+          "model": "Qwen/Qwen2.5-Coder-3B",
+          "pass_at_1": 0.6016666666666667,
+          "mean_parse_failure_rate": 0.041666666666666664,
+          "below_ceiling": false
+        },
+        {
+          "model": "Qwen/Qwen2.5-Coder-7B",
+          "pass_at_1": 0.7,
+          "mean_parse_failure_rate": 0.021666666666666667,
+          "below_ceiling": false
+        }
+      ]
+    },
+    "P5_capability_order": {
+      "label": "P5 ranking by measured pass@1 (vs. by parameter count)",
+      "rows": [
+        {
+          "model": "Salesforce/codegen-350M-mono",
+          "pass_at_1": 0.21666666666666667
+        },
+        {
+          "model": "Qwen/Qwen2.5-Coder-0.5B",
+          "pass_at_1": 0.43333333333333335
+        },
+        {
+          "model": "deepseek-ai/deepseek-coder-1.3b-base",
+          "pass_at_1": 0.44666666666666666
+        },
+        {
+          "model": "Qwen/Qwen2.5-Coder-1.5B",
+          "pass_at_1": 0.595
+        },
+        {
+          "model": "Qwen/Qwen2.5-Coder-3B",
+          "pass_at_1": 0.6016666666666667
+        },
+        {
+          "model": "Qwen/Qwen2.5-Coder-3B",
+          "pass_at_1": 0.6033333333333334
+        },
+        {
+          "model": "Qwen/Qwen2.5-Coder-7B",
+          "pass_at_1": 0.7
+        }
+      ]
+    }
+  }
+}

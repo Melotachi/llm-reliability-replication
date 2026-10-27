@@ -1,0 +1,446 @@
+{
+  "analysis": "week7_suppressor",
+  "config": {
+    "seed": 42,
+    "target": "token_jaccard_diversity",
+    "partners": [
+      "lexical_diversity",
+      "token_cosine_diversity",
+      "ast_node_diversity"
+    ],
+    "representations": [
+      "full",
+      "corrected"
+    ],
+    "include_codebert": false,
+    "include_tree_edit": false,
+    "vif_ceiling": 5.0
+  },
+  "source_results_files": {
+    "cg_he164": "results/humaneval_uncertainty_merged164_20260711.json",
+    "ds_he60": "results/humaneval_deepseek60_merged_20260712.json",
+    "cg_he60": "results/humaneval_uncertainty_20260710_014920.json"
+  },
+  "cells": {
+    "cg_he164": {
+      "run_id": "humaneval_uncertainty_merged164_20260711",
+      "model": "Salesforce/codegen-350M-mono",
+      "representations": {
+        "full": {
+          "available": true,
+          "n_problems": 164,
+          "features": [
+            "token_jaccard_diversity",
+            "lexical_diversity",
+            "token_cosine_diversity",
+            "ast_node_diversity"
+          ],
+          "zero_order": {
+            "token_jaccard_diversity": {
+              "pearson_r": -0.21867589331352763,
+              "spearman_rho": -0.21174550448189194
+            },
+            "lexical_diversity": {
+              "pearson_r": -0.8183515379035448,
+              "spearman_rho": -0.5473374998223286
+            },
+            "token_cosine_diversity": {
+              "pearson_r": -0.25938738371772546,
+              "spearman_rho": -0.2926867978721461
+            },
+            "ast_node_diversity": {
+              "pearson_r": -0.5802319264397573,
+              "spearman_rho": -0.5179078018895675
+            }
+          },
+          "residual_correlations": {
+            "resid_on_ast": {
+              "controls": [
+                "ast_node_diversity"
+              ],
+              "pearson_r": 0.04079771433877605,
+              "spearman_rho": 0.10721222403361748
+            },
+            "resid_on_all_partners": {
+              "controls": [
+                "lexical_diversity",
+                "token_cosine_diversity",
+                "ast_node_diversity"
+              ],
+              "pearson_r": 0.056881892911637186,
+              "spearman_rho": 0.09543877420939274
+            }
+          },
+          "sanity_controls": {
+            "ast_resid_on_target": {
+              "pearson_r": -0.5389938734705533,
+              "spearman_rho": -0.5197413565454545
+            }
+          },
+          "vif": {
+            "token_jaccard_diversity": 2.5198830868665314,
+            "lexical_diversity": 1.4141574644855295,
+            "token_cosine_diversity": 2.6521453124076144,
+            "ast_node_diversity": 1.7091866738660686
+          },
+          "vif_ceiling": 5.0,
+          "max_vif": 2.6521453124076144,
+          "logistic_coefficients": {
+            "token_jaccard_diversity": 0.6349643089214291,
+            "lexical_diversity": -0.9795901875177578,
+            "token_cosine_diversity": -0.36293648262834033,
+            "ast_node_diversity": -1.5803455985638
+          },
+          "verdict": "suppressor: residual sign flips positive, VIF below ceiling"
+        },
+        "corrected": {
+          "available": true,
+          "n_problems": 164,
+          "features": [
+            "token_jaccard_diversity",
+            "lexical_diversity",
+            "token_cosine_diversity",
+            "ast_node_diversity"
+          ],
+          "zero_order": {
+            "token_jaccard_diversity": {
+              "pearson_r": -0.5481353379134386,
+              "spearman_rho": -0.42338016908192194
+            },
+            "lexical_diversity": {
+              "pearson_r": -0.8183515379035448,
+              "spearman_rho": -0.5473374998223286
+            },
+            "token_cosine_diversity": {
+              "pearson_r": -0.34068219341771594,
+              "spearman_rho": -0.27545589284776606
+            },
+            "ast_node_diversity": {
+              "pearson_r": -0.5809344777807227,
+              "spearman_rho": -0.5111822632952282
+            }
+          },
+          "residual_correlations": {
+            "resid_on_ast": {
+              "controls": [
+                "ast_node_diversity"
+              ],
+              "pearson_r": -0.142740725022731,
+              "spearman_rho": -0.05771188425086699
+            },
+            "resid_on_all_partners": {
+              "controls": [
+                "lexical_diversity",
+                "token_cosine_diversity",
+                "ast_node_diversity"
+              ],
+              "pearson_r": -0.04156697831838649,
+              "spearman_rho": 0.025064842437339432
+            }
+          },
+          "sanity_controls": {
+            "ast_resid_on_target": {
+              "pearson_r": -0.23959848368655484,
+              "spearman_rho": -0.2801337115907563
+            }
+          },
+          "vif": {
+            "token_jaccard_diversity": 4.884222521220331,
+            "lexical_diversity": 1.4843907353267414,
+            "token_cosine_diversity": 2.429947160579289,
+            "ast_node_diversity": 2.913054087188976
+          },
+          "vif_ceiling": 5.0,
+          "max_vif": 4.884222521220331,
+          "logistic_coefficients": {
+            "token_jaccard_diversity": 0.14464875860071766,
+            "lexical_diversity": -1.1029809453613253,
+            "token_cosine_diversity": -0.22799059993934337,
+            "ast_node_diversity": -1.3720687964570546
+          },
+          "verdict": "not a suppressor here: residual keeps its raw sign"
+        }
+      }
+    },
+    "ds_he60": {
+      "run_id": "humaneval_deepseek60_merged_20260712",
+      "model": "deepseek-ai/deepseek-coder-1.3b-base",
+      "representations": {
+        "full": {
+          "available": true,
+          "n_problems": 60,
+          "features": [
+            "token_jaccard_diversity",
+            "lexical_diversity",
+            "token_cosine_diversity",
+            "ast_node_diversity"
+          ],
+          "zero_order": {
+            "token_jaccard_diversity": {
+              "pearson_r": -0.508377195367172,
+              "spearman_rho": -0.48303907697810006
+            },
+            "lexical_diversity": {
+              "pearson_r": -0.6358981979264737,
+              "spearman_rho": -0.5644864625602601
+            },
+            "token_cosine_diversity": {
+              "pearson_r": -0.5878543705328463,
+              "spearman_rho": -0.5712316838408344
+            },
+            "ast_node_diversity": {
+              "pearson_r": -0.7402462105639988,
+              "spearman_rho": -0.738233771291376
+            }
+          },
+          "residual_correlations": {
+            "resid_on_ast": {
+              "controls": [
+                "ast_node_diversity"
+              ],
+              "pearson_r": 0.06973577853064042,
+              "spearman_rho": 0.03397728654479136
+            },
+            "resid_on_all_partners": {
+              "controls": [
+                "lexical_diversity",
+                "token_cosine_diversity",
+                "ast_node_diversity"
+              ],
+              "pearson_r": 0.19042495211927019,
+              "spearman_rho": 0.15584406652492902
+            }
+          },
+          "sanity_controls": {
+            "ast_resid_on_target": {
+              "pearson_r": -0.5425681139656497,
+              "spearman_rho": -0.5721662732534454
+            }
+          },
+          "vif": {
+            "token_jaccard_diversity": 3.5568681790221293,
+            "lexical_diversity": 2.819701419893124,
+            "token_cosine_diversity": 2.7214995128034287,
+            "ast_node_diversity": 3.4304753079757058
+          },
+          "vif_ceiling": 5.0,
+          "max_vif": 3.5568681790221293,
+          "logistic_coefficients": {
+            "token_jaccard_diversity": 0.8234110935268527,
+            "lexical_diversity": -0.7348244709986183,
+            "token_cosine_diversity": -0.21012981909899972,
+            "ast_node_diversity": -1.5594077279914007
+          },
+          "verdict": "suppressor: residual sign flips positive, VIF below ceiling"
+        },
+        "corrected": {
+          "available": true,
+          "n_problems": 60,
+          "features": [
+            "token_jaccard_diversity",
+            "lexical_diversity",
+            "token_cosine_diversity",
+            "ast_node_diversity"
+          ],
+          "zero_order": {
+            "token_jaccard_diversity": {
+              "pearson_r": -0.768561186211219,
+              "spearman_rho": -0.76434854524729
+            },
+            "lexical_diversity": {
+              "pearson_r": -0.6358981979264737,
+              "spearman_rho": -0.5644864625602601
+            },
+            "token_cosine_diversity": {
+              "pearson_r": -0.6324667685401535,
+              "spearman_rho": -0.6067051678402993
+            },
+            "ast_node_diversity": {
+              "pearson_r": -0.7230731610159803,
+              "spearman_rho": -0.7178473993645011
+            }
+          },
+          "residual_correlations": {
+            "resid_on_ast": {
+              "controls": [
+                "ast_node_diversity"
+              ],
+              "pearson_r": -0.28844524485204615,
+              "spearman_rho": -0.24926972946951484
+            },
+            "resid_on_all_partners": {
+              "controls": [
+                "lexical_diversity",
+                "token_cosine_diversity",
+                "ast_node_diversity"
+              ],
+              "pearson_r": -0.2266150707315144,
+              "spearman_rho": -0.21590721216399625
+            }
+          },
+          "sanity_controls": {
+            "ast_resid_on_target": {
+              "pearson_r": -0.12389172090580598,
+              "spearman_rho": -0.20335827203089177
+            }
+          },
+          "vif": {
+            "token_jaccard_diversity": 11.69281270912016,
+            "lexical_diversity": 3.160318033627986,
+            "token_cosine_diversity": 5.075547809657626,
+            "ast_node_diversity": 4.107375303464937
+          },
+          "vif_ceiling": 5.0,
+          "max_vif": 11.69281270912016,
+          "logistic_coefficients": {
+            "token_jaccard_diversity": -1.8151185929779388,
+            "lexical_diversity": -0.667674537750678,
+            "token_cosine_diversity": 0.2538315306547366,
+            "ast_node_diversity": -0.5987056211553652
+          },
+          "verdict": "not a suppressor here: residual keeps its raw sign"
+        }
+      }
+    },
+    "cg_he60": {
+      "run_id": "humaneval_uncertainty_20260710_014920",
+      "model": "Salesforce/codegen-350M-mono",
+      "representations": {
+        "full": {
+          "available": true,
+          "n_problems": 60,
+          "features": [
+            "token_jaccard_diversity",
+            "lexical_diversity",
+            "token_cosine_diversity",
+            "ast_node_diversity"
+          ],
+          "zero_order": {
+            "token_jaccard_diversity": {
+              "pearson_r": -0.402901330654506,
+              "spearman_rho": -0.4476784289215103
+            },
+            "lexical_diversity": {
+              "pearson_r": -0.8159970774285162,
+              "spearman_rho": -0.7097735847886275
+            },
+            "token_cosine_diversity": {
+              "pearson_r": -0.4010910241602379,
+              "spearman_rho": -0.46129995593179446
+            },
+            "ast_node_diversity": {
+              "pearson_r": -0.6242576317909273,
+              "spearman_rho": -0.5581871296123194
+            }
+          },
+          "residual_correlations": {
+            "resid_on_ast": {
+              "controls": [
+                "ast_node_diversity"
+              ],
+              "pearson_r": 0.049706114846429145,
+              "spearman_rho": 0.03495502484417838
+            },
+            "resid_on_all_partners": {
+              "controls": [
+                "lexical_diversity",
+                "token_cosine_diversity",
+                "ast_node_diversity"
+              ],
+              "pearson_r": 0.09986425709977576,
+              "spearman_rho": 0.12705545801349707
+            }
+          },
+          "sanity_controls": {
+            "ast_resid_on_target": {
+              "pearson_r": -0.4794150669922376,
+              "spearman_rho": -0.4401732925644339
+            }
+          },
+          "vif": {
+            "token_jaccard_diversity": 3.0463356894639757,
+            "lexical_diversity": 1.6123138485614708,
+            "token_cosine_diversity": 2.3617629662888913,
+            "ast_node_diversity": 2.560380269770506
+          },
+          "vif_ceiling": 5.0,
+          "max_vif": 3.0463356894639757,
+          "logistic_coefficients": {
+            "token_jaccard_diversity": 0.5648587966125905,
+            "lexical_diversity": -1.3911332869992985,
+            "token_cosine_diversity": -0.7191557492846026,
+            "ast_node_diversity": -0.7391271749615954
+          },
+          "verdict": "suppressor: residual sign flips positive, VIF below ceiling"
+        },
+        "corrected": {
+          "available": true,
+          "n_problems": 60,
+          "features": [
+            "token_jaccard_diversity",
+            "lexical_diversity",
+            "token_cosine_diversity",
+            "ast_node_diversity"
+          ],
+          "zero_order": {
+            "token_jaccard_diversity": {
+              "pearson_r": -0.634178887318222,
+              "spearman_rho": -0.5892713951542261
+            },
+            "lexical_diversity": {
+              "pearson_r": -0.8159970774285162,
+              "spearman_rho": -0.7097735847886275
+            },
+            "token_cosine_diversity": {
+              "pearson_r": -0.3829559147531178,
+              "spearman_rho": -0.3610738830057987
+            },
+            "ast_node_diversity": {
+              "pearson_r": -0.6160001333835313,
+              "spearman_rho": -0.5367058928737584
+            }
+          },
+          "residual_correlations": {
+            "resid_on_ast": {
+              "controls": [
+                "ast_node_diversity"
+              ],
+              "pearson_r": -0.2247677050313589,
+              "spearman_rho": -0.22385398835122178
+            },
+            "resid_on_all_partners": {
+              "controls": [
+                "lexical_diversity",
+                "token_cosine_diversity",
+                "ast_node_diversity"
+              ],
+              "pearson_r": -0.1087516060798193,
+              "spearman_rho": -0.05351103127033562
+            }
+          },
+          "sanity_controls": {
+            "ast_resid_on_target": {
+              "pearson_r": -0.16671479968321465,
+              "spearman_rho": -0.10959271948187457
+            }
+          },
+          "vif": {
+            "token_jaccard_diversity": 6.093708340987328,
+            "lexical_diversity": 1.7709493976725414,
+            "token_cosine_diversity": 2.645034542437446,
+            "ast_node_diversity": 3.347486993379632
+          },
+          "vif_ceiling": 5.0,
+          "max_vif": 6.093708340987328,
+          "logistic_coefficients": {
+            "token_jaccard_diversity": -0.5295194527197086,
+            "lexical_diversity": -1.3908221539437076,
+            "token_cosine_diversity": -0.21643113299528124,
+            "ast_node_diversity": -0.36520784781518645
+          },
+          "verdict": "not a suppressor here: residual keeps its raw sign"
+        }
+      }
+    }
+  }
+}

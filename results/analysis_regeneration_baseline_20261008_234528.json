@@ -1,0 +1,197 @@
+{
+  "analysis": "regeneration_baseline",
+  "matched_k": 3,
+  "note": "Repair calls go to Qwen2.5-Coder-1.5B-Instruct; resample calls go to the generator that produced the failure. The arms are matched on coordinates and on call count, not on model.",
+  "cohorts": [
+    {
+      "cohort_name": "humaneval",
+      "source_file": "results/humaneval_uncertainty_merged164_20260711.json",
+      "selection_sha256": "9332324b2b7ecc9278b4742c66c2716b5bb81b93e5e8040085fe49f330c5af20",
+      "coordinate_hash": "49a30fc61646b78458db8ec07b76fc1f7a8774b1dd0199622965888065324bf2",
+      "matched_k": 3,
+      "resample_control": {
+        "model": "Salesforce/codegen-350M-mono",
+        "replayed_from_stored_samples": true,
+        "n_coordinates": 148,
+        "added_passes": 12,
+        "rate": 0.08108108108108109,
+        "rate_wilson_95": [
+          0.04698790503444143,
+          0.13637159591918396
+        ],
+        "base_model_calls": 444,
+        "calls_per_success": 37.0
+      },
+      "arms": {
+        "none": {
+          "pool_file": "results/humaneval_week9_arm_resample_sample0_qwen15b.json",
+          "n_coordinates": 148,
+          "repair_successes": 91,
+          "repair_rate": 0.6148648648648649,
+          "repair_rate_wilson_95": [
+            0.5345013674906656,
+            0.6894161886994696
+          ],
+          "repair_model_calls": 444,
+          "calls_per_success": 4.8791208791208796,
+          "duplicate_candidate_rate": 0.07432432432432433,
+          "paired_vs_resample": {
+            "both": 10,
+            "repair_only": 81,
+            "resample_only": 2,
+            "neither": 55,
+            "mcnemar_mid_p": 3.6923274592835773e-22,
+            "mcnemar_mid_p_bh": 1.1076982377850732e-21
+          }
+        },
+        "code_only": {
+          "pool_file": "results/humaneval_week9_arm_code_only_sample0_qwen15b.json",
+          "n_coordinates": 148,
+          "repair_successes": 65,
+          "repair_rate": 0.4391891891891892,
+          "repair_rate_wilson_95": [
+            0.36177315564232815,
+            0.519682255786424
+          ],
+          "repair_model_calls": 444,
+          "calls_per_success": 6.8307692307692305,
+          "duplicate_candidate_rate": 0.09684684684684684,
+          "paired_vs_resample": {
+            "both": 6,
+            "repair_only": 59,
+            "resample_only": 6,
+            "neither": 77,
+            "mcnemar_mid_p": 2.72580319860688e-12,
+            "mcnemar_mid_p_bh": 4.08870479791032e-12
+          }
+        },
+        "error": {
+          "pool_file": "results/humaneval_week9_arm_error_nostop_sample0_qwen15b.json",
+          "n_coordinates": 148,
+          "repair_successes": 54,
+          "repair_rate": 0.36486486486486486,
+          "repair_rate_wilson_95": [
+            0.2916373002819259,
+            0.4449302806708565
+          ],
+          "repair_model_calls": 444,
+          "calls_per_success": 8.222222222222221,
+          "duplicate_candidate_rate": 0.11261261261261261,
+          "paired_vs_resample": {
+            "both": 7,
+            "repair_only": 47,
+            "resample_only": 5,
+            "neither": 89,
+            "mcnemar_mid_p": 7.077378683106872e-10,
+            "mcnemar_mid_p_bh": 7.077378683106872e-10
+          }
+        }
+      },
+      "random_allocation_t_test": {
+        "mean": 40.5,
+        "sd": 2.7,
+        "n": 200,
+        "reference": 36,
+        "standard_error": 0.19091883092036785,
+        "t": 23.57022603955158,
+        "df": 199,
+        "p_two_sided": 1.6721830997824291e-59
+      }
+    },
+    {
+      "cohort_name": "mbpp",
+      "source_file": "results/mbpp_uncertainty_20260712_024909.json",
+      "selection_sha256": "85c09d30cc342f0c8fc54b92a7d6b26563bfebe43b98f9bc92c681064be5b71b",
+      "coordinate_hash": "ab0efd83ea56382a43b7fe8fd8ee3ed3847a792eb0a42eea5fd721d59735651f",
+      "matched_k": 3,
+      "resample_control": {
+        "model": "Salesforce/codegen-350M-mono",
+        "replayed_from_stored_samples": true,
+        "n_coordinates": 54,
+        "added_passes": 11,
+        "rate": 0.2037037037037037,
+        "rate_wilson_95": [
+          0.1177393408658538,
+          0.32902561722659174
+        ],
+        "base_model_calls": 162,
+        "calls_per_success": 14.727272727272727
+      },
+      "arms": {
+        "none": {
+          "pool_file": "results/mbpp_week9_arm_resample_sample0_qwen15b.json",
+          "n_coordinates": 54,
+          "repair_successes": 27,
+          "repair_rate": 0.5,
+          "repair_rate_wilson_95": [
+            0.37114361988923295,
+            0.628856380110767
+          ],
+          "repair_model_calls": 162,
+          "calls_per_success": 6.0,
+          "duplicate_candidate_rate": 0.15432098765432098,
+          "paired_vs_resample": {
+            "both": 10,
+            "repair_only": 17,
+            "resample_only": 1,
+            "neither": 26,
+            "mcnemar_mid_p": 7.62939453125e-05,
+            "mcnemar_mid_p_bh": 0.0002288818359375
+          }
+        },
+        "code_only": {
+          "pool_file": "results/mbpp_week9_arm_code_only_sample0_qwen15b.json",
+          "n_coordinates": 54,
+          "repair_successes": 14,
+          "repair_rate": 0.25925925925925924,
+          "repair_rate_wilson_95": [
+            0.16118507964793902,
+            0.38931144880217294
+          ],
+          "repair_model_calls": 162,
+          "calls_per_success": 11.571428571428571,
+          "duplicate_candidate_rate": 0.07407407407407407,
+          "paired_vs_resample": {
+            "both": 5,
+            "repair_only": 9,
+            "resample_only": 6,
+            "neither": 34,
+            "mcnemar_mid_p": 0.454498291015625,
+            "mcnemar_mid_p_bh": 0.5810546875
+          }
+        },
+        "error": {
+          "pool_file": "results/mbpp_week9_arm_error_nostop_sample0_qwen15b.json",
+          "n_coordinates": 54,
+          "repair_successes": 13,
+          "repair_rate": 0.24074074074074073,
+          "repair_rate_wilson_95": [
+            0.14644154703850742,
+            0.36947779129238245
+          ],
+          "repair_model_calls": 162,
+          "calls_per_success": 12.461538461538462,
+          "duplicate_candidate_rate": 0.10493827160493827,
+          "paired_vs_resample": {
+            "both": 6,
+            "repair_only": 7,
+            "resample_only": 5,
+            "neither": 36,
+            "mcnemar_mid_p": 0.5810546875,
+            "mcnemar_mid_p_bh": 0.5810546875
+          }
+        }
+      },
+      "random_allocation_t_test": {
+        "mean": 7.56,
+        "sd": 1.19,
+        "n": 200,
+        "reference": 7,
+        "standard_error": 0.08414570696119915,
+        "t": 6.65512264646162,
+        "df": 199,
+        "p_two_sided": 2.6856721493286714e-10
+      }
+    }
+  ]
+}

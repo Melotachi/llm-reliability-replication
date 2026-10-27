@@ -1,0 +1,125 @@
+{
+  "run_id": "humaneval_repair_20260714_124913",
+  "timestamp": "2026-07-14T12:49:13.774252",
+  "config": {
+    "dataset": "humaneval",
+    "model": "Salesforce/codegen-350M-mono",
+    "n_samples": 1,
+    "n_problems": 4,
+    "seed": 42,
+    "mode": "repair",
+    "use_error_context": true,
+    "max_repair_iterations": 1
+  },
+  "summary": {
+    "mean_pass_at_1": 0.25,
+    "mean_pass_at_5": null,
+    "mean_initial_pass_rate": 0.25,
+    "mean_post_repair_pass_rate": 0.25,
+    "repair_success_rate": 0.0
+  },
+  "per_problem": [
+    {
+      "task_id": "HumanEval/0",
+      "prompt_length": 348,
+      "uncertainty": {},
+      "samples": [
+        {
+          "code": "from typing import List\n\n\ndef has_close_elements(numbers: List[float], threshold: float) -> bool:\n    \"\"\" Check if in given list of numbers, are any two numbers closer to each other than\n    given threshold.\n    >>> has_close_elements([1.0, 2.0, 3.0], 0.5)\n    False\n    >>> has_close_elements([1.0, 2.8, 3.0, 4.0, 5.0, 2.0], 0.3)\n    True\n    \"\"\"\n    for i in range(len(numbers) - 1):\n        for j in range(i + 1, len(numbers)):\n            if abs(numbers[i] - numbers[j]) < threshold:\n                return True\n    return False\n\n",
+          "passed": true,
+          "error_message": "",
+          "failure_category": "",
+          "repaired_code": "from typing import List\n\n\ndef has_close_elements(numbers: List[float], threshold: float) -> bool:\n    \"\"\" Check if in given list of numbers, are any two numbers closer to each other than\n    given threshold.\n    >>> has_close_elements([1.0, 2.0, 3.0], 0.5)\n    False\n    >>> has_close_elements([1.0, 2.8, 3.0, 4.0, 5.0, 2.0], 0.3)\n    True\n    \"\"\"\n    for i in range(len(numbers) - 1):\n        for j in range(i + 1, len(numbers)):\n            if abs(numbers[i] - numbers[j]) < threshold:\n                return True\n    return False\n\n",
+          "repaired_passed": true,
+          "repaired_failure_category": ""
+        }
+      ],
+      "initial_pass_rate": 1.0,
+      "post_repair_pass_rate": 1.0,
+      "failure_types": [],
+      "pass_at_1": 1.0,
+      "pass_at_5": null,
+      "n_samples": 1,
+      "n_initial_pass": 1,
+      "n_post_repair_pass": 1
+    },
+    {
+      "task_id": "HumanEval/1",
+      "prompt_length": 506,
+      "uncertainty": {},
+      "samples": [
+        {
+          "code": "from typing import List\n\n\ndef separate_paren_groups(paren_string: str) -> List[str]:\n    \"\"\" Input to this function is a string containing multiple groups of nested parentheses. Your goal is to\n    separate those group into separate strings and return the list of those.\n    Separate groups are balanced (each open brace is properly closed) and not nested within each other\n    Ignore any spaces in the input string.\n    >>> separate_paren_groups('( ) (( )) (( )( ))')\n    ['()', '(())', '(()())']\n    \"\"\"\n    paren_string = paren_string.replace(')', '')\n    paren_string = paren_string.replace('(', '')\n    paren_string = paren_string.replace(')', '').replace('(', '')\n    paren_string = paren_string.replace(' ', '')\n    return paren_string.split(',')\n\n",
+          "passed": false,
+          "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 21, in <module>\n  File \"<string>\", line 10, in check\nAssertionError\n",
+          "failure_category": "assertion_error",
+          "repaired_code": "from typing import List\n\n\ndef separate_paren_groups(paren_string: str) -> List[str]:\n    \"\"\" Input to this function is a string containing multiple groups of nested parentheses. Your goal is to\n    separate those group into separate strings and return the list of those.\n    Separate groups are balanced (each open brace is properly closed) and not nested within each other\n    Ignore any spaces in the input string.\n    >>> separate_paren_groups('( ) (( )) (( )( ))')\n    ['()', '(())', '(()())']\n    \"\"\"\n    paren_string = paren_string.replace(')', '')\n    paren_string = paren_string.replace('(', '')\n    paren_string = paren_string.replace(')', '').replace('(', '')\n    paren_string = paren_string.replace(' ', '')\n    return paren_string.split(',')\n",
+          "repaired_passed": false,
+          "repaired_failure_category": "assertion_error"
+        }
+      ],
+      "initial_pass_rate": 0.0,
+      "post_repair_pass_rate": 0.0,
+      "failure_types": [
+        "assertion_error"
+      ],
+      "pass_at_1": 0.0,
+      "pass_at_5": null,
+      "n_samples": 1,
+      "n_initial_pass": 0,
+      "n_post_repair_pass": 0
+    },
+    {
+      "task_id": "HumanEval/2",
+      "prompt_length": 331,
+      "uncertainty": {},
+      "samples": [
+        {
+          "code": "\n\ndef truncate_number(number: float) -> float:\n    \"\"\" Given a positive floating point number, it can be decomposed into\n    and integer part (largest integer smaller than given number) and decimals\n    (leftover part always smaller than 1).\n\n    Return the decimal part of the number.\n    >>> truncate_number(3.5)\n    0.5\n    \"\"\"\n    return round(number, 5)\n\n",
+          "passed": false,
+          "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 14, in <module>\n    print(json.dumps(result))\n    ^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 10, in check\nAssertionError\n",
+          "failure_category": "assertion_error",
+          "repaired_code": "\n\ndef truncate_number(number: float) -> float:\n    \"\"\" Given a positive floating point number, it can be decomposed into\n    and integer part (largest integer smaller than given number) and decimals\n    (leftover part always smaller than 1).\n\n    Return the decimal part of the number.\n    >>> truncate_number(3.5)\n    0.5\n    \"\"\"\n    return round(number, 5)\n",
+          "repaired_passed": false,
+          "repaired_failure_category": "assertion_error"
+        }
+      ],
+      "initial_pass_rate": 0.0,
+      "post_repair_pass_rate": 0.0,
+      "failure_types": [
+        "assertion_error"
+      ],
+      "pass_at_1": 0.0,
+      "pass_at_5": null,
+      "n_samples": 1,
+      "n_initial_pass": 0,
+      "n_post_repair_pass": 0
+    },
+    {
+      "task_id": "HumanEval/3",
+      "prompt_length": 448,
+      "uncertainty": {},
+      "samples": [
+        {
+          "code": "from typing import List\n\n\ndef below_zero(operations: List[int]) -> bool:\n    \"\"\" You're given a list of deposit and withdrawal operations on a bank account that starts with\n    zero balance. Your task is to detect if at any point the balance of account fallls below zero, and\n    at that point function should return True. Otherwise it should return False.\n    >>> below_zero([1, 2, 3])\n    False\n    >>> below_zero([1, 2, -4, 5])\n    True\n    \"\"\"\n    bal = 0\n    for i in operations:\n        bal += i\n    return bal < 0\n\n",
+          "passed": false,
+          "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 17, in <module>\n  File \"<string>\", line 12, in check\nAssertionError\n",
+          "failure_category": "assertion_error",
+          "repaired_code": "from typing import List\n\n\ndef below_zero(operations: List[int]) -> bool:\n    \"\"\" You're given a list of deposit and withdrawal operations on a bank account that starts with\n    zero balance. Your task is to detect if at any point the balance of account fallls below zero, and\n    at that point function should return True. Otherwise it should return False.\n    >>> below_zero([1, 2, 3])\n    False\n    >>> below_zero([1, 2, -4, 5])\n    True\n    \"\"\"\n    bal = 0\n    for i in operations:\n        bal += i\n    return bal < 0\n\n",
+          "repaired_passed": false,
+          "repaired_failure_category": "assertion_error"
+        }
+      ],
+      "initial_pass_rate": 0.0,
+      "post_repair_pass_rate": 0.0,
+      "failure_types": [
+        "assertion_error"
+      ],
+      "pass_at_1": 0.0,
+      "pass_at_5": null,
+      "n_samples": 1,
+      "n_initial_pass": 0,
+      "n_post_repair_pass": 0
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+.DS_Store
+# Dataset caches downloaded on first use
+data/humaneval/*
+data/mbpp/*
+data/humanevalplus/*
+data/mbppplus/*
+data/defects4j/*
+!data/*/.gitkeep
+# Derived, recomputable signature caches
+results/signature_cache/
+results/.signature_cache/

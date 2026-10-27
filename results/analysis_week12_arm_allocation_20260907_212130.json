@@ -1,0 +1,3869 @@
+{
+  "analysis": "week12_arm_allocation",
+  "timestamp": "2026-09-07T21:21:30.243774",
+  "figure": "reports/figures/week12_arm_allocation.png",
+  "cohorts": [
+    {
+      "analysis": "week12_arm_allocation",
+      "cohort_name": "mbpp",
+      "timestamp": "2026-09-07T21:21:26.319558",
+      "config": {
+        "source_results": "results/mbpp_uncertainty_20260712_024909.json",
+        "source_run_id": "mbpp_uncertainty_20260712_024909",
+        "predictor_results": "results/predictor_mbpp_20260712_212240.json",
+        "predictor_feature_set": "self_consistency_plus_execution",
+        "predictor_model_type": "logistic",
+        "probability_kind": "out_of_fold_raw_rank_only",
+        "sample_index": 0,
+        "smart_coverage": 0.75,
+        "n_seeds": 200,
+        "first_seed": 0,
+        "seed": 42,
+        "n_permutations": 10000,
+        "n_bootstrap": 10000,
+        "arm_order_note": "arms are ordered by how much of the failing program the repair prompt carries: none < code_only < error"
+      },
+      "cohort": {
+        "candidates": 60,
+        "initially_failing": 54
+      },
+      "resample_control": {
+        "n_failing_coordinates": 54,
+        "max_k": 9,
+        "calls_go_to": "Salesforce/codegen-350M-mono",
+        "rows": [
+          {
+            "k_extra_samples": 0,
+            "added_passes": 0,
+            "base_model_calls": 0,
+            "calls_per_added_pass": null
+          },
+          {
+            "k_extra_samples": 1,
+            "added_passes": 2,
+            "base_model_calls": 54,
+            "calls_per_added_pass": 27.0
+          },
+          {
+            "k_extra_samples": 2,
+            "added_passes": 7,
+            "base_model_calls": 108,
+            "calls_per_added_pass": 15.428571428571429
+          },
+          {
+            "k_extra_samples": 3,
+            "added_passes": 11,
+            "base_model_calls": 162,
+            "calls_per_added_pass": 14.727272727272727
+          },
+          {
+            "k_extra_samples": 4,
+            "added_passes": 12,
+            "base_model_calls": 216,
+            "calls_per_added_pass": 18.0
+          },
+          {
+            "k_extra_samples": 5,
+            "added_passes": 15,
+            "base_model_calls": 270,
+            "calls_per_added_pass": 18.0
+          },
+          {
+            "k_extra_samples": 6,
+            "added_passes": 16,
+            "base_model_calls": 324,
+            "calls_per_added_pass": 20.25
+          },
+          {
+            "k_extra_samples": 7,
+            "added_passes": 16,
+            "base_model_calls": 378,
+            "calls_per_added_pass": 23.625
+          },
+          {
+            "k_extra_samples": 8,
+            "added_passes": 16,
+            "base_model_calls": 432,
+            "calls_per_added_pass": 27.0
+          },
+          {
+            "k_extra_samples": 9,
+            "added_passes": 17,
+            "base_model_calls": 486,
+            "calls_per_added_pass": 28.58823529411765
+          }
+        ]
+      },
+      "arms": {
+        "none": {
+          "targets": {
+            "initial_passed": {
+              "target": "initial_passed",
+              "n": 60,
+              "n_positive": 6,
+              "n_negative": 54,
+              "roc_auc": 0.9444444444444444,
+              "permutation_p": 9.999000099990002e-05,
+              "n_permutations": 10000,
+              "bootstrap_95": [
+                0.8036363636363636,
+                1.0
+              ],
+              "n_bootstrap": 10000,
+              "mean_score_positive": 0.8490095986605531,
+              "mean_score_negative": 0.27063660556622443
+            },
+            "repair_success": {
+              "target": "repair_success",
+              "n": 54,
+              "n_positive": 27,
+              "n_negative": 27,
+              "roc_auc": 0.48148148148148145,
+              "permutation_p": 0.8248175182481752,
+              "n_permutations": 10000,
+              "bootstrap_95": [
+                0.3223559670781893,
+                0.6386206896551724
+              ],
+              "n_bootstrap": 10000,
+              "mean_score_positive": 0.2757936641256205,
+              "mean_score_negative": 0.2654795470068284
+            }
+          },
+          "mechanism_regression": {
+            "n": 54,
+            "n_repaired": 27,
+            "predictor_correlation_pearson": -0.032704426623548936,
+            "univariate_roc_auc": {
+              "p_pass_oof": 0.48148148148148145,
+              "sibling_pass_rate": 0.691358024691358
+            },
+            "mean_by_outcome": {
+              "p_pass_oof": {
+                "repaired": 0.2757936641256205,
+                "unrepaired": 0.2654795470068284
+              },
+              "sibling_pass_rate": {
+                "repaired": 0.16049382716049382,
+                "unrepaired": 0.0205761316872428
+              }
+            },
+            "models": {
+              "p_pass_only": {
+                "terms": [
+                  "intercept",
+                  "p_pass_oof"
+                ],
+                "coefficients": [
+                  6.574908197148218e-06,
+                  0.044789185206923286
+                ],
+                "standard_errors": [
+                  0.2722337685634886,
+                  0.27235584004960667
+                ],
+                "wald_z": [
+                  2.415169959201759e-05,
+                  0.16445098147616524
+                ],
+                "wald_p": [
+                  0.9999807297317802,
+                  0.8693761324119085
+                ],
+                "log_likelihood": -37.416415147142814,
+                "n": 54
+              },
+              "sibling_only": {
+                "terms": [
+                  "intercept",
+                  "sibling_pass_rate"
+                ],
+                "coefficients": [
+                  0.2129251281257144,
+                  1.405607948153697
+                ],
+                "standard_errors": [
+                  0.3531730548812181,
+                  0.5596944073112374
+                ],
+                "wald_z": [
+                  0.6028917698642866,
+                  2.5113846588287596
+                ],
+                "wald_p": [
+                  0.5465806914077969,
+                  0.012025857773874105
+                ],
+                "log_likelihood": -31.21524657806622,
+                "n": 54
+              },
+              "both": {
+                "terms": [
+                  "intercept",
+                  "p_pass_oof",
+                  "sibling_pass_rate"
+                ],
+                "coefficients": [
+                  0.2182107679398488,
+                  0.11759352410494629,
+                  1.424987854696271
+                ],
+                "standard_errors": [
+                  0.3555521086389161,
+                  0.3126390798539518,
+                  0.5690451480910951
+                ],
+                "wald_z": [
+                  0.613723734546754,
+                  0.37613187756271443,
+                  2.504173630996592
+                ],
+                "wald_p": [
+                  0.5393979015829817,
+                  0.7068188565846634,
+                  0.012273778430800242
+                ],
+                "log_likelihood": -31.144422043269,
+                "n": 54
+              }
+            },
+            "likelihood_ratio": {
+              "p_pass_given_sibling": {
+                "statistic": 0.14164906959444323,
+                "df": 1,
+                "p_value": 0.706647086694113
+              },
+              "sibling_given_p_pass": {
+                "statistic": 12.54398620774763,
+                "df": 1,
+                "p_value": 0.00039748345775706014
+              }
+            }
+          },
+          "arms_at_smart_coverage": {
+            "risk": {
+              "added_passes": 22,
+              "repair_model_calls": 100,
+              "attempted_repairs": 44,
+              "repair_success_rate": 0.5
+            },
+            "inverted": {
+              "added_passes": 18,
+              "repair_model_calls": 94,
+              "attempted_repairs": 39,
+              "repair_success_rate": 0.46153846153846156
+            },
+            "repair_all": {
+              "added_passes": 27,
+              "repair_model_calls": 124,
+              "attempted_repairs": 54,
+              "repair_success_rate": 0.5
+            }
+          },
+          "gate_direction_sweep": [
+            {
+              "coverage": 0.05,
+              "gate_count": 3,
+              "risk": {
+                "added_passes": 1,
+                "repair_model_calls": 7,
+                "attempted_repairs": 3
+              },
+              "inverted": {
+                "added_passes": 0,
+                "repair_model_calls": 0,
+                "attempted_repairs": 0
+              },
+              "random_mean": {
+                "added_passes": 1.3,
+                "repair_model_calls": 6.265,
+                "added_passes_std": 0.8623912064514713
+              }
+            },
+            {
+              "coverage": 0.1,
+              "gate_count": 6,
+              "risk": {
+                "added_passes": 3,
+                "repair_model_calls": 12,
+                "attempted_repairs": 6
+              },
+              "inverted": {
+                "added_passes": 1,
+                "repair_model_calls": 2,
+                "attempted_repairs": 1
+              },
+              "random_mean": {
+                "added_passes": 2.655,
+                "repair_model_calls": 12.5,
+                "added_passes_std": 1.1500382340159359
+              }
+            },
+            {
+              "coverage": 0.15,
+              "gate_count": 9,
+              "risk": {
+                "added_passes": 6,
+                "repair_model_calls": 15,
+                "attempted_repairs": 9
+              },
+              "inverted": {
+                "added_passes": 3,
+                "repair_model_calls": 8,
+                "attempted_repairs": 4
+              },
+              "random_mean": {
+                "added_passes": 3.96,
+                "repair_model_calls": 18.86,
+                "added_passes_std": 1.3776390845341826
+              }
+            },
+            {
+              "coverage": 0.2,
+              "gate_count": 12,
+              "risk": {
+                "added_passes": 7,
+                "repair_model_calls": 22,
+                "attempted_repairs": 12
+              },
+              "inverted": {
+                "added_passes": 3,
+                "repair_model_calls": 17,
+                "attempted_repairs": 7
+              },
+              "random_mean": {
+                "added_passes": 5.325,
+                "repair_model_calls": 25.095,
+                "added_passes_std": 1.5431401125740902
+              }
+            },
+            {
+              "coverage": 0.25,
+              "gate_count": 15,
+              "risk": {
+                "added_passes": 9,
+                "repair_model_calls": 30,
+                "attempted_repairs": 15
+              },
+              "inverted": {
+                "added_passes": 5,
+                "repair_model_calls": 24,
+                "attempted_repairs": 10
+              },
+              "random_mean": {
+                "added_passes": 6.725,
+                "repair_model_calls": 31.165,
+                "added_passes_std": 1.6163035562448187
+              }
+            },
+            {
+              "coverage": 0.3,
+              "gate_count": 18,
+              "risk": {
+                "added_passes": 11,
+                "repair_model_calls": 35,
+                "attempted_repairs": 18
+              },
+              "inverted": {
+                "added_passes": 8,
+                "repair_model_calls": 30,
+                "attempted_repairs": 13
+              },
+              "random_mean": {
+                "added_passes": 8.15,
+                "repair_model_calls": 37.37,
+                "added_passes_std": 1.6617179461819975
+              }
+            },
+            {
+              "coverage": 0.35,
+              "gate_count": 21,
+              "risk": {
+                "added_passes": 12,
+                "repair_model_calls": 42,
+                "attempted_repairs": 21
+              },
+              "inverted": {
+                "added_passes": 10,
+                "repair_model_calls": 37,
+                "attempted_repairs": 16
+              },
+              "random_mean": {
+                "added_passes": 9.54,
+                "repair_model_calls": 43.37,
+                "added_passes_std": 1.680033500503508
+              }
+            },
+            {
+              "coverage": 0.4,
+              "gate_count": 24,
+              "risk": {
+                "added_passes": 13,
+                "repair_model_calls": 49,
+                "attempted_repairs": 24
+              },
+              "inverted": {
+                "added_passes": 10,
+                "repair_model_calls": 43,
+                "attempted_repairs": 18
+              },
+              "random_mean": {
+                "added_passes": 10.945,
+                "repair_model_calls": 49.49,
+                "added_passes_std": 1.6539810356626397
+              }
+            },
+            {
+              "coverage": 0.45,
+              "gate_count": 27,
+              "risk": {
+                "added_passes": 13,
+                "repair_model_calls": 58,
+                "attempted_repairs": 27
+              },
+              "inverted": {
+                "added_passes": 11,
+                "repair_model_calls": 50,
+                "attempted_repairs": 21
+              },
+              "random_mean": {
+                "added_passes": 12.195,
+                "repair_model_calls": 55.9,
+                "added_passes_std": 1.7784231624457711
+              }
+            },
+            {
+              "coverage": 0.5,
+              "gate_count": 30,
+              "risk": {
+                "added_passes": 16,
+                "repair_model_calls": 65,
+                "attempted_repairs": 30
+              },
+              "inverted": {
+                "added_passes": 11,
+                "repair_model_calls": 59,
+                "attempted_repairs": 24
+              },
+              "random_mean": {
+                "added_passes": 13.52,
+                "repair_model_calls": 62.17,
+                "added_passes_std": 1.82654904315082
+              }
+            },
+            {
+              "coverage": 0.55,
+              "gate_count": 33,
+              "risk": {
+                "added_passes": 16,
+                "repair_model_calls": 74,
+                "attempted_repairs": 33
+              },
+              "inverted": {
+                "added_passes": 14,
+                "repair_model_calls": 66,
+                "attempted_repairs": 27
+              },
+              "random_mean": {
+                "added_passes": 14.865,
+                "repair_model_calls": 68.43,
+                "added_passes_std": 1.853090586997325
+              }
+            },
+            {
+              "coverage": 0.6,
+              "gate_count": 36,
+              "risk": {
+                "added_passes": 17,
+                "repair_model_calls": 81,
+                "attempted_repairs": 36
+              },
+              "inverted": {
+                "added_passes": 14,
+                "repair_model_calls": 75,
+                "attempted_repairs": 30
+              },
+              "random_mean": {
+                "added_passes": 16.105,
+                "repair_model_calls": 74.96,
+                "added_passes_std": 1.8685374389623615
+              }
+            },
+            {
+              "coverage": 0.65,
+              "gate_count": 39,
+              "risk": {
+                "added_passes": 17,
+                "repair_model_calls": 87,
+                "attempted_repairs": 38
+              },
+              "inverted": {
+                "added_passes": 15,
+                "repair_model_calls": 82,
+                "attempted_repairs": 33
+              },
+              "random_mean": {
+                "added_passes": 17.39,
+                "repair_model_calls": 81.245,
+                "added_passes_std": 1.7616518059557442
+              }
+            },
+            {
+              "coverage": 0.7,
+              "gate_count": 42,
+              "risk": {
+                "added_passes": 19,
+                "repair_model_calls": 94,
+                "attempted_repairs": 41
+              },
+              "inverted": {
+                "added_passes": 16,
+                "repair_model_calls": 89,
+                "attempted_repairs": 36
+              },
+              "random_mean": {
+                "added_passes": 18.65,
+                "repair_model_calls": 87.35,
+                "added_passes_std": 1.7558230471389542
+              }
+            },
+            {
+              "coverage": 0.75,
+              "gate_count": 45,
+              "risk": {
+                "added_passes": 22,
+                "repair_model_calls": 100,
+                "attempted_repairs": 44
+              },
+              "inverted": {
+                "added_passes": 18,
+                "repair_model_calls": 94,
+                "attempted_repairs": 39
+              },
+              "random_mean": {
+                "added_passes": 20.035,
+                "repair_model_calls": 93.46,
+                "added_passes_std": 1.620774366695961
+              }
+            },
+            {
+              "coverage": 0.8,
+              "gate_count": 48,
+              "risk": {
+                "added_passes": 24,
+                "repair_model_calls": 107,
+                "attempted_repairs": 47
+              },
+              "inverted": {
+                "added_passes": 20,
+                "repair_model_calls": 102,
+                "attempted_repairs": 42
+              },
+              "random_mean": {
+                "added_passes": 21.47,
+                "repair_model_calls": 99.685,
+                "added_passes_std": 1.5068019980430518
+              }
+            },
+            {
+              "coverage": 0.85,
+              "gate_count": 51,
+              "risk": {
+                "added_passes": 24,
+                "repair_model_calls": 116,
+                "attempted_repairs": 50
+              },
+              "inverted": {
+                "added_passes": 21,
+                "repair_model_calls": 109,
+                "attempted_repairs": 45
+              },
+              "random_mean": {
+                "added_passes": 22.895,
+                "repair_model_calls": 105.865,
+                "added_passes_std": 1.4367659803920958
+              }
+            },
+            {
+              "coverage": 0.9,
+              "gate_count": 54,
+              "risk": {
+                "added_passes": 26,
+                "repair_model_calls": 122,
+                "attempted_repairs": 53
+              },
+              "inverted": {
+                "added_passes": 24,
+                "repair_model_calls": 112,
+                "attempted_repairs": 48
+              },
+              "random_mean": {
+                "added_passes": 24.28,
+                "repair_model_calls": 111.8,
+                "added_passes_std": 1.2036794511436701
+              }
+            },
+            {
+              "coverage": 0.95,
+              "gate_count": 57,
+              "risk": {
+                "added_passes": 27,
+                "repair_model_calls": 124,
+                "attempted_repairs": 54
+              },
+              "inverted": {
+                "added_passes": 26,
+                "repair_model_calls": 117,
+                "attempted_repairs": 51
+              },
+              "random_mean": {
+                "added_passes": 25.665,
+                "repair_model_calls": 117.835,
+                "added_passes_std": 0.8463786291723097
+              }
+            },
+            {
+              "coverage": 1.0,
+              "gate_count": 60,
+              "risk": {
+                "added_passes": 27,
+                "repair_model_calls": 124,
+                "attempted_repairs": 54
+              },
+              "inverted": {
+                "added_passes": 27,
+                "repair_model_calls": 124,
+                "attempted_repairs": 54
+              },
+              "random_mean": {
+                "added_passes": 27.0,
+                "repair_model_calls": 124.0,
+                "added_passes_std": 0.0
+              }
+            }
+          ],
+          "budget_matched_inverted": {
+            "coverage": 1.0,
+            "gate_count": 60,
+            "added_passes": 27,
+            "repair_model_calls": 124,
+            "reference_calls": 124
+          },
+          "repair_all": {
+            "added_passes": 27,
+            "repair_model_calls": 124,
+            "attempted_repairs": 54,
+            "repair_success_rate": 0.5
+          },
+          "arm": "none",
+          "pool_file": "results/mbpp_week9_arm_resample_sample0_qwen15b.json",
+          "pool_run_id": "mbpp_week9_arm_resample_sample0_qwen15b",
+          "context_mode_as_stored": "none",
+          "device_resolved": "cuda",
+          "dtype_resolved": "torch.float16",
+          "selection_sha256": "85c09d30cc342f0c8fc54b92a7d6b26563bfebe43b98f9bc92c681064be5b71b",
+          "call_renormalization": {
+            "stored_calls": 162,
+            "renormalized_calls": 124,
+            "stop_on_pass_as_stored": false,
+            "per_coordinate_delta_histogram": {
+              "-2": 17,
+              "-1": 4,
+              "0": 33
+            },
+            "n_records": 54
+          },
+          "resample_control_at_this_budget": {
+            "reference_repair_calls": 124,
+            "largest_affordable": {
+              "k_extra_samples": 2,
+              "added_passes": 7,
+              "base_model_calls": 108,
+              "calls_per_added_pass": 15.428571428571429
+            },
+            "smallest_unaffordable": {
+              "k_extra_samples": 3,
+              "added_passes": 11,
+              "base_model_calls": 162,
+              "calls_per_added_pass": 14.727272727272727
+            }
+          }
+        },
+        "code_only": {
+          "targets": {
+            "initial_passed": {
+              "target": "initial_passed",
+              "n": 60,
+              "n_positive": 6,
+              "n_negative": 54,
+              "roc_auc": 0.9444444444444444,
+              "permutation_p": 9.999000099990002e-05,
+              "n_permutations": 10000,
+              "bootstrap_95": [
+                0.8036363636363636,
+                1.0
+              ],
+              "n_bootstrap": 10000,
+              "mean_score_positive": 0.8490095986605531,
+              "mean_score_negative": 0.27063660556622443
+            },
+            "repair_success": {
+              "target": "repair_success",
+              "n": 54,
+              "n_positive": 14,
+              "n_negative": 40,
+              "roc_auc": 0.675,
+              "permutation_p": 0.054394560543945605,
+              "n_permutations": 10000,
+              "bootstrap_95": [
+                0.5007034632034632,
+                0.8358974358974359
+              ],
+              "n_bootstrap": 10000,
+              "mean_score_positive": 0.3778818555200701,
+              "mean_score_negative": 0.2331007680823785
+            }
+          },
+          "mechanism_regression": {
+            "n": 54,
+            "n_repaired": 14,
+            "predictor_correlation_pearson": -0.032704426623548936,
+            "univariate_roc_auc": {
+              "p_pass_oof": 0.675,
+              "sibling_pass_rate": 0.5714285714285714
+            },
+            "mean_by_outcome": {
+              "p_pass_oof": {
+                "repaired": 0.3778818555200701,
+                "unrepaired": 0.2331007680823785
+              },
+              "sibling_pass_rate": {
+                "repaired": 0.11111111111111112,
+                "unrepaired": 0.08333333333333333
+              }
+            },
+            "models": {
+              "p_pass_only": {
+                "terms": [
+                  "intercept",
+                  "p_pass_oof"
+                ],
+                "coefficients": [
+                  -1.1254968876928153,
+                  0.5937801532737758
+                ],
+                "standard_errors": [
+                  0.33094825674292144,
+                  0.30568198447023404
+                ],
+                "wald_z": [
+                  -3.4008243426618026,
+                  1.9424767681446253
+                ],
+                "wald_p": [
+                  0.0006718298342338613,
+                  0.052079409709096414
+                ],
+                "log_likelihood": -28.957534383512286,
+                "n": 54
+              },
+              "sibling_only": {
+                "terms": [
+                  "intercept",
+                  "sibling_pass_rate"
+                ],
+                "coefficients": [
+                  -1.0555517009067692,
+                  0.16024429742890053
+                ],
+                "standard_errors": [
+                  0.3120982207215999,
+                  0.29389329374369105
+                ],
+                "wald_z": [
+                  -3.382113805282953,
+                  0.5452465260015498
+                ],
+                "wald_p": [
+                  0.0007193033851082831,
+                  0.5855839763327069
+                ],
+                "log_likelihood": -30.75880504412904,
+                "n": 54
+              },
+              "both": {
+                "terms": [
+                  "intercept",
+                  "p_pass_oof",
+                  "sibling_pass_rate"
+                ],
+                "coefficients": [
+                  -1.1316126695041333,
+                  0.6014691050398313,
+                  0.18706777389097676
+                ],
+                "standard_errors": [
+                  0.3326196815916737,
+                  0.3072700715327471,
+                  0.30561645387382186
+                ],
+                "wald_z": [
+                  -3.4021217989538846,
+                  1.9574607511871853,
+                  0.6120998117732573
+                ],
+                "wald_p": [
+                  0.00066864830875768,
+                  0.05029332195676628,
+                  0.5404717220779931
+                ],
+                "log_likelihood": -28.77547449366749,
+                "n": 54
+              }
+            },
+            "likelihood_ratio": {
+              "p_pass_given_sibling": {
+                "statistic": 3.9666611009230976,
+                "df": 1,
+                "p_value": 0.04640971093128783
+              },
+              "sibling_given_p_pass": {
+                "statistic": 0.3641197796895881,
+                "df": 1,
+                "p_value": 0.5462270703136952
+              }
+            }
+          },
+          "arms_at_smart_coverage": {
+            "risk": {
+              "added_passes": 9,
+              "repair_model_calls": 118,
+              "attempted_repairs": 44,
+              "repair_success_rate": 0.20454545454545456
+            },
+            "inverted": {
+              "added_passes": 11,
+              "repair_model_calls": 99,
+              "attempted_repairs": 39,
+              "repair_success_rate": 0.28205128205128205
+            },
+            "repair_all": {
+              "added_passes": 14,
+              "repair_model_calls": 140,
+              "attempted_repairs": 54,
+              "repair_success_rate": 0.25925925925925924
+            }
+          },
+          "gate_direction_sweep": [
+            {
+              "coverage": 0.05,
+              "gate_count": 3,
+              "risk": {
+                "added_passes": 0,
+                "repair_model_calls": 9,
+                "attempted_repairs": 3
+              },
+              "inverted": {
+                "added_passes": 0,
+                "repair_model_calls": 0,
+                "attempted_repairs": 0
+              },
+              "random_mean": {
+                "added_passes": 0.65,
+                "repair_model_calls": 7.115,
+                "added_passes_std": 0.7141780249043521
+              }
+            },
+            {
+              "coverage": 0.1,
+              "gate_count": 6,
+              "risk": {
+                "added_passes": 0,
+                "repair_model_calls": 18,
+                "attempted_repairs": 6
+              },
+              "inverted": {
+                "added_passes": 1,
+                "repair_model_calls": 1,
+                "attempted_repairs": 1
+              },
+              "random_mean": {
+                "added_passes": 1.385,
+                "repair_model_calls": 14.055,
+                "added_passes_std": 1.0354398477902809
+              }
+            },
+            {
+              "coverage": 0.15,
+              "gate_count": 9,
+              "risk": {
+                "added_passes": 1,
+                "repair_model_calls": 25,
+                "attempted_repairs": 9
+              },
+              "inverted": {
+                "added_passes": 3,
+                "repair_model_calls": 6,
+                "attempted_repairs": 4
+              },
+              "random_mean": {
+                "added_passes": 2.055,
+                "repair_model_calls": 21.08,
+                "added_passes_std": 1.1996544728676488
+              }
+            },
+            {
+              "coverage": 0.2,
+              "gate_count": 12,
+              "risk": {
+                "added_passes": 2,
+                "repair_model_calls": 32,
+                "attempted_repairs": 12
+              },
+              "inverted": {
+                "added_passes": 3,
+                "repair_model_calls": 15,
+                "attempted_repairs": 7
+              },
+              "random_mean": {
+                "added_passes": 2.76,
+                "repair_model_calls": 28.195,
+                "added_passes_std": 1.3717904523746076
+              }
+            },
+            {
+              "coverage": 0.25,
+              "gate_count": 15,
+              "risk": {
+                "added_passes": 3,
+                "repair_model_calls": 41,
+                "attempted_repairs": 15
+              },
+              "inverted": {
+                "added_passes": 5,
+                "repair_model_calls": 22,
+                "attempted_repairs": 10
+              },
+              "random_mean": {
+                "added_passes": 3.515,
+                "repair_model_calls": 35.095,
+                "added_passes_std": 1.5530081039242105
+              }
+            },
+            {
+              "coverage": 0.3,
+              "gate_count": 18,
+              "risk": {
+                "added_passes": 3,
+                "repair_model_calls": 50,
+                "attempted_repairs": 18
+              },
+              "inverted": {
+                "added_passes": 6,
+                "repair_model_calls": 29,
+                "attempted_repairs": 13
+              },
+              "random_mean": {
+                "added_passes": 4.255,
+                "repair_model_calls": 42.085,
+                "added_passes_std": 1.6564098126178448
+              }
+            },
+            {
+              "coverage": 0.35,
+              "gate_count": 21,
+              "risk": {
+                "added_passes": 3,
+                "repair_model_calls": 59,
+                "attempted_repairs": 21
+              },
+              "inverted": {
+                "added_passes": 7,
+                "repair_model_calls": 36,
+                "attempted_repairs": 16
+              },
+              "random_mean": {
+                "added_passes": 5.01,
+                "repair_model_calls": 48.93,
+                "added_passes_std": 1.6624435608359234
+              }
+            },
+            {
+              "coverage": 0.4,
+              "gate_count": 24,
+              "risk": {
+                "added_passes": 4,
+                "repair_model_calls": 67,
+                "attempted_repairs": 24
+              },
+              "inverted": {
+                "added_passes": 7,
+                "repair_model_calls": 42,
+                "attempted_repairs": 18
+              },
+              "random_mean": {
+                "added_passes": 5.74,
+                "repair_model_calls": 55.83,
+                "added_passes_std": 1.5506199116975004
+              }
+            },
+            {
+              "coverage": 0.45,
+              "gate_count": 27,
+              "risk": {
+                "added_passes": 4,
+                "repair_model_calls": 76,
+                "attempted_repairs": 27
+              },
+              "inverted": {
+                "added_passes": 8,
+                "repair_model_calls": 50,
+                "attempted_repairs": 21
+              },
+              "random_mean": {
+                "added_passes": 6.425,
+                "repair_model_calls": 62.895,
+                "added_passes_std": 1.580145340303357
+              }
+            },
+            {
+              "coverage": 0.5,
+              "gate_count": 30,
+              "risk": {
+                "added_passes": 6,
+                "repair_model_calls": 81,
+                "attempted_repairs": 30
+              },
+              "inverted": {
+                "added_passes": 8,
+                "repair_model_calls": 59,
+                "attempted_repairs": 24
+              },
+              "random_mean": {
+                "added_passes": 7.12,
+                "repair_model_calls": 70.02,
+                "added_passes_std": 1.6671824997393614
+              }
+            },
+            {
+              "coverage": 0.55,
+              "gate_count": 33,
+              "risk": {
+                "added_passes": 6,
+                "repair_model_calls": 90,
+                "attempted_repairs": 33
+              },
+              "inverted": {
+                "added_passes": 10,
+                "repair_model_calls": 64,
+                "attempted_repairs": 27
+              },
+              "random_mean": {
+                "added_passes": 7.745,
+                "repair_model_calls": 77.18,
+                "added_passes_std": 1.6805045306058937
+              }
+            },
+            {
+              "coverage": 0.6,
+              "gate_count": 36,
+              "risk": {
+                "added_passes": 7,
+                "repair_model_calls": 98,
+                "attempted_repairs": 36
+              },
+              "inverted": {
+                "added_passes": 10,
+                "repair_model_calls": 73,
+                "attempted_repairs": 30
+              },
+              "random_mean": {
+                "added_passes": 8.44,
+                "repair_model_calls": 84.26,
+                "added_passes_std": 1.7149651680539144
+              }
+            },
+            {
+              "coverage": 0.65,
+              "gate_count": 39,
+              "risk": {
+                "added_passes": 7,
+                "repair_model_calls": 104,
+                "attempted_repairs": 38
+              },
+              "inverted": {
+                "added_passes": 11,
+                "repair_model_calls": 81,
+                "attempted_repairs": 33
+              },
+              "random_mean": {
+                "added_passes": 9.13,
+                "repair_model_calls": 91.24,
+                "added_passes_std": 1.5765556248324872
+              }
+            },
+            {
+              "coverage": 0.7,
+              "gate_count": 42,
+              "risk": {
+                "added_passes": 8,
+                "repair_model_calls": 111,
+                "attempted_repairs": 41
+              },
+              "inverted": {
+                "added_passes": 11,
+                "repair_model_calls": 90,
+                "attempted_repairs": 36
+              },
+              "random_mean": {
+                "added_passes": 9.77,
+                "repair_model_calls": 98.095,
+                "added_passes_std": 1.51279301742434
+              }
+            },
+            {
+              "coverage": 0.75,
+              "gate_count": 45,
+              "risk": {
+                "added_passes": 9,
+                "repair_model_calls": 118,
+                "attempted_repairs": 44
+              },
+              "inverted": {
+                "added_passes": 11,
+                "repair_model_calls": 99,
+                "attempted_repairs": 39
+              },
+              "random_mean": {
+                "added_passes": 10.36,
+                "repair_model_calls": 105.335,
+                "added_passes_std": 1.5369486182941776
+              }
+            },
+            {
+              "coverage": 0.8,
+              "gate_count": 48,
+              "risk": {
+                "added_passes": 11,
+                "repair_model_calls": 125,
+                "attempted_repairs": 47
+              },
+              "inverted": {
+                "added_passes": 12,
+                "repair_model_calls": 108,
+                "attempted_repairs": 42
+              },
+              "random_mean": {
+                "added_passes": 11.02,
+                "repair_model_calls": 112.635,
+                "added_passes_std": 1.4595380283779544
+              }
+            },
+            {
+              "coverage": 0.85,
+              "gate_count": 51,
+              "risk": {
+                "added_passes": 11,
+                "repair_model_calls": 134,
+                "attempted_repairs": 50
+              },
+              "inverted": {
+                "added_passes": 13,
+                "repair_model_calls": 115,
+                "attempted_repairs": 45
+              },
+              "random_mean": {
+                "added_passes": 11.81,
+                "repair_model_calls": 119.6,
+                "added_passes_std": 1.3238819118723975
+              }
+            },
+            {
+              "coverage": 0.9,
+              "gate_count": 54,
+              "risk": {
+                "added_passes": 13,
+                "repair_model_calls": 139,
+                "attempted_repairs": 53
+              },
+              "inverted": {
+                "added_passes": 14,
+                "repair_model_calls": 122,
+                "attempted_repairs": 48
+              },
+              "random_mean": {
+                "added_passes": 12.48,
+                "repair_model_calls": 126.435,
+                "added_passes_std": 1.05124955559596
+              }
+            },
+            {
+              "coverage": 0.95,
+              "gate_count": 57,
+              "risk": {
+                "added_passes": 14,
+                "repair_model_calls": 140,
+                "attempted_repairs": 54
+              },
+              "inverted": {
+                "added_passes": 14,
+                "repair_model_calls": 131,
+                "attempted_repairs": 51
+              },
+              "random_mean": {
+                "added_passes": 13.265,
+                "repair_model_calls": 133.145,
+                "added_passes_std": 0.690768270855068
+              }
+            },
+            {
+              "coverage": 1.0,
+              "gate_count": 60,
+              "risk": {
+                "added_passes": 14,
+                "repair_model_calls": 140,
+                "attempted_repairs": 54
+              },
+              "inverted": {
+                "added_passes": 14,
+                "repair_model_calls": 140,
+                "attempted_repairs": 54
+              },
+              "random_mean": {
+                "added_passes": 14.0,
+                "repair_model_calls": 140.0,
+                "added_passes_std": 0.0
+              }
+            }
+          ],
+          "budget_matched_inverted": {
+            "coverage": 0.9,
+            "gate_count": 54,
+            "added_passes": 14,
+            "repair_model_calls": 122,
+            "reference_calls": 140
+          },
+          "repair_all": {
+            "added_passes": 14,
+            "repair_model_calls": 140,
+            "attempted_repairs": 54,
+            "repair_success_rate": 0.25925925925925924
+          },
+          "arm": "code_only",
+          "pool_file": "results/mbpp_week9_arm_code_only_sample0_qwen15b.json",
+          "pool_run_id": "mbpp_week9_arm_code_only_sample0_qwen15b",
+          "context_mode_as_stored": "code_only",
+          "device_resolved": "cuda",
+          "dtype_resolved": "torch.float16",
+          "selection_sha256": "85c09d30cc342f0c8fc54b92a7d6b26563bfebe43b98f9bc92c681064be5b71b",
+          "call_renormalization": {
+            "stored_calls": 162,
+            "renormalized_calls": 140,
+            "stop_on_pass_as_stored": false,
+            "per_coordinate_delta_histogram": {
+              "-2": 10,
+              "-1": 2,
+              "0": 42
+            },
+            "n_records": 54
+          },
+          "resample_control_at_this_budget": {
+            "reference_repair_calls": 140,
+            "largest_affordable": {
+              "k_extra_samples": 2,
+              "added_passes": 7,
+              "base_model_calls": 108,
+              "calls_per_added_pass": 15.428571428571429
+            },
+            "smallest_unaffordable": {
+              "k_extra_samples": 3,
+              "added_passes": 11,
+              "base_model_calls": 162,
+              "calls_per_added_pass": 14.727272727272727
+            }
+          }
+        },
+        "error": {
+          "targets": {
+            "initial_passed": {
+              "target": "initial_passed",
+              "n": 60,
+              "n_positive": 6,
+              "n_negative": 54,
+              "roc_auc": 0.9444444444444444,
+              "permutation_p": 9.999000099990002e-05,
+              "n_permutations": 10000,
+              "bootstrap_95": [
+                0.8036363636363636,
+                1.0
+              ],
+              "n_bootstrap": 10000,
+              "mean_score_positive": 0.8490095986605531,
+              "mean_score_negative": 0.27063660556622443
+            },
+            "repair_success": {
+              "target": "repair_success",
+              "n": 54,
+              "n_positive": 10,
+              "n_negative": 44,
+              "roc_auc": 0.5181818181818182,
+              "permutation_p": 0.8688131186881312,
+              "n_permutations": 10000,
+              "bootstrap_95": [
+                0.297957012592271,
+                0.7430555555555556
+              ],
+              "n_bootstrap": 10000,
+              "mean_score_positive": 0.2998473594474681,
+              "mean_score_negative": 0.2639977978659418
+            }
+          },
+          "mechanism_regression": {
+            "n": 54,
+            "n_repaired": 10,
+            "predictor_correlation_pearson": -0.032704426623548936,
+            "univariate_roc_auc": {
+              "p_pass_oof": 0.5181818181818182,
+              "sibling_pass_rate": 0.6022727272727273
+            },
+            "mean_by_outcome": {
+              "p_pass_oof": {
+                "repaired": 0.2998473594474681,
+                "unrepaired": 0.2639977978659418
+              },
+              "sibling_pass_rate": {
+                "repaired": 0.12222222222222223,
+                "unrepaired": 0.08333333333333334
+              }
+            },
+            "models": {
+              "p_pass_only": {
+                "terms": [
+                  "intercept",
+                  "p_pass_oof"
+                ],
+                "coefficients": [
+                  -1.4886599046735924,
+                  0.14942511533765143
+                ],
+                "standard_errors": [
+                  0.35241239629558524,
+                  0.33735078978290994
+                ],
+                "wald_z": [
+                  -4.224198468390373,
+                  0.44293690681384984
+                ],
+                "wald_p": [
+                  2.3979266557283552e-05,
+                  0.6578113713459603
+                ],
+                "log_likelihood": -25.77901667254816,
+                "n": 54
+              },
+              "sibling_only": {
+                "terms": [
+                  "intercept",
+                  "sibling_pass_rate"
+                ],
+                "coefficients": [
+                  -1.4960569640658163,
+                  0.2142646240505219
+                ],
+                "standard_errors": [
+                  0.3544274621686808,
+                  0.3176251103873375
+                ],
+                "wald_z": [
+                  -4.2210526095006875,
+                  0.6745833910588193
+                ],
+                "wald_p": [
+                  2.4316417210901164e-05,
+                  0.49994048813463765
+                ],
+                "log_likelihood": -25.66000648911309,
+                "n": 54
+              },
+              "both": {
+                "terms": [
+                  "intercept",
+                  "p_pass_oof",
+                  "sibling_pass_rate"
+                ],
+                "coefficients": [
+                  -1.5034145681007292,
+                  0.1555114486997967,
+                  0.21844376577604327
+                ],
+                "standard_errors": [
+                  0.35654663303520123,
+                  0.33710612672329343,
+                  0.3178565352826198
+                ],
+                "wald_z": [
+                  -4.2166000988496215,
+                  0.4613130298502259,
+                  0.6872401273166071
+                ],
+                "wald_p": [
+                  2.4801322361600597e-05,
+                  0.6445740380061009,
+                  0.49193142141931157
+                ],
+                "log_likelihood": -25.555944481436953,
+                "n": 54
+              }
+            },
+            "likelihood_ratio": {
+              "p_pass_given_sibling": {
+                "statistic": 0.20812401535227565,
+                "df": 1,
+                "p_value": 0.648241771713613
+              },
+              "sibling_given_p_pass": {
+                "statistic": 0.44614438222241404,
+                "df": 1,
+                "p_value": 0.5041716355438637
+              }
+            }
+          },
+          "arms_at_smart_coverage": {
+            "risk": {
+              "added_passes": 7,
+              "repair_model_calls": 120,
+              "attempted_repairs": 44,
+              "repair_success_rate": 0.1590909090909091
+            },
+            "inverted": {
+              "added_passes": 6,
+              "repair_model_calls": 110,
+              "attempted_repairs": 39,
+              "repair_success_rate": 0.15384615384615385
+            },
+            "repair_all": {
+              "added_passes": 10,
+              "repair_model_calls": 147,
+              "attempted_repairs": 54,
+              "repair_success_rate": 0.18518518518518517
+            }
+          },
+          "gate_direction_sweep": [
+            {
+              "coverage": 0.05,
+              "gate_count": 3,
+              "risk": {
+                "added_passes": 0,
+                "repair_model_calls": 9,
+                "attempted_repairs": 3
+              },
+              "inverted": {
+                "added_passes": 0,
+                "repair_model_calls": 0,
+                "attempted_repairs": 0
+              },
+              "random_mean": {
+                "added_passes": 0.515,
+                "repair_model_calls": 7.315,
+                "added_passes_std": 0.6648194676926327
+              }
+            },
+            {
+              "coverage": 0.1,
+              "gate_count": 6,
+              "risk": {
+                "added_passes": 0,
+                "repair_model_calls": 18,
+                "attempted_repairs": 6
+              },
+              "inverted": {
+                "added_passes": 1,
+                "repair_model_calls": 1,
+                "attempted_repairs": 1
+              },
+              "random_mean": {
+                "added_passes": 1.035,
+                "repair_model_calls": 14.66,
+                "added_passes_std": 0.881852207902727
+              }
+            },
+            {
+              "coverage": 0.15,
+              "gate_count": 9,
+              "risk": {
+                "added_passes": 2,
+                "repair_model_calls": 23,
+                "attempted_repairs": 9
+              },
+              "inverted": {
+                "added_passes": 2,
+                "repair_model_calls": 9,
+                "attempted_repairs": 4
+              },
+              "random_mean": {
+                "added_passes": 1.545,
+                "repair_model_calls": 22.05,
+                "added_passes_std": 0.9863261103610201
+              }
+            },
+            {
+              "coverage": 0.2,
+              "gate_count": 12,
+              "risk": {
+                "added_passes": 3,
+                "repair_model_calls": 30,
+                "attempted_repairs": 12
+              },
+              "inverted": {
+                "added_passes": 2,
+                "repair_model_calls": 18,
+                "attempted_repairs": 7
+              },
+              "random_mean": {
+                "added_passes": 2.095,
+                "repair_model_calls": 29.38,
+                "added_passes_std": 1.1279790261423683
+              }
+            },
+            {
+              "coverage": 0.25,
+              "gate_count": 15,
+              "risk": {
+                "added_passes": 4,
+                "repair_model_calls": 37,
+                "attempted_repairs": 15
+              },
+              "inverted": {
+                "added_passes": 3,
+                "repair_model_calls": 27,
+                "attempted_repairs": 10
+              },
+              "random_mean": {
+                "added_passes": 2.57,
+                "repair_model_calls": 36.795,
+                "added_passes_std": 1.328126348654355
+              }
+            },
+            {
+              "coverage": 0.3,
+              "gate_count": 18,
+              "risk": {
+                "added_passes": 4,
+                "repair_model_calls": 46,
+                "attempted_repairs": 18
+              },
+              "inverted": {
+                "added_passes": 3,
+                "repair_model_calls": 36,
+                "attempted_repairs": 13
+              },
+              "random_mean": {
+                "added_passes": 3.095,
+                "repair_model_calls": 44.125,
+                "added_passes_std": 1.35096280574728
+              }
+            },
+            {
+              "coverage": 0.35,
+              "gate_count": 21,
+              "risk": {
+                "added_passes": 4,
+                "repair_model_calls": 55,
+                "attempted_repairs": 21
+              },
+              "inverted": {
+                "added_passes": 3,
+                "repair_model_calls": 45,
+                "attempted_repairs": 16
+              },
+              "random_mean": {
+                "added_passes": 3.62,
+                "repair_model_calls": 51.375,
+                "added_passes_std": 1.358243027076898
+              }
+            },
+            {
+              "coverage": 0.4,
+              "gate_count": 24,
+              "risk": {
+                "added_passes": 4,
+                "repair_model_calls": 64,
+                "attempted_repairs": 24
+              },
+              "inverted": {
+                "added_passes": 3,
+                "repair_model_calls": 51,
+                "attempted_repairs": 18
+              },
+              "random_mean": {
+                "added_passes": 4.155,
+                "repair_model_calls": 58.63,
+                "added_passes_std": 1.3565308250817543
+              }
+            },
+            {
+              "coverage": 0.45,
+              "gate_count": 27,
+              "risk": {
+                "added_passes": 5,
+                "repair_model_calls": 71,
+                "attempted_repairs": 27
+              },
+              "inverted": {
+                "added_passes": 4,
+                "repair_model_calls": 58,
+                "attempted_repairs": 21
+              },
+              "random_mean": {
+                "added_passes": 4.64,
+                "repair_model_calls": 66.075,
+                "added_passes_std": 1.4179041791695703
+              }
+            },
+            {
+              "coverage": 0.5,
+              "gate_count": 30,
+              "risk": {
+                "added_passes": 6,
+                "repair_model_calls": 80,
+                "attempted_repairs": 30
+              },
+              "inverted": {
+                "added_passes": 4,
+                "repair_model_calls": 67,
+                "attempted_repairs": 24
+              },
+              "random_mean": {
+                "added_passes": 5.21,
+                "repair_model_calls": 73.345,
+                "added_passes_std": 1.4198520695824222
+              }
+            },
+            {
+              "coverage": 0.55,
+              "gate_count": 33,
+              "risk": {
+                "added_passes": 6,
+                "repair_model_calls": 89,
+                "attempted_repairs": 33
+              },
+              "inverted": {
+                "added_passes": 5,
+                "repair_model_calls": 76,
+                "attempted_repairs": 27
+              },
+              "random_mean": {
+                "added_passes": 5.68,
+                "repair_model_calls": 80.775,
+                "added_passes_std": 1.4310273218844913
+              }
+            },
+            {
+              "coverage": 0.6,
+              "gate_count": 36,
+              "risk": {
+                "added_passes": 7,
+                "repair_model_calls": 96,
+                "attempted_repairs": 36
+              },
+              "inverted": {
+                "added_passes": 6,
+                "repair_model_calls": 83,
+                "attempted_repairs": 30
+              },
+              "random_mean": {
+                "added_passes": 6.145,
+                "repair_model_calls": 88.2,
+                "added_passes_std": 1.3869365395807125
+              }
+            },
+            {
+              "coverage": 0.65,
+              "gate_count": 39,
+              "risk": {
+                "added_passes": 7,
+                "repair_model_calls": 102,
+                "attempted_repairs": 38
+              },
+              "inverted": {
+                "added_passes": 6,
+                "repair_model_calls": 92,
+                "attempted_repairs": 33
+              },
+              "random_mean": {
+                "added_passes": 6.6,
+                "repair_model_calls": 95.615,
+                "added_passes_std": 1.442359875360602
+              }
+            },
+            {
+              "coverage": 0.7,
+              "gate_count": 42,
+              "risk": {
+                "added_passes": 7,
+                "repair_model_calls": 111,
+                "attempted_repairs": 41
+              },
+              "inverted": {
+                "added_passes": 6,
+                "repair_model_calls": 101,
+                "attempted_repairs": 36
+              },
+              "random_mean": {
+                "added_passes": 7.09,
+                "repair_model_calls": 102.64,
+                "added_passes_std": 1.2884878753892584
+              }
+            },
+            {
+              "coverage": 0.75,
+              "gate_count": 45,
+              "risk": {
+                "added_passes": 7,
+                "repair_model_calls": 120,
+                "attempted_repairs": 44
+              },
+              "inverted": {
+                "added_passes": 6,
+                "repair_model_calls": 110,
+                "attempted_repairs": 39
+              },
+              "random_mean": {
+                "added_passes": 7.555,
+                "repair_model_calls": 110.095,
+                "added_passes_std": 1.1891363362250156
+              }
+            },
+            {
+              "coverage": 0.8,
+              "gate_count": 48,
+              "risk": {
+                "added_passes": 8,
+                "repair_model_calls": 129,
+                "attempted_repairs": 47
+              },
+              "inverted": {
+                "added_passes": 7,
+                "repair_model_calls": 117,
+                "attempted_repairs": 42
+              },
+              "random_mean": {
+                "added_passes": 8.025,
+                "repair_model_calls": 117.8,
+                "added_passes_std": 1.140561000992461
+              }
+            },
+            {
+              "coverage": 0.85,
+              "gate_count": 51,
+              "risk": {
+                "added_passes": 8,
+                "repair_model_calls": 138,
+                "attempted_repairs": 50
+              },
+              "inverted": {
+                "added_passes": 8,
+                "repair_model_calls": 124,
+                "attempted_repairs": 45
+              },
+              "random_mean": {
+                "added_passes": 8.53,
+                "repair_model_calls": 125.24,
+                "added_passes_std": 1.0070605017928946
+              }
+            },
+            {
+              "coverage": 0.9,
+              "gate_count": 54,
+              "risk": {
+                "added_passes": 9,
+                "repair_model_calls": 146,
+                "attempted_repairs": 53
+              },
+              "inverted": {
+                "added_passes": 10,
+                "repair_model_calls": 129,
+                "attempted_repairs": 48
+              },
+              "random_mean": {
+                "added_passes": 8.99,
+                "repair_model_calls": 132.52,
+                "added_passes_std": 0.8326865161456947
+              }
+            },
+            {
+              "coverage": 0.95,
+              "gate_count": 57,
+              "risk": {
+                "added_passes": 10,
+                "repair_model_calls": 147,
+                "attempted_repairs": 54
+              },
+              "inverted": {
+                "added_passes": 10,
+                "repair_model_calls": 138,
+                "attempted_repairs": 51
+              },
+              "random_mean": {
+                "added_passes": 9.53,
+                "repair_model_calls": 139.725,
+                "added_passes_std": 0.566306911125001
+              }
+            },
+            {
+              "coverage": 1.0,
+              "gate_count": 60,
+              "risk": {
+                "added_passes": 10,
+                "repair_model_calls": 147,
+                "attempted_repairs": 54
+              },
+              "inverted": {
+                "added_passes": 10,
+                "repair_model_calls": 147,
+                "attempted_repairs": 54
+              },
+              "random_mean": {
+                "added_passes": 10.0,
+                "repair_model_calls": 147.0,
+                "added_passes_std": 0.0
+              }
+            }
+          ],
+          "budget_matched_inverted": {
+            "coverage": 0.9,
+            "gate_count": 54,
+            "added_passes": 10,
+            "repair_model_calls": 129,
+            "reference_calls": 147
+          },
+          "repair_all": {
+            "added_passes": 10,
+            "repair_model_calls": 147,
+            "attempted_repairs": 54,
+            "repair_success_rate": 0.18518518518518517
+          },
+          "arm": "error",
+          "pool_file": "results/mbpp_week7_repair_all_sample0_qwen15b.json",
+          "pool_run_id": "mbpp_week7_repair_all_sample0_qwen15b",
+          "context_mode_as_stored": null,
+          "device_resolved": null,
+          "dtype_resolved": null,
+          "selection_sha256": "85c09d30cc342f0c8fc54b92a7d6b26563bfebe43b98f9bc92c681064be5b71b",
+          "call_renormalization": {
+            "stored_calls": 147,
+            "renormalized_calls": 147,
+            "stop_on_pass_as_stored": true,
+            "per_coordinate_delta_histogram": {
+              "0": 54
+            },
+            "n_records": 54
+          },
+          "resample_control_at_this_budget": {
+            "reference_repair_calls": 147,
+            "largest_affordable": {
+              "k_extra_samples": 2,
+              "added_passes": 7,
+              "base_model_calls": 108,
+              "calls_per_added_pass": 15.428571428571429
+            },
+            "smallest_unaffordable": {
+              "k_extra_samples": 3,
+              "added_passes": 11,
+              "base_model_calls": 162,
+              "calls_per_added_pass": 14.727272727272727
+            }
+          }
+        }
+      },
+      "guards": {
+        "reproduction": {
+          "arm": "error",
+          "expected": {
+            "initial_passed": 0.944,
+            "repair_success": 0.518
+          },
+          "observed": {
+            "initial_passed": 0.9444444444444444,
+            "repair_success": 0.5181818181818182
+          },
+          "passed": true
+        },
+        "call_renormalization": {
+          "none": {
+            "stop_on_pass_as_stored": false,
+            "stored_calls": 162,
+            "renormalized_calls": 124,
+            "per_coordinate_delta_histogram": {
+              "-2": 17,
+              "-1": 4,
+              "0": 33
+            },
+            "passed": true
+          },
+          "code_only": {
+            "stop_on_pass_as_stored": false,
+            "stored_calls": 162,
+            "renormalized_calls": 140,
+            "per_coordinate_delta_histogram": {
+              "-2": 10,
+              "-1": 2,
+              "0": 42
+            },
+            "passed": true
+          },
+          "error": {
+            "stop_on_pass_as_stored": true,
+            "stored_calls": 147,
+            "renormalized_calls": 147,
+            "per_coordinate_delta_histogram": {
+              "0": 54
+            },
+            "passed": true
+          }
+        },
+        "cohort_identity": {
+          "selection_sha256_by_arm": {
+            "none": "85c09d30cc342f0c8fc54b92a7d6b26563bfebe43b98f9bc92c681064be5b71b",
+            "code_only": "85c09d30cc342f0c8fc54b92a7d6b26563bfebe43b98f9bc92c681064be5b71b",
+            "error": "85c09d30cc342f0c8fc54b92a7d6b26563bfebe43b98f9bc92c681064be5b71b"
+          },
+          "passed": true,
+          "note": "all arms must have been generated over the same frozen coordinate selection"
+        },
+        "cohort_name": "mbpp"
+      }
+    },
+    {
+      "analysis": "week12_arm_allocation",
+      "cohort_name": "humaneval",
+      "timestamp": "2026-09-07T21:21:30.138925",
+      "config": {
+        "source_results": "results/humaneval_uncertainty_merged164_20260711.json",
+        "source_run_id": "humaneval_uncertainty_merged164_20260711",
+        "predictor_results": "results/predictor_humaneval_20260712_215312.json",
+        "predictor_feature_set": "self_consistency_plus_execution",
+        "predictor_model_type": "logistic",
+        "probability_kind": "out_of_fold_raw_rank_only",
+        "sample_index": 0,
+        "smart_coverage": 0.75,
+        "n_seeds": 200,
+        "first_seed": 0,
+        "seed": 42,
+        "n_permutations": 10000,
+        "n_bootstrap": 10000,
+        "arm_order_note": "arms are ordered by how much of the failing program the repair prompt carries: none < code_only < error"
+      },
+      "cohort": {
+        "candidates": 164,
+        "initially_failing": 148
+      },
+      "resample_control": {
+        "n_failing_coordinates": 148,
+        "max_k": 9,
+        "calls_go_to": "Salesforce/codegen-350M-mono",
+        "rows": [
+          {
+            "k_extra_samples": 0,
+            "added_passes": 0,
+            "base_model_calls": 0,
+            "calls_per_added_pass": null
+          },
+          {
+            "k_extra_samples": 1,
+            "added_passes": 6,
+            "base_model_calls": 148,
+            "calls_per_added_pass": 24.666666666666668
+          },
+          {
+            "k_extra_samples": 2,
+            "added_passes": 10,
+            "base_model_calls": 296,
+            "calls_per_added_pass": 29.6
+          },
+          {
+            "k_extra_samples": 3,
+            "added_passes": 12,
+            "base_model_calls": 444,
+            "calls_per_added_pass": 37.0
+          },
+          {
+            "k_extra_samples": 4,
+            "added_passes": 15,
+            "base_model_calls": 592,
+            "calls_per_added_pass": 39.46666666666667
+          },
+          {
+            "k_extra_samples": 5,
+            "added_passes": 16,
+            "base_model_calls": 740,
+            "calls_per_added_pass": 46.25
+          },
+          {
+            "k_extra_samples": 6,
+            "added_passes": 16,
+            "base_model_calls": 888,
+            "calls_per_added_pass": 55.5
+          },
+          {
+            "k_extra_samples": 7,
+            "added_passes": 18,
+            "base_model_calls": 1036,
+            "calls_per_added_pass": 57.55555555555556
+          },
+          {
+            "k_extra_samples": 8,
+            "added_passes": 19,
+            "base_model_calls": 1184,
+            "calls_per_added_pass": 62.31578947368421
+          },
+          {
+            "k_extra_samples": 9,
+            "added_passes": 20,
+            "base_model_calls": 1332,
+            "calls_per_added_pass": 66.6
+          }
+        ]
+      },
+      "arms": {
+        "none": {
+          "targets": {
+            "initial_passed": {
+              "target": "initial_passed",
+              "n": 164,
+              "n_positive": 16,
+              "n_negative": 148,
+              "roc_auc": 0.9467905405405406,
+              "permutation_p": 9.999000099990002e-05,
+              "n_permutations": 10000,
+              "bootstrap_95": [
+                0.8821777575272641,
+                0.9933785726734053
+              ],
+              "n_bootstrap": 10000,
+              "mean_score_positive": 0.8300311107967049,
+              "mean_score_negative": 0.19535216241845202
+            },
+            "repair_success": {
+              "target": "repair_success",
+              "n": 148,
+              "n_positive": 91,
+              "n_negative": 57,
+              "roc_auc": 0.5417389627915944,
+              "permutation_p": 0.38776122387761225,
+              "n_permutations": 10000,
+              "bootstrap_95": [
+                0.44352221173824363,
+                0.6357796699525463
+              ],
+              "n_bootstrap": 10000,
+              "mean_score_positive": 0.2100407661129214,
+              "mean_score_negative": 0.17190193546763238
+            }
+          },
+          "mechanism_regression": {
+            "n": 148,
+            "n_repaired": 91,
+            "predictor_correlation_pearson": 0.344368534532124,
+            "univariate_roc_auc": {
+              "p_pass_oof": 0.5417389627915944,
+              "sibling_pass_rate": 0.5541738962791595
+            },
+            "mean_by_outcome": {
+              "p_pass_oof": {
+                "repaired": 0.2100407661129214,
+                "unrepaired": 0.17190193546763238
+              },
+              "sibling_pass_rate": {
+                "repaired": 0.05128205128205127,
+                "unrepaired": 0.015594541910331383
+              }
+            },
+            "models": {
+              "p_pass_only": {
+                "terms": [
+                  "intercept",
+                  "p_pass_oof"
+                ],
+                "coefficients": [
+                  0.4716394439175933,
+                  0.16893521810049963
+                ],
+                "standard_errors": [
+                  0.16965110026646835,
+                  0.17681765888697573
+                ],
+                "wald_z": [
+                  2.7800553204594403,
+                  0.955420511525296
+                ],
+                "wald_p": [
+                  0.005434963886508104,
+                  0.33936508532003096
+                ],
+                "log_likelihood": -98.17317809464367,
+                "n": 148
+              },
+              "sibling_only": {
+                "terms": [
+                  "intercept",
+                  "sibling_pass_rate"
+                ],
+                "coefficients": [
+                  0.4996527866580939,
+                  0.43657216864134285
+                ],
+                "standard_errors": [
+                  0.17519890654508327,
+                  0.2635335129344248
+                ],
+                "wald_z": [
+                  2.8519172665585106,
+                  1.6566096804165298
+                ],
+                "wald_p": [
+                  0.00434564094494605,
+                  0.09759841393275925
+                ],
+                "log_likelihood": -96.65207118356744,
+                "n": 148
+              },
+              "both": {
+                "terms": [
+                  "intercept",
+                  "p_pass_oof",
+                  "sibling_pass_rate"
+                ],
+                "coefficients": [
+                  0.5001768085582763,
+                  0.06750360528654471,
+                  0.4134921562138456
+                ],
+                "standard_errors": [
+                  0.17531924465883353,
+                  0.18738790241850287,
+                  0.2709248607822683
+                ],
+                "wald_z": [
+                  2.8529486853060924,
+                  0.3602345958053658,
+                  1.5262244853422775
+                ],
+                "wald_p": [
+                  0.004331561547132878,
+                  0.7186717052543805,
+                  0.12695396754717025
+                ],
+                "log_likelihood": -96.58660657957611,
+                "n": 148
+              }
+            },
+            "likelihood_ratio": {
+              "p_pass_given_sibling": {
+                "statistic": 0.1309292079826605,
+                "df": 1,
+                "p_value": 0.7174705431553281
+              },
+              "sibling_given_p_pass": {
+                "statistic": 3.1731430301351224,
+                "df": 1,
+                "p_value": 0.07485826021736652
+              }
+            }
+          },
+          "arms_at_smart_coverage": {
+            "risk": {
+              "added_passes": 73,
+              "repair_model_calls": 250,
+              "attempted_repairs": 121,
+              "repair_success_rate": 0.6033057851239669
+            },
+            "inverted": {
+              "added_passes": 68,
+              "repair_model_calls": 218,
+              "attempted_repairs": 107,
+              "repair_success_rate": 0.6355140186915887
+            },
+            "repair_all": {
+              "added_passes": 91,
+              "repair_model_calls": 304,
+              "attempted_repairs": 148,
+              "repair_success_rate": 0.6148648648648649
+            }
+          },
+          "gate_direction_sweep": [
+            {
+              "coverage": 0.05,
+              "gate_count": 9,
+              "risk": {
+                "added_passes": 5,
+                "repair_model_calls": 19,
+                "attempted_repairs": 9
+              },
+              "inverted": {
+                "added_passes": 1,
+                "repair_model_calls": 3,
+                "attempted_repairs": 1
+              },
+              "random_mean": {
+                "added_passes": 5.075,
+                "repair_model_calls": 16.6,
+                "added_passes_std": 1.4663306680761687
+              }
+            },
+            {
+              "coverage": 0.1,
+              "gate_count": 17,
+              "risk": {
+                "added_passes": 10,
+                "repair_model_calls": 36,
+                "attempted_repairs": 17
+              },
+              "inverted": {
+                "added_passes": 5,
+                "repair_model_calls": 9,
+                "attempted_repairs": 5
+              },
+              "random_mean": {
+                "added_passes": 9.445,
+                "repair_model_calls": 31.405,
+                "added_passes_std": 2.0242189386422087
+              }
+            },
+            {
+              "coverage": 0.15,
+              "gate_count": 25,
+              "risk": {
+                "added_passes": 16,
+                "repair_model_calls": 51,
+                "attempted_repairs": 25
+              },
+              "inverted": {
+                "added_passes": 9,
+                "repair_model_calls": 24,
+                "attempted_repairs": 12
+              },
+              "random_mean": {
+                "added_passes": 13.74,
+                "repair_model_calls": 46.355,
+                "added_passes_std": 2.381334451278153
+              }
+            },
+            {
+              "coverage": 0.2,
+              "gate_count": 33,
+              "risk": {
+                "added_passes": 21,
+                "repair_model_calls": 65,
+                "attempted_repairs": 33
+              },
+              "inverted": {
+                "added_passes": 13,
+                "repair_model_calls": 43,
+                "attempted_repairs": 20
+              },
+              "random_mean": {
+                "added_passes": 18.13,
+                "repair_model_calls": 60.845,
+                "added_passes_std": 2.5994007813553015
+              }
+            },
+            {
+              "coverage": 0.25,
+              "gate_count": 41,
+              "risk": {
+                "added_passes": 23,
+                "repair_model_calls": 86,
+                "attempted_repairs": 41
+              },
+              "inverted": {
+                "added_passes": 18,
+                "repair_model_calls": 54,
+                "attempted_repairs": 27
+              },
+              "random_mean": {
+                "added_passes": 22.54,
+                "repair_model_calls": 76.055,
+                "added_passes_std": 2.84585566611552
+              }
+            },
+            {
+              "coverage": 0.3,
+              "gate_count": 50,
+              "risk": {
+                "added_passes": 29,
+                "repair_model_calls": 104,
+                "attempted_repairs": 50
+              },
+              "inverted": {
+                "added_passes": 21,
+                "repair_model_calls": 73,
+                "attempted_repairs": 35
+              },
+              "random_mean": {
+                "added_passes": 27.455,
+                "repair_model_calls": 92.925,
+                "added_passes_std": 2.8738948061444276
+              }
+            },
+            {
+              "coverage": 0.35,
+              "gate_count": 58,
+              "risk": {
+                "added_passes": 33,
+                "repair_model_calls": 121,
+                "attempted_repairs": 58
+              },
+              "inverted": {
+                "added_passes": 28,
+                "repair_model_calls": 88,
+                "attempted_repairs": 43
+              },
+              "random_mean": {
+                "added_passes": 31.87,
+                "repair_model_calls": 108.035,
+                "added_passes_std": 3.0953198582901944
+              }
+            },
+            {
+              "coverage": 0.4,
+              "gate_count": 66,
+              "risk": {
+                "added_passes": 38,
+                "repair_model_calls": 136,
+                "attempted_repairs": 66
+              },
+              "inverted": {
+                "added_passes": 34,
+                "repair_model_calls": 103,
+                "attempted_repairs": 51
+              },
+              "random_mean": {
+                "added_passes": 36.305,
+                "repair_model_calls": 122.71,
+                "added_passes_std": 2.9927844549799856
+              }
+            },
+            {
+              "coverage": 0.45,
+              "gate_count": 74,
+              "risk": {
+                "added_passes": 44,
+                "repair_model_calls": 153,
+                "attempted_repairs": 74
+              },
+              "inverted": {
+                "added_passes": 39,
+                "repair_model_calls": 118,
+                "attempted_repairs": 59
+              },
+              "random_mean": {
+                "added_passes": 40.8,
+                "repair_model_calls": 137.43,
+                "added_passes_std": 3.0980622895204584
+              }
+            },
+            {
+              "coverage": 0.5,
+              "gate_count": 82,
+              "risk": {
+                "added_passes": 48,
+                "repair_model_calls": 170,
+                "attempted_repairs": 82
+              },
+              "inverted": {
+                "added_passes": 43,
+                "repair_model_calls": 134,
+                "attempted_repairs": 66
+              },
+              "random_mean": {
+                "added_passes": 45.09,
+                "repair_model_calls": 152.14,
+                "added_passes_std": 3.0837391647447916
+              }
+            },
+            {
+              "coverage": 0.55,
+              "gate_count": 91,
+              "risk": {
+                "added_passes": 52,
+                "repair_model_calls": 189,
+                "attempted_repairs": 90
+              },
+              "inverted": {
+                "added_passes": 48,
+                "repair_model_calls": 153,
+                "attempted_repairs": 75
+              },
+              "random_mean": {
+                "added_passes": 50.11,
+                "repair_model_calls": 168.97,
+                "added_passes_std": 3.0321394009401463
+              }
+            },
+            {
+              "coverage": 0.6,
+              "gate_count": 99,
+              "risk": {
+                "added_passes": 58,
+                "repair_model_calls": 204,
+                "attempted_repairs": 98
+              },
+              "inverted": {
+                "added_passes": 53,
+                "repair_model_calls": 171,
+                "attempted_repairs": 83
+              },
+              "random_mean": {
+                "added_passes": 54.615,
+                "repair_model_calls": 183.765,
+                "added_passes_std": 2.9015287947448787
+              }
+            },
+            {
+              "coverage": 0.65,
+              "gate_count": 107,
+              "risk": {
+                "added_passes": 63,
+                "repair_model_calls": 219,
+                "attempted_repairs": 106
+              },
+              "inverted": {
+                "added_passes": 59,
+                "repair_model_calls": 184,
+                "attempted_repairs": 91
+              },
+              "random_mean": {
+                "added_passes": 59.02,
+                "repair_model_calls": 198.905,
+                "added_passes_std": 2.86015777756452
+              }
+            },
+            {
+              "coverage": 0.7,
+              "gate_count": 115,
+              "risk": {
+                "added_passes": 70,
+                "repair_model_calls": 234,
+                "attempted_repairs": 114
+              },
+              "inverted": {
+                "added_passes": 62,
+                "repair_model_calls": 203,
+                "attempted_repairs": 99
+              },
+              "random_mean": {
+                "added_passes": 63.41,
+                "repair_model_calls": 213.675,
+                "added_passes_std": 2.9623941153182773
+              }
+            },
+            {
+              "coverage": 0.75,
+              "gate_count": 123,
+              "risk": {
+                "added_passes": 73,
+                "repair_model_calls": 250,
+                "attempted_repairs": 121
+              },
+              "inverted": {
+                "added_passes": 68,
+                "repair_model_calls": 218,
+                "attempted_repairs": 107
+              },
+              "random_mean": {
+                "added_passes": 67.93,
+                "repair_model_calls": 228.67,
+                "added_passes_std": 2.755551728172266
+              }
+            },
+            {
+              "coverage": 0.8,
+              "gate_count": 132,
+              "risk": {
+                "added_passes": 78,
+                "repair_model_calls": 264,
+                "attempted_repairs": 129
+              },
+              "inverted": {
+                "added_passes": 71,
+                "repair_model_calls": 240,
+                "attempted_repairs": 116
+              },
+              "random_mean": {
+                "added_passes": 72.97,
+                "repair_model_calls": 245.065,
+                "added_passes_std": 2.463624816440382
+              }
+            },
+            {
+              "coverage": 0.85,
+              "gate_count": 140,
+              "risk": {
+                "added_passes": 83,
+                "repair_model_calls": 281,
+                "attempted_repairs": 137
+              },
+              "inverted": {
+                "added_passes": 76,
+                "repair_model_calls": 254,
+                "attempted_repairs": 124
+              },
+              "random_mean": {
+                "added_passes": 77.6,
+                "repair_model_calls": 259.735,
+                "added_passes_std": 2.1571430948498276
+              }
+            },
+            {
+              "coverage": 0.9,
+              "gate_count": 148,
+              "risk": {
+                "added_passes": 87,
+                "repair_model_calls": 297,
+                "attempted_repairs": 144
+              },
+              "inverted": {
+                "added_passes": 81,
+                "repair_model_calls": 271,
+                "attempted_repairs": 132
+              },
+              "random_mean": {
+                "added_passes": 82.09,
+                "repair_model_calls": 274.235,
+                "added_passes_std": 1.9105367711114183
+              }
+            },
+            {
+              "coverage": 0.95,
+              "gate_count": 156,
+              "risk": {
+                "added_passes": 91,
+                "repair_model_calls": 304,
+                "attempted_repairs": 148
+              },
+              "inverted": {
+                "added_passes": 87,
+                "repair_model_calls": 287,
+                "attempted_repairs": 140
+              },
+              "random_mean": {
+                "added_passes": 86.625,
+                "repair_model_calls": 289.095,
+                "added_passes_std": 1.3503675286052896
+              }
+            },
+            {
+              "coverage": 1.0,
+              "gate_count": 164,
+              "risk": {
+                "added_passes": 91,
+                "repair_model_calls": 304,
+                "attempted_repairs": 148
+              },
+              "inverted": {
+                "added_passes": 91,
+                "repair_model_calls": 304,
+                "attempted_repairs": 148
+              },
+              "random_mean": {
+                "added_passes": 91.0,
+                "repair_model_calls": 304.0,
+                "added_passes_std": 0.0
+              }
+            }
+          ],
+          "budget_matched_inverted": {
+            "coverage": 1.0,
+            "gate_count": 164,
+            "added_passes": 91,
+            "repair_model_calls": 304,
+            "reference_calls": 304
+          },
+          "repair_all": {
+            "added_passes": 91,
+            "repair_model_calls": 304,
+            "attempted_repairs": 148,
+            "repair_success_rate": 0.6148648648648649
+          },
+          "arm": "none",
+          "pool_file": "results/humaneval_week9_arm_resample_sample0_qwen15b.json",
+          "pool_run_id": "humaneval_week9_arm_resample_sample0_qwen15b",
+          "context_mode_as_stored": "none",
+          "device_resolved": "cuda",
+          "dtype_resolved": "torch.float16",
+          "selection_sha256": "9332324b2b7ecc9278b4742c66c2716b5bb81b93e5e8040085fe49f330c5af20",
+          "call_renormalization": {
+            "stored_calls": 444,
+            "renormalized_calls": 304,
+            "stop_on_pass_as_stored": false,
+            "per_coordinate_delta_histogram": {
+              "-2": 59,
+              "-1": 22,
+              "0": 67
+            },
+            "n_records": 148
+          },
+          "resample_control_at_this_budget": {
+            "reference_repair_calls": 304,
+            "largest_affordable": {
+              "k_extra_samples": 2,
+              "added_passes": 10,
+              "base_model_calls": 296,
+              "calls_per_added_pass": 29.6
+            },
+            "smallest_unaffordable": {
+              "k_extra_samples": 3,
+              "added_passes": 12,
+              "base_model_calls": 444,
+              "calls_per_added_pass": 37.0
+            }
+          }
+        },
+        "code_only": {
+          "targets": {
+            "initial_passed": {
+              "target": "initial_passed",
+              "n": 164,
+              "n_positive": 16,
+              "n_negative": 148,
+              "roc_auc": 0.9467905405405406,
+              "permutation_p": 9.999000099990002e-05,
+              "n_permutations": 10000,
+              "bootstrap_95": [
+                0.8821777575272641,
+                0.9933785726734053
+              ],
+              "n_bootstrap": 10000,
+              "mean_score_positive": 0.8300311107967049,
+              "mean_score_negative": 0.19535216241845202
+            },
+            "repair_success": {
+              "target": "repair_success",
+              "n": 148,
+              "n_positive": 65,
+              "n_negative": 83,
+              "roc_auc": 0.6481927710843374,
+              "permutation_p": 0.0015998400159984002,
+              "n_permutations": 10000,
+              "bootstrap_95": [
+                0.5560789741860108,
+                0.7370252503310162
+              ],
+              "n_bootstrap": 10000,
+              "mean_score_positive": 0.24994588114941643,
+              "mean_score_negative": 0.1525980453399859
+            }
+          },
+          "mechanism_regression": {
+            "n": 148,
+            "n_repaired": 65,
+            "predictor_correlation_pearson": 0.344368534532124,
+            "univariate_roc_auc": {
+              "p_pass_oof": 0.6481927710843374,
+              "sibling_pass_rate": 0.5444856348470807
+            },
+            "mean_by_outcome": {
+              "p_pass_oof": {
+                "repaired": 0.24994588114941643,
+                "unrepaired": 0.1525980453399859
+              },
+              "sibling_pass_rate": {
+                "repaired": 0.04957264957264958,
+                "unrepaired": 0.02811244979919679
+              }
+            },
+            "models": {
+              "p_pass_only": {
+                "terms": [
+                  "intercept",
+                  "p_pass_oof"
+                ],
+                "coefficients": [
+                  -0.24569554697555526,
+                  0.4250524847278026
+                ],
+                "standard_errors": [
+                  0.16925878190619462,
+                  0.17575101431501416
+                ],
+                "wald_z": [
+                  -1.4515970409838048,
+                  2.4184923562713743
+                ],
+                "wald_p": [
+                  0.14661368200613611,
+                  0.01558497299700301
+                ],
+                "log_likelihood": -98.34777319515847,
+                "n": 148
+              },
+              "sibling_only": {
+                "terms": [
+                  "intercept",
+                  "sibling_pass_rate"
+                ],
+                "coefficients": [
+                  -0.24457838576757637,
+                  0.18558603848061225
+                ],
+                "standard_errors": [
+                  0.16632978429166714,
+                  0.1716443508749654
+                ],
+                "wald_z": [
+                  -1.4704425115991049,
+                  1.0812242729491441
+                ],
+                "wald_p": [
+                  0.14144194483300687,
+                  0.2795973632644362
+                ],
+                "log_likelihood": -100.87288551122865,
+                "n": 148
+              },
+              "both": {
+                "terms": [
+                  "intercept",
+                  "p_pass_oof",
+                  "sibling_pass_rate"
+                ],
+                "coefficients": [
+                  -0.24555094072338693,
+                  0.4079132188653605,
+                  0.050460773737715986
+                ],
+                "standard_errors": [
+                  0.16931293743309953,
+                  0.18576543355121153,
+                  0.18480134986760008
+                ],
+                "wald_z": [
+                  -1.4502786641476306,
+                  2.19585103141865,
+                  0.273054140426292
+                ],
+                "wald_p": [
+                  0.1469808263178689,
+                  0.028102607662408907,
+                  0.7848115981920007
+                ],
+                "log_likelihood": -98.3100844749294,
+                "n": 148
+              }
+            },
+            "likelihood_ratio": {
+              "p_pass_given_sibling": {
+                "statistic": 5.125602072598497,
+                "df": 1,
+                "p_value": 0.0235753906507516
+              },
+              "sibling_given_p_pass": {
+                "statistic": 0.07537744045814065,
+                "df": 1,
+                "p_value": 0.7836623513956605
+              }
+            }
+          },
+          "arms_at_smart_coverage": {
+            "risk": {
+              "added_passes": 48,
+              "repair_model_calls": 299,
+              "attempted_repairs": 121,
+              "repair_success_rate": 0.39669421487603307
+            },
+            "inverted": {
+              "added_passes": 53,
+              "repair_model_calls": 243,
+              "attempted_repairs": 107,
+              "repair_success_rate": 0.4953271028037383
+            },
+            "repair_all": {
+              "added_passes": 65,
+              "repair_model_calls": 352,
+              "attempted_repairs": 148,
+              "repair_success_rate": 0.4391891891891892
+            }
+          },
+          "gate_direction_sweep": [
+            {
+              "coverage": 0.05,
+              "gate_count": 9,
+              "risk": {
+                "added_passes": 3,
+                "repair_model_calls": 23,
+                "attempted_repairs": 9
+              },
+              "inverted": {
+                "added_passes": 0,
+                "repair_model_calls": 3,
+                "attempted_repairs": 1
+              },
+              "random_mean": {
+                "added_passes": 3.57,
+                "repair_model_calls": 19.155,
+                "added_passes_std": 1.4717097703831439
+              }
+            },
+            {
+              "coverage": 0.1,
+              "gate_count": 17,
+              "risk": {
+                "added_passes": 6,
+                "repair_model_calls": 43,
+                "attempted_repairs": 17
+              },
+              "inverted": {
+                "added_passes": 3,
+                "repair_model_calls": 10,
+                "attempted_repairs": 5
+              },
+              "random_mean": {
+                "added_passes": 6.75,
+                "repair_model_calls": 36.395,
+                "added_passes_std": 1.8802063395800432
+              }
+            },
+            {
+              "coverage": 0.15,
+              "gate_count": 25,
+              "risk": {
+                "added_passes": 8,
+                "repair_model_calls": 66,
+                "attempted_repairs": 25
+              },
+              "inverted": {
+                "added_passes": 7,
+                "repair_model_calls": 25,
+                "attempted_repairs": 12
+              },
+              "random_mean": {
+                "added_passes": 9.9,
+                "repair_model_calls": 53.42,
+                "added_passes_std": 2.0836766886236378
+              }
+            },
+            {
+              "coverage": 0.2,
+              "gate_count": 33,
+              "risk": {
+                "added_passes": 11,
+                "repair_model_calls": 86,
+                "attempted_repairs": 33
+              },
+              "inverted": {
+                "added_passes": 11,
+                "repair_model_calls": 43,
+                "attempted_repairs": 20
+              },
+              "random_mean": {
+                "added_passes": 12.99,
+                "repair_model_calls": 70.605,
+                "added_passes_std": 2.221389849693567
+              }
+            },
+            {
+              "coverage": 0.25,
+              "gate_count": 41,
+              "risk": {
+                "added_passes": 12,
+                "repair_model_calls": 109,
+                "attempted_repairs": 41
+              },
+              "inverted": {
+                "added_passes": 17,
+                "repair_model_calls": 53,
+                "attempted_repairs": 27
+              },
+              "random_mean": {
+                "added_passes": 16.11,
+                "repair_model_calls": 88.27,
+                "added_passes_std": 2.608047075445283
+              }
+            },
+            {
+              "coverage": 0.3,
+              "gate_count": 50,
+              "risk": {
+                "added_passes": 15,
+                "repair_model_calls": 132,
+                "attempted_repairs": 50
+              },
+              "inverted": {
+                "added_passes": 21,
+                "repair_model_calls": 69,
+                "attempted_repairs": 35
+              },
+              "random_mean": {
+                "added_passes": 19.82,
+                "repair_model_calls": 107.1,
+                "added_passes_std": 2.7505321549980817
+              }
+            },
+            {
+              "coverage": 0.35,
+              "gate_count": 58,
+              "risk": {
+                "added_passes": 18,
+                "repair_model_calls": 152,
+                "attempted_repairs": 58
+              },
+              "inverted": {
+                "added_passes": 26,
+                "repair_model_calls": 86,
+                "attempted_repairs": 43
+              },
+              "random_mean": {
+                "added_passes": 22.95,
+                "repair_model_calls": 124.35,
+                "added_passes_std": 3.0320731087299686
+              }
+            },
+            {
+              "coverage": 0.4,
+              "gate_count": 66,
+              "risk": {
+                "added_passes": 20,
+                "repair_model_calls": 175,
+                "attempted_repairs": 66
+              },
+              "inverted": {
+                "added_passes": 31,
+                "repair_model_calls": 102,
+                "attempted_repairs": 51
+              },
+              "random_mean": {
+                "added_passes": 26.08,
+                "repair_model_calls": 141.61,
+                "added_passes_std": 3.132517089591518
+              }
+            },
+            {
+              "coverage": 0.45,
+              "gate_count": 74,
+              "risk": {
+                "added_passes": 23,
+                "repair_model_calls": 196,
+                "attempted_repairs": 74
+              },
+              "inverted": {
+                "added_passes": 35,
+                "repair_model_calls": 119,
+                "attempted_repairs": 59
+              },
+              "random_mean": {
+                "added_passes": 29.185,
+                "repair_model_calls": 158.875,
+                "added_passes_std": 3.2144108614067446
+              }
+            },
+            {
+              "coverage": 0.5,
+              "gate_count": 82,
+              "risk": {
+                "added_passes": 27,
+                "repair_model_calls": 217,
+                "attempted_repairs": 82
+              },
+              "inverted": {
+                "added_passes": 38,
+                "repair_model_calls": 135,
+                "attempted_repairs": 66
+              },
+              "random_mean": {
+                "added_passes": 32.495,
+                "repair_model_calls": 175.58,
+                "added_passes_std": 3.119073274299958
+              }
+            },
+            {
+              "coverage": 0.55,
+              "gate_count": 91,
+              "risk": {
+                "added_passes": 30,
+                "repair_model_calls": 236,
+                "attempted_repairs": 90
+              },
+              "inverted": {
+                "added_passes": 43,
+                "repair_model_calls": 159,
+                "attempted_repairs": 75
+              },
+              "random_mean": {
+                "added_passes": 36.145,
+                "repair_model_calls": 194.94,
+                "added_passes_std": 3.1819173449273865
+              }
+            },
+            {
+              "coverage": 0.6,
+              "gate_count": 99,
+              "risk": {
+                "added_passes": 34,
+                "repair_model_calls": 253,
+                "attempted_repairs": 98
+              },
+              "inverted": {
+                "added_passes": 45,
+                "repair_model_calls": 180,
+                "attempted_repairs": 83
+              },
+              "random_mean": {
+                "added_passes": 39.495,
+                "repair_model_calls": 211.965,
+                "added_passes_std": 3.3669954397737585
+              }
+            },
+            {
+              "coverage": 0.65,
+              "gate_count": 107,
+              "risk": {
+                "added_passes": 40,
+                "repair_model_calls": 267,
+                "attempted_repairs": 106
+              },
+              "inverted": {
+                "added_passes": 47,
+                "repair_model_calls": 203,
+                "attempted_repairs": 91
+              },
+              "random_mean": {
+                "added_passes": 42.635,
+                "repair_model_calls": 229.37,
+                "added_passes_std": 3.1193632580509747
+              }
+            },
+            {
+              "coverage": 0.7,
+              "gate_count": 115,
+              "risk": {
+                "added_passes": 45,
+                "repair_model_calls": 284,
+                "attempted_repairs": 114
+              },
+              "inverted": {
+                "added_passes": 51,
+                "repair_model_calls": 221,
+                "attempted_repairs": 99
+              },
+              "random_mean": {
+                "added_passes": 45.745,
+                "repair_model_calls": 246.39,
+                "added_passes_std": 3.0752660545931083
+              }
+            },
+            {
+              "coverage": 0.75,
+              "gate_count": 123,
+              "risk": {
+                "added_passes": 48,
+                "repair_model_calls": 299,
+                "attempted_repairs": 121
+              },
+              "inverted": {
+                "added_passes": 53,
+                "repair_model_calls": 243,
+                "attempted_repairs": 107
+              },
+              "random_mean": {
+                "added_passes": 48.83,
+                "repair_model_calls": 263.955,
+                "added_passes_std": 2.85162388718601
+              }
+            },
+            {
+              "coverage": 0.8,
+              "gate_count": 132,
+              "risk": {
+                "added_passes": 55,
+                "repair_model_calls": 312,
+                "attempted_repairs": 129
+              },
+              "inverted": {
+                "added_passes": 55,
+                "repair_model_calls": 267,
+                "attempted_repairs": 116
+              },
+              "random_mean": {
+                "added_passes": 52.41,
+                "repair_model_calls": 283.12,
+                "added_passes_std": 2.456025305551133
+              }
+            },
+            {
+              "coverage": 0.85,
+              "gate_count": 140,
+              "risk": {
+                "added_passes": 58,
+                "repair_model_calls": 330,
+                "attempted_repairs": 137
+              },
+              "inverted": {
+                "added_passes": 57,
+                "repair_model_calls": 289,
+                "attempted_repairs": 124
+              },
+              "random_mean": {
+                "added_passes": 55.59,
+                "repair_model_calls": 300.47,
+                "added_passes_std": 2.248818785417856
+              }
+            },
+            {
+              "coverage": 0.9,
+              "gate_count": 148,
+              "risk": {
+                "added_passes": 63,
+                "repair_model_calls": 343,
+                "attempted_repairs": 144
+              },
+              "inverted": {
+                "added_passes": 59,
+                "repair_model_calls": 312,
+                "attempted_repairs": 132
+              },
+              "random_mean": {
+                "added_passes": 58.9,
+                "repair_model_calls": 317.14,
+                "added_passes_std": 1.8348935039544587
+              }
+            },
+            {
+              "coverage": 0.95,
+              "gate_count": 156,
+              "risk": {
+                "added_passes": 65,
+                "repair_model_calls": 352,
+                "attempted_repairs": 148
+              },
+              "inverted": {
+                "added_passes": 63,
+                "repair_model_calls": 330,
+                "attempted_repairs": 140
+              },
+              "random_mean": {
+                "added_passes": 61.93,
+                "repair_model_calls": 334.63,
+                "added_passes_std": 1.2217048801041728
+              }
+            },
+            {
+              "coverage": 1.0,
+              "gate_count": 164,
+              "risk": {
+                "added_passes": 65,
+                "repair_model_calls": 352,
+                "attempted_repairs": 148
+              },
+              "inverted": {
+                "added_passes": 65,
+                "repair_model_calls": 352,
+                "attempted_repairs": 148
+              },
+              "random_mean": {
+                "added_passes": 65.0,
+                "repair_model_calls": 352.0,
+                "added_passes_std": 0.0
+              }
+            }
+          ],
+          "budget_matched_inverted": {
+            "coverage": 1.0,
+            "gate_count": 164,
+            "added_passes": 65,
+            "repair_model_calls": 352,
+            "reference_calls": 352
+          },
+          "repair_all": {
+            "added_passes": 65,
+            "repair_model_calls": 352,
+            "attempted_repairs": 148,
+            "repair_success_rate": 0.4391891891891892
+          },
+          "arm": "code_only",
+          "pool_file": "results/humaneval_week9_arm_code_only_sample0_qwen15b.json",
+          "pool_run_id": "humaneval_week9_arm_code_only_sample0_qwen15b",
+          "context_mode_as_stored": "code_only",
+          "device_resolved": "cuda",
+          "dtype_resolved": "torch.float16",
+          "selection_sha256": "9332324b2b7ecc9278b4742c66c2716b5bb81b93e5e8040085fe49f330c5af20",
+          "call_renormalization": {
+            "stored_calls": 444,
+            "renormalized_calls": 352,
+            "stop_on_pass_as_stored": false,
+            "per_coordinate_delta_histogram": {
+              "-2": 37,
+              "-1": 18,
+              "0": 93
+            },
+            "n_records": 148
+          },
+          "resample_control_at_this_budget": {
+            "reference_repair_calls": 352,
+            "largest_affordable": {
+              "k_extra_samples": 2,
+              "added_passes": 10,
+              "base_model_calls": 296,
+              "calls_per_added_pass": 29.6
+            },
+            "smallest_unaffordable": {
+              "k_extra_samples": 3,
+              "added_passes": 12,
+              "base_model_calls": 444,
+              "calls_per_added_pass": 37.0
+            }
+          }
+        },
+        "error": {
+          "targets": {
+            "initial_passed": {
+              "target": "initial_passed",
+              "n": 164,
+              "n_positive": 16,
+              "n_negative": 148,
+              "roc_auc": 0.9467905405405406,
+              "permutation_p": 9.999000099990002e-05,
+              "n_permutations": 10000,
+              "bootstrap_95": [
+                0.8821777575272641,
+                0.9933785726734053
+              ],
+              "n_bootstrap": 10000,
+              "mean_score_positive": 0.8300311107967049,
+              "mean_score_negative": 0.19535216241845202
+            },
+            "repair_success": {
+              "target": "repair_success",
+              "n": 148,
+              "n_positive": 54,
+              "n_negative": 94,
+              "roc_auc": 0.706461780929866,
+              "permutation_p": 9.999000099990002e-05,
+              "n_permutations": 10000,
+              "bootstrap_95": [
+                0.6163672793372041,
+                0.7932408781694495
+              ],
+              "n_bootstrap": 10000,
+              "mean_score_positive": 0.29244181537286357,
+              "mean_score_negative": 0.1395772554020879
+            }
+          },
+          "mechanism_regression": {
+            "n": 148,
+            "n_repaired": 54,
+            "predictor_correlation_pearson": 0.344368534532124,
+            "univariate_roc_auc": {
+              "p_pass_oof": 0.706461780929866,
+              "sibling_pass_rate": 0.5835303388494878
+            },
+            "mean_by_outcome": {
+              "p_pass_oof": {
+                "repaired": 0.29244181537286357,
+                "unrepaired": 0.1395772554020879
+              },
+              "sibling_pass_rate": {
+                "repaired": 0.06378600823045268,
+                "unrepaired": 0.02245862884160756
+              }
+            },
+            "models": {
+              "p_pass_only": {
+                "terms": [
+                  "intercept",
+                  "p_pass_oof"
+                ],
+                "coefficients": [
+                  -0.5789271457191669,
+                  0.6616401530532128
+                ],
+                "standard_errors": [
+                  0.17984935160361998,
+                  0.18726027379760102
+                ],
+                "wald_z": [
+                  -3.218955979308153,
+                  3.533264902561992
+                ],
+                "wald_p": [
+                  0.0012865823477477,
+                  0.0004104609697648254
+                ],
+                "log_likelihood": -89.97256312472722,
+                "n": 148
+              },
+              "sibling_only": {
+                "terms": [
+                  "intercept",
+                  "sibling_pass_rate"
+                ],
+                "coefficients": [
+                  -0.5580267751701984,
+                  0.3546465080343777
+                ],
+                "standard_errors": [
+                  0.1733150033378921,
+                  0.18589814795730356
+                ],
+                "wald_z": [
+                  -3.219725727277508,
+                  1.9077463220119422
+                ],
+                "wald_p": [
+                  0.0012831329685834003,
+                  0.05642401154879506
+                ],
+                "log_likelihood": -95.02202098826689,
+                "n": 148
+              },
+              "both": {
+                "terms": [
+                  "intercept",
+                  "p_pass_oof",
+                  "sibling_pass_rate"
+                ],
+                "coefficients": [
+                  -0.5756217308882267,
+                  0.6108926418557592,
+                  0.16663032338962733
+                ],
+                "standard_errors": [
+                  0.1803658276359528,
+                  0.1955988057405287,
+                  0.20231615625942762
+                ],
+                "wald_z": [
+                  -3.191412355837445,
+                  3.123192084649729,
+                  0.8236135287977656
+                ],
+                "wald_p": [
+                  0.0014157905804081938,
+                  0.001789009493924798,
+                  0.4101591864010934
+                ],
+                "log_likelihood": -89.61629083090781,
+                "n": 148
+              }
+            },
+            "likelihood_ratio": {
+              "p_pass_given_sibling": {
+                "statistic": 10.811460314718147,
+                "df": 1,
+                "p_value": 0.001008737033202754
+              },
+              "sibling_given_p_pass": {
+                "statistic": 0.7125445876388028,
+                "df": 1,
+                "p_value": 0.39860036255637
+              }
+            }
+          },
+          "arms_at_smart_coverage": {
+            "risk": {
+              "added_passes": 36,
+              "repair_model_calls": 312,
+              "attempted_repairs": 121,
+              "repair_success_rate": 0.2975206611570248
+            },
+            "inverted": {
+              "added_passes": 47,
+              "repair_model_calls": 255,
+              "attempted_repairs": 107,
+              "repair_success_rate": 0.4392523364485981
+            },
+            "repair_all": {
+              "added_passes": 54,
+              "repair_model_calls": 368,
+              "attempted_repairs": 148,
+              "repair_success_rate": 0.36486486486486486
+            }
+          },
+          "gate_direction_sweep": [
+            {
+              "coverage": 0.05,
+              "gate_count": 9,
+              "risk": {
+                "added_passes": 2,
+                "repair_model_calls": 24,
+                "attempted_repairs": 9
+              },
+              "inverted": {
+                "added_passes": 0,
+                "repair_model_calls": 3,
+                "attempted_repairs": 1
+              },
+              "random_mean": {
+                "added_passes": 2.995,
+                "repair_model_calls": 20.145,
+                "added_passes_std": 1.3836718320083947
+              }
+            },
+            {
+              "coverage": 0.1,
+              "gate_count": 17,
+              "risk": {
+                "added_passes": 4,
+                "repair_model_calls": 44,
+                "attempted_repairs": 17
+              },
+              "inverted": {
+                "added_passes": 3,
+                "repair_model_calls": 10,
+                "attempted_repairs": 5
+              },
+              "random_mean": {
+                "added_passes": 5.64,
+                "repair_model_calls": 38.005,
+                "added_passes_std": 1.7652138395949335
+              }
+            },
+            {
+              "coverage": 0.15,
+              "gate_count": 25,
+              "risk": {
+                "added_passes": 4,
+                "repair_model_calls": 68,
+                "attempted_repairs": 25
+              },
+              "inverted": {
+                "added_passes": 7,
+                "repair_model_calls": 26,
+                "attempted_repairs": 12
+              },
+              "random_mean": {
+                "added_passes": 8.29,
+                "repair_model_calls": 55.695,
+                "added_passes_std": 2.0681601563130463
+              }
+            },
+            {
+              "coverage": 0.2,
+              "gate_count": 33,
+              "risk": {
+                "added_passes": 7,
+                "repair_model_calls": 89,
+                "attempted_repairs": 33
+              },
+              "inverted": {
+                "added_passes": 12,
+                "repair_model_calls": 45,
+                "attempted_repairs": 20
+              },
+              "random_mean": {
+                "added_passes": 10.87,
+                "repair_model_calls": 73.465,
+                "added_passes_std": 2.244613877103684
+              }
+            },
+            {
+              "coverage": 0.25,
+              "gate_count": 41,
+              "risk": {
+                "added_passes": 7,
+                "repair_model_calls": 113,
+                "attempted_repairs": 41
+              },
+              "inverted": {
+                "added_passes": 18,
+                "repair_model_calls": 56,
+                "attempted_repairs": 27
+              },
+              "random_mean": {
+                "added_passes": 13.52,
+                "repair_model_calls": 91.735,
+                "added_passes_std": 2.648522865076715
+              }
+            },
+            {
+              "coverage": 0.3,
+              "gate_count": 50,
+              "risk": {
+                "added_passes": 9,
+                "repair_model_calls": 138,
+                "attempted_repairs": 50
+              },
+              "inverted": {
+                "added_passes": 22,
+                "repair_model_calls": 73,
+                "attempted_repairs": 35
+              },
+              "random_mean": {
+                "added_passes": 16.57,
+                "repair_model_calls": 111.775,
+                "added_passes_std": 2.662809186520712
+              }
+            },
+            {
+              "coverage": 0.35,
+              "gate_count": 58,
+              "risk": {
+                "added_passes": 12,
+                "repair_model_calls": 158,
+                "attempted_repairs": 58
+              },
+              "inverted": {
+                "added_passes": 25,
+                "repair_model_calls": 93,
+                "attempted_repairs": 43
+              },
+              "random_mean": {
+                "added_passes": 19.16,
+                "repair_model_calls": 129.895,
+                "added_passes_std": 2.954325676191612
+              }
+            },
+            {
+              "coverage": 0.4,
+              "gate_count": 66,
+              "risk": {
+                "added_passes": 14,
+                "repair_model_calls": 179,
+                "attempted_repairs": 66
+              },
+              "inverted": {
+                "added_passes": 30,
+                "repair_model_calls": 111,
+                "attempted_repairs": 51
+              },
+              "random_mean": {
+                "added_passes": 21.71,
+                "repair_model_calls": 147.98,
+                "added_passes_std": 2.990084115050173
+              }
+            },
+            {
+              "coverage": 0.45,
+              "gate_count": 74,
+              "risk": {
+                "added_passes": 17,
+                "repair_model_calls": 200,
+                "attempted_repairs": 74
+              },
+              "inverted": {
+                "added_passes": 33,
+                "repair_model_calls": 130,
+                "attempted_repairs": 59
+              },
+              "random_mean": {
+                "added_passes": 24.24,
+                "repair_model_calls": 166.005,
+                "added_passes_std": 3.036197039441208
+              }
+            },
+            {
+              "coverage": 0.5,
+              "gate_count": 82,
+              "risk": {
+                "added_passes": 18,
+                "repair_model_calls": 222,
+                "attempted_repairs": 82
+              },
+              "inverted": {
+                "added_passes": 36,
+                "repair_model_calls": 146,
+                "attempted_repairs": 66
+              },
+              "random_mean": {
+                "added_passes": 26.97,
+                "repair_model_calls": 183.46,
+                "added_passes_std": 3.0995379782141663
+              }
+            },
+            {
+              "coverage": 0.55,
+              "gate_count": 91,
+              "risk": {
+                "added_passes": 21,
+                "repair_model_calls": 241,
+                "attempted_repairs": 90
+              },
+              "inverted": {
+                "added_passes": 38,
+                "repair_model_calls": 171,
+                "attempted_repairs": 75
+              },
+              "random_mean": {
+                "added_passes": 29.96,
+                "repair_model_calls": 203.725,
+                "added_passes_std": 3.112367936291317
+              }
+            },
+            {
+              "coverage": 0.6,
+              "gate_count": 99,
+              "risk": {
+                "added_passes": 24,
+                "repair_model_calls": 260,
+                "attempted_repairs": 98
+              },
+              "inverted": {
+                "added_passes": 40,
+                "repair_model_calls": 192,
+                "attempted_repairs": 83
+              },
+              "random_mean": {
+                "added_passes": 32.72,
+                "repair_model_calls": 221.57,
+                "added_passes_std": 3.104802569403548
+              }
+            },
+            {
+              "coverage": 0.65,
+              "gate_count": 107,
+              "risk": {
+                "added_passes": 30,
+                "repair_model_calls": 276,
+                "attempted_repairs": 106
+              },
+              "inverted": {
+                "added_passes": 42,
+                "repair_model_calls": 213,
+                "attempted_repairs": 91
+              },
+              "random_mean": {
+                "added_passes": 35.305,
+                "repair_model_calls": 239.855,
+                "added_passes_std": 3.0078582172829194
+              }
+            },
+            {
+              "coverage": 0.7,
+              "gate_count": 115,
+              "risk": {
+                "added_passes": 33,
+                "repair_model_calls": 297,
+                "attempted_repairs": 114
+              },
+              "inverted": {
+                "added_passes": 45,
+                "repair_model_calls": 233,
+                "attempted_repairs": 99
+              },
+              "random_mean": {
+                "added_passes": 37.875,
+                "repair_model_calls": 257.835,
+                "added_passes_std": 2.915799105238657
+              }
+            },
+            {
+              "coverage": 0.75,
+              "gate_count": 123,
+              "risk": {
+                "added_passes": 36,
+                "repair_model_calls": 312,
+                "attempted_repairs": 121
+              },
+              "inverted": {
+                "added_passes": 47,
+                "repair_model_calls": 255,
+                "attempted_repairs": 107
+              },
+              "random_mean": {
+                "added_passes": 40.475,
+                "repair_model_calls": 276.14,
+                "added_passes_std": 2.652272184126936
+              }
+            },
+            {
+              "coverage": 0.8,
+              "gate_count": 132,
+              "risk": {
+                "added_passes": 43,
+                "repair_model_calls": 326,
+                "attempted_repairs": 129
+              },
+              "inverted": {
+                "added_passes": 48,
+                "repair_model_calls": 280,
+                "attempted_repairs": 116
+              },
+              "random_mean": {
+                "added_passes": 43.56,
+                "repair_model_calls": 296.15,
+                "added_passes_std": 2.392702473277474
+              }
+            },
+            {
+              "coverage": 0.85,
+              "gate_count": 140,
+              "risk": {
+                "added_passes": 47,
+                "repair_model_calls": 345,
+                "attempted_repairs": 137
+              },
+              "inverted": {
+                "added_passes": 50,
+                "repair_model_calls": 303,
+                "attempted_repairs": 124
+              },
+              "random_mean": {
+                "added_passes": 46.19,
+                "repair_model_calls": 314.12,
+                "added_passes_std": 2.2109594542964177
+              }
+            },
+            {
+              "coverage": 0.9,
+              "gate_count": 148,
+              "risk": {
+                "added_passes": 52,
+                "repair_model_calls": 359,
+                "attempted_repairs": 144
+              },
+              "inverted": {
+                "added_passes": 50,
+                "repair_model_calls": 327,
+                "attempted_repairs": 132
+              },
+              "random_mean": {
+                "added_passes": 48.915,
+                "repair_model_calls": 331.625,
+                "added_passes_std": 1.7444167935871129
+              }
+            },
+            {
+              "coverage": 0.95,
+              "gate_count": 156,
+              "risk": {
+                "added_passes": 54,
+                "repair_model_calls": 368,
+                "attempted_repairs": 148
+              },
+              "inverted": {
+                "added_passes": 53,
+                "repair_model_calls": 345,
+                "attempted_repairs": 140
+              },
+              "random_mean": {
+                "added_passes": 51.435,
+                "repair_model_calls": 349.875,
+                "added_passes_std": 1.2137300785255294
+              }
+            },
+            {
+              "coverage": 1.0,
+              "gate_count": 164,
+              "risk": {
+                "added_passes": 54,
+                "repair_model_calls": 368,
+                "attempted_repairs": 148
+              },
+              "inverted": {
+                "added_passes": 54,
+                "repair_model_calls": 368,
+                "attempted_repairs": 148
+              },
+              "random_mean": {
+                "added_passes": 54.0,
+                "repair_model_calls": 368.0,
+                "added_passes_std": 0.0
+              }
+            }
+          ],
+          "budget_matched_inverted": {
+            "coverage": 1.0,
+            "gate_count": 164,
+            "added_passes": 54,
+            "repair_model_calls": 368,
+            "reference_calls": 368
+          },
+          "repair_all": {
+            "added_passes": 54,
+            "repair_model_calls": 368,
+            "attempted_repairs": 148,
+            "repair_success_rate": 0.36486486486486486
+          },
+          "arm": "error",
+          "pool_file": "results/humaneval_week8_repair_all_sample0_qwen15b.json",
+          "pool_run_id": "humaneval_week8_repair_all_sample0_qwen15b",
+          "context_mode_as_stored": null,
+          "device_resolved": "cuda",
+          "dtype_resolved": "torch.float16",
+          "selection_sha256": "9332324b2b7ecc9278b4742c66c2716b5bb81b93e5e8040085fe49f330c5af20",
+          "call_renormalization": {
+            "stored_calls": 368,
+            "renormalized_calls": 368,
+            "stop_on_pass_as_stored": true,
+            "per_coordinate_delta_histogram": {
+              "0": 148
+            },
+            "n_records": 148
+          },
+          "resample_control_at_this_budget": {
+            "reference_repair_calls": 368,
+            "largest_affordable": {
+              "k_extra_samples": 2,
+              "added_passes": 10,
+              "base_model_calls": 296,
+              "calls_per_added_pass": 29.6
+            },
+            "smallest_unaffordable": {
+              "k_extra_samples": 3,
+              "added_passes": 12,
+              "base_model_calls": 444,
+              "calls_per_added_pass": 37.0
+            }
+          }
+        }
+      },
+      "guards": {
+        "reproduction": {
+          "arm": "error",
+          "expected": {
+            "initial_passed": 0.947,
+            "repair_success": 0.706
+          },
+          "observed": {
+            "initial_passed": 0.9467905405405406,
+            "repair_success": 0.706461780929866
+          },
+          "passed": true
+        },
+        "call_renormalization": {
+          "none": {
+            "stop_on_pass_as_stored": false,
+            "stored_calls": 444,
+            "renormalized_calls": 304,
+            "per_coordinate_delta_histogram": {
+              "-2": 59,
+              "-1": 22,
+              "0": 67
+            },
+            "passed": true
+          },
+          "code_only": {
+            "stop_on_pass_as_stored": false,
+            "stored_calls": 444,
+            "renormalized_calls": 352,
+            "per_coordinate_delta_histogram": {
+              "-2": 37,
+              "-1": 18,
+              "0": 93
+            },
+            "passed": true
+          },
+          "error": {
+            "stop_on_pass_as_stored": true,
+            "stored_calls": 368,
+            "renormalized_calls": 368,
+            "per_coordinate_delta_histogram": {
+              "0": 148
+            },
+            "passed": true
+          }
+        },
+        "cohort_identity": {
+          "selection_sha256_by_arm": {
+            "none": "9332324b2b7ecc9278b4742c66c2716b5bb81b93e5e8040085fe49f330c5af20",
+            "code_only": "9332324b2b7ecc9278b4742c66c2716b5bb81b93e5e8040085fe49f330c5af20",
+            "error": "9332324b2b7ecc9278b4742c66c2716b5bb81b93e5e8040085fe49f330c5af20"
+          },
+          "passed": true,
+          "note": "all arms must have been generated over the same frozen coordinate selection"
+        },
+        "cohort_name": "humaneval"
+      }
+    }
+  ]
+}

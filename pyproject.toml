@@ -1,0 +1,12 @@
+# Formatter configuration (CLAUDE.md Section 12: black line length 88 + isort).
+# isort's default multi-line style fights black's magic-trailing-comma import
+# wrapping, making the pre-commit sequence "black && isort" non-idempotent;
+# profile = "black" pins the agreed style (stdlib -> third-party -> local
+# ordering is unchanged).
+
+[tool.black]
+line-length = 88
+
+[tool.isort]
+profile = "black"
+line_length = 88

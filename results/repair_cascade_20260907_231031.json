@@ -1,0 +1,4140 @@
+{
+  "analysis": "week13_repair_cascade",
+  "timestamp": "2026-09-07T23:10:31.509925",
+  "figure": "reports/figures/repair_cascade_cost_and_targeting.png",
+  "cohorts": {
+    "humaneval": {
+      "cohort_name": "humaneval",
+      "config": {
+        "sample_index": 0,
+        "max_k0": 9,
+        "n_seeds": 200,
+        "n_splits": 5,
+        "seed": 42,
+        "source_run_id": "humaneval_uncertainty_merged164_20260711"
+      },
+      "n_coordinates": 148,
+      "single_arm_baselines": {
+        "T0": {
+          "length": 1,
+          "tiers": [
+            "T0"
+          ],
+          "added_passes": 20,
+          "base_model_calls": 1220,
+          "repairer_model_calls": 0,
+          "attempts": 148,
+          "single_currency": true
+        },
+        "T1": {
+          "length": 1,
+          "tiers": [
+            "T1"
+          ],
+          "added_passes": 91,
+          "base_model_calls": 0,
+          "repairer_model_calls": 304,
+          "attempts": 148,
+          "single_currency": true
+        },
+        "T2": {
+          "length": 1,
+          "tiers": [
+            "T2"
+          ],
+          "added_passes": 65,
+          "base_model_calls": 0,
+          "repairer_model_calls": 352,
+          "attempts": 148,
+          "single_currency": true
+        },
+        "T3": {
+          "length": 1,
+          "tiers": [
+            "T3"
+          ],
+          "added_passes": 54,
+          "base_model_calls": 0,
+          "repairer_model_calls": 368,
+          "attempts": 148,
+          "single_currency": true
+        }
+      },
+      "all_orders_table": [
+        {
+          "order": [
+            "T0",
+            "T1",
+            "T2",
+            "T3"
+          ],
+          "prefixes": [
+            {
+              "length": 1,
+              "tiers": [
+                "T0"
+              ],
+              "added_passes": 20,
+              "base_model_calls": 1220,
+              "repairer_model_calls": 0,
+              "attempts": 148,
+              "single_currency": true
+            },
+            {
+              "length": 2,
+              "tiers": [
+                "T0",
+                "T1"
+              ],
+              "added_passes": 95,
+              "base_model_calls": 1220,
+              "repairer_model_calls": 271,
+              "attempts": 276,
+              "single_currency": false
+            },
+            {
+              "length": 3,
+              "tiers": [
+                "T0",
+                "T1",
+                "T2"
+              ],
+              "added_passes": 111,
+              "base_model_calls": 1220,
+              "repairer_model_calls": 410,
+              "attempts": 329,
+              "single_currency": false
+            },
+            {
+              "length": 4,
+              "tiers": [
+                "T0",
+                "T1",
+                "T2",
+                "T3"
+              ],
+              "added_passes": 111,
+              "base_model_calls": 1220,
+              "repairer_model_calls": 521,
+              "attempts": 366,
+              "single_currency": false
+            }
+          ]
+        },
+        {
+          "order": [
+            "T0",
+            "T1",
+            "T3",
+            "T2"
+          ],
+          "prefixes": [
+            {
+              "length": 1,
+              "tiers": [
+                "T0"
+              ],
+              "added_passes": 20,
+              "base_model_calls": 1220,
+              "repairer_model_calls": 0,
+              "attempts": 148,
+              "single_currency": true
+            },
+            {
+              "length": 2,
+              "tiers": [
+                "T0",
+                "T1"
+              ],
+              "added_passes": 95,
+              "base_model_calls": 1220,
+              "repairer_model_calls": 271,
+              "attempts": 276,
+              "single_currency": false
+            },
+            {
+              "length": 3,
+              "tiers": [
+                "T0",
+                "T1",
+                "T3"
+              ],
+              "added_passes": 105,
+              "base_model_calls": 1220,
+              "repairer_model_calls": 419,
+              "attempts": 329,
+              "single_currency": false
+            },
+            {
+              "length": 4,
+              "tiers": [
+                "T0",
+                "T1",
+                "T3",
+                "T2"
+              ],
+              "added_passes": 111,
+              "base_model_calls": 1220,
+              "repairer_model_calls": 542,
+              "attempts": 372,
+              "single_currency": false
+            }
+          ]
+        },
+        {
+          "order": [
+            "T0",
+            "T2",
+            "T1",
+            "T3"
+          ],
+          "prefixes": [
+            {
+              "length": 1,
+              "tiers": [
+                "T0"
+              ],
+              "added_passes": 20,
+              "base_model_calls": 1220,
+              "repairer_model_calls": 0,
+              "attempts": 148,
+              "single_currency": true
+            },
+            {
+              "length": 2,
+              "tiers": [
+                "T0",
+                "T2"
+              ],
+              "added_passes": 73,
+              "base_model_calls": 1220,
+              "repairer_model_calls": 310,
+              "attempts": 276,
+              "single_currency": false
+            },
+            {
+              "length": 3,
+              "tiers": [
+                "T0",
+                "T2",
+                "T1"
+              ],
+              "added_passes": 111,
+              "base_model_calls": 1220,
+              "repairer_model_calls": 481,
+              "attempts": 351,
+              "single_currency": false
+            },
+            {
+              "length": 4,
+              "tiers": [
+                "T0",
+                "T2",
+                "T1",
+                "T3"
+              ],
+              "added_passes": 111,
+              "base_model_calls": 1220,
+              "repairer_model_calls": 592,
+              "attempts": 388,
+              "single_currency": false
+            }
+          ]
+        },
+        {
+          "order": [
+            "T0",
+            "T2",
+            "T3",
+            "T1"
+          ],
+          "prefixes": [
+            {
+              "length": 1,
+              "tiers": [
+                "T0"
+              ],
+              "added_passes": 20,
+              "base_model_calls": 1220,
+              "repairer_model_calls": 0,
+              "attempts": 148,
+              "single_currency": true
+            },
+            {
+              "length": 2,
+              "tiers": [
+                "T0",
+                "T2"
+              ],
+              "added_passes": 73,
+              "base_model_calls": 1220,
+              "repairer_model_calls": 310,
+              "attempts": 276,
+              "single_currency": false
+            },
+            {
+              "length": 3,
+              "tiers": [
+                "T0",
+                "T2",
+                "T3"
+              ],
+              "added_passes": 77,
+              "base_model_calls": 1220,
+              "repairer_model_calls": 529,
+              "attempts": 351,
+              "single_currency": false
+            },
+            {
+              "length": 4,
+              "tiers": [
+                "T0",
+                "T2",
+                "T3",
+                "T1"
+              ],
+              "added_passes": 111,
+              "base_model_calls": 1220,
+              "repairer_model_calls": 692,
+              "attempts": 422,
+              "single_currency": false
+            }
+          ]
+        },
+        {
+          "order": [
+            "T0",
+            "T3",
+            "T1",
+            "T2"
+          ],
+          "prefixes": [
+            {
+              "length": 1,
+              "tiers": [
+                "T0"
+              ],
+              "added_passes": 20,
+              "base_model_calls": 1220,
+              "repairer_model_calls": 0,
+              "attempts": 148,
+              "single_currency": true
+            },
+            {
+              "length": 2,
+              "tiers": [
+                "T0",
+                "T3"
+              ],
+              "added_passes": 61,
+              "base_model_calls": 1220,
+              "repairer_model_calls": 325,
+              "attempts": 276,
+              "single_currency": false
+            },
+            {
+              "length": 3,
+              "tiers": [
+                "T0",
+                "T3",
+                "T1"
+              ],
+              "added_passes": 105,
+              "base_model_calls": 1220,
+              "repairer_model_calls": 522,
+              "attempts": 363,
+              "single_currency": false
+            },
+            {
+              "length": 4,
+              "tiers": [
+                "T0",
+                "T3",
+                "T1",
+                "T2"
+              ],
+              "added_passes": 111,
+              "base_model_calls": 1220,
+              "repairer_model_calls": 645,
+              "attempts": 406,
+              "single_currency": false
+            }
+          ]
+        },
+        {
+          "order": [
+            "T0",
+            "T3",
+            "T2",
+            "T1"
+          ],
+          "prefixes": [
+            {
+              "length": 1,
+              "tiers": [
+                "T0"
+              ],
+              "added_passes": 20,
+              "base_model_calls": 1220,
+              "repairer_model_calls": 0,
+              "attempts": 148,
+              "single_currency": true
+            },
+            {
+              "length": 2,
+              "tiers": [
+                "T0",
+                "T3"
+              ],
+              "added_passes": 61,
+              "base_model_calls": 1220,
+              "repairer_model_calls": 325,
+              "attempts": 276,
+              "single_currency": false
+            },
+            {
+              "length": 3,
+              "tiers": [
+                "T0",
+                "T3",
+                "T2"
+              ],
+              "added_passes": 77,
+              "base_model_calls": 1220,
+              "repairer_model_calls": 569,
+              "attempts": 363,
+              "single_currency": false
+            },
+            {
+              "length": 4,
+              "tiers": [
+                "T0",
+                "T3",
+                "T2",
+                "T1"
+              ],
+              "added_passes": 111,
+              "base_model_calls": 1220,
+              "repairer_model_calls": 732,
+              "attempts": 434,
+              "single_currency": false
+            }
+          ]
+        },
+        {
+          "order": [
+            "T1",
+            "T0",
+            "T2",
+            "T3"
+          ],
+          "prefixes": [
+            {
+              "length": 1,
+              "tiers": [
+                "T1"
+              ],
+              "added_passes": 91,
+              "base_model_calls": 0,
+              "repairer_model_calls": 304,
+              "attempts": 148,
+              "single_currency": true
+            },
+            {
+              "length": 2,
+              "tiers": [
+                "T1",
+                "T0"
+              ],
+              "added_passes": 95,
+              "base_model_calls": 495,
+              "repairer_model_calls": 304,
+              "attempts": 205,
+              "single_currency": false
+            },
+            {
+              "length": 3,
+              "tiers": [
+                "T1",
+                "T0",
+                "T2"
+              ],
+              "added_passes": 111,
+              "base_model_calls": 495,
+              "repairer_model_calls": 443,
+              "attempts": 258,
+              "single_currency": false
+            },
+            {
+              "length": 4,
+              "tiers": [
+                "T1",
+                "T0",
+                "T2",
+                "T3"
+              ],
+              "added_passes": 111,
+              "base_model_calls": 495,
+              "repairer_model_calls": 554,
+              "attempts": 295,
+              "single_currency": false
+            }
+          ]
+        },
+        {
+          "order": [
+            "T1",
+            "T0",
+            "T3",
+            "T2"
+          ],
+          "prefixes": [
+            {
+              "length": 1,
+              "tiers": [
+                "T1"
+              ],
+              "added_passes": 91,
+              "base_model_calls": 0,
+              "repairer_model_calls": 304,
+              "attempts": 148,
+              "single_currency": true
+            },
+            {
+              "length": 2,
+              "tiers": [
+                "T1",
+                "T0"
+              ],
+              "added_passes": 95,
+              "base_model_calls": 495,
+              "repairer_model_calls": 304,
+              "attempts": 205,
+              "single_currency": false
+            },
+            {
+              "length": 3,
+              "tiers": [
+                "T1",
+                "T0",
+                "T3"
+              ],
+              "added_passes": 105,
+              "base_model_calls": 495,
+              "repairer_model_calls": 452,
+              "attempts": 258,
+              "single_currency": false
+            },
+            {
+              "length": 4,
+              "tiers": [
+                "T1",
+                "T0",
+                "T3",
+                "T2"
+              ],
+              "added_passes": 111,
+              "base_model_calls": 495,
+              "repairer_model_calls": 575,
+              "attempts": 301,
+              "single_currency": false
+            }
+          ]
+        },
+        {
+          "order": [
+            "T1",
+            "T2",
+            "T0",
+            "T3"
+          ],
+          "prefixes": [
+            {
+              "length": 1,
+              "tiers": [
+                "T1"
+              ],
+              "added_passes": 91,
+              "base_model_calls": 0,
+              "repairer_model_calls": 304,
+              "attempts": 148,
+              "single_currency": true
+            },
+            {
+              "length": 2,
+              "tiers": [
+                "T1",
+                "T2"
+              ],
+              "added_passes": 109,
+              "base_model_calls": 0,
+              "repairer_model_calls": 452,
+              "attempts": 205,
+              "single_currency": true
+            },
+            {
+              "length": 3,
+              "tiers": [
+                "T1",
+                "T2",
+                "T0"
+              ],
+              "added_passes": 111,
+              "base_model_calls": 345,
+              "repairer_model_calls": 452,
+              "attempts": 244,
+              "single_currency": false
+            },
+            {
+              "length": 4,
+              "tiers": [
+                "T1",
+                "T2",
+                "T0",
+                "T3"
+              ],
+              "added_passes": 111,
+              "base_model_calls": 345,
+              "repairer_model_calls": 563,
+              "attempts": 281,
+              "single_currency": false
+            }
+          ]
+        },
+        {
+          "order": [
+            "T1",
+            "T2",
+            "T3",
+            "T0"
+          ],
+          "prefixes": [
+            {
+              "length": 1,
+              "tiers": [
+                "T1"
+              ],
+              "added_passes": 91,
+              "base_model_calls": 0,
+              "repairer_model_calls": 304,
+              "attempts": 148,
+              "single_currency": true
+            },
+            {
+              "length": 2,
+              "tiers": [
+                "T1",
+                "T2"
+              ],
+              "added_passes": 109,
+              "base_model_calls": 0,
+              "repairer_model_calls": 452,
+              "attempts": 205,
+              "single_currency": true
+            },
+            {
+              "length": 3,
+              "tiers": [
+                "T1",
+                "T2",
+                "T3"
+              ],
+              "added_passes": 109,
+              "base_model_calls": 0,
+              "repairer_model_calls": 569,
+              "attempts": 244,
+              "single_currency": true
+            },
+            {
+              "length": 4,
+              "tiers": [
+                "T1",
+                "T2",
+                "T3",
+                "T0"
+              ],
+              "added_passes": 111,
+              "base_model_calls": 345,
+              "repairer_model_calls": 569,
+              "attempts": 283,
+              "single_currency": false
+            }
+          ]
+        },
+        {
+          "order": [
+            "T1",
+            "T3",
+            "T0",
+            "T2"
+          ],
+          "prefixes": [
+            {
+              "length": 1,
+              "tiers": [
+                "T1"
+              ],
+              "added_passes": 91,
+              "base_model_calls": 0,
+              "repairer_model_calls": 304,
+              "attempts": 148,
+              "single_currency": true
+            },
+            {
+              "length": 2,
+              "tiers": [
+                "T1",
+                "T3"
+              ],
+              "added_passes": 103,
+              "base_model_calls": 0,
+              "repairer_model_calls": 461,
+              "attempts": 205,
+              "single_currency": true
+            },
+            {
+              "length": 3,
+              "tiers": [
+                "T1",
+                "T3",
+                "T0"
+              ],
+              "added_passes": 105,
+              "base_model_calls": 399,
+              "repairer_model_calls": 461,
+              "attempts": 250,
+              "single_currency": false
+            },
+            {
+              "length": 4,
+              "tiers": [
+                "T1",
+                "T3",
+                "T0",
+                "T2"
+              ],
+              "added_passes": 111,
+              "base_model_calls": 399,
+              "repairer_model_calls": 584,
+              "attempts": 293,
+              "single_currency": false
+            }
+          ]
+        },
+        {
+          "order": [
+            "T1",
+            "T3",
+            "T2",
+            "T0"
+          ],
+          "prefixes": [
+            {
+              "length": 1,
+              "tiers": [
+                "T1"
+              ],
+              "added_passes": 91,
+              "base_model_calls": 0,
+              "repairer_model_calls": 304,
+              "attempts": 148,
+              "single_currency": true
+            },
+            {
+              "length": 2,
+              "tiers": [
+                "T1",
+                "T3"
+              ],
+              "added_passes": 103,
+              "base_model_calls": 0,
+              "repairer_model_calls": 461,
+              "attempts": 205,
+              "single_currency": true
+            },
+            {
+              "length": 3,
+              "tiers": [
+                "T1",
+                "T3",
+                "T2"
+              ],
+              "added_passes": 109,
+              "base_model_calls": 0,
+              "repairer_model_calls": 590,
+              "attempts": 250,
+              "single_currency": true
+            },
+            {
+              "length": 4,
+              "tiers": [
+                "T1",
+                "T3",
+                "T2",
+                "T0"
+              ],
+              "added_passes": 111,
+              "base_model_calls": 345,
+              "repairer_model_calls": 590,
+              "attempts": 289,
+              "single_currency": false
+            }
+          ]
+        },
+        {
+          "order": [
+            "T2",
+            "T0",
+            "T1",
+            "T3"
+          ],
+          "prefixes": [
+            {
+              "length": 1,
+              "tiers": [
+                "T2"
+              ],
+              "added_passes": 65,
+              "base_model_calls": 0,
+              "repairer_model_calls": 352,
+              "attempts": 148,
+              "single_currency": true
+            },
+            {
+              "length": 2,
+              "tiers": [
+                "T2",
+                "T0"
+              ],
+              "added_passes": 73,
+              "base_model_calls": 701,
+              "repairer_model_calls": 352,
+              "attempts": 231,
+              "single_currency": false
+            },
+            {
+              "length": 3,
+              "tiers": [
+                "T2",
+                "T0",
+                "T1"
+              ],
+              "added_passes": 111,
+              "base_model_calls": 701,
+              "repairer_model_calls": 523,
+              "attempts": 306,
+              "single_currency": false
+            },
+            {
+              "length": 4,
+              "tiers": [
+                "T2",
+                "T0",
+                "T1",
+                "T3"
+              ],
+              "added_passes": 111,
+              "base_model_calls": 701,
+              "repairer_model_calls": 634,
+              "attempts": 343,
+              "single_currency": false
+            }
+          ]
+        },
+        {
+          "order": [
+            "T2",
+            "T0",
+            "T3",
+            "T1"
+          ],
+          "prefixes": [
+            {
+              "length": 1,
+              "tiers": [
+                "T2"
+              ],
+              "added_passes": 65,
+              "base_model_calls": 0,
+              "repairer_model_calls": 352,
+              "attempts": 148,
+              "single_currency": true
+            },
+            {
+              "length": 2,
+              "tiers": [
+                "T2",
+                "T0"
+              ],
+              "added_passes": 73,
+              "base_model_calls": 701,
+              "repairer_model_calls": 352,
+              "attempts": 231,
+              "single_currency": false
+            },
+            {
+              "length": 3,
+              "tiers": [
+                "T2",
+                "T0",
+                "T3"
+              ],
+              "added_passes": 77,
+              "base_model_calls": 701,
+              "repairer_model_calls": 571,
+              "attempts": 306,
+              "single_currency": false
+            },
+            {
+              "length": 4,
+              "tiers": [
+                "T2",
+                "T0",
+                "T3",
+                "T1"
+              ],
+              "added_passes": 111,
+              "base_model_calls": 701,
+              "repairer_model_calls": 734,
+              "attempts": 377,
+              "single_currency": false
+            }
+          ]
+        },
+        {
+          "order": [
+            "T2",
+            "T1",
+            "T0",
+            "T3"
+          ],
+          "prefixes": [
+            {
+              "length": 1,
+              "tiers": [
+                "T2"
+              ],
+              "added_passes": 65,
+              "base_model_calls": 0,
+              "repairer_model_calls": 352,
+              "attempts": 148,
+              "single_currency": true
+            },
+            {
+              "length": 2,
+              "tiers": [
+                "T2",
+                "T1"
+              ],
+              "added_passes": 109,
+              "base_model_calls": 0,
+              "repairer_model_calls": 535,
+              "attempts": 231,
+              "single_currency": true
+            },
+            {
+              "length": 3,
+              "tiers": [
+                "T2",
+                "T1",
+                "T0"
+              ],
+              "added_passes": 111,
+              "base_model_calls": 345,
+              "repairer_model_calls": 535,
+              "attempts": 270,
+              "single_currency": false
+            },
+            {
+              "length": 4,
+              "tiers": [
+                "T2",
+                "T1",
+                "T0",
+                "T3"
+              ],
+              "added_passes": 111,
+              "base_model_calls": 345,
+              "repairer_model_calls": 646,
+              "attempts": 307,
+              "single_currency": false
+            }
+          ]
+        },
+        {
+          "order": [
+            "T2",
+            "T1",
+            "T3",
+            "T0"
+          ],
+          "prefixes": [
+            {
+              "length": 1,
+              "tiers": [
+                "T2"
+              ],
+              "added_passes": 65,
+              "base_model_calls": 0,
+              "repairer_model_calls": 352,
+              "attempts": 148,
+              "single_currency": true
+            },
+            {
+              "length": 2,
+              "tiers": [
+                "T2",
+                "T1"
+              ],
+              "added_passes": 109,
+              "base_model_calls": 0,
+              "repairer_model_calls": 535,
+              "attempts": 231,
+              "single_currency": true
+            },
+            {
+              "length": 3,
+              "tiers": [
+                "T2",
+                "T1",
+                "T3"
+              ],
+              "added_passes": 109,
+              "base_model_calls": 0,
+              "repairer_model_calls": 652,
+              "attempts": 270,
+              "single_currency": true
+            },
+            {
+              "length": 4,
+              "tiers": [
+                "T2",
+                "T1",
+                "T3",
+                "T0"
+              ],
+              "added_passes": 111,
+              "base_model_calls": 345,
+              "repairer_model_calls": 652,
+              "attempts": 309,
+              "single_currency": false
+            }
+          ]
+        },
+        {
+          "order": [
+            "T2",
+            "T3",
+            "T0",
+            "T1"
+          ],
+          "prefixes": [
+            {
+              "length": 1,
+              "tiers": [
+                "T2"
+              ],
+              "added_passes": 65,
+              "base_model_calls": 0,
+              "repairer_model_calls": 352,
+              "attempts": 148,
+              "single_currency": true
+            },
+            {
+              "length": 2,
+              "tiers": [
+                "T2",
+                "T3"
+              ],
+              "added_passes": 70,
+              "base_model_calls": 0,
+              "repairer_model_calls": 593,
+              "attempts": 231,
+              "single_currency": true
+            },
+            {
+              "length": 3,
+              "tiers": [
+                "T2",
+                "T3",
+                "T0"
+              ],
+              "added_passes": 77,
+              "base_model_calls": 664,
+              "repairer_model_calls": 593,
+              "attempts": 309,
+              "single_currency": false
+            },
+            {
+              "length": 4,
+              "tiers": [
+                "T2",
+                "T3",
+                "T0",
+                "T1"
+              ],
+              "added_passes": 111,
+              "base_model_calls": 664,
+              "repairer_model_calls": 756,
+              "attempts": 380,
+              "single_currency": false
+            }
+          ]
+        },
+        {
+          "order": [
+            "T2",
+            "T3",
+            "T1",
+            "T0"
+          ],
+          "prefixes": [
+            {
+              "length": 1,
+              "tiers": [
+                "T2"
+              ],
+              "added_passes": 65,
+              "base_model_calls": 0,
+              "repairer_model_calls": 352,
+              "attempts": 148,
+              "single_currency": true
+            },
+            {
+              "length": 2,
+              "tiers": [
+                "T2",
+                "T3"
+              ],
+              "added_passes": 70,
+              "base_model_calls": 0,
+              "repairer_model_calls": 593,
+              "attempts": 231,
+              "single_currency": true
+            },
+            {
+              "length": 3,
+              "tiers": [
+                "T2",
+                "T3",
+                "T1"
+              ],
+              "added_passes": 109,
+              "base_model_calls": 0,
+              "repairer_model_calls": 767,
+              "attempts": 309,
+              "single_currency": true
+            },
+            {
+              "length": 4,
+              "tiers": [
+                "T2",
+                "T3",
+                "T1",
+                "T0"
+              ],
+              "added_passes": 111,
+              "base_model_calls": 345,
+              "repairer_model_calls": 767,
+              "attempts": 348,
+              "single_currency": false
+            }
+          ]
+        },
+        {
+          "order": [
+            "T3",
+            "T0",
+            "T1",
+            "T2"
+          ],
+          "prefixes": [
+            {
+              "length": 1,
+              "tiers": [
+                "T3"
+              ],
+              "added_passes": 54,
+              "base_model_calls": 0,
+              "repairer_model_calls": 368,
+              "attempts": 148,
+              "single_currency": true
+            },
+            {
+              "length": 2,
+              "tiers": [
+                "T3",
+                "T0"
+              ],
+              "added_passes": 61,
+              "base_model_calls": 808,
+              "repairer_model_calls": 368,
+              "attempts": 242,
+              "single_currency": false
+            },
+            {
+              "length": 3,
+              "tiers": [
+                "T3",
+                "T0",
+                "T1"
+              ],
+              "added_passes": 105,
+              "base_model_calls": 808,
+              "repairer_model_calls": 565,
+              "attempts": 329,
+              "single_currency": false
+            },
+            {
+              "length": 4,
+              "tiers": [
+                "T3",
+                "T0",
+                "T1",
+                "T2"
+              ],
+              "added_passes": 111,
+              "base_model_calls": 808,
+              "repairer_model_calls": 688,
+              "attempts": 372,
+              "single_currency": false
+            }
+          ]
+        },
+        {
+          "order": [
+            "T3",
+            "T0",
+            "T2",
+            "T1"
+          ],
+          "prefixes": [
+            {
+              "length": 1,
+              "tiers": [
+                "T3"
+              ],
+              "added_passes": 54,
+              "base_model_calls": 0,
+              "repairer_model_calls": 368,
+              "attempts": 148,
+              "single_currency": true
+            },
+            {
+              "length": 2,
+              "tiers": [
+                "T3",
+                "T0"
+              ],
+              "added_passes": 61,
+              "base_model_calls": 808,
+              "repairer_model_calls": 368,
+              "attempts": 242,
+              "single_currency": false
+            },
+            {
+              "length": 3,
+              "tiers": [
+                "T3",
+                "T0",
+                "T2"
+              ],
+              "added_passes": 77,
+              "base_model_calls": 808,
+              "repairer_model_calls": 612,
+              "attempts": 329,
+              "single_currency": false
+            },
+            {
+              "length": 4,
+              "tiers": [
+                "T3",
+                "T0",
+                "T2",
+                "T1"
+              ],
+              "added_passes": 111,
+              "base_model_calls": 808,
+              "repairer_model_calls": 775,
+              "attempts": 400,
+              "single_currency": false
+            }
+          ]
+        },
+        {
+          "order": [
+            "T3",
+            "T1",
+            "T0",
+            "T2"
+          ],
+          "prefixes": [
+            {
+              "length": 1,
+              "tiers": [
+                "T3"
+              ],
+              "added_passes": 54,
+              "base_model_calls": 0,
+              "repairer_model_calls": 368,
+              "attempts": 148,
+              "single_currency": true
+            },
+            {
+              "length": 2,
+              "tiers": [
+                "T3",
+                "T1"
+              ],
+              "added_passes": 103,
+              "base_model_calls": 0,
+              "repairer_model_calls": 576,
+              "attempts": 242,
+              "single_currency": true
+            },
+            {
+              "length": 3,
+              "tiers": [
+                "T3",
+                "T1",
+                "T0"
+              ],
+              "added_passes": 105,
+              "base_model_calls": 399,
+              "repairer_model_calls": 576,
+              "attempts": 287,
+              "single_currency": false
+            },
+            {
+              "length": 4,
+              "tiers": [
+                "T3",
+                "T1",
+                "T0",
+                "T2"
+              ],
+              "added_passes": 111,
+              "base_model_calls": 399,
+              "repairer_model_calls": 699,
+              "attempts": 330,
+              "single_currency": false
+            }
+          ]
+        },
+        {
+          "order": [
+            "T3",
+            "T1",
+            "T2",
+            "T0"
+          ],
+          "prefixes": [
+            {
+              "length": 1,
+              "tiers": [
+                "T3"
+              ],
+              "added_passes": 54,
+              "base_model_calls": 0,
+              "repairer_model_calls": 368,
+              "attempts": 148,
+              "single_currency": true
+            },
+            {
+              "length": 2,
+              "tiers": [
+                "T3",
+                "T1"
+              ],
+              "added_passes": 103,
+              "base_model_calls": 0,
+              "repairer_model_calls": 576,
+              "attempts": 242,
+              "single_currency": true
+            },
+            {
+              "length": 3,
+              "tiers": [
+                "T3",
+                "T1",
+                "T2"
+              ],
+              "added_passes": 109,
+              "base_model_calls": 0,
+              "repairer_model_calls": 705,
+              "attempts": 287,
+              "single_currency": true
+            },
+            {
+              "length": 4,
+              "tiers": [
+                "T3",
+                "T1",
+                "T2",
+                "T0"
+              ],
+              "added_passes": 111,
+              "base_model_calls": 345,
+              "repairer_model_calls": 705,
+              "attempts": 326,
+              "single_currency": false
+            }
+          ]
+        },
+        {
+          "order": [
+            "T3",
+            "T2",
+            "T0",
+            "T1"
+          ],
+          "prefixes": [
+            {
+              "length": 1,
+              "tiers": [
+                "T3"
+              ],
+              "added_passes": 54,
+              "base_model_calls": 0,
+              "repairer_model_calls": 368,
+              "attempts": 148,
+              "single_currency": true
+            },
+            {
+              "length": 2,
+              "tiers": [
+                "T3",
+                "T2"
+              ],
+              "added_passes": 70,
+              "base_model_calls": 0,
+              "repairer_model_calls": 633,
+              "attempts": 242,
+              "single_currency": true
+            },
+            {
+              "length": 3,
+              "tiers": [
+                "T3",
+                "T2",
+                "T0"
+              ],
+              "added_passes": 77,
+              "base_model_calls": 664,
+              "repairer_model_calls": 633,
+              "attempts": 320,
+              "single_currency": false
+            },
+            {
+              "length": 4,
+              "tiers": [
+                "T3",
+                "T2",
+                "T0",
+                "T1"
+              ],
+              "added_passes": 111,
+              "base_model_calls": 664,
+              "repairer_model_calls": 796,
+              "attempts": 391,
+              "single_currency": false
+            }
+          ]
+        },
+        {
+          "order": [
+            "T3",
+            "T2",
+            "T1",
+            "T0"
+          ],
+          "prefixes": [
+            {
+              "length": 1,
+              "tiers": [
+                "T3"
+              ],
+              "added_passes": 54,
+              "base_model_calls": 0,
+              "repairer_model_calls": 368,
+              "attempts": 148,
+              "single_currency": true
+            },
+            {
+              "length": 2,
+              "tiers": [
+                "T3",
+                "T2"
+              ],
+              "added_passes": 70,
+              "base_model_calls": 0,
+              "repairer_model_calls": 633,
+              "attempts": 242,
+              "single_currency": true
+            },
+            {
+              "length": 3,
+              "tiers": [
+                "T3",
+                "T2",
+                "T1"
+              ],
+              "added_passes": 109,
+              "base_model_calls": 0,
+              "repairer_model_calls": 807,
+              "attempts": 320,
+              "single_currency": true
+            },
+            {
+              "length": 4,
+              "tiers": [
+                "T3",
+                "T2",
+                "T1",
+                "T0"
+              ],
+              "added_passes": 111,
+              "base_model_calls": 345,
+              "repairer_model_calls": 807,
+              "attempts": 359,
+              "single_currency": false
+            }
+          ]
+        }
+      ],
+      "three_tier_cascade": {
+        "orders": [
+          {
+            "order": [
+              "T1",
+              "T2",
+              "T3"
+            ],
+            "prefixes": [
+              {
+                "length": 1,
+                "tiers": [
+                  "T1"
+                ],
+                "added_passes": 91,
+                "base_model_calls": 0,
+                "repairer_model_calls": 304,
+                "attempts": 148,
+                "single_currency": true
+              },
+              {
+                "length": 2,
+                "tiers": [
+                  "T1",
+                  "T2"
+                ],
+                "added_passes": 109,
+                "base_model_calls": 0,
+                "repairer_model_calls": 452,
+                "attempts": 205,
+                "single_currency": true
+              },
+              {
+                "length": 3,
+                "tiers": [
+                  "T1",
+                  "T2",
+                  "T3"
+                ],
+                "added_passes": 109,
+                "base_model_calls": 0,
+                "repairer_model_calls": 569,
+                "attempts": 244,
+                "single_currency": true
+              }
+            ]
+          },
+          {
+            "order": [
+              "T1",
+              "T3",
+              "T2"
+            ],
+            "prefixes": [
+              {
+                "length": 1,
+                "tiers": [
+                  "T1"
+                ],
+                "added_passes": 91,
+                "base_model_calls": 0,
+                "repairer_model_calls": 304,
+                "attempts": 148,
+                "single_currency": true
+              },
+              {
+                "length": 2,
+                "tiers": [
+                  "T1",
+                  "T3"
+                ],
+                "added_passes": 103,
+                "base_model_calls": 0,
+                "repairer_model_calls": 461,
+                "attempts": 205,
+                "single_currency": true
+              },
+              {
+                "length": 3,
+                "tiers": [
+                  "T1",
+                  "T3",
+                  "T2"
+                ],
+                "added_passes": 109,
+                "base_model_calls": 0,
+                "repairer_model_calls": 590,
+                "attempts": 250,
+                "single_currency": true
+              }
+            ]
+          },
+          {
+            "order": [
+              "T2",
+              "T1",
+              "T3"
+            ],
+            "prefixes": [
+              {
+                "length": 1,
+                "tiers": [
+                  "T2"
+                ],
+                "added_passes": 65,
+                "base_model_calls": 0,
+                "repairer_model_calls": 352,
+                "attempts": 148,
+                "single_currency": true
+              },
+              {
+                "length": 2,
+                "tiers": [
+                  "T2",
+                  "T1"
+                ],
+                "added_passes": 109,
+                "base_model_calls": 0,
+                "repairer_model_calls": 535,
+                "attempts": 231,
+                "single_currency": true
+              },
+              {
+                "length": 3,
+                "tiers": [
+                  "T2",
+                  "T1",
+                  "T3"
+                ],
+                "added_passes": 109,
+                "base_model_calls": 0,
+                "repairer_model_calls": 652,
+                "attempts": 270,
+                "single_currency": true
+              }
+            ]
+          },
+          {
+            "order": [
+              "T2",
+              "T3",
+              "T1"
+            ],
+            "prefixes": [
+              {
+                "length": 1,
+                "tiers": [
+                  "T2"
+                ],
+                "added_passes": 65,
+                "base_model_calls": 0,
+                "repairer_model_calls": 352,
+                "attempts": 148,
+                "single_currency": true
+              },
+              {
+                "length": 2,
+                "tiers": [
+                  "T2",
+                  "T3"
+                ],
+                "added_passes": 70,
+                "base_model_calls": 0,
+                "repairer_model_calls": 593,
+                "attempts": 231,
+                "single_currency": true
+              },
+              {
+                "length": 3,
+                "tiers": [
+                  "T2",
+                  "T3",
+                  "T1"
+                ],
+                "added_passes": 109,
+                "base_model_calls": 0,
+                "repairer_model_calls": 767,
+                "attempts": 309,
+                "single_currency": true
+              }
+            ]
+          },
+          {
+            "order": [
+              "T3",
+              "T1",
+              "T2"
+            ],
+            "prefixes": [
+              {
+                "length": 1,
+                "tiers": [
+                  "T3"
+                ],
+                "added_passes": 54,
+                "base_model_calls": 0,
+                "repairer_model_calls": 368,
+                "attempts": 148,
+                "single_currency": true
+              },
+              {
+                "length": 2,
+                "tiers": [
+                  "T3",
+                  "T1"
+                ],
+                "added_passes": 103,
+                "base_model_calls": 0,
+                "repairer_model_calls": 576,
+                "attempts": 242,
+                "single_currency": true
+              },
+              {
+                "length": 3,
+                "tiers": [
+                  "T3",
+                  "T1",
+                  "T2"
+                ],
+                "added_passes": 109,
+                "base_model_calls": 0,
+                "repairer_model_calls": 705,
+                "attempts": 287,
+                "single_currency": true
+              }
+            ]
+          },
+          {
+            "order": [
+              "T3",
+              "T2",
+              "T1"
+            ],
+            "prefixes": [
+              {
+                "length": 1,
+                "tiers": [
+                  "T3"
+                ],
+                "added_passes": 54,
+                "base_model_calls": 0,
+                "repairer_model_calls": 368,
+                "attempts": 148,
+                "single_currency": true
+              },
+              {
+                "length": 2,
+                "tiers": [
+                  "T3",
+                  "T2"
+                ],
+                "added_passes": 70,
+                "base_model_calls": 0,
+                "repairer_model_calls": 633,
+                "attempts": 242,
+                "single_currency": true
+              },
+              {
+                "length": 3,
+                "tiers": [
+                  "T3",
+                  "T2",
+                  "T1"
+                ],
+                "added_passes": 109,
+                "base_model_calls": 0,
+                "repairer_model_calls": 807,
+                "attempts": 320,
+                "single_currency": true
+              }
+            ]
+          }
+        ],
+        "ceiling_added_passes": 109,
+        "two_tier_added_passes": 109,
+        "two_tier_repairer_model_calls": 452,
+        "reaches_ceiling_without_t3": true,
+        "min_three_tier_cost_at_ceiling": 569,
+        "two_tier_strictly_cheaper_than_every_t3_order": true
+      },
+      "targeting_control": {
+        "base_tier": "T1",
+        "escalate_tier": "T2",
+        "n_coordinates": 148,
+        "n_escalated": 57,
+        "baseline_passes": 91,
+        "cascade_added_passes": 18,
+        "random_control": {
+          "n_seeds": 200,
+          "mean": -10.18,
+          "std": 3.8485917283413276,
+          "min": -20,
+          "max": 0
+        },
+        "predicted_p_pass_oof_added_passes": -14,
+        "predicted_initial_chars_added_passes": -18,
+        "oracle_added_passes": 18,
+        "oracle_equals_cascade": true,
+        "ratio_vs_random": -1.768172888015717,
+        "ratio_vs_predicted_p_pass_oof": -1.2857142857142858,
+        "ratio_vs_predicted_initial_chars": -1.0
+      },
+      "budget_sweep_within_failing_set": {
+        "base_tier": "T1",
+        "escalate_tier": "T2",
+        "n_failing": 57,
+        "full_escalate_tier_cost": 148,
+        "sweep": {
+          "p_pass_oof": [
+            {
+              "coverage": 0.25,
+              "budget": 37,
+              "added": 3,
+              "attempts": 13
+            },
+            {
+              "coverage": 0.5,
+              "budget": 74,
+              "added": 5,
+              "attempts": 26
+            },
+            {
+              "coverage": 0.75,
+              "budget": 111,
+              "added": 8,
+              "attempts": 39
+            },
+            {
+              "coverage": 1.0,
+              "budget": 148,
+              "added": 18,
+              "attempts": 57
+            }
+          ],
+          "initial_chars": [
+            {
+              "coverage": 0.25,
+              "budget": 37,
+              "added": 0,
+              "attempts": 12
+            },
+            {
+              "coverage": 0.5,
+              "budget": 74,
+              "added": 1,
+              "attempts": 24
+            },
+            {
+              "coverage": 0.75,
+              "budget": 111,
+              "added": 12,
+              "attempts": 42
+            },
+            {
+              "coverage": 1.0,
+              "budget": 148,
+              "added": 18,
+              "attempts": 57
+            }
+          ],
+          "random": [
+            {
+              "coverage": 0.25,
+              "budget": 37,
+              "added": 7,
+              "attempts": 15
+            },
+            {
+              "coverage": 0.5,
+              "budget": 74,
+              "added": 10,
+              "attempts": 28
+            },
+            {
+              "coverage": 0.75,
+              "budget": 111,
+              "added": 14,
+              "attempts": 43
+            },
+            {
+              "coverage": 1.0,
+              "budget": 148,
+              "added": 18,
+              "attempts": 57
+            }
+          ]
+        }
+      },
+      "nested_three_tier_order_selection": {
+        "n_splits": 5,
+        "held_out_added_passes": 109,
+        "held_out_repairer_model_calls": 569,
+        "fold_orders": [
+          [
+            "T1",
+            "T2",
+            "T3"
+          ],
+          [
+            "T1",
+            "T2",
+            "T3"
+          ],
+          [
+            "T1",
+            "T2",
+            "T3"
+          ],
+          [
+            "T1",
+            "T2",
+            "T3"
+          ],
+          [
+            "T1",
+            "T2",
+            "T3"
+          ]
+        ],
+        "fold_baseline_partition_check": {
+          "sum": 91,
+          "cohort_total": 91,
+          "passed": true
+        }
+      },
+      "marginal_return_table": {
+        "current_tier": "T1",
+        "next_tier": "T2",
+        "entries": [
+          {
+            "k": 1,
+            "deepen_rate": 0.39864864864864863,
+            "deepen_n": 148,
+            "switch_rate": 0.23595505617977527,
+            "switch_n": 89
+          },
+          {
+            "k": 2,
+            "deepen_rate": 0.24719101123595505,
+            "deepen_n": 89,
+            "switch_rate": 0.16417910447761194,
+            "switch_n": 67
+          },
+          {
+            "k": 3,
+            "deepen_rate": 0.14925373134328357,
+            "deepen_n": 67,
+            "switch_rate": 0.15789473684210525,
+            "switch_n": 57
+          }
+        ],
+        "crossover_k": 3,
+        "candidate_limit_note": "only k<=3 is testable: each arm stores exactly 3 candidates per coordinate"
+      },
+      "guards": {
+        "guard_1_reproduction": {
+          "observed_arm_successes": {
+            "none": 91,
+            "code_only": 65,
+            "error": 54
+          },
+          "expected_arm_successes": {
+            "none": 91,
+            "code_only": 65,
+            "error": 54
+          },
+          "observed_complementarity": {
+            "n_union": 109,
+            "none_only": 39,
+            "code_only_only": 6,
+            "error_only": 0,
+            "n_context_only": 18,
+            "n_unsolved_by_every_arm": 39
+          },
+          "expected_complementarity": {
+            "n_union": 109,
+            "none_only": 39,
+            "code_only_only": 6,
+            "error_only": 0,
+            "n_context_only": 18,
+            "n_unsolved_by_every_arm": 39
+          },
+          "passed": true
+        },
+        "guard_2_identity": {
+          "one_tier_equals_arm": {
+            "T0": {
+              "single_arm_passed": 20,
+              "stored_arm_successes": null,
+              "passed": true
+            },
+            "T1": {
+              "single_arm_passed": 91,
+              "stored_arm_successes": 91,
+              "passed": true
+            },
+            "T2": {
+              "single_arm_passed": 65,
+              "stored_arm_successes": 65,
+              "passed": true
+            },
+            "T3": {
+              "single_arm_passed": 54,
+              "stored_arm_successes": 54,
+              "passed": true
+            }
+          },
+          "full_cascade_equals_union": {
+            "union_all_tiers": 111,
+            "unlimited_budget_cascade_added_passes": 111,
+            "passed": true
+          },
+          "t0_zero_equals_baseline": {
+            "t0_at_k0_passed": false,
+            "t0_at_k0_cost": 0,
+            "passed": true
+          },
+          "passed": true
+        },
+        "guard_3_selection_sha256": {
+          "selection_sha256_by_arm": {
+            "T1": "9332324b2b7ecc9278b4742c66c2716b5bb81b93e5e8040085fe49f330c5af20",
+            "T2": "9332324b2b7ecc9278b4742c66c2716b5bb81b93e5e8040085fe49f330c5af20",
+            "T3": "9332324b2b7ecc9278b4742c66c2716b5bb81b93e5e8040085fe49f330c5af20"
+          },
+          "passed": true
+        }
+      }
+    },
+    "mbpp": {
+      "cohort_name": "mbpp",
+      "config": {
+        "sample_index": 0,
+        "max_k0": 9,
+        "n_seeds": 200,
+        "n_splits": 5,
+        "seed": 42,
+        "source_run_id": "mbpp_uncertainty_20260712_024909"
+      },
+      "n_coordinates": 54,
+      "single_arm_baselines": {
+        "T0": {
+          "length": 1,
+          "tiers": [
+            "T0"
+          ],
+          "added_passes": 17,
+          "base_model_calls": 391,
+          "repairer_model_calls": 0,
+          "attempts": 54,
+          "single_currency": true
+        },
+        "T1": {
+          "length": 1,
+          "tiers": [
+            "T1"
+          ],
+          "added_passes": 27,
+          "base_model_calls": 0,
+          "repairer_model_calls": 124,
+          "attempts": 54,
+          "single_currency": true
+        },
+        "T2": {
+          "length": 1,
+          "tiers": [
+            "T2"
+          ],
+          "added_passes": 14,
+          "base_model_calls": 0,
+          "repairer_model_calls": 140,
+          "attempts": 54,
+          "single_currency": true
+        },
+        "T3": {
+          "length": 1,
+          "tiers": [
+            "T3"
+          ],
+          "added_passes": 13,
+          "base_model_calls": 0,
+          "repairer_model_calls": 141,
+          "attempts": 54,
+          "single_currency": true
+        }
+      },
+      "all_orders_table": [
+        {
+          "order": [
+            "T0",
+            "T1",
+            "T2",
+            "T3"
+          ],
+          "prefixes": [
+            {
+              "length": 1,
+              "tiers": [
+                "T0"
+              ],
+              "added_passes": 17,
+              "base_model_calls": 391,
+              "repairer_model_calls": 0,
+              "attempts": 54,
+              "single_currency": true
+            },
+            {
+              "length": 2,
+              "tiers": [
+                "T0",
+                "T1"
+              ],
+              "added_passes": 31,
+              "base_model_calls": 391,
+              "repairer_model_calls": 95,
+              "attempts": 91,
+              "single_currency": false
+            },
+            {
+              "length": 3,
+              "tiers": [
+                "T0",
+                "T1",
+                "T2"
+              ],
+              "added_passes": 32,
+              "base_model_calls": 391,
+              "repairer_model_calls": 163,
+              "attempts": 114,
+              "single_currency": false
+            },
+            {
+              "length": 4,
+              "tiers": [
+                "T0",
+                "T1",
+                "T2",
+                "T3"
+              ],
+              "added_passes": 32,
+              "base_model_calls": 391,
+              "repairer_model_calls": 229,
+              "attempts": 136,
+              "single_currency": false
+            }
+          ]
+        },
+        {
+          "order": [
+            "T0",
+            "T1",
+            "T3",
+            "T2"
+          ],
+          "prefixes": [
+            {
+              "length": 1,
+              "tiers": [
+                "T0"
+              ],
+              "added_passes": 17,
+              "base_model_calls": 391,
+              "repairer_model_calls": 0,
+              "attempts": 54,
+              "single_currency": true
+            },
+            {
+              "length": 2,
+              "tiers": [
+                "T0",
+                "T1"
+              ],
+              "added_passes": 31,
+              "base_model_calls": 391,
+              "repairer_model_calls": 95,
+              "attempts": 91,
+              "single_currency": false
+            },
+            {
+              "length": 3,
+              "tiers": [
+                "T0",
+                "T1",
+                "T3"
+              ],
+              "added_passes": 31,
+              "base_model_calls": 391,
+              "repairer_model_calls": 164,
+              "attempts": 114,
+              "single_currency": false
+            },
+            {
+              "length": 4,
+              "tiers": [
+                "T0",
+                "T1",
+                "T3",
+                "T2"
+              ],
+              "added_passes": 32,
+              "base_model_calls": 391,
+              "repairer_model_calls": 232,
+              "attempts": 137,
+              "single_currency": false
+            }
+          ]
+        },
+        {
+          "order": [
+            "T0",
+            "T2",
+            "T1",
+            "T3"
+          ],
+          "prefixes": [
+            {
+              "length": 1,
+              "tiers": [
+                "T0"
+              ],
+              "added_passes": 17,
+              "base_model_calls": 391,
+              "repairer_model_calls": 0,
+              "attempts": 54,
+              "single_currency": true
+            },
+            {
+              "length": 2,
+              "tiers": [
+                "T0",
+                "T2"
+              ],
+              "added_passes": 25,
+              "base_model_calls": 391,
+              "repairer_model_calls": 100,
+              "attempts": 91,
+              "single_currency": false
+            },
+            {
+              "length": 3,
+              "tiers": [
+                "T0",
+                "T2",
+                "T1"
+              ],
+              "added_passes": 32,
+              "base_model_calls": 391,
+              "repairer_model_calls": 176,
+              "attempts": 120,
+              "single_currency": false
+            },
+            {
+              "length": 4,
+              "tiers": [
+                "T0",
+                "T2",
+                "T1",
+                "T3"
+              ],
+              "added_passes": 32,
+              "base_model_calls": 391,
+              "repairer_model_calls": 242,
+              "attempts": 142,
+              "single_currency": false
+            }
+          ]
+        },
+        {
+          "order": [
+            "T0",
+            "T2",
+            "T3",
+            "T1"
+          ],
+          "prefixes": [
+            {
+              "length": 1,
+              "tiers": [
+                "T0"
+              ],
+              "added_passes": 17,
+              "base_model_calls": 391,
+              "repairer_model_calls": 0,
+              "attempts": 54,
+              "single_currency": true
+            },
+            {
+              "length": 2,
+              "tiers": [
+                "T0",
+                "T2"
+              ],
+              "added_passes": 25,
+              "base_model_calls": 391,
+              "repairer_model_calls": 100,
+              "attempts": 91,
+              "single_currency": false
+            },
+            {
+              "length": 3,
+              "tiers": [
+                "T0",
+                "T2",
+                "T3"
+              ],
+              "added_passes": 26,
+              "base_model_calls": 391,
+              "repairer_model_calls": 186,
+              "attempts": 120,
+              "single_currency": false
+            },
+            {
+              "length": 4,
+              "tiers": [
+                "T0",
+                "T2",
+                "T3",
+                "T1"
+              ],
+              "added_passes": 32,
+              "base_model_calls": 391,
+              "repairer_model_calls": 261,
+              "attempts": 148,
+              "single_currency": false
+            }
+          ]
+        },
+        {
+          "order": [
+            "T0",
+            "T3",
+            "T1",
+            "T2"
+          ],
+          "prefixes": [
+            {
+              "length": 1,
+              "tiers": [
+                "T0"
+              ],
+              "added_passes": 17,
+              "base_model_calls": 391,
+              "repairer_model_calls": 0,
+              "attempts": 54,
+              "single_currency": true
+            },
+            {
+              "length": 2,
+              "tiers": [
+                "T0",
+                "T3"
+              ],
+              "added_passes": 23,
+              "base_model_calls": 391,
+              "repairer_model_calls": 102,
+              "attempts": 91,
+              "single_currency": false
+            },
+            {
+              "length": 3,
+              "tiers": [
+                "T0",
+                "T3",
+                "T1"
+              ],
+              "added_passes": 31,
+              "base_model_calls": 391,
+              "repairer_model_calls": 184,
+              "attempts": 122,
+              "single_currency": false
+            },
+            {
+              "length": 4,
+              "tiers": [
+                "T0",
+                "T3",
+                "T1",
+                "T2"
+              ],
+              "added_passes": 32,
+              "base_model_calls": 391,
+              "repairer_model_calls": 252,
+              "attempts": 145,
+              "single_currency": false
+            }
+          ]
+        },
+        {
+          "order": [
+            "T0",
+            "T3",
+            "T2",
+            "T1"
+          ],
+          "prefixes": [
+            {
+              "length": 1,
+              "tiers": [
+                "T0"
+              ],
+              "added_passes": 17,
+              "base_model_calls": 391,
+              "repairer_model_calls": 0,
+              "attempts": 54,
+              "single_currency": true
+            },
+            {
+              "length": 2,
+              "tiers": [
+                "T0",
+                "T3"
+              ],
+              "added_passes": 23,
+              "base_model_calls": 391,
+              "repairer_model_calls": 102,
+              "attempts": 91,
+              "single_currency": false
+            },
+            {
+              "length": 3,
+              "tiers": [
+                "T0",
+                "T3",
+                "T2"
+              ],
+              "added_passes": 26,
+              "base_model_calls": 391,
+              "repairer_model_calls": 190,
+              "attempts": 122,
+              "single_currency": false
+            },
+            {
+              "length": 4,
+              "tiers": [
+                "T0",
+                "T3",
+                "T2",
+                "T1"
+              ],
+              "added_passes": 32,
+              "base_model_calls": 391,
+              "repairer_model_calls": 265,
+              "attempts": 150,
+              "single_currency": false
+            }
+          ]
+        },
+        {
+          "order": [
+            "T1",
+            "T0",
+            "T2",
+            "T3"
+          ],
+          "prefixes": [
+            {
+              "length": 1,
+              "tiers": [
+                "T1"
+              ],
+              "added_passes": 27,
+              "base_model_calls": 0,
+              "repairer_model_calls": 124,
+              "attempts": 54,
+              "single_currency": true
+            },
+            {
+              "length": 2,
+              "tiers": [
+                "T1",
+                "T0"
+              ],
+              "added_passes": 31,
+              "base_model_calls": 230,
+              "repairer_model_calls": 124,
+              "attempts": 81,
+              "single_currency": false
+            },
+            {
+              "length": 3,
+              "tiers": [
+                "T1",
+                "T0",
+                "T2"
+              ],
+              "added_passes": 32,
+              "base_model_calls": 230,
+              "repairer_model_calls": 192,
+              "attempts": 104,
+              "single_currency": false
+            },
+            {
+              "length": 4,
+              "tiers": [
+                "T1",
+                "T0",
+                "T2",
+                "T3"
+              ],
+              "added_passes": 32,
+              "base_model_calls": 230,
+              "repairer_model_calls": 258,
+              "attempts": 126,
+              "single_currency": false
+            }
+          ]
+        },
+        {
+          "order": [
+            "T1",
+            "T0",
+            "T3",
+            "T2"
+          ],
+          "prefixes": [
+            {
+              "length": 1,
+              "tiers": [
+                "T1"
+              ],
+              "added_passes": 27,
+              "base_model_calls": 0,
+              "repairer_model_calls": 124,
+              "attempts": 54,
+              "single_currency": true
+            },
+            {
+              "length": 2,
+              "tiers": [
+                "T1",
+                "T0"
+              ],
+              "added_passes": 31,
+              "base_model_calls": 230,
+              "repairer_model_calls": 124,
+              "attempts": 81,
+              "single_currency": false
+            },
+            {
+              "length": 3,
+              "tiers": [
+                "T1",
+                "T0",
+                "T3"
+              ],
+              "added_passes": 31,
+              "base_model_calls": 230,
+              "repairer_model_calls": 193,
+              "attempts": 104,
+              "single_currency": false
+            },
+            {
+              "length": 4,
+              "tiers": [
+                "T1",
+                "T0",
+                "T3",
+                "T2"
+              ],
+              "added_passes": 32,
+              "base_model_calls": 230,
+              "repairer_model_calls": 261,
+              "attempts": 127,
+              "single_currency": false
+            }
+          ]
+        },
+        {
+          "order": [
+            "T1",
+            "T2",
+            "T0",
+            "T3"
+          ],
+          "prefixes": [
+            {
+              "length": 1,
+              "tiers": [
+                "T1"
+              ],
+              "added_passes": 27,
+              "base_model_calls": 0,
+              "repairer_model_calls": 124,
+              "attempts": 54,
+              "single_currency": true
+            },
+            {
+              "length": 2,
+              "tiers": [
+                "T1",
+                "T2"
+              ],
+              "added_passes": 28,
+              "base_model_calls": 0,
+              "repairer_model_calls": 204,
+              "attempts": 81,
+              "single_currency": true
+            },
+            {
+              "length": 3,
+              "tiers": [
+                "T1",
+                "T2",
+                "T0"
+              ],
+              "added_passes": 32,
+              "base_model_calls": 221,
+              "repairer_model_calls": 204,
+              "attempts": 107,
+              "single_currency": false
+            },
+            {
+              "length": 4,
+              "tiers": [
+                "T1",
+                "T2",
+                "T0",
+                "T3"
+              ],
+              "added_passes": 32,
+              "base_model_calls": 221,
+              "repairer_model_calls": 270,
+              "attempts": 129,
+              "single_currency": false
+            }
+          ]
+        },
+        {
+          "order": [
+            "T1",
+            "T2",
+            "T3",
+            "T0"
+          ],
+          "prefixes": [
+            {
+              "length": 1,
+              "tiers": [
+                "T1"
+              ],
+              "added_passes": 27,
+              "base_model_calls": 0,
+              "repairer_model_calls": 124,
+              "attempts": 54,
+              "single_currency": true
+            },
+            {
+              "length": 2,
+              "tiers": [
+                "T1",
+                "T2"
+              ],
+              "added_passes": 28,
+              "base_model_calls": 0,
+              "repairer_model_calls": 204,
+              "attempts": 81,
+              "single_currency": true
+            },
+            {
+              "length": 3,
+              "tiers": [
+                "T1",
+                "T2",
+                "T3"
+              ],
+              "added_passes": 28,
+              "base_model_calls": 0,
+              "repairer_model_calls": 282,
+              "attempts": 107,
+              "single_currency": true
+            },
+            {
+              "length": 4,
+              "tiers": [
+                "T1",
+                "T2",
+                "T3",
+                "T0"
+              ],
+              "added_passes": 32,
+              "base_model_calls": 221,
+              "repairer_model_calls": 282,
+              "attempts": 133,
+              "single_currency": false
+            }
+          ]
+        },
+        {
+          "order": [
+            "T1",
+            "T3",
+            "T0",
+            "T2"
+          ],
+          "prefixes": [
+            {
+              "length": 1,
+              "tiers": [
+                "T1"
+              ],
+              "added_passes": 27,
+              "base_model_calls": 0,
+              "repairer_model_calls": 124,
+              "attempts": 54,
+              "single_currency": true
+            },
+            {
+              "length": 2,
+              "tiers": [
+                "T1",
+                "T3"
+              ],
+              "added_passes": 27,
+              "base_model_calls": 0,
+              "repairer_model_calls": 205,
+              "attempts": 81,
+              "single_currency": true
+            },
+            {
+              "length": 3,
+              "tiers": [
+                "T1",
+                "T3",
+                "T0"
+              ],
+              "added_passes": 31,
+              "base_model_calls": 230,
+              "repairer_model_calls": 205,
+              "attempts": 108,
+              "single_currency": false
+            },
+            {
+              "length": 4,
+              "tiers": [
+                "T1",
+                "T3",
+                "T0",
+                "T2"
+              ],
+              "added_passes": 32,
+              "base_model_calls": 230,
+              "repairer_model_calls": 273,
+              "attempts": 131,
+              "single_currency": false
+            }
+          ]
+        },
+        {
+          "order": [
+            "T1",
+            "T3",
+            "T2",
+            "T0"
+          ],
+          "prefixes": [
+            {
+              "length": 1,
+              "tiers": [
+                "T1"
+              ],
+              "added_passes": 27,
+              "base_model_calls": 0,
+              "repairer_model_calls": 124,
+              "attempts": 54,
+              "single_currency": true
+            },
+            {
+              "length": 2,
+              "tiers": [
+                "T1",
+                "T3"
+              ],
+              "added_passes": 27,
+              "base_model_calls": 0,
+              "repairer_model_calls": 205,
+              "attempts": 81,
+              "single_currency": true
+            },
+            {
+              "length": 3,
+              "tiers": [
+                "T1",
+                "T3",
+                "T2"
+              ],
+              "added_passes": 28,
+              "base_model_calls": 0,
+              "repairer_model_calls": 285,
+              "attempts": 108,
+              "single_currency": true
+            },
+            {
+              "length": 4,
+              "tiers": [
+                "T1",
+                "T3",
+                "T2",
+                "T0"
+              ],
+              "added_passes": 32,
+              "base_model_calls": 221,
+              "repairer_model_calls": 285,
+              "attempts": 134,
+              "single_currency": false
+            }
+          ]
+        },
+        {
+          "order": [
+            "T2",
+            "T0",
+            "T1",
+            "T3"
+          ],
+          "prefixes": [
+            {
+              "length": 1,
+              "tiers": [
+                "T2"
+              ],
+              "added_passes": 14,
+              "base_model_calls": 0,
+              "repairer_model_calls": 140,
+              "attempts": 54,
+              "single_currency": true
+            },
+            {
+              "length": 2,
+              "tiers": [
+                "T2",
+                "T0"
+              ],
+              "added_passes": 25,
+              "base_model_calls": 301,
+              "repairer_model_calls": 140,
+              "attempts": 94,
+              "single_currency": false
+            },
+            {
+              "length": 3,
+              "tiers": [
+                "T2",
+                "T0",
+                "T1"
+              ],
+              "added_passes": 32,
+              "base_model_calls": 301,
+              "repairer_model_calls": 216,
+              "attempts": 123,
+              "single_currency": false
+            },
+            {
+              "length": 4,
+              "tiers": [
+                "T2",
+                "T0",
+                "T1",
+                "T3"
+              ],
+              "added_passes": 32,
+              "base_model_calls": 301,
+              "repairer_model_calls": 282,
+              "attempts": 145,
+              "single_currency": false
+            }
+          ]
+        },
+        {
+          "order": [
+            "T2",
+            "T0",
+            "T3",
+            "T1"
+          ],
+          "prefixes": [
+            {
+              "length": 1,
+              "tiers": [
+                "T2"
+              ],
+              "added_passes": 14,
+              "base_model_calls": 0,
+              "repairer_model_calls": 140,
+              "attempts": 54,
+              "single_currency": true
+            },
+            {
+              "length": 2,
+              "tiers": [
+                "T2",
+                "T0"
+              ],
+              "added_passes": 25,
+              "base_model_calls": 301,
+              "repairer_model_calls": 140,
+              "attempts": 94,
+              "single_currency": false
+            },
+            {
+              "length": 3,
+              "tiers": [
+                "T2",
+                "T0",
+                "T3"
+              ],
+              "added_passes": 26,
+              "base_model_calls": 301,
+              "repairer_model_calls": 226,
+              "attempts": 123,
+              "single_currency": false
+            },
+            {
+              "length": 4,
+              "tiers": [
+                "T2",
+                "T0",
+                "T3",
+                "T1"
+              ],
+              "added_passes": 32,
+              "base_model_calls": 301,
+              "repairer_model_calls": 301,
+              "attempts": 151,
+              "single_currency": false
+            }
+          ]
+        },
+        {
+          "order": [
+            "T2",
+            "T1",
+            "T0",
+            "T3"
+          ],
+          "prefixes": [
+            {
+              "length": 1,
+              "tiers": [
+                "T2"
+              ],
+              "added_passes": 14,
+              "base_model_calls": 0,
+              "repairer_model_calls": 140,
+              "attempts": 54,
+              "single_currency": true
+            },
+            {
+              "length": 2,
+              "tiers": [
+                "T2",
+                "T1"
+              ],
+              "added_passes": 28,
+              "base_model_calls": 0,
+              "repairer_model_calls": 237,
+              "attempts": 94,
+              "single_currency": true
+            },
+            {
+              "length": 3,
+              "tiers": [
+                "T2",
+                "T1",
+                "T0"
+              ],
+              "added_passes": 32,
+              "base_model_calls": 221,
+              "repairer_model_calls": 237,
+              "attempts": 120,
+              "single_currency": false
+            },
+            {
+              "length": 4,
+              "tiers": [
+                "T2",
+                "T1",
+                "T0",
+                "T3"
+              ],
+              "added_passes": 32,
+              "base_model_calls": 221,
+              "repairer_model_calls": 303,
+              "attempts": 142,
+              "single_currency": false
+            }
+          ]
+        },
+        {
+          "order": [
+            "T2",
+            "T1",
+            "T3",
+            "T0"
+          ],
+          "prefixes": [
+            {
+              "length": 1,
+              "tiers": [
+                "T2"
+              ],
+              "added_passes": 14,
+              "base_model_calls": 0,
+              "repairer_model_calls": 140,
+              "attempts": 54,
+              "single_currency": true
+            },
+            {
+              "length": 2,
+              "tiers": [
+                "T2",
+                "T1"
+              ],
+              "added_passes": 28,
+              "base_model_calls": 0,
+              "repairer_model_calls": 237,
+              "attempts": 94,
+              "single_currency": true
+            },
+            {
+              "length": 3,
+              "tiers": [
+                "T2",
+                "T1",
+                "T3"
+              ],
+              "added_passes": 28,
+              "base_model_calls": 0,
+              "repairer_model_calls": 315,
+              "attempts": 120,
+              "single_currency": true
+            },
+            {
+              "length": 4,
+              "tiers": [
+                "T2",
+                "T1",
+                "T3",
+                "T0"
+              ],
+              "added_passes": 32,
+              "base_model_calls": 221,
+              "repairer_model_calls": 315,
+              "attempts": 146,
+              "single_currency": false
+            }
+          ]
+        },
+        {
+          "order": [
+            "T2",
+            "T3",
+            "T0",
+            "T1"
+          ],
+          "prefixes": [
+            {
+              "length": 1,
+              "tiers": [
+                "T2"
+              ],
+              "added_passes": 14,
+              "base_model_calls": 0,
+              "repairer_model_calls": 140,
+              "attempts": 54,
+              "single_currency": true
+            },
+            {
+              "length": 2,
+              "tiers": [
+                "T2",
+                "T3"
+              ],
+              "added_passes": 16,
+              "base_model_calls": 0,
+              "repairer_model_calls": 259,
+              "attempts": 94,
+              "single_currency": true
+            },
+            {
+              "length": 3,
+              "tiers": [
+                "T2",
+                "T3",
+                "T0"
+              ],
+              "added_passes": 26,
+              "base_model_calls": 290,
+              "repairer_model_calls": 259,
+              "attempts": 132,
+              "single_currency": false
+            },
+            {
+              "length": 4,
+              "tiers": [
+                "T2",
+                "T3",
+                "T0",
+                "T1"
+              ],
+              "added_passes": 32,
+              "base_model_calls": 290,
+              "repairer_model_calls": 334,
+              "attempts": 160,
+              "single_currency": false
+            }
+          ]
+        },
+        {
+          "order": [
+            "T2",
+            "T3",
+            "T1",
+            "T0"
+          ],
+          "prefixes": [
+            {
+              "length": 1,
+              "tiers": [
+                "T2"
+              ],
+              "added_passes": 14,
+              "base_model_calls": 0,
+              "repairer_model_calls": 140,
+              "attempts": 54,
+              "single_currency": true
+            },
+            {
+              "length": 2,
+              "tiers": [
+                "T2",
+                "T3"
+              ],
+              "added_passes": 16,
+              "base_model_calls": 0,
+              "repairer_model_calls": 259,
+              "attempts": 94,
+              "single_currency": true
+            },
+            {
+              "length": 3,
+              "tiers": [
+                "T2",
+                "T3",
+                "T1"
+              ],
+              "added_passes": 28,
+              "base_model_calls": 0,
+              "repairer_model_calls": 354,
+              "attempts": 132,
+              "single_currency": true
+            },
+            {
+              "length": 4,
+              "tiers": [
+                "T2",
+                "T3",
+                "T1",
+                "T0"
+              ],
+              "added_passes": 32,
+              "base_model_calls": 221,
+              "repairer_model_calls": 354,
+              "attempts": 158,
+              "single_currency": false
+            }
+          ]
+        },
+        {
+          "order": [
+            "T3",
+            "T0",
+            "T1",
+            "T2"
+          ],
+          "prefixes": [
+            {
+              "length": 1,
+              "tiers": [
+                "T3"
+              ],
+              "added_passes": 13,
+              "base_model_calls": 0,
+              "repairer_model_calls": 141,
+              "attempts": 54,
+              "single_currency": true
+            },
+            {
+              "length": 2,
+              "tiers": [
+                "T3",
+                "T0"
+              ],
+              "added_passes": 23,
+              "base_model_calls": 317,
+              "repairer_model_calls": 141,
+              "attempts": 95,
+              "single_currency": false
+            },
+            {
+              "length": 3,
+              "tiers": [
+                "T3",
+                "T0",
+                "T1"
+              ],
+              "added_passes": 31,
+              "base_model_calls": 317,
+              "repairer_model_calls": 223,
+              "attempts": 126,
+              "single_currency": false
+            },
+            {
+              "length": 4,
+              "tiers": [
+                "T3",
+                "T0",
+                "T1",
+                "T2"
+              ],
+              "added_passes": 32,
+              "base_model_calls": 317,
+              "repairer_model_calls": 291,
+              "attempts": 149,
+              "single_currency": false
+            }
+          ]
+        },
+        {
+          "order": [
+            "T3",
+            "T0",
+            "T2",
+            "T1"
+          ],
+          "prefixes": [
+            {
+              "length": 1,
+              "tiers": [
+                "T3"
+              ],
+              "added_passes": 13,
+              "base_model_calls": 0,
+              "repairer_model_calls": 141,
+              "attempts": 54,
+              "single_currency": true
+            },
+            {
+              "length": 2,
+              "tiers": [
+                "T3",
+                "T0"
+              ],
+              "added_passes": 23,
+              "base_model_calls": 317,
+              "repairer_model_calls": 141,
+              "attempts": 95,
+              "single_currency": false
+            },
+            {
+              "length": 3,
+              "tiers": [
+                "T3",
+                "T0",
+                "T2"
+              ],
+              "added_passes": 26,
+              "base_model_calls": 317,
+              "repairer_model_calls": 229,
+              "attempts": 126,
+              "single_currency": false
+            },
+            {
+              "length": 4,
+              "tiers": [
+                "T3",
+                "T0",
+                "T2",
+                "T1"
+              ],
+              "added_passes": 32,
+              "base_model_calls": 317,
+              "repairer_model_calls": 304,
+              "attempts": 154,
+              "single_currency": false
+            }
+          ]
+        },
+        {
+          "order": [
+            "T3",
+            "T1",
+            "T0",
+            "T2"
+          ],
+          "prefixes": [
+            {
+              "length": 1,
+              "tiers": [
+                "T3"
+              ],
+              "added_passes": 13,
+              "base_model_calls": 0,
+              "repairer_model_calls": 141,
+              "attempts": 54,
+              "single_currency": true
+            },
+            {
+              "length": 2,
+              "tiers": [
+                "T3",
+                "T1"
+              ],
+              "added_passes": 27,
+              "base_model_calls": 0,
+              "repairer_model_calls": 243,
+              "attempts": 95,
+              "single_currency": true
+            },
+            {
+              "length": 3,
+              "tiers": [
+                "T3",
+                "T1",
+                "T0"
+              ],
+              "added_passes": 31,
+              "base_model_calls": 230,
+              "repairer_model_calls": 243,
+              "attempts": 122,
+              "single_currency": false
+            },
+            {
+              "length": 4,
+              "tiers": [
+                "T3",
+                "T1",
+                "T0",
+                "T2"
+              ],
+              "added_passes": 32,
+              "base_model_calls": 230,
+              "repairer_model_calls": 311,
+              "attempts": 145,
+              "single_currency": false
+            }
+          ]
+        },
+        {
+          "order": [
+            "T3",
+            "T1",
+            "T2",
+            "T0"
+          ],
+          "prefixes": [
+            {
+              "length": 1,
+              "tiers": [
+                "T3"
+              ],
+              "added_passes": 13,
+              "base_model_calls": 0,
+              "repairer_model_calls": 141,
+              "attempts": 54,
+              "single_currency": true
+            },
+            {
+              "length": 2,
+              "tiers": [
+                "T3",
+                "T1"
+              ],
+              "added_passes": 27,
+              "base_model_calls": 0,
+              "repairer_model_calls": 243,
+              "attempts": 95,
+              "single_currency": true
+            },
+            {
+              "length": 3,
+              "tiers": [
+                "T3",
+                "T1",
+                "T2"
+              ],
+              "added_passes": 28,
+              "base_model_calls": 0,
+              "repairer_model_calls": 323,
+              "attempts": 122,
+              "single_currency": true
+            },
+            {
+              "length": 4,
+              "tiers": [
+                "T3",
+                "T1",
+                "T2",
+                "T0"
+              ],
+              "added_passes": 32,
+              "base_model_calls": 221,
+              "repairer_model_calls": 323,
+              "attempts": 148,
+              "single_currency": false
+            }
+          ]
+        },
+        {
+          "order": [
+            "T3",
+            "T2",
+            "T0",
+            "T1"
+          ],
+          "prefixes": [
+            {
+              "length": 1,
+              "tiers": [
+                "T3"
+              ],
+              "added_passes": 13,
+              "base_model_calls": 0,
+              "repairer_model_calls": 141,
+              "attempts": 54,
+              "single_currency": true
+            },
+            {
+              "length": 2,
+              "tiers": [
+                "T3",
+                "T2"
+              ],
+              "added_passes": 16,
+              "base_model_calls": 0,
+              "repairer_model_calls": 259,
+              "attempts": 95,
+              "single_currency": true
+            },
+            {
+              "length": 3,
+              "tiers": [
+                "T3",
+                "T2",
+                "T0"
+              ],
+              "added_passes": 26,
+              "base_model_calls": 290,
+              "repairer_model_calls": 259,
+              "attempts": 133,
+              "single_currency": false
+            },
+            {
+              "length": 4,
+              "tiers": [
+                "T3",
+                "T2",
+                "T0",
+                "T1"
+              ],
+              "added_passes": 32,
+              "base_model_calls": 290,
+              "repairer_model_calls": 334,
+              "attempts": 161,
+              "single_currency": false
+            }
+          ]
+        },
+        {
+          "order": [
+            "T3",
+            "T2",
+            "T1",
+            "T0"
+          ],
+          "prefixes": [
+            {
+              "length": 1,
+              "tiers": [
+                "T3"
+              ],
+              "added_passes": 13,
+              "base_model_calls": 0,
+              "repairer_model_calls": 141,
+              "attempts": 54,
+              "single_currency": true
+            },
+            {
+              "length": 2,
+              "tiers": [
+                "T3",
+                "T2"
+              ],
+              "added_passes": 16,
+              "base_model_calls": 0,
+              "repairer_model_calls": 259,
+              "attempts": 95,
+              "single_currency": true
+            },
+            {
+              "length": 3,
+              "tiers": [
+                "T3",
+                "T2",
+                "T1"
+              ],
+              "added_passes": 28,
+              "base_model_calls": 0,
+              "repairer_model_calls": 354,
+              "attempts": 133,
+              "single_currency": true
+            },
+            {
+              "length": 4,
+              "tiers": [
+                "T3",
+                "T2",
+                "T1",
+                "T0"
+              ],
+              "added_passes": 32,
+              "base_model_calls": 221,
+              "repairer_model_calls": 354,
+              "attempts": 159,
+              "single_currency": false
+            }
+          ]
+        }
+      ],
+      "three_tier_cascade": {
+        "orders": [
+          {
+            "order": [
+              "T1",
+              "T2",
+              "T3"
+            ],
+            "prefixes": [
+              {
+                "length": 1,
+                "tiers": [
+                  "T1"
+                ],
+                "added_passes": 27,
+                "base_model_calls": 0,
+                "repairer_model_calls": 124,
+                "attempts": 54,
+                "single_currency": true
+              },
+              {
+                "length": 2,
+                "tiers": [
+                  "T1",
+                  "T2"
+                ],
+                "added_passes": 28,
+                "base_model_calls": 0,
+                "repairer_model_calls": 204,
+                "attempts": 81,
+                "single_currency": true
+              },
+              {
+                "length": 3,
+                "tiers": [
+                  "T1",
+                  "T2",
+                  "T3"
+                ],
+                "added_passes": 28,
+                "base_model_calls": 0,
+                "repairer_model_calls": 282,
+                "attempts": 107,
+                "single_currency": true
+              }
+            ]
+          },
+          {
+            "order": [
+              "T1",
+              "T3",
+              "T2"
+            ],
+            "prefixes": [
+              {
+                "length": 1,
+                "tiers": [
+                  "T1"
+                ],
+                "added_passes": 27,
+                "base_model_calls": 0,
+                "repairer_model_calls": 124,
+                "attempts": 54,
+                "single_currency": true
+              },
+              {
+                "length": 2,
+                "tiers": [
+                  "T1",
+                  "T3"
+                ],
+                "added_passes": 27,
+                "base_model_calls": 0,
+                "repairer_model_calls": 205,
+                "attempts": 81,
+                "single_currency": true
+              },
+              {
+                "length": 3,
+                "tiers": [
+                  "T1",
+                  "T3",
+                  "T2"
+                ],
+                "added_passes": 28,
+                "base_model_calls": 0,
+                "repairer_model_calls": 285,
+                "attempts": 108,
+                "single_currency": true
+              }
+            ]
+          },
+          {
+            "order": [
+              "T2",
+              "T1",
+              "T3"
+            ],
+            "prefixes": [
+              {
+                "length": 1,
+                "tiers": [
+                  "T2"
+                ],
+                "added_passes": 14,
+                "base_model_calls": 0,
+                "repairer_model_calls": 140,
+                "attempts": 54,
+                "single_currency": true
+              },
+              {
+                "length": 2,
+                "tiers": [
+                  "T2",
+                  "T1"
+                ],
+                "added_passes": 28,
+                "base_model_calls": 0,
+                "repairer_model_calls": 237,
+                "attempts": 94,
+                "single_currency": true
+              },
+              {
+                "length": 3,
+                "tiers": [
+                  "T2",
+                  "T1",
+                  "T3"
+                ],
+                "added_passes": 28,
+                "base_model_calls": 0,
+                "repairer_model_calls": 315,
+                "attempts": 120,
+                "single_currency": true
+              }
+            ]
+          },
+          {
+            "order": [
+              "T2",
+              "T3",
+              "T1"
+            ],
+            "prefixes": [
+              {
+                "length": 1,
+                "tiers": [
+                  "T2"
+                ],
+                "added_passes": 14,
+                "base_model_calls": 0,
+                "repairer_model_calls": 140,
+                "attempts": 54,
+                "single_currency": true
+              },
+              {
+                "length": 2,
+                "tiers": [
+                  "T2",
+                  "T3"
+                ],
+                "added_passes": 16,
+                "base_model_calls": 0,
+                "repairer_model_calls": 259,
+                "attempts": 94,
+                "single_currency": true
+              },
+              {
+                "length": 3,
+                "tiers": [
+                  "T2",
+                  "T3",
+                  "T1"
+                ],
+                "added_passes": 28,
+                "base_model_calls": 0,
+                "repairer_model_calls": 354,
+                "attempts": 132,
+                "single_currency": true
+              }
+            ]
+          },
+          {
+            "order": [
+              "T3",
+              "T1",
+              "T2"
+            ],
+            "prefixes": [
+              {
+                "length": 1,
+                "tiers": [
+                  "T3"
+                ],
+                "added_passes": 13,
+                "base_model_calls": 0,
+                "repairer_model_calls": 141,
+                "attempts": 54,
+                "single_currency": true
+              },
+              {
+                "length": 2,
+                "tiers": [
+                  "T3",
+                  "T1"
+                ],
+                "added_passes": 27,
+                "base_model_calls": 0,
+                "repairer_model_calls": 243,
+                "attempts": 95,
+                "single_currency": true
+              },
+              {
+                "length": 3,
+                "tiers": [
+                  "T3",
+                  "T1",
+                  "T2"
+                ],
+                "added_passes": 28,
+                "base_model_calls": 0,
+                "repairer_model_calls": 323,
+                "attempts": 122,
+                "single_currency": true
+              }
+            ]
+          },
+          {
+            "order": [
+              "T3",
+              "T2",
+              "T1"
+            ],
+            "prefixes": [
+              {
+                "length": 1,
+                "tiers": [
+                  "T3"
+                ],
+                "added_passes": 13,
+                "base_model_calls": 0,
+                "repairer_model_calls": 141,
+                "attempts": 54,
+                "single_currency": true
+              },
+              {
+                "length": 2,
+                "tiers": [
+                  "T3",
+                  "T2"
+                ],
+                "added_passes": 16,
+                "base_model_calls": 0,
+                "repairer_model_calls": 259,
+                "attempts": 95,
+                "single_currency": true
+              },
+              {
+                "length": 3,
+                "tiers": [
+                  "T3",
+                  "T2",
+                  "T1"
+                ],
+                "added_passes": 28,
+                "base_model_calls": 0,
+                "repairer_model_calls": 354,
+                "attempts": 133,
+                "single_currency": true
+              }
+            ]
+          }
+        ],
+        "ceiling_added_passes": 28,
+        "two_tier_added_passes": 28,
+        "two_tier_repairer_model_calls": 204,
+        "reaches_ceiling_without_t3": true,
+        "min_three_tier_cost_at_ceiling": 282,
+        "two_tier_strictly_cheaper_than_every_t3_order": true
+      },
+      "targeting_control": {
+        "base_tier": "T1",
+        "escalate_tier": "T2",
+        "n_coordinates": 54,
+        "n_escalated": 27,
+        "baseline_passes": 27,
+        "cascade_added_passes": 1,
+        "random_control": {
+          "n_seeds": 200,
+          "mean": -6.525,
+          "std": 1.759218362293651,
+          "min": -10,
+          "max": -2
+        },
+        "predicted_p_pass_oof_added_passes": -9,
+        "predicted_initial_chars_added_passes": -7,
+        "oracle_added_passes": 1,
+        "oracle_equals_cascade": true,
+        "ratio_vs_random": -0.1532567049808429,
+        "ratio_vs_predicted_p_pass_oof": -0.1111111111111111,
+        "ratio_vs_predicted_initial_chars": -0.14285714285714285
+      },
+      "budget_sweep_within_failing_set": {
+        "base_tier": "T1",
+        "escalate_tier": "T2",
+        "n_failing": 27,
+        "full_escalate_tier_cost": 80,
+        "sweep": {
+          "p_pass_oof": [
+            {
+              "coverage": 0.25,
+              "budget": 20,
+              "added": 0,
+              "attempts": 6
+            },
+            {
+              "coverage": 0.5,
+              "budget": 40,
+              "added": 1,
+              "attempts": 13
+            },
+            {
+              "coverage": 0.75,
+              "budget": 60,
+              "added": 1,
+              "attempts": 20
+            },
+            {
+              "coverage": 1.0,
+              "budget": 80,
+              "added": 1,
+              "attempts": 27
+            }
+          ],
+          "initial_chars": [
+            {
+              "coverage": 0.25,
+              "budget": 20,
+              "added": 0,
+              "attempts": 6
+            },
+            {
+              "coverage": 0.5,
+              "budget": 40,
+              "added": 0,
+              "attempts": 13
+            },
+            {
+              "coverage": 0.75,
+              "budget": 60,
+              "added": 1,
+              "attempts": 20
+            },
+            {
+              "coverage": 1.0,
+              "budget": 80,
+              "added": 1,
+              "attempts": 27
+            }
+          ],
+          "random": [
+            {
+              "coverage": 0.25,
+              "budget": 20,
+              "added": 0,
+              "attempts": 6
+            },
+            {
+              "coverage": 0.5,
+              "budget": 40,
+              "added": 0,
+              "attempts": 13
+            },
+            {
+              "coverage": 0.75,
+              "budget": 60,
+              "added": 1,
+              "attempts": 20
+            },
+            {
+              "coverage": 1.0,
+              "budget": 80,
+              "added": 1,
+              "attempts": 27
+            }
+          ]
+        }
+      },
+      "nested_three_tier_order_selection": {
+        "n_splits": 5,
+        "held_out_added_passes": 28,
+        "held_out_repairer_model_calls": 282,
+        "fold_orders": [
+          [
+            "T1",
+            "T2",
+            "T3"
+          ],
+          [
+            "T1",
+            "T2",
+            "T3"
+          ],
+          [
+            "T1",
+            "T2",
+            "T3"
+          ],
+          [
+            "T1",
+            "T2",
+            "T3"
+          ],
+          [
+            "T1",
+            "T2",
+            "T3"
+          ]
+        ],
+        "fold_baseline_partition_check": {
+          "sum": 27,
+          "cohort_total": 27,
+          "passed": true
+        }
+      },
+      "marginal_return_table": {
+        "current_tier": "T1",
+        "next_tier": "T2",
+        "entries": [
+          {
+            "k": 1,
+            "deepen_rate": 0.3148148148148148,
+            "deepen_n": 54,
+            "switch_rate": 0.13513513513513514,
+            "switch_n": 37
+          },
+          {
+            "k": 2,
+            "deepen_rate": 0.10810810810810811,
+            "deepen_n": 37,
+            "switch_rate": 0.06060606060606061,
+            "switch_n": 33
+          },
+          {
+            "k": 3,
+            "deepen_rate": 0.18181818181818182,
+            "deepen_n": 33,
+            "switch_rate": 0.0,
+            "switch_n": 27
+          }
+        ],
+        "crossover_k": null,
+        "candidate_limit_note": "only k<=3 is testable: each arm stores exactly 3 candidates per coordinate"
+      },
+      "guards": {
+        "guard_1_reproduction": {
+          "observed_arm_successes": {
+            "none": 27,
+            "code_only": 14,
+            "error": 13
+          },
+          "expected_arm_successes": {
+            "none": 27,
+            "code_only": 14,
+            "error": 13
+          },
+          "observed_complementarity": {
+            "n_union": 28,
+            "none_only": 12,
+            "code_only_only": 1,
+            "error_only": 0,
+            "n_context_only": 1,
+            "n_unsolved_by_every_arm": 26
+          },
+          "expected_complementarity": null,
+          "passed": true
+        },
+        "guard_2_identity": {
+          "one_tier_equals_arm": {
+            "T0": {
+              "single_arm_passed": 17,
+              "stored_arm_successes": null,
+              "passed": true
+            },
+            "T1": {
+              "single_arm_passed": 27,
+              "stored_arm_successes": 27,
+              "passed": true
+            },
+            "T2": {
+              "single_arm_passed": 14,
+              "stored_arm_successes": 14,
+              "passed": true
+            },
+            "T3": {
+              "single_arm_passed": 13,
+              "stored_arm_successes": 13,
+              "passed": true
+            }
+          },
+          "full_cascade_equals_union": {
+            "union_all_tiers": 32,
+            "unlimited_budget_cascade_added_passes": 32,
+            "passed": true
+          },
+          "t0_zero_equals_baseline": {
+            "t0_at_k0_passed": false,
+            "t0_at_k0_cost": 0,
+            "passed": true
+          },
+          "passed": true
+        },
+        "guard_3_selection_sha256": {
+          "selection_sha256_by_arm": {
+            "T1": "85c09d30cc342f0c8fc54b92a7d6b26563bfebe43b98f9bc92c681064be5b71b",
+            "T2": "85c09d30cc342f0c8fc54b92a7d6b26563bfebe43b98f9bc92c681064be5b71b",
+            "T3": "85c09d30cc342f0c8fc54b92a7d6b26563bfebe43b98f9bc92c681064be5b71b"
+          },
+          "passed": true
+        }
+      }
+    }
+  },
+  "pre_registrations": [
+    {
+      "id": "PR-1",
+      "statement": "Restated per review: the near-trivial half is that the two-tier {none, code_only} cascade reaches the three-arm union (109/148 on HumanEval). The non-trivial claim is that union(none, code_only) == union(none, code_only, error) -- T3 is provably dead weight -- and that the two-tier order attains that ceiling at strictly lower repairer-model cost than every order that tries T3.",
+      "falsifier": "T3 solves >= 1 coordinate neither T1 nor T2 solves, OR some order containing T3 reaches the ceiling at repairer cost <= the two-tier order's cost.",
+      "cohort_scope": null,
+      "observed": {
+        "reaches_ceiling_without_t3": true,
+        "two_tier_repairer_model_calls": 452,
+        "min_three_tier_cost_at_ceiling": 569,
+        "two_tier_strictly_cheaper_than_every_t3_order": true
+      },
+      "verdict": "held"
+    },
+    {
+      "id": "PR-2",
+      "statement": "Escalating exactly on the n coordinates the verifier marks T1-failing beats escalating on a budget-matched RANDOM selection of n coordinates from the full cohort, by >= 2x on net added passes.",
+      "falsifier": "ratio (cascade added / random mean added) < 1.3",
+      "cohort_scope": null,
+      "observed": {
+        "cascade_added_passes": 18,
+        "random_mean_added_passes": -10.18,
+        "ratio_vs_random": -1.768172888015717
+      },
+      "verdict": "falsified"
+    },
+    {
+      "id": "PR-3",
+      "statement": "The verifier-targeted escalation also beats a PREDICTED-failure escalation of the same size n, chosen by p_pass_oof (lowest first) and separately by initial_chars (longest first) -- a pipeline with no verifier has to guess, and p_pass_oof is this project's best guess.",
+      "falsifier": "either predictor's added passes is within 10% of the verifier's",
+      "cohort_scope": null,
+      "observed": {
+        "cascade_added_passes": 18,
+        "predicted_p_pass_oof_added_passes": -14,
+        "predicted_initial_chars_added_passes": -18,
+        "p_pass_within_10pct": false,
+        "chars_within_10pct": false
+      },
+      "verdict": "held"
+    },
+    {
+      "id": "PR-4",
+      "statement": "At the margin, switching to the next tier's first candidate beats deepening the cheap tier's own candidate list, for some k <= 3.",
+      "falsifier": "deepening dominates switching at every testable k <= 3",
+      "cohort_scope": null,
+      "observed": {
+        "crossover_k": 3,
+        "entries": [
+          {
+            "k": 1,
+            "deepen_rate": 0.39864864864864863,
+            "deepen_n": 148,
+            "switch_rate": 0.23595505617977527,
+            "switch_n": 89
+          },
+          {
+            "k": 2,
+            "deepen_rate": 0.24719101123595505,
+            "deepen_n": 89,
+            "switch_rate": 0.16417910447761194,
+            "switch_n": 67
+          },
+          {
+            "k": 3,
+            "deepen_rate": 0.14925373134328357,
+            "deepen_n": 67,
+            "switch_rate": 0.15789473684210525,
+            "switch_n": 57
+          }
+        ]
+      },
+      "verdict": "held"
+    },
+    {
+      "id": "PR-5",
+      "statement": "Cascade gain tracks Week 9's complementarity: MBPP shows ~0 gain from adding context tiers, since it has only one context-only coordinate.",
+      "falsifier": "the T1->T2 cascade adds >= 3 net passes on MBPP",
+      "cohort_scope": null,
+      "observed": {
+        "mbpp_cascade_added_passes": 1
+      },
+      "verdict": "held"
+    }
+  ]
+}

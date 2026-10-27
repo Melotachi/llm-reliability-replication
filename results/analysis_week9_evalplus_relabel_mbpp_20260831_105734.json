@@ -1,0 +1,199 @@
+{
+  "config": {
+    "dataset": "mbpp",
+    "timeout_s": 30.0,
+    "seed": 42,
+    "excluded_tasks": [
+      "HumanEval/32"
+    ],
+    "label": "evalplus_plus_suite",
+    "input_kind": "repair_runs"
+  },
+  "source_results_files": [
+    "results/mbpp_week9_arm_resample_sample0_qwen15b.json",
+    "results/mbpp_week9_arm_code_only_sample0_qwen15b.json",
+    "results/mbpp_week9_arm_error_nostop_sample0_qwen15b.json"
+  ],
+  "relabelled_run_files": [
+    "/Users/melih/Desktop/stajsal/Internship Resources \u2013 AI For SE/results/mbpp_week9_arm_resample_sample0_qwen15b_evalpluslabel_20260831_105733.json",
+    "/Users/melih/Desktop/stajsal/Internship Resources \u2013 AI For SE/results/mbpp_week9_arm_code_only_sample0_qwen15b_evalpluslabel_20260831_105733.json",
+    "/Users/melih/Desktop/stajsal/Internship Resources \u2013 AI For SE/results/mbpp_week9_arm_error_nostop_sample0_qwen15b_evalpluslabel_20260831_105734.json"
+  ],
+  "initial_pool": {
+    "n_coordinates": 54,
+    "skipped_task_ids": [],
+    "n_initial_plus_pass": 0,
+    "initial_plus_pass_task_ids": []
+  },
+  "cells": [
+    {
+      "n_coordinates_total": 54,
+      "n_coordinates_scored": 54,
+      "skipped_task_ids": [],
+      "confusion": {
+        "base_pass_plus_pass": 23,
+        "base_pass_plus_fail": 4,
+        "base_fail_plus_pass": 3,
+        "base_fail_plus_fail": 24
+      },
+      "successes_base": 27,
+      "repair_success_rate_base_over_scored": 0.5,
+      "repair_success_rate_base_wilson_95": [
+        0.37114361988923295,
+        0.628856380110767
+      ],
+      "successes_plus": 26,
+      "repair_success_rate_plus_over_scored": 0.48148148148148145,
+      "repair_success_rate_plus_wilson_95": [
+        0.3539375603654322,
+        0.6114852495153457
+      ],
+      "false_positive_rate": 0.14814814814814814,
+      "false_positive_rate_wilson_95": [
+        0.059158318596448906,
+        0.32479063346829484
+      ],
+      "base_fail_plus_pass": 3,
+      "base_fail_plus_pass_rate": 0.05555555555555555,
+      "n_coordinates_failing_under_plus": 54,
+      "successes_plus_adjusted": 26,
+      "repair_success_rate_plus_adjusted": 0.48148148148148145,
+      "timeout_fraction_among_plus_failures": 0.0,
+      "plus_failure_categories": {
+        "assertion_error": 3,
+        "type_error": 1
+      },
+      "context_mode": "none",
+      "run_id": "mbpp_week9_arm_resample_sample0_qwen15b",
+      "source_results_file": "results/mbpp_week9_arm_resample_sample0_qwen15b.json",
+      "timeout_sensitivity": {
+        "long_timeout_s": 300.0,
+        "n_timeout_base_pass": 0,
+        "n_rescued": 0,
+        "false_positive_rate_at_long_timeout": 0.14814814814814814
+      }
+    },
+    {
+      "n_coordinates_total": 54,
+      "n_coordinates_scored": 54,
+      "skipped_task_ids": [],
+      "confusion": {
+        "base_pass_plus_pass": 10,
+        "base_pass_plus_fail": 4,
+        "base_fail_plus_pass": 1,
+        "base_fail_plus_fail": 39
+      },
+      "successes_base": 14,
+      "repair_success_rate_base_over_scored": 0.25925925925925924,
+      "repair_success_rate_base_wilson_95": [
+        0.16118507964793902,
+        0.38931144880217294
+      ],
+      "successes_plus": 11,
+      "repair_success_rate_plus_over_scored": 0.2037037037037037,
+      "repair_success_rate_plus_wilson_95": [
+        0.1177393408658538,
+        0.32902561722659174
+      ],
+      "false_positive_rate": 0.2857142857142857,
+      "false_positive_rate_wilson_95": [
+        0.11721187910109099,
+        0.5464954117248438
+      ],
+      "base_fail_plus_pass": 1,
+      "base_fail_plus_pass_rate": 0.018518518518518517,
+      "n_coordinates_failing_under_plus": 54,
+      "successes_plus_adjusted": 11,
+      "repair_success_rate_plus_adjusted": 0.2037037037037037,
+      "timeout_fraction_among_plus_failures": 0.0,
+      "plus_failure_categories": {
+        "type_error": 1,
+        "assertion_error": 3
+      },
+      "context_mode": "code_only",
+      "run_id": "mbpp_week9_arm_code_only_sample0_qwen15b",
+      "source_results_file": "results/mbpp_week9_arm_code_only_sample0_qwen15b.json",
+      "timeout_sensitivity": {
+        "long_timeout_s": 300.0,
+        "n_timeout_base_pass": 0,
+        "n_rescued": 0,
+        "false_positive_rate_at_long_timeout": 0.2857142857142857
+      }
+    },
+    {
+      "n_coordinates_total": 54,
+      "n_coordinates_scored": 54,
+      "skipped_task_ids": [],
+      "confusion": {
+        "base_pass_plus_pass": 10,
+        "base_pass_plus_fail": 3,
+        "base_fail_plus_pass": 2,
+        "base_fail_plus_fail": 39
+      },
+      "successes_base": 13,
+      "repair_success_rate_base_over_scored": 0.24074074074074073,
+      "repair_success_rate_base_wilson_95": [
+        0.14644154703850742,
+        0.36947779129238245
+      ],
+      "successes_plus": 12,
+      "repair_success_rate_plus_over_scored": 0.2222222222222222,
+      "repair_success_rate_plus_wilson_95": [
+        0.13195287989578958,
+        0.34938926831587813
+      ],
+      "false_positive_rate": 0.23076923076923078,
+      "false_positive_rate_wilson_95": [
+        0.08179379092465713,
+        0.5025687399512693
+      ],
+      "base_fail_plus_pass": 2,
+      "base_fail_plus_pass_rate": 0.037037037037037035,
+      "n_coordinates_failing_under_plus": 54,
+      "successes_plus_adjusted": 12,
+      "repair_success_rate_plus_adjusted": 0.2222222222222222,
+      "timeout_fraction_among_plus_failures": 0.0,
+      "plus_failure_categories": {
+        "type_error": 1,
+        "assertion_error": 2
+      },
+      "context_mode": "error",
+      "run_id": "mbpp_week9_arm_error_nostop_sample0_qwen15b",
+      "source_results_file": "results/mbpp_week9_arm_error_nostop_sample0_qwen15b.json",
+      "timeout_sensitivity": {
+        "long_timeout_s": 300.0,
+        "n_timeout_base_pass": 0,
+        "n_rescued": 0,
+        "false_positive_rate_at_long_timeout": 0.23076923076923078
+      }
+    }
+  ],
+  "arm_comparison": {
+    "arms": [
+      "none",
+      "code_only",
+      "error"
+    ],
+    "false_positive_rate_by_arm": [
+      0.14814814814814814,
+      0.2857142857142857,
+      0.23076923076923078
+    ],
+    "false_positive_rate_spread": 0.13756613756613756,
+    "wilson_intervals_all_overlap": true,
+    "common_overlap": [
+      0.11721187910109099,
+      0.32479063346829484
+    ],
+    "base_label_success_by_arm": [
+      27,
+      14,
+      13
+    ],
+    "plus_label_success_by_arm": [
+      26,
+      11,
+      12
+    ]
+  }
+}

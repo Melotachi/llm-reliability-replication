@@ -1,0 +1,1464 @@
+{
+  "analysis": "joint_random_gate_sweep",
+  "timestamp": "2026-08-29T23:32:15.641812",
+  "config": {
+    "source_results": "results/humaneval_uncertainty_merged164_20260711.json",
+    "source_run_id": "humaneval_uncertainty_merged164_20260711",
+    "repair_run_id": "humaneval_week8_repair_all_sample0_qwen15b",
+    "repair_model": "Qwen/Qwen2.5-Coder-1.5B-Instruct",
+    "predictor_feature_set": "self_consistency_plus_execution",
+    "predictor_model_type": "logistic",
+    "probability_kind": "out_of_fold_raw_rank_only",
+    "sample_index": 0,
+    "smart_coverage": 0.75,
+    "gate_count": 123,
+    "n_seeds": 200,
+    "first_seed": 0,
+    "shared_repair_trace_pool": true
+  },
+  "cohort": {
+    "candidates": 164,
+    "initially_passing": 16,
+    "initially_failing": 148
+  },
+  "repair_all": {
+    "added_passes": 54,
+    "repair_model_calls": 368
+  },
+  "smart": {
+    "added_passes": 36,
+    "repair_model_calls": 312,
+    "attempted_repairs": 121,
+    "final_passed": 52
+  },
+  "random_distribution": {
+    "added_passes": {
+      "fraction_below": 0.025,
+      "fraction_equal": 0.045,
+      "fraction_above": 0.93,
+      "mean": 40.475,
+      "std": 2.652272184126936,
+      "min": 33.0,
+      "median": 41.0,
+      "max": 47.0
+    },
+    "repair_model_calls": {
+      "fraction_below": 1.0,
+      "fraction_equal": 0.0,
+      "fraction_above": 0.0,
+      "mean": 276.14,
+      "std": 5.896119156320336,
+      "min": 261.0,
+      "median": 276.0,
+      "max": 290.0
+    }
+  },
+  "joint": {
+    "fraction_at_least_as_good_on_both": 0.975,
+    "fraction_strictly_dominating_smart": 0.975,
+    "spearman_added_vs_calls": -0.48312533940997526
+  },
+  "draws": [
+    {
+      "seed": 0,
+      "added_passes": 39,
+      "repair_model_calls": 289,
+      "attempted_repairs": 113,
+      "final_passed": 55
+    },
+    {
+      "seed": 1,
+      "added_passes": 39,
+      "repair_model_calls": 276,
+      "attempted_repairs": 111,
+      "final_passed": 55
+    },
+    {
+      "seed": 2,
+      "added_passes": 39,
+      "repair_model_calls": 276,
+      "attempted_repairs": 110,
+      "final_passed": 55
+    },
+    {
+      "seed": 3,
+      "added_passes": 38,
+      "repair_model_calls": 289,
+      "attempted_repairs": 113,
+      "final_passed": 54
+    },
+    {
+      "seed": 4,
+      "added_passes": 39,
+      "repair_model_calls": 275,
+      "attempted_repairs": 110,
+      "final_passed": 55
+    },
+    {
+      "seed": 5,
+      "added_passes": 41,
+      "repair_model_calls": 275,
+      "attempted_repairs": 110,
+      "final_passed": 57
+    },
+    {
+      "seed": 6,
+      "added_passes": 40,
+      "repair_model_calls": 274,
+      "attempted_repairs": 111,
+      "final_passed": 56
+    },
+    {
+      "seed": 7,
+      "added_passes": 41,
+      "repair_model_calls": 278,
+      "attempted_repairs": 111,
+      "final_passed": 57
+    },
+    {
+      "seed": 8,
+      "added_passes": 40,
+      "repair_model_calls": 265,
+      "attempted_repairs": 108,
+      "final_passed": 56
+    },
+    {
+      "seed": 9,
+      "added_passes": 42,
+      "repair_model_calls": 271,
+      "attempted_repairs": 110,
+      "final_passed": 58
+    },
+    {
+      "seed": 10,
+      "added_passes": 44,
+      "repair_model_calls": 273,
+      "attempted_repairs": 113,
+      "final_passed": 60
+    },
+    {
+      "seed": 11,
+      "added_passes": 43,
+      "repair_model_calls": 273,
+      "attempted_repairs": 111,
+      "final_passed": 59
+    },
+    {
+      "seed": 12,
+      "added_passes": 42,
+      "repair_model_calls": 266,
+      "attempted_repairs": 108,
+      "final_passed": 58
+    },
+    {
+      "seed": 13,
+      "added_passes": 42,
+      "repair_model_calls": 276,
+      "attempted_repairs": 112,
+      "final_passed": 58
+    },
+    {
+      "seed": 14,
+      "added_passes": 40,
+      "repair_model_calls": 272,
+      "attempted_repairs": 109,
+      "final_passed": 56
+    },
+    {
+      "seed": 15,
+      "added_passes": 39,
+      "repair_model_calls": 280,
+      "attempted_repairs": 113,
+      "final_passed": 55
+    },
+    {
+      "seed": 16,
+      "added_passes": 45,
+      "repair_model_calls": 284,
+      "attempted_repairs": 116,
+      "final_passed": 61
+    },
+    {
+      "seed": 17,
+      "added_passes": 45,
+      "repair_model_calls": 274,
+      "attempted_repairs": 112,
+      "final_passed": 61
+    },
+    {
+      "seed": 18,
+      "added_passes": 39,
+      "repair_model_calls": 287,
+      "attempted_repairs": 114,
+      "final_passed": 55
+    },
+    {
+      "seed": 19,
+      "added_passes": 40,
+      "repair_model_calls": 276,
+      "attempted_repairs": 111,
+      "final_passed": 56
+    },
+    {
+      "seed": 20,
+      "added_passes": 42,
+      "repair_model_calls": 266,
+      "attempted_repairs": 110,
+      "final_passed": 58
+    },
+    {
+      "seed": 21,
+      "added_passes": 39,
+      "repair_model_calls": 278,
+      "attempted_repairs": 111,
+      "final_passed": 55
+    },
+    {
+      "seed": 22,
+      "added_passes": 41,
+      "repair_model_calls": 270,
+      "attempted_repairs": 110,
+      "final_passed": 57
+    },
+    {
+      "seed": 23,
+      "added_passes": 44,
+      "repair_model_calls": 270,
+      "attempted_repairs": 110,
+      "final_passed": 60
+    },
+    {
+      "seed": 24,
+      "added_passes": 45,
+      "repair_model_calls": 273,
+      "attempted_repairs": 113,
+      "final_passed": 61
+    },
+    {
+      "seed": 25,
+      "added_passes": 42,
+      "repair_model_calls": 284,
+      "attempted_repairs": 114,
+      "final_passed": 58
+    },
+    {
+      "seed": 26,
+      "added_passes": 41,
+      "repair_model_calls": 278,
+      "attempted_repairs": 112,
+      "final_passed": 57
+    },
+    {
+      "seed": 27,
+      "added_passes": 43,
+      "repair_model_calls": 272,
+      "attempted_repairs": 110,
+      "final_passed": 59
+    },
+    {
+      "seed": 28,
+      "added_passes": 37,
+      "repair_model_calls": 276,
+      "attempted_repairs": 110,
+      "final_passed": 53
+    },
+    {
+      "seed": 29,
+      "added_passes": 37,
+      "repair_model_calls": 285,
+      "attempted_repairs": 113,
+      "final_passed": 53
+    },
+    {
+      "seed": 30,
+      "added_passes": 45,
+      "repair_model_calls": 270,
+      "attempted_repairs": 110,
+      "final_passed": 61
+    },
+    {
+      "seed": 31,
+      "added_passes": 38,
+      "repair_model_calls": 273,
+      "attempted_repairs": 109,
+      "final_passed": 54
+    },
+    {
+      "seed": 32,
+      "added_passes": 43,
+      "repair_model_calls": 271,
+      "attempted_repairs": 111,
+      "final_passed": 59
+    },
+    {
+      "seed": 33,
+      "added_passes": 38,
+      "repair_model_calls": 290,
+      "attempted_repairs": 113,
+      "final_passed": 54
+    },
+    {
+      "seed": 34,
+      "added_passes": 41,
+      "repair_model_calls": 274,
+      "attempted_repairs": 110,
+      "final_passed": 57
+    },
+    {
+      "seed": 35,
+      "added_passes": 46,
+      "repair_model_calls": 276,
+      "attempted_repairs": 114,
+      "final_passed": 62
+    },
+    {
+      "seed": 36,
+      "added_passes": 40,
+      "repair_model_calls": 271,
+      "attempted_repairs": 109,
+      "final_passed": 56
+    },
+    {
+      "seed": 37,
+      "added_passes": 38,
+      "repair_model_calls": 283,
+      "attempted_repairs": 111,
+      "final_passed": 54
+    },
+    {
+      "seed": 38,
+      "added_passes": 40,
+      "repair_model_calls": 280,
+      "attempted_repairs": 111,
+      "final_passed": 56
+    },
+    {
+      "seed": 39,
+      "added_passes": 41,
+      "repair_model_calls": 271,
+      "attempted_repairs": 109,
+      "final_passed": 57
+    },
+    {
+      "seed": 40,
+      "added_passes": 41,
+      "repair_model_calls": 276,
+      "attempted_repairs": 111,
+      "final_passed": 57
+    },
+    {
+      "seed": 41,
+      "added_passes": 46,
+      "repair_model_calls": 264,
+      "attempted_repairs": 109,
+      "final_passed": 62
+    },
+    {
+      "seed": 42,
+      "added_passes": 43,
+      "repair_model_calls": 275,
+      "attempted_repairs": 112,
+      "final_passed": 59
+    },
+    {
+      "seed": 43,
+      "added_passes": 42,
+      "repair_model_calls": 274,
+      "attempted_repairs": 111,
+      "final_passed": 58
+    },
+    {
+      "seed": 44,
+      "added_passes": 47,
+      "repair_model_calls": 274,
+      "attempted_repairs": 114,
+      "final_passed": 63
+    },
+    {
+      "seed": 45,
+      "added_passes": 40,
+      "repair_model_calls": 274,
+      "attempted_repairs": 110,
+      "final_passed": 56
+    },
+    {
+      "seed": 46,
+      "added_passes": 43,
+      "repair_model_calls": 273,
+      "attempted_repairs": 111,
+      "final_passed": 59
+    },
+    {
+      "seed": 47,
+      "added_passes": 43,
+      "repair_model_calls": 271,
+      "attempted_repairs": 111,
+      "final_passed": 59
+    },
+    {
+      "seed": 48,
+      "added_passes": 41,
+      "repair_model_calls": 274,
+      "attempted_repairs": 111,
+      "final_passed": 57
+    },
+    {
+      "seed": 49,
+      "added_passes": 38,
+      "repair_model_calls": 276,
+      "attempted_repairs": 109,
+      "final_passed": 54
+    },
+    {
+      "seed": 50,
+      "added_passes": 37,
+      "repair_model_calls": 276,
+      "attempted_repairs": 109,
+      "final_passed": 53
+    },
+    {
+      "seed": 51,
+      "added_passes": 42,
+      "repair_model_calls": 271,
+      "attempted_repairs": 111,
+      "final_passed": 58
+    },
+    {
+      "seed": 52,
+      "added_passes": 40,
+      "repair_model_calls": 278,
+      "attempted_repairs": 112,
+      "final_passed": 56
+    },
+    {
+      "seed": 53,
+      "added_passes": 42,
+      "repair_model_calls": 269,
+      "attempted_repairs": 109,
+      "final_passed": 58
+    },
+    {
+      "seed": 54,
+      "added_passes": 42,
+      "repair_model_calls": 261,
+      "attempted_repairs": 108,
+      "final_passed": 58
+    },
+    {
+      "seed": 55,
+      "added_passes": 39,
+      "repair_model_calls": 279,
+      "attempted_repairs": 111,
+      "final_passed": 55
+    },
+    {
+      "seed": 56,
+      "added_passes": 43,
+      "repair_model_calls": 274,
+      "attempted_repairs": 112,
+      "final_passed": 59
+    },
+    {
+      "seed": 57,
+      "added_passes": 38,
+      "repair_model_calls": 280,
+      "attempted_repairs": 111,
+      "final_passed": 54
+    },
+    {
+      "seed": 58,
+      "added_passes": 38,
+      "repair_model_calls": 280,
+      "attempted_repairs": 111,
+      "final_passed": 54
+    },
+    {
+      "seed": 59,
+      "added_passes": 41,
+      "repair_model_calls": 270,
+      "attempted_repairs": 111,
+      "final_passed": 57
+    },
+    {
+      "seed": 60,
+      "added_passes": 43,
+      "repair_model_calls": 280,
+      "attempted_repairs": 114,
+      "final_passed": 59
+    },
+    {
+      "seed": 61,
+      "added_passes": 42,
+      "repair_model_calls": 276,
+      "attempted_repairs": 111,
+      "final_passed": 58
+    },
+    {
+      "seed": 62,
+      "added_passes": 44,
+      "repair_model_calls": 281,
+      "attempted_repairs": 114,
+      "final_passed": 60
+    },
+    {
+      "seed": 63,
+      "added_passes": 42,
+      "repair_model_calls": 272,
+      "attempted_repairs": 110,
+      "final_passed": 58
+    },
+    {
+      "seed": 64,
+      "added_passes": 40,
+      "repair_model_calls": 270,
+      "attempted_repairs": 108,
+      "final_passed": 56
+    },
+    {
+      "seed": 65,
+      "added_passes": 38,
+      "repair_model_calls": 277,
+      "attempted_repairs": 112,
+      "final_passed": 54
+    },
+    {
+      "seed": 66,
+      "added_passes": 45,
+      "repair_model_calls": 267,
+      "attempted_repairs": 110,
+      "final_passed": 61
+    },
+    {
+      "seed": 67,
+      "added_passes": 42,
+      "repair_model_calls": 277,
+      "attempted_repairs": 113,
+      "final_passed": 58
+    },
+    {
+      "seed": 68,
+      "added_passes": 33,
+      "repair_model_calls": 281,
+      "attempted_repairs": 109,
+      "final_passed": 49
+    },
+    {
+      "seed": 69,
+      "added_passes": 40,
+      "repair_model_calls": 276,
+      "attempted_repairs": 110,
+      "final_passed": 56
+    },
+    {
+      "seed": 70,
+      "added_passes": 38,
+      "repair_model_calls": 280,
+      "attempted_repairs": 112,
+      "final_passed": 54
+    },
+    {
+      "seed": 71,
+      "added_passes": 41,
+      "repair_model_calls": 266,
+      "attempted_repairs": 108,
+      "final_passed": 57
+    },
+    {
+      "seed": 72,
+      "added_passes": 41,
+      "repair_model_calls": 279,
+      "attempted_repairs": 112,
+      "final_passed": 57
+    },
+    {
+      "seed": 73,
+      "added_passes": 41,
+      "repair_model_calls": 285,
+      "attempted_repairs": 114,
+      "final_passed": 57
+    },
+    {
+      "seed": 74,
+      "added_passes": 43,
+      "repair_model_calls": 271,
+      "attempted_repairs": 111,
+      "final_passed": 59
+    },
+    {
+      "seed": 75,
+      "added_passes": 42,
+      "repair_model_calls": 265,
+      "attempted_repairs": 109,
+      "final_passed": 58
+    },
+    {
+      "seed": 76,
+      "added_passes": 38,
+      "repair_model_calls": 286,
+      "attempted_repairs": 113,
+      "final_passed": 54
+    },
+    {
+      "seed": 77,
+      "added_passes": 41,
+      "repair_model_calls": 276,
+      "attempted_repairs": 110,
+      "final_passed": 57
+    },
+    {
+      "seed": 78,
+      "added_passes": 46,
+      "repair_model_calls": 277,
+      "attempted_repairs": 113,
+      "final_passed": 62
+    },
+    {
+      "seed": 79,
+      "added_passes": 43,
+      "repair_model_calls": 265,
+      "attempted_repairs": 109,
+      "final_passed": 59
+    },
+    {
+      "seed": 80,
+      "added_passes": 43,
+      "repair_model_calls": 278,
+      "attempted_repairs": 113,
+      "final_passed": 59
+    },
+    {
+      "seed": 81,
+      "added_passes": 39,
+      "repair_model_calls": 270,
+      "attempted_repairs": 108,
+      "final_passed": 55
+    },
+    {
+      "seed": 82,
+      "added_passes": 41,
+      "repair_model_calls": 279,
+      "attempted_repairs": 112,
+      "final_passed": 57
+    },
+    {
+      "seed": 83,
+      "added_passes": 44,
+      "repair_model_calls": 270,
+      "attempted_repairs": 111,
+      "final_passed": 60
+    },
+    {
+      "seed": 84,
+      "added_passes": 38,
+      "repair_model_calls": 280,
+      "attempted_repairs": 112,
+      "final_passed": 54
+    },
+    {
+      "seed": 85,
+      "added_passes": 44,
+      "repair_model_calls": 265,
+      "attempted_repairs": 110,
+      "final_passed": 60
+    },
+    {
+      "seed": 86,
+      "added_passes": 41,
+      "repair_model_calls": 270,
+      "attempted_repairs": 109,
+      "final_passed": 57
+    },
+    {
+      "seed": 87,
+      "added_passes": 37,
+      "repair_model_calls": 277,
+      "attempted_repairs": 111,
+      "final_passed": 53
+    },
+    {
+      "seed": 88,
+      "added_passes": 44,
+      "repair_model_calls": 273,
+      "attempted_repairs": 111,
+      "final_passed": 60
+    },
+    {
+      "seed": 89,
+      "added_passes": 39,
+      "repair_model_calls": 278,
+      "attempted_repairs": 111,
+      "final_passed": 55
+    },
+    {
+      "seed": 90,
+      "added_passes": 44,
+      "repair_model_calls": 284,
+      "attempted_repairs": 114,
+      "final_passed": 60
+    },
+    {
+      "seed": 91,
+      "added_passes": 42,
+      "repair_model_calls": 281,
+      "attempted_repairs": 113,
+      "final_passed": 58
+    },
+    {
+      "seed": 92,
+      "added_passes": 38,
+      "repair_model_calls": 279,
+      "attempted_repairs": 111,
+      "final_passed": 54
+    },
+    {
+      "seed": 93,
+      "added_passes": 37,
+      "repair_model_calls": 285,
+      "attempted_repairs": 112,
+      "final_passed": 53
+    },
+    {
+      "seed": 94,
+      "added_passes": 40,
+      "repair_model_calls": 283,
+      "attempted_repairs": 113,
+      "final_passed": 56
+    },
+    {
+      "seed": 95,
+      "added_passes": 43,
+      "repair_model_calls": 273,
+      "attempted_repairs": 111,
+      "final_passed": 59
+    },
+    {
+      "seed": 96,
+      "added_passes": 41,
+      "repair_model_calls": 288,
+      "attempted_repairs": 115,
+      "final_passed": 57
+    },
+    {
+      "seed": 97,
+      "added_passes": 34,
+      "repair_model_calls": 282,
+      "attempted_repairs": 110,
+      "final_passed": 50
+    },
+    {
+      "seed": 98,
+      "added_passes": 40,
+      "repair_model_calls": 264,
+      "attempted_repairs": 108,
+      "final_passed": 56
+    },
+    {
+      "seed": 99,
+      "added_passes": 35,
+      "repair_model_calls": 282,
+      "attempted_repairs": 110,
+      "final_passed": 51
+    },
+    {
+      "seed": 100,
+      "added_passes": 44,
+      "repair_model_calls": 275,
+      "attempted_repairs": 112,
+      "final_passed": 60
+    },
+    {
+      "seed": 101,
+      "added_passes": 45,
+      "repair_model_calls": 273,
+      "attempted_repairs": 112,
+      "final_passed": 61
+    },
+    {
+      "seed": 102,
+      "added_passes": 36,
+      "repair_model_calls": 283,
+      "attempted_repairs": 110,
+      "final_passed": 52
+    },
+    {
+      "seed": 103,
+      "added_passes": 40,
+      "repair_model_calls": 280,
+      "attempted_repairs": 112,
+      "final_passed": 56
+    },
+    {
+      "seed": 104,
+      "added_passes": 41,
+      "repair_model_calls": 274,
+      "attempted_repairs": 112,
+      "final_passed": 57
+    },
+    {
+      "seed": 105,
+      "added_passes": 43,
+      "repair_model_calls": 270,
+      "attempted_repairs": 110,
+      "final_passed": 59
+    },
+    {
+      "seed": 106,
+      "added_passes": 43,
+      "repair_model_calls": 271,
+      "attempted_repairs": 110,
+      "final_passed": 59
+    },
+    {
+      "seed": 107,
+      "added_passes": 40,
+      "repair_model_calls": 278,
+      "attempted_repairs": 113,
+      "final_passed": 56
+    },
+    {
+      "seed": 108,
+      "added_passes": 37,
+      "repair_model_calls": 279,
+      "attempted_repairs": 111,
+      "final_passed": 53
+    },
+    {
+      "seed": 109,
+      "added_passes": 40,
+      "repair_model_calls": 275,
+      "attempted_repairs": 111,
+      "final_passed": 56
+    },
+    {
+      "seed": 110,
+      "added_passes": 38,
+      "repair_model_calls": 271,
+      "attempted_repairs": 109,
+      "final_passed": 54
+    },
+    {
+      "seed": 111,
+      "added_passes": 40,
+      "repair_model_calls": 283,
+      "attempted_repairs": 113,
+      "final_passed": 56
+    },
+    {
+      "seed": 112,
+      "added_passes": 39,
+      "repair_model_calls": 290,
+      "attempted_repairs": 115,
+      "final_passed": 55
+    },
+    {
+      "seed": 113,
+      "added_passes": 40,
+      "repair_model_calls": 277,
+      "attempted_repairs": 110,
+      "final_passed": 56
+    },
+    {
+      "seed": 114,
+      "added_passes": 37,
+      "repair_model_calls": 277,
+      "attempted_repairs": 109,
+      "final_passed": 53
+    },
+    {
+      "seed": 115,
+      "added_passes": 37,
+      "repair_model_calls": 282,
+      "attempted_repairs": 111,
+      "final_passed": 53
+    },
+    {
+      "seed": 116,
+      "added_passes": 36,
+      "repair_model_calls": 276,
+      "attempted_repairs": 110,
+      "final_passed": 52
+    },
+    {
+      "seed": 117,
+      "added_passes": 45,
+      "repair_model_calls": 278,
+      "attempted_repairs": 114,
+      "final_passed": 61
+    },
+    {
+      "seed": 118,
+      "added_passes": 36,
+      "repair_model_calls": 280,
+      "attempted_repairs": 109,
+      "final_passed": 52
+    },
+    {
+      "seed": 119,
+      "added_passes": 39,
+      "repair_model_calls": 274,
+      "attempted_repairs": 110,
+      "final_passed": 55
+    },
+    {
+      "seed": 120,
+      "added_passes": 37,
+      "repair_model_calls": 281,
+      "attempted_repairs": 109,
+      "final_passed": 53
+    },
+    {
+      "seed": 121,
+      "added_passes": 42,
+      "repair_model_calls": 272,
+      "attempted_repairs": 111,
+      "final_passed": 58
+    },
+    {
+      "seed": 122,
+      "added_passes": 39,
+      "repair_model_calls": 280,
+      "attempted_repairs": 112,
+      "final_passed": 55
+    },
+    {
+      "seed": 123,
+      "added_passes": 41,
+      "repair_model_calls": 263,
+      "attempted_repairs": 109,
+      "final_passed": 57
+    },
+    {
+      "seed": 124,
+      "added_passes": 39,
+      "repair_model_calls": 278,
+      "attempted_repairs": 111,
+      "final_passed": 55
+    },
+    {
+      "seed": 125,
+      "added_passes": 40,
+      "repair_model_calls": 277,
+      "attempted_repairs": 111,
+      "final_passed": 56
+    },
+    {
+      "seed": 126,
+      "added_passes": 44,
+      "repair_model_calls": 277,
+      "attempted_repairs": 113,
+      "final_passed": 60
+    },
+    {
+      "seed": 127,
+      "added_passes": 36,
+      "repair_model_calls": 285,
+      "attempted_repairs": 111,
+      "final_passed": 52
+    },
+    {
+      "seed": 128,
+      "added_passes": 39,
+      "repair_model_calls": 280,
+      "attempted_repairs": 112,
+      "final_passed": 55
+    },
+    {
+      "seed": 129,
+      "added_passes": 38,
+      "repair_model_calls": 277,
+      "attempted_repairs": 110,
+      "final_passed": 54
+    },
+    {
+      "seed": 130,
+      "added_passes": 35,
+      "repair_model_calls": 278,
+      "attempted_repairs": 110,
+      "final_passed": 51
+    },
+    {
+      "seed": 131,
+      "added_passes": 45,
+      "repair_model_calls": 276,
+      "attempted_repairs": 113,
+      "final_passed": 61
+    },
+    {
+      "seed": 132,
+      "added_passes": 43,
+      "repair_model_calls": 277,
+      "attempted_repairs": 112,
+      "final_passed": 59
+    },
+    {
+      "seed": 133,
+      "added_passes": 44,
+      "repair_model_calls": 272,
+      "attempted_repairs": 111,
+      "final_passed": 60
+    },
+    {
+      "seed": 134,
+      "added_passes": 41,
+      "repair_model_calls": 278,
+      "attempted_repairs": 111,
+      "final_passed": 57
+    },
+    {
+      "seed": 135,
+      "added_passes": 39,
+      "repair_model_calls": 268,
+      "attempted_repairs": 109,
+      "final_passed": 55
+    },
+    {
+      "seed": 136,
+      "added_passes": 44,
+      "repair_model_calls": 270,
+      "attempted_repairs": 111,
+      "final_passed": 60
+    },
+    {
+      "seed": 137,
+      "added_passes": 41,
+      "repair_model_calls": 273,
+      "attempted_repairs": 111,
+      "final_passed": 57
+    },
+    {
+      "seed": 138,
+      "added_passes": 39,
+      "repair_model_calls": 269,
+      "attempted_repairs": 109,
+      "final_passed": 55
+    },
+    {
+      "seed": 139,
+      "added_passes": 43,
+      "repair_model_calls": 274,
+      "attempted_repairs": 111,
+      "final_passed": 59
+    },
+    {
+      "seed": 140,
+      "added_passes": 42,
+      "repair_model_calls": 275,
+      "attempted_repairs": 112,
+      "final_passed": 58
+    },
+    {
+      "seed": 141,
+      "added_passes": 38,
+      "repair_model_calls": 286,
+      "attempted_repairs": 114,
+      "final_passed": 54
+    },
+    {
+      "seed": 142,
+      "added_passes": 42,
+      "repair_model_calls": 277,
+      "attempted_repairs": 111,
+      "final_passed": 58
+    },
+    {
+      "seed": 143,
+      "added_passes": 45,
+      "repair_model_calls": 261,
+      "attempted_repairs": 108,
+      "final_passed": 61
+    },
+    {
+      "seed": 144,
+      "added_passes": 42,
+      "repair_model_calls": 274,
+      "attempted_repairs": 111,
+      "final_passed": 58
+    },
+    {
+      "seed": 145,
+      "added_passes": 38,
+      "repair_model_calls": 283,
+      "attempted_repairs": 112,
+      "final_passed": 54
+    },
+    {
+      "seed": 146,
+      "added_passes": 38,
+      "repair_model_calls": 283,
+      "attempted_repairs": 111,
+      "final_passed": 54
+    },
+    {
+      "seed": 147,
+      "added_passes": 40,
+      "repair_model_calls": 276,
+      "attempted_repairs": 110,
+      "final_passed": 56
+    },
+    {
+      "seed": 148,
+      "added_passes": 38,
+      "repair_model_calls": 280,
+      "attempted_repairs": 111,
+      "final_passed": 54
+    },
+    {
+      "seed": 149,
+      "added_passes": 45,
+      "repair_model_calls": 271,
+      "attempted_repairs": 111,
+      "final_passed": 61
+    },
+    {
+      "seed": 150,
+      "added_passes": 42,
+      "repair_model_calls": 266,
+      "attempted_repairs": 109,
+      "final_passed": 58
+    },
+    {
+      "seed": 151,
+      "added_passes": 39,
+      "repair_model_calls": 279,
+      "attempted_repairs": 111,
+      "final_passed": 55
+    },
+    {
+      "seed": 152,
+      "added_passes": 40,
+      "repair_model_calls": 274,
+      "attempted_repairs": 110,
+      "final_passed": 56
+    },
+    {
+      "seed": 153,
+      "added_passes": 36,
+      "repair_model_calls": 285,
+      "attempted_repairs": 112,
+      "final_passed": 52
+    },
+    {
+      "seed": 154,
+      "added_passes": 40,
+      "repair_model_calls": 279,
+      "attempted_repairs": 112,
+      "final_passed": 56
+    },
+    {
+      "seed": 155,
+      "added_passes": 41,
+      "repair_model_calls": 274,
+      "attempted_repairs": 110,
+      "final_passed": 57
+    },
+    {
+      "seed": 156,
+      "added_passes": 41,
+      "repair_model_calls": 277,
+      "attempted_repairs": 112,
+      "final_passed": 57
+    },
+    {
+      "seed": 157,
+      "added_passes": 37,
+      "repair_model_calls": 284,
+      "attempted_repairs": 112,
+      "final_passed": 53
+    },
+    {
+      "seed": 158,
+      "added_passes": 38,
+      "repair_model_calls": 273,
+      "attempted_repairs": 110,
+      "final_passed": 54
+    },
+    {
+      "seed": 159,
+      "added_passes": 42,
+      "repair_model_calls": 275,
+      "attempted_repairs": 112,
+      "final_passed": 58
+    },
+    {
+      "seed": 160,
+      "added_passes": 36,
+      "repair_model_calls": 286,
+      "attempted_repairs": 112,
+      "final_passed": 52
+    },
+    {
+      "seed": 161,
+      "added_passes": 41,
+      "repair_model_calls": 269,
+      "attempted_repairs": 110,
+      "final_passed": 57
+    },
+    {
+      "seed": 162,
+      "added_passes": 40,
+      "repair_model_calls": 284,
+      "attempted_repairs": 113,
+      "final_passed": 56
+    },
+    {
+      "seed": 163,
+      "added_passes": 40,
+      "repair_model_calls": 282,
+      "attempted_repairs": 114,
+      "final_passed": 56
+    },
+    {
+      "seed": 164,
+      "added_passes": 36,
+      "repair_model_calls": 284,
+      "attempted_repairs": 112,
+      "final_passed": 52
+    },
+    {
+      "seed": 165,
+      "added_passes": 40,
+      "repair_model_calls": 281,
+      "attempted_repairs": 114,
+      "final_passed": 56
+    },
+    {
+      "seed": 166,
+      "added_passes": 41,
+      "repair_model_calls": 277,
+      "attempted_repairs": 111,
+      "final_passed": 57
+    },
+    {
+      "seed": 167,
+      "added_passes": 42,
+      "repair_model_calls": 268,
+      "attempted_repairs": 111,
+      "final_passed": 58
+    },
+    {
+      "seed": 168,
+      "added_passes": 40,
+      "repair_model_calls": 280,
+      "attempted_repairs": 113,
+      "final_passed": 56
+    },
+    {
+      "seed": 169,
+      "added_passes": 41,
+      "repair_model_calls": 279,
+      "attempted_repairs": 112,
+      "final_passed": 57
+    },
+    {
+      "seed": 170,
+      "added_passes": 41,
+      "repair_model_calls": 275,
+      "attempted_repairs": 110,
+      "final_passed": 57
+    },
+    {
+      "seed": 171,
+      "added_passes": 39,
+      "repair_model_calls": 273,
+      "attempted_repairs": 109,
+      "final_passed": 55
+    },
+    {
+      "seed": 172,
+      "added_passes": 42,
+      "repair_model_calls": 275,
+      "attempted_repairs": 110,
+      "final_passed": 58
+    },
+    {
+      "seed": 173,
+      "added_passes": 41,
+      "repair_model_calls": 270,
+      "attempted_repairs": 110,
+      "final_passed": 57
+    },
+    {
+      "seed": 174,
+      "added_passes": 41,
+      "repair_model_calls": 277,
+      "attempted_repairs": 111,
+      "final_passed": 57
+    },
+    {
+      "seed": 175,
+      "added_passes": 42,
+      "repair_model_calls": 277,
+      "attempted_repairs": 111,
+      "final_passed": 58
+    },
+    {
+      "seed": 176,
+      "added_passes": 37,
+      "repair_model_calls": 274,
+      "attempted_repairs": 109,
+      "final_passed": 53
+    },
+    {
+      "seed": 177,
+      "added_passes": 41,
+      "repair_model_calls": 284,
+      "attempted_repairs": 113,
+      "final_passed": 57
+    },
+    {
+      "seed": 178,
+      "added_passes": 37,
+      "repair_model_calls": 275,
+      "attempted_repairs": 109,
+      "final_passed": 53
+    },
+    {
+      "seed": 179,
+      "added_passes": 38,
+      "repair_model_calls": 276,
+      "attempted_repairs": 110,
+      "final_passed": 54
+    },
+    {
+      "seed": 180,
+      "added_passes": 43,
+      "repair_model_calls": 269,
+      "attempted_repairs": 110,
+      "final_passed": 59
+    },
+    {
+      "seed": 181,
+      "added_passes": 36,
+      "repair_model_calls": 283,
+      "attempted_repairs": 111,
+      "final_passed": 52
+    },
+    {
+      "seed": 182,
+      "added_passes": 40,
+      "repair_model_calls": 272,
+      "attempted_repairs": 111,
+      "final_passed": 56
+    },
+    {
+      "seed": 183,
+      "added_passes": 42,
+      "repair_model_calls": 268,
+      "attempted_repairs": 108,
+      "final_passed": 58
+    },
+    {
+      "seed": 184,
+      "added_passes": 41,
+      "repair_model_calls": 285,
+      "attempted_repairs": 114,
+      "final_passed": 57
+    },
+    {
+      "seed": 185,
+      "added_passes": 40,
+      "repair_model_calls": 275,
+      "attempted_repairs": 110,
+      "final_passed": 56
+    },
+    {
+      "seed": 186,
+      "added_passes": 35,
+      "repair_model_calls": 270,
+      "attempted_repairs": 107,
+      "final_passed": 51
+    },
+    {
+      "seed": 187,
+      "added_passes": 43,
+      "repair_model_calls": 282,
+      "attempted_repairs": 114,
+      "final_passed": 59
+    },
+    {
+      "seed": 188,
+      "added_passes": 38,
+      "repair_model_calls": 272,
+      "attempted_repairs": 108,
+      "final_passed": 54
+    },
+    {
+      "seed": 189,
+      "added_passes": 38,
+      "repair_model_calls": 284,
+      "attempted_repairs": 113,
+      "final_passed": 54
+    },
+    {
+      "seed": 190,
+      "added_passes": 41,
+      "repair_model_calls": 286,
+      "attempted_repairs": 114,
+      "final_passed": 57
+    },
+    {
+      "seed": 191,
+      "added_passes": 42,
+      "repair_model_calls": 276,
+      "attempted_repairs": 112,
+      "final_passed": 58
+    },
+    {
+      "seed": 192,
+      "added_passes": 38,
+      "repair_model_calls": 284,
+      "attempted_repairs": 113,
+      "final_passed": 54
+    },
+    {
+      "seed": 193,
+      "added_passes": 41,
+      "repair_model_calls": 274,
+      "attempted_repairs": 111,
+      "final_passed": 57
+    },
+    {
+      "seed": 194,
+      "added_passes": 36,
+      "repair_model_calls": 289,
+      "attempted_repairs": 113,
+      "final_passed": 52
+    },
+    {
+      "seed": 195,
+      "added_passes": 45,
+      "repair_model_calls": 273,
+      "attempted_repairs": 113,
+      "final_passed": 61
+    },
+    {
+      "seed": 196,
+      "added_passes": 41,
+      "repair_model_calls": 274,
+      "attempted_repairs": 111,
+      "final_passed": 57
+    },
+    {
+      "seed": 197,
+      "added_passes": 43,
+      "repair_model_calls": 272,
+      "attempted_repairs": 111,
+      "final_passed": 59
+    },
+    {
+      "seed": 198,
+      "added_passes": 39,
+      "repair_model_calls": 272,
+      "attempted_repairs": 109,
+      "final_passed": 55
+    },
+    {
+      "seed": 199,
+      "added_passes": 37,
+      "repair_model_calls": 282,
+      "attempted_repairs": 112,
+      "final_passed": 53
+    }
+  ],
+  "figure": "/kaggle/working/project/reports/figures/humaneval/week8_random_gate_sweep.png"
+}

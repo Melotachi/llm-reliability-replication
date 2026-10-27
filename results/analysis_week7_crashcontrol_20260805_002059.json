@@ -1,0 +1,4845 @@
+{
+  "analysis": "week7_crash_control_diagnostic",
+  "source_results_file": "results/mbpp_uncertainty_20260712_085004.json",
+  "source_run_id": "mbpp_uncertainty_20260712_085004",
+  "config": {
+    "seed": 42,
+    "probe_source": "evalplus",
+    "probe_cap": 12,
+    "execution_timeout": 5.0
+  },
+  "source_config": {
+    "dataset": "mbpp",
+    "model": "deepseek-ai/deepseek-coder-1.3b-base",
+    "n_samples": 10,
+    "n_problems": 60,
+    "problem_offset": 0,
+    "task_ids_file": "data/mbppplus_member_task_ids.txt",
+    "seed": 42,
+    "mode": "uncertainty",
+    "codebert_model": null,
+    "use_error_context": false,
+    "max_repair_iterations": 1
+  },
+  "summary": {
+    "n_samples": 600,
+    "n_supported": 398,
+    "frac_supported": 0.6633333333333333,
+    "pass_rate_all": 0.26166666666666666,
+    "pass_rate_supported": 0.38944723618090454,
+    "mean_crash_rate": 0.3675,
+    "frac_samples_all_crash": 0.33666666666666667,
+    "auc_all_samples": {
+      "crash_rate": 0.7494428548834668,
+      "execution_self": 0.8749263130652327,
+      "nocrash_self": 0.4813302468692039
+    },
+    "auc_supported_only": {
+      "crash_rate": 0.5555422806318864,
+      "execution_self": 0.863454135138723,
+      "nocrash_self": 0.7701579715916633
+    }
+  },
+  "per_sample": [
+    {
+      "task_id": "MBPP/11",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6888888888888888,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/11",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6888888888888888,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/11",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6888888888888888,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/11",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6888888888888888,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/11",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.9629629629629629,
+      "nocrash_self": 0.07407407407407407,
+      "nocrash_support": 0.1111111111111111
+    },
+    {
+      "task_id": "MBPP/11",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.9629629629629629,
+      "nocrash_self": 0.07407407407407407,
+      "nocrash_support": 0.1111111111111111
+    },
+    {
+      "task_id": "MBPP/11",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6888888888888888,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/11",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6888888888888888,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/11",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6888888888888888,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/11",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6888888888888888,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/12",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.7777777777777778,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "MBPP/12",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8888888888888888,
+      "nocrash_self": 0.6666666666666666,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "MBPP/12",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.8796296296296295,
+      "nocrash_self": 0.6574074074074074,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "MBPP/12",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8888888888888888,
+      "nocrash_self": 0.6666666666666666,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "MBPP/12",
+      "passed": 0,
+      "crash_rate": 0.9166666666666666,
+      "execution_self": 0.9592592592592593,
+      "nocrash_self": 0.7777777777777778,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "MBPP/12",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.8796296296296295,
+      "nocrash_self": 0.6574074074074073,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "MBPP/12",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.9351851851851853,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/12",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.9814814814814814,
+      "nocrash_self": 0.7592592592592592,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "MBPP/12",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.9351851851851853,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/12",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.7777777777777778,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "MBPP/14",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/14",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/14",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/14",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/14",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/14",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/14",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/14",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/14",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/14",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/16",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.911111111111111,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/16",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.9444444444444444,
+      "nocrash_self": 0.6111111111111112,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "MBPP/16",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.9629629629629629,
+      "nocrash_self": 0.6296296296296295,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "MBPP/16",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.9351851851851853,
+      "nocrash_self": 0.6018518518518519,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "MBPP/16",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.925925925925926,
+      "nocrash_self": 0.5925925925925927,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "MBPP/16",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.9537037037037037,
+      "nocrash_self": 0.6203703703703705,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "MBPP/16",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.911111111111111,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/16",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.911111111111111,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/16",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.9814814814814815,
+      "nocrash_self": 0.6481481481481483,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "MBPP/16",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.6666666666666666,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "MBPP/17",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.1111111111111111,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/17",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.1111111111111111,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/17",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.1111111111111111,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/17",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.1111111111111111,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/17",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.1111111111111111,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/17",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/17",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.1111111111111111,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/17",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.1111111111111111,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/17",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.1111111111111111,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/17",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.1111111111111111,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/18",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/18",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/18",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/18",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/18",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/18",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/18",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/18",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/18",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/18",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/19",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.2222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "MBPP/19",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.9555555555555555,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/19",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.2222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "MBPP/19",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.2222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "MBPP/19",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.2222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "MBPP/19",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.2222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "MBPP/19",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.2222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "MBPP/19",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.9555555555555555,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/19",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.2222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "MBPP/19",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.2222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "MBPP/20",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.9092592592592593,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/20",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.574074074074074,
+      "nocrash_self": 0.2314814814814815,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "MBPP/20",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.9092592592592593,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/20",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.6666666666666666,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "MBPP/20",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.574074074074074,
+      "nocrash_self": 0.2314814814814815,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "MBPP/20",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.574074074074074,
+      "nocrash_self": 0.2314814814814815,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "MBPP/20",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.9092592592592593,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/20",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.6666666666666666,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "MBPP/20",
+      "passed": 1,
+      "crash_rate": 0.08333333333333333,
+      "execution_self": 0.5962962962962962,
+      "nocrash_self": 0.23232323232323232,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "MBPP/20",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.6018518518518519,
+      "nocrash_self": 0.2601010101010101,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "MBPP/56",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/56",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.6666666666666666,
+      "nocrash_self": 0.5555555555555556,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/56",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.6759259259259259,
+      "nocrash_self": 0.5648148148148148,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/56",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.6666666666666666,
+      "nocrash_self": 0.5555555555555556,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/56",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.6666666666666666,
+      "nocrash_self": 0.5555555555555556,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/56",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.675925925925926,
+      "nocrash_self": 0.5648148148148149,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/56",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.6666666666666666,
+      "nocrash_self": 0.5555555555555556,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/56",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.6759259259259259,
+      "nocrash_self": 0.5648148148148148,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/56",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.6944444444444444,
+      "nocrash_self": 0.5833333333333334,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/56",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.8888888888888888,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/57",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/57",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/57",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/57",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/57",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/57",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/57",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/57",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/57",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/57",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/58",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.2222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "MBPP/58",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.9555555555555555,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/58",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.2222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "MBPP/58",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.2222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "MBPP/58",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.2222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "MBPP/58",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.2222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "MBPP/58",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.2222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "MBPP/58",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.2222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "MBPP/58",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.9555555555555555,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/58",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.2222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "MBPP/59",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.3055555555555556,
+      "nocrash_self": 0.3055555555555556,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/59",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.3611111111111111,
+      "nocrash_self": 0.3611111111111111,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/59",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.2685185185185185,
+      "nocrash_self": 0.2685185185185185,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/59",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.2685185185185185,
+      "nocrash_self": 0.2685185185185185,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/59",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.2685185185185185,
+      "nocrash_self": 0.2685185185185185,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/59",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 1.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/59",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.2685185185185185,
+      "nocrash_self": 0.2685185185185185,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/59",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.3055555555555556,
+      "nocrash_self": 0.3055555555555556,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/59",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 1.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/59",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.3055555555555556,
+      "nocrash_self": 0.3055555555555556,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/61",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.7333333333333334,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/61",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6888888888888889,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/61",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6888888888888889,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/61",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.7333333333333334,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/61",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6888888888888889,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/61",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6888888888888889,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/61",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.7333333333333334,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/61",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6888888888888889,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/61",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6888888888888889,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/61",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.7333333333333334,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/62",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.05555555555555555,
+      "nocrash_self": 0.05555555555555555,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/62",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.05555555555555555,
+      "nocrash_self": 0.05555555555555555,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/62",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.5,
+      "nocrash_self": 0.5,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/62",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.05555555555555555,
+      "nocrash_self": 0.05555555555555555,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/62",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.05555555555555555,
+      "nocrash_self": 0.05555555555555555,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/62",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.05555555555555555,
+      "nocrash_self": 0.05555555555555555,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/62",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.05555555555555555,
+      "nocrash_self": 0.05555555555555555,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/62",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.05555555555555555,
+      "nocrash_self": 0.05555555555555555,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/62",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.05555555555555555,
+      "nocrash_self": 0.05555555555555555,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/62",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.05555555555555555,
+      "nocrash_self": 0.05555555555555555,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/63",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.2222222222222222,
+      "nocrash_support": 0.2222222222222222
+    },
+    {
+      "task_id": "MBPP/63",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.7555555555555555,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/63",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.2222222222222222,
+      "nocrash_support": 0.2222222222222222
+    },
+    {
+      "task_id": "MBPP/63",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.2222222222222222,
+      "nocrash_support": 0.2222222222222222
+    },
+    {
+      "task_id": "MBPP/63",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.7555555555555555,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/63",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.7555555555555555,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/63",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.7555555555555555,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/63",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.7555555555555555,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/63",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.7555555555555555,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/63",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8666666666666667,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/64",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.39814814814814814,
+      "nocrash_self": 0.2222222222222222,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/64",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.39814814814814814,
+      "nocrash_self": 0.2222222222222222,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/64",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.8888888888888888,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/64",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.39814814814814814,
+      "nocrash_self": 0.2222222222222222,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/64",
+      "passed": 1,
+      "crash_rate": 0.5833333333333334,
+      "execution_self": 0.7018518518518518,
+      "nocrash_self": 0.2222222222222222,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/64",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.39814814814814814,
+      "nocrash_self": 0.2222222222222222,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/64",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.9796296296296296,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/64",
+      "passed": 1,
+      "crash_rate": 0.3333333333333333,
+      "execution_self": 0.9851851851851853,
+      "nocrash_self": 0.8888888888888888,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/64",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.39814814814814814,
+      "nocrash_self": 0.2222222222222222,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/64",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.39814814814814814,
+      "nocrash_self": 0.2222222222222222,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/65",
+      "passed": 0,
+      "crash_rate": 0.25,
+      "execution_self": 0.538888888888889,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/65",
+      "passed": 0,
+      "crash_rate": 0.8333333333333334,
+      "execution_self": 0.6037037037037037,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/65",
+      "passed": 0,
+      "crash_rate": 0.8333333333333334,
+      "execution_self": 0.6037037037037037,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/65",
+      "passed": 0,
+      "crash_rate": 0.8333333333333334,
+      "execution_self": 0.6037037037037037,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/65",
+      "passed": 0,
+      "crash_rate": 0.8333333333333334,
+      "execution_self": 0.6037037037037037,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/65",
+      "passed": 0,
+      "crash_rate": 0.8333333333333334,
+      "execution_self": 0.6037037037037037,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/65",
+      "passed": 0,
+      "crash_rate": 0.25,
+      "execution_self": 0.538888888888889,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/65",
+      "passed": 0,
+      "crash_rate": 0.25,
+      "execution_self": 0.538888888888889,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/65",
+      "passed": 0,
+      "crash_rate": 0.8333333333333334,
+      "execution_self": 0.6037037037037037,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/65",
+      "passed": 0,
+      "crash_rate": 0.25,
+      "execution_self": 0.538888888888889,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/66",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.9555555555555555,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/66",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.4444444444444444,
+      "nocrash_self": 0.2222222222222222,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "MBPP/66",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.4444444444444444,
+      "nocrash_self": 0.2222222222222222,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "MBPP/66",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.4444444444444444,
+      "nocrash_self": 0.2222222222222222,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "MBPP/66",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.4444444444444444,
+      "nocrash_self": 0.2222222222222222,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "MBPP/66",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.7777777777777778,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "MBPP/66",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.9555555555555555,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/66",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.4444444444444444,
+      "nocrash_self": 0.2222222222222222,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "MBPP/66",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.4444444444444444,
+      "nocrash_self": 0.2222222222222222,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "MBPP/66",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.7777777777777778,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "MBPP/67",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8500000000000001,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/67",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8888888888888888,
+      "nocrash_self": 0.2222222222222222,
+      "nocrash_support": 0.3333333333333333
+    },
+    {
+      "task_id": "MBPP/67",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8722222222222223,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/67",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.3333333333333333,
+      "nocrash_support": 0.3333333333333333
+    },
+    {
+      "task_id": "MBPP/67",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8500000000000001,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/67",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8500000000000001,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/67",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8722222222222223,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/67",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8888888888888888,
+      "nocrash_self": 0.2222222222222222,
+      "nocrash_support": 0.3333333333333333
+    },
+    {
+      "task_id": "MBPP/67",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8500000000000001,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/67",
+      "passed": 0,
+      "crash_rate": 0.75,
+      "execution_self": 0.8999999999999999,
+      "nocrash_self": 0.3333333333333333,
+      "nocrash_support": 0.3333333333333333
+    },
+    {
+      "task_id": "MBPP/68",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.12037037037037036,
+      "nocrash_self": 0.12037037037037036,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/68",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.12037037037037036,
+      "nocrash_self": 0.12037037037037036,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/68",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.12037037037037036,
+      "nocrash_self": 0.12037037037037036,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/68",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.12037037037037036,
+      "nocrash_self": 0.12037037037037036,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/68",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.12037037037037036,
+      "nocrash_self": 0.12037037037037036,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/68",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.12037037037037036,
+      "nocrash_self": 0.12037037037037036,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/68",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.18518518518518517,
+      "nocrash_self": 0.18518518518518517,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/68",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 1.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/68",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.12037037037037036,
+      "nocrash_self": 0.12037037037037036,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/68",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.12037037037037036,
+      "nocrash_self": 0.12037037037037036,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/69",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.5092592592592593,
+      "nocrash_self": 0.5058922558922558,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/69",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.34259259259259256,
+      "nocrash_self": 0.335016835016835,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/69",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.25,
+      "nocrash_self": 0.24074074074074078,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/69",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.25,
+      "nocrash_self": 0.24074074074074078,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/69",
+      "passed": 0,
+      "crash_rate": 0.08333333333333333,
+      "execution_self": 0.32407407407407407,
+      "nocrash_self": 0.26262626262626265,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/69",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.5092592592592592,
+      "nocrash_self": 0.5058922558922558,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/69",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.2685185185185185,
+      "nocrash_self": 0.2601010101010101,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/69",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.2685185185185185,
+      "nocrash_self": 0.2601010101010101,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/69",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.2685185185185185,
+      "nocrash_self": 0.2601010101010101,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/69",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.5092592592592593,
+      "nocrash_self": 0.505892255892256,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/70",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/70",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/70",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/70",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/70",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/70",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/70",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/70",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/70",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8000000000000002,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/70",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/71",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.9333333333333333,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/71",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.3333333333333333,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "MBPP/71",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.3333333333333333,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "MBPP/71",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.3333333333333333,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "MBPP/71",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.9555555555555557,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/71",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.3333333333333333,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "MBPP/71",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.3333333333333333,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "MBPP/71",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.9333333333333333,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/71",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.3333333333333333,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "MBPP/71",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.3333333333333333,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "MBPP/72",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.6944444444444444,
+      "nocrash_self": 0.1388888888888889,
+      "nocrash_support": 0.4444444444444444
+    },
+    {
+      "task_id": "MBPP/72",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.7314814814814815,
+      "nocrash_self": 0.17592592592592593,
+      "nocrash_support": 0.4444444444444444
+    },
+    {
+      "task_id": "MBPP/72",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8222222222222223,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/72",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8222222222222223,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/72",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8222222222222223,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/72",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8222222222222223,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/72",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.6944444444444444,
+      "nocrash_self": 0.1388888888888889,
+      "nocrash_support": 0.4444444444444444
+    },
+    {
+      "task_id": "MBPP/72",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.7129629629629629,
+      "nocrash_self": 0.15740740740740738,
+      "nocrash_support": 0.4444444444444444
+    },
+    {
+      "task_id": "MBPP/72",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.4444444444444444,
+      "nocrash_support": 0.4444444444444444
+    },
+    {
+      "task_id": "MBPP/72",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8222222222222223,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/74",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.4074074074074074,
+      "nocrash_self": 0.19444444444444445,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/74",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.7037037037037037,
+      "nocrash_self": 0.4907407407407407,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/74",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.4074074074074074,
+      "nocrash_self": 0.19444444444444445,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/74",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.4074074074074074,
+      "nocrash_self": 0.19444444444444445,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/74",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.4074074074074074,
+      "nocrash_self": 0.19444444444444445,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/74",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.4074074074074074,
+      "nocrash_self": 0.19444444444444445,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/74",
+      "passed": 0,
+      "crash_rate": 0.9166666666666666,
+      "execution_self": 0.9055555555555554,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/74",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.9796296296296296,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/74",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.5,
+      "nocrash_self": 0.287037037037037,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/74",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.7037037037037037,
+      "nocrash_self": 0.49074074074074076,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/75",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.4166666666666667,
+      "nocrash_self": 0.07777777777777778,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "MBPP/75",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.4166666666666667,
+      "nocrash_self": 0.07777777777777778,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "MBPP/75",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.9296296296296297,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/75",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.9518518518518518,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/75",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.4166666666666667,
+      "nocrash_self": 0.07777777777777778,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "MBPP/75",
+      "passed": 0,
+      "crash_rate": 0.16666666666666666,
+      "execution_self": 0.8222222222222223,
+      "nocrash_self": 0.46666666666666656,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "MBPP/75",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.4166666666666667,
+      "nocrash_self": 0.07777777777777778,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "MBPP/75",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.9296296296296297,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/75",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.4166666666666667,
+      "nocrash_self": 0.07777777777777778,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "MBPP/75",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.4166666666666667,
+      "nocrash_self": 0.07777777777777778,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "MBPP/77",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6888888888888888,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/77",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6888888888888888,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/77",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6888888888888888,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/77",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8888888888888888,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.1111111111111111
+    },
+    {
+      "task_id": "MBPP/77",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6888888888888888,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/77",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6888888888888888,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/77",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6888888888888888,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/77",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8888888888888888,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.1111111111111111
+    },
+    {
+      "task_id": "MBPP/77",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6888888888888888,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/77",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6888888888888888,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/79",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8888888888888888,
+      "nocrash_self": 0.4444444444444444,
+      "nocrash_support": 0.5555555555555556
+    },
+    {
+      "task_id": "MBPP/79",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8666666666666667,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/79",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.5555555555555556,
+      "nocrash_support": 0.5555555555555556
+    },
+    {
+      "task_id": "MBPP/79",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.5555555555555556,
+      "nocrash_support": 0.5555555555555556
+    },
+    {
+      "task_id": "MBPP/79",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8888888888888888,
+      "nocrash_self": 0.4444444444444444,
+      "nocrash_support": 0.5555555555555556
+    },
+    {
+      "task_id": "MBPP/79",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8666666666666667,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/79",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8666666666666667,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/79",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8666666666666667,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/79",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.5555555555555556,
+      "nocrash_support": 0.5555555555555556
+    },
+    {
+      "task_id": "MBPP/79",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.5555555555555556,
+      "nocrash_support": 0.5555555555555556
+    },
+    {
+      "task_id": "MBPP/80",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.2222222222222222,
+      "nocrash_self": 0.2222222222222222,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/80",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.2222222222222222,
+      "nocrash_self": 0.2222222222222222,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/80",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.2222222222222222,
+      "nocrash_self": 0.2222222222222222,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/80",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.2222222222222222,
+      "nocrash_self": 0.2222222222222222,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/80",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.2222222222222222,
+      "nocrash_self": 0.2222222222222222,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/80",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.2222222222222222,
+      "nocrash_self": 0.2222222222222222,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/80",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 1.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/80",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 1.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/80",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.2222222222222222,
+      "nocrash_self": 0.2222222222222222,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/80",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.2222222222222222,
+      "nocrash_self": 0.2222222222222222,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/82",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.9259259259259258,
+      "nocrash_self": 0.7037037037037037,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "MBPP/82",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.7777777777777778,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "MBPP/82",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.7777777777777778,
+      "nocrash_self": 0.5555555555555556,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "MBPP/82",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.9777777777777779,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/82",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.7777777777777778,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "MBPP/82",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8518518518518517,
+      "nocrash_self": 0.6296296296296295,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "MBPP/82",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8518518518518517,
+      "nocrash_self": 0.6296296296296295,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "MBPP/82",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.9777777777777779,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/82",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.7777777777777778,
+      "nocrash_self": 0.5555555555555556,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "MBPP/82",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.7777777777777778,
+      "nocrash_self": 0.5555555555555556,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "MBPP/84",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.7129629629629629,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/84",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.2222222222222222,
+      "nocrash_support": 0.2222222222222222
+    },
+    {
+      "task_id": "MBPP/84",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.7129629629629629,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/84",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.7129629629629629,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/84",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.7129629629629629,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/84",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.9907407407407407,
+      "nocrash_self": 0.1111111111111111,
+      "nocrash_support": 0.2222222222222222
+    },
+    {
+      "task_id": "MBPP/84",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.7129629629629629,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/84",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.7129629629629629,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/84",
+      "passed": 0,
+      "crash_rate": 0.9166666666666666,
+      "execution_self": 0.8481481481481482,
+      "nocrash_self": 0.1111111111111111,
+      "nocrash_support": 0.2222222222222222
+    },
+    {
+      "task_id": "MBPP/84",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.7129629629629629,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/85",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.4907407407407407,
+      "nocrash_self": 0.37962962962962965,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/85",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.4907407407407407,
+      "nocrash_self": 0.37962962962962965,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/85",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.675925925925926,
+      "nocrash_self": 0.5648148148148149,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/85",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.8888888888888888,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/85",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/85",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.8888888888888888,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/85",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.49074074074074076,
+      "nocrash_self": 0.37962962962962965,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/85",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.8888888888888888,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/85",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.49074074074074076,
+      "nocrash_self": 0.37962962962962965,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/85",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.49074074074074076,
+      "nocrash_self": 0.37962962962962965,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/86",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8703703703703703,
+      "nocrash_self": 0.6481481481481481,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "MBPP/86",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.7777777777777778,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "MBPP/86",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8703703703703703,
+      "nocrash_self": 0.6481481481481481,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "MBPP/86",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.7777777777777778,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "MBPP/86",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.7777777777777778,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "MBPP/86",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8703703703703703,
+      "nocrash_self": 0.6481481481481481,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "MBPP/86",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.9555555555555555,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/86",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.9555555555555555,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/86",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.7777777777777778,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "MBPP/86",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8703703703703703,
+      "nocrash_self": 0.6481481481481481,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "MBPP/87",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.3148148148148148,
+      "nocrash_self": 0.20370370370370372,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/87",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.3148148148148148,
+      "nocrash_self": 0.20370370370370372,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/87",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.3148148148148148,
+      "nocrash_self": 0.20370370370370372,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/87",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.3148148148148148,
+      "nocrash_self": 0.20370370370370372,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/87",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.3148148148148148,
+      "nocrash_self": 0.20370370370370372,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/87",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.8888888888888888,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/87",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8703703703703703,
+      "nocrash_self": 0.7592592592592592,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/87",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/87",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.3148148148148148,
+      "nocrash_self": 0.20370370370370372,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/87",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.3148148148148148,
+      "nocrash_self": 0.20370370370370372,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/88",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.17592592592592593,
+      "nocrash_self": 0.17592592592592593,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/88",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.17592592592592593,
+      "nocrash_self": 0.17592592592592593,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/88",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.6296296296296297,
+      "nocrash_self": 0.6296296296296297,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/88",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 1.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/88",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.17592592592592593,
+      "nocrash_self": 0.17592592592592593,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/88",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.17592592592592593,
+      "nocrash_self": 0.17592592592592593,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/88",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.17592592592592593,
+      "nocrash_self": 0.17592592592592593,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/88",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.17592592592592593,
+      "nocrash_self": 0.17592592592592593,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/88",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.17592592592592593,
+      "nocrash_self": 0.17592592592592593,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/88",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.17592592592592593,
+      "nocrash_self": 0.17592592592592593,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/89",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.9166666666666666,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/89",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.938888888888889,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/89",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.9166666666666666,
+      "nocrash_self": 0.5833333333333334,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "MBPP/89",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.9537037037037037,
+      "nocrash_self": 0.5370370370370371,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "MBPP/89",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.9074074074074076,
+      "nocrash_self": 0.5740740740740741,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "MBPP/89",
+      "passed": 1,
+      "crash_rate": 0.75,
+      "execution_self": 0.9222222222222223,
+      "nocrash_self": 0.5555555555555556,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "MBPP/89",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.9166666666666666,
+      "nocrash_self": 0.5833333333333334,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "MBPP/89",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.6666666666666666,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "MBPP/89",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8703703703703705,
+      "nocrash_self": 0.5370370370370371,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "MBPP/89",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.9166666666666666,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/90",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.4444444444444444,
+      "nocrash_self": 0.3333333333333333,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/90",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.4444444444444444,
+      "nocrash_self": 0.3333333333333333,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/90",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/90",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.4444444444444444,
+      "nocrash_self": 0.3333333333333333,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/90",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.8888888888888888,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/90",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.4444444444444444,
+      "nocrash_self": 0.3333333333333333,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/90",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.8888888888888888,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/90",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.8888888888888888,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/90",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.4444444444444444,
+      "nocrash_self": 0.3333333333333333,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/90",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.4444444444444444,
+      "nocrash_self": 0.3333333333333333,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/91",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.9111111111111112,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/91",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.5555555555555556,
+      "nocrash_support": 0.5555555555555556
+    },
+    {
+      "task_id": "MBPP/91",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.574074074074074,
+      "nocrash_self": 0.12962962962962962,
+      "nocrash_support": 0.5555555555555556
+    },
+    {
+      "task_id": "MBPP/91",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.5833333333333334,
+      "nocrash_self": 0.1388888888888889,
+      "nocrash_support": 0.5555555555555556
+    },
+    {
+      "task_id": "MBPP/91",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.9111111111111112,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/91",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.574074074074074,
+      "nocrash_self": 0.12962962962962962,
+      "nocrash_support": 0.5555555555555556
+    },
+    {
+      "task_id": "MBPP/91",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.574074074074074,
+      "nocrash_self": 0.12962962962962962,
+      "nocrash_support": 0.5555555555555556
+    },
+    {
+      "task_id": "MBPP/91",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.5833333333333334,
+      "nocrash_self": 0.1388888888888889,
+      "nocrash_support": 0.5555555555555556
+    },
+    {
+      "task_id": "MBPP/91",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.9111111111111112,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/91",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.9111111111111112,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/92",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8333333333333333,
+      "nocrash_self": 0.611111111111111,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "MBPP/92",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.9777777777777779,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/92",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.6481481481481481,
+      "nocrash_self": 0.4259259259259259,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "MBPP/92",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.5555555555555556,
+      "nocrash_self": 0.3333333333333333,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "MBPP/92",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.5,
+      "nocrash_self": 0.27777777777777773,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "MBPP/92",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.5555555555555556,
+      "nocrash_self": 0.3333333333333333,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "MBPP/92",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.9777777777777779,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/92",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.5,
+      "nocrash_self": 0.2777777777777778,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "MBPP/92",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.5,
+      "nocrash_self": 0.27777777777777773,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "MBPP/92",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.537037037037037,
+      "nocrash_self": 0.31481481481481477,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "MBPP/93",
+      "passed": 0,
+      "crash_rate": 0.9166666666666666,
+      "execution_self": 0.898148148148148,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/93",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.9759259259259259,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/93",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.25,
+      "nocrash_self": 0.018518518518518517,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/93",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.25,
+      "nocrash_self": 0.018518518518518517,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/93",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.2777777777777778,
+      "nocrash_self": 0.046296296296296294,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/93",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.25,
+      "nocrash_self": 0.018518518518518517,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/93",
+      "passed": 1,
+      "crash_rate": 0.08333333333333333,
+      "execution_self": 0.2685185185185185,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/93",
+      "passed": 1,
+      "crash_rate": 0.08333333333333333,
+      "execution_self": 0.2685185185185185,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/93",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.2777777777777778,
+      "nocrash_self": 0.046296296296296294,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/93",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.25,
+      "nocrash_self": 0.018518518518518517,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/94",
+      "passed": 0,
+      "crash_rate": 0.5833333333333334,
+      "execution_self": 0.9277777777777777,
+      "nocrash_self": 0.6666666666666666,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "MBPP/94",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8888888888888888,
+      "nocrash_self": 0.6666666666666666,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "MBPP/94",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.9648148148148148,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/94",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8425925925925926,
+      "nocrash_self": 0.5814814814814815,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "MBPP/94",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8888888888888888,
+      "nocrash_self": 0.6666666666666666,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "MBPP/94",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8981481481481483,
+      "nocrash_self": 0.6499999999999999,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "MBPP/94",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.7777777777777778,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "MBPP/94",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.7777777777777778,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "MBPP/94",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.9648148148148148,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/94",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.898148148148148,
+      "nocrash_self": 0.675925925925926,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "MBPP/95",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8796296296296297,
+      "nocrash_self": 0.6574074074074074,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "MBPP/95",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.9777777777777779,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/95",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8796296296296295,
+      "nocrash_self": 0.6574074074074073,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "MBPP/95",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8518518518518519,
+      "nocrash_self": 0.6296296296296297,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "MBPP/95",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.7777777777777778,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "MBPP/95",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.7777777777777778,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "MBPP/95",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.9777777777777779,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/95",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8518518518518519,
+      "nocrash_self": 0.6296296296296297,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "MBPP/95",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.7777777777777778,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "MBPP/95",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.9074074074074073,
+      "nocrash_self": 0.6851851851851851,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "MBPP/96",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.911111111111111,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/96",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.5555555555555556,
+      "nocrash_self": 0.2222222222222222,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "MBPP/96",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.911111111111111,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/96",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.5555555555555556,
+      "nocrash_self": 0.2222222222222222,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "MBPP/96",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.6666666666666666,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "MBPP/96",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.5555555555555556,
+      "nocrash_self": 0.2222222222222222,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "MBPP/96",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.911111111111111,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/96",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.5555555555555556,
+      "nocrash_self": 0.2222222222222222,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "MBPP/96",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.6666666666666666,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "MBPP/96",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.5555555555555556,
+      "nocrash_self": 0.2222222222222222,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "MBPP/97",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.2222222222222222,
+      "nocrash_support": 0.2222222222222222
+    },
+    {
+      "task_id": "MBPP/97",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.7555555555555555,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/97",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.7555555555555555,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/97",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.7555555555555555,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/97",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.2222222222222222,
+      "nocrash_support": 0.2222222222222222
+    },
+    {
+      "task_id": "MBPP/97",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.7555555555555555,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/97",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8666666666666667,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/97",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.2222222222222222,
+      "nocrash_support": 0.2222222222222222
+    },
+    {
+      "task_id": "MBPP/97",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.7555555555555555,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/97",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.7555555555555555,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/98",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.20370370370370372,
+      "nocrash_self": 0.20370370370370372,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/98",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.20370370370370372,
+      "nocrash_self": 0.20370370370370372,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/98",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.20370370370370372,
+      "nocrash_self": 0.20370370370370372,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/98",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.20370370370370372,
+      "nocrash_self": 0.20370370370370372,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/98",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.20370370370370372,
+      "nocrash_self": 0.20370370370370372,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/98",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 1.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/98",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.20370370370370372,
+      "nocrash_self": 0.20370370370370372,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/98",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.20370370370370372,
+      "nocrash_self": 0.20370370370370372,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/98",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.20370370370370372,
+      "nocrash_self": 0.20370370370370372,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/98",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8518518518518519,
+      "nocrash_self": 0.8518518518518519,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/99",
+      "passed": 0,
+      "crash_rate": 0.4166666666666667,
+      "execution_self": 0.9537037037037037,
+      "nocrash_self": 0.8888888888888888,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/99",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.7592592592592593,
+      "nocrash_self": 0.6481481481481483,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/99",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.7592592592592593,
+      "nocrash_self": 0.6481481481481483,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/99",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.8888888888888888,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/99",
+      "passed": 0,
+      "crash_rate": 0.5833333333333334,
+      "execution_self": 0.9500000000000001,
+      "nocrash_self": 0.8888888888888888,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/99",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.8888888888888888,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/99",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.9685185185185186,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/99",
+      "passed": 0,
+      "crash_rate": 0.4166666666666667,
+      "execution_self": 0.9537037037037037,
+      "nocrash_self": 0.8888888888888888,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/99",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.8055555555555557,
+      "nocrash_self": 0.6944444444444445,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/99",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.8055555555555557,
+      "nocrash_self": 0.6944444444444445,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/100",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.8240740740740741,
+      "nocrash_self": 0.26851851851851855,
+      "nocrash_support": 0.4444444444444444
+    },
+    {
+      "task_id": "MBPP/100",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8166666666666667,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/100",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8166666666666667,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/100",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8166666666666667,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/100",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8166666666666667,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/100",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8333333333333334,
+      "nocrash_self": 0.2777777777777778,
+      "nocrash_support": 0.4444444444444444
+    },
+    {
+      "task_id": "MBPP/100",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.9722222222222222,
+      "nocrash_self": 0.4166666666666667,
+      "nocrash_support": 0.4444444444444444
+    },
+    {
+      "task_id": "MBPP/100",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8166666666666667,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/100",
+      "passed": 0,
+      "crash_rate": 0.25,
+      "execution_self": 0.9722222222222222,
+      "nocrash_self": 0.4444444444444444,
+      "nocrash_support": 0.4444444444444444
+    },
+    {
+      "task_id": "MBPP/100",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8148148148148148,
+      "nocrash_self": 0.25925925925925924,
+      "nocrash_support": 0.4444444444444444
+    },
+    {
+      "task_id": "MBPP/101",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/101",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/101",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/101",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/101",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/101",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/101",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/101",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8000000000000002,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/101",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/101",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/102",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.7592592592592592,
+      "nocrash_self": 0.6481481481481481,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/102",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8611111111111112,
+      "nocrash_self": 0.75,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/102",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.8888888888888888,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/102",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.9907407407407407,
+      "nocrash_self": 0.8796296296296295,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/102",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/102",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.9629629629629629,
+      "nocrash_self": 0.8518518518518519,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/102",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8425925925925927,
+      "nocrash_self": 0.7314814814814815,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/102",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.7592592592592592,
+      "nocrash_self": 0.6481481481481481,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/102",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8333333333333334,
+      "nocrash_self": 0.7222222222222222,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/102",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8611111111111112,
+      "nocrash_self": 0.75,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/103",
+      "passed": 0,
+      "crash_rate": 0.08333333333333333,
+      "execution_self": 0.8962962962962963,
+      "nocrash_self": 0.7794612794612795,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/103",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.8888888888888888,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/103",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.9444444444444444,
+      "nocrash_self": 0.8316498316498318,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/103",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.9537037037037036,
+      "nocrash_self": 0.8417508417508418,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/103",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.9833333333333333,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/103",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.9537037037037037,
+      "nocrash_self": 0.8383838383838385,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/103",
+      "passed": 0,
+      "crash_rate": 0.5,
+      "execution_self": 0.9703703703703704,
+      "nocrash_self": 0.8703703703703705,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/103",
+      "passed": 0,
+      "crash_rate": 0.08333333333333333,
+      "execution_self": 0.9092592592592593,
+      "nocrash_self": 0.797979797979798,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/103",
+      "passed": 0,
+      "crash_rate": 0.08333333333333333,
+      "execution_self": 0.8962962962962963,
+      "nocrash_self": 0.7878787878787878,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/103",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.9814814814814814,
+      "nocrash_self": 0.8703703703703703,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/104",
+      "passed": 0,
+      "crash_rate": 0.3333333333333333,
+      "execution_self": 0.8666666666666666,
+      "nocrash_self": 0.8333333333333334,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/104",
+      "passed": 0,
+      "crash_rate": 0.08333333333333333,
+      "execution_self": 0.4129629629629629,
+      "nocrash_self": 0.37626262626262624,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/104",
+      "passed": 0,
+      "crash_rate": 0.08333333333333333,
+      "execution_self": 0.4129629629629629,
+      "nocrash_self": 0.37626262626262624,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/104",
+      "passed": 0,
+      "crash_rate": 0.08333333333333333,
+      "execution_self": 0.4129629629629629,
+      "nocrash_self": 0.37626262626262624,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/104",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8888888888888888,
+      "nocrash_self": 0.8888888888888888,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/104",
+      "passed": 0,
+      "crash_rate": 0.08333333333333333,
+      "execution_self": 0.4129629629629629,
+      "nocrash_self": 0.37626262626262624,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/104",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8888888888888888,
+      "nocrash_self": 0.8888888888888888,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/104",
+      "passed": 0,
+      "crash_rate": 0.08333333333333333,
+      "execution_self": 0.4129629629629629,
+      "nocrash_self": 0.37626262626262624,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/104",
+      "passed": 0,
+      "crash_rate": 0.08333333333333333,
+      "execution_self": 0.4129629629629629,
+      "nocrash_self": 0.37626262626262624,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/104",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.7777777777777778,
+      "nocrash_self": 0.7575757575757576,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "MBPP/105",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8888888888888888,
+      "nocrash_self": 0.7777777777777778,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/105",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.3333333333333333,
+      "nocrash_self": 0.2222222222222222,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/105",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.3333333333333333,
+      "nocrash_self": 0.2222222222222222,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/105",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.3333333333333333,
+      "nocrash_self": 0.2222222222222222,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/105",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.3333333333333333,
+      "nocrash_self": 0.2222222222222222,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/105",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.3333333333333333,
+      "nocrash_self": 0.2222222222222222,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/105",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8888888888888888,
+      "nocrash_self": 0.7777777777777778,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/105",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.3333333333333333,
+      "nocrash_self": 0.2222222222222222,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/105",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.3333333333333333,
+      "nocrash_self": 0.2222222222222222,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/105",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/106",
+      "passed": 0,
+      "crash_rate": 0.8333333333333334,
+      "execution_self": 0.9333333333333333,
+      "nocrash_self": 0.8888888888888888,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/106",
+      "passed": 0,
+      "crash_rate": 0.8333333333333334,
+      "execution_self": 0.9388888888888888,
+      "nocrash_self": 0.8888888888888888,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/106",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.9314814814814815,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/106",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.7685185185185185,
+      "nocrash_self": 0.6574074074074073,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/106",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.8888888888888888,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/106",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.9907407407407407,
+      "nocrash_self": 0.8796296296296295,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/106",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.9722222222222222,
+      "nocrash_self": 0.8611111111111112,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/106",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.7685185185185185,
+      "nocrash_self": 0.6574074074074073,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/106",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.9907407407407407,
+      "nocrash_self": 0.8796296296296295,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/106",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.7685185185185185,
+      "nocrash_self": 0.6574074074074073,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/108",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/108",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/108",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8222222222222223,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/108",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/108",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.2222222222222222,
+      "nocrash_support": 0.2222222222222222
+    },
+    {
+      "task_id": "MBPP/108",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8222222222222223,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/108",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.2222222222222222,
+      "nocrash_support": 0.2222222222222222
+    },
+    {
+      "task_id": "MBPP/108",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8222222222222223,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/108",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8000000000000002,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/108",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.2222222222222222,
+      "nocrash_support": 0.2222222222222222
+    },
+    {
+      "task_id": "MBPP/109",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8222222222222223,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/109",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.9351851851851853,
+      "nocrash_self": 0.37962962962962965,
+      "nocrash_support": 0.4444444444444444
+    },
+    {
+      "task_id": "MBPP/109",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.925925925925926,
+      "nocrash_self": 0.3703703703703704,
+      "nocrash_support": 0.4444444444444444
+    },
+    {
+      "task_id": "MBPP/109",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8222222222222223,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/109",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.4444444444444444,
+      "nocrash_support": 0.4444444444444444
+    },
+    {
+      "task_id": "MBPP/109",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8222222222222223,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/109",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.4444444444444444,
+      "nocrash_support": 0.4444444444444444
+    },
+    {
+      "task_id": "MBPP/109",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8222222222222223,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/109",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8981481481481483,
+      "nocrash_self": 0.3425925925925926,
+      "nocrash_support": 0.4444444444444444
+    },
+    {
+      "task_id": "MBPP/109",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8222222222222223,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/111",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.9018518518518519,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/111",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.9018518518518519,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/111",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8888888888888888,
+      "nocrash_self": 0.4444444444444444,
+      "nocrash_support": 0.5555555555555556
+    },
+    {
+      "task_id": "MBPP/111",
+      "passed": 0,
+      "crash_rate": 0.4166666666666667,
+      "execution_self": 0.9574074074074075,
+      "nocrash_self": 0.5555555555555556,
+      "nocrash_support": 0.5555555555555556
+    },
+    {
+      "task_id": "MBPP/111",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.9037037037037037,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/111",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.5555555555555556,
+      "nocrash_support": 0.5555555555555556
+    },
+    {
+      "task_id": "MBPP/111",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.5555555555555556,
+      "nocrash_support": 0.5555555555555556
+    },
+    {
+      "task_id": "MBPP/111",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.9092592592592593,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/111",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8888888888888888,
+      "nocrash_self": 0.4444444444444444,
+      "nocrash_support": 0.5555555555555556
+    },
+    {
+      "task_id": "MBPP/111",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.5555555555555556,
+      "nocrash_support": 0.5555555555555556
+    },
+    {
+      "task_id": "MBPP/113",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.911111111111111,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/113",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.911111111111111,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/113",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.3333333333333333,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "MBPP/113",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.3333333333333333,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "MBPP/113",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.3333333333333333,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "MBPP/113",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.3333333333333333,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "MBPP/113",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.911111111111111,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/113",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.3333333333333333,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "MBPP/113",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.3333333333333333,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "MBPP/113",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.3333333333333333,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "MBPP/116",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.3888888888888889,
+      "nocrash_self": 0.2777777777777778,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/116",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.3888888888888889,
+      "nocrash_self": 0.2777777777777778,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/116",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/116",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.7592592592592592,
+      "nocrash_self": 0.6481481481481481,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/116",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.3888888888888889,
+      "nocrash_self": 0.2777777777777778,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/116",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.7592592592592592,
+      "nocrash_self": 0.6481481481481481,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/116",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.3888888888888889,
+      "nocrash_self": 0.2777777777777778,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/116",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.3888888888888889,
+      "nocrash_self": 0.2777777777777778,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/116",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.8518518518518519,
+      "nocrash_self": 0.7407407407407408,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/116",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.38888888888888895,
+      "nocrash_self": 0.2777777777777778,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "MBPP/118",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.9555555555555555,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/118",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.5277777777777778,
+      "nocrash_self": 0.3055555555555556,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "MBPP/118",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.7314814814814814,
+      "nocrash_self": 0.5092592592592592,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "MBPP/118",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.7314814814814814,
+      "nocrash_self": 0.5092592592592592,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "MBPP/118",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.5277777777777778,
+      "nocrash_self": 0.3055555555555556,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "MBPP/118",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.7314814814814814,
+      "nocrash_self": 0.5092592592592592,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "MBPP/118",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.9555555555555555,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/118",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.5277777777777778,
+      "nocrash_self": 0.3055555555555556,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "MBPP/118",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.5277777777777778,
+      "nocrash_self": 0.3055555555555556,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "MBPP/118",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.5277777777777778,
+      "nocrash_self": 0.3055555555555556,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "MBPP/119",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/119",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/119",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/119",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/119",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/119",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/119",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/119",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/119",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "MBPP/119",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "context": {
+    "HumanEval": {
+      "n": 148,
+      "successes": [
+        91,
+        65,
+        54
+      ]
+    },
+    "MBPP": {
+      "n": 54,
+      "successes": [
+        27,
+        14,
+        13
+      ]
+    }
+  },
+  "allocation": {
+    "caps_pct": [
+      25,
+      40,
+      50,
+      75
+    ],
+    "risk": [
+      7,
+      9,
+      14,
+      30
+    ],
+    "random": [
+      13.5,
+      21.3,
+      26.8,
+      40.1
+    ],
+    "reversed": [
+      24,
+      36,
+      40,
+      47
+    ],
+    "length": [
+      27,
+      37,
+      40,
+      51
+    ]
+  },
+  "source": "Uploaded main_joint.tex, context ladder and length-gate tables",
+  "uncertainty": "Wilson intervals calculated from aggregate counts; paired tests are reported separately."
+}

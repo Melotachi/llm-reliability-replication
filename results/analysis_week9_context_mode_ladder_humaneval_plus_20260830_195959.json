@@ -1,0 +1,528 @@
+{
+  "config": {
+    "dataset": "humaneval",
+    "label": "plus",
+    "arms": {
+      "none": "results/humaneval_week9_arm_resample_sample0_qwen15b_evalpluslabel_20260830_194901.json",
+      "code_only": "results/humaneval_week9_arm_code_only_sample0_qwen15b_evalpluslabel_20260830_194914.json",
+      "error": "results/humaneval_week9_arm_error_nostop_sample0_qwen15b_evalpluslabel_20260830_195445.json"
+    },
+    "model": "Qwen/Qwen2.5-Coder-1.5B-Instruct",
+    "device_resolved": "cuda",
+    "dtype_resolved": "torch.float16",
+    "temperature": 0.8,
+    "seed": 42,
+    "selection_sha256": "9332324b2b7ecc9278b4742c66c2716b5bb81b93e5e8040085fe49f330c5af20"
+  },
+  "arms": [
+    {
+      "context_mode": "none",
+      "run_id": "humaneval_week9_arm_resample_sample0_qwen15b_evalpluslabel",
+      "source_results_file": "results/humaneval_week9_arm_resample_sample0_qwen15b_evalpluslabel_20260830_194901.json",
+      "n_coordinates": 147,
+      "successes": 82,
+      "repair_success_rate": 0.5578231292517006,
+      "repair_success_wilson_95": [
+        0.4770790664050208,
+        0.6356219391531275
+      ],
+      "repair_model_calls": 441,
+      "model_calls_per_success": 5.378048780487805,
+      "duplicate_candidate_rate": 0.07432432432432433,
+      "stagnation_stops": 12,
+      "final_failure_categories": {
+        "assertion_error": 50,
+        "name_error": 2,
+        "type_error": 1,
+        "runtime_error": 4
+      }
+    },
+    {
+      "context_mode": "code_only",
+      "run_id": "humaneval_week9_arm_code_only_sample0_qwen15b_evalpluslabel",
+      "source_results_file": "results/humaneval_week9_arm_code_only_sample0_qwen15b_evalpluslabel_20260830_194914.json",
+      "n_coordinates": 147,
+      "successes": 62,
+      "repair_success_rate": 0.4217687074829932,
+      "repair_success_wilson_95": [
+        0.34492551378720415,
+        0.5025966551635362
+      ],
+      "repair_model_calls": 441,
+      "model_calls_per_success": 7.112903225806452,
+      "duplicate_candidate_rate": 0.09684684684684684,
+      "stagnation_stops": 27,
+      "final_failure_categories": {
+        "assertion_error": 67,
+        "type_error": 3,
+        "name_error": 6,
+        "runtime_error": 2,
+        "syntax_error": 5
+      }
+    },
+    {
+      "context_mode": "error",
+      "run_id": "humaneval_week9_arm_error_nostop_sample0_qwen15b_evalpluslabel",
+      "source_results_file": "results/humaneval_week9_arm_error_nostop_sample0_qwen15b_evalpluslabel_20260830_195445.json",
+      "n_coordinates": 147,
+      "successes": 49,
+      "repair_success_rate": 0.3333333333333333,
+      "repair_success_wilson_95": [
+        0.2622286259058324,
+        0.41292729925009275
+      ],
+      "repair_model_calls": 441,
+      "model_calls_per_success": 9.0,
+      "duplicate_candidate_rate": 0.11261261261261261,
+      "stagnation_stops": 32,
+      "final_failure_categories": {
+        "assertion_error": 75,
+        "runtime_error": 4,
+        "type_error": 3,
+        "name_error": 8,
+        "syntax_error": 4
+      }
+    }
+  ],
+  "paired_comparisons": [
+    {
+      "left": "none",
+      "right": "code_only",
+      "both_pass": 41,
+      "left_only_pass": 41,
+      "right_only_pass": 21,
+      "neither_pass": 44,
+      "mcnemar_mid_p": 0.011141407415305074,
+      "mcnemar_mid_p_bh": 0.011141407415305074
+    },
+    {
+      "left": "none",
+      "right": "error",
+      "both_pass": 35,
+      "left_only_pass": 47,
+      "right_only_pass": 14,
+      "neither_pass": 51,
+      "mcnemar_mid_p": 1.7428522601631996e-05,
+      "mcnemar_mid_p_bh": 5.228556780489599e-05
+    },
+    {
+      "left": "code_only",
+      "right": "error",
+      "both_pass": 46,
+      "left_only_pass": 16,
+      "right_only_pass": 3,
+      "neither_pass": 82,
+      "mcnemar_mid_p": 0.0025768280029296875,
+      "mcnemar_mid_p_bh": 0.0038652420043945312
+    }
+  ],
+  "entrenchment": [
+    {
+      "context_mode": "none",
+      "n_coordinates": 147,
+      "n_final_identical_to_initial": 11,
+      "n_changed": 136,
+      "changed_label_crosstab": {
+        "changed_passed": 82,
+        "changed_failed": 54,
+        "identical_passed": 0,
+        "identical_failed": 11
+      },
+      "mean_final_chars": 319.6734693877551,
+      "mean_final_chars_changed": 287.25,
+      "mean_token_jaccard_to_initial": 0.6924906148341579,
+      "mean_token_jaccard_to_initial_passed": 0.7321492780612799,
+      "mean_token_jaccard_to_initial_failed": 0.6424596858399422,
+      "roc_auc_token_jaccard_vs_success": 0.5166041275797373,
+      "mean_ast_distance_to_initial": 0.5351641959867577,
+      "mean_ast_distance_to_initial_passed": 0.5548494203126193,
+      "mean_ast_distance_to_initial_failed": 0.510330528375671,
+      "roc_auc_ast_distance_vs_success": 0.5133208255159475,
+      "mean_token_jaccard_to_initial_changed": 0.7485008851516264,
+      "mean_token_jaccard_to_initial_passed_changed": 0.7321492780612799,
+      "mean_token_jaccard_to_initial_failed_changed": 0.7733311033258566,
+      "roc_auc_token_jaccard_vs_success_changed": 0.41937669376693765,
+      "mean_ast_distance_to_initial_changed": 0.5784495353680397,
+      "mean_ast_distance_to_initial_passed_changed": 0.5548494203126193,
+      "mean_ast_distance_to_initial_failed_changed": 0.6142867471188632,
+      "roc_auc_ast_distance_vs_success_changed": 0.41418247515808493
+    },
+    {
+      "context_mode": "code_only",
+      "n_coordinates": 147,
+      "n_final_identical_to_initial": 26,
+      "n_changed": 121,
+      "changed_label_crosstab": {
+        "changed_passed": 62,
+        "changed_failed": 59,
+        "identical_passed": 0,
+        "identical_failed": 26
+      },
+      "mean_final_chars": 711.8571428571429,
+      "mean_final_chars_changed": 630.099173553719,
+      "mean_token_jaccard_to_initial": 0.15411788165427964,
+      "mean_token_jaccard_to_initial_passed": 0.23234535649120686,
+      "mean_token_jaccard_to_initial_failed": 0.09705784118499156,
+      "roc_auc_token_jaccard_vs_success": 0.7946869070208729,
+      "mean_ast_distance_to_initial": 0.3558729975881,
+      "mean_ast_distance_to_initial_passed": 0.49495888459190307,
+      "mean_ast_distance_to_initial_failed": 0.25442211530297304,
+      "roc_auc_ast_distance_vs_success": 0.7675521821631879,
+      "mean_token_jaccard_to_initial_changed": 0.18723412068743062,
+      "mean_token_jaccard_to_initial_passed_changed": 0.23234535649120686,
+      "mean_token_jaccard_to_initial_failed_changed": 0.13982909323261494,
+      "roc_auc_token_jaccard_vs_success_changed": 0.7113176599234554,
+      "mean_ast_distance_to_initial_changed": 0.4323415755822372,
+      "mean_ast_distance_to_initial_passed_changed": 0.49495888459190307,
+      "mean_ast_distance_to_initial_failed_changed": 0.3665403356059781,
+      "roc_auc_ast_distance_vs_success_changed": 0.6651175505740842
+    },
+    {
+      "context_mode": "error",
+      "n_coordinates": 147,
+      "n_final_identical_to_initial": 31,
+      "n_changed": 116,
+      "changed_label_crosstab": {
+        "changed_passed": 49,
+        "changed_failed": 67,
+        "identical_passed": 0,
+        "identical_failed": 31
+      },
+      "mean_final_chars": 716.5170068027211,
+      "mean_final_chars_changed": 636.7844827586207,
+      "mean_token_jaccard_to_initial": 0.12588327164964935,
+      "mean_token_jaccard_to_initial_passed": 0.2073230160701733,
+      "mean_token_jaccard_to_initial_failed": 0.08516339943938737,
+      "roc_auc_token_jaccard_vs_success": 0.7883173677634319,
+      "mean_ast_distance_to_initial": 0.3227773649064143,
+      "mean_ast_distance_to_initial_passed": 0.46091488216061816,
+      "mean_ast_distance_to_initial_failed": 0.2537086062793124,
+      "roc_auc_ast_distance_vs_success": 0.7469804248229904,
+      "mean_token_jaccard_to_initial_changed": 0.15952449079740047,
+      "mean_token_jaccard_to_initial_passed_changed": 0.2073230160701733,
+      "mean_token_jaccard_to_initial_failed_changed": 0.12456736037402931,
+      "roc_auc_token_jaccard_vs_success_changed": 0.6998172403289674,
+      "mean_ast_distance_to_initial_changed": 0.409036833114163,
+      "mean_ast_distance_to_initial_passed_changed": 0.46091488216061816,
+      "mean_ast_distance_to_initial_failed_changed": 0.37109617037869574,
+      "roc_auc_ast_distance_vs_success_changed": 0.629911666159001
+    }
+  ],
+  "category_breakdown": {
+    "categories": [
+      "assertion_error",
+      "name_error",
+      "runtime_error",
+      "syntax_error",
+      "type_error"
+    ],
+    "by_arm": {
+      "none": {
+        "assertion_error": {
+          "failures": 116,
+          "successful_repairs": 66,
+          "repair_success_rate": 0.5689655172413793,
+          "repair_success_wilson_95": [
+            0.47806242360837425,
+            0.6554471423520268
+          ]
+        },
+        "name_error": {
+          "failures": 15,
+          "successful_repairs": 7,
+          "repair_success_rate": 0.4666666666666667,
+          "repair_success_wilson_95": [
+            0.24809225259746442,
+            0.6988336984894921
+          ]
+        },
+        "runtime_error": {
+          "failures": 8,
+          "successful_repairs": 4,
+          "repair_success_rate": 0.5,
+          "repair_success_wilson_95": [
+            0.21521252682444186,
+            0.7847874731755582
+          ]
+        },
+        "syntax_error": {
+          "failures": 5,
+          "successful_repairs": 3,
+          "repair_success_rate": 0.6,
+          "repair_success_wilson_95": [
+            0.23071993220883708,
+            0.8823817688407467
+          ]
+        },
+        "type_error": {
+          "failures": 3,
+          "successful_repairs": 2,
+          "repair_success_rate": 0.6666666666666666,
+          "repair_success_wilson_95": [
+            0.2076549551264879,
+            0.9385096847238394
+          ]
+        }
+      },
+      "code_only": {
+        "assertion_error": {
+          "failures": 116,
+          "successful_repairs": 54,
+          "repair_success_rate": 0.46551724137931033,
+          "repair_success_wilson_95": [
+            0.37730845831344373,
+            0.5559367587063557
+          ]
+        },
+        "name_error": {
+          "failures": 15,
+          "successful_repairs": 3,
+          "repair_success_rate": 0.2,
+          "repair_success_wilson_95": [
+            0.07047420643610414,
+            0.4518593533465045
+          ]
+        },
+        "runtime_error": {
+          "failures": 8,
+          "successful_repairs": 4,
+          "repair_success_rate": 0.5,
+          "repair_success_wilson_95": [
+            0.21521252682444186,
+            0.7847874731755582
+          ]
+        },
+        "syntax_error": {
+          "failures": 5,
+          "successful_repairs": 0,
+          "repair_success_rate": 0.0,
+          "repair_success_wilson_95": [
+            0.0,
+            0.43449149475208104
+          ]
+        },
+        "type_error": {
+          "failures": 3,
+          "successful_repairs": 1,
+          "repair_success_rate": 0.3333333333333333,
+          "repair_success_wilson_95": [
+            0.0614903152761605,
+            0.7923450448735121
+          ]
+        }
+      },
+      "error": {
+        "assertion_error": {
+          "failures": 116,
+          "successful_repairs": 43,
+          "repair_success_rate": 0.3706896551724138,
+          "repair_success_wilson_95": [
+            0.2882606171492148,
+            0.4614089466750333
+          ]
+        },
+        "name_error": {
+          "failures": 15,
+          "successful_repairs": 2,
+          "repair_success_rate": 0.13333333333333333,
+          "repair_success_wilson_95": [
+            0.0373604698913593,
+            0.3788249920651624
+          ]
+        },
+        "runtime_error": {
+          "failures": 8,
+          "successful_repairs": 3,
+          "repair_success_rate": 0.375,
+          "repair_success_wilson_95": [
+            0.13684175946152105,
+            0.6942621454161981
+          ]
+        },
+        "syntax_error": {
+          "failures": 5,
+          "successful_repairs": 0,
+          "repair_success_rate": 0.0,
+          "repair_success_wilson_95": [
+            0.0,
+            0.43449149475208104
+          ]
+        },
+        "type_error": {
+          "failures": 3,
+          "successful_repairs": 1,
+          "repair_success_rate": 0.3333333333333333,
+          "repair_success_wilson_95": [
+            0.0614903152761605,
+            0.7923450448735121
+          ]
+        }
+      }
+    }
+  },
+  "complementarity": {
+    "n_coordinates": 147,
+    "solved_by_arm": {
+      "none": 82,
+      "code_only": 62,
+      "error": 49
+    },
+    "n_union": 103,
+    "union_rate": 0.7006802721088435,
+    "n_intersection": 32,
+    "n_unsolved_by_every_arm": 44,
+    "n_context_only": 21,
+    "context_only_task_ids": [
+      "HumanEval/104",
+      "HumanEval/122",
+      "HumanEval/139",
+      "HumanEval/146",
+      "HumanEval/147",
+      "HumanEval/151",
+      "HumanEval/17",
+      "HumanEval/18",
+      "HumanEval/39",
+      "HumanEval/44",
+      "HumanEval/57",
+      "HumanEval/63",
+      "HumanEval/64",
+      "HumanEval/70",
+      "HumanEval/77",
+      "HumanEval/79",
+      "HumanEval/82",
+      "HumanEval/83",
+      "HumanEval/9",
+      "HumanEval/90",
+      "HumanEval/95"
+    ],
+    "n_none_only": 38,
+    "none_only_task_ids": [
+      "HumanEval/1",
+      "HumanEval/100",
+      "HumanEval/11",
+      "HumanEval/110",
+      "HumanEval/111",
+      "HumanEval/115",
+      "HumanEval/119",
+      "HumanEval/125",
+      "HumanEval/131",
+      "HumanEval/133",
+      "HumanEval/136",
+      "HumanEval/144",
+      "HumanEval/152",
+      "HumanEval/153",
+      "HumanEval/154",
+      "HumanEval/155",
+      "HumanEval/156",
+      "HumanEval/159",
+      "HumanEval/19",
+      "HumanEval/20",
+      "HumanEval/25",
+      "HumanEval/37",
+      "HumanEval/38",
+      "HumanEval/46",
+      "HumanEval/50",
+      "HumanEval/51",
+      "HumanEval/52",
+      "HumanEval/58",
+      "HumanEval/68",
+      "HumanEval/69",
+      "HumanEval/72",
+      "HumanEval/78",
+      "HumanEval/8",
+      "HumanEval/80",
+      "HumanEval/85",
+      "HumanEval/92",
+      "HumanEval/94",
+      "HumanEval/97"
+    ],
+    "solved_only_by_arm": {
+      "none": [
+        "HumanEval/1",
+        "HumanEval/100",
+        "HumanEval/11",
+        "HumanEval/110",
+        "HumanEval/111",
+        "HumanEval/115",
+        "HumanEval/119",
+        "HumanEval/125",
+        "HumanEval/131",
+        "HumanEval/133",
+        "HumanEval/136",
+        "HumanEval/144",
+        "HumanEval/152",
+        "HumanEval/153",
+        "HumanEval/154",
+        "HumanEval/155",
+        "HumanEval/156",
+        "HumanEval/159",
+        "HumanEval/19",
+        "HumanEval/20",
+        "HumanEval/25",
+        "HumanEval/37",
+        "HumanEval/38",
+        "HumanEval/46",
+        "HumanEval/50",
+        "HumanEval/51",
+        "HumanEval/52",
+        "HumanEval/58",
+        "HumanEval/68",
+        "HumanEval/69",
+        "HumanEval/72",
+        "HumanEval/78",
+        "HumanEval/8",
+        "HumanEval/80",
+        "HumanEval/85",
+        "HumanEval/92",
+        "HumanEval/94",
+        "HumanEval/97"
+      ],
+      "code_only": [
+        "HumanEval/122",
+        "HumanEval/139",
+        "HumanEval/17",
+        "HumanEval/63",
+        "HumanEval/64",
+        "HumanEval/70",
+        "HumanEval/90"
+      ],
+      "error": []
+    }
+  },
+  "contamination": [
+    {
+      "context_mode": "none",
+      "n_scored": 147,
+      "mean_similarity_to_canonical": 0.5702791568571413,
+      "mean_similarity_to_canonical_passed": 0.6069161708495006,
+      "mean_similarity_to_canonical_failed": 0.5240601545898574,
+      "max_similarity_to_canonical": 1.0,
+      "n_above_0_9_similarity_to_canonical": 12,
+      "mean_similarity_to_initial": 0.5163928624668135,
+      "roc_auc_canonical_similarity_vs_success": 0.6283302063789868
+    },
+    {
+      "context_mode": "code_only",
+      "n_scored": 147,
+      "mean_similarity_to_canonical": 0.541818829658248,
+      "mean_similarity_to_canonical_passed": 0.5840333721697305,
+      "mean_similarity_to_canonical_failed": 0.5110270457086963,
+      "max_similarity_to_canonical": 1.0,
+      "n_above_0_9_similarity_to_canonical": 8,
+      "mean_similarity_to_initial": 0.7010993152993308,
+      "roc_auc_canonical_similarity_vs_success": 0.6056925996204934
+    },
+    {
+      "context_mode": "error",
+      "n_scored": 147,
+      "mean_similarity_to_canonical": 0.5386563711793898,
+      "mean_similarity_to_canonical_passed": 0.6160086004430086,
+      "mean_similarity_to_canonical_failed": 0.4999802565475802,
+      "max_similarity_to_canonical": 1.0,
+      "n_above_0_9_similarity_to_canonical": 8,
+      "mean_similarity_to_initial": 0.7332134923557112,
+      "roc_auc_canonical_similarity_vs_success": 0.6603498542274052
+    }
+  ],
+  "figure": "reports/figures/week9_context_mode_ladder_humaneval_plus.png"
+}

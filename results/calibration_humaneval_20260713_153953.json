@@ -1,0 +1,196 @@
+{
+  "analysis": "predictor_calibration",
+  "source_results_file": "results/humaneval_uncertainty_20260710_014920.json",
+  "source_run_id": "humaneval_uncertainty_20260710_014920",
+  "config": {
+    "seed": 42,
+    "n_splits": 5,
+    "n_bins": null,
+    "recalibrate": "beta",
+    "codebert_model": "microsoft/codebert-base"
+  },
+  "source_config": {
+    "dataset": "humaneval",
+    "model": "Salesforce/codegen-350M-mono",
+    "n_samples": 10,
+    "n_problems": 60,
+    "seed": 42,
+    "mode": "uncertainty",
+    "codebert_model": "microsoft/codebert-base",
+    "use_error_context": false,
+    "max_repair_iterations": 1
+  },
+  "n_problems": 60,
+  "n_samples": 600,
+  "figure": "/Users/melih/Desktop/stajsal/Internship Resources \u2013 AI For SE/reports/figures/week6_reliability_beta_he60.png",
+  "calibrations": {
+    "Task A (reduced / logistic)": {
+      "n_bins": 4,
+      "n_bins_actual": 4,
+      "strategy": "quantile",
+      "bin_edges": [
+        -Infinity,
+        0.26014328923165797,
+        0.5411630415813322,
+        0.7696690497045693,
+        Infinity
+      ],
+      "bin_count": [
+        15,
+        15,
+        15,
+        15
+      ],
+      "bin_mean_predicted": [
+        0.11043211441817766,
+        0.43773202110199977,
+        0.6521235310917024,
+        0.8702455006295594
+      ],
+      "bin_fraction_positive": [
+        0.06666666666666667,
+        0.4,
+        0.7333333333333333,
+        0.8666666666666667
+      ],
+      "ece": 0.04157152626450858,
+      "mce": 0.08120980224163088,
+      "brier_score": 0.15651702197411044,
+      "n_rows": 60
+    },
+    "Task A (reduced / logistic) + beta": {
+      "n_bins": 4,
+      "n_bins_actual": 4,
+      "strategy": "quantile",
+      "bin_edges": [
+        -Infinity,
+        0.3526279100369146,
+        0.509023534825142,
+        0.7302549791646102,
+        Infinity
+      ],
+      "bin_count": [
+        15,
+        15,
+        15,
+        15
+      ],
+      "bin_mean_predicted": [
+        0.1899893292073488,
+        0.43501529372146985,
+        0.6311319806622541,
+        0.8642849909749996
+      ],
+      "bin_fraction_positive": [
+        0.06666666666666667,
+        0.5333333333333333,
+        0.6666666666666666,
+        0.8
+      ],
+      "ece": 0.08036509478298942,
+      "mce": 0.12332266254068212,
+      "brier_score": 0.175900645705927,
+      "n_rows": 60
+    },
+    "Task B (self_consistency_core / logistic)": {
+      "n_bins": 8,
+      "n_bins_actual": 8,
+      "strategy": "quantile",
+      "bin_edges": [
+        -Infinity,
+        0.1588319326364447,
+        0.23027807969052103,
+        0.3022563060471016,
+        0.3841521773004555,
+        0.45867875989218,
+        0.5841896791512147,
+        0.8303556881536364,
+        Infinity
+      ],
+      "bin_count": [
+        75,
+        75,
+        75,
+        75,
+        75,
+        75,
+        74,
+        76
+      ],
+      "bin_mean_predicted": [
+        0.08615671951346537,
+        0.19433802566245884,
+        0.26748715155511177,
+        0.34171320028757246,
+        0.4231204777694323,
+        0.5196644229915649,
+        0.6977644875645134,
+        0.8828569662510888
+      ],
+      "bin_fraction_positive": [
+        0.09333333333333334,
+        0.14666666666666667,
+        0.05333333333333334,
+        0.05333333333333334,
+        0.13333333333333333,
+        0.25333333333333335,
+        0.4189189189189189,
+        0.6842105263157895
+      ],
+      "ece": 0.1987403223688456,
+      "mce": 0.289787144436099,
+      "brier_score": 0.18283766823340353,
+      "n_rows": 600
+    },
+    "Task B (self_consistency_core / logistic) + beta": {
+      "n_bins": 8,
+      "n_bins_actual": 8,
+      "strategy": "quantile",
+      "bin_edges": [
+        -Infinity,
+        0.08458674489539499,
+        0.10507057280973901,
+        0.13421362037706905,
+        0.16169512421002485,
+        0.19196801791291584,
+        0.25949957837975013,
+        0.5447229954348636,
+        Infinity
+      ],
+      "bin_count": [
+        75,
+        75,
+        75,
+        75,
+        75,
+        75,
+        75,
+        75
+      ],
+      "bin_mean_predicted": [
+        0.060549959881435515,
+        0.09512259654761669,
+        0.11933991919258612,
+        0.14669824354176644,
+        0.17731784410807178,
+        0.22322473858691197,
+        0.37808812777554557,
+        0.6828381557663985
+      ],
+      "bin_fraction_positive": [
+        0.06666666666666667,
+        0.13333333333333333,
+        0.10666666666666667,
+        0.05333333333333334,
+        0.10666666666666667,
+        0.29333333333333333,
+        0.4,
+        0.68
+      ],
+      "ece": 0.039484425810497464,
+      "mce": 0.0933649102084331,
+      "brier_score": 0.13972321493822557,
+      "n_rows": 600
+    }
+  }
+}

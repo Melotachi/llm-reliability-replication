@@ -1,0 +1,944 @@
+{
+  "analysis": "week7_capability_sweep",
+  "source_results_files": [
+    "results/bigcodebench_uncertainty_20260901_202225.json",
+    "results/bigcodebench_uncertainty_20260901_212618.json",
+    "results/bigcodebench_uncertainty_20260901_223901.json",
+    "results/bigcodebench_uncertainty_20260902_001146.json",
+    "results/bigcodebench_uncertainty_20260902_101441.json"
+  ],
+  "config": {
+    "seed": 42,
+    "representation": "full",
+    "headline_metric": "ast_node_diversity",
+    "consensus_feature": "ast_node_diversity",
+    "tracked_metrics": [
+      "lexical_diversity",
+      "token_jaccard_diversity",
+      "token_cosine_diversity",
+      "ast_node_diversity",
+      "pairwise_distance"
+    ]
+  },
+  "protocol_conflicts": {},
+  "protocol_unrecorded": {},
+  "cells": [
+    {
+      "run_id": "bigcodebench_uncertainty_20260901_202225",
+      "model": "Salesforce/codegen-350M-mono",
+      "config": {
+        "dataset": "bigcodebench",
+        "model": "Salesforce/codegen-350M-mono",
+        "n_samples": 10,
+        "n_problems": 60,
+        "max_new_tokens": 512,
+        "exec_timeout": 30.0,
+        "problem_offset": 0,
+        "task_ids_file": "data/bigcodebench_cell_task_ids.txt",
+        "temperature": 0.7,
+        "seed": 42,
+        "mode": "uncertainty",
+        "device_requested": "cuda",
+        "dtype_requested": "float16",
+        "device_resolved": "cuda",
+        "dtype_resolved": "torch.float16",
+        "device_map_requested": "none",
+        "device_map_resolved": null,
+        "dtype_actual": "torch.float16",
+        "codebert_model": null,
+        "tree_edit_distance": false,
+        "use_error_context": false,
+        "max_repair_iterations": 3,
+        "repair_candidates": 1,
+        "task_ids_sha256": "9d38b2af955f7c43ea94b1cd6f5c537150346086aabef00bfd6208a4af95e61f"
+      },
+      "pass_at_1": 0.045,
+      "n_solved": 11,
+      "n_problems": 60,
+      "correlations": {
+        "lexical_diversity": {
+          "pearson_r": 0.04659544519379455,
+          "spearman_rho": 0.06134160674292793
+        },
+        "token_jaccard_diversity": {
+          "pearson_r": -0.2102191396618227,
+          "spearman_rho": -0.2067320707290886
+        },
+        "token_cosine_diversity": {
+          "pearson_r": -0.2449636568641571,
+          "spearman_rho": -0.22944580372444812
+        },
+        "ast_node_diversity": {
+          "pearson_r": -0.1216679814672626,
+          "spearman_rho": -0.19016052687403506
+        },
+        "pairwise_distance": {
+          "pearson_r": -0.09134399553634767,
+          "spearman_rho": -0.1931285645794178
+        }
+      },
+      "consensus": {
+        "feature": "ast_node_diversity",
+        "quartiles": [
+          {
+            "group": 1,
+            "n_problems": 15,
+            "frac_solved": 0.26666666666666666,
+            "mean_pass_rate": 0.04,
+            "task_ids_all_fail": [
+              "BigCodeBench/950",
+              "BigCodeBench/32",
+              "BigCodeBench/29",
+              "BigCodeBench/791",
+              "BigCodeBench/314",
+              "BigCodeBench/1046",
+              "BigCodeBench/290",
+              "BigCodeBench/271",
+              "BigCodeBench/822",
+              "BigCodeBench/431",
+              "BigCodeBench/747"
+            ]
+          },
+          {
+            "group": 2,
+            "n_problems": 15,
+            "frac_solved": 0.2,
+            "mean_pass_rate": 0.1,
+            "task_ids_all_fail": [
+              "BigCodeBench/229",
+              "BigCodeBench/881",
+              "BigCodeBench/411",
+              "BigCodeBench/331",
+              "BigCodeBench/532",
+              "BigCodeBench/640",
+              "BigCodeBench/1122",
+              "BigCodeBench/690",
+              "BigCodeBench/133",
+              "BigCodeBench/47",
+              "BigCodeBench/251",
+              "BigCodeBench/254"
+            ]
+          },
+          {
+            "group": 3,
+            "n_problems": 15,
+            "frac_solved": 0.2,
+            "mean_pass_rate": 0.020000000000000004,
+            "task_ids_all_fail": [
+              "BigCodeBench/851",
+              "BigCodeBench/1019",
+              "BigCodeBench/880",
+              "BigCodeBench/112",
+              "BigCodeBench/502",
+              "BigCodeBench/707",
+              "BigCodeBench/993",
+              "BigCodeBench/904",
+              "BigCodeBench/260",
+              "BigCodeBench/162",
+              "BigCodeBench/657",
+              "BigCodeBench/953"
+            ]
+          },
+          {
+            "group": 4,
+            "n_problems": 15,
+            "frac_solved": 0.06666666666666667,
+            "mean_pass_rate": 0.02,
+            "task_ids_all_fail": [
+              "BigCodeBench/35",
+              "BigCodeBench/123",
+              "BigCodeBench/875",
+              "BigCodeBench/951",
+              "BigCodeBench/113",
+              "BigCodeBench/185",
+              "BigCodeBench/402",
+              "BigCodeBench/179",
+              "BigCodeBench/900",
+              "BigCodeBench/257",
+              "BigCodeBench/867",
+              "BigCodeBench/594",
+              "BigCodeBench/106",
+              "BigCodeBench/758"
+            ]
+          }
+        ],
+        "spread": 0.2,
+        "confidently_wrong": {
+          "n_problems": 6,
+          "n_all_fail": 5,
+          "rate": 0.8333333333333334,
+          "task_ids": [
+            "BigCodeBench/950",
+            "BigCodeBench/32",
+            "BigCodeBench/29",
+            "BigCodeBench/791",
+            "BigCodeBench/314"
+          ]
+        }
+      },
+      "mean_parse_failure_rate": 0.06999999999999999
+    },
+    {
+      "run_id": "bigcodebench_uncertainty_20260901_212618",
+      "model": "Qwen/Qwen2.5-Coder-0.5B",
+      "config": {
+        "dataset": "bigcodebench",
+        "model": "Qwen/Qwen2.5-Coder-0.5B",
+        "n_samples": 10,
+        "n_problems": 60,
+        "max_new_tokens": 512,
+        "exec_timeout": 30.0,
+        "problem_offset": 0,
+        "task_ids_file": "data/bigcodebench_cell_task_ids.txt",
+        "temperature": 0.7,
+        "seed": 42,
+        "mode": "uncertainty",
+        "device_requested": "cuda",
+        "dtype_requested": "float16",
+        "device_resolved": "cuda",
+        "dtype_resolved": "torch.float16",
+        "device_map_requested": "none",
+        "device_map_resolved": null,
+        "dtype_actual": "torch.float16",
+        "codebert_model": null,
+        "tree_edit_distance": false,
+        "use_error_context": false,
+        "max_repair_iterations": 3,
+        "repair_candidates": 1,
+        "task_ids_sha256": "9d38b2af955f7c43ea94b1cd6f5c537150346086aabef00bfd6208a4af95e61f"
+      },
+      "pass_at_1": 0.11833333333333333,
+      "n_solved": 20,
+      "n_problems": 60,
+      "correlations": {
+        "lexical_diversity": {
+          "pearson_r": -0.3799995343548459,
+          "spearman_rho": -0.31658025644115934
+        },
+        "token_jaccard_diversity": {
+          "pearson_r": -0.3141773942869518,
+          "spearman_rho": -0.2718603306877214
+        },
+        "token_cosine_diversity": {
+          "pearson_r": -0.36496589632915116,
+          "spearman_rho": -0.37888752012818144
+        },
+        "ast_node_diversity": {
+          "pearson_r": -0.28283606373362624,
+          "spearman_rho": -0.2657283919926192
+        },
+        "pairwise_distance": {
+          "pearson_r": -0.3285278873206867,
+          "spearman_rho": -0.3348701439817178
+        }
+      },
+      "consensus": {
+        "feature": "ast_node_diversity",
+        "quartiles": [
+          {
+            "group": 1,
+            "n_problems": 15,
+            "frac_solved": 0.3333333333333333,
+            "mean_pass_rate": 0.14666666666666667,
+            "task_ids_all_fail": [
+              "BigCodeBench/29",
+              "BigCodeBench/290",
+              "BigCodeBench/271",
+              "BigCodeBench/32",
+              "BigCodeBench/640",
+              "BigCodeBench/1122",
+              "BigCodeBench/254",
+              "BigCodeBench/851",
+              "BigCodeBench/657",
+              "BigCodeBench/822"
+            ]
+          },
+          {
+            "group": 2,
+            "n_problems": 15,
+            "frac_solved": 0.5333333333333333,
+            "mean_pass_rate": 0.18000000000000002,
+            "task_ids_all_fail": [
+              "BigCodeBench/331",
+              "BigCodeBench/411",
+              "BigCodeBench/133",
+              "BigCodeBench/881",
+              "BigCodeBench/791",
+              "BigCodeBench/951",
+              "BigCodeBench/953"
+            ]
+          },
+          {
+            "group": 3,
+            "n_problems": 15,
+            "frac_solved": 0.3333333333333333,
+            "mean_pass_rate": 0.12666666666666665,
+            "task_ids_all_fail": [
+              "BigCodeBench/35",
+              "BigCodeBench/123",
+              "BigCodeBench/1046",
+              "BigCodeBench/880",
+              "BigCodeBench/758",
+              "BigCodeBench/1019",
+              "BigCodeBench/314",
+              "BigCodeBench/431",
+              "BigCodeBench/162",
+              "BigCodeBench/229"
+            ]
+          },
+          {
+            "group": 4,
+            "n_problems": 15,
+            "frac_solved": 0.13333333333333333,
+            "mean_pass_rate": 0.020000000000000004,
+            "task_ids_all_fail": [
+              "BigCodeBench/594",
+              "BigCodeBench/406",
+              "BigCodeBench/707",
+              "BigCodeBench/185",
+              "BigCodeBench/106",
+              "BigCodeBench/502",
+              "BigCodeBench/904",
+              "BigCodeBench/402",
+              "BigCodeBench/532",
+              "BigCodeBench/257",
+              "BigCodeBench/179",
+              "BigCodeBench/900",
+              "BigCodeBench/993"
+            ]
+          }
+        ],
+        "spread": 0.19999999999999998,
+        "confidently_wrong": {
+          "n_problems": 6,
+          "n_all_fail": 3,
+          "rate": 0.5,
+          "task_ids": [
+            "BigCodeBench/29",
+            "BigCodeBench/290",
+            "BigCodeBench/271"
+          ]
+        }
+      },
+      "mean_parse_failure_rate": 0.015000000000000003
+    },
+    {
+      "run_id": "bigcodebench_uncertainty_20260901_223901",
+      "model": "Qwen/Qwen2.5-Coder-1.5B",
+      "config": {
+        "dataset": "bigcodebench",
+        "model": "Qwen/Qwen2.5-Coder-1.5B",
+        "n_samples": 10,
+        "n_problems": 60,
+        "max_new_tokens": 512,
+        "exec_timeout": 30.0,
+        "problem_offset": 0,
+        "task_ids_file": "data/bigcodebench_cell_task_ids.txt",
+        "temperature": 0.7,
+        "seed": 42,
+        "mode": "uncertainty",
+        "device_requested": "cuda",
+        "dtype_requested": "float16",
+        "device_resolved": "cuda",
+        "dtype_resolved": "torch.float16",
+        "device_map_requested": "none",
+        "device_map_resolved": null,
+        "dtype_actual": "torch.float16",
+        "codebert_model": null,
+        "tree_edit_distance": false,
+        "use_error_context": false,
+        "max_repair_iterations": 3,
+        "repair_candidates": 1,
+        "task_ids_sha256": "9d38b2af955f7c43ea94b1cd6f5c537150346086aabef00bfd6208a4af95e61f"
+      },
+      "pass_at_1": 0.28,
+      "n_solved": 38,
+      "n_problems": 60,
+      "correlations": {
+        "lexical_diversity": {
+          "pearson_r": -0.31562138431599956,
+          "spearman_rho": -0.2702866756054788
+        },
+        "token_jaccard_diversity": {
+          "pearson_r": -0.380374142957413,
+          "spearman_rho": -0.33375892979018296
+        },
+        "token_cosine_diversity": {
+          "pearson_r": -0.3993797435633126,
+          "spearman_rho": -0.4255533557907207
+        },
+        "ast_node_diversity": {
+          "pearson_r": -0.43773930665325284,
+          "spearman_rho": -0.4384177256755672
+        },
+        "pairwise_distance": {
+          "pearson_r": -0.4121499068884001,
+          "spearman_rho": -0.49707925235046707
+        }
+      },
+      "consensus": {
+        "feature": "ast_node_diversity",
+        "quartiles": [
+          {
+            "group": 1,
+            "n_problems": 15,
+            "frac_solved": 0.7333333333333333,
+            "mean_pass_rate": 0.5,
+            "task_ids_all_fail": [
+              "BigCodeBench/29",
+              "BigCodeBench/1122",
+              "BigCodeBench/290",
+              "BigCodeBench/851"
+            ]
+          },
+          {
+            "group": 2,
+            "n_problems": 15,
+            "frac_solved": 0.8666666666666667,
+            "mean_pass_rate": 0.30666666666666664,
+            "task_ids_all_fail": [
+              "BigCodeBench/271",
+              "BigCodeBench/881"
+            ]
+          },
+          {
+            "group": 3,
+            "n_problems": 15,
+            "frac_solved": 0.5333333333333333,
+            "mean_pass_rate": 0.16000000000000003,
+            "task_ids_all_fail": [
+              "BigCodeBench/254",
+              "BigCodeBench/594",
+              "BigCodeBench/657",
+              "BigCodeBench/32",
+              "BigCodeBench/1019",
+              "BigCodeBench/532",
+              "BigCodeBench/402"
+            ]
+          },
+          {
+            "group": 4,
+            "n_problems": 15,
+            "frac_solved": 0.4,
+            "mean_pass_rate": 0.15333333333333332,
+            "task_ids_all_fail": [
+              "BigCodeBench/791",
+              "BigCodeBench/179",
+              "BigCodeBench/904",
+              "BigCodeBench/993",
+              "BigCodeBench/900",
+              "BigCodeBench/951",
+              "BigCodeBench/35",
+              "BigCodeBench/502",
+              "BigCodeBench/257"
+            ]
+          }
+        ],
+        "spread": 0.33333333333333326,
+        "confidently_wrong": {
+          "n_problems": 6,
+          "n_all_fail": 1,
+          "rate": 0.16666666666666666,
+          "task_ids": [
+            "BigCodeBench/29"
+          ]
+        }
+      },
+      "mean_parse_failure_rate": 0.006666666666666667
+    },
+    {
+      "run_id": "bigcodebench_uncertainty_20260902_001146",
+      "model": "Qwen/Qwen2.5-Coder-3B",
+      "config": {
+        "dataset": "bigcodebench",
+        "model": "Qwen/Qwen2.5-Coder-3B",
+        "n_samples": 10,
+        "n_problems": 60,
+        "max_new_tokens": 512,
+        "exec_timeout": 30.0,
+        "problem_offset": 0,
+        "task_ids_file": "data/bigcodebench_cell_task_ids.txt",
+        "task_ids_sha256": "9d38b2af955f7c43ea94b1cd6f5c537150346086aabef00bfd6208a4af95e61f",
+        "temperature": 0.7,
+        "seed": 42,
+        "mode": "uncertainty",
+        "device_requested": "cuda",
+        "dtype_requested": "float16",
+        "device_resolved": "cuda",
+        "dtype_resolved": "torch.float16",
+        "device_map_requested": "none",
+        "device_map_resolved": null,
+        "dtype_actual": "torch.float16",
+        "codebert_model": null,
+        "tree_edit_distance": false,
+        "use_error_context": false,
+        "max_repair_iterations": 3,
+        "repair_candidates": 1
+      },
+      "pass_at_1": 0.3433333333333333,
+      "n_solved": 36,
+      "n_problems": 60,
+      "correlations": {
+        "lexical_diversity": {
+          "pearson_r": -0.1897748471200959,
+          "spearman_rho": -0.10312664945052723
+        },
+        "token_jaccard_diversity": {
+          "pearson_r": -0.3461936843897575,
+          "spearman_rho": -0.315572586821767
+        },
+        "token_cosine_diversity": {
+          "pearson_r": -0.31690980576295974,
+          "spearman_rho": -0.34860130815442203
+        },
+        "ast_node_diversity": {
+          "pearson_r": -0.20728345194606307,
+          "spearman_rho": -0.16188968729920375
+        },
+        "pairwise_distance": {
+          "pearson_r": -0.23308069231682033,
+          "spearman_rho": -0.28170878883815553
+        }
+      },
+      "consensus": {
+        "feature": "ast_node_diversity",
+        "quartiles": [
+          {
+            "group": 1,
+            "n_problems": 15,
+            "frac_solved": 0.6,
+            "mean_pass_rate": 0.39333333333333337,
+            "task_ids_all_fail": [
+              "BigCodeBench/271",
+              "BigCodeBench/32",
+              "BigCodeBench/290",
+              "BigCodeBench/707",
+              "BigCodeBench/1122",
+              "BigCodeBench/851"
+            ]
+          },
+          {
+            "group": 2,
+            "n_problems": 15,
+            "frac_solved": 0.6,
+            "mean_pass_rate": 0.4066666666666667,
+            "task_ids_all_fail": [
+              "BigCodeBench/881",
+              "BigCodeBench/1046",
+              "BigCodeBench/254",
+              "BigCodeBench/29",
+              "BigCodeBench/791",
+              "BigCodeBench/402"
+            ]
+          },
+          {
+            "group": 3,
+            "n_problems": 15,
+            "frac_solved": 0.6666666666666666,
+            "mean_pass_rate": 0.32,
+            "task_ids_all_fail": [
+              "BigCodeBench/993",
+              "BigCodeBench/657",
+              "BigCodeBench/314",
+              "BigCodeBench/951",
+              "BigCodeBench/179"
+            ]
+          },
+          {
+            "group": 4,
+            "n_problems": 15,
+            "frac_solved": 0.5333333333333333,
+            "mean_pass_rate": 0.2533333333333333,
+            "task_ids_all_fail": [
+              "BigCodeBench/1019",
+              "BigCodeBench/532",
+              "BigCodeBench/502",
+              "BigCodeBench/35",
+              "BigCodeBench/257",
+              "BigCodeBench/594",
+              "BigCodeBench/904"
+            ]
+          }
+        ],
+        "spread": 0.06666666666666665,
+        "confidently_wrong": {
+          "n_problems": 6,
+          "n_all_fail": 2,
+          "rate": 0.3333333333333333,
+          "task_ids": [
+            "BigCodeBench/271",
+            "BigCodeBench/32"
+          ]
+        }
+      },
+      "mean_parse_failure_rate": 0.0016666666666666668
+    },
+    {
+      "run_id": "bigcodebench_uncertainty_20260902_101441",
+      "model": "Qwen/Qwen2.5-Coder-7B",
+      "config": {
+        "dataset": "bigcodebench",
+        "model": "Qwen/Qwen2.5-Coder-7B",
+        "n_samples": 10,
+        "n_problems": 60,
+        "max_new_tokens": 512,
+        "exec_timeout": 30.0,
+        "problem_offset": 0,
+        "task_ids_file": "data/bigcodebench_cell_task_ids.txt",
+        "task_ids_sha256": "9d38b2af955f7c43ea94b1cd6f5c537150346086aabef00bfd6208a4af95e61f",
+        "temperature": 0.7,
+        "seed": 42,
+        "mode": "uncertainty",
+        "device_requested": "cuda",
+        "dtype_requested": "float16",
+        "device_resolved": "cuda",
+        "dtype_resolved": "torch.float16",
+        "device_map_requested": "auto",
+        "device_map_resolved": {
+          "model.embed_tokens": "0",
+          "model.layers.0": "0",
+          "model.layers.1": "0",
+          "model.layers.2": "0",
+          "model.layers.3": "0",
+          "model.layers.4": "0",
+          "model.layers.5": "0",
+          "model.layers.6": "0",
+          "model.layers.7": "0",
+          "model.layers.8": "0",
+          "model.layers.9": "0",
+          "model.layers.10": "0",
+          "model.layers.11": "0",
+          "model.layers.12": "0",
+          "model.layers.13": "0",
+          "model.layers.14": "0",
+          "model.layers.15": "0",
+          "model.layers.16": "0",
+          "model.layers.17": "0",
+          "model.layers.18": "0",
+          "model.layers.19": "0",
+          "model.layers.20": "0",
+          "model.layers.21": "0",
+          "model.layers.22": "0",
+          "model.layers.23": "0",
+          "model.layers.24": "0",
+          "model.layers.25": "0",
+          "model.layers.26": "0",
+          "model.layers.27": "cpu",
+          "model.norm": "cpu",
+          "model.rotary_emb": "cpu",
+          "lm_head": "cpu"
+        },
+        "dtype_actual": "torch.float16",
+        "codebert_model": null,
+        "tree_edit_distance": false,
+        "use_error_context": false,
+        "max_repair_iterations": 3,
+        "repair_candidates": 1
+      },
+      "pass_at_1": 0.4066666666666667,
+      "n_solved": 41,
+      "n_problems": 60,
+      "correlations": {
+        "lexical_diversity": {
+          "pearson_r": -0.10411829062285702,
+          "spearman_rho": -0.10577066134189639
+        },
+        "token_jaccard_diversity": {
+          "pearson_r": -0.32788164634349054,
+          "spearman_rho": -0.30907083226166804
+        },
+        "token_cosine_diversity": {
+          "pearson_r": -0.2800929682672616,
+          "spearman_rho": -0.3015373546311719
+        },
+        "ast_node_diversity": {
+          "pearson_r": -0.1747457450517116,
+          "spearman_rho": -0.15253876134530778
+        },
+        "pairwise_distance": {
+          "pearson_r": -0.1866480333206847,
+          "spearman_rho": -0.20704606524728908
+        }
+      },
+      "consensus": {
+        "feature": "ast_node_diversity",
+        "quartiles": [
+          {
+            "group": 1,
+            "n_problems": 15,
+            "frac_solved": 0.8,
+            "mean_pass_rate": 0.5333333333333333,
+            "task_ids_all_fail": [
+              "BigCodeBench/851",
+              "BigCodeBench/29",
+              "BigCodeBench/32"
+            ]
+          },
+          {
+            "group": 2,
+            "n_problems": 15,
+            "frac_solved": 0.5333333333333333,
+            "mean_pass_rate": 0.3733333333333333,
+            "task_ids_all_fail": [
+              "BigCodeBench/229",
+              "BigCodeBench/791",
+              "BigCodeBench/402",
+              "BigCodeBench/185",
+              "BigCodeBench/290",
+              "BigCodeBench/314",
+              "BigCodeBench/657"
+            ]
+          },
+          {
+            "group": 3,
+            "n_problems": 15,
+            "frac_solved": 0.6666666666666666,
+            "mean_pass_rate": 0.4066666666666667,
+            "task_ids_all_fail": [
+              "BigCodeBench/254",
+              "BigCodeBench/881",
+              "BigCodeBench/594",
+              "BigCodeBench/1019",
+              "BigCodeBench/993"
+            ]
+          },
+          {
+            "group": 4,
+            "n_problems": 15,
+            "frac_solved": 0.7333333333333333,
+            "mean_pass_rate": 0.31333333333333335,
+            "task_ids_all_fail": [
+              "BigCodeBench/904",
+              "BigCodeBench/532",
+              "BigCodeBench/35",
+              "BigCodeBench/951"
+            ]
+          }
+        ],
+        "spread": 0.06666666666666676,
+        "confidently_wrong": {
+          "n_problems": 6,
+          "n_all_fail": 2,
+          "rate": 0.3333333333333333,
+          "task_ids": [
+            "BigCodeBench/851",
+            "BigCodeBench/29"
+          ]
+        }
+      },
+      "mean_parse_failure_rate": 0.0
+    }
+  ],
+  "prereg_scoring": {
+    "confidently_wrong_rate": {
+      "label": "P1 confidently-wrong rate",
+      "tolerance": 0.1,
+      "rows": [
+        {
+          "model": "Salesforce/codegen-350M-mono",
+          "pass_at_1": 0.045,
+          "predicted": 0.28355,
+          "observed": 0.8333333333333334,
+          "deviation": 0.5497833333333333,
+          "within_tolerance": false,
+          "fit_was_derived_from_this_cell": true
+        },
+        {
+          "model": "Qwen/Qwen2.5-Coder-0.5B",
+          "pass_at_1": 0.11833333333333333,
+          "predicted": 0.23735,
+          "observed": 0.5,
+          "deviation": 0.26265,
+          "within_tolerance": false,
+          "fit_was_derived_from_this_cell": false
+        },
+        {
+          "model": "Qwen/Qwen2.5-Coder-1.5B",
+          "pass_at_1": 0.28,
+          "predicted": 0.13549999999999998,
+          "observed": 0.16666666666666666,
+          "deviation": 0.031166666666666676,
+          "within_tolerance": true,
+          "fit_was_derived_from_this_cell": false
+        },
+        {
+          "model": "Qwen/Qwen2.5-Coder-3B",
+          "pass_at_1": 0.3433333333333333,
+          "predicted": 0.09560000000000002,
+          "observed": 0.3333333333333333,
+          "deviation": 0.2377333333333333,
+          "within_tolerance": false,
+          "fit_was_derived_from_this_cell": false
+        },
+        {
+          "model": "Qwen/Qwen2.5-Coder-7B",
+          "pass_at_1": 0.4066666666666667,
+          "predicted": 0.05570000000000003,
+          "observed": 0.3333333333333333,
+          "deviation": 0.2776333333333333,
+          "within_tolerance": false,
+          "fit_was_derived_from_this_cell": false
+        }
+      ],
+      "n_held_out": 4,
+      "n_held_out_within_tolerance": 1
+    },
+    "ast_abs_spearman": {
+      "label": "P3 |Spearman rho| of ast_node_diversity",
+      "tolerance": 0.12,
+      "rows": [
+        {
+          "model": "Salesforce/codegen-350M-mono",
+          "pass_at_1": 0.045,
+          "predicted": 0.434555,
+          "observed": 0.19016052687403506,
+          "deviation": -0.24439447312596496,
+          "within_tolerance": false,
+          "fit_was_derived_from_this_cell": true
+        },
+        {
+          "model": "Qwen/Qwen2.5-Coder-0.5B",
+          "pass_at_1": 0.11833333333333333,
+          "predicted": 0.4843483333333334,
+          "observed": 0.2657283919926192,
+          "deviation": -0.21861994134071416,
+          "within_tolerance": false,
+          "fit_was_derived_from_this_cell": false
+        },
+        {
+          "model": "Qwen/Qwen2.5-Coder-1.5B",
+          "pass_at_1": 0.28,
+          "predicted": 0.5941200000000001,
+          "observed": 0.4384177256755672,
+          "deviation": -0.1557022743244329,
+          "within_tolerance": false,
+          "fit_was_derived_from_this_cell": false
+        },
+        {
+          "model": "Qwen/Qwen2.5-Coder-3B",
+          "pass_at_1": 0.3433333333333333,
+          "predicted": 0.6371233333333334,
+          "observed": 0.16188968729920375,
+          "deviation": -0.47523364603412965,
+          "within_tolerance": false,
+          "fit_was_derived_from_this_cell": false
+        },
+        {
+          "model": "Qwen/Qwen2.5-Coder-7B",
+          "pass_at_1": 0.4066666666666667,
+          "predicted": 0.6801266666666668,
+          "observed": 0.15253876134530778,
+          "deviation": -0.527587905321359,
+          "within_tolerance": false,
+          "fit_was_derived_from_this_cell": false
+        }
+      ],
+      "n_held_out": 4,
+      "n_held_out_within_tolerance": 0
+    },
+    "P2_spread_band": {
+      "label": "P2 quartile spread stays in [0.40, 0.70] with no capability trend",
+      "band": [
+        0.4,
+        0.7
+      ],
+      "rows": [
+        {
+          "model": "Salesforce/codegen-350M-mono",
+          "pass_at_1": 0.045,
+          "spread": 0.2,
+          "in_band": false
+        },
+        {
+          "model": "Qwen/Qwen2.5-Coder-0.5B",
+          "pass_at_1": 0.11833333333333333,
+          "spread": 0.19999999999999998,
+          "in_band": false
+        },
+        {
+          "model": "Qwen/Qwen2.5-Coder-1.5B",
+          "pass_at_1": 0.28,
+          "spread": 0.33333333333333326,
+          "in_band": false
+        },
+        {
+          "model": "Qwen/Qwen2.5-Coder-3B",
+          "pass_at_1": 0.3433333333333333,
+          "spread": 0.06666666666666665,
+          "in_band": false
+        },
+        {
+          "model": "Qwen/Qwen2.5-Coder-7B",
+          "pass_at_1": 0.4066666666666667,
+          "spread": 0.06666666666666676,
+          "in_band": false
+        }
+      ],
+      "trend_vs_pass_at_1": {
+        "pearson_r": -0.4536397324249981,
+        "p_value": 0.4428798656477691
+      }
+    },
+    "P4_parse_failure": {
+      "label": "P4 mean parse-failure rate < 0.005",
+      "ceiling": 0.005,
+      "rows": [
+        {
+          "model": "Salesforce/codegen-350M-mono",
+          "pass_at_1": 0.045,
+          "mean_parse_failure_rate": 0.06999999999999999,
+          "below_ceiling": false
+        },
+        {
+          "model": "Qwen/Qwen2.5-Coder-0.5B",
+          "pass_at_1": 0.11833333333333333,
+          "mean_parse_failure_rate": 0.015000000000000003,
+          "below_ceiling": false
+        },
+        {
+          "model": "Qwen/Qwen2.5-Coder-1.5B",
+          "pass_at_1": 0.28,
+          "mean_parse_failure_rate": 0.006666666666666667,
+          "below_ceiling": false
+        },
+        {
+          "model": "Qwen/Qwen2.5-Coder-3B",
+          "pass_at_1": 0.3433333333333333,
+          "mean_parse_failure_rate": 0.0016666666666666668,
+          "below_ceiling": true
+        },
+        {
+          "model": "Qwen/Qwen2.5-Coder-7B",
+          "pass_at_1": 0.4066666666666667,
+          "mean_parse_failure_rate": 0.0,
+          "below_ceiling": true
+        }
+      ]
+    },
+    "P5_capability_order": {
+      "label": "P5 ranking by measured pass@1 (vs. by parameter count)",
+      "rows": [
+        {
+          "model": "Salesforce/codegen-350M-mono",
+          "pass_at_1": 0.045
+        },
+        {
+          "model": "Qwen/Qwen2.5-Coder-0.5B",
+          "pass_at_1": 0.11833333333333333
+        },
+        {
+          "model": "Qwen/Qwen2.5-Coder-1.5B",
+          "pass_at_1": 0.28
+        },
+        {
+          "model": "Qwen/Qwen2.5-Coder-3B",
+          "pass_at_1": 0.3433333333333333
+        },
+        {
+          "model": "Qwen/Qwen2.5-Coder-7B",
+          "pass_at_1": 0.4066666666666667
+        }
+      ]
+    }
+  }
+}

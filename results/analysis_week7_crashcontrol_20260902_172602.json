@@ -1,0 +1,4857 @@
+{
+  "analysis": "week7_crash_control_diagnostic",
+  "source_results_file": "results/bigcodebench_uncertainty_20260901_223901.json",
+  "source_run_id": "bigcodebench_uncertainty_20260901_223901",
+  "config": {
+    "seed": 42,
+    "probe_source": "test",
+    "probe_cap": 12,
+    "execution_timeout": 5.0
+  },
+  "source_config": {
+    "dataset": "bigcodebench",
+    "model": "Qwen/Qwen2.5-Coder-1.5B",
+    "n_samples": 10,
+    "n_problems": 60,
+    "max_new_tokens": 512,
+    "exec_timeout": 30.0,
+    "problem_offset": 0,
+    "task_ids_file": "data/bigcodebench_cell_task_ids.txt",
+    "temperature": 0.7,
+    "seed": 42,
+    "mode": "uncertainty",
+    "device_requested": "cuda",
+    "dtype_requested": "float16",
+    "device_resolved": "cuda",
+    "dtype_resolved": "torch.float16",
+    "device_map_requested": "none",
+    "device_map_resolved": null,
+    "dtype_actual": "torch.float16",
+    "codebert_model": null,
+    "tree_edit_distance": false,
+    "use_error_context": false,
+    "max_repair_iterations": 3,
+    "repair_candidates": 1
+  },
+  "summary": {
+    "n_samples": 600,
+    "n_supported": 135,
+    "frac_supported": 0.225,
+    "pass_rate_all": 0.28,
+    "pass_rate_supported": 0.37037037037037035,
+    "mean_crash_rate": 0.8195277777777779,
+    "frac_samples_all_crash": 0.7683333333333333,
+    "auc_all_samples": {
+      "crash_rate": 0.558862433862434,
+      "execution_self": 0.6343212632275133,
+      "nocrash_self": 0.4733934082892417
+    },
+    "auc_supported_only": {
+      "crash_rate": 0.7155294117647059,
+      "execution_self": 0.5875294117647059,
+      "nocrash_self": 0.5704705882352941
+    }
+  },
+  "per_sample": [
+    {
+      "task_id": "BigCodeBench/6",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.911111111111111,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/6",
+      "passed": 1,
+      "crash_rate": 0.5,
+      "execution_self": 0.5888888888888889,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "BigCodeBench/6",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.5555555555555556,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "BigCodeBench/6",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.5555555555555556,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "BigCodeBench/6",
+      "passed": 0,
+      "crash_rate": 0.5,
+      "execution_self": 0.5666666666666667,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "BigCodeBench/6",
+      "passed": 0,
+      "crash_rate": 0.5,
+      "execution_self": 0.5666666666666667,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "BigCodeBench/6",
+      "passed": 0,
+      "crash_rate": 0.5,
+      "execution_self": 0.8555555555555555,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.2222222222222222
+    },
+    {
+      "task_id": "BigCodeBench/6",
+      "passed": 1,
+      "crash_rate": 0.5,
+      "execution_self": 0.588888888888889,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "BigCodeBench/6",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8666666666666667,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/6",
+      "passed": 0,
+      "crash_rate": 0.5,
+      "execution_self": 0.5666666666666667,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "BigCodeBench/27",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/27",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/27",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/27",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/27",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/27",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/27",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/27",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/27",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/27",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/29",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/29",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/29",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/29",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/29",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/29",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/29",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/29",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/29",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/29",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/32",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.711111111111111,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/32",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.7777777777777778,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/32",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.711111111111111,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/32",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.711111111111111,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/32",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/32",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.711111111111111,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/32",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.711111111111111,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/32",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.7777777777777778,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/32",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.711111111111111,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/32",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.7777777777777779,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/35",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6333333333333333,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/35",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6333333333333333,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/35",
+      "passed": 0,
+      "crash_rate": 0.25,
+      "execution_self": 0.8999999999999999,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/35",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6333333333333333,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/35",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6333333333333333,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/35",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6333333333333333,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/35",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6333333333333333,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/35",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6333333333333333,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/35",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6333333333333333,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/35",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6333333333333333,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/47",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/47",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/47",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/47",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/47",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/47",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/47",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/47",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/47",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/47",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/106",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/106",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/106",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/106",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/106",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/106",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/106",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/106",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8000000000000002,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/106",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/106",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/112",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/112",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/112",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/112",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/112",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/112",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/112",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/112",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/112",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/112",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/113",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/113",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/113",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/113",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/113",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/113",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/113",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/113",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/113",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/113",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/118",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/118",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/118",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/118",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/118",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/118",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/118",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/118",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/118",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/118",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/123",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6518518518518519,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/123",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6740740740740742,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/123",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6740740740740742,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/123",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6518518518518519,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/123",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8000000000000002,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/123",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6518518518518519,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/123",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6518518518518519,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/123",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6518518518518519,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/123",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.674074074074074,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/123",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.674074074074074,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/133",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/133",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/133",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/133",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/133",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/133",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/133",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/133",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/133",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/133",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/162",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.9377777777777777,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/162",
+      "passed": 0,
+      "crash_rate": 0.4,
+      "execution_self": 0.9199999999999999,
+      "nocrash_self": 0.7777777777777778,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "BigCodeBench/162",
+      "passed": 0,
+      "crash_rate": 0.4,
+      "execution_self": 0.9199999999999999,
+      "nocrash_self": 0.7777777777777778,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "BigCodeBench/162",
+      "passed": 0,
+      "crash_rate": 0.2,
+      "execution_self": 0.711111111111111,
+      "nocrash_self": 0.5185185185185185,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "BigCodeBench/162",
+      "passed": 0,
+      "crash_rate": 0.4,
+      "execution_self": 0.831111111111111,
+      "nocrash_self": 0.6666666666666666,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "BigCodeBench/162",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.9111111111111112,
+      "nocrash_self": 0.6851851851851851,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "BigCodeBench/162",
+      "passed": 1,
+      "crash_rate": 0.2,
+      "execution_self": 0.7777777777777778,
+      "nocrash_self": 0.6944444444444444,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "BigCodeBench/162",
+      "passed": 0,
+      "crash_rate": 0.2,
+      "execution_self": 0.8444444444444443,
+      "nocrash_self": 0.6851851851851851,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "BigCodeBench/162",
+      "passed": 1,
+      "crash_rate": 0.2,
+      "execution_self": 0.7777777777777778,
+      "nocrash_self": 0.6944444444444444,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "BigCodeBench/162",
+      "passed": 0,
+      "crash_rate": 0.8,
+      "execution_self": 0.8222222222222223,
+      "nocrash_self": 0.2222222222222222,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "BigCodeBench/179",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/179",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/179",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/179",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/179",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/179",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/179",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/179",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/179",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/179",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/185",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/185",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/185",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/185",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/185",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/185",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/185",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/185",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/185",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/185",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/229",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/229",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/229",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/229",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/229",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/229",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/229",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/229",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/229",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/229",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/251",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/251",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/251",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/251",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/251",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/251",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/251",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/251",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/251",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/251",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/254",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/254",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/254",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/254",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/254",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/254",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/254",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/254",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/254",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/254",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/257",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/257",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/257",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/257",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/257",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/257",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/257",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/257",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/257",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/257",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/260",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/260",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/260",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/260",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/260",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/260",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/260",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/260",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/260",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/260",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/271",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8177777777777777,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/271",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8177777777777777,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/271",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.9555555555555555,
+      "nocrash_self": 0.4,
+      "nocrash_support": 0.4444444444444444
+    },
+    {
+      "task_id": "BigCodeBench/271",
+      "passed": 0,
+      "crash_rate": 0.2,
+      "execution_self": 0.9777777777777779,
+      "nocrash_self": 0.4444444444444444,
+      "nocrash_support": 0.4444444444444444
+    },
+    {
+      "task_id": "BigCodeBench/271",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.9555555555555555,
+      "nocrash_self": 0.4,
+      "nocrash_support": 0.4444444444444444
+    },
+    {
+      "task_id": "BigCodeBench/271",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8888888888888888,
+      "nocrash_self": 0.3333333333333333,
+      "nocrash_support": 0.4444444444444444
+    },
+    {
+      "task_id": "BigCodeBench/271",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8177777777777777,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/271",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8177777777777777,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/271",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8888888888888888,
+      "nocrash_self": 0.3333333333333333,
+      "nocrash_support": 0.4444444444444444
+    },
+    {
+      "task_id": "BigCodeBench/271",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8177777777777778,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/290",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/290",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/290",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/290",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/290",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/290",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/290",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/290",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/290",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/290",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/314",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8666666666666667,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/314",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8888888888888888,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/314",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.6666666666666666,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.3333333333333333
+    },
+    {
+      "task_id": "BigCodeBench/314",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.6666666666666666,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.3333333333333333
+    },
+    {
+      "task_id": "BigCodeBench/314",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8666666666666667,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/314",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8666666666666667,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/314",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8666666666666667,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/314",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8888888888888888,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/314",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.6666666666666666,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.3333333333333333
+    },
+    {
+      "task_id": "BigCodeBench/314",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.6666666666666666,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.3333333333333333
+    },
+    {
+      "task_id": "BigCodeBench/328",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.8888888888888888,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "BigCodeBench/328",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.8888888888888888,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "BigCodeBench/328",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.8888888888888888,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "BigCodeBench/328",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.8888888888888888,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "BigCodeBench/328",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.8888888888888888,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "BigCodeBench/328",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.8888888888888888,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "BigCodeBench/328",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.8888888888888888,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "BigCodeBench/328",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.8888888888888888,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "BigCodeBench/328",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/328",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.8888888888888888,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "BigCodeBench/331",
+      "passed": 0,
+      "crash_rate": 0.3333333333333333,
+      "execution_self": 0.974074074074074,
+      "nocrash_self": 1.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "BigCodeBench/331",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 1.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "BigCodeBench/331",
+      "passed": 0,
+      "crash_rate": 0.16666666666666666,
+      "execution_self": 0.8666666666666666,
+      "nocrash_self": 0.8666666666666667,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "BigCodeBench/331",
+      "passed": 0,
+      "crash_rate": 0.16666666666666666,
+      "execution_self": 0.9592592592592593,
+      "nocrash_self": 0.9777777777777779,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "BigCodeBench/331",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.9629629629629631,
+      "nocrash_self": 0.9592592592592594,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "BigCodeBench/331",
+      "passed": 0,
+      "crash_rate": 0.16666666666666666,
+      "execution_self": 0.9592592592592593,
+      "nocrash_self": 0.9777777777777779,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "BigCodeBench/331",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.9814814814814815,
+      "nocrash_self": 0.9814814814814815,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "BigCodeBench/331",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8703703703703705,
+      "nocrash_self": 0.8518518518518517,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "BigCodeBench/331",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.9444444444444444,
+      "nocrash_self": 0.9407407407407408,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "BigCodeBench/331",
+      "passed": 0,
+      "crash_rate": 0.16666666666666666,
+      "execution_self": 0.9777777777777779,
+      "nocrash_self": 0.9777777777777779,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "BigCodeBench/402",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/402",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/402",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/402",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/402",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/402",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/402",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/402",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/402",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/402",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6222222222222222,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/406",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.7777777777777778,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/406",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6444444444444444,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/406",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6444444444444444,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/406",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6444444444444444,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/406",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6444444444444444,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/406",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6444444444444444,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/406",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6444444444444444,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/406",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6444444444444444,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/406",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6444444444444444,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/406",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.7777777777777778,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/411",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/411",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/411",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/411",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/411",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/411",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/411",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/411",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/411",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/411",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/431",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6444444444444444,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/431",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6444444444444444,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/431",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6444444444444444,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/431",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6444444444444444,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/431",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6444444444444444,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/431",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6444444444444444,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/431",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6444444444444444,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/431",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.7777777777777778,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/431",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6444444444444444,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/431",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.7777777777777778,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/453",
+      "passed": 1,
+      "crash_rate": 0.16666666666666666,
+      "execution_self": 0.7666666666666666,
+      "nocrash_self": 0.5333333333333333,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "BigCodeBench/453",
+      "passed": 0,
+      "crash_rate": 0.8333333333333334,
+      "execution_self": 0.7074074074074074,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "BigCodeBench/453",
+      "passed": 0,
+      "crash_rate": 0.8333333333333334,
+      "execution_self": 0.7074074074074074,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "BigCodeBench/453",
+      "passed": 1,
+      "crash_rate": 0.16666666666666666,
+      "execution_self": 0.7666666666666666,
+      "nocrash_self": 0.5333333333333333,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "BigCodeBench/453",
+      "passed": 1,
+      "crash_rate": 0.16666666666666666,
+      "execution_self": 0.7666666666666666,
+      "nocrash_self": 0.5333333333333333,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "BigCodeBench/453",
+      "passed": 1,
+      "crash_rate": 0.16666666666666666,
+      "execution_self": 0.7666666666666666,
+      "nocrash_self": 0.5333333333333333,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "BigCodeBench/453",
+      "passed": 1,
+      "crash_rate": 0.16666666666666666,
+      "execution_self": 0.7666666666666666,
+      "nocrash_self": 0.5333333333333333,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "BigCodeBench/453",
+      "passed": 0,
+      "crash_rate": 0.8333333333333334,
+      "execution_self": 0.7074074074074074,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "BigCodeBench/453",
+      "passed": 1,
+      "crash_rate": 0.16666666666666666,
+      "execution_self": 0.7666666666666666,
+      "nocrash_self": 0.5333333333333333,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "BigCodeBench/453",
+      "passed": 1,
+      "crash_rate": 0.16666666666666666,
+      "execution_self": 0.7666666666666666,
+      "nocrash_self": 0.5333333333333333,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "BigCodeBench/502",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.7238095238095238,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/502",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8444444444444444,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/502",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.7873015873015873,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/502",
+      "passed": 0,
+      "crash_rate": 0.14285714285714285,
+      "execution_self": 0.9142857142857141,
+      "nocrash_self": 0.18518518518518517,
+      "nocrash_support": 0.2222222222222222
+    },
+    {
+      "task_id": "BigCodeBench/502",
+      "passed": 0,
+      "crash_rate": 0.14285714285714285,
+      "execution_self": 0.9142857142857141,
+      "nocrash_self": 0.18518518518518517,
+      "nocrash_support": 0.2222222222222222
+    },
+    {
+      "task_id": "BigCodeBench/502",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.7238095238095238,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/502",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.7238095238095238,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/502",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.7238095238095238,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/502",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.7238095238095238,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/502",
+      "passed": 0,
+      "crash_rate": 0.7142857142857143,
+      "execution_self": 0.7936507936507936,
+      "nocrash_self": 0.2222222222222222,
+      "nocrash_support": 0.2222222222222222
+    },
+    {
+      "task_id": "BigCodeBench/505",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.018518518518518517,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "BigCodeBench/505",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.018518518518518517,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "BigCodeBench/505",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.018518518518518517,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "BigCodeBench/505",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.018518518518518517,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "BigCodeBench/505",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.018518518518518517,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "BigCodeBench/505",
+      "passed": 0,
+      "crash_rate": 0.16666666666666666,
+      "execution_self": 0.16666666666666666,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "BigCodeBench/505",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.018518518518518517,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "BigCodeBench/505",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.018518518518518517,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "BigCodeBench/505",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.018518518518518517,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "BigCodeBench/505",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.018518518518518517,
+      "nocrash_self": 0.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "BigCodeBench/532",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/532",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/532",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/532",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/532",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/532",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/532",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/532",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/532",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/532",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/543",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8666666666666667,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/543",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8222222222222223,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/543",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.3333333333333333,
+      "nocrash_support": 0.3333333333333333
+    },
+    {
+      "task_id": "BigCodeBench/543",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.3333333333333333,
+      "nocrash_support": 0.3333333333333333
+    },
+    {
+      "task_id": "BigCodeBench/543",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8222222222222223,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/543",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.3333333333333333,
+      "nocrash_support": 0.3333333333333333
+    },
+    {
+      "task_id": "BigCodeBench/543",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8666666666666667,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/543",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8222222222222223,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/543",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8222222222222223,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/543",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.3333333333333333,
+      "nocrash_support": 0.3333333333333333
+    },
+    {
+      "task_id": "BigCodeBench/594",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.7777777777777778,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/594",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8444444444444446,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/594",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8444444444444446,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/594",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8444444444444446,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/594",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8444444444444446,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/594",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.7777777777777778,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/594",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8888888888888888,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.1111111111111111
+    },
+    {
+      "task_id": "BigCodeBench/594",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.7777777777777778,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/594",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8888888888888888,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.1111111111111111
+    },
+    {
+      "task_id": "BigCodeBench/594",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.7777777777777778,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/640",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.9333333333333333,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/640",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.6666666666666666,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "BigCodeBench/640",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.9333333333333333,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/640",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.6666666666666666,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "BigCodeBench/640",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.6666666666666666,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "BigCodeBench/640",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.9555555555555555,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/640",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.6666666666666666,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "BigCodeBench/640",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.6666666666666666,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "BigCodeBench/640",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.6666666666666666,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "BigCodeBench/640",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.6666666666666666,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "BigCodeBench/657",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/657",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/657",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/657",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/657",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/657",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/657",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/657",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/657",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/657",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/690",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/690",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/690",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/690",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/690",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/690",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/690",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/690",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/690",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/690",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/691",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/691",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/691",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/691",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/691",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/691",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/691",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/691",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/691",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/691",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/705",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/705",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/705",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/705",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/705",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/705",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/705",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/705",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/705",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/705",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/707",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/707",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/707",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/707",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/707",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/707",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/707",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/707",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/707",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/707",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/747",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.5333333333333333,
+      "nocrash_self": 0.4444444444444444,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "BigCodeBench/747",
+      "passed": 0,
+      "crash_rate": 0.8,
+      "execution_self": 0.9111111111111112,
+      "nocrash_self": 0.5555555555555556,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "BigCodeBench/747",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.9111111111111112,
+      "nocrash_self": 0.8222222222222222,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "BigCodeBench/747",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.5333333333333333,
+      "nocrash_self": 0.4444444444444444,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "BigCodeBench/747",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 1.0,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "BigCodeBench/747",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.5555555555555556,
+      "nocrash_self": 0.5555555555555556,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "BigCodeBench/747",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.5555555555555556,
+      "nocrash_self": 0.5555555555555556,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "BigCodeBench/747",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.5555555555555556,
+      "nocrash_self": 0.5555555555555556,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "BigCodeBench/747",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.8222222222222223,
+      "nocrash_self": 0.8222222222222223,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "BigCodeBench/747",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.911111111111111,
+      "nocrash_self": 0.8222222222222223,
+      "nocrash_support": 1.0
+    },
+    {
+      "task_id": "BigCodeBench/758",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8370370370370371,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/758",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8370370370370371,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/758",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.7592592592592593,
+      "nocrash_self": 0.20370370370370372,
+      "nocrash_support": 0.4444444444444444
+    },
+    {
+      "task_id": "BigCodeBench/758",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8370370370370371,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/758",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.7592592592592593,
+      "nocrash_self": 0.20370370370370372,
+      "nocrash_support": 0.4444444444444444
+    },
+    {
+      "task_id": "BigCodeBench/758",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.9074074074074076,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/758",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.9444444444444444,
+      "nocrash_self": 0.3888888888888889,
+      "nocrash_support": 0.4444444444444444
+    },
+    {
+      "task_id": "BigCodeBench/758",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.837037037037037,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/758",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.7592592592592593,
+      "nocrash_self": 0.20370370370370372,
+      "nocrash_support": 0.4444444444444444
+    },
+    {
+      "task_id": "BigCodeBench/758",
+      "passed": 0,
+      "crash_rate": 0.16666666666666666,
+      "execution_self": 0.9666666666666666,
+      "nocrash_self": 0.4444444444444444,
+      "nocrash_support": 0.4444444444444444
+    },
+    {
+      "task_id": "BigCodeBench/791",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/791",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/791",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/791",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/791",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/791",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/791",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/791",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/791",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/791",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/822",
+      "passed": 0,
+      "crash_rate": 0.8,
+      "execution_self": 0.7155555555555555,
+      "nocrash_self": 0.6666666666666666,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "BigCodeBench/822",
+      "passed": 0,
+      "crash_rate": 0.8,
+      "execution_self": 0.7155555555555555,
+      "nocrash_self": 0.6666666666666666,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "BigCodeBench/822",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.7066666666666666,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/822",
+      "passed": 0,
+      "crash_rate": 0.8,
+      "execution_self": 0.7155555555555555,
+      "nocrash_self": 0.6666666666666666,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "BigCodeBench/822",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8311111111111111,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/822",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.7066666666666666,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/822",
+      "passed": 1,
+      "crash_rate": 0.8,
+      "execution_self": 0.7155555555555555,
+      "nocrash_self": 0.6666666666666666,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "BigCodeBench/822",
+      "passed": 0,
+      "crash_rate": 0.8,
+      "execution_self": 0.7155555555555555,
+      "nocrash_self": 0.6666666666666666,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "BigCodeBench/822",
+      "passed": 0,
+      "crash_rate": 0.8,
+      "execution_self": 0.7155555555555555,
+      "nocrash_self": 0.6666666666666666,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "BigCodeBench/822",
+      "passed": 0,
+      "crash_rate": 0.8,
+      "execution_self": 0.8400000000000001,
+      "nocrash_self": 0.6666666666666666,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "BigCodeBench/827",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/827",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/827",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/827",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/827",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/827",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/827",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/827",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/827",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/827",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/851",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/851",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/851",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/851",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/851",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/851",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/851",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/851",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/851",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/851",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/867",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/867",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/867",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/867",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/867",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/867",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/867",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/867",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/867",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/867",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/875",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/875",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/875",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/875",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/875",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/875",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/875",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/875",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/875",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/875",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/880",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/880",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/880",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/880",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/880",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/880",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/880",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/880",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/880",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/880",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/881",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/881",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/881",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/881",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/881",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/881",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/881",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/881",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/881",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/881",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/900",
+      "passed": 0,
+      "crash_rate": 0.6666666666666666,
+      "execution_self": 0.7111111111111111,
+      "nocrash_self": 0.6666666666666666,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "BigCodeBench/900",
+      "passed": 0,
+      "crash_rate": 0.6666666666666666,
+      "execution_self": 0.6740740740740742,
+      "nocrash_self": 0.5555555555555556,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "BigCodeBench/900",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.7407407407407408,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/900",
+      "passed": 0,
+      "crash_rate": 0.6666666666666666,
+      "execution_self": 0.7481481481481481,
+      "nocrash_self": 0.7777777777777778,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "BigCodeBench/900",
+      "passed": 0,
+      "crash_rate": 0.6666666666666666,
+      "execution_self": 0.7481481481481481,
+      "nocrash_self": 0.7777777777777778,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "BigCodeBench/900",
+      "passed": 0,
+      "crash_rate": 0.6666666666666666,
+      "execution_self": 0.6740740740740742,
+      "nocrash_self": 0.5555555555555556,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "BigCodeBench/900",
+      "passed": 0,
+      "crash_rate": 0.6666666666666666,
+      "execution_self": 0.6740740740740742,
+      "nocrash_self": 0.5555555555555556,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "BigCodeBench/900",
+      "passed": 0,
+      "crash_rate": 0.6666666666666666,
+      "execution_self": 0.8592592592592594,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/900",
+      "passed": 0,
+      "crash_rate": 0.6666666666666666,
+      "execution_self": 0.7111111111111111,
+      "nocrash_self": 0.6666666666666666,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "BigCodeBench/900",
+      "passed": 0,
+      "crash_rate": 0.6666666666666666,
+      "execution_self": 0.7481481481481481,
+      "nocrash_self": 0.7777777777777778,
+      "nocrash_support": 0.7777777777777778
+    },
+    {
+      "task_id": "BigCodeBench/904",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6666666666666666,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/904",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6666666666666666,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/904",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6666666666666666,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/904",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6666666666666666,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/904",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6666666666666666,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/904",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6666666666666666,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/904",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6666666666666666,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/904",
+      "passed": 0,
+      "crash_rate": 0.5,
+      "execution_self": 0.8999999999999999,
+      "nocrash_self": 0.1111111111111111,
+      "nocrash_support": 0.1111111111111111
+    },
+    {
+      "task_id": "BigCodeBench/904",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6666666666666666,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/904",
+      "passed": 0,
+      "crash_rate": 0.5,
+      "execution_self": 0.8999999999999999,
+      "nocrash_self": 0.1111111111111111,
+      "nocrash_support": 0.1111111111111111
+    },
+    {
+      "task_id": "BigCodeBench/950",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.3111111111111111,
+      "nocrash_self": 0.19999999999999998,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "BigCodeBench/950",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.3111111111111111,
+      "nocrash_self": 0.19999999999999998,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "BigCodeBench/950",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.3111111111111111,
+      "nocrash_self": 0.19999999999999998,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "BigCodeBench/950",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.3111111111111111,
+      "nocrash_self": 0.19999999999999998,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "BigCodeBench/950",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.5111111111111111,
+      "nocrash_self": 0.39999999999999997,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "BigCodeBench/950",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.3111111111111111,
+      "nocrash_self": 0.19999999999999998,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "BigCodeBench/950",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.5111111111111111,
+      "nocrash_self": 0.39999999999999997,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "BigCodeBench/950",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/950",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 0.3111111111111111,
+      "nocrash_self": 0.19999999999999998,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "BigCodeBench/950",
+      "passed": 1,
+      "crash_rate": 0.0,
+      "execution_self": 0.5111111111111111,
+      "nocrash_self": 0.4,
+      "nocrash_support": 0.8888888888888888
+    },
+    {
+      "task_id": "BigCodeBench/951",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.7688888888888888,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/951",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.7688888888888888,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/951",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.3333333333333333,
+      "nocrash_support": 0.3333333333333333
+    },
+    {
+      "task_id": "BigCodeBench/951",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8355555555555556,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/951",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8355555555555556,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/951",
+      "passed": 0,
+      "crash_rate": 0.8,
+      "execution_self": 0.8222222222222223,
+      "nocrash_self": 0.3333333333333333,
+      "nocrash_support": 0.3333333333333333
+    },
+    {
+      "task_id": "BigCodeBench/951",
+      "passed": 0,
+      "crash_rate": 0.8,
+      "execution_self": 0.8222222222222223,
+      "nocrash_self": 0.3333333333333333,
+      "nocrash_support": 0.3333333333333333
+    },
+    {
+      "task_id": "BigCodeBench/951",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.7688888888888888,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/951",
+      "passed": 0,
+      "crash_rate": 0.8,
+      "execution_self": 0.8222222222222223,
+      "nocrash_self": 0.3333333333333333,
+      "nocrash_support": 0.3333333333333333
+    },
+    {
+      "task_id": "BigCodeBench/951",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.7688888888888888,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/953",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/953",
+      "passed": 1,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/953",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/953",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/953",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/953",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/953",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/953",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/953",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/953",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/993",
+      "passed": 0,
+      "crash_rate": 0.2,
+      "execution_self": 0.88,
+      "nocrash_self": 0.5925925925925926,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "BigCodeBench/993",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8577777777777778,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/993",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.911111111111111,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/993",
+      "passed": 0,
+      "crash_rate": 0.2,
+      "execution_self": 0.9244444444444445,
+      "nocrash_self": 0.6666666666666666,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "BigCodeBench/993",
+      "passed": 0,
+      "crash_rate": 0.4,
+      "execution_self": 0.8711111111111111,
+      "nocrash_self": 0.6296296296296295,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "BigCodeBench/993",
+      "passed": 0,
+      "crash_rate": 0.4,
+      "execution_self": 0.8933333333333334,
+      "nocrash_self": 0.6666666666666666,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "BigCodeBench/993",
+      "passed": 0,
+      "crash_rate": 0.4,
+      "execution_self": 0.8488888888888888,
+      "nocrash_self": 0.5925925925925926,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "BigCodeBench/993",
+      "passed": 0,
+      "crash_rate": 0.2,
+      "execution_self": 0.9022222222222221,
+      "nocrash_self": 0.6296296296296295,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "BigCodeBench/993",
+      "passed": 0,
+      "crash_rate": 0.2,
+      "execution_self": 0.9244444444444445,
+      "nocrash_self": 0.6666666666666666,
+      "nocrash_support": 0.6666666666666666
+    },
+    {
+      "task_id": "BigCodeBench/993",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8577777777777779,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/1019",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6666666666666665,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/1019",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6666666666666665,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/1019",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6666666666666665,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/1019",
+      "passed": 0,
+      "crash_rate": 0.0,
+      "execution_self": 1.0,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/1019",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6666666666666665,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/1019",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6666666666666665,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/1019",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6666666666666665,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/1019",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6666666666666665,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/1019",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.8222222222222223,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/1019",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6666666666666665,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/1046",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.7481481481481481,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/1046",
+      "passed": 1,
+      "crash_rate": 0.3333333333333333,
+      "execution_self": 0.8666666666666667,
+      "nocrash_self": 0.1111111111111111,
+      "nocrash_support": 0.1111111111111111
+    },
+    {
+      "task_id": "BigCodeBench/1046",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.7185185185185187,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/1046",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.7629629629629631,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/1046",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.7629629629629631,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/1046",
+      "passed": 0,
+      "crash_rate": 0.3333333333333333,
+      "execution_self": 0.8666666666666667,
+      "nocrash_self": 0.1111111111111111,
+      "nocrash_support": 0.1111111111111111
+    },
+    {
+      "task_id": "BigCodeBench/1046",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.7185185185185186,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/1046",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.7185185185185186,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/1046",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.7185185185185186,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/1046",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.7481481481481481,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/1122",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/1122",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/1122",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/1122",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/1122",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/1122",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/1122",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/1122",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/1122",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    },
+    {
+      "task_id": "BigCodeBench/1122",
+      "passed": 0,
+      "crash_rate": 1.0,
+      "execution_self": 0.6,
+      "nocrash_self": 0.0,
+      "nocrash_support": 0.0
+    }
+  ]
+}

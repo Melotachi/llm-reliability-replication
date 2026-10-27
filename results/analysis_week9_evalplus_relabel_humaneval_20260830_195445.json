@@ -1,0 +1,205 @@
+{
+  "config": {
+    "dataset": "humaneval",
+    "timeout_s": 30.0,
+    "seed": 42,
+    "excluded_tasks": [
+      "HumanEval/32"
+    ],
+    "label": "evalplus_plus_suite",
+    "input_kind": "repair_runs"
+  },
+  "source_results_files": [
+    "results/humaneval_week9_arm_resample_sample0_qwen15b.json",
+    "results/humaneval_week9_arm_code_only_sample0_qwen15b.json",
+    "results/humaneval_week9_arm_error_nostop_sample0_qwen15b.json"
+  ],
+  "relabelled_run_files": [
+    "/Users/melih/Desktop/stajsal/Internship Resources \u2013 AI For SE/results/humaneval_week9_arm_resample_sample0_qwen15b_evalpluslabel_20260830_194901.json",
+    "/Users/melih/Desktop/stajsal/Internship Resources \u2013 AI For SE/results/humaneval_week9_arm_code_only_sample0_qwen15b_evalpluslabel_20260830_194914.json",
+    "/Users/melih/Desktop/stajsal/Internship Resources \u2013 AI For SE/results/humaneval_week9_arm_error_nostop_sample0_qwen15b_evalpluslabel_20260830_195445.json"
+  ],
+  "initial_pool": {
+    "n_coordinates": 147,
+    "skipped_task_ids": [
+      "HumanEval/32"
+    ],
+    "n_initial_plus_pass": 0,
+    "initial_plus_pass_task_ids": []
+  },
+  "cells": [
+    {
+      "n_coordinates_total": 148,
+      "n_coordinates_scored": 147,
+      "skipped_task_ids": [
+        "HumanEval/32"
+      ],
+      "confusion": {
+        "base_pass_plus_pass": 82,
+        "base_pass_plus_fail": 9,
+        "base_fail_plus_pass": 0,
+        "base_fail_plus_fail": 56
+      },
+      "successes_base": 91,
+      "repair_success_rate_base_over_scored": 0.6190476190476191,
+      "repair_success_rate_base_wilson_95": [
+        0.5384580315961985,
+        0.6935734504352836
+      ],
+      "successes_plus": 82,
+      "repair_success_rate_plus_over_scored": 0.5578231292517006,
+      "repair_success_rate_plus_wilson_95": [
+        0.4770790664050208,
+        0.6356219391531275
+      ],
+      "false_positive_rate": 0.0989010989010989,
+      "false_positive_rate_wilson_95": [
+        0.052908040587209215,
+        0.17738752591525386
+      ],
+      "base_fail_plus_pass": 0,
+      "base_fail_plus_pass_rate": 0.0,
+      "n_coordinates_failing_under_plus": 147,
+      "successes_plus_adjusted": 82,
+      "repair_success_rate_plus_adjusted": 0.5578231292517006,
+      "timeout_fraction_among_plus_failures": 0.0,
+      "plus_failure_categories": {
+        "assertion_error": 9
+      },
+      "context_mode": "none",
+      "run_id": "humaneval_week9_arm_resample_sample0_qwen15b",
+      "source_results_file": "results/humaneval_week9_arm_resample_sample0_qwen15b.json",
+      "timeout_sensitivity": {
+        "long_timeout_s": 300.0,
+        "n_timeout_base_pass": 0,
+        "n_rescued": 0,
+        "false_positive_rate_at_long_timeout": 0.0989010989010989
+      }
+    },
+    {
+      "n_coordinates_total": 148,
+      "n_coordinates_scored": 147,
+      "skipped_task_ids": [
+        "HumanEval/32"
+      ],
+      "confusion": {
+        "base_pass_plus_pass": 62,
+        "base_pass_plus_fail": 3,
+        "base_fail_plus_pass": 0,
+        "base_fail_plus_fail": 82
+      },
+      "successes_base": 65,
+      "repair_success_rate_base_over_scored": 0.4421768707482993,
+      "repair_success_rate_base_wilson_95": [
+        0.3643780608468724,
+        0.5229209335949792
+      ],
+      "successes_plus": 62,
+      "repair_success_rate_plus_over_scored": 0.4217687074829932,
+      "repair_success_rate_plus_wilson_95": [
+        0.34492551378720415,
+        0.5025966551635362
+      ],
+      "false_positive_rate": 0.046153846153846156,
+      "false_positive_rate_wilson_95": [
+        0.01581955358590327,
+        0.12714051706904955
+      ],
+      "base_fail_plus_pass": 0,
+      "base_fail_plus_pass_rate": 0.0,
+      "n_coordinates_failing_under_plus": 147,
+      "successes_plus_adjusted": 62,
+      "repair_success_rate_plus_adjusted": 0.4217687074829932,
+      "timeout_fraction_among_plus_failures": 0.0,
+      "plus_failure_categories": {
+        "assertion_error": 3
+      },
+      "context_mode": "code_only",
+      "run_id": "humaneval_week9_arm_code_only_sample0_qwen15b",
+      "source_results_file": "results/humaneval_week9_arm_code_only_sample0_qwen15b.json",
+      "timeout_sensitivity": {
+        "long_timeout_s": 300.0,
+        "n_timeout_base_pass": 0,
+        "n_rescued": 0,
+        "false_positive_rate_at_long_timeout": 0.046153846153846156
+      }
+    },
+    {
+      "n_coordinates_total": 148,
+      "n_coordinates_scored": 147,
+      "skipped_task_ids": [
+        "HumanEval/32"
+      ],
+      "confusion": {
+        "base_pass_plus_pass": 49,
+        "base_pass_plus_fail": 5,
+        "base_fail_plus_pass": 0,
+        "base_fail_plus_fail": 93
+      },
+      "successes_base": 54,
+      "repair_success_rate_base_over_scored": 0.3673469387755102,
+      "repair_success_rate_base_wilson_95": [
+        0.29371749239857664,
+        0.4477331419092006
+      ],
+      "successes_plus": 49,
+      "repair_success_rate_plus_over_scored": 0.3333333333333333,
+      "repair_success_rate_plus_wilson_95": [
+        0.2622286259058324,
+        0.41292729925009275
+      ],
+      "false_positive_rate": 0.09259259259259259,
+      "false_positive_rate_wilson_95": [
+        0.040200542070567336,
+        0.1991012753065453
+      ],
+      "base_fail_plus_pass": 0,
+      "base_fail_plus_pass_rate": 0.0,
+      "n_coordinates_failing_under_plus": 147,
+      "successes_plus_adjusted": 49,
+      "repair_success_rate_plus_adjusted": 0.3333333333333333,
+      "timeout_fraction_among_plus_failures": 0.2,
+      "plus_failure_categories": {
+        "assertion_error": 4,
+        "timeout": 1
+      },
+      "context_mode": "error",
+      "run_id": "humaneval_week9_arm_error_nostop_sample0_qwen15b",
+      "source_results_file": "results/humaneval_week9_arm_error_nostop_sample0_qwen15b.json",
+      "timeout_sensitivity": {
+        "long_timeout_s": 300.0,
+        "n_timeout_base_pass": 1,
+        "n_rescued": 0,
+        "false_positive_rate_at_long_timeout": 0.09259259259259259
+      }
+    }
+  ],
+  "arm_comparison": {
+    "arms": [
+      "none",
+      "code_only",
+      "error"
+    ],
+    "false_positive_rate_by_arm": [
+      0.0989010989010989,
+      0.046153846153846156,
+      0.09259259259259259
+    ],
+    "false_positive_rate_spread": 0.05274725274725274,
+    "wilson_intervals_all_overlap": true,
+    "common_overlap": [
+      0.052908040587209215,
+      0.12714051706904955
+    ],
+    "base_label_success_by_arm": [
+      91,
+      65,
+      54
+    ],
+    "plus_label_success_by_arm": [
+      82,
+      62,
+      49
+    ]
+  }
+}

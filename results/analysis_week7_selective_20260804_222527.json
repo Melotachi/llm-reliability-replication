@@ -1,0 +1,794 @@
+{
+  "analysis": "week7_selective_prediction",
+  "config": {
+    "seed": 42,
+    "risk_targets": [
+      0.05,
+      0.1
+    ]
+  },
+  "sources": {
+    "cg_he164": "results/predictor_humaneval_20260712_215312.json",
+    "ds_he60": "results/predictor_humaneval_20260712_212837.json",
+    "cg_mbppplus": "results/predictor_mbpp_20260712_212240.json",
+    "ds_mbppplus": "results/predictor_mbpp_20260712_213424.json"
+  },
+  "cells": {
+    "cg_he164": [
+      {
+        "task": "problem_level",
+        "feature_set": "no_codebert",
+        "model_type": "logistic",
+        "roc_auc": 0.8469014167650531,
+        "n": 164,
+        "base_error": 0.7804878048780488,
+        "aurc": 0.5493956045106412,
+        "augrc": 0.3326888756692445,
+        "norm_aurc": 0.3007602758457838,
+        "norm_augrc": 0.30034722222222154,
+        "coverage_at_risk": {
+          "0.05": 0.018292682926829267,
+          "0.10": 0.07317073170731707
+        }
+      },
+      {
+        "task": "problem_level",
+        "feature_set": "no_codebert",
+        "model_type": "random_forest",
+        "roc_auc": 0.8018813459268006,
+        "n": 164,
+        "base_error": 0.7804878048780488,
+        "aurc": 0.5798451934752442,
+        "augrc": 0.34220701963117184,
+        "norm_aurc": 0.39289476655714217,
+        "norm_augrc": 0.41145833333333187,
+        "coverage_at_risk": {
+          "0.05": 0.03048780487804878,
+          "0.10": 0.03048780487804878
+        }
+      },
+      {
+        "task": "problem_level",
+        "feature_set": "execution_only",
+        "model_type": "logistic",
+        "roc_auc": 0.7872007083825265,
+        "n": 164,
+        "base_error": 0.7804878048780488,
+        "aurc": 0.5913799283178545,
+        "augrc": 0.34778405710886373,
+        "norm_aurc": 0.4277966143768246,
+        "norm_augrc": 0.47656249999999906,
+        "coverage_at_risk": {
+          "0.05": 0.018292682926829267,
+          "0.10": 0.018292682926829267
+        }
+      },
+      {
+        "task": "problem_level",
+        "feature_set": "execution_only",
+        "model_type": "random_forest",
+        "roc_auc": 0.6626670602125146,
+        "n": 164,
+        "base_error": 0.7804878048780488,
+        "aurc": 0.6534477434146502,
+        "augrc": 0.3644408090422367,
+        "norm_aurc": 0.6156016629164868,
+        "norm_augrc": 0.6710069444444433,
+        "coverage_at_risk": {
+          "0.05": 0.006097560975609756,
+          "0.10": 0.006097560975609756
+        }
+      },
+      {
+        "task": "problem_level",
+        "feature_set": "no_codebert_plus_execution",
+        "model_type": "logistic",
+        "roc_auc": 0.8681357733175915,
+        "n": 164,
+        "base_error": 0.7804878048780488,
+        "aurc": 0.5266857355177716,
+        "augrc": 0.3295285544318857,
+        "norm_aurc": 0.23204466145072486,
+        "norm_augrc": 0.26345486111110983,
+        "coverage_at_risk": {
+          "0.05": 0.054878048780487805,
+          "0.10": 0.12804878048780488
+        }
+      },
+      {
+        "task": "problem_level",
+        "feature_set": "no_codebert_plus_execution",
+        "model_type": "random_forest",
+        "roc_auc": 0.834095631641086,
+        "n": 164,
+        "base_error": 0.7804878048780488,
+        "aurc": 0.543145584266063,
+        "augrc": 0.33495687091017257,
+        "norm_aurc": 0.2818489390510803,
+        "norm_augrc": 0.3268229166666667,
+        "coverage_at_risk": {
+          "0.05": 0.036585365853658534,
+          "0.10": 0.0975609756097561
+        }
+      },
+      {
+        "task": "sample_level",
+        "feature_set": "self_consistency_core",
+        "model_type": "logistic",
+        "roc_auc": 0.8625808971934873,
+        "n": 1640,
+        "base_error": 0.9085365853658537,
+        "aurc": 0.7646248389782899,
+        "augrc": 0.4233581201665675,
+        "norm_aurc": 0.3413258835565389,
+        "norm_augrc": 0.2493870246084989,
+        "coverage_at_risk": {
+          "0.05": 0.0,
+          "0.10": 0.006097560975609756
+        }
+      },
+      {
+        "task": "sample_level",
+        "feature_set": "self_consistency_core",
+        "model_type": "random_forest",
+        "roc_auc": 0.8094678349109412,
+        "n": 1640,
+        "base_error": 0.9085365853658537,
+        "aurc": 0.7775438803429499,
+        "augrc": 0.42751524390243895,
+        "norm_aurc": 0.4004554429550291,
+        "norm_augrc": 0.3494407158836655,
+        "coverage_at_risk": {
+          "0.05": 0.001829268292682927,
+          "0.10": 0.001829268292682927
+        }
+      },
+      {
+        "task": "sample_level",
+        "feature_set": "execution_self_only",
+        "model_type": "logistic",
+        "roc_auc": 0.901562892836657,
+        "n": 1640,
+        "base_error": 0.9085365853658537,
+        "aurc": 0.7439819190172435,
+        "augrc": 0.4210101873884593,
+        "norm_aurc": 0.24684466567500601,
+        "norm_augrc": 0.19287695749440698,
+        "coverage_at_risk": {
+          "0.05": 0.01768292682926829,
+          "0.10": 0.018902439024390243
+        }
+      },
+      {
+        "task": "sample_level",
+        "feature_set": "execution_self_only",
+        "model_type": "random_forest",
+        "roc_auc": 0.806821984702264,
+        "n": 1640,
+        "base_error": 0.9085365853658537,
+        "aurc": 0.7766784019303516,
+        "augrc": 0.4282131171921475,
+        "norm_aurc": 0.39649420807998437,
+        "norm_augrc": 0.366237136465322,
+        "coverage_at_risk": {
+          "0.05": 0.025,
+          "0.10": 0.02621951219512195
+        }
+      },
+      {
+        "task": "sample_level",
+        "feature_set": "self_consistency_plus_execution",
+        "model_type": "logistic",
+        "roc_auc": 0.9339772499172738,
+        "n": 1640,
+        "base_error": 0.9085365853658537,
+        "aurc": 0.7235240921132315,
+        "augrc": 0.41827111838191555,
+        "norm_aurc": 0.15321060592241156,
+        "norm_augrc": 0.1269530201342275,
+        "coverage_at_risk": {
+          "0.05": 0.03719512195121951,
+          "0.10": 0.039634146341463415
+        }
+      },
+      {
+        "task": "sample_level",
+        "feature_set": "self_consistency_plus_execution",
+        "model_type": "random_forest",
+        "roc_auc": 0.9306199725354407,
+        "n": 1640,
+        "base_error": 0.9085365853658537,
+        "aurc": 0.722820768194391,
+        "augrc": 0.41828599048185605,
+        "norm_aurc": 0.14999154095763623,
+        "norm_augrc": 0.12731096196867908,
+        "coverage_at_risk": {
+          "0.05": 0.028658536585365855,
+          "0.10": 0.057926829268292686
+        }
+      }
+    ],
+    "ds_he60": [
+      {
+        "task": "problem_level",
+        "feature_set": "no_codebert",
+        "model_type": "logistic",
+        "roc_auc": 0.9167129629629629,
+        "n": 60,
+        "base_error": 0.21666666666666667,
+        "aurc": 0.048995146521379415,
+        "augrc": 0.04027777777777778,
+        "norm_aurc": 0.11515942687585856,
+        "norm_augrc": 0.17675941080196397,
+        "coverage_at_risk": {
+          "0.05": 0.7333333333333333,
+          "0.10": 0.7833333333333333
+        }
+      },
+      {
+        "task": "problem_level",
+        "feature_set": "no_codebert",
+        "model_type": "random_forest",
+        "roc_auc": 0.896712962962963,
+        "n": 60,
+        "base_error": 0.21666666666666667,
+        "aurc": 0.06375247346600924,
+        "augrc": 0.0475,
+        "norm_aurc": 0.19303718226420322,
+        "norm_augrc": 0.2618657937806873,
+        "coverage_at_risk": {
+          "0.05": 0.7333333333333333,
+          "0.10": 0.7666666666666667
+        }
+      },
+      {
+        "task": "problem_level",
+        "feature_set": "execution_only",
+        "model_type": "logistic",
+        "roc_auc": 0.9389351851851853,
+        "n": 60,
+        "base_error": 0.21666666666666667,
+        "aurc": 0.045719048678559984,
+        "augrc": 0.03888888888888889,
+        "norm_aurc": 0.09787071684126664,
+        "norm_augrc": 0.160392798690671,
+        "coverage_at_risk": {
+          "0.05": 0.6166666666666667,
+          "0.10": 0.7833333333333333
+        }
+      },
+      {
+        "task": "problem_level",
+        "feature_set": "execution_only",
+        "model_type": "random_forest",
+        "roc_auc": 0.9726388888888889,
+        "n": 60,
+        "base_error": 0.21666666666666667,
+        "aurc": 0.039147123699153595,
+        "augrc": 0.03388888888888889,
+        "norm_aurc": 0.06318918082210236,
+        "norm_augrc": 0.10147299509001638,
+        "coverage_at_risk": {
+          "0.05": 0.7166666666666667,
+          "0.10": 0.85
+        }
+      },
+      {
+        "task": "problem_level",
+        "feature_set": "no_codebert_plus_execution",
+        "model_type": "logistic",
+        "roc_auc": 0.946712962962963,
+        "n": 60,
+        "base_error": 0.21666666666666667,
+        "aurc": 0.04435619857393115,
+        "augrc": 0.03722222222222223,
+        "norm_aurc": 0.09067864828593204,
+        "norm_augrc": 0.14075286415711957,
+        "coverage_at_risk": {
+          "0.05": 0.7666666666666667,
+          "0.10": 0.8333333333333334
+        }
+      },
+      {
+        "task": "problem_level",
+        "feature_set": "no_codebert_plus_execution",
+        "model_type": "random_forest",
+        "roc_auc": 0.9577777777777777,
+        "n": 60,
+        "base_error": 0.21666666666666667,
+        "aurc": 0.040418214187032696,
+        "augrc": 0.035277777777777776,
+        "norm_aurc": 0.0698970131052058,
+        "norm_augrc": 0.11783960720130927,
+        "coverage_at_risk": {
+          "0.05": 0.7833333333333333,
+          "0.10": 0.8333333333333334
+        }
+      },
+      {
+        "task": "sample_level",
+        "feature_set": "self_consistency_core",
+        "model_type": "logistic",
+        "roc_auc": 0.8217377241957033,
+        "n": 600,
+        "base_error": 0.505,
+        "aurc": 0.24798625071428063,
+        "augrc": 0.17028055555555557,
+        "norm_aurc": 0.26073734074147686,
+        "norm_augrc": 0.33881165894367243,
+        "coverage_at_risk": {
+          "0.05": 0.19666666666666666,
+          "0.10": 0.24
+        }
+      },
+      {
+        "task": "sample_level",
+        "feature_set": "self_consistency_core",
+        "model_type": "random_forest",
+        "roc_auc": 0.7856323805431797,
+        "n": 600,
+        "base_error": 0.505,
+        "aurc": 0.2825204307585665,
+        "augrc": 0.1804638888888889,
+        "norm_aurc": 0.3600698855792635,
+        "norm_augrc": 0.4202864730917538,
+        "coverage_at_risk": {
+          "0.05": 0.07166666666666667,
+          "0.10": 0.08833333333333333
+        }
+      },
+      {
+        "task": "sample_level",
+        "feature_set": "execution_self_only",
+        "model_type": "logistic",
+        "roc_auc": 0.916322844823571,
+        "n": 600,
+        "base_error": 0.505,
+        "aurc": 0.2194871238015174,
+        "augrc": 0.15126944444444443,
+        "norm_aurc": 0.17876374825225153,
+        "norm_augrc": 0.1867075596448534,
+        "coverage_at_risk": {
+          "0.05": 0.07,
+          "0.10": 0.37166666666666665
+        }
+      },
+      {
+        "task": "sample_level",
+        "feature_set": "execution_self_only",
+        "model_type": "random_forest",
+        "roc_auc": 0.8950226145397517,
+        "n": 600,
+        "base_error": 0.505,
+        "aurc": 0.2243033525182122,
+        "augrc": 0.153075,
+        "norm_aurc": 0.1926169294870926,
+        "norm_augrc": 0.2011534486782012,
+        "coverage_at_risk": {
+          "0.05": 0.04,
+          "0.10": 0.3333333333333333
+        }
+      },
+      {
+        "task": "sample_level",
+        "feature_set": "self_consistency_plus_execution",
+        "model_type": "logistic",
+        "roc_auc": 0.9255521190635878,
+        "n": 600,
+        "base_error": 0.505,
+        "aurc": 0.2003851168367011,
+        "augrc": 0.14780833333333335,
+        "norm_aurc": 0.1238196041929144,
+        "norm_augrc": 0.15901590159015927,
+        "coverage_at_risk": {
+          "0.05": 0.25,
+          "0.10": 0.3883333333333333
+        }
+      },
+      {
+        "task": "sample_level",
+        "feature_set": "self_consistency_plus_execution",
+        "model_type": "random_forest",
+        "roc_auc": 0.9129471112388616,
+        "n": 600,
+        "base_error": 0.505,
+        "aurc": 0.20400494195667443,
+        "augrc": 0.14913611111111108,
+        "norm_aurc": 0.13423150453551982,
+        "norm_augrc": 0.1696391861408362,
+        "coverage_at_risk": {
+          "0.05": 0.24166666666666667,
+          "0.10": 0.33666666666666667
+        }
+      }
+    ],
+    "cg_mbppplus": [
+      {
+        "task": "problem_level",
+        "feature_set": "no_codebert",
+        "model_type": "logistic",
+        "roc_auc": 0.6895833333333333,
+        "n": 60,
+        "base_error": 0.6166666666666667,
+        "aurc": 0.4840457091305355,
+        "augrc": 0.2752777777777778,
+        "norm_aurc": 0.6341207332044749,
+        "norm_augrc": 0.6768507638072854,
+        "coverage_at_risk": {
+          "0.05": 0.03333333333333333,
+          "0.10": 0.03333333333333333
+        }
+      },
+      {
+        "task": "problem_level",
+        "feature_set": "no_codebert",
+        "model_type": "random_forest",
+        "roc_auc": 0.6569444444444444,
+        "n": 60,
+        "base_error": 0.6166666666666667,
+        "aurc": 0.5591913540572192,
+        "augrc": 0.2775,
+        "norm_aurc": 0.8414351273956145,
+        "norm_augrc": 0.6956521739130433,
+        "coverage_at_risk": {
+          "0.05": 0.0,
+          "0.10": 0.0
+        }
+      },
+      {
+        "task": "problem_level",
+        "feature_set": "execution_only",
+        "model_type": "logistic",
+        "roc_auc": 0.6266203703703704,
+        "n": 60,
+        "base_error": 0.6166666666666667,
+        "aurc": 0.5095951578791104,
+        "augrc": 0.29000000000000004,
+        "norm_aurc": 0.704607432658531,
+        "norm_augrc": 0.8014101057579318,
+        "coverage_at_risk": {
+          "0.05": 0.03333333333333333,
+          "0.10": 0.03333333333333333
+        }
+      },
+      {
+        "task": "problem_level",
+        "feature_set": "execution_only",
+        "model_type": "random_forest",
+        "roc_auc": 0.5046296296296295,
+        "n": 60,
+        "base_error": 0.6166666666666667,
+        "aurc": 0.6188366465115233,
+        "augrc": 0.31666666666666665,
+        "norm_aurc": 1.0059866151575696,
+        "norm_augrc": 1.0270270270270265,
+        "coverage_at_risk": {
+          "0.05": 0.0,
+          "0.10": 0.0
+        }
+      },
+      {
+        "task": "problem_level",
+        "feature_set": "no_codebert_plus_execution",
+        "model_type": "logistic",
+        "roc_auc": 0.6622685185185185,
+        "n": 60,
+        "base_error": 0.6166666666666667,
+        "aurc": 0.4655271163353721,
+        "augrc": 0.2758333333333333,
+        "norm_aurc": 0.5830310013863845,
+        "norm_augrc": 0.6815511163337246,
+        "coverage_at_risk": {
+          "0.05": 0.06666666666666667,
+          "0.10": 0.06666666666666667
+        }
+      },
+      {
+        "task": "problem_level",
+        "feature_set": "no_codebert_plus_execution",
+        "model_type": "random_forest",
+        "roc_auc": 0.6032407407407407,
+        "n": 60,
+        "base_error": 0.6166666666666667,
+        "aurc": 0.5763852140225211,
+        "augrc": 0.2916666666666667,
+        "norm_aurc": 0.8888701406421122,
+        "norm_augrc": 0.8155111633372502,
+        "coverage_at_risk": {
+          "0.05": 0.0,
+          "0.10": 0.0
+        }
+      },
+      {
+        "task": "sample_level",
+        "feature_set": "self_consistency_core",
+        "model_type": "logistic",
+        "roc_auc": 0.7414001578613173,
+        "n": 600,
+        "base_error": 0.8466666666666667,
+        "aurc": 0.6794093683028204,
+        "augrc": 0.38482777777777777,
+        "norm_aurc": 0.4168512421033025,
+        "norm_augrc": 0.3959260527216705,
+        "coverage_at_risk": {
+          "0.05": 0.011666666666666667,
+          "0.10": 0.011666666666666667
+        }
+      },
+      {
+        "task": "sample_level",
+        "feature_set": "self_consistency_core",
+        "model_type": "random_forest",
+        "roc_auc": 0.71060574705342,
+        "n": 600,
+        "base_error": 0.8466666666666667,
+        "aurc": 0.7480175069969467,
+        "augrc": 0.39315555555555554,
+        "norm_aurc": 0.6560560555999926,
+        "norm_augrc": 0.524221157137966,
+        "coverage_at_risk": {
+          "0.05": 0.0,
+          "0.10": 0.0
+        }
+      },
+      {
+        "task": "sample_level",
+        "feature_set": "execution_self_only",
+        "model_type": "logistic",
+        "roc_auc": 0.8330784784666626,
+        "n": 600,
+        "base_error": 0.8466666666666667,
+        "aurc": 0.6397147171150219,
+        "augrc": 0.3778888888888889,
+        "norm_aurc": 0.27845437235982406,
+        "norm_augrc": 0.28902773022937345,
+        "coverage_at_risk": {
+          "0.05": 0.045,
+          "0.10": 0.04666666666666667
+        }
+      },
+      {
+        "task": "sample_level",
+        "feature_set": "execution_self_only",
+        "model_type": "random_forest",
+        "roc_auc": 0.6010884525594263,
+        "n": 600,
+        "base_error": 0.8466666666666667,
+        "aurc": 0.7801038207688714,
+        "augrc": 0.4069055555555555,
+        "norm_aurc": 0.7679261754968121,
+        "norm_augrc": 0.7360492981855522,
+        "coverage_at_risk": {
+          "0.05": 0.0,
+          "0.10": 0.0
+        }
+      },
+      {
+        "task": "sample_level",
+        "feature_set": "self_consistency_plus_execution",
+        "model_type": "logistic",
+        "roc_auc": 0.8618840330033178,
+        "n": 600,
+        "base_error": 0.8466666666666667,
+        "aurc": 0.6236824734672922,
+        "augrc": 0.37411944444444445,
+        "norm_aurc": 0.22255736182021293,
+        "norm_augrc": 0.23095686408764132,
+        "coverage_at_risk": {
+          "0.05": 0.05333333333333334,
+          "0.10": 0.06166666666666667
+        }
+      },
+      {
+        "task": "sample_level",
+        "feature_set": "self_consistency_plus_execution",
+        "model_type": "random_forest",
+        "roc_auc": 0.7901837244875347,
+        "n": 600,
+        "base_error": 0.8466666666666667,
+        "aurc": 0.665729931171546,
+        "augrc": 0.38338333333333335,
+        "norm_aurc": 0.36915737851789776,
+        "norm_augrc": 0.3736733995207124,
+        "coverage_at_risk": {
+          "0.05": 0.0033333333333333335,
+          "0.10": 0.0033333333333333335
+        }
+      }
+    ],
+    "ds_mbppplus": [
+      {
+        "task": "problem_level",
+        "feature_set": "no_codebert",
+        "model_type": "logistic",
+        "roc_auc": 0.6335119047619048,
+        "n": 60,
+        "base_error": 0.45,
+        "aurc": 0.35605294335479365,
+        "augrc": 0.19416666666666665,
+        "norm_aurc": 0.711011896753836,
+        "norm_augrc": 0.7205387205387203,
+        "coverage_at_risk": {
+          "0.05": 0.0,
+          "0.10": 0.0
+        }
+      },
+      {
+        "task": "problem_level",
+        "feature_set": "no_codebert",
+        "model_type": "random_forest",
+        "roc_auc": 0.5186838624338626,
+        "n": 60,
+        "base_error": 0.45,
+        "aurc": 0.4410379001490687,
+        "augrc": 0.22833333333333333,
+        "norm_aurc": 0.9724319171934853,
+        "norm_augrc": 0.9966329966329963,
+        "coverage_at_risk": {
+          "0.05": 0.03333333333333333,
+          "0.10": 0.03333333333333333
+        }
+      },
+      {
+        "task": "problem_level",
+        "feature_set": "execution_only",
+        "model_type": "logistic",
+        "roc_auc": 0.6488624338624339,
+        "n": 60,
+        "base_error": 0.45,
+        "aurc": 0.282759604394943,
+        "augrc": 0.18388888888888885,
+        "norm_aurc": 0.48555615856529794,
+        "norm_augrc": 0.6374859708193036,
+        "coverage_at_risk": {
+          "0.05": 0.15,
+          "0.10": 0.23333333333333334
+        }
+      },
+      {
+        "task": "problem_level",
+        "feature_set": "execution_only",
+        "model_type": "random_forest",
+        "roc_auc": 0.5885284391534391,
+        "n": 60,
+        "base_error": 0.45,
+        "aurc": 0.33660131067083476,
+        "augrc": 0.21055555555555555,
+        "norm_aurc": 0.6511772341777926,
+        "norm_augrc": 0.8529741863075193,
+        "coverage_at_risk": {
+          "0.05": 0.15,
+          "0.10": 0.16666666666666666
+        }
+      },
+      {
+        "task": "problem_level",
+        "feature_set": "no_codebert_plus_execution",
+        "model_type": "logistic",
+        "roc_auc": 0.6653835978835979,
+        "n": 60,
+        "base_error": 0.45,
+        "aurc": 0.3085044171173369,
+        "augrc": 0.17638888888888887,
+        "norm_aurc": 0.5647491089646859,
+        "norm_augrc": 0.5768799102132433,
+        "coverage_at_risk": {
+          "0.05": 0.016666666666666666,
+          "0.10": 0.016666666666666666
+        }
+      },
+      {
+        "task": "problem_level",
+        "feature_set": "no_codebert_plus_execution",
+        "model_type": "random_forest",
+        "roc_auc": 0.6339748677248677,
+        "n": 60,
+        "base_error": 0.45,
+        "aurc": 0.4067753286013294,
+        "augrc": 0.20805555555555555,
+        "norm_aurc": 0.8670377098868067,
+        "norm_augrc": 0.8327721661054991,
+        "coverage_at_risk": {
+          "0.05": 0.016666666666666666,
+          "0.10": 0.016666666666666666
+        }
+      },
+      {
+        "task": "sample_level",
+        "feature_set": "self_consistency_core",
+        "model_type": "logistic",
+        "roc_auc": 0.71738670725224,
+        "n": 600,
+        "base_error": 0.7383333333333333,
+        "aurc": 0.6127347845763245,
+        "augrc": 0.33009166666666667,
+        "norm_aurc": 0.6413497130409894,
+        "norm_augrc": 0.5891216517375738,
+        "coverage_at_risk": {
+          "0.05": 0.0,
+          "0.10": 0.0
+        }
+      },
+      {
+        "task": "sample_level",
+        "feature_set": "self_consistency_core",
+        "model_type": "random_forest",
+        "roc_auc": 0.5852027659052009,
+        "n": 600,
+        "base_error": 0.7383333333333333,
+        "aurc": 0.6789171646669458,
+        "augrc": 0.35379999999999995,
+        "norm_aurc": 0.8303354126851272,
+        "norm_augrc": 0.8345530617820011,
+        "coverage_at_risk": {
+          "0.05": 0.0016666666666666668,
+          "0.10": 0.0016666666666666668
+        }
+      },
+      {
+        "task": "sample_level",
+        "feature_set": "execution_self_only",
+        "model_type": "logistic",
+        "roc_auc": 0.8755466663587091,
+        "n": 600,
+        "base_error": 0.7383333333333333,
+        "aurc": 0.46274882952977103,
+        "augrc": 0.2975666666666667,
+        "norm_aurc": 0.21306048239599076,
+        "norm_augrc": 0.2524190881511412,
+        "coverage_at_risk": {
+          "0.05": 0.095,
+          "0.10": 0.14
+        }
+      },
+      {
+        "task": "sample_level",
+        "feature_set": "execution_self_only",
+        "model_type": "random_forest",
+        "roc_auc": 0.7752785025722566,
+        "n": 600,
+        "base_error": 0.7383333333333333,
+        "aurc": 0.5113339356006152,
+        "augrc": 0.3177277777777778,
+        "norm_aurc": 0.3517966573493647,
+        "norm_augrc": 0.46112924328909716,
+        "coverage_at_risk": {
+          "0.05": 0.035,
+          "0.10": 0.03833333333333333
+        }
+      },
+      {
+        "task": "sample_level",
+        "feature_set": "self_consistency_plus_execution",
+        "model_type": "logistic",
+        "roc_auc": 0.8913818997095474,
+        "n": 600,
+        "base_error": 0.7383333333333333,
+        "aurc": 0.46144531610187556,
+        "augrc": 0.29692499999999994,
+        "norm_aurc": 0.2093382621187955,
+        "norm_augrc": 0.24577648056821547,
+        "coverage_at_risk": {
+          "0.05": 0.08833333333333333,
+          "0.10": 0.11666666666666667
+        }
+      },
+      {
+        "task": "sample_level",
+        "feature_set": "self_consistency_plus_execution",
+        "model_type": "random_forest",
+        "roc_auc": 0.8291532706720608,
+        "n": 600,
+        "base_error": 0.7383333333333333,
+        "aurc": 0.5081281406605443,
+        "augrc": 0.3074138888888889,
+        "norm_aurc": 0.3426424172202644,
+        "norm_augrc": 0.3543586720536008,
+        "coverage_at_risk": {
+          "0.05": 0.0033333333333333335,
+          "0.10": 0.0033333333333333335
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,361 @@
+{
+  "analysis": "week7_capability_sweep",
+  "source_results_files": [
+    "results/humaneval_uncertainty_20260710_014920.json",
+    "results/humaneval_deepseek60_merged_20260712.json"
+  ],
+  "config": {
+    "seed": 42,
+    "representation": "full",
+    "headline_metric": "ast_node_diversity",
+    "consensus_feature": "ast_node_diversity",
+    "tracked_metrics": [
+      "lexical_diversity",
+      "token_jaccard_diversity",
+      "token_cosine_diversity",
+      "ast_node_diversity",
+      "pairwise_distance"
+    ]
+  },
+  "protocol_conflicts": {},
+  "protocol_unrecorded": {
+    "problem_offset": {
+      "humaneval_uncertainty_20260710_014920": null,
+      "humaneval_deepseek60_merged_20260712": 0
+    },
+    "temperature": {
+      "humaneval_uncertainty_20260710_014920": null,
+      "humaneval_deepseek60_merged_20260712": 0.7
+    }
+  },
+  "cells": [
+    {
+      "run_id": "humaneval_uncertainty_20260710_014920",
+      "model": "Salesforce/codegen-350M-mono",
+      "config": {
+        "dataset": "humaneval",
+        "model": "Salesforce/codegen-350M-mono",
+        "n_samples": 10,
+        "n_problems": 60,
+        "seed": 42,
+        "mode": "uncertainty",
+        "codebert_model": "microsoft/codebert-base",
+        "use_error_context": false,
+        "max_repair_iterations": 1
+      },
+      "pass_at_1": 0.22999999999999998,
+      "n_solved": 31,
+      "n_problems": 60,
+      "correlations": {
+        "lexical_diversity": {
+          "pearson_r": -0.8159970774285162,
+          "spearman_rho": -0.7097735847886275
+        },
+        "token_jaccard_diversity": {
+          "pearson_r": -0.402901330654506,
+          "spearman_rho": -0.4476784289215103
+        },
+        "token_cosine_diversity": {
+          "pearson_r": -0.4010910241602379,
+          "spearman_rho": -0.46129995593179446
+        },
+        "ast_node_diversity": {
+          "pearson_r": -0.6242576317909273,
+          "spearman_rho": -0.5581871296123194
+        },
+        "pairwise_distance": {
+          "pearson_r": -0.4946254345475806,
+          "spearman_rho": -0.6777965468306069
+        }
+      },
+      "consensus": {
+        "feature": "ast_node_diversity",
+        "quartiles": [
+          {
+            "group": 1,
+            "n_problems": 15,
+            "frac_solved": 0.8666666666666667,
+            "mean_pass_rate": 0.5666666666666667,
+            "task_ids_all_fail": [
+              "HumanEval/38",
+              "HumanEval/46"
+            ]
+          },
+          {
+            "group": 2,
+            "n_problems": 15,
+            "frac_solved": 0.4666666666666667,
+            "mean_pass_rate": 0.16666666666666666,
+            "task_ids_all_fail": [
+              "HumanEval/4",
+              "HumanEval/37",
+              "HumanEval/2",
+              "HumanEval/16",
+              "HumanEval/20",
+              "HumanEval/32",
+              "HumanEval/25",
+              "HumanEval/5"
+            ]
+          },
+          {
+            "group": 3,
+            "n_problems": 15,
+            "frac_solved": 0.4666666666666667,
+            "mean_pass_rate": 0.07333333333333333,
+            "task_ids_all_fail": [
+              "HumanEval/36",
+              "HumanEval/1",
+              "HumanEval/6",
+              "HumanEval/21",
+              "HumanEval/39",
+              "HumanEval/59",
+              "HumanEval/9",
+              "HumanEval/19"
+            ]
+          },
+          {
+            "group": 4,
+            "n_problems": 15,
+            "frac_solved": 0.26666666666666666,
+            "mean_pass_rate": 0.11333333333333334,
+            "task_ids_all_fail": [
+              "HumanEval/33",
+              "HumanEval/14",
+              "HumanEval/40",
+              "HumanEval/24",
+              "HumanEval/3",
+              "HumanEval/49",
+              "HumanEval/56",
+              "HumanEval/10",
+              "HumanEval/43",
+              "HumanEval/41",
+              "HumanEval/17"
+            ]
+          }
+        ],
+        "spread": 0.6000000000000001,
+        "confidently_wrong": {
+          "n_problems": 6,
+          "n_all_fail": 1,
+          "rate": 0.16666666666666666,
+          "task_ids": [
+            "HumanEval/38"
+          ]
+        }
+      },
+      "mean_parse_failure_rate": 0.013333333333333334
+    },
+    {
+      "run_id": "humaneval_deepseek60_merged_20260712",
+      "model": "deepseek-ai/deepseek-coder-1.3b-base",
+      "config": {
+        "dataset": "humaneval",
+        "model": "deepseek-ai/deepseek-coder-1.3b-base",
+        "n_samples": 10,
+        "n_problems": 60,
+        "problem_offset": 0,
+        "seed": 42,
+        "mode": "uncertainty",
+        "codebert_model": null,
+        "use_error_context": false,
+        "max_repair_iterations": 1,
+        "temperature": 0.7,
+        "merged_from": [
+          "humaneval_uncertainty_20260711_042224",
+          "humaneval_uncertainty_20260712_061253"
+        ],
+        "note": "deepseek-coder-1.3b HumanEval 0-59, identical protocol both halves"
+      },
+      "pass_at_1": 0.495,
+      "n_solved": 47,
+      "n_problems": 60,
+      "correlations": {
+        "lexical_diversity": {
+          "pearson_r": -0.6358981979264737,
+          "spearman_rho": -0.5644864625602601
+        },
+        "token_jaccard_diversity": {
+          "pearson_r": -0.508377195367172,
+          "spearman_rho": -0.48303907697810006
+        },
+        "token_cosine_diversity": {
+          "pearson_r": -0.5878543705328463,
+          "spearman_rho": -0.5712316838408344
+        },
+        "ast_node_diversity": {
+          "pearson_r": -0.7402462105639988,
+          "spearman_rho": -0.738233771291376
+        },
+        "pairwise_distance": {
+          "pearson_r": -0.763299263039699,
+          "spearman_rho": -0.80275138266931
+        }
+      },
+      "consensus": {
+        "feature": "ast_node_diversity",
+        "quartiles": [
+          {
+            "group": 1,
+            "n_problems": 15,
+            "frac_solved": 0.9333333333333333,
+            "mean_pass_rate": 0.8733333333333334,
+            "task_ids_all_fail": [
+              "HumanEval/38"
+            ]
+          },
+          {
+            "group": 2,
+            "n_problems": 15,
+            "frac_solved": 0.9333333333333333,
+            "mean_pass_rate": 0.5133333333333333,
+            "task_ids_all_fail": [
+              "HumanEval/10"
+            ]
+          },
+          {
+            "group": 3,
+            "n_problems": 15,
+            "frac_solved": 0.8,
+            "mean_pass_rate": 0.42666666666666664,
+            "task_ids_all_fail": [
+              "HumanEval/20",
+              "HumanEval/36",
+              "HumanEval/17"
+            ]
+          },
+          {
+            "group": 4,
+            "n_problems": 15,
+            "frac_solved": 0.4666666666666667,
+            "mean_pass_rate": 0.16666666666666666,
+            "task_ids_all_fail": [
+              "HumanEval/33",
+              "HumanEval/39",
+              "HumanEval/32",
+              "HumanEval/6",
+              "HumanEval/1",
+              "HumanEval/37",
+              "HumanEval/41",
+              "HumanEval/19"
+            ]
+          }
+        ],
+        "spread": 0.4666666666666667,
+        "confidently_wrong": {
+          "n_problems": 6,
+          "n_all_fail": 0,
+          "rate": 0.0,
+          "task_ids": []
+        }
+      },
+      "mean_parse_failure_rate": 0.0016666666666666668
+    }
+  ],
+  "prereg_scoring": {
+    "confidently_wrong_rate": {
+      "label": "P1 confidently-wrong rate",
+      "tolerance": 0.1,
+      "rows": [
+        {
+          "model": "Salesforce/codegen-350M-mono",
+          "pass_at_1": 0.22999999999999998,
+          "predicted": 0.167,
+          "observed": 0.16666666666666666,
+          "deviation": -0.00033333333333335213,
+          "within_tolerance": true,
+          "fit_was_derived_from_this_cell": true
+        },
+        {
+          "model": "deepseek-ai/deepseek-coder-1.3b-base",
+          "pass_at_1": 0.495,
+          "predicted": 4.999999999999449e-05,
+          "observed": 0.0,
+          "deviation": -4.999999999999449e-05,
+          "within_tolerance": true,
+          "fit_was_derived_from_this_cell": true
+        }
+      ],
+      "n_held_out": 0,
+      "n_held_out_within_tolerance": 0
+    },
+    "ast_abs_spearman": {
+      "label": "P3 |Spearman rho| of ast_node_diversity",
+      "tolerance": 0.12,
+      "rows": [
+        {
+          "model": "Salesforce/codegen-350M-mono",
+          "pass_at_1": 0.22999999999999998,
+          "predicted": 0.5601700000000001,
+          "observed": 0.5581871296123194,
+          "deviation": -0.0019828703876806353,
+          "within_tolerance": true,
+          "fit_was_derived_from_this_cell": true
+        },
+        {
+          "model": "deepseek-ai/deepseek-coder-1.3b-base",
+          "pass_at_1": 0.495,
+          "predicted": 0.740105,
+          "observed": 0.738233771291376,
+          "deviation": -0.0018712287086239954,
+          "within_tolerance": true,
+          "fit_was_derived_from_this_cell": true
+        }
+      ],
+      "n_held_out": 0,
+      "n_held_out_within_tolerance": 0
+    },
+    "P2_spread_band": {
+      "label": "P2 quartile spread stays in [0.40, 0.70] with no capability trend",
+      "band": [
+        0.4,
+        0.7
+      ],
+      "rows": [
+        {
+          "model": "Salesforce/codegen-350M-mono",
+          "pass_at_1": 0.22999999999999998,
+          "spread": 0.6000000000000001,
+          "in_band": true
+        },
+        {
+          "model": "deepseek-ai/deepseek-coder-1.3b-base",
+          "pass_at_1": 0.495,
+          "spread": 0.4666666666666667,
+          "in_band": true
+        }
+      ],
+      "trend_vs_pass_at_1": null
+    },
+    "P4_parse_failure": {
+      "label": "P4 mean parse-failure rate < 0.005",
+      "ceiling": 0.005,
+      "rows": [
+        {
+          "model": "Salesforce/codegen-350M-mono",
+          "pass_at_1": 0.22999999999999998,
+          "mean_parse_failure_rate": 0.013333333333333334,
+          "below_ceiling": false
+        },
+        {
+          "model": "deepseek-ai/deepseek-coder-1.3b-base",
+          "pass_at_1": 0.495,
+          "mean_parse_failure_rate": 0.0016666666666666668,
+          "below_ceiling": true
+        }
+      ]
+    },
+    "P5_capability_order": {
+      "label": "P5 ranking by measured pass@1 (vs. by parameter count)",
+      "rows": [
+        {
+          "model": "Salesforce/codegen-350M-mono",
+          "pass_at_1": 0.22999999999999998
+        },
+        {
+          "model": "deepseek-ai/deepseek-coder-1.3b-base",
+          "pass_at_1": 0.495
+        }
+      ]
+    }
+  }
+}

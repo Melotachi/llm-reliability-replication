@@ -1,0 +1,12 @@
+{
+  "before": "665b722^:reports/overleaf/main_joint.tex",
+  "after": "reports/overleaf/main_joint.tex",
+  "supplementary": [
+    "reports/overleaf/supplementary_joint.tex"
+  ],
+  "n_before": 574,
+  "n_after": 559,
+  "n_relocated": 15,
+  "n_lost": 0,
+  "lost": []
+}

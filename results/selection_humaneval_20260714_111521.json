@@ -1,0 +1,4662 @@
+{
+  "analysis": "week6_selection_trial",
+  "source_results_file": "results/humaneval_uncertainty_merged164_20260711.json",
+  "source_run_id": "humaneval_uncertainty_merged164_20260711",
+  "config": {
+    "seed": 42,
+    "n_splits": 5,
+    "model_type": "logistic",
+    "codebert_model": null,
+    "execution_timeout": 5.0,
+    "probe_source": "evalplus",
+    "probe_cap": 12,
+    "error_costs": [
+      1.0,
+      0.8,
+      0.6
+    ]
+  },
+  "source_config": {
+    "dataset": "humaneval",
+    "model": "Salesforce/codegen-350M-mono",
+    "n_samples": 10,
+    "n_problems": 164,
+    "seed": 42,
+    "mode": "uncertainty",
+    "codebert_model": "microsoft/codebert-base",
+    "use_error_context": false,
+    "max_repair_iterations": 1,
+    "problem_offset": 0,
+    "merged_from": [
+      "humaneval_uncertainty_20260710_014920",
+      "humaneval_uncertainty_20260710_232745"
+    ],
+    "note": "union of first-60 (with codebert metrics) and 60-163 (no-codebert) runs; identical model/temp/seed"
+  },
+  "prediction_metrics_context": {
+    "self_consistency_core": {
+      "summary": {
+        "precision_mean": 0.28869582452431297,
+        "precision_std": 0.10385524976003555,
+        "recall_mean": 0.7645112781954887,
+        "recall_std": 0.1535435558656564,
+        "f1_mean": 0.41201113599225325,
+        "f1_std": 0.12851351617905088,
+        "precision_macro_mean": 0.6308732989164373,
+        "precision_macro_std": 0.0503050230034841,
+        "recall_macro_mean": 0.7893133799709658,
+        "recall_macro_std": 0.08437618243520054,
+        "f1_macro_mean": 0.6492053642555897,
+        "f1_macro_std": 0.06619966498779506,
+        "roc_auc_mean": 0.8625808971934873,
+        "roc_auc_std": 0.04648483349238388,
+        "pr_auc_mean": 0.5407436971753399,
+        "pr_auc_std": 0.06103577452081256
+      },
+      "n_splits": 5,
+      "class_balance": {
+        "pass": 150,
+        "fail": 1490
+      }
+    },
+    "execution_self_only": {
+      "summary": {
+        "precision_mean": 0.3334423993936464,
+        "precision_std": 0.10906236685031781,
+        "recall_mean": 0.8034419381787803,
+        "recall_std": 0.11917273057612389,
+        "f1_mean": 0.4615955531024024,
+        "f1_std": 0.12203041467816653,
+        "precision_macro_mean": 0.6562718855493024,
+        "precision_macro_std": 0.05325154646749984,
+        "recall_macro_mean": 0.8237948912676885,
+        "recall_macro_std": 0.05432439509902141,
+        "f1_macro_mean": 0.6838872602911026,
+        "f1_macro_std": 0.059937324557770684,
+        "roc_auc_mean": 0.901562892836657,
+        "roc_auc_std": 0.04012534805594644,
+        "pr_auc_mean": 0.6617269531413671,
+        "pr_auc_std": 0.18660019784458065
+      },
+      "n_splits": 5,
+      "class_balance": {
+        "pass": 150,
+        "fail": 1490
+      }
+    },
+    "self_consistency_plus_execution": {
+      "summary": {
+        "precision_mean": 0.44080170475519315,
+        "precision_std": 0.14747422436825242,
+        "recall_mean": 0.8492397660818714,
+        "recall_std": 0.08897539775647877,
+        "f1_mean": 0.5644925188134572,
+        "f1_std": 0.14146365553946025,
+        "precision_macro_mean": 0.7131760575409091,
+        "precision_macro_std": 0.07178133433754197,
+        "recall_macro_mean": 0.8712357885277138,
+        "recall_macro_std": 0.03466947094626156,
+        "f1_macro_mean": 0.7505425174455593,
+        "f1_macro_std": 0.07381445976181521,
+        "roc_auc_mean": 0.9339772499172738,
+        "roc_auc_std": 0.028256676075478486,
+        "pr_auc_mean": 0.7755562237007936,
+        "pr_auc_std": 0.06594748464641989
+      },
+      "n_splits": 5,
+      "class_balance": {
+        "pass": 150,
+        "fail": 1490
+      }
+    }
+  },
+  "selection_accuracy": {
+    "random_draw": {
+      "overall": 0.09146341463414634,
+      "n_problems": 164,
+      "conditional_on_solvable": 0.4166666666666667,
+      "n_solvable": 36
+    },
+    "execution_heuristic": {
+      "overall": 0.1402439024390244,
+      "n_problems": 164,
+      "conditional_on_solvable": 0.6388888888888888,
+      "n_solvable": 36
+    },
+    "classifier__self_consistency_core": {
+      "overall": 0.0975609756097561,
+      "n_problems": 164,
+      "conditional_on_solvable": 0.4444444444444444,
+      "n_solvable": 36
+    },
+    "classifier__execution_self_only": {
+      "overall": 0.1402439024390244,
+      "n_problems": 164,
+      "conditional_on_solvable": 0.6388888888888888,
+      "n_solvable": 36
+    },
+    "classifier__self_consistency_plus_execution": {
+      "overall": 0.12195121951219512,
+      "n_problems": 164,
+      "conditional_on_solvable": 0.5555555555555556,
+      "n_solvable": 36
+    },
+    "oracle": {
+      "overall": 0.21951219512195122,
+      "n_problems": 164,
+      "conditional_on_solvable": 1.0,
+      "n_solvable": 36
+    }
+  },
+  "expected_random": 0.09146341463414634,
+  "n_problems_scored": 164,
+  "n_problems_skipped": 0,
+  "trap_diagnostic": {
+    "diversity_threshold": 0.2,
+    "n_unsolvable": 128,
+    "n_unsolvable_low_diversity": 0,
+    "trapped_task_ids": []
+  },
+  "pairwise_mcnemar": [
+    {
+      "a": "classifier__execution_self_only",
+      "b": "classifier__self_consistency_core",
+      "n_common": 164,
+      "p_mid": 0.0078125,
+      "p_bh": 0.0390625
+    },
+    {
+      "a": "classifier__execution_self_only",
+      "b": "classifier__self_consistency_plus_execution",
+      "n_common": 164,
+      "p_mid": 0.125,
+      "p_bh": 0.17857142857142858
+    },
+    {
+      "a": "classifier__execution_self_only",
+      "b": "execution_heuristic",
+      "n_common": 164,
+      "p_mid": 1.0,
+      "p_bh": 1.0
+    },
+    {
+      "a": "classifier__execution_self_only",
+      "b": "random_draw",
+      "n_common": 164,
+      "p_mid": 0.0224609375,
+      "p_bh": 0.05615234375
+    },
+    {
+      "a": "classifier__self_consistency_core",
+      "b": "classifier__self_consistency_plus_execution",
+      "n_common": 164,
+      "p_mid": 0.0625,
+      "p_bh": 0.125
+    },
+    {
+      "a": "classifier__self_consistency_core",
+      "b": "execution_heuristic",
+      "n_common": 164,
+      "p_mid": 0.0078125,
+      "p_bh": 0.0390625
+    },
+    {
+      "a": "classifier__self_consistency_core",
+      "b": "random_draw",
+      "n_common": 164,
+      "p_mid": 0.79052734375,
+      "p_bh": 0.8783637152777778
+    },
+    {
+      "a": "classifier__self_consistency_plus_execution",
+      "b": "execution_heuristic",
+      "n_common": 164,
+      "p_mid": 0.125,
+      "p_bh": 0.17857142857142858
+    },
+    {
+      "a": "classifier__self_consistency_plus_execution",
+      "b": "random_draw",
+      "n_common": 164,
+      "p_mid": 0.14599609375,
+      "p_bh": 0.1824951171875
+    },
+    {
+      "a": "execution_heuristic",
+      "b": "random_draw",
+      "n_common": 164,
+      "p_mid": 0.0224609375,
+      "p_bh": 0.05615234375
+    }
+  ],
+  "per_problem": [
+    {
+      "task_id": "HumanEval/0",
+      "pass_rate": 0.2,
+      "execution_behavior_diversity": 0.5407407407407407,
+      "picks": {
+        "random_draw": {
+          "index": 0,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 1,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 1,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/1",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.9214814814814816,
+      "picks": {
+        "random_draw": {
+          "index": 7,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 3,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 9,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/2",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.8862962962962961,
+      "picks": {
+        "random_draw": {
+          "index": 6,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 9,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 9,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 9,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/3",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.6111111111111112,
+      "picks": {
+        "random_draw": {
+          "index": 4,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 6,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 6,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/4",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.9288888888888889,
+      "picks": {
+        "random_draw": {
+          "index": 4,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 1,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 1,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 0,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/5",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.945925925925926,
+      "picks": {
+        "random_draw": {
+          "index": 8,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 1,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 2,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/6",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.9240740740740743,
+      "picks": {
+        "random_draw": {
+          "index": 0,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 5,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 3,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/7",
+      "pass_rate": 0.7,
+      "execution_behavior_diversity": 0.43333333333333335,
+      "picks": {
+        "random_draw": {
+          "index": 6,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": true
+        },
+        "classifier__self_consistency_core": {
+          "index": 3,
+          "passed": true
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": true
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 3,
+          "passed": true
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/8",
+      "pass_rate": 0.5,
+      "execution_behavior_diversity": 0.6944444444444444,
+      "picks": {
+        "random_draw": {
+          "index": 2,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 3,
+          "passed": true
+        },
+        "classifier__self_consistency_core": {
+          "index": 5,
+          "passed": true
+        },
+        "classifier__execution_self_only": {
+          "index": 3,
+          "passed": true
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 5,
+          "passed": true
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/9",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.9733333333333334,
+      "picks": {
+        "random_draw": {
+          "index": 0,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 6,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/10",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.9422222222222223,
+      "picks": {
+        "random_draw": {
+          "index": 5,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 5,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 5,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/11",
+      "pass_rate": 0.2,
+      "execution_behavior_diversity": 0.9025925925925927,
+      "picks": {
+        "random_draw": {
+          "index": 9,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 1,
+          "passed": true
+        },
+        "classifier__self_consistency_core": {
+          "index": 6,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 1,
+          "passed": true
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 8,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/12",
+      "pass_rate": 0.2,
+      "execution_behavior_diversity": 0.7481481481481481,
+      "picks": {
+        "random_draw": {
+          "index": 7,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 5,
+          "passed": true
+        },
+        "classifier__self_consistency_core": {
+          "index": 8,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 5,
+          "passed": true
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 5,
+          "passed": true
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/13",
+      "pass_rate": 0.1,
+      "execution_behavior_diversity": 0.8518518518518517,
+      "picks": {
+        "random_draw": {
+          "index": 7,
+          "passed": true
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 6,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 0,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/14",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.9648148148148149,
+      "picks": {
+        "random_draw": {
+          "index": 7,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 4,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 9,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 4,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 4,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/15",
+      "pass_rate": 0.1,
+      "execution_behavior_diversity": 0.925185185185185,
+      "picks": {
+        "random_draw": {
+          "index": 7,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 1,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 1,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 1,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 1,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/16",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.75,
+      "picks": {
+        "random_draw": {
+          "index": 5,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 1,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 4,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 1,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 7,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/17",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.9377777777777778,
+      "picks": {
+        "random_draw": {
+          "index": 1,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 6,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 7,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/18",
+      "pass_rate": 0.4,
+      "execution_behavior_diversity": 0.6370370370370371,
+      "picks": {
+        "random_draw": {
+          "index": 8,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 2,
+          "passed": true
+        },
+        "classifier__self_consistency_core": {
+          "index": 2,
+          "passed": true
+        },
+        "classifier__execution_self_only": {
+          "index": 2,
+          "passed": true
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 2,
+          "passed": true
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/19",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.8622222222222221,
+      "picks": {
+        "random_draw": {
+          "index": 4,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 6,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 6,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/20",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.9518518518518517,
+      "picks": {
+        "random_draw": {
+          "index": 5,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 5,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 0,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/21",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.9777777777777777,
+      "picks": {
+        "random_draw": {
+          "index": 3,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 0,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/22",
+      "pass_rate": 0.7,
+      "execution_behavior_diversity": 0.554074074074074,
+      "picks": {
+        "random_draw": {
+          "index": 1,
+          "passed": true
+        },
+        "execution_heuristic": {
+          "index": 1,
+          "passed": true
+        },
+        "classifier__self_consistency_core": {
+          "index": 1,
+          "passed": true
+        },
+        "classifier__execution_self_only": {
+          "index": 1,
+          "passed": true
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 1,
+          "passed": true
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/23",
+      "pass_rate": 0.9,
+      "execution_behavior_diversity": 0.2,
+      "picks": {
+        "random_draw": {
+          "index": 9,
+          "passed": true
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": true
+        },
+        "classifier__self_consistency_core": {
+          "index": 0,
+          "passed": true
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": true
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 0,
+          "passed": true
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/24",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.9270370370370369,
+      "picks": {
+        "random_draw": {
+          "index": 7,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 6,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 6,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/25",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.9437037037037037,
+      "picks": {
+        "random_draw": {
+          "index": 6,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 1,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 1,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 3,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/26",
+      "pass_rate": 0.1,
+      "execution_behavior_diversity": 0.9833333333333333,
+      "picks": {
+        "random_draw": {
+          "index": 4,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 0,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/27",
+      "pass_rate": 0.5,
+      "execution_behavior_diversity": 0.7277777777777777,
+      "picks": {
+        "random_draw": {
+          "index": 8,
+          "passed": true
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": true
+        },
+        "classifier__self_consistency_core": {
+          "index": 3,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": true
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 0,
+          "passed": true
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/28",
+      "pass_rate": 1.0,
+      "execution_behavior_diversity": 0.0,
+      "picks": {
+        "random_draw": {
+          "index": 5,
+          "passed": true
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": true
+        },
+        "classifier__self_consistency_core": {
+          "index": 0,
+          "passed": true
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": true
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 0,
+          "passed": true
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/29",
+      "pass_rate": 0.9,
+      "execution_behavior_diversity": 0.21481481481481485,
+      "picks": {
+        "random_draw": {
+          "index": 4,
+          "passed": true
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": true
+        },
+        "classifier__self_consistency_core": {
+          "index": 8,
+          "passed": true
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": true
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 8,
+          "passed": true
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/30",
+      "pass_rate": 0.7,
+      "execution_behavior_diversity": 0.40740740740740744,
+      "picks": {
+        "random_draw": {
+          "index": 4,
+          "passed": true
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": true
+        },
+        "classifier__self_consistency_core": {
+          "index": 0,
+          "passed": true
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": true
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 0,
+          "passed": true
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/31",
+      "pass_rate": 0.3,
+      "execution_behavior_diversity": 0.46481481481481485,
+      "picks": {
+        "random_draw": {
+          "index": 2,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 3,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 7,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 3,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 7,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/32",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.9870370370370369,
+      "picks": {
+        "random_draw": {
+          "index": 0,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 1,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 9,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 1,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 6,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/33",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.9592592592592594,
+      "picks": {
+        "random_draw": {
+          "index": 5,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 3,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 3,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/34",
+      "pass_rate": 0.4,
+      "execution_behavior_diversity": 0.724074074074074,
+      "picks": {
+        "random_draw": {
+          "index": 8,
+          "passed": true
+        },
+        "execution_heuristic": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 2,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/35",
+      "pass_rate": 0.9,
+      "execution_behavior_diversity": 0.16666666666666669,
+      "picks": {
+        "random_draw": {
+          "index": 0,
+          "passed": true
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": true
+        },
+        "classifier__self_consistency_core": {
+          "index": 0,
+          "passed": true
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": true
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 0,
+          "passed": true
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/36",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.9296296296296298,
+      "picks": {
+        "random_draw": {
+          "index": 8,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 7,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 6,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 7,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 7,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/37",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.9481481481481481,
+      "picks": {
+        "random_draw": {
+          "index": 8,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 1,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 8,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 1,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 1,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/38",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.7511111111111111,
+      "picks": {
+        "random_draw": {
+          "index": 2,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 8,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/39",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.9033333333333331,
+      "picks": {
+        "random_draw": {
+          "index": 6,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 5,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 0,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/40",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.22962962962962966,
+      "picks": {
+        "random_draw": {
+          "index": 1,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 8,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 0,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/41",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.9748148148148147,
+      "picks": {
+        "random_draw": {
+          "index": 7,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 5,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 6,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/42",
+      "pass_rate": 0.6,
+      "execution_behavior_diversity": 0.6037037037037036,
+      "picks": {
+        "random_draw": {
+          "index": 7,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": true
+        },
+        "classifier__self_consistency_core": {
+          "index": 1,
+          "passed": true
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": true
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 1,
+          "passed": true
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/43",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.7896296296296298,
+      "picks": {
+        "random_draw": {
+          "index": 3,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 4,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 4,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 1,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/44",
+      "pass_rate": 0.1,
+      "execution_behavior_diversity": 0.9677777777777778,
+      "picks": {
+        "random_draw": {
+          "index": 0,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 8,
+          "passed": true
+        },
+        "classifier__self_consistency_core": {
+          "index": 4,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 8,
+          "passed": true
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 4,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/45",
+      "pass_rate": 0.6,
+      "execution_behavior_diversity": 0.6425925925925926,
+      "picks": {
+        "random_draw": {
+          "index": 9,
+          "passed": true
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": true
+        },
+        "classifier__self_consistency_core": {
+          "index": 0,
+          "passed": true
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": true
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 0,
+          "passed": true
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/46",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.7866666666666666,
+      "picks": {
+        "random_draw": {
+          "index": 4,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 4,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 0,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/47",
+      "pass_rate": 0.1,
+      "execution_behavior_diversity": 0.9207407407407409,
+      "picks": {
+        "random_draw": {
+          "index": 8,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 3,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 3,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 4,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/48",
+      "pass_rate": 0.4,
+      "execution_behavior_diversity": 0.4518518518518519,
+      "picks": {
+        "random_draw": {
+          "index": 6,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": true
+        },
+        "classifier__self_consistency_core": {
+          "index": 0,
+          "passed": true
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": true
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 0,
+          "passed": true
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/49",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.9285185185185186,
+      "picks": {
+        "random_draw": {
+          "index": 7,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 1,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 5,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 1,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 5,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/50",
+      "pass_rate": 0.7,
+      "execution_behavior_diversity": 0.5333333333333333,
+      "picks": {
+        "random_draw": {
+          "index": 7,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 1,
+          "passed": true
+        },
+        "classifier__self_consistency_core": {
+          "index": 1,
+          "passed": true
+        },
+        "classifier__execution_self_only": {
+          "index": 1,
+          "passed": true
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 1,
+          "passed": true
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/51",
+      "pass_rate": 0.2,
+      "execution_behavior_diversity": 0.914814814814815,
+      "picks": {
+        "random_draw": {
+          "index": 1,
+          "passed": true
+        },
+        "execution_heuristic": {
+          "index": 1,
+          "passed": true
+        },
+        "classifier__self_consistency_core": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 1,
+          "passed": true
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 0,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/52",
+      "pass_rate": 0.2,
+      "execution_behavior_diversity": 0.4148148148148149,
+      "picks": {
+        "random_draw": {
+          "index": 3,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 2,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/53",
+      "pass_rate": 0.9,
+      "execution_behavior_diversity": 0.2,
+      "picks": {
+        "random_draw": {
+          "index": 4,
+          "passed": true
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": true
+        },
+        "classifier__self_consistency_core": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": true
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 0,
+          "passed": true
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/54",
+      "pass_rate": 0.1,
+      "execution_behavior_diversity": 0.2388888888888889,
+      "picks": {
+        "random_draw": {
+          "index": 4,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": true
+        },
+        "classifier__self_consistency_core": {
+          "index": 0,
+          "passed": true
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": true
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 0,
+          "passed": true
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/55",
+      "pass_rate": 0.5,
+      "execution_behavior_diversity": 0.7466666666666668,
+      "picks": {
+        "random_draw": {
+          "index": 0,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 6,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/56",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.715925925925926,
+      "picks": {
+        "random_draw": {
+          "index": 5,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 5,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/57",
+      "pass_rate": 0.2,
+      "execution_behavior_diversity": 0.5774074074074075,
+      "picks": {
+        "random_draw": {
+          "index": 1,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 1,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 3,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 1,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 3,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/58",
+      "pass_rate": 0.4,
+      "execution_behavior_diversity": 0.7796296296296293,
+      "picks": {
+        "random_draw": {
+          "index": 7,
+          "passed": true
+        },
+        "execution_heuristic": {
+          "index": 7,
+          "passed": true
+        },
+        "classifier__self_consistency_core": {
+          "index": 7,
+          "passed": true
+        },
+        "classifier__execution_self_only": {
+          "index": 7,
+          "passed": true
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 7,
+          "passed": true
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/59",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.8444444444444446,
+      "picks": {
+        "random_draw": {
+          "index": 6,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 5,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 5,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/60",
+      "pass_rate": 0.6,
+      "execution_behavior_diversity": 0.6444444444444445,
+      "picks": {
+        "random_draw": {
+          "index": 9,
+          "passed": true
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": true
+        },
+        "classifier__self_consistency_core": {
+          "index": 0,
+          "passed": true
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": true
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 0,
+          "passed": true
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/61",
+      "pass_rate": 0.3,
+      "execution_behavior_diversity": 0.3796296296296296,
+      "picks": {
+        "random_draw": {
+          "index": 7,
+          "passed": true
+        },
+        "execution_heuristic": {
+          "index": 2,
+          "passed": true
+        },
+        "classifier__self_consistency_core": {
+          "index": 3,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 2,
+          "passed": true
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 2,
+          "passed": true
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/62",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.9466666666666665,
+      "picks": {
+        "random_draw": {
+          "index": 3,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 4,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 4,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 8,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/63",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.8181481481481485,
+      "picks": {
+        "random_draw": {
+          "index": 9,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 9,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 3,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/64",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.6759259259259258,
+      "picks": {
+        "random_draw": {
+          "index": 4,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 9,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 9,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/65",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.8822222222222221,
+      "picks": {
+        "random_draw": {
+          "index": 3,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 0,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/66",
+      "pass_rate": 0.1,
+      "execution_behavior_diversity": 0.7648148148148147,
+      "picks": {
+        "random_draw": {
+          "index": 9,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 1,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 3,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/67",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.9344444444444445,
+      "picks": {
+        "random_draw": {
+          "index": 3,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 3,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 4,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 3,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 5,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/68",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.9674074074074074,
+      "picks": {
+        "random_draw": {
+          "index": 0,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 5,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 5,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/69",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.732962962962963,
+      "picks": {
+        "random_draw": {
+          "index": 4,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 2,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/70",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.9392592592592591,
+      "picks": {
+        "random_draw": {
+          "index": 7,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 5,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 5,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/71",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.6848148148148148,
+      "picks": {
+        "random_draw": {
+          "index": 1,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 3,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 3,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 2,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/72",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.747037037037037,
+      "picks": {
+        "random_draw": {
+          "index": 4,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 8,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 2,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/73",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.908148148148148,
+      "picks": {
+        "random_draw": {
+          "index": 1,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 5,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 5,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/74",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.9111111111111111,
+      "picks": {
+        "random_draw": {
+          "index": 6,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 1,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 1,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 1,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/75",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.6174074074074074,
+      "picks": {
+        "random_draw": {
+          "index": 4,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 9,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 9,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 9,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 9,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/76",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.8562962962962962,
+      "picks": {
+        "random_draw": {
+          "index": 3,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 3,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 6,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/77",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.27222222222222225,
+      "picks": {
+        "random_draw": {
+          "index": 2,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 1,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 9,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 1,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 9,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/78",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.9022222222222223,
+      "picks": {
+        "random_draw": {
+          "index": 5,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 4,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 8,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 4,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 6,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/79",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.9907407407407408,
+      "picks": {
+        "random_draw": {
+          "index": 6,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 1,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 4,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 1,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 4,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/80",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.648888888888889,
+      "picks": {
+        "random_draw": {
+          "index": 9,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 2,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/81",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.9244444444444445,
+      "picks": {
+        "random_draw": {
+          "index": 4,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 0,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/82",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.7155555555555553,
+      "picks": {
+        "random_draw": {
+          "index": 1,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 4,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 8,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/83",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.8511111111111112,
+      "picks": {
+        "random_draw": {
+          "index": 8,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 1,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 6,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 1,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 5,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/84",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.9744444444444444,
+      "picks": {
+        "random_draw": {
+          "index": 6,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 7,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 7,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 7,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 7,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/85",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.9911111111111112,
+      "picks": {
+        "random_draw": {
+          "index": 7,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 3,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 9,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/86",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.912962962962963,
+      "picks": {
+        "random_draw": {
+          "index": 0,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 1,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 3,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 1,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 3,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/87",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.9074074074074071,
+      "picks": {
+        "random_draw": {
+          "index": 3,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 1,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 5,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 1,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 0,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/88",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.9348148148148149,
+      "picks": {
+        "random_draw": {
+          "index": 7,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 6,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 6,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 0,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/89",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.9522222222222223,
+      "picks": {
+        "random_draw": {
+          "index": 8,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 3,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 3,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/90",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.7537037037037037,
+      "picks": {
+        "random_draw": {
+          "index": 4,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 8,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 4,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/91",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.6037037037037036,
+      "picks": {
+        "random_draw": {
+          "index": 8,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 1,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 6,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 1,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 6,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/92",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.6744444444444445,
+      "picks": {
+        "random_draw": {
+          "index": 8,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 9,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 9,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/93",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.9644444444444442,
+      "picks": {
+        "random_draw": {
+          "index": 3,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 5,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 4,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/94",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.9048148148148148,
+      "picks": {
+        "random_draw": {
+          "index": 8,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 3,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 8,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 3,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 8,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/95",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.6511111111111111,
+      "picks": {
+        "random_draw": {
+          "index": 2,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 6,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 1,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 6,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 1,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/96",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.8755555555555555,
+      "picks": {
+        "random_draw": {
+          "index": 2,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 4,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 4,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/97",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.8355555555555556,
+      "picks": {
+        "random_draw": {
+          "index": 6,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 1,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 4,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 1,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 4,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/98",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.8355555555555554,
+      "picks": {
+        "random_draw": {
+          "index": 6,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 1,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 1,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 1,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 1,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/99",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.945185185185185,
+      "picks": {
+        "random_draw": {
+          "index": 1,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 3,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 7,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 3,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 5,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/100",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 1.0,
+      "picks": {
+        "random_draw": {
+          "index": 8,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 3,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 3,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/101",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.4703703703703704,
+      "picks": {
+        "random_draw": {
+          "index": 1,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 0,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/102",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.9048148148148148,
+      "picks": {
+        "random_draw": {
+          "index": 8,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 5,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 2,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/103",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.9222222222222223,
+      "picks": {
+        "random_draw": {
+          "index": 0,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 0,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/104",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.9355555555555557,
+      "picks": {
+        "random_draw": {
+          "index": 7,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 6,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 6,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 6,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 6,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/105",
+      "pass_rate": 0.1,
+      "execution_behavior_diversity": 0.8933333333333334,
+      "picks": {
+        "random_draw": {
+          "index": 7,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 1,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 8,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 1,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 4,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/106",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.9844444444444443,
+      "picks": {
+        "random_draw": {
+          "index": 7,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 9,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 9,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 1,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/107",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.9377777777777778,
+      "picks": {
+        "random_draw": {
+          "index": 6,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 7,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 7,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/108",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.7555555555555555,
+      "picks": {
+        "random_draw": {
+          "index": 4,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 5,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 5,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/109",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.8296296296296297,
+      "picks": {
+        "random_draw": {
+          "index": 7,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 7,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 3,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/110",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.6485185185185185,
+      "picks": {
+        "random_draw": {
+          "index": 2,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 1,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 8,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 1,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 5,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/111",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.9155555555555556,
+      "picks": {
+        "random_draw": {
+          "index": 7,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 1,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 6,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 1,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 7,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/112",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.9625925925925927,
+      "picks": {
+        "random_draw": {
+          "index": 5,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 3,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 9,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 3,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 3,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/113",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.9448148148148148,
+      "picks": {
+        "random_draw": {
+          "index": 4,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 3,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 3,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/114",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.9874074074074073,
+      "picks": {
+        "random_draw": {
+          "index": 5,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 3,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 3,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 2,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/115",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.7840740740740744,
+      "picks": {
+        "random_draw": {
+          "index": 5,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 1,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 9,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 1,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 2,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/116",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.915185185185185,
+      "picks": {
+        "random_draw": {
+          "index": 0,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 8,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 6,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 8,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 8,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/117",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.78,
+      "picks": {
+        "random_draw": {
+          "index": 1,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 5,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 6,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 5,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 6,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/118",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.9440740740740743,
+      "picks": {
+        "random_draw": {
+          "index": 2,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 6,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 4,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 6,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 6,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/119",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.8566666666666666,
+      "picks": {
+        "random_draw": {
+          "index": 1,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 9,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 5,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 9,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 5,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/120",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.9525925925925924,
+      "picks": {
+        "random_draw": {
+          "index": 4,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 1,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 3,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 1,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 8,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/121",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.8796296296296295,
+      "picks": {
+        "random_draw": {
+          "index": 6,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 4,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 4,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/122",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.9592592592592594,
+      "picks": {
+        "random_draw": {
+          "index": 6,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 8,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 8,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 5,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/123",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.9288888888888889,
+      "picks": {
+        "random_draw": {
+          "index": 4,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 6,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 3,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 6,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 1,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/124",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.824074074074074,
+      "picks": {
+        "random_draw": {
+          "index": 8,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 1,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 5,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 1,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 5,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/125",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.8540740740740742,
+      "picks": {
+        "random_draw": {
+          "index": 5,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 3,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 3,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 2,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/126",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.46111111111111114,
+      "picks": {
+        "random_draw": {
+          "index": 0,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 8,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 8,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/127",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.7696296296296294,
+      "picks": {
+        "random_draw": {
+          "index": 7,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 3,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 7,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/128",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.9666666666666667,
+      "picks": {
+        "random_draw": {
+          "index": 5,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 1,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 8,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 1,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 9,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/129",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.8799999999999999,
+      "picks": {
+        "random_draw": {
+          "index": 6,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 8,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 8,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/130",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.8077777777777775,
+      "picks": {
+        "random_draw": {
+          "index": 5,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 5,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 4,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/131",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.8788888888888889,
+      "picks": {
+        "random_draw": {
+          "index": 5,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 2,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/132",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.6977777777777778,
+      "picks": {
+        "random_draw": {
+          "index": 0,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 1,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 3,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 1,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 3,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/133",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.7855555555555555,
+      "picks": {
+        "random_draw": {
+          "index": 5,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 3,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 3,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/134",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.5740740740740741,
+      "picks": {
+        "random_draw": {
+          "index": 7,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 1,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 1,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 0,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/135",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.7592592592592592,
+      "picks": {
+        "random_draw": {
+          "index": 3,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 1,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 5,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 1,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 1,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/136",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.9522222222222223,
+      "picks": {
+        "random_draw": {
+          "index": 6,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 8,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 5,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 8,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 5,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/137",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.7748148148148148,
+      "picks": {
+        "random_draw": {
+          "index": 0,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 2,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/138",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.5955555555555556,
+      "picks": {
+        "random_draw": {
+          "index": 3,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 7,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 4,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 7,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 4,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/139",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.8355555555555556,
+      "picks": {
+        "random_draw": {
+          "index": 4,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 4,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 4,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/140",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.43888888888888883,
+      "picks": {
+        "random_draw": {
+          "index": 9,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 3,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 0,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/141",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.8240740740740742,
+      "picks": {
+        "random_draw": {
+          "index": 2,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 4,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 5,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/142",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.9629629629629629,
+      "picks": {
+        "random_draw": {
+          "index": 2,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 7,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 7,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 0,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/143",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.9162962962962963,
+      "picks": {
+        "random_draw": {
+          "index": 4,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 6,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 6,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/144",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.8014814814814816,
+      "picks": {
+        "random_draw": {
+          "index": 9,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 3,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 9,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 3,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 5,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/145",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.8666666666666668,
+      "picks": {
+        "random_draw": {
+          "index": 8,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 9,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 8,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/146",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.8833333333333333,
+      "picks": {
+        "random_draw": {
+          "index": 0,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 9,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 0,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/147",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.9733333333333333,
+      "picks": {
+        "random_draw": {
+          "index": 2,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 5,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 5,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 2,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/148",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.7911111111111111,
+      "picks": {
+        "random_draw": {
+          "index": 8,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 3,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 3,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/149",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.9807407407407409,
+      "picks": {
+        "random_draw": {
+          "index": 0,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 8,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 7,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 8,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 9,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/150",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.7148148148148149,
+      "picks": {
+        "random_draw": {
+          "index": 8,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 6,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 7,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/151",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.75,
+      "picks": {
+        "random_draw": {
+          "index": 2,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 6,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/152",
+      "pass_rate": 0.1,
+      "execution_behavior_diversity": 0.9555555555555556,
+      "picks": {
+        "random_draw": {
+          "index": 9,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 9,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 1,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/153",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.9022222222222221,
+      "picks": {
+        "random_draw": {
+          "index": 2,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 5,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 5,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 5,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 5,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/154",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.7825925925925925,
+      "picks": {
+        "random_draw": {
+          "index": 4,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 1,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 1,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 1,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/155",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.9151851851851851,
+      "picks": {
+        "random_draw": {
+          "index": 6,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 3,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 3,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 3,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 3,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/156",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.8551851851851854,
+      "picks": {
+        "random_draw": {
+          "index": 1,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 5,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 8,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 5,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 6,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/157",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.7392592592592593,
+      "picks": {
+        "random_draw": {
+          "index": 5,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 7,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 3,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 7,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 3,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/158",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.6277777777777778,
+      "picks": {
+        "random_draw": {
+          "index": 5,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 0,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/159",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.9607407407407406,
+      "picks": {
+        "random_draw": {
+          "index": 7,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 9,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 9,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 0,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/160",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.8718518518518518,
+      "picks": {
+        "random_draw": {
+          "index": 9,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 4,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 4,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 7,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/161",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.7177777777777777,
+      "picks": {
+        "random_draw": {
+          "index": 6,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 3,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 5,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/162",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.6400000000000002,
+      "picks": {
+        "random_draw": {
+          "index": 4,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 8,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 8,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "HumanEval/163",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.8796296296296297,
+      "picks": {
+        "random_draw": {
+          "index": 4,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 0,
+          "passed": false
+        }
+      }
+    }
+  ]
+}

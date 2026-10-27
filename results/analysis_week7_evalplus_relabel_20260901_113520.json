@@ -1,0 +1,318 @@
+{
+  "config": {
+    "dataset": "humaneval",
+    "timeout_s": 30.0,
+    "seed": 42,
+    "excluded_tasks": [
+      "HumanEval/32"
+    ],
+    "label": "evalplus_humanevalplus"
+  },
+  "source_results_files": [
+    "results/humaneval_uncertainty_20260827_194450.json",
+    "results/humaneval_uncertainty_20260822_071639.json",
+    "results/humaneval_uncertainty_20260827_200356.json",
+    "results/humaneval_uncertainty_20260822_073415.json",
+    "results/humaneval_uncertainty_20260827_192505.json",
+    "results/humaneval_uncertainty_20260831_212704.json",
+    "results/humaneval_uncertainty_20260901_004849.json"
+  ],
+  "relabelled_run_files": [
+    "/Users/melih/Desktop/stajsal/Internship Resources \u2013 AI For SE/results/humaneval_evalpluslabel_20260901_105357.json",
+    "/Users/melih/Desktop/stajsal/Internship Resources \u2013 AI For SE/results/humaneval_evalpluslabel_20260901_105918.json",
+    "/Users/melih/Desktop/stajsal/Internship Resources \u2013 AI For SE/results/humaneval_evalpluslabel_20260901_110638.json",
+    "/Users/melih/Desktop/stajsal/Internship Resources \u2013 AI For SE/results/humaneval_evalpluslabel_20260901_111352.json",
+    "/Users/melih/Desktop/stajsal/Internship Resources \u2013 AI For SE/results/humaneval_evalpluslabel_20260901_112108.json",
+    "/Users/melih/Desktop/stajsal/Internship Resources \u2013 AI For SE/results/humaneval_evalpluslabel_20260901_113031.json",
+    "/Users/melih/Desktop/stajsal/Internship Resources \u2013 AI For SE/results/humaneval_evalpluslabel_20260901_113520.json"
+  ],
+  "cells": [
+    {
+      "n_problems_scored": 59,
+      "n_samples_scored": 590,
+      "confusion": {
+        "base_pass_plus_pass": 107,
+        "base_pass_plus_fail": 23,
+        "base_fail_plus_pass": 0,
+        "base_fail_plus_fail": 460
+      },
+      "false_positive_rate": 0.17692307692307693,
+      "base_fail_plus_pass_rate": 0.0,
+      "mean_pass_at_1_base": 0.22033898305084743,
+      "mean_pass_at_1_plus": 0.18135593220338983,
+      "mean_pass_at_5_base": 0.46643798762442834,
+      "mean_pass_at_5_plus": 0.39278988431530804,
+      "absolute_pass_at_1_drop": 0.038983050847457595,
+      "relative_pass_at_1_drop": 0.1769230769230768,
+      "timeout_fraction_among_plus_failures": 0.08695652173913043,
+      "plus_failure_categories": {
+        "assertion_error": 19,
+        "timeout": 2,
+        "runtime_error": 2
+      },
+      "skipped_task_ids": [
+        "HumanEval/32"
+      ],
+      "model": "Salesforce/codegen-350M-mono",
+      "timeout_sensitivity": {
+        "long_timeout_s": 120.0,
+        "n_timeout_base_pass": 2,
+        "n_rescued": 0,
+        "false_positive_rate_at_long_timeout": 0.17692307692307693
+      },
+      "source_results_file": "results/humaneval_uncertainty_20260827_194450.json"
+    },
+    {
+      "n_problems_scored": 59,
+      "n_samples_scored": 590,
+      "confusion": {
+        "base_pass_plus_pass": 228,
+        "base_pass_plus_fail": 32,
+        "base_fail_plus_pass": 1,
+        "base_fail_plus_fail": 329
+      },
+      "false_positive_rate": 0.12307692307692308,
+      "base_fail_plus_pass_rate": 0.001694915254237288,
+      "mean_pass_at_1_base": 0.44067796610169496,
+      "mean_pass_at_1_plus": 0.3881355932203391,
+      "mean_pass_at_5_base": 0.6762173796072101,
+      "mean_pass_at_5_plus": 0.6294054344901802,
+      "absolute_pass_at_1_drop": 0.05254237288135588,
+      "relative_pass_at_1_drop": 0.1192307692307691,
+      "timeout_fraction_among_plus_failures": 0.15625,
+      "plus_failure_categories": {
+        "assertion_error": 21,
+        "runtime_error": 4,
+        "type_error": 2,
+        "timeout": 5
+      },
+      "skipped_task_ids": [
+        "HumanEval/32"
+      ],
+      "model": "Qwen/Qwen2.5-Coder-0.5B",
+      "timeout_sensitivity": {
+        "long_timeout_s": 120.0,
+        "n_timeout_base_pass": 5,
+        "n_rescued": 0,
+        "false_positive_rate_at_long_timeout": 0.12307692307692308
+      },
+      "source_results_file": "results/humaneval_uncertainty_20260822_071639.json"
+    },
+    {
+      "n_problems_scored": 59,
+      "n_samples_scored": 590,
+      "confusion": {
+        "base_pass_plus_pass": 222,
+        "base_pass_plus_fail": 46,
+        "base_fail_plus_pass": 2,
+        "base_fail_plus_fail": 320
+      },
+      "false_positive_rate": 0.17164179104477612,
+      "base_fail_plus_pass_rate": 0.003389830508474576,
+      "mean_pass_at_1_base": 0.4542372881355932,
+      "mean_pass_at_1_plus": 0.3796610169491525,
+      "mean_pass_at_5_base": 0.7384315308044122,
+      "mean_pass_at_5_plus": 0.6561743341404358,
+      "absolute_pass_at_1_drop": 0.07457627118644072,
+      "relative_pass_at_1_drop": 0.16417910447761205,
+      "timeout_fraction_among_plus_failures": 0.2608695652173913,
+      "plus_failure_categories": {
+        "assertion_error": 27,
+        "runtime_error": 5,
+        "timeout": 12,
+        "type_error": 2
+      },
+      "skipped_task_ids": [
+        "HumanEval/32"
+      ],
+      "model": "deepseek-ai/deepseek-coder-1.3b-base",
+      "timeout_sensitivity": {
+        "long_timeout_s": 120.0,
+        "n_timeout_base_pass": 12,
+        "n_rescued": 0,
+        "false_positive_rate_at_long_timeout": 0.17164179104477612
+      },
+      "source_results_file": "results/humaneval_uncertainty_20260827_200356.json"
+    },
+    {
+      "n_problems_scored": 59,
+      "n_samples_scored": 590,
+      "confusion": {
+        "base_pass_plus_pass": 316,
+        "base_pass_plus_fail": 41,
+        "base_fail_plus_pass": 0,
+        "base_fail_plus_fail": 233
+      },
+      "false_positive_rate": 0.11484593837535013,
+      "base_fail_plus_pass_rate": 0.0,
+      "mean_pass_at_1_base": 0.6050847457627119,
+      "mean_pass_at_1_plus": 0.535593220338983,
+      "mean_pass_at_5_base": 0.8572101156846921,
+      "mean_pass_at_5_plus": 0.7888081786386872,
+      "absolute_pass_at_1_drop": 0.06949152542372883,
+      "relative_pass_at_1_drop": 0.11484593837535016,
+      "timeout_fraction_among_plus_failures": 0.24390243902439024,
+      "plus_failure_categories": {
+        "assertion_error": 29,
+        "timeout": 10,
+        "runtime_error": 2
+      },
+      "skipped_task_ids": [
+        "HumanEval/32"
+      ],
+      "model": "Qwen/Qwen2.5-Coder-1.5B",
+      "timeout_sensitivity": {
+        "long_timeout_s": 120.0,
+        "n_timeout_base_pass": 10,
+        "n_rescued": 0,
+        "false_positive_rate_at_long_timeout": 0.11484593837535013
+      },
+      "source_results_file": "results/humaneval_uncertainty_20260822_073415.json"
+    },
+    {
+      "n_problems_scored": 59,
+      "n_samples_scored": 590,
+      "confusion": {
+        "base_pass_plus_pass": 322,
+        "base_pass_plus_fail": 39,
+        "base_fail_plus_pass": 0,
+        "base_fail_plus_fail": 229
+      },
+      "false_positive_rate": 0.10803324099722991,
+      "base_fail_plus_pass_rate": 0.0,
+      "mean_pass_at_1_base": 0.6118644067796611,
+      "mean_pass_at_1_plus": 0.5457627118644068,
+      "mean_pass_at_5_base": 0.871603443637342,
+      "mean_pass_at_5_plus": 0.822370191014259,
+      "absolute_pass_at_1_drop": 0.0661016949152543,
+      "relative_pass_at_1_drop": 0.10803324099723001,
+      "timeout_fraction_among_plus_failures": 0.3333333333333333,
+      "plus_failure_categories": {
+        "assertion_error": 23,
+        "timeout": 13,
+        "name_error": 1,
+        "runtime_error": 2
+      },
+      "skipped_task_ids": [
+        "HumanEval/32"
+      ],
+      "model": "Qwen/Qwen2.5-Coder-3B",
+      "timeout_sensitivity": {
+        "long_timeout_s": 120.0,
+        "n_timeout_base_pass": 13,
+        "n_rescued": 0,
+        "false_positive_rate_at_long_timeout": 0.10803324099722991
+      },
+      "source_results_file": "results/humaneval_uncertainty_20260831_212704.json"
+    },
+    {
+      "n_problems_scored": 59,
+      "n_samples_scored": 590,
+      "confusion": {
+        "base_pass_plus_pass": 322,
+        "base_pass_plus_fail": 40,
+        "base_fail_plus_pass": 0,
+        "base_fail_plus_fail": 228
+      },
+      "false_positive_rate": 0.11049723756906077,
+      "base_fail_plus_pass_rate": 0.0,
+      "mean_pass_at_1_base": 0.6135593220338984,
+      "mean_pass_at_1_plus": 0.5457627118644068,
+      "mean_pass_at_5_base": 0.8580844767285445,
+      "mean_pass_at_5_plus": 0.8051520043045467,
+      "absolute_pass_at_1_drop": 0.06779661016949157,
+      "relative_pass_at_1_drop": 0.11049723756906082,
+      "timeout_fraction_among_plus_failures": 0.3,
+      "plus_failure_categories": {
+        "assertion_error": 24,
+        "timeout": 12,
+        "type_error": 1,
+        "name_error": 1,
+        "runtime_error": 2
+      },
+      "skipped_task_ids": [
+        "HumanEval/32"
+      ],
+      "model": "Qwen/Qwen2.5-Coder-3B",
+      "timeout_sensitivity": {
+        "long_timeout_s": 120.0,
+        "n_timeout_base_pass": 12,
+        "n_rescued": 0,
+        "false_positive_rate_at_long_timeout": 0.11049723756906077
+      },
+      "source_results_file": "results/humaneval_uncertainty_20260827_192505.json"
+    },
+    {
+      "n_problems_scored": 59,
+      "n_samples_scored": 590,
+      "confusion": {
+        "base_pass_plus_pass": 375,
+        "base_pass_plus_fail": 44,
+        "base_fail_plus_pass": 0,
+        "base_fail_plus_fail": 171
+      },
+      "false_positive_rate": 0.10501193317422435,
+      "base_fail_plus_pass_rate": 0.0,
+      "mean_pass_at_1_base": 0.7101694915254239,
+      "mean_pass_at_1_plus": 0.6355932203389831,
+      "mean_pass_at_5_base": 0.9512375571697606,
+      "mean_pass_at_5_plus": 0.9045601291364004,
+      "absolute_pass_at_1_drop": 0.07457627118644072,
+      "relative_pass_at_1_drop": 0.10501193317422439,
+      "timeout_fraction_among_plus_failures": 0.1590909090909091,
+      "plus_failure_categories": {
+        "assertion_error": 34,
+        "timeout": 7,
+        "name_error": 1,
+        "runtime_error": 2
+      },
+      "skipped_task_ids": [
+        "HumanEval/32"
+      ],
+      "model": "Qwen/Qwen2.5-Coder-7B",
+      "timeout_sensitivity": {
+        "long_timeout_s": 120.0,
+        "n_timeout_base_pass": 7,
+        "n_rescued": 0,
+        "false_positive_rate_at_long_timeout": 0.10501193317422435
+      },
+      "source_results_file": "results/humaneval_uncertainty_20260901_004849.json"
+    }
+  ],
+  "trend": {
+    "capability_ordered_models": [
+      "Salesforce/codegen-350M-mono",
+      "Qwen/Qwen2.5-Coder-0.5B",
+      "deepseek-ai/deepseek-coder-1.3b-base",
+      "Qwen/Qwen2.5-Coder-1.5B",
+      "Qwen/Qwen2.5-Coder-3B",
+      "Qwen/Qwen2.5-Coder-3B",
+      "Qwen/Qwen2.5-Coder-7B"
+    ],
+    "capability_ordered_base_pass_at_1": [
+      0.22033898305084743,
+      0.44067796610169496,
+      0.4542372881355932,
+      0.6050847457627119,
+      0.6118644067796611,
+      0.6135593220338984,
+      0.7101694915254239
+    ],
+    "capability_ordered_false_positive_rate": [
+      0.17692307692307693,
+      0.12307692307692308,
+      0.17164179104477612,
+      0.11484593837535013,
+      0.10803324099722991,
+      0.11049723756906077,
+      0.10501193317422435
+    ],
+    "false_positive_rate_spread": 0.07191114374885259,
+    "pearson_r_fpr_vs_capability": -0.8627233251417207,
+    "pearson_p_fpr_vs_capability": 0.012437587232103132,
+    "spearman_rho_fpr_vs_capability": -0.9285714285714288,
+    "spearman_p_fpr_vs_capability": 0.0025194724037946874,
+    "pearson_r_relative_drop_vs_capability": -0.8761928329892269,
+    "pearson_p_relative_drop_vs_capability": 0.009680288343550524
+  }
+}

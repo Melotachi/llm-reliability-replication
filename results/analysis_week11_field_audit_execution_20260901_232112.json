@@ -1,0 +1,125 @@
+{
+  "preregistration": "reports/week11_field_audit_preregistration.md",
+  "probe_source": "evalplus",
+  "probe_cap": 12,
+  "timeout_s": 5.0,
+  "seed": 42,
+  "per_cell": {
+    "cg_he164": {
+      "n_samples": 1640,
+      "n_supported": 1260,
+      "frac_supported": 0.7682926829268293,
+      "mean_crash_rate": 0.26173780487804876,
+      "frac_samples_all_crash": 0.23109756097560977,
+      "pass_rate_all": 0.09146341463414634,
+      "auc_all_samples": {
+        "crash_rate": 0.6390044742729307,
+        "project_graded_self": 0.9116532438478748,
+        "published_graded_self": 0.9115615212527964,
+        "published_isolation_self": 0.8897046979865771
+      },
+      "auc_supported_only": {
+        "crash_rate": 0.5417040358744394,
+        "project_graded_self": 0.9046605845059534,
+        "published_graded_self": 0.9045647131591155,
+        "published_isolation_self": 0.9051059223751353
+      },
+      "run_file": "humaneval_uncertainty_merged164_20260711.json",
+      "model": "Salesforce/codegen-350M-mono"
+    },
+    "ds_he60": {
+      "n_samples": 600,
+      "n_supported": 526,
+      "frac_supported": 0.8766666666666667,
+      "mean_crash_rate": 0.1361111111111111,
+      "frac_samples_all_crash": 0.12333333333333334,
+      "pass_rate_all": 0.495,
+      "auc_all_samples": {
+        "crash_rate": 0.5914258092475915,
+        "project_graded_self": 0.9181195897367515,
+        "published_graded_self": 0.9180973652920847,
+        "published_isolation_self": 0.8820937649320488
+      },
+      "auc_supported_only": {
+        "crash_rate": 0.5252659574468085,
+        "project_graded_self": 0.9137164283222882,
+        "published_graded_self": 0.9137091617253809,
+        "published_isolation_self": 0.9109405883036857
+      },
+      "run_file": "humaneval_deepseek60_merged_20260712.json",
+      "model": "deepseek-ai/deepseek-coder-1.3b-base"
+    },
+    "cg_mbppplus": {
+      "n_samples": 600,
+      "n_supported": 395,
+      "frac_supported": 0.6583333333333333,
+      "mean_crash_rate": 0.3725,
+      "frac_samples_all_crash": 0.3416666666666667,
+      "pass_rate_all": 0.15333333333333332,
+      "auc_all_samples": {
+        "crash_rate": 0.7291595344060253,
+        "project_graded_self": 0.8571657822663471,
+        "published_graded_self": 0.857048099965765,
+        "published_isolation_self": 0.8301416466963368
+      },
+      "auc_supported_only": {
+        "crash_rate": 0.5571139386928861,
+        "project_graded_self": 0.8738432620011568,
+        "published_graded_self": 0.8739517061885483,
+        "published_isolation_self": 0.8720539329091961
+      },
+      "run_file": "mbpp_uncertainty_20260712_024909.json",
+      "model": "Salesforce/codegen-350M-mono"
+    },
+    "ds_mbppplus": {
+      "n_samples": 600,
+      "n_supported": 398,
+      "frac_supported": 0.6633333333333333,
+      "mean_crash_rate": 0.3675,
+      "frac_samples_all_crash": 0.33666666666666667,
+      "pass_rate_all": 0.26166666666666666,
+      "auc_all_samples": {
+        "crash_rate": 0.7494428548834668,
+        "project_graded_self": 0.8749263130652327,
+        "published_graded_self": 0.8750269586346712,
+        "published_isolation_self": 0.8373927046340095
+      },
+      "auc_supported_only": {
+        "crash_rate": 0.5555422806318864,
+        "project_graded_self": 0.863454135138723,
+        "published_graded_self": 0.8636267091464225,
+        "published_isolation_self": 0.8480286738351255
+      },
+      "run_file": "mbpp_uncertainty_20260712_085004.json",
+      "model": "deepseek-ai/deepseek-coder-1.3b-base"
+    }
+  },
+  "H6": {
+    "hypothesis": "each published execution definition retains ROC-AUC >= 0.7 on the support>0 subpopulation in >= 3 of 4 cells",
+    "per_definition": {
+      "published_graded_self": {
+        "cells_clearing_floor": [
+          "cg_he164",
+          "ds_he60",
+          "cg_mbppplus",
+          "ds_mbppplus"
+        ],
+        "n_clearing": 4,
+        "n_cells": 4,
+        "passes": true
+      },
+      "published_isolation_self": {
+        "cells_clearing_floor": [
+          "cg_he164",
+          "ds_he60",
+          "cg_mbppplus",
+          "ds_mbppplus"
+        ],
+        "n_clearing": 4,
+        "n_cells": 4,
+        "passes": true
+      }
+    },
+    "verdict": "CONFIRMED"
+  }
+}

@@ -1,0 +1,1661 @@
+{
+  "analysis": "week12_repairability",
+  "timestamp": "2026-09-07T22:16:15.087985",
+  "figure": "reports/figures/week12_repairability.png",
+  "cohorts": [
+    {
+      "analysis": "week12_repairability",
+      "cohort_name": "mbpp",
+      "timestamp": "2026-09-07T22:16:14.113432",
+      "config": {
+        "source_results": "results/mbpp_uncertainty_20260712_024909.json",
+        "source_run_id": "mbpp_uncertainty_20260712_024909",
+        "predictor_results": "results/predictor_mbpp_20260712_212240.json",
+        "sample_index": 0,
+        "timeout_s": 5.0,
+        "probe_cap": 12,
+        "model_type": "logistic",
+        "n_splits": 5,
+        "seed": 42,
+        "target": "final_passed over initially-failing coordinates",
+        "grouping_note": "one row per problem in the sample-0 design, so grouped CV degenerates to StratifiedKFold here"
+      },
+      "arms": {
+        "none": {
+          "pool_file": "results/mbpp_week9_arm_resample_sample0_qwen15b.json",
+          "n_rows": 54,
+          "n_repaired": 27,
+          "strata": {
+            "all_crash": {
+              "n": 22,
+              "repaired": 11,
+              "repair_rate": 0.5
+            },
+            "runs_but_no_co_running_sibling": {
+              "n": 0,
+              "repaired": 0,
+              "repair_rate": null
+            },
+            "proximity_defined": {
+              "n": 32,
+              "repaired": 16,
+              "repair_rate": 0.5
+            },
+            "mean_support_where_defined": 7.03125,
+            "mean_proximity_where_defined": 0.1998996663059163
+          },
+          "arms": {
+            "category_only": {
+              "n_features": 5,
+              "feature_names": [
+                "category_assertion_error",
+                "category_name_error",
+                "category_type_error",
+                "category_runtime_error",
+                "category_syntax_error"
+              ],
+              "roc_auc_mean": 0.4901190476190476,
+              "roc_auc_std": 0.08324451048614016,
+              "pr_auc_mean": 0.5279004329004329,
+              "f1_mean": 0.6428571428571429,
+              "oof_roc_auc": 0.42112482853223593,
+              "feature_importances": {
+                "category_assertion_error": 0.1351514088485093,
+                "category_name_error": 0.12313268675816531,
+                "category_type_error": -0.25343504578043663,
+                "category_runtime_error": 0.02522224245271579,
+                "category_syntax_error": -0.12539674280535704
+              }
+            },
+            "chars_only": {
+              "n_features": 1,
+              "feature_names": [
+                "initial_chars"
+              ],
+              "roc_auc_mean": 0.46642857142857147,
+              "roc_auc_std": 0.12693491109749439,
+              "pr_auc_mean": 0.5618354462997319,
+              "f1_mean": 0.47619047619047616,
+              "oof_roc_auc": 0.48148148148148145,
+              "feature_importances": {
+                "initial_chars": -0.11724553229353081
+              }
+            },
+            "ast_nodes_only": {
+              "n_features": 1,
+              "feature_names": [
+                "initial_ast_nodes"
+              ],
+              "roc_auc_mean": 0.6235714285714286,
+              "roc_auc_std": 0.10346710673866717,
+              "pr_auc_mean": 0.6634583075654503,
+              "f1_mean": 0.6122222222222222,
+              "oof_roc_auc": 0.6117969821673526,
+              "feature_importances": {
+                "initial_ast_nodes": -0.3471905321373731
+              }
+            },
+            "length_only": {
+              "n_features": 2,
+              "feature_names": [
+                "initial_chars",
+                "initial_ast_nodes"
+              ],
+              "roc_auc_mean": 0.5476190476190476,
+              "roc_auc_std": 0.12046772038736685,
+              "pr_auc_mean": 0.5928986291486291,
+              "f1_mean": 0.509090909090909,
+              "oof_roc_auc": 0.5473251028806584,
+              "feature_importances": {
+                "initial_chars": 0.13010856029614826,
+                "initial_ast_nodes": -0.42609487145209834
+              }
+            },
+            "p_pass_only": {
+              "n_features": 1,
+              "feature_names": [
+                "p_pass_oof"
+              ],
+              "roc_auc_mean": 0.4119047619047619,
+              "roc_auc_std": 0.0899105123261867,
+              "pr_auc_mean": 0.5398528653885796,
+              "f1_mean": 0.4004761904761905,
+              "oof_roc_auc": 0.438957475994513,
+              "feature_importances": {
+                "p_pass_oof": 0.04169692012199642
+              }
+            },
+            "sibling_only": {
+              "n_features": 1,
+              "feature_names": [
+                "sibling_pass_rate"
+              ],
+              "roc_auc_mean": 0.7180952380952381,
+              "roc_auc_std": 0.07708698741109236,
+              "pr_auc_mean": 0.7647619047619048,
+              "f1_mean": 0.6034343434343434,
+              "oof_roc_auc": 0.5939643347050755,
+              "feature_importances": {
+                "sibling_pass_rate": 1.1169782830055097
+              }
+            },
+            "category_plus_length": {
+              "n_features": 7,
+              "feature_names": [
+                "category_assertion_error",
+                "category_name_error",
+                "category_type_error",
+                "category_runtime_error",
+                "category_syntax_error",
+                "initial_chars",
+                "initial_ast_nodes"
+              ],
+              "roc_auc_mean": 0.5854761904761905,
+              "roc_auc_std": 0.1662620939968782,
+              "pr_auc_mean": 0.6477821583178726,
+              "f1_mean": 0.6035897435897437,
+              "oof_roc_auc": 0.5432098765432098,
+              "feature_importances": {
+                "category_assertion_error": 0.2117631692262863,
+                "category_name_error": 0.06294078733796157,
+                "category_type_error": -0.25607053487329295,
+                "category_runtime_error": 0.1191516503752025,
+                "category_syntax_error": -0.3037067694049901,
+                "initial_chars": 0.3234089590360482,
+                "initial_ast_nodes": -0.6634639537455793
+              }
+            },
+            "proximity_only": {
+              "n_features": 2,
+              "feature_names": [
+                "proximity",
+                "has_proximity"
+              ],
+              "roc_auc_mean": 0.195,
+              "roc_auc_std": 0.18298420684487643,
+              "pr_auc_mean": 0.44997783962069676,
+              "f1_mean": 0.263030303030303,
+              "oof_roc_auc": 0.19890260631001372,
+              "feature_importances": {
+                "proximity": -0.08323143272542273,
+                "has_proximity": 0.034512214180887194
+              }
+            },
+            "proximity_plus_crash": {
+              "n_features": 4,
+              "feature_names": [
+                "proximity",
+                "has_proximity",
+                "proximity_support",
+                "crash_rate"
+              ],
+              "roc_auc_mean": 0.315952380952381,
+              "roc_auc_std": 0.26691803628686855,
+              "pr_auc_mean": 0.5439064110492682,
+              "f1_mean": 0.38408258408258406,
+              "oof_roc_auc": 0.24417009602194786,
+              "feature_importances": {
+                "proximity": -0.10219014518092188,
+                "has_proximity": -0.6288172945828637,
+                "proximity_support": 0.4416252230071926,
+                "crash_rate": -0.306685632869355
+              }
+            },
+            "proximity_plus_baselines": {
+              "n_features": 11,
+              "feature_names": [
+                "proximity",
+                "has_proximity",
+                "proximity_support",
+                "crash_rate",
+                "initial_chars",
+                "initial_ast_nodes",
+                "category_assertion_error",
+                "category_name_error",
+                "category_type_error",
+                "category_runtime_error",
+                "category_syntax_error"
+              ],
+              "roc_auc_mean": 0.4102380952380952,
+              "roc_auc_std": 0.23499360728507618,
+              "pr_auc_mean": 0.5604417474060331,
+              "f1_mean": 0.4303030303030303,
+              "oof_roc_auc": 0.37585733882030176,
+              "feature_importances": {
+                "proximity": -0.17835746073536016,
+                "has_proximity": -0.5076029100435058,
+                "proximity_support": 0.3273830279386054,
+                "crash_rate": -0.16264970913148888,
+                "initial_chars": 0.29634542183317963,
+                "initial_ast_nodes": -0.6786477548013395,
+                "category_assertion_error": 0.2388138348951769,
+                "category_name_error": 0.035947242718537796,
+                "category_type_error": -0.2271240855458063,
+                "category_runtime_error": 0.09263124397768785,
+                "category_syntax_error": -0.33381944146334114
+              }
+            },
+            "everything": {
+              "n_features": 13,
+              "feature_names": [
+                "proximity",
+                "has_proximity",
+                "proximity_support",
+                "crash_rate",
+                "initial_chars",
+                "initial_ast_nodes",
+                "category_assertion_error",
+                "category_name_error",
+                "category_type_error",
+                "category_runtime_error",
+                "category_syntax_error",
+                "p_pass_oof",
+                "sibling_pass_rate"
+              ],
+              "roc_auc_mean": 0.5430952380952381,
+              "roc_auc_std": 0.12150884368213913,
+              "pr_auc_mean": 0.7237363430220572,
+              "f1_mean": 0.5355555555555556,
+              "oof_roc_auc": 0.5582990397805213,
+              "feature_importances": {
+                "proximity": -0.20172813072448695,
+                "has_proximity": -0.5340093454815946,
+                "proximity_support": 0.3961976515305703,
+                "crash_rate": 0.08613823090408125,
+                "initial_chars": 0.14105657597888718,
+                "initial_ast_nodes": -0.6751068237877316,
+                "category_assertion_error": 0.18580838182650847,
+                "category_name_error": 0.10861168669440395,
+                "category_type_error": -0.18235565587142846,
+                "category_runtime_error": 0.011134064978496396,
+                "category_syntax_error": -0.30003684469816916,
+                "p_pass_oof": -0.07259081371947791,
+                "sibling_pass_rate": 1.251275420002265
+              }
+            }
+          },
+          "univariate_roc_auc": {
+            "category_assertion_error": 0.5555555555555556,
+            "category_name_error": 0.5185185185185185,
+            "category_runtime_error": 0.5,
+            "category_syntax_error": 0.48148148148148145,
+            "category_type_error": 0.4444444444444444,
+            "crash_rate": 0.46502057613168724,
+            "has_proximity": 0.5,
+            "initial_ast_nodes": 0.36419753086419754,
+            "initial_chars": 0.46021947873799723,
+            "p_pass_oof": 0.48148148148148145,
+            "proximity": 0.5219478737997256,
+            "proximity_support": 0.541838134430727,
+            "sibling_pass_rate": 0.691358024691358
+          }
+        },
+        "code_only": {
+          "pool_file": "results/mbpp_week9_arm_code_only_sample0_qwen15b.json",
+          "n_rows": 54,
+          "n_repaired": 14,
+          "strata": {
+            "all_crash": {
+              "n": 22,
+              "repaired": 7,
+              "repair_rate": 0.3181818181818182
+            },
+            "runs_but_no_co_running_sibling": {
+              "n": 0,
+              "repaired": 0,
+              "repair_rate": null
+            },
+            "proximity_defined": {
+              "n": 32,
+              "repaired": 7,
+              "repair_rate": 0.21875
+            },
+            "mean_support_where_defined": 7.03125,
+            "mean_proximity_where_defined": 0.1998996663059163
+          },
+          "arms": {
+            "category_only": {
+              "n_features": 5,
+              "feature_names": [
+                "category_assertion_error",
+                "category_name_error",
+                "category_type_error",
+                "category_runtime_error",
+                "category_syntax_error"
+              ],
+              "roc_auc_mean": 0.5772222222222222,
+              "roc_auc_std": 0.16353667136865085,
+              "pr_auc_mean": 0.4217604617604618,
+              "f1_mean": 0.2942857142857143,
+              "oof_roc_auc": 0.6214285714285714,
+              "feature_importances": {
+                "category_assertion_error": 0.04256343607122313,
+                "category_name_error": 0.47692135811272096,
+                "category_type_error": -0.17398310532738068,
+                "category_runtime_error": 0.031971589149804594,
+                "category_syntax_error": -0.5713675823806107
+              }
+            },
+            "chars_only": {
+              "n_features": 1,
+              "feature_names": [
+                "initial_chars"
+              ],
+              "roc_auc_mean": 0.5841269841269842,
+              "roc_auc_std": 0.07091526318631328,
+              "pr_auc_mean": 0.42533730158730165,
+              "f1_mean": 0.3988888888888889,
+              "oof_roc_auc": 0.6,
+              "feature_importances": {
+                "initial_chars": -0.5212196001173831
+              }
+            },
+            "ast_nodes_only": {
+              "n_features": 1,
+              "feature_names": [
+                "initial_ast_nodes"
+              ],
+              "roc_auc_mean": 0.6555555555555557,
+              "roc_auc_std": 0.17175527364154952,
+              "pr_auc_mean": 0.4510714285714286,
+              "f1_mean": 0.42974025974025976,
+              "oof_roc_auc": 0.7035714285714286,
+              "feature_importances": {
+                "initial_ast_nodes": -1.0536009619933098
+              }
+            },
+            "length_only": {
+              "n_features": 2,
+              "feature_names": [
+                "initial_chars",
+                "initial_ast_nodes"
+              ],
+              "roc_auc_mean": 0.6341269841269842,
+              "roc_auc_std": 0.14548725267304424,
+              "pr_auc_mean": 0.41464285714285715,
+              "f1_mean": 0.42714285714285716,
+              "oof_roc_auc": 0.6785714285714286,
+              "feature_importances": {
+                "initial_chars": -0.12243404668163378,
+                "initial_ast_nodes": -0.9887657163590304
+              }
+            },
+            "p_pass_only": {
+              "n_features": 1,
+              "feature_names": [
+                "p_pass_oof"
+              ],
+              "roc_auc_mean": 0.665873015873016,
+              "roc_auc_std": 0.1659925899987476,
+              "pr_auc_mean": 0.5206421356421356,
+              "f1_mean": 0.3880952380952381,
+              "oof_roc_auc": 0.6428571428571429,
+              "feature_importances": {
+                "p_pass_oof": 0.5410982744918744
+              }
+            },
+            "sibling_only": {
+              "n_features": 1,
+              "feature_names": [
+                "sibling_pass_rate"
+              ],
+              "roc_auc_mean": 0.5021428571428572,
+              "roc_auc_std": 0.1588157705632279,
+              "pr_auc_mean": 0.32463203463203466,
+              "f1_mean": 0.287012987012987,
+              "oof_roc_auc": 0.5401785714285714,
+              "feature_importances": {
+                "sibling_pass_rate": 0.1665050794142735
+              }
+            },
+            "category_plus_length": {
+              "n_features": 7,
+              "feature_names": [
+                "category_assertion_error",
+                "category_name_error",
+                "category_type_error",
+                "category_runtime_error",
+                "category_syntax_error",
+                "initial_chars",
+                "initial_ast_nodes"
+              ],
+              "roc_auc_mean": 0.6474603174603175,
+              "roc_auc_std": 0.20058895394675216,
+              "pr_auc_mean": 0.5612301587301587,
+              "f1_mean": 0.4254545454545455,
+              "oof_roc_auc": 0.6696428571428571,
+              "feature_importances": {
+                "category_assertion_error": 0.0991624427759779,
+                "category_name_error": 0.3470402127348847,
+                "category_type_error": -0.06384157067508163,
+                "category_runtime_error": 0.18074332471608417,
+                "category_syntax_error": -0.8329720661910901,
+                "initial_chars": 0.005246665257166484,
+                "initial_ast_nodes": -1.3135442706014147
+              }
+            },
+            "proximity_only": {
+              "n_features": 2,
+              "feature_names": [
+                "proximity",
+                "has_proximity"
+              ],
+              "roc_auc_mean": 0.6244444444444445,
+              "roc_auc_std": 0.1755008669374382,
+              "pr_auc_mean": 0.45924603174603174,
+              "f1_mean": 0.4144444444444444,
+              "oof_roc_auc": 0.5973214285714286,
+              "feature_importances": {
+                "proximity": 0.4727037845382804,
+                "has_proximity": -0.4680887077779626
+              }
+            },
+            "proximity_plus_crash": {
+              "n_features": 4,
+              "feature_names": [
+                "proximity",
+                "has_proximity",
+                "proximity_support",
+                "crash_rate"
+              ],
+              "roc_auc_mean": 0.5815873015873015,
+              "roc_auc_std": 0.15920041451851566,
+              "pr_auc_mean": 0.4170238095238095,
+              "f1_mean": 0.4144444444444444,
+              "oof_roc_auc": 0.5776785714285714,
+              "feature_importances": {
+                "proximity": 0.4556994236130338,
+                "has_proximity": -0.8263624861825856,
+                "proximity_support": 0.19202470670796717,
+                "crash_rate": -0.20874131190622033
+              }
+            },
+            "proximity_plus_baselines": {
+              "n_features": 11,
+              "feature_names": [
+                "proximity",
+                "has_proximity",
+                "proximity_support",
+                "crash_rate",
+                "initial_chars",
+                "initial_ast_nodes",
+                "category_assertion_error",
+                "category_name_error",
+                "category_type_error",
+                "category_runtime_error",
+                "category_syntax_error"
+              ],
+              "roc_auc_mean": 0.5744444444444444,
+              "roc_auc_std": 0.16951786446980038,
+              "pr_auc_mean": 0.4357539682539683,
+              "f1_mean": 0.4087878787878788,
+              "oof_roc_auc": 0.6375,
+              "feature_importances": {
+                "proximity": 0.3093457036938728,
+                "has_proximity": -0.6890113295433419,
+                "proximity_support": 0.09798894806866745,
+                "crash_rate": -0.059172304742980054,
+                "initial_chars": -0.02971227420014465,
+                "initial_ast_nodes": -1.2885777069308728,
+                "category_assertion_error": 0.24941364914233674,
+                "category_name_error": 0.277351972772271,
+                "category_type_error": -0.13075922722552502,
+                "category_runtime_error": 0.1182918200695961,
+                "category_syntax_error": -0.8810218310255903
+              }
+            },
+            "everything": {
+              "n_features": 13,
+              "feature_names": [
+                "proximity",
+                "has_proximity",
+                "proximity_support",
+                "crash_rate",
+                "initial_chars",
+                "initial_ast_nodes",
+                "category_assertion_error",
+                "category_name_error",
+                "category_type_error",
+                "category_runtime_error",
+                "category_syntax_error",
+                "p_pass_oof",
+                "sibling_pass_rate"
+              ],
+              "roc_auc_mean": 0.5458730158730158,
+              "roc_auc_std": 0.13750869781693315,
+              "pr_auc_mean": 0.37825396825396823,
+              "f1_mean": 0.39666666666666667,
+              "oof_roc_auc": 0.6035714285714285,
+              "feature_importances": {
+                "proximity": 0.21341436932889368,
+                "has_proximity": -0.6204996494170341,
+                "proximity_support": 0.068344059017877,
+                "crash_rate": -0.022754955081014293,
+                "initial_chars": -0.0901570463845172,
+                "initial_ast_nodes": -1.2008459277399592,
+                "category_assertion_error": 0.21552648777524366,
+                "category_name_error": 0.2722990312974459,
+                "category_type_error": -0.1163088190930809,
+                "category_runtime_error": 0.12575692443296754,
+                "category_syntax_error": -0.8312172392421967,
+                "p_pass_oof": 0.14604403481542522,
+                "sibling_pass_rate": 0.19940827561306848
+              }
+            }
+          },
+          "univariate_roc_auc": {
+            "category_assertion_error": 0.4732142857142857,
+            "category_name_error": 0.6053571428571428,
+            "category_runtime_error": 0.4982142857142857,
+            "category_syntax_error": 0.4625,
+            "category_type_error": 0.4607142857142857,
+            "crash_rate": 0.53125,
+            "has_proximity": 0.4375,
+            "initial_ast_nodes": 0.2830357142857143,
+            "initial_chars": 0.38392857142857145,
+            "p_pass_oof": 0.675,
+            "proximity": 0.5741071428571428,
+            "proximity_support": 0.47767857142857145,
+            "sibling_pass_rate": 0.5714285714285714
+          }
+        },
+        "error": {
+          "pool_file": "results/mbpp_week7_repair_all_sample0_qwen15b.json",
+          "n_rows": 54,
+          "n_repaired": 10,
+          "strata": {
+            "all_crash": {
+              "n": 22,
+              "repaired": 3,
+              "repair_rate": 0.13636363636363635
+            },
+            "runs_but_no_co_running_sibling": {
+              "n": 0,
+              "repaired": 0,
+              "repair_rate": null
+            },
+            "proximity_defined": {
+              "n": 32,
+              "repaired": 7,
+              "repair_rate": 0.21875
+            },
+            "mean_support_where_defined": 7.03125,
+            "mean_proximity_where_defined": 0.1998996663059163
+          },
+          "arms": {
+            "category_only": {
+              "n_features": 5,
+              "feature_names": [
+                "category_assertion_error",
+                "category_name_error",
+                "category_type_error",
+                "category_runtime_error",
+                "category_syntax_error"
+              ],
+              "roc_auc_mean": 0.5399305555555556,
+              "roc_auc_std": 0.12328833873320133,
+              "pr_auc_mean": 0.26489898989898986,
+              "f1_mean": 0.2973914973914974,
+              "oof_roc_auc": 0.4738636363636364,
+              "feature_importances": {
+                "category_assertion_error": 0.42952868098054897,
+                "category_name_error": 0.07892379499329308,
+                "category_type_error": 0.07892379499329237,
+                "category_runtime_error": -0.5694088823876294,
+                "category_syntax_error": -0.49458955734839366
+              }
+            },
+            "chars_only": {
+              "n_features": 1,
+              "feature_names": [
+                "initial_chars"
+              ],
+              "roc_auc_mean": 0.32232142857142854,
+              "roc_auc_std": 0.07789833899911386,
+              "pr_auc_mean": 0.23646735209235206,
+              "f1_mean": 0.14444444444444443,
+              "oof_roc_auc": 0.4784090909090909,
+              "feature_importances": {
+                "initial_chars": 0.24207087805668673
+              }
+            },
+            "ast_nodes_only": {
+              "n_features": 1,
+              "feature_names": [
+                "initial_ast_nodes"
+              ],
+              "roc_auc_mean": 0.31463293650793644,
+              "roc_auc_std": 0.11242652262651548,
+              "pr_auc_mean": 0.24425505050505047,
+              "f1_mean": 0.10714285714285714,
+              "oof_roc_auc": 0.36477272727272725,
+              "feature_importances": {
+                "initial_ast_nodes": 0.2191218166937998
+              }
+            },
+            "length_only": {
+              "n_features": 2,
+              "feature_names": [
+                "initial_chars",
+                "initial_ast_nodes"
+              ],
+              "roc_auc_mean": 0.3128968253968254,
+              "roc_auc_std": 0.08170821863923654,
+              "pr_auc_mean": 0.24306457431457432,
+              "f1_mean": 0.1,
+              "oof_roc_auc": 0.3931818181818182,
+              "feature_importances": {
+                "initial_chars": 0.15023098662118226,
+                "initial_ast_nodes": 0.13568482193179532
+              }
+            },
+            "p_pass_only": {
+              "n_features": 1,
+              "feature_names": [
+                "p_pass_oof"
+              ],
+              "roc_auc_mean": 0.3540674603174603,
+              "roc_auc_std": 0.12433698408098556,
+              "pr_auc_mean": 0.3065656565656566,
+              "f1_mean": 0.10158730158730159,
+              "oof_roc_auc": 0.43863636363636366,
+              "feature_importances": {
+                "p_pass_oof": 0.12308857053466525
+              }
+            },
+            "sibling_only": {
+              "n_features": 1,
+              "feature_names": [
+                "sibling_pass_rate"
+              ],
+              "roc_auc_mean": 0.6203373015873016,
+              "roc_auc_std": 0.17623546521821384,
+              "pr_auc_mean": 0.35738636363636367,
+              "f1_mean": 0.22603174603174603,
+              "oof_roc_auc": 0.4943181818181818,
+              "feature_importances": {
+                "sibling_pass_rate": 0.23431105873188943
+              }
+            },
+            "category_plus_length": {
+              "n_features": 7,
+              "feature_names": [
+                "category_assertion_error",
+                "category_name_error",
+                "category_type_error",
+                "category_runtime_error",
+                "category_syntax_error",
+                "initial_chars",
+                "initial_ast_nodes"
+              ],
+              "roc_auc_mean": 0.3612103174603174,
+              "roc_auc_std": 0.07066410523798779,
+              "pr_auc_mean": 0.250719246031746,
+              "f1_mean": 0.19717171717171716,
+              "oof_roc_auc": 0.4090909090909091,
+              "feature_importances": {
+                "category_assertion_error": 0.46839834467430697,
+                "category_name_error": 0.0626363938023442,
+                "category_type_error": 0.026293614909712028,
+                "category_runtime_error": -0.5468500612467873,
+                "category_syntax_error": -0.5020449366641249,
+                "initial_chars": 0.33188618482149773,
+                "initial_ast_nodes": -0.06360985436566739
+              }
+            },
+            "proximity_only": {
+              "n_features": 2,
+              "feature_names": [
+                "proximity",
+                "has_proximity"
+              ],
+              "roc_auc_mean": 0.4584325396825398,
+              "roc_auc_std": 0.23494700607427477,
+              "pr_auc_mean": 0.32677218614718617,
+              "f1_mean": 0.13714285714285715,
+              "oof_roc_auc": 0.38636363636363635,
+              "feature_importances": {
+                "proximity": 0.1279371879661989,
+                "has_proximity": 0.20474150750847014
+              }
+            },
+            "proximity_plus_crash": {
+              "n_features": 4,
+              "feature_names": [
+                "proximity",
+                "has_proximity",
+                "proximity_support",
+                "crash_rate"
+              ],
+              "roc_auc_mean": 0.41309523809523807,
+              "roc_auc_std": 0.17688489281485414,
+              "pr_auc_mean": 0.2627840909090909,
+              "f1_mean": 0.13714285714285715,
+              "oof_roc_auc": 0.39886363636363636,
+              "feature_importances": {
+                "proximity": 0.12209057421939765,
+                "has_proximity": -0.35889822382747705,
+                "proximity_support": 0.1541118300005081,
+                "crash_rate": -0.4664365208932101
+              }
+            },
+            "proximity_plus_baselines": {
+              "n_features": 11,
+              "feature_names": [
+                "proximity",
+                "has_proximity",
+                "proximity_support",
+                "crash_rate",
+                "initial_chars",
+                "initial_ast_nodes",
+                "category_assertion_error",
+                "category_name_error",
+                "category_type_error",
+                "category_runtime_error",
+                "category_syntax_error"
+              ],
+              "roc_auc_mean": 0.34186507936507937,
+              "roc_auc_std": 0.07057107646164544,
+              "pr_auc_mean": 0.2722222222222222,
+              "f1_mean": 0.09,
+              "oof_roc_auc": 0.3477272727272727,
+              "feature_importances": {
+                "proximity": 0.18977090503059577,
+                "has_proximity": -0.4921435723405587,
+                "proximity_support": 0.22944442344288118,
+                "crash_rate": -0.1479133425988017,
+                "initial_chars": 0.30625353035658653,
+                "initial_ast_nodes": 0.01969491508321879,
+                "category_assertion_error": 0.47427794205396934,
+                "category_name_error": 0.06872638578093677,
+                "category_type_error": 0.009078803908662383,
+                "category_runtime_error": -0.5575873536891967,
+                "category_syntax_error": -0.4859685101562405
+              }
+            },
+            "everything": {
+              "n_features": 13,
+              "feature_names": [
+                "proximity",
+                "has_proximity",
+                "proximity_support",
+                "crash_rate",
+                "initial_chars",
+                "initial_ast_nodes",
+                "category_assertion_error",
+                "category_name_error",
+                "category_type_error",
+                "category_runtime_error",
+                "category_syntax_error",
+                "p_pass_oof",
+                "sibling_pass_rate"
+              ],
+              "roc_auc_mean": 0.29325396825396827,
+              "roc_auc_std": 0.09303249621220494,
+              "pr_auc_mean": 0.2614748677248677,
+              "f1_mean": 0.05,
+              "oof_roc_auc": 0.3090909090909091,
+              "feature_importances": {
+                "proximity": 0.3558956603059704,
+                "has_proximity": -0.6074586980030175,
+                "proximity_support": 0.26565038925993656,
+                "crash_rate": -0.08555036319664311,
+                "initial_chars": 0.2694339865863964,
+                "initial_ast_nodes": 0.06962935456955359,
+                "category_assertion_error": 0.5006425574147736,
+                "category_name_error": 0.10681267160677294,
+                "category_type_error": -0.03438109584839565,
+                "category_runtime_error": -0.5910288473283979,
+                "category_syntax_error": -0.49596445550266,
+                "p_pass_oof": -0.20277050227941265,
+                "sibling_pass_rate": 0.16899871753761034
+              }
+            }
+          },
+          "univariate_roc_auc": {
+            "category_assertion_error": 0.615909090909091,
+            "category_name_error": 0.4818181818181818,
+            "category_runtime_error": 0.45454545454545453,
+            "category_syntax_error": 0.4659090909090909,
+            "category_type_error": 0.4818181818181818,
+            "crash_rate": 0.39431818181818185,
+            "has_proximity": 0.5659090909090909,
+            "initial_ast_nodes": 0.5159090909090909,
+            "initial_chars": 0.5568181818181818,
+            "p_pass_oof": 0.5181818181818182,
+            "proximity": 0.6022727272727273,
+            "proximity_support": 0.5840909090909091,
+            "sibling_pass_rate": 0.6022727272727273
+          }
+        }
+      }
+    },
+    {
+      "analysis": "week12_repairability",
+      "cohort_name": "humaneval",
+      "timestamp": "2026-09-07T22:16:14.961567",
+      "config": {
+        "source_results": "results/humaneval_uncertainty_merged164_20260711.json",
+        "source_run_id": "humaneval_uncertainty_merged164_20260711",
+        "predictor_results": "results/predictor_humaneval_20260712_215312.json",
+        "sample_index": 0,
+        "timeout_s": 5.0,
+        "probe_cap": 12,
+        "model_type": "logistic",
+        "n_splits": 5,
+        "seed": 42,
+        "target": "final_passed over initially-failing coordinates",
+        "grouping_note": "one row per problem in the sample-0 design, so grouped CV degenerates to StratifiedKFold here"
+      },
+      "arms": {
+        "none": {
+          "pool_file": "results/humaneval_week9_arm_resample_sample0_qwen15b.json",
+          "n_rows": 148,
+          "n_repaired": 91,
+          "strata": {
+            "all_crash": {
+              "n": 34,
+              "repaired": 21,
+              "repair_rate": 0.6176470588235294
+            },
+            "runs_but_no_co_running_sibling": {
+              "n": 0,
+              "repaired": 0,
+              "repair_rate": null
+            },
+            "proximity_defined": {
+              "n": 114,
+              "repaired": 70,
+              "repair_rate": 0.6140350877192983
+            },
+            "mean_support_where_defined": 7.12280701754386,
+            "mean_proximity_where_defined": 0.24277118775474038
+          },
+          "arms": {
+            "category_only": {
+              "n_features": 5,
+              "feature_names": [
+                "category_assertion_error",
+                "category_name_error",
+                "category_type_error",
+                "category_runtime_error",
+                "category_syntax_error"
+              ],
+              "roc_auc_mean": 0.4894582043343654,
+              "roc_auc_std": 0.041598668672435724,
+              "pr_auc_mean": 0.612536474389683,
+              "f1_mean": 0.7055855855855856,
+              "oof_roc_auc": 0.47686524002313474,
+              "feature_importances": {
+                "category_assertion_error": 0.06158978088407428,
+                "category_name_error": 0.007921346818147695,
+                "category_type_error": -0.059787871379109674,
+                "category_runtime_error": -0.08352634035509154,
+                "category_syntax_error": 0.004637121601343114
+              }
+            },
+            "chars_only": {
+              "n_features": 1,
+              "feature_names": [
+                "initial_chars"
+              ],
+              "roc_auc_mean": 0.5591769865841073,
+              "roc_auc_std": 0.05782760698799755,
+              "pr_auc_mean": 0.713902052188972,
+              "f1_mean": 0.6144051194984981,
+              "oof_roc_auc": 0.5379795642953538,
+              "feature_importances": {
+                "initial_chars": -0.2175165408061646
+              }
+            },
+            "ast_nodes_only": {
+              "n_features": 1,
+              "feature_names": [
+                "initial_ast_nodes"
+              ],
+              "roc_auc_mean": 0.4345814700149065,
+              "roc_auc_std": 0.05600883574082198,
+              "pr_auc_mean": 0.6098899021813854,
+              "f1_mean": 0.47127382421500075,
+              "oof_roc_auc": 0.4489107383844226,
+              "feature_importances": {
+                "initial_ast_nodes": 0.07399389785282882
+              }
+            },
+            "length_only": {
+              "n_features": 2,
+              "feature_names": [
+                "initial_chars",
+                "initial_ast_nodes"
+              ],
+              "roc_auc_mean": 0.5542523793142988,
+              "roc_auc_std": 0.09017935099441213,
+              "pr_auc_mean": 0.6996200783113208,
+              "f1_mean": 0.6419573822323662,
+              "oof_roc_auc": 0.5411605937921727,
+              "feature_importances": {
+                "initial_chars": -0.24730755342080385,
+                "initial_ast_nodes": 0.13015342277525715
+              }
+            },
+            "p_pass_only": {
+              "n_features": 1,
+              "feature_names": [
+                "p_pass_oof"
+              ],
+              "roc_auc_mean": 0.5177611512441234,
+              "roc_auc_std": 0.06782118192467337,
+              "pr_auc_mean": 0.6814369640140987,
+              "f1_mean": 0.45172118204376266,
+              "oof_roc_auc": 0.5149411991517254,
+              "feature_importances": {
+                "p_pass_oof": 0.16541808023125945
+              }
+            },
+            "sibling_only": {
+              "n_features": 1,
+              "feature_names": [
+                "sibling_pass_rate"
+              ],
+              "roc_auc_mean": 0.5524234606123152,
+              "roc_auc_std": 0.034579388238596985,
+              "pr_auc_mean": 0.6608262239931002,
+              "f1_mean": 0.28555190347410025,
+              "oof_roc_auc": 0.5551378446115288,
+              "feature_importances": {
+                "sibling_pass_rate": 0.4095009410390226
+              }
+            },
+            "category_plus_length": {
+              "n_features": 7,
+              "feature_names": [
+                "category_assertion_error",
+                "category_name_error",
+                "category_type_error",
+                "category_runtime_error",
+                "category_syntax_error",
+                "initial_chars",
+                "initial_ast_nodes"
+              ],
+              "roc_auc_mean": 0.541339295952299,
+              "roc_auc_std": 0.07552189376745533,
+              "pr_auc_mean": 0.6999752787856749,
+              "f1_mean": 0.644077625915578,
+              "oof_roc_auc": 0.5457875457875457,
+              "feature_importances": {
+                "category_assertion_error": -0.018438666184143457,
+                "category_name_error": 0.03693783669629917,
+                "category_type_error": -0.0762195482054595,
+                "category_runtime_error": -0.12747514493880896,
+                "category_syntax_error": 0.208267182308232,
+                "initial_chars": -0.37298240657786413,
+                "initial_ast_nodes": 0.22354222196231452
+              }
+            },
+            "proximity_only": {
+              "n_features": 2,
+              "feature_names": [
+                "proximity",
+                "has_proximity"
+              ],
+              "roc_auc_mean": 0.4556464281619081,
+              "roc_auc_std": 0.0774372637949836,
+              "pr_auc_mean": 0.6380565717617342,
+              "f1_mean": 0.4637606837606837,
+              "oof_roc_auc": 0.4299209562367457,
+              "feature_importances": {
+                "proximity": 0.09931084880962847,
+                "has_proximity": -0.04471282492383683
+              }
+            },
+            "proximity_plus_crash": {
+              "n_features": 4,
+              "feature_names": [
+                "proximity",
+                "has_proximity",
+                "proximity_support",
+                "crash_rate"
+              ],
+              "roc_auc_mean": 0.3871605893819516,
+              "roc_auc_std": 0.05904179349022369,
+              "pr_auc_mean": 0.5875225426193604,
+              "f1_mean": 0.43942149804218766,
+              "oof_roc_auc": 0.379313668787353,
+              "feature_importances": {
+                "proximity": 0.10431958903507559,
+                "has_proximity": -0.009448217804680888,
+                "proximity_support": -0.052758016038966134,
+                "crash_rate": -0.009827327938989678
+              }
+            },
+            "proximity_plus_baselines": {
+              "n_features": 11,
+              "feature_names": [
+                "proximity",
+                "has_proximity",
+                "proximity_support",
+                "crash_rate",
+                "initial_chars",
+                "initial_ast_nodes",
+                "category_assertion_error",
+                "category_name_error",
+                "category_type_error",
+                "category_runtime_error",
+                "category_syntax_error"
+              ],
+              "roc_auc_mean": 0.4801851851851852,
+              "roc_auc_std": 0.11104874793085061,
+              "pr_auc_mean": 0.6574811682795376,
+              "f1_mean": 0.595876303334401,
+              "oof_roc_auc": 0.48621553884711777,
+              "feature_importances": {
+                "proximity": 0.07514167643318702,
+                "has_proximity": 0.14529731474984287,
+                "proximity_support": -0.20425432008798153,
+                "crash_rate": 0.26835094636770457,
+                "initial_chars": -0.3688090915830401,
+                "initial_ast_nodes": 0.2141273700932623,
+                "category_assertion_error": 0.112041417872058,
+                "category_name_error": -0.04805579623419963,
+                "category_type_error": -0.13468539209293534,
+                "category_runtime_error": -0.165782497720074,
+                "category_syntax_error": 0.15336007625745468
+              }
+            },
+            "everything": {
+              "n_features": 13,
+              "feature_names": [
+                "proximity",
+                "has_proximity",
+                "proximity_support",
+                "crash_rate",
+                "initial_chars",
+                "initial_ast_nodes",
+                "category_assertion_error",
+                "category_name_error",
+                "category_type_error",
+                "category_runtime_error",
+                "category_syntax_error",
+                "p_pass_oof",
+                "sibling_pass_rate"
+              ],
+              "roc_auc_mean": 0.48455567022130486,
+              "roc_auc_std": 0.09006740491474899,
+              "pr_auc_mean": 0.6642726163550401,
+              "f1_mean": 0.548422095480919,
+              "oof_roc_auc": 0.4860227491806439,
+              "feature_importances": {
+                "proximity": 0.04898923505675708,
+                "has_proximity": 0.20997156441669027,
+                "proximity_support": -0.2891711299585871,
+                "crash_rate": 0.21720206758871946,
+                "initial_chars": -0.29298446501314585,
+                "initial_ast_nodes": 0.1953417792581081,
+                "category_assertion_error": 0.09045544632620321,
+                "category_name_error": -0.03506208539981963,
+                "category_type_error": -0.11573832298115376,
+                "category_runtime_error": -0.14622411531087198,
+                "category_syntax_error": 0.13935468160420678,
+                "p_pass_oof": 0.05325366310326111,
+                "sibling_pass_rate": 0.32895987855622727
+              }
+            }
+          },
+          "univariate_roc_auc": {
+            "category_assertion_error": 0.5239059186427607,
+            "category_name_error": 0.496818970503181,
+            "category_runtime_error": 0.48689030267977634,
+            "category_syntax_error": 0.4989396568343937,
+            "category_type_error": 0.4934451513398882,
+            "crash_rate": 0.5123385386543281,
+            "has_proximity": 0.49865047233468285,
+            "initial_ast_nodes": 0.5246770773086562,
+            "initial_chars": 0.44929631771737033,
+            "p_pass_oof": 0.5417389627915944,
+            "proximity": 0.501638712165028,
+            "proximity_support": 0.47937150568729514,
+            "sibling_pass_rate": 0.5541738962791595
+          }
+        },
+        "code_only": {
+          "pool_file": "results/humaneval_week9_arm_code_only_sample0_qwen15b.json",
+          "n_rows": 148,
+          "n_repaired": 65,
+          "strata": {
+            "all_crash": {
+              "n": 34,
+              "repaired": 6,
+              "repair_rate": 0.17647058823529413
+            },
+            "runs_but_no_co_running_sibling": {
+              "n": 0,
+              "repaired": 0,
+              "repair_rate": null
+            },
+            "proximity_defined": {
+              "n": 114,
+              "repaired": 59,
+              "repair_rate": 0.5175438596491229
+            },
+            "mean_support_where_defined": 7.12280701754386,
+            "mean_proximity_where_defined": 0.24277118775474038
+          },
+          "arms": {
+            "category_only": {
+              "n_features": 5,
+              "feature_names": [
+                "category_assertion_error",
+                "category_name_error",
+                "category_type_error",
+                "category_runtime_error",
+                "category_syntax_error"
+              ],
+              "roc_auc_mean": 0.5773612172141585,
+              "roc_auc_std": 0.06776776473593069,
+              "pr_auc_mean": 0.48626431751309934,
+              "f1_mean": 0.6290167727009832,
+              "oof_roc_auc": 0.5386468952734013,
+              "feature_importances": {
+                "category_assertion_error": 0.3065828490603475,
+                "category_name_error": -0.17576656814472605,
+                "category_type_error": -0.04951889887391178,
+                "category_runtime_error": 0.17269403363753005,
+                "category_syntax_error": -0.5766464868040694
+              }
+            },
+            "chars_only": {
+              "n_features": 1,
+              "feature_names": [
+                "initial_chars"
+              ],
+              "roc_auc_mean": 0.7145865164247518,
+              "roc_auc_std": 0.0897950524107575,
+              "pr_auc_mean": 0.6768017241759502,
+              "f1_mean": 0.6084949124949125,
+              "oof_roc_auc": 0.6839666357738647,
+              "feature_importances": {
+                "initial_chars": -0.902160019130004
+              }
+            },
+            "ast_nodes_only": {
+              "n_features": 1,
+              "feature_names": [
+                "initial_ast_nodes"
+              ],
+              "roc_auc_mean": 0.5550246689584923,
+              "roc_auc_std": 0.06348868564955697,
+              "pr_auc_mean": 0.49816311118833256,
+              "f1_mean": 0.5543426168426169,
+              "oof_roc_auc": 0.5628359592215014,
+              "feature_importances": {
+                "initial_ast_nodes": -0.2556617051907196
+              }
+            },
+            "length_only": {
+              "n_features": 2,
+              "feature_names": [
+                "initial_chars",
+                "initial_ast_nodes"
+              ],
+              "roc_auc_mean": 0.7116383371530429,
+              "roc_auc_std": 0.09575057928221571,
+              "pr_auc_mean": 0.6779429551879212,
+              "f1_mean": 0.6190769230769231,
+              "oof_roc_auc": 0.6839666357738647,
+              "feature_importances": {
+                "initial_chars": -0.8769227793470906,
+                "initial_ast_nodes": -0.0703021186905766
+              }
+            },
+            "p_pass_only": {
+              "n_features": 1,
+              "feature_names": [
+                "p_pass_oof"
+              ],
+              "roc_auc_mean": 0.6656541252864783,
+              "roc_auc_std": 0.034098787214591406,
+              "pr_auc_mean": 0.6069779524440865,
+              "f1_mean": 0.5194967061923584,
+              "oof_roc_auc": 0.6391102873030584,
+              "feature_importances": {
+                "p_pass_oof": 0.42246056637782137
+              }
+            },
+            "sibling_only": {
+              "n_features": 1,
+              "feature_names": [
+                "sibling_pass_rate"
+              ],
+              "roc_auc_mean": 0.5353522090654443,
+              "roc_auc_std": 0.05128559872840016,
+              "pr_auc_mean": 0.4909751299945265,
+              "f1_mean": 0.26450980392156864,
+              "oof_roc_auc": 0.46691380908248376,
+              "feature_importances": {
+                "sibling_pass_rate": 0.185832501563125
+              }
+            },
+            "category_plus_length": {
+              "n_features": 7,
+              "feature_names": [
+                "category_assertion_error",
+                "category_name_error",
+                "category_type_error",
+                "category_runtime_error",
+                "category_syntax_error",
+                "initial_chars",
+                "initial_ast_nodes"
+              ],
+              "roc_auc_mean": 0.691393875732111,
+              "roc_auc_std": 0.09524096894329123,
+              "pr_auc_mean": 0.6577850584527922,
+              "f1_mean": 0.6210269382683176,
+              "oof_roc_auc": 0.6708063021316033,
+              "feature_importances": {
+                "category_assertion_error": 0.21518805829700294,
+                "category_name_error": -0.1327760203243222,
+                "category_type_error": 0.03188319680291483,
+                "category_runtime_error": 0.10051208139540818,
+                "category_syntax_error": -0.4229350390281446,
+                "initial_chars": -0.7331153106154941,
+                "initial_ast_nodes": -0.1429600079627037
+              }
+            },
+            "proximity_only": {
+              "n_features": 2,
+              "feature_names": [
+                "proximity",
+                "has_proximity"
+              ],
+              "roc_auc_mean": 0.6209969442322384,
+              "roc_auc_std": 0.08330257231413404,
+              "pr_auc_mean": 0.5286705867839785,
+              "f1_mean": 0.6552558816395828,
+              "oof_roc_auc": 0.5886005560704356,
+              "feature_importances": {
+                "proximity": -0.06188660216132004,
+                "has_proximity": 0.6761800047013887
+              }
+            },
+            "proximity_plus_crash": {
+              "n_features": 4,
+              "feature_names": [
+                "proximity",
+                "has_proximity",
+                "proximity_support",
+                "crash_rate"
+              ],
+              "roc_auc_mean": 0.723842627960275,
+              "roc_auc_std": 0.11039168612752343,
+              "pr_auc_mean": 0.6730675601195247,
+              "f1_mean": 0.6316459316459316,
+              "oof_roc_auc": 0.6521779425393883,
+              "feature_importances": {
+                "proximity": -0.15045785740947154,
+                "has_proximity": 0.5088094900044027,
+                "proximity_support": 0.8485807966256963,
+                "crash_rate": 0.587365799027755
+              }
+            },
+            "proximity_plus_baselines": {
+              "n_features": 11,
+              "feature_names": [
+                "proximity",
+                "has_proximity",
+                "proximity_support",
+                "crash_rate",
+                "initial_chars",
+                "initial_ast_nodes",
+                "category_assertion_error",
+                "category_name_error",
+                "category_type_error",
+                "category_runtime_error",
+                "category_syntax_error"
+              ],
+              "roc_auc_mean": 0.7424411128087598,
+              "roc_auc_std": 0.08361282436280397,
+              "pr_auc_mean": 0.6861665226147552,
+              "f1_mean": 0.6539504656274013,
+              "oof_roc_auc": 0.7045412418906395,
+              "feature_importances": {
+                "proximity": -0.19141668492314645,
+                "has_proximity": 0.5284183138027533,
+                "proximity_support": 0.6915403532598893,
+                "crash_rate": 0.3864403856856579,
+                "initial_chars": -0.7543654045708024,
+                "initial_ast_nodes": -0.14225866815983937,
+                "category_assertion_error": -0.05205960694110361,
+                "category_name_error": 0.13944525864215965,
+                "category_type_error": 0.114030760396428,
+                "category_runtime_error": 0.0737752640126086,
+                "category_syntax_error": -0.3089932123798948
+              }
+            },
+            "everything": {
+              "n_features": 13,
+              "feature_names": [
+                "proximity",
+                "has_proximity",
+                "proximity_support",
+                "crash_rate",
+                "initial_chars",
+                "initial_ast_nodes",
+                "category_assertion_error",
+                "category_name_error",
+                "category_type_error",
+                "category_runtime_error",
+                "category_syntax_error",
+                "p_pass_oof",
+                "sibling_pass_rate"
+              ],
+              "roc_auc_mean": 0.7334463330786861,
+              "roc_auc_std": 0.07669998151727836,
+              "pr_auc_mean": 0.6630191366436319,
+              "f1_mean": 0.6685823754789272,
+              "oof_roc_auc": 0.6917516218721038,
+              "feature_importances": {
+                "proximity": -0.37486488800519213,
+                "has_proximity": 0.6678577792580969,
+                "proximity_support": 0.6196475286944596,
+                "crash_rate": 0.4206245829557356,
+                "initial_chars": -0.695858323952461,
+                "initial_ast_nodes": -0.1274422099573837,
+                "category_assertion_error": -0.04781026980446521,
+                "category_name_error": 0.13629748169971084,
+                "category_type_error": 0.15080129749466173,
+                "category_runtime_error": 0.035689428935886454,
+                "category_syntax_error": -0.2987535297322895,
+                "p_pass_oof": 0.31001767641523464,
+                "sibling_pass_rate": -0.08222599734018146
+              }
+            }
+          },
+          "univariate_roc_auc": {
+            "category_assertion_error": 0.5830398517145505,
+            "category_name_error": 0.45078776645041707,
+            "category_runtime_error": 0.5066728452270621,
+            "category_syntax_error": 0.46987951807228917,
+            "category_type_error": 0.4896200185356812,
+            "crash_rate": 0.3973123262279889,
+            "has_proximity": 0.6225208526413346,
+            "initial_ast_nodes": 0.43957367933271546,
+            "initial_chars": 0.3001853568118628,
+            "p_pass_oof": 0.6481927710843374,
+            "proximity": 0.5728452270620945,
+            "proximity_support": 0.6885078776645042,
+            "sibling_pass_rate": 0.5444856348470807
+          }
+        },
+        "error": {
+          "pool_file": "results/humaneval_week8_repair_all_sample0_qwen15b.json",
+          "n_rows": 148,
+          "n_repaired": 54,
+          "strata": {
+            "all_crash": {
+              "n": 34,
+              "repaired": 6,
+              "repair_rate": 0.17647058823529413
+            },
+            "runs_but_no_co_running_sibling": {
+              "n": 0,
+              "repaired": 0,
+              "repair_rate": null
+            },
+            "proximity_defined": {
+              "n": 114,
+              "repaired": 48,
+              "repair_rate": 0.42105263157894735
+            },
+            "mean_support_where_defined": 7.12280701754386,
+            "mean_proximity_where_defined": 0.24277118775474038
+          },
+          "arms": {
+            "category_only": {
+              "n_features": 5,
+              "feature_names": [
+                "category_assertion_error",
+                "category_name_error",
+                "category_type_error",
+                "category_runtime_error",
+                "category_syntax_error"
+              ],
+              "roc_auc_mean": 0.6170939976203134,
+              "roc_auc_std": 0.040758014030049285,
+              "pr_auc_mean": 0.46388204388204385,
+              "f1_mean": 0.5675132086974192,
+              "oof_roc_auc": 0.5331954294720253,
+              "feature_importances": {
+                "category_assertion_error": 0.24814215113161622,
+                "category_name_error": -0.2449715620372323,
+                "category_type_error": -0.011471167139739254,
+                "category_runtime_error": 0.33781747693739017,
+                "category_syntax_error": -0.568702947491683
+              }
+            },
+            "chars_only": {
+              "n_features": 1,
+              "feature_names": [
+                "initial_chars"
+              ],
+              "roc_auc_mean": 0.7455120756436546,
+              "roc_auc_std": 0.04382366398898697,
+              "pr_auc_mean": 0.6449339897970914,
+              "f1_mean": 0.5826340326340327,
+              "oof_roc_auc": 0.7291174152876281,
+              "feature_importances": {
+                "initial_chars": -1.0632694933534879
+              }
+            },
+            "ast_nodes_only": {
+              "n_features": 1,
+              "feature_names": [
+                "initial_ast_nodes"
+              ],
+              "roc_auc_mean": 0.5822399749373434,
+              "roc_auc_std": 0.07099253452690961,
+              "pr_auc_mean": 0.44172635375519975,
+              "f1_mean": 0.544518460104667,
+              "oof_roc_auc": 0.5851063829787234,
+              "feature_importances": {
+                "initial_ast_nodes": -0.3814843963392638
+              }
+            },
+            "length_only": {
+              "n_features": 2,
+              "feature_names": [
+                "initial_chars",
+                "initial_ast_nodes"
+              ],
+              "roc_auc_mean": 0.7399949368370421,
+              "roc_auc_std": 0.06549664424015963,
+              "pr_auc_mean": 0.6454689495452696,
+              "f1_mean": 0.570035742035742,
+              "oof_roc_auc": 0.7206461780929866,
+              "feature_importances": {
+                "initial_chars": -0.994915537737509,
+                "initial_ast_nodes": -0.19594575508709972
+              }
+            },
+            "p_pass_only": {
+              "n_features": 1,
+              "feature_names": [
+                "p_pass_oof"
+              ],
+              "roc_auc_mean": 0.7131891597681072,
+              "roc_auc_std": 0.08372021653472406,
+              "pr_auc_mean": 0.6044003671643298,
+              "f1_mean": 0.5409428787810804,
+              "oof_roc_auc": 0.6887312844759653,
+              "feature_importances": {
+                "p_pass_oof": 0.6749122499793209
+              }
+            },
+            "sibling_only": {
+              "n_features": 1,
+              "feature_names": [
+                "sibling_pass_rate"
+              ],
+              "roc_auc_mean": 0.5811577871446293,
+              "roc_auc_std": 0.04420573258836857,
+              "pr_auc_mean": 0.46810275165447585,
+              "f1_mean": 0.3421794871794872,
+              "oof_roc_auc": 0.5356579984239559,
+              "feature_importances": {
+                "sibling_pass_rate": 0.3744120137834427
+              }
+            },
+            "category_plus_length": {
+              "n_features": 7,
+              "feature_names": [
+                "category_assertion_error",
+                "category_name_error",
+                "category_type_error",
+                "category_runtime_error",
+                "category_syntax_error",
+                "initial_chars",
+                "initial_ast_nodes"
+              ],
+              "roc_auc_mean": 0.7245038100301258,
+              "roc_auc_std": 0.0581258051870625,
+              "pr_auc_mean": 0.6132821623100002,
+              "f1_mean": 0.6005852390101556,
+              "oof_roc_auc": 0.706461780929866,
+              "feature_importances": {
+                "category_assertion_error": 0.14227419438729436,
+                "category_name_error": -0.20347511426265924,
+                "category_type_error": 0.09676779471726193,
+                "category_runtime_error": 0.2646853797439772,
+                "category_syntax_error": -0.40241674169155334,
+                "initial_chars": -0.8774034799933855,
+                "initial_ast_nodes": -0.2639649946148173
+              }
+            },
+            "proximity_only": {
+              "n_features": 2,
+              "feature_names": [
+                "proximity",
+                "has_proximity"
+              ],
+              "roc_auc_mean": 0.5349678805599859,
+              "roc_auc_std": 0.1231612869009422,
+              "pr_auc_mean": 0.4376387002322938,
+              "f1_mean": 0.5667632204396911,
+              "oof_roc_auc": 0.5178289992119779,
+              "feature_importances": {
+                "proximity": 0.07154096521189769,
+                "has_proximity": 0.46838811104242334
+              }
+            },
+            "proximity_plus_crash": {
+              "n_features": 4,
+              "feature_names": [
+                "proximity",
+                "has_proximity",
+                "proximity_support",
+                "crash_rate"
+              ],
+              "roc_auc_mean": 0.6401949317738791,
+              "roc_auc_std": 0.04746013819482055,
+              "pr_auc_mean": 0.5261071872331234,
+              "f1_mean": 0.5156498673740053,
+              "oof_roc_auc": 0.623719464144996,
+              "feature_importances": {
+                "proximity": -0.002117267568533336,
+                "has_proximity": 0.34888114088084954,
+                "proximity_support": 0.7265962079356906,
+                "crash_rate": 0.5389171925099191
+              }
+            },
+            "proximity_plus_baselines": {
+              "n_features": 11,
+              "feature_names": [
+                "proximity",
+                "has_proximity",
+                "proximity_support",
+                "crash_rate",
+                "initial_chars",
+                "initial_ast_nodes",
+                "category_assertion_error",
+                "category_name_error",
+                "category_type_error",
+                "category_runtime_error",
+                "category_syntax_error"
+              ],
+              "roc_auc_mean": 0.725894407736513,
+              "roc_auc_std": 0.06934768442583637,
+              "pr_auc_mean": 0.619692228172194,
+              "f1_mean": 0.5731671378852304,
+              "oof_roc_auc": 0.7129629629629629,
+              "feature_importances": {
+                "proximity": -0.015156860636840427,
+                "has_proximity": 0.14721943129318316,
+                "proximity_support": 0.594688589188595,
+                "crash_rate": 0.1163526654468683,
+                "initial_chars": -0.8800989119512065,
+                "initial_ast_nodes": -0.286872318673547,
+                "category_assertion_error": -0.08881609168085378,
+                "category_name_error": 0.006277894053565877,
+                "category_type_error": 0.16904119605950432,
+                "category_runtime_error": 0.28730000496276914,
+                "category_syntax_error": -0.31941772314428685
+              }
+            },
+            "everything": {
+              "n_features": 13,
+              "feature_names": [
+                "proximity",
+                "has_proximity",
+                "proximity_support",
+                "crash_rate",
+                "initial_chars",
+                "initial_ast_nodes",
+                "category_assertion_error",
+                "category_name_error",
+                "category_type_error",
+                "category_runtime_error",
+                "category_syntax_error",
+                "p_pass_oof",
+                "sibling_pass_rate"
+              ],
+              "roc_auc_mean": 0.7693460292144503,
+              "roc_auc_std": 0.06406902118445225,
+              "pr_auc_mean": 0.6629019211782369,
+              "f1_mean": 0.6223952858735468,
+              "oof_roc_auc": 0.7527580772261623,
+              "feature_importances": {
+                "proximity": -0.3595595984172053,
+                "has_proximity": 0.4546020107039382,
+                "proximity_support": 0.4148651823978481,
+                "crash_rate": 0.10533002671915075,
+                "initial_chars": -0.6997204565869399,
+                "initial_ast_nodes": -0.2994943450472289,
+                "category_assertion_error": -0.11859012113399674,
+                "category_name_error": 0.023972621376076128,
+                "category_type_error": 0.2537745799627368,
+                "category_runtime_error": 0.24327307290103886,
+                "category_syntax_error": -0.3020839070770281,
+                "p_pass_oof": 0.5736288190603993,
+                "sibling_pass_rate": 0.09494378898361217
+              }
+            }
+          },
+          "univariate_roc_auc": {
+            "category_assertion_error": 0.553585500394011,
+            "category_name_error": 0.44936958234830576,
+            "category_runtime_error": 0.5303388494877856,
+            "category_syntax_error": 0.4734042553191489,
+            "category_type_error": 0.4933018124507486,
+            "crash_rate": 0.4254334121355398,
+            "has_proximity": 0.5933806146572104,
+            "initial_ast_nodes": 0.40583136327817176,
+            "initial_chars": 0.2637903861308117,
+            "p_pass_oof": 0.706461780929866,
+            "proximity": 0.5768321513002365,
+            "proximity_support": 0.6525807722616234,
+            "sibling_pass_rate": 0.5835303388494878
+          }
+        }
+      }
+    }
+  ]
+}

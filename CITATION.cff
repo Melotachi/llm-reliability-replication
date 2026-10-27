@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you use this replication package, please cite the paper."
+title: "Replication package: From Uncertainty Estimation to Repair Allocation in Code Generation"
+type: software
+license: MIT
+repository-code: "https://github.com/Melotachi/llm-reliability-replication"
+authors:
+  - family-names: Elibol
+    given-names: Melih
+    affiliation: "Sabancı University; University of Groningen"
+  - family-names: Gönül
+    given-names: Ayşenur
+    affiliation: "Sabancı University; University of Groningen"
+  - family-names: Pandey
+    given-names: Sushant Kumar
+    affiliation: "University of Groningen"
+preferred-citation:
+  type: article
+  title: "From Uncertainty Estimation to Repair Allocation in Code Generation: An Empirical Study"
+  authors:
+    - family-names: Elibol
+      given-names: Melih
+    - family-names: Gönül
+      given-names: Ayşenur
+    - family-names: Pandey
+      given-names: Sushant Kumar
+  journal: "Information and Software Technology"
+  status: submitted

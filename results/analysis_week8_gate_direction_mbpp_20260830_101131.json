@@ -1,0 +1,543 @@
+{
+  "analysis": "joint_gate_direction",
+  "timestamp": "2026-08-30T10:11:29.864745",
+  "config": {
+    "source_results": "results/mbpp_uncertainty_20260712_024909.json",
+    "source_run_id": "mbpp_uncertainty_20260712_024909",
+    "repair_run_id": "mbpp_week7_repair_all_sample0_qwen15b",
+    "repair_model": "Qwen/Qwen2.5-Coder-1.5B-Instruct",
+    "predictor_feature_set": "self_consistency_plus_execution",
+    "predictor_model_type": "logistic",
+    "probability_kind": "out_of_fold_raw_rank_only",
+    "sample_index": 0,
+    "smart_coverage": 0.75,
+    "n_seeds": 200,
+    "first_seed": 0
+  },
+  "cohort": {
+    "candidates": 60,
+    "initially_passing": 6,
+    "initially_failing": 54,
+    "repaired_in_pool": 10
+  },
+  "arms_at_smart_coverage": {
+    "risk": {
+      "added_passes": 7,
+      "repair_model_calls": 120,
+      "attempted_repairs": 44,
+      "repair_success_rate": 0.1590909090909091
+    },
+    "inverted": {
+      "added_passes": 6,
+      "repair_model_calls": 110,
+      "attempted_repairs": 39,
+      "repair_success_rate": 0.15384615384615385
+    },
+    "repair_all": {
+      "added_passes": 10,
+      "repair_model_calls": 147,
+      "attempted_repairs": 54,
+      "repair_success_rate": 0.18518518518518517
+    }
+  },
+  "mechanism_regression": {
+    "n": 54,
+    "n_repaired": 10,
+    "predictor_correlation_pearson": -0.032704426623548936,
+    "univariate_roc_auc": {
+      "p_pass_oof": 0.5181818181818182,
+      "sibling_pass_rate": 0.6022727272727273
+    },
+    "mean_by_outcome": {
+      "p_pass_oof": {
+        "repaired": 0.2998473594474681,
+        "unrepaired": 0.2639977978659418
+      },
+      "sibling_pass_rate": {
+        "repaired": 0.12222222222222223,
+        "unrepaired": 0.08333333333333334
+      }
+    },
+    "models": {
+      "p_pass_only": {
+        "terms": [
+          "intercept",
+          "p_pass_oof"
+        ],
+        "coefficients": [
+          -1.4886599046735924,
+          0.14942511533765143
+        ],
+        "standard_errors": [
+          0.35241239629558524,
+          0.33735078978290994
+        ],
+        "wald_z": [
+          -4.224198468390373,
+          0.44293690681384984
+        ],
+        "wald_p": [
+          2.3979266557283552e-05,
+          0.6578113713459603
+        ],
+        "log_likelihood": -25.77901667254816,
+        "n": 54
+      },
+      "sibling_only": {
+        "terms": [
+          "intercept",
+          "sibling_pass_rate"
+        ],
+        "coefficients": [
+          -1.4960569640658163,
+          0.2142646240505219
+        ],
+        "standard_errors": [
+          0.3544274621686808,
+          0.3176251103873375
+        ],
+        "wald_z": [
+          -4.2210526095006875,
+          0.6745833910588193
+        ],
+        "wald_p": [
+          2.4316417210901164e-05,
+          0.49994048813463765
+        ],
+        "log_likelihood": -25.66000648911309,
+        "n": 54
+      },
+      "both": {
+        "terms": [
+          "intercept",
+          "p_pass_oof",
+          "sibling_pass_rate"
+        ],
+        "coefficients": [
+          -1.5034145681007292,
+          0.1555114486997967,
+          0.21844376577604327
+        ],
+        "standard_errors": [
+          0.35654663303520123,
+          0.33710612672329343,
+          0.3178565352826198
+        ],
+        "wald_z": [
+          -4.2166000988496215,
+          0.4613130298502259,
+          0.6872401273166071
+        ],
+        "wald_p": [
+          2.4801322361600597e-05,
+          0.6445740380061009,
+          0.49193142141931157
+        ],
+        "log_likelihood": -25.555944481436953,
+        "n": 54
+      }
+    },
+    "likelihood_ratio": {
+      "p_pass_given_sibling": {
+        "statistic": 0.20812401535227565,
+        "df": 1,
+        "p_value": 0.648241771713613
+      },
+      "sibling_given_p_pass": {
+        "statistic": 0.44614438222241404,
+        "df": 1,
+        "p_value": 0.5041716355438637
+      }
+    }
+  },
+  "direction_sweep": [
+    {
+      "coverage": 0.05,
+      "gate_count": 3,
+      "risk": {
+        "added_passes": 0,
+        "repair_model_calls": 9,
+        "attempted_repairs": 3
+      },
+      "inverted": {
+        "added_passes": 0,
+        "repair_model_calls": 0,
+        "attempted_repairs": 0
+      },
+      "random_mean": {
+        "added_passes": 0.515,
+        "repair_model_calls": 7.315,
+        "added_passes_std": 0.6648194676926327
+      }
+    },
+    {
+      "coverage": 0.1,
+      "gate_count": 6,
+      "risk": {
+        "added_passes": 0,
+        "repair_model_calls": 18,
+        "attempted_repairs": 6
+      },
+      "inverted": {
+        "added_passes": 1,
+        "repair_model_calls": 1,
+        "attempted_repairs": 1
+      },
+      "random_mean": {
+        "added_passes": 1.035,
+        "repair_model_calls": 14.66,
+        "added_passes_std": 0.881852207902727
+      }
+    },
+    {
+      "coverage": 0.15,
+      "gate_count": 9,
+      "risk": {
+        "added_passes": 2,
+        "repair_model_calls": 23,
+        "attempted_repairs": 9
+      },
+      "inverted": {
+        "added_passes": 2,
+        "repair_model_calls": 9,
+        "attempted_repairs": 4
+      },
+      "random_mean": {
+        "added_passes": 1.545,
+        "repair_model_calls": 22.05,
+        "added_passes_std": 0.9863261103610201
+      }
+    },
+    {
+      "coverage": 0.2,
+      "gate_count": 12,
+      "risk": {
+        "added_passes": 3,
+        "repair_model_calls": 30,
+        "attempted_repairs": 12
+      },
+      "inverted": {
+        "added_passes": 2,
+        "repair_model_calls": 18,
+        "attempted_repairs": 7
+      },
+      "random_mean": {
+        "added_passes": 2.095,
+        "repair_model_calls": 29.38,
+        "added_passes_std": 1.1279790261423683
+      }
+    },
+    {
+      "coverage": 0.25,
+      "gate_count": 15,
+      "risk": {
+        "added_passes": 4,
+        "repair_model_calls": 37,
+        "attempted_repairs": 15
+      },
+      "inverted": {
+        "added_passes": 3,
+        "repair_model_calls": 27,
+        "attempted_repairs": 10
+      },
+      "random_mean": {
+        "added_passes": 2.57,
+        "repair_model_calls": 36.795,
+        "added_passes_std": 1.328126348654355
+      }
+    },
+    {
+      "coverage": 0.3,
+      "gate_count": 18,
+      "risk": {
+        "added_passes": 4,
+        "repair_model_calls": 46,
+        "attempted_repairs": 18
+      },
+      "inverted": {
+        "added_passes": 3,
+        "repair_model_calls": 36,
+        "attempted_repairs": 13
+      },
+      "random_mean": {
+        "added_passes": 3.095,
+        "repair_model_calls": 44.125,
+        "added_passes_std": 1.35096280574728
+      }
+    },
+    {
+      "coverage": 0.35,
+      "gate_count": 21,
+      "risk": {
+        "added_passes": 4,
+        "repair_model_calls": 55,
+        "attempted_repairs": 21
+      },
+      "inverted": {
+        "added_passes": 3,
+        "repair_model_calls": 45,
+        "attempted_repairs": 16
+      },
+      "random_mean": {
+        "added_passes": 3.62,
+        "repair_model_calls": 51.375,
+        "added_passes_std": 1.358243027076898
+      }
+    },
+    {
+      "coverage": 0.4,
+      "gate_count": 24,
+      "risk": {
+        "added_passes": 4,
+        "repair_model_calls": 64,
+        "attempted_repairs": 24
+      },
+      "inverted": {
+        "added_passes": 3,
+        "repair_model_calls": 51,
+        "attempted_repairs": 18
+      },
+      "random_mean": {
+        "added_passes": 4.155,
+        "repair_model_calls": 58.63,
+        "added_passes_std": 1.3565308250817543
+      }
+    },
+    {
+      "coverage": 0.45,
+      "gate_count": 27,
+      "risk": {
+        "added_passes": 5,
+        "repair_model_calls": 71,
+        "attempted_repairs": 27
+      },
+      "inverted": {
+        "added_passes": 4,
+        "repair_model_calls": 58,
+        "attempted_repairs": 21
+      },
+      "random_mean": {
+        "added_passes": 4.64,
+        "repair_model_calls": 66.075,
+        "added_passes_std": 1.4179041791695703
+      }
+    },
+    {
+      "coverage": 0.5,
+      "gate_count": 30,
+      "risk": {
+        "added_passes": 6,
+        "repair_model_calls": 80,
+        "attempted_repairs": 30
+      },
+      "inverted": {
+        "added_passes": 4,
+        "repair_model_calls": 67,
+        "attempted_repairs": 24
+      },
+      "random_mean": {
+        "added_passes": 5.21,
+        "repair_model_calls": 73.345,
+        "added_passes_std": 1.4198520695824222
+      }
+    },
+    {
+      "coverage": 0.55,
+      "gate_count": 33,
+      "risk": {
+        "added_passes": 6,
+        "repair_model_calls": 89,
+        "attempted_repairs": 33
+      },
+      "inverted": {
+        "added_passes": 5,
+        "repair_model_calls": 76,
+        "attempted_repairs": 27
+      },
+      "random_mean": {
+        "added_passes": 5.68,
+        "repair_model_calls": 80.775,
+        "added_passes_std": 1.4310273218844913
+      }
+    },
+    {
+      "coverage": 0.6,
+      "gate_count": 36,
+      "risk": {
+        "added_passes": 7,
+        "repair_model_calls": 96,
+        "attempted_repairs": 36
+      },
+      "inverted": {
+        "added_passes": 6,
+        "repair_model_calls": 83,
+        "attempted_repairs": 30
+      },
+      "random_mean": {
+        "added_passes": 6.145,
+        "repair_model_calls": 88.2,
+        "added_passes_std": 1.3869365395807125
+      }
+    },
+    {
+      "coverage": 0.65,
+      "gate_count": 39,
+      "risk": {
+        "added_passes": 7,
+        "repair_model_calls": 102,
+        "attempted_repairs": 38
+      },
+      "inverted": {
+        "added_passes": 6,
+        "repair_model_calls": 92,
+        "attempted_repairs": 33
+      },
+      "random_mean": {
+        "added_passes": 6.6,
+        "repair_model_calls": 95.615,
+        "added_passes_std": 1.442359875360602
+      }
+    },
+    {
+      "coverage": 0.7,
+      "gate_count": 42,
+      "risk": {
+        "added_passes": 7,
+        "repair_model_calls": 111,
+        "attempted_repairs": 41
+      },
+      "inverted": {
+        "added_passes": 6,
+        "repair_model_calls": 101,
+        "attempted_repairs": 36
+      },
+      "random_mean": {
+        "added_passes": 7.09,
+        "repair_model_calls": 102.64,
+        "added_passes_std": 1.2884878753892584
+      }
+    },
+    {
+      "coverage": 0.75,
+      "gate_count": 45,
+      "risk": {
+        "added_passes": 7,
+        "repair_model_calls": 120,
+        "attempted_repairs": 44
+      },
+      "inverted": {
+        "added_passes": 6,
+        "repair_model_calls": 110,
+        "attempted_repairs": 39
+      },
+      "random_mean": {
+        "added_passes": 7.555,
+        "repair_model_calls": 110.095,
+        "added_passes_std": 1.1891363362250156
+      }
+    },
+    {
+      "coverage": 0.8,
+      "gate_count": 48,
+      "risk": {
+        "added_passes": 8,
+        "repair_model_calls": 129,
+        "attempted_repairs": 47
+      },
+      "inverted": {
+        "added_passes": 7,
+        "repair_model_calls": 117,
+        "attempted_repairs": 42
+      },
+      "random_mean": {
+        "added_passes": 8.025,
+        "repair_model_calls": 117.8,
+        "added_passes_std": 1.140561000992461
+      }
+    },
+    {
+      "coverage": 0.85,
+      "gate_count": 51,
+      "risk": {
+        "added_passes": 8,
+        "repair_model_calls": 138,
+        "attempted_repairs": 50
+      },
+      "inverted": {
+        "added_passes": 8,
+        "repair_model_calls": 124,
+        "attempted_repairs": 45
+      },
+      "random_mean": {
+        "added_passes": 8.53,
+        "repair_model_calls": 125.24,
+        "added_passes_std": 1.0070605017928946
+      }
+    },
+    {
+      "coverage": 0.9,
+      "gate_count": 54,
+      "risk": {
+        "added_passes": 9,
+        "repair_model_calls": 146,
+        "attempted_repairs": 53
+      },
+      "inverted": {
+        "added_passes": 10,
+        "repair_model_calls": 129,
+        "attempted_repairs": 48
+      },
+      "random_mean": {
+        "added_passes": 8.99,
+        "repair_model_calls": 132.52,
+        "added_passes_std": 0.8326865161456947
+      }
+    },
+    {
+      "coverage": 0.95,
+      "gate_count": 57,
+      "risk": {
+        "added_passes": 10,
+        "repair_model_calls": 147,
+        "attempted_repairs": 54
+      },
+      "inverted": {
+        "added_passes": 10,
+        "repair_model_calls": 138,
+        "attempted_repairs": 51
+      },
+      "random_mean": {
+        "added_passes": 9.53,
+        "repair_model_calls": 139.725,
+        "added_passes_std": 0.566306911125001
+      }
+    },
+    {
+      "coverage": 1.0,
+      "gate_count": 60,
+      "risk": {
+        "added_passes": 10,
+        "repair_model_calls": 147,
+        "attempted_repairs": 54
+      },
+      "inverted": {
+        "added_passes": 10,
+        "repair_model_calls": 147,
+        "attempted_repairs": 54
+      },
+      "random_mean": {
+        "added_passes": 10.0,
+        "repair_model_calls": 147.0,
+        "added_passes_std": 0.0
+      }
+    }
+  ],
+  "budget_matched_inverted": {
+    "coverage": 0.8,
+    "gate_count": 48,
+    "added_passes": 7,
+    "repair_model_calls": 117,
+    "reference_calls": 120
+  },
+  "figure": "reports/figures/mbpp/week8_gate_direction.png"
+}

@@ -1,0 +1,221 @@
+{
+  "analysis": "week7_n_sweep_preregistration",
+  "generated_at": "2026-08-05T10:57:11",
+  "source_n": 10,
+  "target_n": [
+    20,
+    30,
+    50,
+    100
+  ],
+  "cells": {
+    "cg/HE60": {
+      "source_results_file": "results/humaneval_uncertainty_20260710_014920.json",
+      "model": "Salesforce/codegen-350M-mono",
+      "n_problems": 60,
+      "representation": "full",
+      "predictions": {
+        "lexical_diversity": {
+          "observed_abs_pearson_r_at_10": 0.8159970774285162,
+          "ceiling_at_10": 0.8724746515410539,
+          "percent_of_ceiling_at_10": 93.52673753755697,
+          "implied_true_r": 0.9352673753755698,
+          "by_target_n": {
+            "20": {
+              "ceiling": 0.9317679157044858,
+              "predicted_abs_pearson_r": 0.8714521329800996
+            },
+            "30": {
+              "ceiling": 0.9534210333021577,
+              "predicted_abs_pearson_r": 0.8917035874443727
+            },
+            "50": {
+              "ceiling": 0.9715052713093746,
+              "predicted_abs_pearson_r": 0.9086171852610496
+            },
+            "100": {
+              "ceiling": 0.9855400290224868,
+              "predicted_abs_pearson_r": 0.9217434362714242
+            }
+          }
+        },
+        "token_jaccard_diversity": {
+          "observed_abs_pearson_r_at_10": 0.402901330654506,
+          "ceiling_at_10": 0.8034109984744872,
+          "percent_of_ceiling_at_10": 50.14884429258911,
+          "implied_true_r": 0.501488442925891,
+          "by_target_n": {
+            "20": {
+              "ceiling": 0.889523248393122,
+              "predicted_abs_pearson_r": 0.44608562878304736
+            },
+            "30": {
+              "ceiling": 0.9231292127397361,
+              "predicted_abs_pearson_r": 0.46293863151625386
+            },
+            "50": {
+              "ceiling": 0.9521936181434943,
+              "predicted_abs_pearson_r": 0.4775140949267514
+            },
+            "100": {
+              "ceiling": 0.9754196641674494,
+              "predicted_abs_pearson_r": 0.4891616885826297
+            }
+          }
+        },
+        "token_cosine_diversity": {
+          "observed_abs_pearson_r_at_10": 0.4010910241602379,
+          "ceiling_at_10": 0.8559842816955585,
+          "percent_of_ceiling_at_10": 46.857288473305275,
+          "implied_true_r": 0.46857288473305275,
+          "by_target_n": {
+            "20": {
+              "ceiling": 0.9220929719399193,
+              "predicted_abs_pearson_r": 0.4320677638539619
+            },
+            "30": {
+              "ceiling": 0.9465965107963927,
+              "predicted_abs_pearson_r": 0.4435494577421081
+            },
+            "50": {
+              "ceiling": 0.9672160631357551,
+              "predicted_abs_pearson_r": 0.4532112208636673
+            },
+            "100": {
+              "ceiling": 0.9833177696468552,
+              "predicted_abs_pearson_r": 0.4607560439326984
+            }
+          }
+        },
+        "ast_node_diversity": {
+          "observed_abs_pearson_r_at_10": 0.6242576317909273,
+          "ceiling_at_10": 0.8612569005784191,
+          "percent_of_ceiling_at_10": 72.48216314687019,
+          "implied_true_r": 0.7248216314687019,
+          "by_target_n": {
+            "20": {
+              "ceiling": 0.9252137555640878,
+              "predicted_abs_pearson_r": 0.6706149437652469
+            },
+            "30": {
+              "ceiling": 0.9488051340686318,
+              "predicted_abs_pearson_r": 0.6877144852215061
+            },
+            "50": {
+              "ceiling": 0.9686080684006834,
+              "predicted_abs_pearson_r": 0.7020680803919314
+            },
+            "100": {
+              "ceiling": 0.9840405586078818,
+              "predicted_abs_pearson_r": 0.7132538831215377
+            }
+          }
+        }
+      }
+    },
+    "ds/HE60": {
+      "source_results_file": "results/humaneval_deepseek60_merged_20260712.json",
+      "model": "deepseek-ai/deepseek-coder-1.3b-base",
+      "n_problems": 60,
+      "representation": "full",
+      "predictions": {
+        "lexical_diversity": {
+          "observed_abs_pearson_r_at_10": 0.6358981979264737,
+          "ceiling_at_10": 0.8971612630346887,
+          "percent_of_ceiling_at_10": 70.8789182198437,
+          "implied_true_r": 0.7087891821984369,
+          "by_target_n": {
+            "20": {
+              "ceiling": 0.9457893684576695,
+              "predicted_abs_pearson_r": 0.6703652730010876
+            },
+            "30": {
+              "ceiling": 0.9631935080124713,
+              "predicted_abs_pearson_r": 0.6827011388430031
+            },
+            "50": {
+              "ceiling": 0.9775856093905015,
+              "predicted_abs_pearson_r": 0.6929021046088542
+            },
+            "100": {
+              "ceiling": 0.9886655811356075,
+              "predicted_abs_pearson_r": 0.7007554687208496
+            }
+          }
+        },
+        "token_jaccard_diversity": {
+          "observed_abs_pearson_r_at_10": 0.508377195367172,
+          "ceiling_at_10": 0.8347341825460478,
+          "percent_of_ceiling_at_10": 60.90288453463777,
+          "implied_true_r": 0.6090288453463777,
+          "by_target_n": {
+            "20": {
+              "ceiling": 0.9092389069087555,
+              "predicted_abs_pearson_r": 0.553752721618642
+            },
+            "30": {
+              "ceiling": 0.9374231892547625,
+              "predicted_abs_pearson_r": 0.570917762552747
+            },
+            "50": {
+              "ceiling": 0.9613929573385592,
+              "predicted_abs_pearson_r": 0.585516042732042
+            },
+            "100": {
+              "ceiling": 0.9802769604882539,
+              "predicted_abs_pearson_r": 0.597016945365818
+            }
+          }
+        },
+        "token_cosine_diversity": {
+          "observed_abs_pearson_r_at_10": 0.5878543705328463,
+          "ceiling_at_10": 0.8612907612833417,
+          "percent_of_ceiling_at_10": 68.25271986627729,
+          "implied_true_r": 0.6825271986627729,
+          "by_target_n": {
+            "20": {
+              "ceiling": 0.925226846596751,
+              "predicted_abs_pearson_r": 0.6314924877352716
+            },
+            "30": {
+              "ceiling": 0.9488126534689012,
+              "predicted_abs_pearson_r": 0.6475904424279214
+            },
+            "50": {
+              "ceiling": 0.9686119019065443,
+              "predicted_abs_pearson_r": 0.6611039679996943
+            },
+            "100": {
+              "ceiling": 0.9840421883865188,
+              "predicted_abs_pearson_r": 0.6716355582054353
+            }
+          }
+        },
+        "ast_node_diversity": {
+          "observed_abs_pearson_r_at_10": 0.7402462105639988,
+          "ceiling_at_10": 0.8706890161181264,
+          "percent_of_ceiling_at_10": 85.018439059253,
+          "implied_true_r": 0.8501843905925299,
+          "by_target_n": {
+            "20": {
+              "ceiling": 0.9307270597687961,
+              "predicted_abs_pearson_r": 0.7912896181175111
+            },
+            "30": {
+              "ceiling": 0.9526887022317924,
+              "predicted_abs_pearson_r": 0.8099610637313246
+            },
+            "50": {
+              "ceiling": 0.9710460144399256,
+              "predicted_abs_pearson_r": 0.8255681640239131
+            },
+            "100": {
+              "ceiling": 0.9853025033769202,
+              "predicted_abs_pearson_r": 0.837688808382801
+            }
+          }
+        }
+      }
+    }
+  }
+}

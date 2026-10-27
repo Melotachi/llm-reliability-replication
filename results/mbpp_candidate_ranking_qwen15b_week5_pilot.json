@@ -1,0 +1,439 @@
+{
+  "run_id": "mbpp_candidate_ranking_qwen15b_week5_pilot",
+  "timestamp": "2026-08-04T11:10:42.526488",
+  "config": {
+    "dataset": "mbpp",
+    "model": "Qwen/Qwen2.5-Coder-1.5B-Instruct",
+    "source_results": "results\\mbpp_uncertainty_20260726_230817.json",
+    "available_source_failures": 7,
+    "selected_failures": 4,
+    "max_repair_iterations": 1,
+    "repair_candidates": 3,
+    "temperature": 0.2,
+    "seed": 42,
+    "candidate_seed_policy": "record_seed=seed+record_index; candidate_seed=record_seed+(iteration-1)*repair_candidates+candidate_index",
+    "ranking_strategy": "pass>failure_progress>unique>changed>lower_candidate_index",
+    "use_error_context": true
+  },
+  "summary": {
+    "completed_failures": 4,
+    "successful_repairs": 3,
+    "repair_success_rate": 0.75,
+    "success_after_one_iteration": 3,
+    "additional_successes_from_iteration_2_plus": 0,
+    "repair_model_calls": 12,
+    "duplicate_candidates": 6,
+    "duplicate_candidate_rate": 0.5,
+    "unique_candidates_executed": 6,
+    "oracle_candidate_successes": 3,
+    "ranking_oracle_gap": 0,
+    "stagnation_stops": 0,
+    "initial_failure_categories": {
+      "name_error": 1,
+      "syntax_error": 1,
+      "type_error": 1,
+      "assertion_error": 1
+    },
+    "final_failure_categories": {
+      "assertion_error": 1
+    }
+  },
+  "records": [
+    {
+      "task_id": "MBPP/18",
+      "sample_index": 0,
+      "initial_code": "\"\"\"Write a function to remove characters from the first string which are present in the second string.\"\"\"\ndef str_to_list(string):\n    \"\"\"Convert string to list of characters.\"\"\"\n    return list(string)\n",
+      "initial_error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\nNameError: name 'remove_dirty_chars' is not defined\n",
+      "initial_failure_category": "name_error",
+      "attempts_used": 1,
+      "repair_rounds_used": 1,
+      "repair_model_calls": 3,
+      "duplicate_candidates": 2,
+      "oracle_candidate_passed": true,
+      "oracle_success_iteration": 1,
+      "selected_candidate_indices": [
+        0
+      ],
+      "success_iteration": 1,
+      "final_passed": true,
+      "final_code": "def str_to_list(string):\n    \"\"\"Convert string to list of characters.\"\"\"\n    return list(string)\n\ndef remove_dirty_chars(string, dirty_chars):\n    \"\"\"Remove characters from the first string which are present in the second string.\"\"\"\n    return ''.join([char for char in string if char not in dirty_chars])\n",
+      "final_error_message": "",
+      "final_failure_category": "",
+      "trace": [
+        {
+          "iteration": 0,
+          "passed": false,
+          "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\nNameError: name 'remove_dirty_chars' is not defined\n",
+          "code": "\"\"\"Write a function to remove characters from the first string which are present in the second string.\"\"\"\ndef str_to_list(string):\n    \"\"\"Convert string to list of characters.\"\"\"\n    return list(string)\n",
+          "duplicate": false,
+          "failure_category": "name_error",
+          "selected_candidate_index": null,
+          "candidates": []
+        },
+        {
+          "iteration": 1,
+          "passed": true,
+          "error_message": "",
+          "failure_category": "",
+          "code": "def str_to_list(string):\n    \"\"\"Convert string to list of characters.\"\"\"\n    return list(string)\n\ndef remove_dirty_chars(string, dirty_chars):\n    \"\"\"Remove characters from the first string which are present in the second string.\"\"\"\n    return ''.join([char for char in string if char not in dirty_chars])\n",
+          "duplicate": false,
+          "selected_candidate_index": 0,
+          "ranking_score": [
+            1,
+            4,
+            1,
+            1,
+            0
+          ],
+          "candidates": [
+            {
+              "candidate_index": 0,
+              "seed": 42,
+              "passed": true,
+              "error_message": "",
+              "failure_category": "",
+              "code": "def str_to_list(string):\n    \"\"\"Convert string to list of characters.\"\"\"\n    return list(string)\n\ndef remove_dirty_chars(string, dirty_chars):\n    \"\"\"Remove characters from the first string which are present in the second string.\"\"\"\n    return ''.join([char for char in string if char not in dirty_chars])\n",
+              "duplicate": false,
+              "ranking_score": [
+                1,
+                4,
+                1,
+                1,
+                0
+              ]
+            },
+            {
+              "candidate_index": 1,
+              "seed": 43,
+              "passed": true,
+              "error_message": "",
+              "failure_category": "",
+              "code": "def str_to_list(string):\n    \"\"\"Convert string to list of characters.\"\"\"\n    return list(string)\n\ndef remove_dirty_chars(string, dirty_chars):\n    \"\"\"Remove characters from the first string which are present in the second string.\"\"\"\n    return ''.join([char for char in string if char not in dirty_chars])\n",
+              "duplicate": true,
+              "ranking_score": [
+                1,
+                4,
+                0,
+                1,
+                -1
+              ]
+            },
+            {
+              "candidate_index": 2,
+              "seed": 44,
+              "passed": true,
+              "error_message": "",
+              "failure_category": "",
+              "code": "def str_to_list(string):\n    \"\"\"Convert string to list of characters.\"\"\"\n    return list(string)\n\ndef remove_dirty_chars(string, dirty_chars):\n    \"\"\"Remove characters from the first string which are present in the second string.\"\"\"\n    return ''.join([char for char in string if char not in dirty_chars])\n",
+              "duplicate": true,
+              "ranking_score": [
+                1,
+                4,
+                0,
+                1,
+                -2
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "task_id": "MBPP/14",
+      "sample_index": 0,
+      "initial_code": "\"\"\"Write a python function to find the volume of a triangular prism.\"\"\"\ndef find_Volume(...):\n    \"\"\"Find the volume of a triangular prism.\"\"\"\n    pass\n",
+      "initial_error_message": "Traceback (most recent call last):\n  File \"<string>\", line 9, in <module>\n    exec(payload[\"code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 2\n    def find_Volume(...):\n                    ^^^\nSyntaxError: invalid syntax\n",
+      "initial_failure_category": "syntax_error",
+      "attempts_used": 1,
+      "repair_rounds_used": 1,
+      "repair_model_calls": 3,
+      "duplicate_candidates": 1,
+      "oracle_candidate_passed": true,
+      "oracle_success_iteration": 1,
+      "selected_candidate_indices": [
+        0
+      ],
+      "success_iteration": 1,
+      "final_passed": true,
+      "final_code": "def find_Volume(base_length, base_width, height):\n    \"\"\"Find the volume of a triangular prism.\"\"\"\n    return 0.5 * base_length * base_width * height\n",
+      "final_error_message": "",
+      "final_failure_category": "",
+      "trace": [
+        {
+          "iteration": 0,
+          "passed": false,
+          "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 9, in <module>\n    exec(payload[\"code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 2\n    def find_Volume(...):\n                    ^^^\nSyntaxError: invalid syntax\n",
+          "code": "\"\"\"Write a python function to find the volume of a triangular prism.\"\"\"\ndef find_Volume(...):\n    \"\"\"Find the volume of a triangular prism.\"\"\"\n    pass\n",
+          "duplicate": false,
+          "failure_category": "syntax_error",
+          "selected_candidate_index": null,
+          "candidates": []
+        },
+        {
+          "iteration": 1,
+          "passed": true,
+          "error_message": "",
+          "failure_category": "",
+          "code": "def find_Volume(base_length, base_width, height):\n    \"\"\"Find the volume of a triangular prism.\"\"\"\n    return 0.5 * base_length * base_width * height\n",
+          "duplicate": false,
+          "selected_candidate_index": 0,
+          "ranking_score": [
+            1,
+            4,
+            1,
+            1,
+            0
+          ],
+          "candidates": [
+            {
+              "candidate_index": 0,
+              "seed": 43,
+              "passed": true,
+              "error_message": "",
+              "failure_category": "",
+              "code": "def find_Volume(base_length, base_width, height):\n    \"\"\"Find the volume of a triangular prism.\"\"\"\n    return 0.5 * base_length * base_width * height\n",
+              "duplicate": false,
+              "ranking_score": [
+                1,
+                4,
+                1,
+                1,
+                0
+              ]
+            },
+            {
+              "candidate_index": 1,
+              "seed": 44,
+              "passed": false,
+              "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 9, in <module>\n    exec(payload[\"code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 2\n    def find_Volume(...):\n                    ^^^\nSyntaxError: invalid syntax\n",
+              "failure_category": "syntax_error",
+              "code": "\"\"\"Write a python function to find the volume of a triangular prism.\"\"\"\ndef find_Volume(...):\n\"\"\"Write a python function to find the volume of a triangular prism.\"\"\"\ndef find_Volume(base_length, base_width, height):\n    \"\"\"Find the volume of a triangular prism.\"\"\"\n    return (base_length * base_width) * height\n",
+              "duplicate": false,
+              "ranking_score": [
+                0,
+                0,
+                1,
+                1,
+                -1
+              ]
+            },
+            {
+              "candidate_index": 2,
+              "seed": 45,
+              "passed": false,
+              "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 9, in <module>\n    exec(payload[\"code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 2\n    def find_Volume(...):\n                    ^^^\nSyntaxError: invalid syntax\n",
+              "failure_category": "syntax_error",
+              "code": "\"\"\"Write a python function to find the volume of a triangular prism.\"\"\"\ndef find_Volume(...):\n\"\"\"Write a python function to find the volume of a triangular prism.\"\"\"\ndef find_Volume(base_length, base_width, height):\n    \"\"\"Find the volume of a triangular prism.\"\"\"\n    return (base_length * base_width) * height\n",
+              "duplicate": true,
+              "ranking_score": [
+                0,
+                0,
+                0,
+                1,
+                -2
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "task_id": "MBPP/17",
+      "sample_index": 0,
+      "initial_code": "\"\"\"Write a function to find the perimeter of a square.\"\"\"\ndef square_perimeter(a):\n    \"\"\"Return the perimeter of a square.\"\"\"\n    return (a[0] + a[1] + a[2]) * 2\n",
+      "initial_error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 4, in square_perimeter\nTypeError: 'int' object is not subscriptable\n",
+      "initial_failure_category": "type_error",
+      "attempts_used": 1,
+      "repair_rounds_used": 1,
+      "repair_model_calls": 3,
+      "duplicate_candidates": 1,
+      "oracle_candidate_passed": true,
+      "oracle_success_iteration": 1,
+      "selected_candidate_indices": [
+        0
+      ],
+      "success_iteration": 1,
+      "final_passed": true,
+      "final_code": "def square_perimeter(a):\n    \"\"\"Return the perimeter of a square.\"\"\"\n    return 4 * a\n",
+      "final_error_message": "",
+      "final_failure_category": "",
+      "trace": [
+        {
+          "iteration": 0,
+          "passed": false,
+          "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 4, in square_perimeter\nTypeError: 'int' object is not subscriptable\n",
+          "code": "\"\"\"Write a function to find the perimeter of a square.\"\"\"\ndef square_perimeter(a):\n    \"\"\"Return the perimeter of a square.\"\"\"\n    return (a[0] + a[1] + a[2]) * 2\n",
+          "duplicate": false,
+          "failure_category": "type_error",
+          "selected_candidate_index": null,
+          "candidates": []
+        },
+        {
+          "iteration": 1,
+          "passed": true,
+          "error_message": "",
+          "failure_category": "",
+          "code": "def square_perimeter(a):\n    \"\"\"Return the perimeter of a square.\"\"\"\n    return 4 * a\n",
+          "duplicate": false,
+          "selected_candidate_index": 0,
+          "ranking_score": [
+            1,
+            4,
+            1,
+            1,
+            0
+          ],
+          "candidates": [
+            {
+              "candidate_index": 0,
+              "seed": 44,
+              "passed": true,
+              "error_message": "",
+              "failure_category": "",
+              "code": "def square_perimeter(a):\n    \"\"\"Return the perimeter of a square.\"\"\"\n    return 4 * a\n",
+              "duplicate": false,
+              "ranking_score": [
+                1,
+                4,
+                1,
+                1,
+                0
+              ]
+            },
+            {
+              "candidate_index": 1,
+              "seed": 45,
+              "passed": false,
+              "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 9, in <module>\n    exec(payload[\"code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 3\n    \"\"\"Write a function to find the perimeter of a square.\"\"\"\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nIndentationError: expected an indented block after function definition on line 2\n",
+              "failure_category": "syntax_error",
+              "code": "\"\"\"Write a function to find the perimeter of a square.\"\"\"\ndef square_perimeter(a):\n\"\"\"Write a function to find the perimeter of a square.\"\"\"\ndef square_perimeter(a):\n    \"\"\"Return the perimeter of a square.\"\"\"\n    return 4 * a\n",
+              "duplicate": false,
+              "ranking_score": [
+                0,
+                0,
+                1,
+                1,
+                -1
+              ]
+            },
+            {
+              "candidate_index": 2,
+              "seed": 46,
+              "passed": true,
+              "error_message": "",
+              "failure_category": "",
+              "code": "def square_perimeter(a):\n    \"\"\"Return the perimeter of a square.\"\"\"\n    return 4 * a\n",
+              "duplicate": true,
+              "ranking_score": [
+                1,
+                4,
+                0,
+                1,
+                -2
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "task_id": "MBPP/12",
+      "sample_index": 0,
+      "initial_code": "\"\"\"Write a function to sort a given matrix in ascending order according to the sum of its rows.\"\"\"\ndef sort_matrix(M):\n    \"\"\"Sort a given matrix in ascending order according to the sum of its rows.\n\n    Args:\n        M (list): Matrix to sort.\n\n    Returns:\n        list: Matrix sorted according to the sum of its rows.\n    \"\"\"\n    n = len(M)\n    for i in range(n):\n        for j in range(n-i-1):\n            if M[j][i] > M[j+1][i]:\n                M[j], M[j+1] = M[j+1], M[j]\n    return M\n",
+      "initial_error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 2, in <module>\n    import json\n           ^^^^\nAssertionError\n",
+      "initial_failure_category": "assertion_error",
+      "attempts_used": 1,
+      "repair_rounds_used": 1,
+      "repair_model_calls": 3,
+      "duplicate_candidates": 2,
+      "oracle_candidate_passed": false,
+      "oracle_success_iteration": null,
+      "selected_candidate_indices": [
+        0
+      ],
+      "success_iteration": null,
+      "final_passed": false,
+      "final_code": "import json\n\ndef sort_matrix(M):\n    \"\"\"Sort a given matrix in ascending order according to the sum of its rows.\n\n    Args:\n        M (list): Matrix to sort.\n\n    Returns:\n        list: Matrix sorted according to the sum of its rows.\n    \"\"\"\n    n = len(M)\n    for i in range(n):\n        for j in range(n-i-1):\n            if M[j][i] > M[j+1][i]:\n                M[j], M[j+1] = M[j+1], M[j]\n    return M\n",
+      "final_error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 2, in <module>\n    import json\n           ^^^^\nAssertionError\n",
+      "final_failure_category": "assertion_error",
+      "trace": [
+        {
+          "iteration": 0,
+          "passed": false,
+          "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 2, in <module>\n    import json\n           ^^^^\nAssertionError\n",
+          "code": "\"\"\"Write a function to sort a given matrix in ascending order according to the sum of its rows.\"\"\"\ndef sort_matrix(M):\n    \"\"\"Sort a given matrix in ascending order according to the sum of its rows.\n\n    Args:\n        M (list): Matrix to sort.\n\n    Returns:\n        list: Matrix sorted according to the sum of its rows.\n    \"\"\"\n    n = len(M)\n    for i in range(n):\n        for j in range(n-i-1):\n            if M[j][i] > M[j+1][i]:\n                M[j], M[j+1] = M[j+1], M[j]\n    return M\n",
+          "duplicate": false,
+          "failure_category": "assertion_error",
+          "selected_candidate_index": null,
+          "candidates": []
+        },
+        {
+          "iteration": 1,
+          "passed": false,
+          "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 2, in <module>\n    import json\n           ^^^^\nAssertionError\n",
+          "failure_category": "assertion_error",
+          "code": "import json\n\ndef sort_matrix(M):\n    \"\"\"Sort a given matrix in ascending order according to the sum of its rows.\n\n    Args:\n        M (list): Matrix to sort.\n\n    Returns:\n        list: Matrix sorted according to the sum of its rows.\n    \"\"\"\n    n = len(M)\n    for i in range(n):\n        for j in range(n-i-1):\n            if M[j][i] > M[j+1][i]:\n                M[j], M[j+1] = M[j+1], M[j]\n    return M\n",
+          "duplicate": false,
+          "selected_candidate_index": 0,
+          "ranking_score": [
+            0,
+            3,
+            1,
+            1,
+            0
+          ],
+          "candidates": [
+            {
+              "candidate_index": 0,
+              "seed": 45,
+              "passed": false,
+              "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 2, in <module>\n    import json\n           ^^^^\nAssertionError\n",
+              "failure_category": "assertion_error",
+              "code": "import json\n\ndef sort_matrix(M):\n    \"\"\"Sort a given matrix in ascending order according to the sum of its rows.\n\n    Args:\n        M (list): Matrix to sort.\n\n    Returns:\n        list: Matrix sorted according to the sum of its rows.\n    \"\"\"\n    n = len(M)\n    for i in range(n):\n        for j in range(n-i-1):\n            if M[j][i] > M[j+1][i]:\n                M[j], M[j+1] = M[j+1], M[j]\n    return M\n",
+              "duplicate": false,
+              "ranking_score": [
+                0,
+                3,
+                1,
+                1,
+                0
+              ]
+            },
+            {
+              "candidate_index": 1,
+              "seed": 46,
+              "passed": false,
+              "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 2, in <module>\n    import json\n           ^^^^\nAssertionError\n",
+              "failure_category": "assertion_error",
+              "code": "import json\n\ndef sort_matrix(M):\n    \"\"\"Sort a given matrix in ascending order according to the sum of its rows.\n\n    Args:\n        M (list): Matrix to sort.\n\n    Returns:\n        list: Matrix sorted according to the sum of its rows.\n    \"\"\"\n    n = len(M)\n    for i in range(n):\n        for j in range(n-i-1):\n            if M[j][i] > M[j+1][i]:\n                M[j], M[j+1] = M[j+1], M[j]\n    return M\n",
+              "duplicate": true,
+              "ranking_score": [
+                0,
+                3,
+                0,
+                1,
+                -1
+              ]
+            },
+            {
+              "candidate_index": 2,
+              "seed": 47,
+              "passed": false,
+              "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 2, in <module>\n    import json\n           ^^^^\nAssertionError\n",
+              "failure_category": "assertion_error",
+              "code": "import json\n\ndef sort_matrix(M):\n    \"\"\"Sort a given matrix in ascending order according to the sum of its rows.\n\n    Args:\n        M (list): Matrix to sort.\n\n    Returns:\n        list: Matrix sorted according to the sum of its rows.\n    \"\"\"\n    n = len(M)\n    for i in range(n):\n        for j in range(n-i-1):\n            if M[j][i] > M[j+1][i]:\n                M[j], M[j+1] = M[j+1], M[j]\n    return M\n",
+              "duplicate": true,
+              "ranking_score": [
+                0,
+                3,
+                0,
+                1,
+                -2
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

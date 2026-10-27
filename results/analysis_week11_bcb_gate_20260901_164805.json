@@ -1,0 +1,558 @@
+{
+  "analysis": "week11_bigcodebench_canonical_gate",
+  "config": {
+    "dataset": "bigcodebench",
+    "split": "v0.1.4",
+    "timeout_s": 30.0,
+    "limit": 40,
+    "subsample": 10,
+    "n_mutants": 6,
+    "seed": 42
+  },
+  "summary": {
+    "n_problems": 40,
+    "n_canonical_passed": 36,
+    "canonical_pass_rate": 0.9,
+    "n_prompt_split_failures": 0,
+    "failure_categories": {
+      "runtime_error": 3,
+      "timeout": 1
+    },
+    "elapsed_s": {
+      "median": 0.073,
+      "p95": 6.229,
+      "max": 30.042
+    }
+  },
+  "mutation_control": {
+    "n_mutated": 12,
+    "n_survived": 0,
+    "survivors": [],
+    "records": [
+      {
+        "task_id": "BigCodeBench/7",
+        "kind": "none",
+        "mutant_passed": false,
+        "failure_category": "assertion_error"
+      },
+      {
+        "task_id": "BigCodeBench/7",
+        "kind": "raise",
+        "mutant_passed": false,
+        "failure_category": "runtime_error"
+      },
+      {
+        "task_id": "BigCodeBench/1",
+        "kind": "none",
+        "mutant_passed": false,
+        "failure_category": "assertion_error"
+      },
+      {
+        "task_id": "BigCodeBench/1",
+        "kind": "raise",
+        "mutant_passed": false,
+        "failure_category": "runtime_error"
+      },
+      {
+        "task_id": "BigCodeBench/17",
+        "kind": "none",
+        "mutant_passed": false,
+        "failure_category": "assertion_error"
+      },
+      {
+        "task_id": "BigCodeBench/17",
+        "kind": "raise",
+        "mutant_passed": false,
+        "failure_category": "runtime_error"
+      },
+      {
+        "task_id": "BigCodeBench/15",
+        "kind": "none",
+        "mutant_passed": false,
+        "failure_category": "type_error"
+      },
+      {
+        "task_id": "BigCodeBench/15",
+        "kind": "raise",
+        "mutant_passed": false,
+        "failure_category": "runtime_error"
+      },
+      {
+        "task_id": "BigCodeBench/14",
+        "kind": "none",
+        "mutant_passed": false,
+        "failure_category": "assertion_error"
+      },
+      {
+        "task_id": "BigCodeBench/14",
+        "kind": "raise",
+        "mutant_passed": false,
+        "failure_category": "runtime_error"
+      },
+      {
+        "task_id": "BigCodeBench/4",
+        "kind": "none",
+        "mutant_passed": false,
+        "failure_category": "assertion_error"
+      },
+      {
+        "task_id": "BigCodeBench/4",
+        "kind": "raise",
+        "mutant_passed": false,
+        "failure_category": "runtime_error"
+      }
+    ]
+  },
+  "eligible_task_ids": [
+    "BigCodeBench/0",
+    "BigCodeBench/1",
+    "BigCodeBench/2",
+    "BigCodeBench/3",
+    "BigCodeBench/4",
+    "BigCodeBench/5",
+    "BigCodeBench/6",
+    "BigCodeBench/7",
+    "BigCodeBench/8",
+    "BigCodeBench/9",
+    "BigCodeBench/10",
+    "BigCodeBench/11",
+    "BigCodeBench/12",
+    "BigCodeBench/13",
+    "BigCodeBench/14",
+    "BigCodeBench/15",
+    "BigCodeBench/16",
+    "BigCodeBench/17",
+    "BigCodeBench/19",
+    "BigCodeBench/20",
+    "BigCodeBench/21",
+    "BigCodeBench/22",
+    "BigCodeBench/23",
+    "BigCodeBench/24",
+    "BigCodeBench/25",
+    "BigCodeBench/26",
+    "BigCodeBench/27",
+    "BigCodeBench/28",
+    "BigCodeBench/29",
+    "BigCodeBench/30",
+    "BigCodeBench/31",
+    "BigCodeBench/32",
+    "BigCodeBench/34",
+    "BigCodeBench/35",
+    "BigCodeBench/37",
+    "BigCodeBench/38"
+  ],
+  "subsample_task_ids": [
+    "BigCodeBench/1",
+    "BigCodeBench/3",
+    "BigCodeBench/4",
+    "BigCodeBench/7",
+    "BigCodeBench/14",
+    "BigCodeBench/15",
+    "BigCodeBench/17",
+    "BigCodeBench/22",
+    "BigCodeBench/24",
+    "BigCodeBench/30"
+  ],
+  "records": [
+    {
+      "task_id": "BigCodeBench/0",
+      "canonical_passed": true,
+      "failure_category": "",
+      "error_head": "",
+      "elapsed_s": 6.229,
+      "prompt_split_ok": true,
+      "prompt_chars": 671,
+      "canonical_chars": 337
+    },
+    {
+      "task_id": "BigCodeBench/1",
+      "canonical_passed": true,
+      "failure_category": "",
+      "error_head": "",
+      "elapsed_s": 0.04,
+      "prompt_split_ok": true,
+      "prompt_chars": 888,
+      "canonical_chars": 228
+    },
+    {
+      "task_id": "BigCodeBench/2",
+      "canonical_passed": true,
+      "failure_category": "",
+      "error_head": "",
+      "elapsed_s": 0.041,
+      "prompt_split_ok": true,
+      "prompt_chars": 885,
+      "canonical_chars": 234
+    },
+    {
+      "task_id": "BigCodeBench/3",
+      "canonical_passed": true,
+      "failure_category": "",
+      "error_head": "",
+      "elapsed_s": 0.073,
+      "prompt_split_ok": true,
+      "prompt_chars": 1026,
+      "canonical_chars": 187
+    },
+    {
+      "task_id": "BigCodeBench/4",
+      "canonical_passed": true,
+      "failure_category": "",
+      "error_head": "",
+      "elapsed_s": 0.036,
+      "prompt_split_ok": true,
+      "prompt_chars": 930,
+      "canonical_chars": 95
+    },
+    {
+      "task_id": "BigCodeBench/5",
+      "canonical_passed": true,
+      "failure_category": "",
+      "error_head": "",
+      "elapsed_s": 0.058,
+      "prompt_split_ok": true,
+      "prompt_chars": 1661,
+      "canonical_chars": 257
+    },
+    {
+      "task_id": "BigCodeBench/6",
+      "canonical_passed": true,
+      "failure_category": "",
+      "error_head": "",
+      "elapsed_s": 0.056,
+      "prompt_split_ok": true,
+      "prompt_chars": 934,
+      "canonical_chars": 249
+    },
+    {
+      "task_id": "BigCodeBench/7",
+      "canonical_passed": true,
+      "failure_category": "",
+      "error_head": "",
+      "elapsed_s": 0.038,
+      "prompt_split_ok": true,
+      "prompt_chars": 903,
+      "canonical_chars": 401
+    },
+    {
+      "task_id": "BigCodeBench/8",
+      "canonical_passed": true,
+      "failure_category": "",
+      "error_head": "",
+      "elapsed_s": 0.039,
+      "prompt_split_ok": true,
+      "prompt_chars": 1822,
+      "canonical_chars": 256
+    },
+    {
+      "task_id": "BigCodeBench/9",
+      "canonical_passed": true,
+      "failure_category": "",
+      "error_head": "",
+      "elapsed_s": 1.428,
+      "prompt_split_ok": true,
+      "prompt_chars": 884,
+      "canonical_chars": 221
+    },
+    {
+      "task_id": "BigCodeBench/10",
+      "canonical_passed": true,
+      "failure_category": "",
+      "error_head": "",
+      "elapsed_s": 0.086,
+      "prompt_split_ok": true,
+      "prompt_chars": 1344,
+      "canonical_chars": 409
+    },
+    {
+      "task_id": "BigCodeBench/11",
+      "canonical_passed": true,
+      "failure_category": "",
+      "error_head": "",
+      "elapsed_s": 0.081,
+      "prompt_split_ok": true,
+      "prompt_chars": 1034,
+      "canonical_chars": 364
+    },
+    {
+      "task_id": "BigCodeBench/12",
+      "canonical_passed": true,
+      "failure_category": "",
+      "error_head": "",
+      "elapsed_s": 0.058,
+      "prompt_split_ok": true,
+      "prompt_chars": 1252,
+      "canonical_chars": 631
+    },
+    {
+      "task_id": "BigCodeBench/13",
+      "canonical_passed": true,
+      "failure_category": "",
+      "error_head": "",
+      "elapsed_s": 0.058,
+      "prompt_split_ok": true,
+      "prompt_chars": 1393,
+      "canonical_chars": 1109
+    },
+    {
+      "task_id": "BigCodeBench/14",
+      "canonical_passed": true,
+      "failure_category": "",
+      "error_head": "",
+      "elapsed_s": 0.06,
+      "prompt_split_ok": true,
+      "prompt_chars": 1251,
+      "canonical_chars": 600
+    },
+    {
+      "task_id": "BigCodeBench/15",
+      "canonical_passed": true,
+      "failure_category": "",
+      "error_head": "",
+      "elapsed_s": 0.067,
+      "prompt_split_ok": true,
+      "prompt_chars": 1389,
+      "canonical_chars": 931
+    },
+    {
+      "task_id": "BigCodeBench/16",
+      "canonical_passed": true,
+      "failure_category": "",
+      "error_head": "",
+      "elapsed_s": 0.065,
+      "prompt_split_ok": true,
+      "prompt_chars": 1056,
+      "canonical_chars": 509
+    },
+    {
+      "task_id": "BigCodeBench/17",
+      "canonical_passed": true,
+      "failure_category": "",
+      "error_head": "",
+      "elapsed_s": 15.111,
+      "prompt_split_ok": true,
+      "prompt_chars": 863,
+      "canonical_chars": 561
+    },
+    {
+      "task_id": "BigCodeBench/18",
+      "canonical_passed": false,
+      "failure_category": "runtime_error",
+      "error_head": "RuntimeError: execution subprocess exited with code 0",
+      "elapsed_s": 0.082,
+      "prompt_split_ok": true,
+      "prompt_chars": 835,
+      "canonical_chars": 814
+    },
+    {
+      "task_id": "BigCodeBench/19",
+      "canonical_passed": true,
+      "failure_category": "",
+      "error_head": "",
+      "elapsed_s": 0.048,
+      "prompt_split_ok": true,
+      "prompt_chars": 716,
+      "canonical_chars": 453
+    },
+    {
+      "task_id": "BigCodeBench/20",
+      "canonical_passed": true,
+      "failure_category": "",
+      "error_head": "",
+      "elapsed_s": 1.802,
+      "prompt_split_ok": true,
+      "prompt_chars": 778,
+      "canonical_chars": 276
+    },
+    {
+      "task_id": "BigCodeBench/21",
+      "canonical_passed": true,
+      "failure_category": "",
+      "error_head": "",
+      "elapsed_s": 0.068,
+      "prompt_split_ok": true,
+      "prompt_chars": 1170,
+      "canonical_chars": 318
+    },
+    {
+      "task_id": "BigCodeBench/22",
+      "canonical_passed": true,
+      "failure_category": "",
+      "error_head": "",
+      "elapsed_s": 0.037,
+      "prompt_split_ok": true,
+      "prompt_chars": 1115,
+      "canonical_chars": 178
+    },
+    {
+      "task_id": "BigCodeBench/23",
+      "canonical_passed": true,
+      "failure_category": "",
+      "error_head": "",
+      "elapsed_s": 0.062,
+      "prompt_split_ok": true,
+      "prompt_chars": 1219,
+      "canonical_chars": 222
+    },
+    {
+      "task_id": "BigCodeBench/24",
+      "canonical_passed": true,
+      "failure_category": "",
+      "error_head": "",
+      "elapsed_s": 0.217,
+      "prompt_split_ok": true,
+      "prompt_chars": 863,
+      "canonical_chars": 234
+    },
+    {
+      "task_id": "BigCodeBench/25",
+      "canonical_passed": true,
+      "failure_category": "",
+      "error_head": "",
+      "elapsed_s": 0.036,
+      "prompt_split_ok": true,
+      "prompt_chars": 743,
+      "canonical_chars": 135
+    },
+    {
+      "task_id": "BigCodeBench/26",
+      "canonical_passed": true,
+      "failure_category": "",
+      "error_head": "",
+      "elapsed_s": 0.089,
+      "prompt_split_ok": true,
+      "prompt_chars": 973,
+      "canonical_chars": 183
+    },
+    {
+      "task_id": "BigCodeBench/27",
+      "canonical_passed": true,
+      "failure_category": "",
+      "error_head": "",
+      "elapsed_s": 0.038,
+      "prompt_split_ok": true,
+      "prompt_chars": 1165,
+      "canonical_chars": 364
+    },
+    {
+      "task_id": "BigCodeBench/28",
+      "canonical_passed": true,
+      "failure_category": "",
+      "error_head": "",
+      "elapsed_s": 0.105,
+      "prompt_split_ok": true,
+      "prompt_chars": 817,
+      "canonical_chars": 202
+    },
+    {
+      "task_id": "BigCodeBench/29",
+      "canonical_passed": true,
+      "failure_category": "",
+      "error_head": "",
+      "elapsed_s": 0.762,
+      "prompt_split_ok": true,
+      "prompt_chars": 746,
+      "canonical_chars": 263
+    },
+    {
+      "task_id": "BigCodeBench/30",
+      "canonical_passed": true,
+      "failure_category": "",
+      "error_head": "",
+      "elapsed_s": 0.04,
+      "prompt_split_ok": true,
+      "prompt_chars": 1654,
+      "canonical_chars": 621
+    },
+    {
+      "task_id": "BigCodeBench/31",
+      "canonical_passed": true,
+      "failure_category": "",
+      "error_head": "",
+      "elapsed_s": 1.482,
+      "prompt_split_ok": true,
+      "prompt_chars": 1290,
+      "canonical_chars": 428
+    },
+    {
+      "task_id": "BigCodeBench/32",
+      "canonical_passed": true,
+      "failure_category": "",
+      "error_head": "",
+      "elapsed_s": 0.146,
+      "prompt_split_ok": true,
+      "prompt_chars": 553,
+      "canonical_chars": 180
+    },
+    {
+      "task_id": "BigCodeBench/33",
+      "canonical_passed": false,
+      "failure_category": "runtime_error",
+      "error_head": "RuntimeError: execution subprocess exited with code 0",
+      "elapsed_s": 0.06,
+      "prompt_split_ok": true,
+      "prompt_chars": 825,
+      "canonical_chars": 170
+    },
+    {
+      "task_id": "BigCodeBench/34",
+      "canonical_passed": true,
+      "failure_category": "",
+      "error_head": "",
+      "elapsed_s": 0.444,
+      "prompt_split_ok": true,
+      "prompt_chars": 947,
+      "canonical_chars": 470
+    },
+    {
+      "task_id": "BigCodeBench/35",
+      "canonical_passed": true,
+      "failure_category": "",
+      "error_head": "",
+      "elapsed_s": 1.203,
+      "prompt_split_ok": true,
+      "prompt_chars": 978,
+      "canonical_chars": 233
+    },
+    {
+      "task_id": "BigCodeBench/36",
+      "canonical_passed": false,
+      "failure_category": "timeout",
+      "error_head": "TimeoutError: execution exceeded 30.0s time limit",
+      "elapsed_s": 30.042,
+      "prompt_split_ok": true,
+      "prompt_chars": 1149,
+      "canonical_chars": 1019
+    },
+    {
+      "task_id": "BigCodeBench/37",
+      "canonical_passed": true,
+      "failure_category": "",
+      "error_head": "",
+      "elapsed_s": 2.029,
+      "prompt_split_ok": true,
+      "prompt_chars": 1401,
+      "canonical_chars": 481
+    },
+    {
+      "task_id": "BigCodeBench/38",
+      "canonical_passed": true,
+      "failure_category": "",
+      "error_head": "",
+      "elapsed_s": 1.068,
+      "prompt_split_ok": true,
+      "prompt_chars": 1372,
+      "canonical_chars": 303
+    },
+    {
+      "task_id": "BigCodeBench/39",
+      "canonical_passed": false,
+      "failure_category": "runtime_error",
+      "error_head": "ValueError: Calling nonzero on 0d arrays is not allowed. Use np.atleast_1d(scalar).nonzero() instead. If the context of this error is of the form `arr[nonzero(cond)]`, just use `arr[cond]`.",
+      "elapsed_s": 0.54,
+      "prompt_split_ok": true,
+      "prompt_chars": 1418,
+      "canonical_chars": 530
+    }
+  ]
+}

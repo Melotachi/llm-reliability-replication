@@ -1,0 +1,1850 @@
+{
+  "analysis": "week6_selection_trial",
+  "source_results_file": "results/mbpp_uncertainty_20260712_085004.json",
+  "source_run_id": "mbpp_uncertainty_20260712_085004",
+  "config": {
+    "seed": 42,
+    "n_splits": 5,
+    "model_type": "logistic",
+    "codebert_model": null,
+    "execution_timeout": 5.0,
+    "probe_source": "evalplus",
+    "probe_cap": 12,
+    "error_costs": [
+      1.0,
+      0.8,
+      0.6
+    ]
+  },
+  "source_config": {
+    "dataset": "mbpp",
+    "model": "deepseek-ai/deepseek-coder-1.3b-base",
+    "n_samples": 10,
+    "n_problems": 60,
+    "problem_offset": 0,
+    "task_ids_file": "data/mbppplus_member_task_ids.txt",
+    "seed": 42,
+    "mode": "uncertainty",
+    "codebert_model": null,
+    "use_error_context": false,
+    "max_repair_iterations": 1
+  },
+  "prediction_metrics_context": {
+    "self_consistency_core": {
+      "summary": {
+        "precision_mean": 0.39573107926556206,
+        "precision_std": 0.09457082198344438,
+        "recall_mean": 0.6802982456140352,
+        "recall_std": 0.0934775234973614,
+        "f1_mean": 0.4875672326119275,
+        "f1_std": 0.062461965618634895,
+        "precision_macro_mean": 0.6208963797603955,
+        "precision_macro_std": 0.0336362809811193,
+        "recall_macro_mean": 0.6529317306570194,
+        "recall_macro_std": 0.03193139283012427,
+        "f1_macro_mean": 0.6006626960191991,
+        "f1_macro_std": 0.047331959820460276,
+        "roc_auc_mean": 0.71738670725224,
+        "roc_auc_std": 0.03631690162548289,
+        "pr_auc_mean": 0.5236188531015082,
+        "pr_auc_std": 0.11411451542351964
+      },
+      "n_splits": 5,
+      "class_balance": {
+        "pass": 157,
+        "fail": 443
+      }
+    },
+    "execution_self_only": {
+      "summary": {
+        "precision_mean": 0.6916081901968998,
+        "precision_std": 0.17671212706753572,
+        "recall_mean": 0.7768947368421053,
+        "recall_std": 0.10469562796619283,
+        "f1_mean": 0.7083792216587521,
+        "f1_std": 0.05696146636378392,
+        "precision_macro_mean": 0.806805068327726,
+        "precision_macro_std": 0.08541009104814243,
+        "recall_macro_mean": 0.8012887151359551,
+        "recall_macro_std": 0.025247310208700396,
+        "f1_macro_mean": 0.7867036101924766,
+        "f1_macro_std": 0.05622718797259556,
+        "roc_auc_mean": 0.8755466663587091,
+        "roc_auc_std": 0.027683192672436376,
+        "pr_auc_mean": 0.8057253623785929,
+        "pr_auc_std": 0.09587422861277065
+      },
+      "n_splits": 5,
+      "class_balance": {
+        "pass": 157,
+        "fail": 443
+      }
+    },
+    "self_consistency_plus_execution": {
+      "summary": {
+        "precision_mean": 0.7047683284457478,
+        "precision_std": 0.16712694885289225,
+        "recall_mean": 0.8185614035087718,
+        "recall_std": 0.07244117767428825,
+        "f1_mean": 0.7465015673981191,
+        "f1_std": 0.09735133939198931,
+        "precision_macro_mean": 0.8186364406820468,
+        "precision_macro_std": 0.08928421256270301,
+        "recall_macro_mean": 0.8307417823939005,
+        "recall_macro_std": 0.05127257865241684,
+        "f1_macro_mean": 0.8140161085997228,
+        "f1_macro_std": 0.07638881474902057,
+        "roc_auc_mean": 0.8913818997095474,
+        "roc_auc_std": 0.015322121045235408,
+        "pr_auc_mean": 0.8296086877109362,
+        "pr_auc_std": 0.07047949391178446
+      },
+      "n_splits": 5,
+      "class_balance": {
+        "pass": 157,
+        "fail": 443
+      }
+    }
+  },
+  "selection_accuracy": {
+    "random_draw": {
+      "overall": 0.3333333333333333,
+      "n_problems": 60,
+      "conditional_on_solvable": 0.6060606060606061,
+      "n_solvable": 33
+    },
+    "execution_heuristic": {
+      "overall": 0.36666666666666664,
+      "n_problems": 60,
+      "conditional_on_solvable": 0.6666666666666666,
+      "n_solvable": 33
+    },
+    "classifier__self_consistency_core": {
+      "overall": 0.3,
+      "n_problems": 60,
+      "conditional_on_solvable": 0.5454545454545454,
+      "n_solvable": 33
+    },
+    "classifier__execution_self_only": {
+      "overall": 0.36666666666666664,
+      "n_problems": 60,
+      "conditional_on_solvable": 0.6666666666666666,
+      "n_solvable": 33
+    },
+    "classifier__self_consistency_plus_execution": {
+      "overall": 0.36666666666666664,
+      "n_problems": 60,
+      "conditional_on_solvable": 0.6666666666666666,
+      "n_solvable": 33
+    },
+    "oracle": {
+      "overall": 0.55,
+      "n_problems": 60,
+      "conditional_on_solvable": 1.0,
+      "n_solvable": 33
+    }
+  },
+  "expected_random": 0.26166666666666666,
+  "n_problems_scored": 60,
+  "n_problems_skipped": 0,
+  "trap_diagnostic": {
+    "diversity_threshold": 0.2,
+    "n_unsolvable": 27,
+    "n_unsolvable_low_diversity": 0,
+    "trapped_task_ids": []
+  },
+  "pairwise_mcnemar": [
+    {
+      "a": "classifier__execution_self_only",
+      "b": "classifier__self_consistency_core",
+      "n_common": 60,
+      "p_mid": 0.125,
+      "p_bh": 0.4166666666666667
+    },
+    {
+      "a": "classifier__execution_self_only",
+      "b": "classifier__self_consistency_plus_execution",
+      "n_common": 60,
+      "p_mid": 1.0,
+      "p_bh": 1.0
+    },
+    {
+      "a": "classifier__execution_self_only",
+      "b": "execution_heuristic",
+      "n_common": 60,
+      "p_mid": 1.0,
+      "p_bh": 1.0
+    },
+    {
+      "a": "classifier__execution_self_only",
+      "b": "random_draw",
+      "n_common": 60,
+      "p_mid": 0.453125,
+      "p_bh": 0.6473214285714286
+    },
+    {
+      "a": "classifier__self_consistency_core",
+      "b": "classifier__self_consistency_plus_execution",
+      "n_common": 60,
+      "p_mid": 0.0625,
+      "p_bh": 0.4166666666666667
+    },
+    {
+      "a": "classifier__self_consistency_core",
+      "b": "execution_heuristic",
+      "n_common": 60,
+      "p_mid": 0.125,
+      "p_bh": 0.4166666666666667
+    },
+    {
+      "a": "classifier__self_consistency_core",
+      "b": "random_draw",
+      "n_common": 60,
+      "p_mid": 0.453125,
+      "p_bh": 0.6473214285714286
+    },
+    {
+      "a": "classifier__self_consistency_plus_execution",
+      "b": "execution_heuristic",
+      "n_common": 60,
+      "p_mid": 1.0,
+      "p_bh": 1.0
+    },
+    {
+      "a": "classifier__self_consistency_plus_execution",
+      "b": "random_draw",
+      "n_common": 60,
+      "p_mid": 0.375,
+      "p_bh": 0.6473214285714286
+    },
+    {
+      "a": "execution_heuristic",
+      "b": "random_draw",
+      "n_common": 60,
+      "p_mid": 0.453125,
+      "p_bh": 0.6473214285714286
+    }
+  ],
+  "per_problem": [
+    {
+      "task_id": "MBPP/11",
+      "pass_rate": 0.1,
+      "execution_behavior_diversity": 0.7437037037037038,
+      "picks": {
+        "random_draw": {
+          "index": 0,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 8,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 8,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "MBPP/12",
+      "pass_rate": 0.2,
+      "execution_behavior_diversity": 0.9348148148148149,
+      "picks": {
+        "random_draw": {
+          "index": 7,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 2,
+          "passed": true
+        },
+        "classifier__self_consistency_core": {
+          "index": 3,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 2,
+          "passed": true
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 3,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "MBPP/14",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.6000000000000002,
+      "picks": {
+        "random_draw": {
+          "index": 6,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 3,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 3,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "MBPP/16",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.9437037037037037,
+      "picks": {
+        "random_draw": {
+          "index": 4,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 7,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 7,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "MBPP/17",
+      "pass_rate": 0.9,
+      "execution_behavior_diversity": 0.2,
+      "picks": {
+        "random_draw": {
+          "index": 4,
+          "passed": true
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": true
+        },
+        "classifier__self_consistency_core": {
+          "index": 3,
+          "passed": true
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": true
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 3,
+          "passed": true
+        }
+      }
+    },
+    {
+      "task_id": "MBPP/18",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.6000000000000002,
+      "picks": {
+        "random_draw": {
+          "index": 8,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 2,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "MBPP/19",
+      "pass_rate": 0.7,
+      "execution_behavior_diversity": 0.36888888888888893,
+      "picks": {
+        "random_draw": {
+          "index": 0,
+          "passed": true
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": true
+        },
+        "classifier__self_consistency_core": {
+          "index": 0,
+          "passed": true
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": true
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 0,
+          "passed": true
+        }
+      }
+    },
+    {
+      "task_id": "MBPP/20",
+      "pass_rate": 0.1,
+      "execution_behavior_diversity": 0.7648148148148147,
+      "picks": {
+        "random_draw": {
+          "index": 6,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 1,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 3,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 1,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 4,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "MBPP/56",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.7388888888888889,
+      "picks": {
+        "random_draw": {
+          "index": 2,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 1,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 3,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 1,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 3,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "MBPP/57",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.6000000000000002,
+      "picks": {
+        "random_draw": {
+          "index": 0,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 8,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 8,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "MBPP/58",
+      "pass_rate": 0.8,
+      "execution_behavior_diversity": 0.36888888888888893,
+      "picks": {
+        "random_draw": {
+          "index": 5,
+          "passed": true
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": true
+        },
+        "classifier__self_consistency_core": {
+          "index": 2,
+          "passed": true
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": true
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 2,
+          "passed": true
+        }
+      }
+    },
+    {
+      "task_id": "MBPP/59",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.4351851851851852,
+      "picks": {
+        "random_draw": {
+          "index": 9,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 8,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 4,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "MBPP/61",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.7066666666666669,
+      "picks": {
+        "random_draw": {
+          "index": 7,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 1,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 5,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 1,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 8,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "MBPP/62",
+      "pass_rate": 0.9,
+      "execution_behavior_diversity": 0.1,
+      "picks": {
+        "random_draw": {
+          "index": 7,
+          "passed": true
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": true
+        },
+        "classifier__self_consistency_core": {
+          "index": 8,
+          "passed": true
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": true
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 8,
+          "passed": true
+        }
+      }
+    },
+    {
+      "task_id": "MBPP/63",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.84,
+      "picks": {
+        "random_draw": {
+          "index": 7,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 1,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 1,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 1,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 1,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "MBPP/64",
+      "pass_rate": 0.7,
+      "execution_behavior_diversity": 0.6055555555555555,
+      "picks": {
+        "random_draw": {
+          "index": 7,
+          "passed": true
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 3,
+          "passed": true
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 8,
+          "passed": true
+        }
+      }
+    },
+    {
+      "task_id": "MBPP/65",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.5777777777777777,
+      "picks": {
+        "random_draw": {
+          "index": 5,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 3,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 3,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "MBPP/66",
+      "pass_rate": 0.6,
+      "execution_behavior_diversity": 0.6577777777777778,
+      "picks": {
+        "random_draw": {
+          "index": 1,
+          "passed": true
+        },
+        "execution_heuristic": {
+          "index": 1,
+          "passed": true
+        },
+        "classifier__self_consistency_core": {
+          "index": 7,
+          "passed": true
+        },
+        "classifier__execution_self_only": {
+          "index": 1,
+          "passed": true
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 7,
+          "passed": true
+        }
+      }
+    },
+    {
+      "task_id": "MBPP/67",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.8822222222222222,
+      "picks": {
+        "random_draw": {
+          "index": 8,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 2,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "MBPP/68",
+      "pass_rate": 0.8,
+      "execution_behavior_diversity": 0.2148148148148148,
+      "picks": {
+        "random_draw": {
+          "index": 4,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": true
+        },
+        "classifier__self_consistency_core": {
+          "index": 1,
+          "passed": true
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": true
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 0,
+          "passed": true
+        }
+      }
+    },
+    {
+      "task_id": "MBPP/69",
+      "pass_rate": 0.5,
+      "execution_behavior_diversity": 0.35,
+      "picks": {
+        "random_draw": {
+          "index": 5,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 2,
+          "passed": true
+        },
+        "classifier__self_consistency_core": {
+          "index": 8,
+          "passed": true
+        },
+        "classifier__execution_self_only": {
+          "index": 2,
+          "passed": true
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 2,
+          "passed": true
+        }
+      }
+    },
+    {
+      "task_id": "MBPP/70",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.6400000000000001,
+      "picks": {
+        "random_draw": {
+          "index": 3,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 3,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 3,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "MBPP/71",
+      "pass_rate": 0.5,
+      "execution_behavior_diversity": 0.5155555555555557,
+      "picks": {
+        "random_draw": {
+          "index": 1,
+          "passed": true
+        },
+        "execution_heuristic": {
+          "index": 1,
+          "passed": true
+        },
+        "classifier__self_consistency_core": {
+          "index": 7,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 1,
+          "passed": true
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 6,
+          "passed": true
+        }
+      }
+    },
+    {
+      "task_id": "MBPP/72",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.7944444444444444,
+      "picks": {
+        "random_draw": {
+          "index": 9,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 3,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 6,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "MBPP/74",
+      "pass_rate": 0.1,
+      "execution_behavior_diversity": 0.582962962962963,
+      "picks": {
+        "random_draw": {
+          "index": 7,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 3,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 3,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "MBPP/75",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.6133333333333334,
+      "picks": {
+        "random_draw": {
+          "index": 6,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 0,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "MBPP/77",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.728888888888889,
+      "picks": {
+        "random_draw": {
+          "index": 4,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 1,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 1,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "MBPP/79",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.9244444444444445,
+      "picks": {
+        "random_draw": {
+          "index": 8,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 1,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 8,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 1,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 0,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "MBPP/80",
+      "pass_rate": 0.8,
+      "execution_behavior_diversity": 0.37777777777777777,
+      "picks": {
+        "random_draw": {
+          "index": 5,
+          "passed": true
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": true
+        },
+        "classifier__self_consistency_core": {
+          "index": 3,
+          "passed": true
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": true
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 3,
+          "passed": true
+        }
+      }
+    },
+    {
+      "task_id": "MBPP/82",
+      "pass_rate": 0.1,
+      "execution_behavior_diversity": 0.8918518518518519,
+      "picks": {
+        "random_draw": {
+          "index": 4,
+          "passed": true
+        },
+        "execution_heuristic": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 2,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "MBPP/84",
+      "pass_rate": 0.1,
+      "execution_behavior_diversity": 0.7829629629629633,
+      "picks": {
+        "random_draw": {
+          "index": 4,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 3,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 3,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "MBPP/85",
+      "pass_rate": 0.1,
+      "execution_behavior_diversity": 0.712962962962963,
+      "picks": {
+        "random_draw": {
+          "index": 2,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 7,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 1,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "MBPP/86",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.9392592592592592,
+      "picks": {
+        "random_draw": {
+          "index": 0,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 0,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "MBPP/87",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.5074074074074074,
+      "picks": {
+        "random_draw": {
+          "index": 5,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 8,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 8,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "MBPP/88",
+      "pass_rate": 1.0,
+      "execution_behavior_diversity": 0.30370370370370375,
+      "picks": {
+        "random_draw": {
+          "index": 8,
+          "passed": true
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": true
+        },
+        "classifier__self_consistency_core": {
+          "index": 8,
+          "passed": true
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": true
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 7,
+          "passed": true
+        }
+      }
+    },
+    {
+      "task_id": "MBPP/89",
+      "pass_rate": 0.2,
+      "execution_behavior_diversity": 0.9259259259259258,
+      "picks": {
+        "random_draw": {
+          "index": 0,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 8,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 9,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 8,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 9,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "MBPP/90",
+      "pass_rate": 0.6,
+      "execution_behavior_diversity": 0.6666666666666666,
+      "picks": {
+        "random_draw": {
+          "index": 8,
+          "passed": true
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": true
+        },
+        "classifier__self_consistency_core": {
+          "index": 3,
+          "passed": true
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": true
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 3,
+          "passed": true
+        }
+      }
+    },
+    {
+      "task_id": "MBPP/91",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.7533333333333333,
+      "picks": {
+        "random_draw": {
+          "index": 8,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 4,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 2,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "MBPP/92",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.6585185185185185,
+      "picks": {
+        "random_draw": {
+          "index": 2,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 4,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 4,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 4,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 4,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "MBPP/93",
+      "pass_rate": 0.8,
+      "execution_behavior_diversity": 0.39666666666666645,
+      "picks": {
+        "random_draw": {
+          "index": 6,
+          "passed": true
+        },
+        "execution_heuristic": {
+          "index": 2,
+          "passed": true
+        },
+        "classifier__self_consistency_core": {
+          "index": 3,
+          "passed": true
+        },
+        "classifier__execution_self_only": {
+          "index": 2,
+          "passed": true
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 3,
+          "passed": true
+        }
+      }
+    },
+    {
+      "task_id": "MBPP/94",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.9274074074074075,
+      "picks": {
+        "random_draw": {
+          "index": 1,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 3,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 3,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 3,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "MBPP/95",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.9325925925925925,
+      "picks": {
+        "random_draw": {
+          "index": 7,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 3,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 3,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 3,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 7,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "MBPP/96",
+      "pass_rate": 0.5,
+      "execution_behavior_diversity": 0.7511111111111111,
+      "picks": {
+        "random_draw": {
+          "index": 7,
+          "passed": true
+        },
+        "execution_heuristic": {
+          "index": 1,
+          "passed": true
+        },
+        "classifier__self_consistency_core": {
+          "index": 1,
+          "passed": true
+        },
+        "classifier__execution_self_only": {
+          "index": 1,
+          "passed": true
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 3,
+          "passed": true
+        }
+      }
+    },
+    {
+      "task_id": "MBPP/97",
+      "pass_rate": 0.1,
+      "execution_behavior_diversity": 0.84,
+      "picks": {
+        "random_draw": {
+          "index": 3,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 1,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 1,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 1,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 1,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "MBPP/98",
+      "pass_rate": 0.8,
+      "execution_behavior_diversity": 0.3481481481481482,
+      "picks": {
+        "random_draw": {
+          "index": 0,
+          "passed": true
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": true
+        },
+        "classifier__self_consistency_core": {
+          "index": 3,
+          "passed": true
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": true
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 3,
+          "passed": true
+        }
+      }
+    },
+    {
+      "task_id": "MBPP/99",
+      "pass_rate": 0.4,
+      "execution_behavior_diversity": 0.8955555555555554,
+      "picks": {
+        "random_draw": {
+          "index": 9,
+          "passed": true
+        },
+        "execution_heuristic": {
+          "index": 1,
+          "passed": true
+        },
+        "classifier__self_consistency_core": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 1,
+          "passed": true
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 1,
+          "passed": true
+        }
+      }
+    },
+    {
+      "task_id": "MBPP/100",
+      "pass_rate": 0.1,
+      "execution_behavior_diversity": 0.85,
+      "picks": {
+        "random_draw": {
+          "index": 4,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 9,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 9,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 9,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "MBPP/101",
+      "pass_rate": 0.1,
+      "execution_behavior_diversity": 0.6400000000000001,
+      "picks": {
+        "random_draw": {
+          "index": 8,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 2,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "MBPP/102",
+      "pass_rate": 0.2,
+      "execution_behavior_diversity": 0.887037037037037,
+      "picks": {
+        "random_draw": {
+          "index": 6,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": true
+        },
+        "classifier__self_consistency_core": {
+          "index": 9,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": true
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 0,
+          "passed": true
+        }
+      }
+    },
+    {
+      "task_id": "MBPP/103",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.948888888888889,
+      "picks": {
+        "random_draw": {
+          "index": 7,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 2,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "MBPP/104",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.5900000000000001,
+      "picks": {
+        "random_draw": {
+          "index": 7,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 1,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 3,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 1,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 3,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "MBPP/105",
+      "pass_rate": 0.7,
+      "execution_behavior_diversity": 0.5111111111111111,
+      "picks": {
+        "random_draw": {
+          "index": 1,
+          "passed": true
+        },
+        "execution_heuristic": {
+          "index": 1,
+          "passed": true
+        },
+        "classifier__self_consistency_core": {
+          "index": 8,
+          "passed": true
+        },
+        "classifier__execution_self_only": {
+          "index": 1,
+          "passed": true
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 1,
+          "passed": true
+        }
+      }
+    },
+    {
+      "task_id": "MBPP/106",
+      "pass_rate": 0.3,
+      "execution_behavior_diversity": 0.9062962962962963,
+      "picks": {
+        "random_draw": {
+          "index": 3,
+          "passed": true
+        },
+        "execution_heuristic": {
+          "index": 3,
+          "passed": true
+        },
+        "classifier__self_consistency_core": {
+          "index": 3,
+          "passed": true
+        },
+        "classifier__execution_self_only": {
+          "index": 3,
+          "passed": true
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 3,
+          "passed": true
+        }
+      }
+    },
+    {
+      "task_id": "MBPP/108",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.8666666666666667,
+      "picks": {
+        "random_draw": {
+          "index": 4,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 6,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 8,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "MBPP/109",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.8870370370370372,
+      "picks": {
+        "random_draw": {
+          "index": 4,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 5,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "MBPP/111",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.9351851851851852,
+      "picks": {
+        "random_draw": {
+          "index": 0,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 2,
+          "passed": false
+        }
+      }
+    },
+    {
+      "task_id": "MBPP/113",
+      "pass_rate": 0.7,
+      "execution_behavior_diversity": 0.5066666666666666,
+      "picks": {
+        "random_draw": {
+          "index": 5,
+          "passed": true
+        },
+        "execution_heuristic": {
+          "index": 2,
+          "passed": true
+        },
+        "classifier__self_consistency_core": {
+          "index": 2,
+          "passed": true
+        },
+        "classifier__execution_self_only": {
+          "index": 2,
+          "passed": true
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 3,
+          "passed": true
+        }
+      }
+    },
+    {
+      "task_id": "MBPP/116",
+      "pass_rate": 0.7,
+      "execution_behavior_diversity": 0.5703703703703704,
+      "picks": {
+        "random_draw": {
+          "index": 1,
+          "passed": true
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": true
+        },
+        "classifier__self_consistency_core": {
+          "index": 2,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": true
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 4,
+          "passed": true
+        }
+      }
+    },
+    {
+      "task_id": "MBPP/118",
+      "pass_rate": 0.5,
+      "execution_behavior_diversity": 0.6744444444444444,
+      "picks": {
+        "random_draw": {
+          "index": 7,
+          "passed": true
+        },
+        "execution_heuristic": {
+          "index": 1,
+          "passed": true
+        },
+        "classifier__self_consistency_core": {
+          "index": 9,
+          "passed": true
+        },
+        "classifier__execution_self_only": {
+          "index": 1,
+          "passed": true
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 9,
+          "passed": true
+        }
+      }
+    },
+    {
+      "task_id": "MBPP/119",
+      "pass_rate": 0.0,
+      "execution_behavior_diversity": 0.6000000000000002,
+      "picks": {
+        "random_draw": {
+          "index": 6,
+          "passed": false
+        },
+        "execution_heuristic": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_core": {
+          "index": 3,
+          "passed": false
+        },
+        "classifier__execution_self_only": {
+          "index": 0,
+          "passed": false
+        },
+        "classifier__self_consistency_plus_execution": {
+          "index": 3,
+          "passed": false
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,1457 @@
+{
+  "analysis": "student_b_week7_smart_repair",
+  "timestamp": "2026-08-17T18:26:33.421881",
+  "config": {
+    "source_run_id": "mbpp_uncertainty_20260712_024909",
+    "predictor_source_run_id": "mbpp_uncertainty_20260712_024909",
+    "predictor_feature_set": "self_consistency_plus_execution",
+    "predictor_model_type": "logistic",
+    "probability_kind": "out_of_fold_raw_rank_only",
+    "sample_index": 0,
+    "smart_coverage": 0.75,
+    "smart_gate_count": 45,
+    "seed": 42,
+    "shared_repair_trace_pool": true
+  },
+  "cohort": {
+    "candidates": 60,
+    "initially_passing": 6,
+    "initially_failing": 54,
+    "coordinates": [
+      {
+        "task_id": "MBPP/11",
+        "sample_index": 0,
+        "p_pass_oof": 0.04826369372587474,
+        "initial_passed": false,
+        "smart_gated": true,
+        "random_gated": true
+      },
+      {
+        "task_id": "MBPP/12",
+        "sample_index": 0,
+        "p_pass_oof": 0.05341070860973596,
+        "initial_passed": false,
+        "smart_gated": true,
+        "random_gated": true
+      },
+      {
+        "task_id": "MBPP/14",
+        "sample_index": 0,
+        "p_pass_oof": 0.04158209683440847,
+        "initial_passed": false,
+        "smart_gated": true,
+        "random_gated": true
+      },
+      {
+        "task_id": "MBPP/16",
+        "sample_index": 0,
+        "p_pass_oof": 0.13772551206036418,
+        "initial_passed": false,
+        "smart_gated": true,
+        "random_gated": true
+      },
+      {
+        "task_id": "MBPP/17",
+        "sample_index": 0,
+        "p_pass_oof": 0.05963683175165385,
+        "initial_passed": false,
+        "smart_gated": true,
+        "random_gated": true
+      },
+      {
+        "task_id": "MBPP/18",
+        "sample_index": 0,
+        "p_pass_oof": 0.2939348689585036,
+        "initial_passed": false,
+        "smart_gated": true,
+        "random_gated": true
+      },
+      {
+        "task_id": "MBPP/19",
+        "sample_index": 0,
+        "p_pass_oof": 0.8714091022370565,
+        "initial_passed": false,
+        "smart_gated": false,
+        "random_gated": true
+      },
+      {
+        "task_id": "MBPP/20",
+        "sample_index": 0,
+        "p_pass_oof": 0.04507269802139792,
+        "initial_passed": false,
+        "smart_gated": true,
+        "random_gated": true
+      },
+      {
+        "task_id": "MBPP/56",
+        "sample_index": 0,
+        "p_pass_oof": 0.35976979041449814,
+        "initial_passed": false,
+        "smart_gated": true,
+        "random_gated": true
+      },
+      {
+        "task_id": "MBPP/57",
+        "sample_index": 0,
+        "p_pass_oof": 0.10372926263302473,
+        "initial_passed": false,
+        "smart_gated": true,
+        "random_gated": false
+      },
+      {
+        "task_id": "MBPP/58",
+        "sample_index": 0,
+        "p_pass_oof": 0.5636623474709924,
+        "initial_passed": false,
+        "smart_gated": false,
+        "random_gated": true
+      },
+      {
+        "task_id": "MBPP/59",
+        "sample_index": 0,
+        "p_pass_oof": 0.6923331194739244,
+        "initial_passed": false,
+        "smart_gated": false,
+        "random_gated": false
+      },
+      {
+        "task_id": "MBPP/61",
+        "sample_index": 0,
+        "p_pass_oof": 0.4584702716731255,
+        "initial_passed": false,
+        "smart_gated": false,
+        "random_gated": true
+      },
+      {
+        "task_id": "MBPP/62",
+        "sample_index": 0,
+        "p_pass_oof": 0.9119748103661818,
+        "initial_passed": true,
+        "smart_gated": false,
+        "random_gated": true
+      },
+      {
+        "task_id": "MBPP/63",
+        "sample_index": 0,
+        "p_pass_oof": 0.6026325598109451,
+        "initial_passed": false,
+        "smart_gated": false,
+        "random_gated": true
+      },
+      {
+        "task_id": "MBPP/64",
+        "sample_index": 0,
+        "p_pass_oof": 0.4558969230717509,
+        "initial_passed": false,
+        "smart_gated": true,
+        "random_gated": true
+      },
+      {
+        "task_id": "MBPP/65",
+        "sample_index": 0,
+        "p_pass_oof": 0.246337642271679,
+        "initial_passed": false,
+        "smart_gated": true,
+        "random_gated": false
+      },
+      {
+        "task_id": "MBPP/66",
+        "sample_index": 0,
+        "p_pass_oof": 0.9132902800445423,
+        "initial_passed": true,
+        "smart_gated": false,
+        "random_gated": true
+      },
+      {
+        "task_id": "MBPP/67",
+        "sample_index": 0,
+        "p_pass_oof": 0.45419759682189764,
+        "initial_passed": false,
+        "smart_gated": true,
+        "random_gated": true
+      },
+      {
+        "task_id": "MBPP/68",
+        "sample_index": 0,
+        "p_pass_oof": 0.7430698040071924,
+        "initial_passed": false,
+        "smart_gated": false,
+        "random_gated": false
+      },
+      {
+        "task_id": "MBPP/69",
+        "sample_index": 0,
+        "p_pass_oof": 0.16883386057248773,
+        "initial_passed": false,
+        "smart_gated": true,
+        "random_gated": false
+      },
+      {
+        "task_id": "MBPP/70",
+        "sample_index": 0,
+        "p_pass_oof": 0.6135336978095044,
+        "initial_passed": false,
+        "smart_gated": false,
+        "random_gated": true
+      },
+      {
+        "task_id": "MBPP/71",
+        "sample_index": 0,
+        "p_pass_oof": 0.1735537289097865,
+        "initial_passed": false,
+        "smart_gated": true,
+        "random_gated": true
+      },
+      {
+        "task_id": "MBPP/72",
+        "sample_index": 0,
+        "p_pass_oof": 0.24223271082664288,
+        "initial_passed": false,
+        "smart_gated": true,
+        "random_gated": false
+      },
+      {
+        "task_id": "MBPP/74",
+        "sample_index": 0,
+        "p_pass_oof": 0.11587345609079162,
+        "initial_passed": false,
+        "smart_gated": true,
+        "random_gated": true
+      },
+      {
+        "task_id": "MBPP/75",
+        "sample_index": 0,
+        "p_pass_oof": 0.7424548580541782,
+        "initial_passed": false,
+        "smart_gated": false,
+        "random_gated": true
+      },
+      {
+        "task_id": "MBPP/77",
+        "sample_index": 0,
+        "p_pass_oof": 0.05099177098900588,
+        "initial_passed": false,
+        "smart_gated": true,
+        "random_gated": true
+      },
+      {
+        "task_id": "MBPP/79",
+        "sample_index": 0,
+        "p_pass_oof": 0.10660837499390503,
+        "initial_passed": false,
+        "smart_gated": true,
+        "random_gated": true
+      },
+      {
+        "task_id": "MBPP/80",
+        "sample_index": 0,
+        "p_pass_oof": 0.1284909535748798,
+        "initial_passed": false,
+        "smart_gated": true,
+        "random_gated": true
+      },
+      {
+        "task_id": "MBPP/82",
+        "sample_index": 0,
+        "p_pass_oof": 0.4084159083291834,
+        "initial_passed": false,
+        "smart_gated": true,
+        "random_gated": true
+      },
+      {
+        "task_id": "MBPP/84",
+        "sample_index": 0,
+        "p_pass_oof": 0.3798784573200514,
+        "initial_passed": false,
+        "smart_gated": true,
+        "random_gated": false
+      },
+      {
+        "task_id": "MBPP/85",
+        "sample_index": 0,
+        "p_pass_oof": 0.7745110664668748,
+        "initial_passed": false,
+        "smart_gated": false,
+        "random_gated": false
+      },
+      {
+        "task_id": "MBPP/86",
+        "sample_index": 0,
+        "p_pass_oof": 0.08626807186012442,
+        "initial_passed": false,
+        "smart_gated": true,
+        "random_gated": true
+      },
+      {
+        "task_id": "MBPP/87",
+        "sample_index": 0,
+        "p_pass_oof": 0.11958772237876436,
+        "initial_passed": false,
+        "smart_gated": true,
+        "random_gated": false
+      },
+      {
+        "task_id": "MBPP/88",
+        "sample_index": 0,
+        "p_pass_oof": 0.10304740059946477,
+        "initial_passed": false,
+        "smart_gated": true,
+        "random_gated": true
+      },
+      {
+        "task_id": "MBPP/89",
+        "sample_index": 0,
+        "p_pass_oof": 0.08691584803373664,
+        "initial_passed": false,
+        "smart_gated": true,
+        "random_gated": true
+      },
+      {
+        "task_id": "MBPP/90",
+        "sample_index": 0,
+        "p_pass_oof": 0.09158836467984963,
+        "initial_passed": false,
+        "smart_gated": true,
+        "random_gated": false
+      },
+      {
+        "task_id": "MBPP/91",
+        "sample_index": 0,
+        "p_pass_oof": 0.08524836753923075,
+        "initial_passed": false,
+        "smart_gated": true,
+        "random_gated": true
+      },
+      {
+        "task_id": "MBPP/92",
+        "sample_index": 0,
+        "p_pass_oof": 0.6524788512720838,
+        "initial_passed": false,
+        "smart_gated": false,
+        "random_gated": false
+      },
+      {
+        "task_id": "MBPP/93",
+        "sample_index": 0,
+        "p_pass_oof": 0.966843534258383,
+        "initial_passed": true,
+        "smart_gated": false,
+        "random_gated": true
+      },
+      {
+        "task_id": "MBPP/94",
+        "sample_index": 0,
+        "p_pass_oof": 0.28621722107435293,
+        "initial_passed": false,
+        "smart_gated": true,
+        "random_gated": true
+      },
+      {
+        "task_id": "MBPP/95",
+        "sample_index": 0,
+        "p_pass_oof": 0.11991984491255366,
+        "initial_passed": false,
+        "smart_gated": true,
+        "random_gated": true
+      },
+      {
+        "task_id": "MBPP/96",
+        "sample_index": 0,
+        "p_pass_oof": 0.0581248713341398,
+        "initial_passed": false,
+        "smart_gated": true,
+        "random_gated": true
+      },
+      {
+        "task_id": "MBPP/97",
+        "sample_index": 0,
+        "p_pass_oof": 0.057982582501119706,
+        "initial_passed": false,
+        "smart_gated": true,
+        "random_gated": true
+      },
+      {
+        "task_id": "MBPP/98",
+        "sample_index": 0,
+        "p_pass_oof": 0.21586145505743742,
+        "initial_passed": false,
+        "smart_gated": true,
+        "random_gated": true
+      },
+      {
+        "task_id": "MBPP/99",
+        "sample_index": 0,
+        "p_pass_oof": 0.31803991147487337,
+        "initial_passed": true,
+        "smart_gated": true,
+        "random_gated": false
+      },
+      {
+        "task_id": "MBPP/100",
+        "sample_index": 0,
+        "p_pass_oof": 0.19835468435116962,
+        "initial_passed": false,
+        "smart_gated": true,
+        "random_gated": true
+      },
+      {
+        "task_id": "MBPP/101",
+        "sample_index": 0,
+        "p_pass_oof": 0.3788032636591795,
+        "initial_passed": false,
+        "smart_gated": true,
+        "random_gated": true
+      },
+      {
+        "task_id": "MBPP/102",
+        "sample_index": 0,
+        "p_pass_oof": 0.44540186013272126,
+        "initial_passed": false,
+        "smart_gated": true,
+        "random_gated": true
+      },
+      {
+        "task_id": "MBPP/103",
+        "sample_index": 0,
+        "p_pass_oof": 0.0728741452847685,
+        "initial_passed": false,
+        "smart_gated": true,
+        "random_gated": true
+      },
+      {
+        "task_id": "MBPP/104",
+        "sample_index": 0,
+        "p_pass_oof": 0.19310960267712365,
+        "initial_passed": false,
+        "smart_gated": true,
+        "random_gated": true
+      },
+      {
+        "task_id": "MBPP/105",
+        "sample_index": 0,
+        "p_pass_oof": 0.9956321825288638,
+        "initial_passed": true,
+        "smart_gated": false,
+        "random_gated": true
+      },
+      {
+        "task_id": "MBPP/106",
+        "sample_index": 0,
+        "p_pass_oof": 0.1262789589693577,
+        "initial_passed": false,
+        "smart_gated": true,
+        "random_gated": true
+      },
+      {
+        "task_id": "MBPP/108",
+        "sample_index": 0,
+        "p_pass_oof": 0.033024601446358624,
+        "initial_passed": false,
+        "smart_gated": true,
+        "random_gated": true
+      },
+      {
+        "task_id": "MBPP/109",
+        "sample_index": 0,
+        "p_pass_oof": 0.0786959898622211,
+        "initial_passed": false,
+        "smart_gated": true,
+        "random_gated": false
+      },
+      {
+        "task_id": "MBPP/111",
+        "sample_index": 0,
+        "p_pass_oof": 0.25896071503243784,
+        "initial_passed": false,
+        "smart_gated": true,
+        "random_gated": false
+      },
+      {
+        "task_id": "MBPP/113",
+        "sample_index": 0,
+        "p_pass_oof": 0.9882768732904733,
+        "initial_passed": true,
+        "smart_gated": false,
+        "random_gated": true
+      },
+      {
+        "task_id": "MBPP/116",
+        "sample_index": 0,
+        "p_pass_oof": 0.2780209728608171,
+        "initial_passed": false,
+        "smart_gated": true,
+        "random_gated": true
+      },
+      {
+        "task_id": "MBPP/118",
+        "sample_index": 0,
+        "p_pass_oof": 0.42864565269733973,
+        "initial_passed": false,
+        "smart_gated": true,
+        "random_gated": false
+      },
+      {
+        "task_id": "MBPP/119",
+        "sample_index": 0,
+        "p_pass_oof": 0.022451978574450204,
+        "initial_passed": false,
+        "smart_gated": true,
+        "random_gated": true
+      }
+    ]
+  },
+  "conditions": {
+    "baseline": {
+      "name": "baseline",
+      "candidates": 60,
+      "gated_candidates": 0,
+      "gate_coverage": 0.0,
+      "initial_passed": 6,
+      "initial_accuracy": 0.1,
+      "attempted_repairs": 0,
+      "successful_repairs": 0,
+      "repair_success_rate": 0.0,
+      "repair_success_wilson_95": [
+        0.0,
+        0.0
+      ],
+      "final_passed": 6,
+      "final_accuracy": 0.1,
+      "added_passes": 0,
+      "repair_model_calls": 0,
+      "duplicate_candidates": 0,
+      "duplicate_candidate_rate": 0.0,
+      "unique_repair_candidates_executed": 0,
+      "initial_candidate_executions": 0,
+      "total_execution_budget": 0,
+      "model_calls_per_added_pass": null,
+      "successful_selected_candidate_indices": {},
+      "per_initial_failure_category": {
+        "assertion_error": {
+          "initial_failures": 33,
+          "attempted_repairs": 0,
+          "successful_repairs": 0,
+          "captured_failure_rate": 0.0,
+          "repair_success_rate": 0.0,
+          "repair_model_calls": 0,
+          "calls_per_success": null
+        },
+        "name_error": {
+          "initial_failures": 7,
+          "attempted_repairs": 0,
+          "successful_repairs": 0,
+          "captured_failure_rate": 0.0,
+          "repair_success_rate": 0.0,
+          "repair_model_calls": 0,
+          "calls_per_success": null
+        },
+        "runtime_error": {
+          "initial_failures": 4,
+          "attempted_repairs": 0,
+          "successful_repairs": 0,
+          "captured_failure_rate": 0.0,
+          "repair_success_rate": 0.0,
+          "repair_model_calls": 0,
+          "calls_per_success": null
+        },
+        "syntax_error": {
+          "initial_failures": 3,
+          "attempted_repairs": 0,
+          "successful_repairs": 0,
+          "captured_failure_rate": 0.0,
+          "repair_success_rate": 0.0,
+          "repair_model_calls": 0,
+          "calls_per_success": null
+        },
+        "type_error": {
+          "initial_failures": 7,
+          "attempted_repairs": 0,
+          "successful_repairs": 0,
+          "captured_failure_rate": 0.0,
+          "repair_success_rate": 0.0,
+          "repair_model_calls": 0,
+          "calls_per_success": null
+        }
+      },
+      "model_call_savings_vs_repair_all": 147,
+      "relative_model_call_savings_vs_repair_all": 1.0,
+      "repair_all_successes_captured": 0,
+      "repair_all_success_capture_rate": 0.0
+    },
+    "repair_all": {
+      "name": "repair_all",
+      "candidates": 60,
+      "gated_candidates": 60,
+      "gate_coverage": 1.0,
+      "initial_passed": 6,
+      "initial_accuracy": 0.1,
+      "attempted_repairs": 54,
+      "successful_repairs": 10,
+      "repair_success_rate": 0.18518518518518517,
+      "repair_success_wilson_95": [
+        0.10382574505942957,
+        0.3083620229137938
+      ],
+      "final_passed": 16,
+      "final_accuracy": 0.26666666666666666,
+      "added_passes": 10,
+      "repair_model_calls": 147,
+      "duplicate_candidates": 8,
+      "duplicate_candidate_rate": 0.05442176870748299,
+      "unique_repair_candidates_executed": 139,
+      "initial_candidate_executions": 60,
+      "total_execution_budget": 199,
+      "model_calls_per_added_pass": 14.7,
+      "successful_selected_candidate_indices": {
+        "0": 7,
+        "2": 2,
+        "1": 1
+      },
+      "per_initial_failure_category": {
+        "assertion_error": {
+          "initial_failures": 33,
+          "attempted_repairs": 33,
+          "successful_repairs": 8,
+          "captured_failure_rate": 0.24242424242424243,
+          "repair_success_rate": 0.24242424242424243,
+          "repair_model_calls": 88,
+          "calls_per_success": 11.0
+        },
+        "name_error": {
+          "initial_failures": 7,
+          "attempted_repairs": 7,
+          "successful_repairs": 1,
+          "captured_failure_rate": 0.14285714285714285,
+          "repair_success_rate": 0.14285714285714285,
+          "repair_model_calls": 19,
+          "calls_per_success": 19.0
+        },
+        "runtime_error": {
+          "initial_failures": 4,
+          "attempted_repairs": 4,
+          "successful_repairs": 0,
+          "captured_failure_rate": 0.0,
+          "repair_success_rate": 0.0,
+          "repair_model_calls": 12,
+          "calls_per_success": null
+        },
+        "syntax_error": {
+          "initial_failures": 3,
+          "attempted_repairs": 3,
+          "successful_repairs": 0,
+          "captured_failure_rate": 0.0,
+          "repair_success_rate": 0.0,
+          "repair_model_calls": 9,
+          "calls_per_success": null
+        },
+        "type_error": {
+          "initial_failures": 7,
+          "attempted_repairs": 7,
+          "successful_repairs": 1,
+          "captured_failure_rate": 0.14285714285714285,
+          "repair_success_rate": 0.14285714285714285,
+          "repair_model_calls": 19,
+          "calls_per_success": 19.0
+        }
+      },
+      "model_call_savings_vs_repair_all": 0,
+      "relative_model_call_savings_vs_repair_all": 0.0,
+      "repair_all_successes_captured": 10,
+      "repair_all_success_capture_rate": 1.0
+    },
+    "smart_repair_at_0.75": {
+      "name": "smart_repair_at_0.75",
+      "candidates": 60,
+      "gated_candidates": 45,
+      "gate_coverage": 0.75,
+      "initial_passed": 6,
+      "initial_accuracy": 0.1,
+      "attempted_repairs": 44,
+      "successful_repairs": 7,
+      "repair_success_rate": 0.1590909090909091,
+      "repair_success_wilson_95": [
+        0.07926576557718398,
+        0.29366490563782555
+      ],
+      "final_passed": 13,
+      "final_accuracy": 0.21666666666666667,
+      "added_passes": 7,
+      "repair_model_calls": 120,
+      "duplicate_candidates": 8,
+      "duplicate_candidate_rate": 0.06666666666666667,
+      "unique_repair_candidates_executed": 112,
+      "initial_candidate_executions": 45,
+      "total_execution_budget": 157,
+      "model_calls_per_added_pass": 17.142857142857142,
+      "successful_selected_candidate_indices": {
+        "0": 6,
+        "2": 1
+      },
+      "per_initial_failure_category": {
+        "assertion_error": {
+          "initial_failures": 33,
+          "attempted_repairs": 27,
+          "successful_repairs": 5,
+          "captured_failure_rate": 0.15151515151515152,
+          "repair_success_rate": 0.18518518518518517,
+          "repair_model_calls": 73,
+          "calls_per_success": 14.6
+        },
+        "name_error": {
+          "initial_failures": 7,
+          "attempted_repairs": 5,
+          "successful_repairs": 1,
+          "captured_failure_rate": 0.14285714285714285,
+          "repair_success_rate": 0.2,
+          "repair_model_calls": 13,
+          "calls_per_success": 13.0
+        },
+        "runtime_error": {
+          "initial_failures": 4,
+          "attempted_repairs": 4,
+          "successful_repairs": 0,
+          "captured_failure_rate": 0.0,
+          "repair_success_rate": 0.0,
+          "repair_model_calls": 12,
+          "calls_per_success": null
+        },
+        "syntax_error": {
+          "initial_failures": 3,
+          "attempted_repairs": 3,
+          "successful_repairs": 0,
+          "captured_failure_rate": 0.0,
+          "repair_success_rate": 0.0,
+          "repair_model_calls": 9,
+          "calls_per_success": null
+        },
+        "type_error": {
+          "initial_failures": 7,
+          "attempted_repairs": 5,
+          "successful_repairs": 1,
+          "captured_failure_rate": 0.14285714285714285,
+          "repair_success_rate": 0.2,
+          "repair_model_calls": 13,
+          "calls_per_success": 13.0
+        }
+      },
+      "model_call_savings_vs_repair_all": 27,
+      "relative_model_call_savings_vs_repair_all": 0.1836734693877551,
+      "repair_all_successes_captured": 7,
+      "repair_all_success_capture_rate": 0.7
+    },
+    "random_repair_at_0.75": {
+      "name": "random_repair_at_0.75",
+      "candidates": 60,
+      "gated_candidates": 45,
+      "gate_coverage": 0.75,
+      "initial_passed": 6,
+      "initial_accuracy": 0.1,
+      "attempted_repairs": 40,
+      "successful_repairs": 9,
+      "repair_success_rate": 0.225,
+      "repair_success_wilson_95": [
+        0.1231595325467853,
+        0.3750339640409305
+      ],
+      "final_passed": 15,
+      "final_accuracy": 0.25,
+      "added_passes": 9,
+      "repair_model_calls": 106,
+      "duplicate_candidates": 7,
+      "duplicate_candidate_rate": 0.0660377358490566,
+      "unique_repair_candidates_executed": 99,
+      "initial_candidate_executions": 45,
+      "total_execution_budget": 144,
+      "model_calls_per_added_pass": 11.777777777777779,
+      "successful_selected_candidate_indices": {
+        "0": 7,
+        "2": 2
+      },
+      "per_initial_failure_category": {
+        "assertion_error": {
+          "initial_failures": 33,
+          "attempted_repairs": 24,
+          "successful_repairs": 7,
+          "captured_failure_rate": 0.21212121212121213,
+          "repair_success_rate": 0.2916666666666667,
+          "repair_model_calls": 62,
+          "calls_per_success": 8.857142857142858
+        },
+        "name_error": {
+          "initial_failures": 7,
+          "attempted_repairs": 6,
+          "successful_repairs": 1,
+          "captured_failure_rate": 0.14285714285714285,
+          "repair_success_rate": 0.16666666666666666,
+          "repair_model_calls": 16,
+          "calls_per_success": 16.0
+        },
+        "runtime_error": {
+          "initial_failures": 4,
+          "attempted_repairs": 3,
+          "successful_repairs": 0,
+          "captured_failure_rate": 0.0,
+          "repair_success_rate": 0.0,
+          "repair_model_calls": 9,
+          "calls_per_success": null
+        },
+        "syntax_error": {
+          "initial_failures": 3,
+          "attempted_repairs": 2,
+          "successful_repairs": 0,
+          "captured_failure_rate": 0.0,
+          "repair_success_rate": 0.0,
+          "repair_model_calls": 6,
+          "calls_per_success": null
+        },
+        "type_error": {
+          "initial_failures": 7,
+          "attempted_repairs": 5,
+          "successful_repairs": 1,
+          "captured_failure_rate": 0.14285714285714285,
+          "repair_success_rate": 0.2,
+          "repair_model_calls": 13,
+          "calls_per_success": 13.0
+        }
+      },
+      "model_call_savings_vs_repair_all": 41,
+      "relative_model_call_savings_vs_repair_all": 0.2789115646258503,
+      "repair_all_successes_captured": 9,
+      "repair_all_success_capture_rate": 0.9
+    }
+  },
+  "paired_comparisons": [
+    {
+      "left": "baseline",
+      "right": "repair_all",
+      "both_pass": 6,
+      "left_only_pass": 0,
+      "right_only_pass": 10,
+      "neither_pass": 44,
+      "mcnemar_mid_p": 0.0009765625,
+      "mcnemar_mid_p_bh": 0.005859375
+    },
+    {
+      "left": "baseline",
+      "right": "smart_repair_at_0.75",
+      "both_pass": 6,
+      "left_only_pass": 0,
+      "right_only_pass": 7,
+      "neither_pass": 47,
+      "mcnemar_mid_p": 0.0078125,
+      "mcnemar_mid_p_bh": 0.015625
+    },
+    {
+      "left": "baseline",
+      "right": "random_repair_at_0.75",
+      "both_pass": 6,
+      "left_only_pass": 0,
+      "right_only_pass": 9,
+      "neither_pass": 45,
+      "mcnemar_mid_p": 0.001953125,
+      "mcnemar_mid_p_bh": 0.005859375
+    },
+    {
+      "left": "repair_all",
+      "right": "smart_repair_at_0.75",
+      "both_pass": 13,
+      "left_only_pass": 3,
+      "right_only_pass": 0,
+      "neither_pass": 44,
+      "mcnemar_mid_p": 0.125,
+      "mcnemar_mid_p_bh": 0.1875
+    },
+    {
+      "left": "repair_all",
+      "right": "random_repair_at_0.75",
+      "both_pass": 15,
+      "left_only_pass": 1,
+      "right_only_pass": 0,
+      "neither_pass": 44,
+      "mcnemar_mid_p": 0.5,
+      "mcnemar_mid_p_bh": 0.5
+    },
+    {
+      "left": "smart_repair_at_0.75",
+      "right": "random_repair_at_0.75",
+      "both_pass": 13,
+      "left_only_pass": 0,
+      "right_only_pass": 2,
+      "neither_pass": 45,
+      "mcnemar_mid_p": 0.25,
+      "mcnemar_mid_p_bh": 0.3
+    }
+  ],
+  "risk_coverage": [
+    {
+      "gate_count": 0,
+      "coverage": 0.0,
+      "final_error_risk": 0.9,
+      "final_accuracy": 0.1,
+      "repair_model_calls": 0,
+      "total_execution_budget": 0,
+      "added_passes": 0
+    },
+    {
+      "gate_count": 1,
+      "coverage": 0.016666666666666666,
+      "final_error_risk": 0.9,
+      "final_accuracy": 0.1,
+      "repair_model_calls": 3,
+      "total_execution_budget": 4,
+      "added_passes": 0
+    },
+    {
+      "gate_count": 2,
+      "coverage": 0.03333333333333333,
+      "final_error_risk": 0.9,
+      "final_accuracy": 0.1,
+      "repair_model_calls": 6,
+      "total_execution_budget": 8,
+      "added_passes": 0
+    },
+    {
+      "gate_count": 3,
+      "coverage": 0.05,
+      "final_error_risk": 0.9,
+      "final_accuracy": 0.1,
+      "repair_model_calls": 9,
+      "total_execution_budget": 12,
+      "added_passes": 0
+    },
+    {
+      "gate_count": 4,
+      "coverage": 0.06666666666666667,
+      "final_error_risk": 0.9,
+      "final_accuracy": 0.1,
+      "repair_model_calls": 12,
+      "total_execution_budget": 15,
+      "added_passes": 0
+    },
+    {
+      "gate_count": 5,
+      "coverage": 0.08333333333333333,
+      "final_error_risk": 0.9,
+      "final_accuracy": 0.1,
+      "repair_model_calls": 15,
+      "total_execution_budget": 19,
+      "added_passes": 0
+    },
+    {
+      "gate_count": 6,
+      "coverage": 0.1,
+      "final_error_risk": 0.9,
+      "final_accuracy": 0.1,
+      "repair_model_calls": 18,
+      "total_execution_budget": 23,
+      "added_passes": 0
+    },
+    {
+      "gate_count": 7,
+      "coverage": 0.11666666666666667,
+      "final_error_risk": 0.8833333333333333,
+      "final_accuracy": 0.11666666666666667,
+      "repair_model_calls": 19,
+      "total_execution_budget": 25,
+      "added_passes": 1
+    },
+    {
+      "gate_count": 8,
+      "coverage": 0.13333333333333333,
+      "final_error_risk": 0.8833333333333333,
+      "final_accuracy": 0.11666666666666667,
+      "repair_model_calls": 22,
+      "total_execution_budget": 29,
+      "added_passes": 1
+    },
+    {
+      "gate_count": 9,
+      "coverage": 0.15,
+      "final_error_risk": 0.8666666666666667,
+      "final_accuracy": 0.13333333333333333,
+      "repair_model_calls": 23,
+      "total_execution_budget": 31,
+      "added_passes": 2
+    },
+    {
+      "gate_count": 10,
+      "coverage": 0.16666666666666666,
+      "final_error_risk": 0.85,
+      "final_accuracy": 0.15,
+      "repair_model_calls": 24,
+      "total_execution_budget": 33,
+      "added_passes": 3
+    },
+    {
+      "gate_count": 11,
+      "coverage": 0.18333333333333332,
+      "final_error_risk": 0.85,
+      "final_accuracy": 0.15,
+      "repair_model_calls": 27,
+      "total_execution_budget": 37,
+      "added_passes": 3
+    },
+    {
+      "gate_count": 12,
+      "coverage": 0.2,
+      "final_error_risk": 0.85,
+      "final_accuracy": 0.15,
+      "repair_model_calls": 30,
+      "total_execution_budget": 41,
+      "added_passes": 3
+    },
+    {
+      "gate_count": 13,
+      "coverage": 0.21666666666666667,
+      "final_error_risk": 0.85,
+      "final_accuracy": 0.15,
+      "repair_model_calls": 33,
+      "total_execution_budget": 45,
+      "added_passes": 3
+    },
+    {
+      "gate_count": 14,
+      "coverage": 0.23333333333333334,
+      "final_error_risk": 0.85,
+      "final_accuracy": 0.15,
+      "repair_model_calls": 36,
+      "total_execution_budget": 49,
+      "added_passes": 3
+    },
+    {
+      "gate_count": 15,
+      "coverage": 0.25,
+      "final_error_risk": 0.8333333333333334,
+      "final_accuracy": 0.16666666666666666,
+      "repair_model_calls": 37,
+      "total_execution_budget": 51,
+      "added_passes": 4
+    },
+    {
+      "gate_count": 16,
+      "coverage": 0.26666666666666666,
+      "final_error_risk": 0.8333333333333334,
+      "final_accuracy": 0.16666666666666666,
+      "repair_model_calls": 40,
+      "total_execution_budget": 55,
+      "added_passes": 4
+    },
+    {
+      "gate_count": 17,
+      "coverage": 0.2833333333333333,
+      "final_error_risk": 0.8333333333333334,
+      "final_accuracy": 0.16666666666666666,
+      "repair_model_calls": 43,
+      "total_execution_budget": 59,
+      "added_passes": 4
+    },
+    {
+      "gate_count": 18,
+      "coverage": 0.3,
+      "final_error_risk": 0.8333333333333334,
+      "final_accuracy": 0.16666666666666666,
+      "repair_model_calls": 46,
+      "total_execution_budget": 63,
+      "added_passes": 4
+    },
+    {
+      "gate_count": 19,
+      "coverage": 0.31666666666666665,
+      "final_error_risk": 0.8333333333333334,
+      "final_accuracy": 0.16666666666666666,
+      "repair_model_calls": 49,
+      "total_execution_budget": 67,
+      "added_passes": 4
+    },
+    {
+      "gate_count": 20,
+      "coverage": 0.3333333333333333,
+      "final_error_risk": 0.8333333333333334,
+      "final_accuracy": 0.16666666666666666,
+      "repair_model_calls": 52,
+      "total_execution_budget": 70,
+      "added_passes": 4
+    },
+    {
+      "gate_count": 21,
+      "coverage": 0.35,
+      "final_error_risk": 0.8333333333333334,
+      "final_accuracy": 0.16666666666666666,
+      "repair_model_calls": 55,
+      "total_execution_budget": 73,
+      "added_passes": 4
+    },
+    {
+      "gate_count": 22,
+      "coverage": 0.36666666666666664,
+      "final_error_risk": 0.8333333333333334,
+      "final_accuracy": 0.16666666666666666,
+      "repair_model_calls": 58,
+      "total_execution_budget": 77,
+      "added_passes": 4
+    },
+    {
+      "gate_count": 23,
+      "coverage": 0.38333333333333336,
+      "final_error_risk": 0.8333333333333334,
+      "final_accuracy": 0.16666666666666666,
+      "repair_model_calls": 61,
+      "total_execution_budget": 81,
+      "added_passes": 4
+    },
+    {
+      "gate_count": 24,
+      "coverage": 0.4,
+      "final_error_risk": 0.8333333333333334,
+      "final_accuracy": 0.16666666666666666,
+      "repair_model_calls": 64,
+      "total_execution_budget": 84,
+      "added_passes": 4
+    },
+    {
+      "gate_count": 25,
+      "coverage": 0.4166666666666667,
+      "final_error_risk": 0.8333333333333334,
+      "final_accuracy": 0.16666666666666666,
+      "repair_model_calls": 67,
+      "total_execution_budget": 88,
+      "added_passes": 4
+    },
+    {
+      "gate_count": 26,
+      "coverage": 0.43333333333333335,
+      "final_error_risk": 0.8333333333333334,
+      "final_accuracy": 0.16666666666666666,
+      "repair_model_calls": 70,
+      "total_execution_budget": 92,
+      "added_passes": 4
+    },
+    {
+      "gate_count": 27,
+      "coverage": 0.45,
+      "final_error_risk": 0.8166666666666667,
+      "final_accuracy": 0.18333333333333332,
+      "repair_model_calls": 71,
+      "total_execution_budget": 94,
+      "added_passes": 5
+    },
+    {
+      "gate_count": 28,
+      "coverage": 0.4666666666666667,
+      "final_error_risk": 0.8166666666666667,
+      "final_accuracy": 0.18333333333333332,
+      "repair_model_calls": 74,
+      "total_execution_budget": 98,
+      "added_passes": 5
+    },
+    {
+      "gate_count": 29,
+      "coverage": 0.48333333333333334,
+      "final_error_risk": 0.8166666666666667,
+      "final_accuracy": 0.18333333333333332,
+      "repair_model_calls": 77,
+      "total_execution_budget": 102,
+      "added_passes": 5
+    },
+    {
+      "gate_count": 30,
+      "coverage": 0.5,
+      "final_error_risk": 0.8,
+      "final_accuracy": 0.2,
+      "repair_model_calls": 80,
+      "total_execution_budget": 106,
+      "added_passes": 6
+    },
+    {
+      "gate_count": 31,
+      "coverage": 0.5166666666666667,
+      "final_error_risk": 0.8,
+      "final_accuracy": 0.2,
+      "repair_model_calls": 83,
+      "total_execution_budget": 110,
+      "added_passes": 6
+    },
+    {
+      "gate_count": 32,
+      "coverage": 0.5333333333333333,
+      "final_error_risk": 0.8,
+      "final_accuracy": 0.2,
+      "repair_model_calls": 86,
+      "total_execution_budget": 114,
+      "added_passes": 6
+    },
+    {
+      "gate_count": 33,
+      "coverage": 0.55,
+      "final_error_risk": 0.8,
+      "final_accuracy": 0.2,
+      "repair_model_calls": 89,
+      "total_execution_budget": 118,
+      "added_passes": 6
+    },
+    {
+      "gate_count": 34,
+      "coverage": 0.5666666666666667,
+      "final_error_risk": 0.7833333333333333,
+      "final_accuracy": 0.21666666666666667,
+      "repair_model_calls": 90,
+      "total_execution_budget": 120,
+      "added_passes": 7
+    },
+    {
+      "gate_count": 35,
+      "coverage": 0.5833333333333334,
+      "final_error_risk": 0.7833333333333333,
+      "final_accuracy": 0.21666666666666667,
+      "repair_model_calls": 93,
+      "total_execution_budget": 123,
+      "added_passes": 7
+    },
+    {
+      "gate_count": 36,
+      "coverage": 0.6,
+      "final_error_risk": 0.7833333333333333,
+      "final_accuracy": 0.21666666666666667,
+      "repair_model_calls": 96,
+      "total_execution_budget": 127,
+      "added_passes": 7
+    },
+    {
+      "gate_count": 37,
+      "coverage": 0.6166666666666667,
+      "final_error_risk": 0.7833333333333333,
+      "final_accuracy": 0.21666666666666667,
+      "repair_model_calls": 96,
+      "total_execution_budget": 128,
+      "added_passes": 7
+    },
+    {
+      "gate_count": 38,
+      "coverage": 0.6333333333333333,
+      "final_error_risk": 0.7833333333333333,
+      "final_accuracy": 0.21666666666666667,
+      "repair_model_calls": 99,
+      "total_execution_budget": 132,
+      "added_passes": 7
+    },
+    {
+      "gate_count": 39,
+      "coverage": 0.65,
+      "final_error_risk": 0.7833333333333333,
+      "final_accuracy": 0.21666666666666667,
+      "repair_model_calls": 102,
+      "total_execution_budget": 136,
+      "added_passes": 7
+    },
+    {
+      "gate_count": 40,
+      "coverage": 0.6666666666666666,
+      "final_error_risk": 0.7833333333333333,
+      "final_accuracy": 0.21666666666666667,
+      "repair_model_calls": 105,
+      "total_execution_budget": 140,
+      "added_passes": 7
+    },
+    {
+      "gate_count": 41,
+      "coverage": 0.6833333333333333,
+      "final_error_risk": 0.7833333333333333,
+      "final_accuracy": 0.21666666666666667,
+      "repair_model_calls": 108,
+      "total_execution_budget": 143,
+      "added_passes": 7
+    },
+    {
+      "gate_count": 42,
+      "coverage": 0.7,
+      "final_error_risk": 0.7833333333333333,
+      "final_accuracy": 0.21666666666666667,
+      "repair_model_calls": 111,
+      "total_execution_budget": 147,
+      "added_passes": 7
+    },
+    {
+      "gate_count": 43,
+      "coverage": 0.7166666666666667,
+      "final_error_risk": 0.7833333333333333,
+      "final_accuracy": 0.21666666666666667,
+      "repair_model_calls": 114,
+      "total_execution_budget": 151,
+      "added_passes": 7
+    },
+    {
+      "gate_count": 44,
+      "coverage": 0.7333333333333333,
+      "final_error_risk": 0.7833333333333333,
+      "final_accuracy": 0.21666666666666667,
+      "repair_model_calls": 117,
+      "total_execution_budget": 154,
+      "added_passes": 7
+    },
+    {
+      "gate_count": 45,
+      "coverage": 0.75,
+      "final_error_risk": 0.7833333333333333,
+      "final_accuracy": 0.21666666666666667,
+      "repair_model_calls": 120,
+      "total_execution_budget": 157,
+      "added_passes": 7
+    },
+    {
+      "gate_count": 46,
+      "coverage": 0.7666666666666667,
+      "final_error_risk": 0.7666666666666666,
+      "final_accuracy": 0.23333333333333334,
+      "repair_model_calls": 123,
+      "total_execution_budget": 161,
+      "added_passes": 8
+    },
+    {
+      "gate_count": 47,
+      "coverage": 0.7833333333333333,
+      "final_error_risk": 0.7666666666666666,
+      "final_accuracy": 0.23333333333333334,
+      "repair_model_calls": 126,
+      "total_execution_budget": 165,
+      "added_passes": 8
+    },
+    {
+      "gate_count": 48,
+      "coverage": 0.8,
+      "final_error_risk": 0.7666666666666666,
+      "final_accuracy": 0.23333333333333334,
+      "repair_model_calls": 129,
+      "total_execution_budget": 169,
+      "added_passes": 8
+    },
+    {
+      "gate_count": 49,
+      "coverage": 0.8166666666666667,
+      "final_error_risk": 0.7666666666666666,
+      "final_accuracy": 0.23333333333333334,
+      "repair_model_calls": 132,
+      "total_execution_budget": 173,
+      "added_passes": 8
+    },
+    {
+      "gate_count": 50,
+      "coverage": 0.8333333333333334,
+      "final_error_risk": 0.7666666666666666,
+      "final_accuracy": 0.23333333333333334,
+      "repair_model_calls": 135,
+      "total_execution_budget": 177,
+      "added_passes": 8
+    },
+    {
+      "gate_count": 51,
+      "coverage": 0.85,
+      "final_error_risk": 0.7666666666666666,
+      "final_accuracy": 0.23333333333333334,
+      "repair_model_calls": 138,
+      "total_execution_budget": 181,
+      "added_passes": 8
+    },
+    {
+      "gate_count": 52,
+      "coverage": 0.8666666666666667,
+      "final_error_risk": 0.7666666666666666,
+      "final_accuracy": 0.23333333333333334,
+      "repair_model_calls": 141,
+      "total_execution_budget": 185,
+      "added_passes": 8
+    },
+    {
+      "gate_count": 53,
+      "coverage": 0.8833333333333333,
+      "final_error_risk": 0.75,
+      "final_accuracy": 0.25,
+      "repair_model_calls": 143,
+      "total_execution_budget": 188,
+      "added_passes": 9
+    },
+    {
+      "gate_count": 54,
+      "coverage": 0.9,
+      "final_error_risk": 0.75,
+      "final_accuracy": 0.25,
+      "repair_model_calls": 146,
+      "total_execution_budget": 192,
+      "added_passes": 9
+    },
+    {
+      "gate_count": 55,
+      "coverage": 0.9166666666666666,
+      "final_error_risk": 0.7333333333333334,
+      "final_accuracy": 0.26666666666666666,
+      "repair_model_calls": 147,
+      "total_execution_budget": 194,
+      "added_passes": 10
+    },
+    {
+      "gate_count": 56,
+      "coverage": 0.9333333333333333,
+      "final_error_risk": 0.7333333333333334,
+      "final_accuracy": 0.26666666666666666,
+      "repair_model_calls": 147,
+      "total_execution_budget": 195,
+      "added_passes": 10
+    },
+    {
+      "gate_count": 57,
+      "coverage": 0.95,
+      "final_error_risk": 0.7333333333333334,
+      "final_accuracy": 0.26666666666666666,
+      "repair_model_calls": 147,
+      "total_execution_budget": 196,
+      "added_passes": 10
+    },
+    {
+      "gate_count": 58,
+      "coverage": 0.9666666666666667,
+      "final_error_risk": 0.7333333333333334,
+      "final_accuracy": 0.26666666666666666,
+      "repair_model_calls": 147,
+      "total_execution_budget": 197,
+      "added_passes": 10
+    },
+    {
+      "gate_count": 59,
+      "coverage": 0.9833333333333333,
+      "final_error_risk": 0.7333333333333334,
+      "final_accuracy": 0.26666666666666666,
+      "repair_model_calls": 147,
+      "total_execution_budget": 198,
+      "added_passes": 10
+    },
+    {
+      "gate_count": 60,
+      "coverage": 1.0,
+      "final_error_risk": 0.7333333333333334,
+      "final_accuracy": 0.26666666666666666,
+      "repair_model_calls": 147,
+      "total_execution_budget": 199,
+      "added_passes": 10
+    }
+  ],
+  "area_under_final_risk_coverage": 0.8113888888888889,
+  "repair_all_selected_candidate_indices": {
+    "0": 7,
+    "2": 2,
+    "1": 1
+  },
+  "week6_stop_on_pass_counterfactual": {
+    "completed_failures": 50,
+    "successful_repairs": 12,
+    "actual_model_calls": 150,
+    "stop_on_pass_model_calls": 132,
+    "saved_model_calls": 18,
+    "relative_call_savings": 0.12,
+    "actual_calls_per_success": 12.5,
+    "stop_on_pass_calls_per_success": 11.0,
+    "first_passing_candidate_indices": {
+      "0": 8,
+      "2": 2,
+      "1": 2
+    }
+  }
+}

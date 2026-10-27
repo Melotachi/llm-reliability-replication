@@ -1,0 +1,85 @@
+{
+  "analysis": "joint_gate_target_diagnosis",
+  "timestamp": "2026-08-29T20:47:49.471574",
+  "config": {
+    "source_results": "results/mbpp_uncertainty_20260712_024909.json",
+    "source_run_id": "mbpp_uncertainty_20260712_024909",
+    "repair_run_id": "mbpp_week7_repair_all_sample0_qwen15b",
+    "repair_model": "Qwen/Qwen2.5-Coder-1.5B-Instruct",
+    "predictor_feature_set": "self_consistency_plus_execution",
+    "predictor_model_type": "logistic",
+    "probability_kind": "out_of_fold_raw_rank_only",
+    "sample_index": 0,
+    "seed": 42,
+    "n_permutations": 10000,
+    "n_bootstrap": 10000
+  },
+  "cohort": {
+    "candidates": 60,
+    "initially_passing": 6,
+    "initially_failing": 54,
+    "repaired": 10
+  },
+  "targets": [
+    {
+      "target": "initial_passed",
+      "n": 60,
+      "n_positive": 6,
+      "n_negative": 54,
+      "roc_auc": 0.9444444444444444,
+      "permutation_p": 9.999000099990002e-05,
+      "n_permutations": 10000,
+      "bootstrap_95": [
+        0.8036363636363636,
+        1.0
+      ],
+      "n_bootstrap": 10000,
+      "mean_score_positive": 0.8490095986605531,
+      "mean_score_negative": 0.27063660556622443
+    },
+    {
+      "target": "repair_success",
+      "n": 54,
+      "n_positive": 10,
+      "n_negative": 44,
+      "roc_auc": 0.5181818181818182,
+      "permutation_p": 0.8688131186881312,
+      "n_permutations": 10000,
+      "bootstrap_95": [
+        0.297957012592271,
+        0.7430555555555556
+      ],
+      "n_bootstrap": 10000,
+      "mean_score_positive": 0.2998473594474681,
+      "mean_score_negative": 0.2639977978659418
+    }
+  ],
+  "target_gap": 0.42626262626262623,
+  "per_initial_failure_category": {
+    "assertion_error": {
+      "n": 33,
+      "repaired": 8,
+      "repair_rate": 0.24242424242424243
+    },
+    "name_error": {
+      "n": 7,
+      "repaired": 1,
+      "repair_rate": 0.14285714285714285
+    },
+    "runtime_error": {
+      "n": 4,
+      "repaired": 0,
+      "repair_rate": 0.0
+    },
+    "syntax_error": {
+      "n": 3,
+      "repaired": 0,
+      "repair_rate": 0.0
+    },
+    "type_error": {
+      "n": 7,
+      "repaired": 1,
+      "repair_rate": 0.14285714285714285
+    }
+  }
+}

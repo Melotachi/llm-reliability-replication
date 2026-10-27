@@ -1,0 +1,2754 @@
+{
+  "analysis": "week10_context_arm_router",
+  "label": "base",
+  "source_results_file": "results/humaneval_uncertainty_merged164_20260711.json",
+  "predictor_file": "results/predictor_humaneval_20260712_215312.json",
+  "arm_files": {
+    "none": "results/humaneval_week9_arm_resample_sample0_qwen15b.json",
+    "code_only": "results/humaneval_week9_arm_code_only_sample0_qwen15b.json",
+    "error": "results/humaneval_week9_arm_error_nostop_sample0_qwen15b.json"
+  },
+  "config": {
+    "sample_index": 0,
+    "n_splits": 5,
+    "n_permutations": 1000,
+    "n_seeds": 200,
+    "seed": 42,
+    "default_arm": "none",
+    "routed_arm": "code_only",
+    "feature_names": [
+      "p_pass_oof",
+      "sibling_pass_rate",
+      "initial_code_chars",
+      "lexical_diversity",
+      "token_jaccard_diversity",
+      "token_cosine_diversity",
+      "ast_node_diversity",
+      "tree_edit_distance_diversity",
+      "pairwise_distance",
+      "parse_failure_rate",
+      "category_assertion_error",
+      "category_name_error",
+      "category_runtime_error",
+      "category_syntax_error",
+      "category_type_error",
+      "category_timeout"
+    ]
+  },
+  "reference_points": {
+    "n_coordinates": 148,
+    "per_arm_passes": {
+      "code_only": 65,
+      "error": 54,
+      "none": 91
+    },
+    "best_single_arm": "none",
+    "best_single_arm_passes": 91,
+    "oracle_union_passes": 109,
+    "default_arm": "none",
+    "default_arm_passes": 91,
+    "routed_arm": "code_only",
+    "two_arm_oracle_passes": 109,
+    "headroom_context_only": 18,
+    "headroom_routed_arm_only": 18
+  },
+  "target": {
+    "name": "context_only",
+    "n_positive": 18,
+    "n_rows": 148,
+    "positives": [
+      "HumanEval/9",
+      "HumanEval/17",
+      "HumanEval/18",
+      "HumanEval/39",
+      "HumanEval/57",
+      "HumanEval/63",
+      "HumanEval/64",
+      "HumanEval/70",
+      "HumanEval/77",
+      "HumanEval/79",
+      "HumanEval/83",
+      "HumanEval/86",
+      "HumanEval/90",
+      "HumanEval/95",
+      "HumanEval/139",
+      "HumanEval/146",
+      "HumanEval/147",
+      "HumanEval/151"
+    ]
+  },
+  "rankability": {
+    "cv_roc_auc": 0.5944444444444444,
+    "permutation_p": 0.09290709290709291,
+    "univariate": [
+      {
+        "feature": "initial_code_chars",
+        "auc": 0.33824786324786327,
+        "abs_deviation": 0.16175213675213673
+      },
+      {
+        "feature": "parse_failure_rate",
+        "auc": 0.3844017094017094,
+        "abs_deviation": 0.11559829059829058
+      },
+      {
+        "feature": "p_pass_oof",
+        "auc": 0.6047008547008547,
+        "abs_deviation": 0.10470085470085466
+      },
+      {
+        "feature": "tree_edit_distance_diversity",
+        "auc": 0.4200854700854701,
+        "abs_deviation": 0.07991452991452991
+      },
+      {
+        "feature": "ast_node_diversity",
+        "auc": 0.4205128205128205,
+        "abs_deviation": 0.07948717948717948
+      },
+      {
+        "feature": "lexical_diversity",
+        "auc": 0.4269230769230769,
+        "abs_deviation": 0.0730769230769231
+      },
+      {
+        "feature": "category_assertion_error",
+        "auc": 0.5598290598290598,
+        "abs_deviation": 0.05982905982905984
+      },
+      {
+        "feature": "category_name_error",
+        "auc": 0.4423076923076923,
+        "abs_deviation": 0.05769230769230771
+      },
+      {
+        "feature": "pairwise_distance",
+        "auc": 0.4495726495726496,
+        "abs_deviation": 0.050427350427350415
+      },
+      {
+        "feature": "category_runtime_error",
+        "auc": 0.5324786324786325,
+        "abs_deviation": 0.032478632478632474
+      },
+      {
+        "feature": "token_cosine_diversity",
+        "auc": 0.4705128205128205,
+        "abs_deviation": 0.029487179487179493
+      },
+      {
+        "feature": "category_syntax_error",
+        "auc": 0.4807692307692308,
+        "abs_deviation": 0.019230769230769218
+      },
+      {
+        "feature": "category_type_error",
+        "auc": 0.4846153846153846,
+        "abs_deviation": 0.015384615384615385
+      },
+      {
+        "feature": "sibling_pass_rate",
+        "auc": 0.4888888888888889,
+        "abs_deviation": 0.011111111111111127
+      },
+      {
+        "feature": "token_jaccard_diversity",
+        "auc": 0.5051282051282051,
+        "abs_deviation": 0.00512820512820511
+      }
+    ]
+  },
+  "routing_sweep": [
+    {
+      "k": 0,
+      "passes": 91,
+      "gained": 0,
+      "lost": 0
+    },
+    {
+      "k": 1,
+      "passes": 91,
+      "gained": 0,
+      "lost": 0
+    },
+    {
+      "k": 2,
+      "passes": 92,
+      "gained": 1,
+      "lost": 0
+    },
+    {
+      "k": 3,
+      "passes": 91,
+      "gained": 1,
+      "lost": 1
+    },
+    {
+      "k": 4,
+      "passes": 90,
+      "gained": 1,
+      "lost": 2
+    },
+    {
+      "k": 5,
+      "passes": 89,
+      "gained": 1,
+      "lost": 3
+    },
+    {
+      "k": 6,
+      "passes": 89,
+      "gained": 1,
+      "lost": 3
+    },
+    {
+      "k": 7,
+      "passes": 88,
+      "gained": 1,
+      "lost": 4
+    },
+    {
+      "k": 8,
+      "passes": 88,
+      "gained": 1,
+      "lost": 4
+    },
+    {
+      "k": 9,
+      "passes": 88,
+      "gained": 1,
+      "lost": 4
+    },
+    {
+      "k": 10,
+      "passes": 88,
+      "gained": 1,
+      "lost": 4
+    },
+    {
+      "k": 11,
+      "passes": 88,
+      "gained": 1,
+      "lost": 4
+    },
+    {
+      "k": 12,
+      "passes": 89,
+      "gained": 2,
+      "lost": 4
+    },
+    {
+      "k": 13,
+      "passes": 89,
+      "gained": 2,
+      "lost": 4
+    },
+    {
+      "k": 14,
+      "passes": 89,
+      "gained": 2,
+      "lost": 4
+    },
+    {
+      "k": 15,
+      "passes": 89,
+      "gained": 2,
+      "lost": 4
+    },
+    {
+      "k": 16,
+      "passes": 90,
+      "gained": 3,
+      "lost": 4
+    },
+    {
+      "k": 17,
+      "passes": 89,
+      "gained": 3,
+      "lost": 5
+    },
+    {
+      "k": 18,
+      "passes": 88,
+      "gained": 3,
+      "lost": 6
+    },
+    {
+      "k": 19,
+      "passes": 88,
+      "gained": 3,
+      "lost": 6
+    },
+    {
+      "k": 20,
+      "passes": 88,
+      "gained": 3,
+      "lost": 6
+    },
+    {
+      "k": 21,
+      "passes": 88,
+      "gained": 3,
+      "lost": 6
+    },
+    {
+      "k": 22,
+      "passes": 87,
+      "gained": 3,
+      "lost": 7
+    },
+    {
+      "k": 23,
+      "passes": 87,
+      "gained": 3,
+      "lost": 7
+    },
+    {
+      "k": 24,
+      "passes": 88,
+      "gained": 4,
+      "lost": 7
+    },
+    {
+      "k": 25,
+      "passes": 87,
+      "gained": 4,
+      "lost": 8
+    },
+    {
+      "k": 26,
+      "passes": 87,
+      "gained": 4,
+      "lost": 8
+    },
+    {
+      "k": 27,
+      "passes": 87,
+      "gained": 4,
+      "lost": 8
+    },
+    {
+      "k": 28,
+      "passes": 87,
+      "gained": 4,
+      "lost": 8
+    },
+    {
+      "k": 29,
+      "passes": 87,
+      "gained": 4,
+      "lost": 8
+    },
+    {
+      "k": 30,
+      "passes": 87,
+      "gained": 4,
+      "lost": 8
+    },
+    {
+      "k": 31,
+      "passes": 87,
+      "gained": 4,
+      "lost": 8
+    },
+    {
+      "k": 32,
+      "passes": 88,
+      "gained": 5,
+      "lost": 8
+    },
+    {
+      "k": 33,
+      "passes": 89,
+      "gained": 6,
+      "lost": 8
+    },
+    {
+      "k": 34,
+      "passes": 88,
+      "gained": 6,
+      "lost": 9
+    },
+    {
+      "k": 35,
+      "passes": 88,
+      "gained": 6,
+      "lost": 9
+    },
+    {
+      "k": 36,
+      "passes": 88,
+      "gained": 6,
+      "lost": 9
+    },
+    {
+      "k": 37,
+      "passes": 88,
+      "gained": 6,
+      "lost": 9
+    },
+    {
+      "k": 38,
+      "passes": 87,
+      "gained": 6,
+      "lost": 10
+    },
+    {
+      "k": 39,
+      "passes": 87,
+      "gained": 6,
+      "lost": 10
+    },
+    {
+      "k": 40,
+      "passes": 86,
+      "gained": 6,
+      "lost": 11
+    },
+    {
+      "k": 41,
+      "passes": 86,
+      "gained": 6,
+      "lost": 11
+    },
+    {
+      "k": 42,
+      "passes": 85,
+      "gained": 6,
+      "lost": 12
+    },
+    {
+      "k": 43,
+      "passes": 85,
+      "gained": 6,
+      "lost": 12
+    },
+    {
+      "k": 44,
+      "passes": 85,
+      "gained": 6,
+      "lost": 12
+    },
+    {
+      "k": 45,
+      "passes": 85,
+      "gained": 6,
+      "lost": 12
+    },
+    {
+      "k": 46,
+      "passes": 85,
+      "gained": 6,
+      "lost": 12
+    },
+    {
+      "k": 47,
+      "passes": 85,
+      "gained": 6,
+      "lost": 12
+    },
+    {
+      "k": 48,
+      "passes": 85,
+      "gained": 6,
+      "lost": 12
+    },
+    {
+      "k": 49,
+      "passes": 85,
+      "gained": 6,
+      "lost": 12
+    },
+    {
+      "k": 50,
+      "passes": 85,
+      "gained": 6,
+      "lost": 12
+    },
+    {
+      "k": 51,
+      "passes": 86,
+      "gained": 7,
+      "lost": 12
+    },
+    {
+      "k": 52,
+      "passes": 85,
+      "gained": 7,
+      "lost": 13
+    },
+    {
+      "k": 53,
+      "passes": 86,
+      "gained": 8,
+      "lost": 13
+    },
+    {
+      "k": 54,
+      "passes": 86,
+      "gained": 8,
+      "lost": 13
+    },
+    {
+      "k": 55,
+      "passes": 86,
+      "gained": 8,
+      "lost": 13
+    },
+    {
+      "k": 56,
+      "passes": 86,
+      "gained": 8,
+      "lost": 13
+    },
+    {
+      "k": 57,
+      "passes": 86,
+      "gained": 8,
+      "lost": 13
+    },
+    {
+      "k": 58,
+      "passes": 85,
+      "gained": 8,
+      "lost": 14
+    },
+    {
+      "k": 59,
+      "passes": 86,
+      "gained": 9,
+      "lost": 14
+    },
+    {
+      "k": 60,
+      "passes": 86,
+      "gained": 9,
+      "lost": 14
+    },
+    {
+      "k": 61,
+      "passes": 86,
+      "gained": 9,
+      "lost": 14
+    },
+    {
+      "k": 62,
+      "passes": 86,
+      "gained": 9,
+      "lost": 14
+    },
+    {
+      "k": 63,
+      "passes": 86,
+      "gained": 9,
+      "lost": 14
+    },
+    {
+      "k": 64,
+      "passes": 85,
+      "gained": 9,
+      "lost": 15
+    },
+    {
+      "k": 65,
+      "passes": 84,
+      "gained": 9,
+      "lost": 16
+    },
+    {
+      "k": 66,
+      "passes": 85,
+      "gained": 10,
+      "lost": 16
+    },
+    {
+      "k": 67,
+      "passes": 84,
+      "gained": 10,
+      "lost": 17
+    },
+    {
+      "k": 68,
+      "passes": 83,
+      "gained": 10,
+      "lost": 18
+    },
+    {
+      "k": 69,
+      "passes": 82,
+      "gained": 10,
+      "lost": 19
+    },
+    {
+      "k": 70,
+      "passes": 81,
+      "gained": 10,
+      "lost": 20
+    },
+    {
+      "k": 71,
+      "passes": 82,
+      "gained": 11,
+      "lost": 20
+    },
+    {
+      "k": 72,
+      "passes": 81,
+      "gained": 11,
+      "lost": 21
+    },
+    {
+      "k": 73,
+      "passes": 81,
+      "gained": 11,
+      "lost": 21
+    },
+    {
+      "k": 74,
+      "passes": 80,
+      "gained": 11,
+      "lost": 22
+    },
+    {
+      "k": 75,
+      "passes": 80,
+      "gained": 11,
+      "lost": 22
+    },
+    {
+      "k": 76,
+      "passes": 80,
+      "gained": 11,
+      "lost": 22
+    },
+    {
+      "k": 77,
+      "passes": 81,
+      "gained": 12,
+      "lost": 22
+    },
+    {
+      "k": 78,
+      "passes": 81,
+      "gained": 12,
+      "lost": 22
+    },
+    {
+      "k": 79,
+      "passes": 81,
+      "gained": 12,
+      "lost": 22
+    },
+    {
+      "k": 80,
+      "passes": 81,
+      "gained": 12,
+      "lost": 22
+    },
+    {
+      "k": 81,
+      "passes": 81,
+      "gained": 12,
+      "lost": 22
+    },
+    {
+      "k": 82,
+      "passes": 81,
+      "gained": 12,
+      "lost": 22
+    },
+    {
+      "k": 83,
+      "passes": 81,
+      "gained": 12,
+      "lost": 22
+    },
+    {
+      "k": 84,
+      "passes": 81,
+      "gained": 12,
+      "lost": 22
+    },
+    {
+      "k": 85,
+      "passes": 80,
+      "gained": 12,
+      "lost": 23
+    },
+    {
+      "k": 86,
+      "passes": 80,
+      "gained": 12,
+      "lost": 23
+    },
+    {
+      "k": 87,
+      "passes": 80,
+      "gained": 12,
+      "lost": 23
+    },
+    {
+      "k": 88,
+      "passes": 80,
+      "gained": 12,
+      "lost": 23
+    },
+    {
+      "k": 89,
+      "passes": 80,
+      "gained": 12,
+      "lost": 23
+    },
+    {
+      "k": 90,
+      "passes": 79,
+      "gained": 12,
+      "lost": 24
+    },
+    {
+      "k": 91,
+      "passes": 80,
+      "gained": 13,
+      "lost": 24
+    },
+    {
+      "k": 92,
+      "passes": 80,
+      "gained": 13,
+      "lost": 24
+    },
+    {
+      "k": 93,
+      "passes": 80,
+      "gained": 13,
+      "lost": 24
+    },
+    {
+      "k": 94,
+      "passes": 79,
+      "gained": 13,
+      "lost": 25
+    },
+    {
+      "k": 95,
+      "passes": 78,
+      "gained": 13,
+      "lost": 26
+    },
+    {
+      "k": 96,
+      "passes": 77,
+      "gained": 13,
+      "lost": 27
+    },
+    {
+      "k": 97,
+      "passes": 78,
+      "gained": 14,
+      "lost": 27
+    },
+    {
+      "k": 98,
+      "passes": 77,
+      "gained": 14,
+      "lost": 28
+    },
+    {
+      "k": 99,
+      "passes": 78,
+      "gained": 15,
+      "lost": 28
+    },
+    {
+      "k": 100,
+      "passes": 78,
+      "gained": 15,
+      "lost": 28
+    },
+    {
+      "k": 101,
+      "passes": 78,
+      "gained": 15,
+      "lost": 28
+    },
+    {
+      "k": 102,
+      "passes": 78,
+      "gained": 15,
+      "lost": 28
+    },
+    {
+      "k": 103,
+      "passes": 78,
+      "gained": 15,
+      "lost": 28
+    },
+    {
+      "k": 104,
+      "passes": 78,
+      "gained": 15,
+      "lost": 28
+    },
+    {
+      "k": 105,
+      "passes": 77,
+      "gained": 15,
+      "lost": 29
+    },
+    {
+      "k": 106,
+      "passes": 78,
+      "gained": 16,
+      "lost": 29
+    },
+    {
+      "k": 107,
+      "passes": 79,
+      "gained": 17,
+      "lost": 29
+    },
+    {
+      "k": 108,
+      "passes": 79,
+      "gained": 17,
+      "lost": 29
+    },
+    {
+      "k": 109,
+      "passes": 79,
+      "gained": 17,
+      "lost": 29
+    },
+    {
+      "k": 110,
+      "passes": 78,
+      "gained": 17,
+      "lost": 30
+    },
+    {
+      "k": 111,
+      "passes": 78,
+      "gained": 17,
+      "lost": 30
+    },
+    {
+      "k": 112,
+      "passes": 78,
+      "gained": 17,
+      "lost": 30
+    },
+    {
+      "k": 113,
+      "passes": 78,
+      "gained": 17,
+      "lost": 30
+    },
+    {
+      "k": 114,
+      "passes": 78,
+      "gained": 17,
+      "lost": 30
+    },
+    {
+      "k": 115,
+      "passes": 78,
+      "gained": 17,
+      "lost": 30
+    },
+    {
+      "k": 116,
+      "passes": 78,
+      "gained": 17,
+      "lost": 30
+    },
+    {
+      "k": 117,
+      "passes": 77,
+      "gained": 17,
+      "lost": 31
+    },
+    {
+      "k": 118,
+      "passes": 77,
+      "gained": 17,
+      "lost": 31
+    },
+    {
+      "k": 119,
+      "passes": 76,
+      "gained": 17,
+      "lost": 32
+    },
+    {
+      "k": 120,
+      "passes": 76,
+      "gained": 17,
+      "lost": 32
+    },
+    {
+      "k": 121,
+      "passes": 76,
+      "gained": 17,
+      "lost": 32
+    },
+    {
+      "k": 122,
+      "passes": 76,
+      "gained": 17,
+      "lost": 32
+    },
+    {
+      "k": 123,
+      "passes": 75,
+      "gained": 17,
+      "lost": 33
+    },
+    {
+      "k": 124,
+      "passes": 76,
+      "gained": 18,
+      "lost": 33
+    },
+    {
+      "k": 125,
+      "passes": 76,
+      "gained": 18,
+      "lost": 33
+    },
+    {
+      "k": 126,
+      "passes": 75,
+      "gained": 18,
+      "lost": 34
+    },
+    {
+      "k": 127,
+      "passes": 74,
+      "gained": 18,
+      "lost": 35
+    },
+    {
+      "k": 128,
+      "passes": 73,
+      "gained": 18,
+      "lost": 36
+    },
+    {
+      "k": 129,
+      "passes": 72,
+      "gained": 18,
+      "lost": 37
+    },
+    {
+      "k": 130,
+      "passes": 72,
+      "gained": 18,
+      "lost": 37
+    },
+    {
+      "k": 131,
+      "passes": 72,
+      "gained": 18,
+      "lost": 37
+    },
+    {
+      "k": 132,
+      "passes": 72,
+      "gained": 18,
+      "lost": 37
+    },
+    {
+      "k": 133,
+      "passes": 72,
+      "gained": 18,
+      "lost": 37
+    },
+    {
+      "k": 134,
+      "passes": 72,
+      "gained": 18,
+      "lost": 37
+    },
+    {
+      "k": 135,
+      "passes": 71,
+      "gained": 18,
+      "lost": 38
+    },
+    {
+      "k": 136,
+      "passes": 71,
+      "gained": 18,
+      "lost": 38
+    },
+    {
+      "k": 137,
+      "passes": 71,
+      "gained": 18,
+      "lost": 38
+    },
+    {
+      "k": 138,
+      "passes": 70,
+      "gained": 18,
+      "lost": 39
+    },
+    {
+      "k": 139,
+      "passes": 70,
+      "gained": 18,
+      "lost": 39
+    },
+    {
+      "k": 140,
+      "passes": 70,
+      "gained": 18,
+      "lost": 39
+    },
+    {
+      "k": 141,
+      "passes": 69,
+      "gained": 18,
+      "lost": 40
+    },
+    {
+      "k": 142,
+      "passes": 68,
+      "gained": 18,
+      "lost": 41
+    },
+    {
+      "k": 143,
+      "passes": 67,
+      "gained": 18,
+      "lost": 42
+    },
+    {
+      "k": 144,
+      "passes": 66,
+      "gained": 18,
+      "lost": 43
+    },
+    {
+      "k": 145,
+      "passes": 66,
+      "gained": 18,
+      "lost": 43
+    },
+    {
+      "k": 146,
+      "passes": 65,
+      "gained": 18,
+      "lost": 44
+    },
+    {
+      "k": 147,
+      "passes": 65,
+      "gained": 18,
+      "lost": 44
+    },
+    {
+      "k": 148,
+      "passes": 65,
+      "gained": 18,
+      "lost": 44
+    }
+  ],
+  "best_in_sample": {
+    "k": 2,
+    "passes": 92,
+    "gained": 1,
+    "lost": 0,
+    "note": "k selected on the same rows; optimistic by construction"
+  },
+  "random_control": {
+    "k": 2,
+    "n_seeds": 200,
+    "mean": 90.62,
+    "std": 0.853959150753582,
+    "min": 89,
+    "max": 93,
+    "quantiles": {
+      "p05": 89.0,
+      "p50": 91.0,
+      "p95": 92.0
+    },
+    "target_passes": 92,
+    "fraction_matching_or_beating_target": 0.135,
+    "fraction_beating_target": 0.02
+  },
+  "nested_routing": {
+    "passes": 85,
+    "fold_default_arm_passes": 91,
+    "fold_coverages": [
+      0.4067796610169492,
+      0.15254237288135594,
+      0.11016949152542373,
+      0.18487394957983194,
+      0.16806722689075632
+    ],
+    "default_arm_passes": 91
+  },
+  "category_router": {
+    "per_category": {
+      "assertion_error": {
+        "n": 116,
+        "default_arm_passes": 73,
+        "routed_arm_passes": 57
+      },
+      "name_error": {
+        "n": 15,
+        "default_arm_passes": 9,
+        "routed_arm_passes": 3
+      },
+      "runtime_error": {
+        "n": 8,
+        "default_arm_passes": 4,
+        "routed_arm_passes": 4
+      },
+      "syntax_error": {
+        "n": 5,
+        "default_arm_passes": 3,
+        "routed_arm_passes": 0
+      },
+      "type_error": {
+        "n": 4,
+        "default_arm_passes": 2,
+        "routed_arm_passes": 1
+      }
+    },
+    "categories_routed": [],
+    "passes_in_sample": 91
+  },
+  "rows": [
+    {
+      "task_id": "HumanEval/0",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": true,
+        "code_only": true,
+        "error": true
+      },
+      "context_only": false,
+      "router_score": 0.5242644237381963
+    },
+    {
+      "task_id": "HumanEval/1",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": true,
+        "code_only": false,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.31108407145652445
+    },
+    {
+      "task_id": "HumanEval/2",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": true,
+        "code_only": true,
+        "error": true
+      },
+      "context_only": false,
+      "router_score": 0.7103208110352659
+    },
+    {
+      "task_id": "HumanEval/3",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": true,
+        "code_only": true,
+        "error": true
+      },
+      "context_only": false,
+      "router_score": 0.34354951374667064
+    },
+    {
+      "task_id": "HumanEval/4",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": true,
+        "code_only": true,
+        "error": true
+      },
+      "context_only": false,
+      "router_score": 0.4153887767182937
+    },
+    {
+      "task_id": "HumanEval/5",
+      "initial_failure_category": "runtime_error",
+      "outcomes": {
+        "none": true,
+        "code_only": true,
+        "error": true
+      },
+      "context_only": false,
+      "router_score": 0.7687365825440509
+    },
+    {
+      "task_id": "HumanEval/6",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": false,
+        "code_only": false,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.21951045090674687
+    },
+    {
+      "task_id": "HumanEval/8",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": true,
+        "code_only": false,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.11772853059885491
+    },
+    {
+      "task_id": "HumanEval/9",
+      "initial_failure_category": "runtime_error",
+      "outcomes": {
+        "none": false,
+        "code_only": true,
+        "error": true
+      },
+      "context_only": true,
+      "router_score": 0.46971766009938887
+    },
+    {
+      "task_id": "HumanEval/10",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": true,
+        "code_only": false,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.3214419378781294
+    },
+    {
+      "task_id": "HumanEval/11",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": true,
+        "code_only": false,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.44560732941893993
+    },
+    {
+      "task_id": "HumanEval/12",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": true,
+        "code_only": true,
+        "error": true
+      },
+      "context_only": false,
+      "router_score": 0.12112052061407895
+    },
+    {
+      "task_id": "HumanEval/13",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": true,
+        "code_only": true,
+        "error": true
+      },
+      "context_only": false,
+      "router_score": 0.6530763748677909
+    },
+    {
+      "task_id": "HumanEval/14",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": true,
+        "code_only": true,
+        "error": true
+      },
+      "context_only": false,
+      "router_score": 0.34389476010933967
+    },
+    {
+      "task_id": "HumanEval/15",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": true,
+        "code_only": true,
+        "error": true
+      },
+      "context_only": false,
+      "router_score": 0.6328388106949544
+    },
+    {
+      "task_id": "HumanEval/16",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": true,
+        "code_only": true,
+        "error": true
+      },
+      "context_only": false,
+      "router_score": 0.8058859438522176
+    },
+    {
+      "task_id": "HumanEval/17",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": false,
+        "code_only": true,
+        "error": false
+      },
+      "context_only": true,
+      "router_score": 0.06345239601231252
+    },
+    {
+      "task_id": "HumanEval/18",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": false,
+        "code_only": true,
+        "error": true
+      },
+      "context_only": true,
+      "router_score": 0.22209062338366414
+    },
+    {
+      "task_id": "HumanEval/19",
+      "initial_failure_category": "runtime_error",
+      "outcomes": {
+        "none": true,
+        "code_only": false,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.49900161509126495
+    },
+    {
+      "task_id": "HumanEval/20",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": true,
+        "code_only": false,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.34271428965679873
+    },
+    {
+      "task_id": "HumanEval/21",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": true,
+        "code_only": true,
+        "error": true
+      },
+      "context_only": false,
+      "router_score": 0.6818398115009732
+    },
+    {
+      "task_id": "HumanEval/24",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": true,
+        "code_only": true,
+        "error": true
+      },
+      "context_only": false,
+      "router_score": 0.7931830444688456
+    },
+    {
+      "task_id": "HumanEval/25",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": true,
+        "code_only": true,
+        "error": true
+      },
+      "context_only": false,
+      "router_score": 0.2861100751041649
+    },
+    {
+      "task_id": "HumanEval/26",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": false,
+        "code_only": false,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.3805006103120368
+    },
+    {
+      "task_id": "HumanEval/31",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": true,
+        "code_only": true,
+        "error": true
+      },
+      "context_only": false,
+      "router_score": 0.3651688511186511
+    },
+    {
+      "task_id": "HumanEval/32",
+      "initial_failure_category": "type_error",
+      "outcomes": {
+        "none": false,
+        "code_only": false,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.017606709686848458
+    },
+    {
+      "task_id": "HumanEval/33",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": false,
+        "code_only": false,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.6436118503845327
+    },
+    {
+      "task_id": "HumanEval/36",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": true,
+        "code_only": true,
+        "error": true
+      },
+      "context_only": false,
+      "router_score": 0.48427130441323574
+    },
+    {
+      "task_id": "HumanEval/37",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": true,
+        "code_only": false,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.5901232520656483
+    },
+    {
+      "task_id": "HumanEval/38",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": true,
+        "code_only": false,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.3319913686708437
+    },
+    {
+      "task_id": "HumanEval/39",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": false,
+        "code_only": true,
+        "error": true
+      },
+      "context_only": true,
+      "router_score": 0.6367288686008387
+    },
+    {
+      "task_id": "HumanEval/40",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": true,
+        "code_only": true,
+        "error": true
+      },
+      "context_only": false,
+      "router_score": 0.8175756018515491
+    },
+    {
+      "task_id": "HumanEval/41",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": true,
+        "code_only": true,
+        "error": true
+      },
+      "context_only": false,
+      "router_score": 0.3829518778755612
+    },
+    {
+      "task_id": "HumanEval/43",
+      "initial_failure_category": "type_error",
+      "outcomes": {
+        "none": true,
+        "code_only": true,
+        "error": true
+      },
+      "context_only": false,
+      "router_score": 0.020991752147389152
+    },
+    {
+      "task_id": "HumanEval/44",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": true,
+        "code_only": true,
+        "error": true
+      },
+      "context_only": false,
+      "router_score": 0.5096161628725969
+    },
+    {
+      "task_id": "HumanEval/46",
+      "initial_failure_category": "runtime_error",
+      "outcomes": {
+        "none": true,
+        "code_only": false,
+        "error": true
+      },
+      "context_only": false,
+      "router_score": 0.6923291350535651
+    },
+    {
+      "task_id": "HumanEval/47",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": true,
+        "code_only": true,
+        "error": true
+      },
+      "context_only": false,
+      "router_score": 0.6570874765976648
+    },
+    {
+      "task_id": "HumanEval/49",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": false,
+        "code_only": false,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.7348772409437245
+    },
+    {
+      "task_id": "HumanEval/50",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": true,
+        "code_only": false,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.9032632351129186
+    },
+    {
+      "task_id": "HumanEval/51",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": true,
+        "code_only": false,
+        "error": true
+      },
+      "context_only": false,
+      "router_score": 0.4624071287018588
+    },
+    {
+      "task_id": "HumanEval/52",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": true,
+        "code_only": false,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.204344684123833
+    },
+    {
+      "task_id": "HumanEval/55",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": true,
+        "code_only": true,
+        "error": true
+      },
+      "context_only": false,
+      "router_score": 0.29002434533692467
+    },
+    {
+      "task_id": "HumanEval/56",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": true,
+        "code_only": true,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.5003769536808916
+    },
+    {
+      "task_id": "HumanEval/57",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": false,
+        "code_only": true,
+        "error": true
+      },
+      "context_only": true,
+      "router_score": 0.3838775187457756
+    },
+    {
+      "task_id": "HumanEval/58",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": true,
+        "code_only": true,
+        "error": true
+      },
+      "context_only": false,
+      "router_score": 0.21842833444105
+    },
+    {
+      "task_id": "HumanEval/59",
+      "initial_failure_category": "name_error",
+      "outcomes": {
+        "none": false,
+        "code_only": false,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.17785524678587095
+    },
+    {
+      "task_id": "HumanEval/61",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": true,
+        "code_only": true,
+        "error": true
+      },
+      "context_only": false,
+      "router_score": 0.5492975925232181
+    },
+    {
+      "task_id": "HumanEval/62",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": true,
+        "code_only": false,
+        "error": true
+      },
+      "context_only": false,
+      "router_score": 0.726927921795634
+    },
+    {
+      "task_id": "HumanEval/63",
+      "initial_failure_category": "runtime_error",
+      "outcomes": {
+        "none": false,
+        "code_only": true,
+        "error": true
+      },
+      "context_only": true,
+      "router_score": 0.7752581015003367
+    },
+    {
+      "task_id": "HumanEval/64",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": false,
+        "code_only": true,
+        "error": false
+      },
+      "context_only": true,
+      "router_score": 0.30833391937308624
+    },
+    {
+      "task_id": "HumanEval/65",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": true,
+        "code_only": true,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.6000911773075219
+    },
+    {
+      "task_id": "HumanEval/67",
+      "initial_failure_category": "name_error",
+      "outcomes": {
+        "none": false,
+        "code_only": false,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.009841759747109288
+    },
+    {
+      "task_id": "HumanEval/68",
+      "initial_failure_category": "name_error",
+      "outcomes": {
+        "none": true,
+        "code_only": false,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.004666117323059098
+    },
+    {
+      "task_id": "HumanEval/69",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": true,
+        "code_only": false,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.6353486307198615
+    },
+    {
+      "task_id": "HumanEval/70",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": false,
+        "code_only": true,
+        "error": false
+      },
+      "context_only": true,
+      "router_score": 0.5275924498901613
+    },
+    {
+      "task_id": "HumanEval/71",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": true,
+        "code_only": true,
+        "error": true
+      },
+      "context_only": false,
+      "router_score": 0.33786801555292173
+    },
+    {
+      "task_id": "HumanEval/72",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": true,
+        "code_only": false,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.47118820389566607
+    },
+    {
+      "task_id": "HumanEval/73",
+      "initial_failure_category": "name_error",
+      "outcomes": {
+        "none": true,
+        "code_only": true,
+        "error": true
+      },
+      "context_only": false,
+      "router_score": 0.024012004258261038
+    },
+    {
+      "task_id": "HumanEval/74",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": false,
+        "code_only": false,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.27649635319377425
+    },
+    {
+      "task_id": "HumanEval/75",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": false,
+        "code_only": false,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.5801009026892289
+    },
+    {
+      "task_id": "HumanEval/76",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": true,
+        "code_only": false,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.6011552438461615
+    },
+    {
+      "task_id": "HumanEval/77",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": false,
+        "code_only": true,
+        "error": true
+      },
+      "context_only": true,
+      "router_score": 0.9252479010126873
+    },
+    {
+      "task_id": "HumanEval/78",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": true,
+        "code_only": false,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.03694327888214421
+    },
+    {
+      "task_id": "HumanEval/79",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": false,
+        "code_only": true,
+        "error": true
+      },
+      "context_only": true,
+      "router_score": 0.3039640223376267
+    },
+    {
+      "task_id": "HumanEval/80",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": true,
+        "code_only": false,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.47060317806291546
+    },
+    {
+      "task_id": "HumanEval/81",
+      "initial_failure_category": "name_error",
+      "outcomes": {
+        "none": false,
+        "code_only": false,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.00011354958532624303
+    },
+    {
+      "task_id": "HumanEval/82",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": true,
+        "code_only": true,
+        "error": true
+      },
+      "context_only": false,
+      "router_score": 0.7986097356940264
+    },
+    {
+      "task_id": "HumanEval/83",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": false,
+        "code_only": true,
+        "error": true
+      },
+      "context_only": true,
+      "router_score": 0.6798752165914477
+    },
+    {
+      "task_id": "HumanEval/84",
+      "initial_failure_category": "runtime_error",
+      "outcomes": {
+        "none": true,
+        "code_only": true,
+        "error": true
+      },
+      "context_only": false,
+      "router_score": 0.627272414782048
+    },
+    {
+      "task_id": "HumanEval/85",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": true,
+        "code_only": false,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.8086157771006681
+    },
+    {
+      "task_id": "HumanEval/86",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": false,
+        "code_only": true,
+        "error": false
+      },
+      "context_only": true,
+      "router_score": 0.3393706122899978
+    },
+    {
+      "task_id": "HumanEval/87",
+      "initial_failure_category": "type_error",
+      "outcomes": {
+        "none": false,
+        "code_only": false,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.02424914682729429
+    },
+    {
+      "task_id": "HumanEval/88",
+      "initial_failure_category": "name_error",
+      "outcomes": {
+        "none": false,
+        "code_only": false,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.012486202595668646
+    },
+    {
+      "task_id": "HumanEval/89",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": true,
+        "code_only": true,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.5715786892298945
+    },
+    {
+      "task_id": "HumanEval/90",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": false,
+        "code_only": true,
+        "error": false
+      },
+      "context_only": true,
+      "router_score": 0.7345612309170093
+    },
+    {
+      "task_id": "HumanEval/91",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": false,
+        "code_only": false,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.3801292246333977
+    },
+    {
+      "task_id": "HumanEval/92",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": true,
+        "code_only": false,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.7320223784740445
+    },
+    {
+      "task_id": "HumanEval/93",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": false,
+        "code_only": false,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.5398638753276346
+    },
+    {
+      "task_id": "HumanEval/94",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": true,
+        "code_only": false,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.5281514465488342
+    },
+    {
+      "task_id": "HumanEval/95",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": false,
+        "code_only": true,
+        "error": true
+      },
+      "context_only": true,
+      "router_score": 0.23007819913069869
+    },
+    {
+      "task_id": "HumanEval/96",
+      "initial_failure_category": "name_error",
+      "outcomes": {
+        "none": true,
+        "code_only": true,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.1351210193566492
+    },
+    {
+      "task_id": "HumanEval/97",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": true,
+        "code_only": false,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.8371991860544491
+    },
+    {
+      "task_id": "HumanEval/98",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": true,
+        "code_only": true,
+        "error": true
+      },
+      "context_only": false,
+      "router_score": 0.6751870735314215
+    },
+    {
+      "task_id": "HumanEval/99",
+      "initial_failure_category": "runtime_error",
+      "outcomes": {
+        "none": false,
+        "code_only": false,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.6481978504557878
+    },
+    {
+      "task_id": "HumanEval/100",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": true,
+        "code_only": false,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.5801259801341083
+    },
+    {
+      "task_id": "HumanEval/101",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": true,
+        "code_only": false,
+        "error": true
+      },
+      "context_only": false,
+      "router_score": 0.8348998309136708
+    },
+    {
+      "task_id": "HumanEval/102",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": false,
+        "code_only": false,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.5622878397656277
+    },
+    {
+      "task_id": "HumanEval/103",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": false,
+        "code_only": false,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.716908546165321
+    },
+    {
+      "task_id": "HumanEval/104",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": true,
+        "code_only": true,
+        "error": true
+      },
+      "context_only": false,
+      "router_score": 0.7159647318852983
+    },
+    {
+      "task_id": "HumanEval/105",
+      "initial_failure_category": "name_error",
+      "outcomes": {
+        "none": false,
+        "code_only": false,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.02985967642474491
+    },
+    {
+      "task_id": "HumanEval/106",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": false,
+        "code_only": false,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.48223477793632785
+    },
+    {
+      "task_id": "HumanEval/107",
+      "initial_failure_category": "name_error",
+      "outcomes": {
+        "none": false,
+        "code_only": false,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.009280989908715377
+    },
+    {
+      "task_id": "HumanEval/108",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": false,
+        "code_only": false,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.7878103871239401
+    },
+    {
+      "task_id": "HumanEval/109",
+      "initial_failure_category": "name_error",
+      "outcomes": {
+        "none": true,
+        "code_only": false,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.004156320021467906
+    },
+    {
+      "task_id": "HumanEval/110",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": true,
+        "code_only": false,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.24776788106146916
+    },
+    {
+      "task_id": "HumanEval/111",
+      "initial_failure_category": "name_error",
+      "outcomes": {
+        "none": true,
+        "code_only": false,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.03996044944765694
+    },
+    {
+      "task_id": "HumanEval/112",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": true,
+        "code_only": true,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.3361526935017535
+    },
+    {
+      "task_id": "HumanEval/113",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": false,
+        "code_only": false,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.25450327063510453
+    },
+    {
+      "task_id": "HumanEval/114",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": true,
+        "code_only": true,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.38671144976205757
+    },
+    {
+      "task_id": "HumanEval/115",
+      "initial_failure_category": "syntax_error",
+      "outcomes": {
+        "none": true,
+        "code_only": false,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.0005246343674959083
+    },
+    {
+      "task_id": "HumanEval/116",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": true,
+        "code_only": true,
+        "error": true
+      },
+      "context_only": false,
+      "router_score": 0.11701238128114508
+    },
+    {
+      "task_id": "HumanEval/117",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": true,
+        "code_only": true,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.35618463567742886
+    },
+    {
+      "task_id": "HumanEval/118",
+      "initial_failure_category": "name_error",
+      "outcomes": {
+        "none": true,
+        "code_only": false,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.010746028458880555
+    },
+    {
+      "task_id": "HumanEval/119",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": true,
+        "code_only": false,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.10708701901868398
+    },
+    {
+      "task_id": "HumanEval/120",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": false,
+        "code_only": false,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.05793299296999797
+    },
+    {
+      "task_id": "HumanEval/121",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": true,
+        "code_only": true,
+        "error": true
+      },
+      "context_only": false,
+      "router_score": 0.38364970352576816
+    },
+    {
+      "task_id": "HumanEval/122",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": true,
+        "code_only": true,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.17994495231815708
+    },
+    {
+      "task_id": "HumanEval/123",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": false,
+        "code_only": false,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.3750980990991375
+    },
+    {
+      "task_id": "HumanEval/124",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": true,
+        "code_only": false,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.044777185980148224
+    },
+    {
+      "task_id": "HumanEval/125",
+      "initial_failure_category": "name_error",
+      "outcomes": {
+        "none": true,
+        "code_only": false,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.06737204383420428
+    },
+    {
+      "task_id": "HumanEval/126",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": false,
+        "code_only": false,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.5150800266822118
+    },
+    {
+      "task_id": "HumanEval/127",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": false,
+        "code_only": false,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.08166086145828924
+    },
+    {
+      "task_id": "HumanEval/128",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": true,
+        "code_only": true,
+        "error": true
+      },
+      "context_only": false,
+      "router_score": 0.541138295723029
+    },
+    {
+      "task_id": "HumanEval/129",
+      "initial_failure_category": "syntax_error",
+      "outcomes": {
+        "none": false,
+        "code_only": false,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.0011994765953132252
+    },
+    {
+      "task_id": "HumanEval/130",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": false,
+        "code_only": false,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.06772216058238144
+    },
+    {
+      "task_id": "HumanEval/131",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": true,
+        "code_only": false,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.6787808438638309
+    },
+    {
+      "task_id": "HumanEval/132",
+      "initial_failure_category": "runtime_error",
+      "outcomes": {
+        "none": false,
+        "code_only": false,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.3760798949111171
+    },
+    {
+      "task_id": "HumanEval/133",
+      "initial_failure_category": "name_error",
+      "outcomes": {
+        "none": true,
+        "code_only": false,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.018434035377833138
+    },
+    {
+      "task_id": "HumanEval/134",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": false,
+        "code_only": false,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.38830867468480845
+    },
+    {
+      "task_id": "HumanEval/135",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": false,
+        "code_only": false,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.6050614262812927
+    },
+    {
+      "task_id": "HumanEval/136",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": true,
+        "code_only": false,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.4175791224031009
+    },
+    {
+      "task_id": "HumanEval/137",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": false,
+        "code_only": false,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.194390168642105
+    },
+    {
+      "task_id": "HumanEval/138",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": true,
+        "code_only": true,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.5538525131957275
+    },
+    {
+      "task_id": "HumanEval/139",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": false,
+        "code_only": true,
+        "error": false
+      },
+      "context_only": true,
+      "router_score": 0.4213624993049436
+    },
+    {
+      "task_id": "HumanEval/140",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": false,
+        "code_only": false,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.7618875708173414
+    },
+    {
+      "task_id": "HumanEval/141",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": false,
+        "code_only": false,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.5559388114599134
+    },
+    {
+      "task_id": "HumanEval/142",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": false,
+        "code_only": false,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.4881416850594613
+    },
+    {
+      "task_id": "HumanEval/143",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": true,
+        "code_only": true,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.12418773584587603
+    },
+    {
+      "task_id": "HumanEval/144",
+      "initial_failure_category": "syntax_error",
+      "outcomes": {
+        "none": true,
+        "code_only": false,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.0038360540182711916
+    },
+    {
+      "task_id": "HumanEval/145",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": false,
+        "code_only": false,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.5899305399333927
+    },
+    {
+      "task_id": "HumanEval/146",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": false,
+        "code_only": true,
+        "error": true
+      },
+      "context_only": true,
+      "router_score": 0.4981455482954917
+    },
+    {
+      "task_id": "HumanEval/147",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": false,
+        "code_only": true,
+        "error": true
+      },
+      "context_only": true,
+      "router_score": 0.6362253945813494
+    },
+    {
+      "task_id": "HumanEval/148",
+      "initial_failure_category": "syntax_error",
+      "outcomes": {
+        "none": false,
+        "code_only": false,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 7.430170425387305e-05
+    },
+    {
+      "task_id": "HumanEval/149",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": true,
+        "code_only": true,
+        "error": true
+      },
+      "context_only": false,
+      "router_score": 0.36588703349137713
+    },
+    {
+      "task_id": "HumanEval/150",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": true,
+        "code_only": true,
+        "error": true
+      },
+      "context_only": false,
+      "router_score": 0.6771635208123128
+    },
+    {
+      "task_id": "HumanEval/151",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": false,
+        "code_only": true,
+        "error": true
+      },
+      "context_only": true,
+      "router_score": 0.5388385122418818
+    },
+    {
+      "task_id": "HumanEval/152",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": true,
+        "code_only": false,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.44687654522089654
+    },
+    {
+      "task_id": "HumanEval/153",
+      "initial_failure_category": "type_error",
+      "outcomes": {
+        "none": true,
+        "code_only": false,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.00575119248608401
+    },
+    {
+      "task_id": "HumanEval/154",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": true,
+        "code_only": false,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.41250490527344186
+    },
+    {
+      "task_id": "HumanEval/155",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": true,
+        "code_only": false,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.4694639941568026
+    },
+    {
+      "task_id": "HumanEval/156",
+      "initial_failure_category": "syntax_error",
+      "outcomes": {
+        "none": true,
+        "code_only": false,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.03845563255930646
+    },
+    {
+      "task_id": "HumanEval/157",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": true,
+        "code_only": false,
+        "error": true
+      },
+      "context_only": false,
+      "router_score": 0.30668045168896696
+    },
+    {
+      "task_id": "HumanEval/158",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": true,
+        "code_only": true,
+        "error": true
+      },
+      "context_only": false,
+      "router_score": 0.48689861118317895
+    },
+    {
+      "task_id": "HumanEval/159",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": true,
+        "code_only": false,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.3656661530223326
+    },
+    {
+      "task_id": "HumanEval/160",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": false,
+        "code_only": false,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.10009952194418507
+    },
+    {
+      "task_id": "HumanEval/161",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": true,
+        "code_only": true,
+        "error": true
+      },
+      "context_only": false,
+      "router_score": 0.29259853280745196
+    },
+    {
+      "task_id": "HumanEval/162",
+      "initial_failure_category": "name_error",
+      "outcomes": {
+        "none": true,
+        "code_only": true,
+        "error": true
+      },
+      "context_only": false,
+      "router_score": 0.0270314895402149
+    },
+    {
+      "task_id": "HumanEval/163",
+      "initial_failure_category": "assertion_error",
+      "outcomes": {
+        "none": false,
+        "code_only": false,
+        "error": false
+      },
+      "context_only": false,
+      "router_score": 0.9287118682522684
+    }
+  ],
+  "figure": "reports/figures/week10_context_arm_router_base.png"
+}

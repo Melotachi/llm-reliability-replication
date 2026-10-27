@@ -1,0 +1,441 @@
+{
+  "run_id": "humaneval_candidate_ranking_qwen15b_week5_pilot",
+  "timestamp": "2026-08-04T00:34:07.102148",
+  "config": {
+    "dataset": "humaneval",
+    "model": "Qwen/Qwen2.5-Coder-1.5B-Instruct",
+    "source_results": "results\\humaneval_uncertainty_20260702_163323.json",
+    "available_source_failures": 235,
+    "selected_failures": 4,
+    "max_repair_iterations": 1,
+    "repair_candidates": 3,
+    "temperature": 0.2,
+    "seed": 42,
+    "candidate_seed_policy": "record_seed=seed+record_index; candidate_seed=record_seed+(iteration-1)*repair_candidates+candidate_index",
+    "ranking_strategy": "pass>failure_progress>unique>changed>lower_candidate_index",
+    "use_error_context": true
+  },
+  "summary": {
+    "completed_failures": 4,
+    "successful_repairs": 0,
+    "repair_success_rate": 0.0,
+    "success_after_one_iteration": 0,
+    "additional_successes_from_iteration_2_plus": 0,
+    "repair_model_calls": 12,
+    "duplicate_candidates": 4,
+    "duplicate_candidate_rate": 0.3333333333333333,
+    "unique_candidates_executed": 8,
+    "oracle_candidate_successes": 0,
+    "ranking_oracle_gap": 0,
+    "stagnation_stops": 0,
+    "initial_failure_categories": {
+      "timeout": 1,
+      "syntax_error": 1,
+      "type_error": 1,
+      "name_error": 1
+    },
+    "final_failure_categories": {
+      "assertion_error": 2,
+      "syntax_error": 1,
+      "runtime_error": 1
+    }
+  },
+  "records": [
+    {
+      "task_id": "HumanEval/24",
+      "sample_index": 7,
+      "initial_code": "\n\ndef largest_divisor(n: int) -> int:\n    \"\"\" For a given number n, find the largest number that divides n evenly, smaller than n\n    >>> largest_divisor(15)\n    5\n    \"\"\"\n    div = 2\n    div_cnt = 1\n    while (1):\n        if n % div == 0:\n            n = n // div\n            div_cnt+=1\n        else:\n            div = div // div_cnt\n            div_cnt = 1\n        if div_cnt == 1:\n            div_cnt = 2\n    return div\n\n",
+      "initial_error_message": "Traceback (most recent call last):\n  File \"/Users/melih/Desktop/stajsal/Internship Resources \u2013 AI For SE/src/evaluation.py\", line 76, in run_code\n    exec(test_code, exec_globals)  # TODO: SANDBOX\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 16, in <module>\n  File \"<string>\", line 10, in check\n  File \"<string>\", line 10, in largest_divisor\n  File \"/Users/melih/Desktop/stajsal/Internship Resources \u2013 AI For SE/src/evaluation.py\", line 67, in _on_timeout\n    raise TimeoutError(f\"execution exceeded {timeout_s}s time limit\")\nTimeoutError: execution exceeded 5.0s time limit\n",
+      "initial_failure_category": "timeout",
+      "attempts_used": 1,
+      "repair_rounds_used": 1,
+      "repair_model_calls": 3,
+      "duplicate_candidates": 2,
+      "oracle_candidate_passed": false,
+      "oracle_success_iteration": null,
+      "selected_candidate_indices": [
+        0
+      ],
+      "success_iteration": null,
+      "final_passed": false,
+      "final_code": "def largest_divisor(n: int) -> int:\n    \"\"\" For a given number n, find the largest number that divides n evenly, smaller than n\n    >>> largest_divisor(15)\n    5\n    \"\"\"\n    for i in range(n-1, 1, -1):\n        if n % i == 0:\n            return i\n",
+      "final_error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 16, in <module>\n  File \"<string>\", line 10, in check\nAssertionError\n",
+      "final_failure_category": "assertion_error",
+      "trace": [
+        {
+          "iteration": 0,
+          "passed": false,
+          "error_message": "Traceback (most recent call last):\nTimeoutError: execution exceeded 5.0s time limit\n",
+          "code": "\n\ndef largest_divisor(n: int) -> int:\n    \"\"\" For a given number n, find the largest number that divides n evenly, smaller than n\n    >>> largest_divisor(15)\n    5\n    \"\"\"\n    div = 2\n    div_cnt = 1\n    while (1):\n        if n % div == 0:\n            n = n // div\n            div_cnt+=1\n        else:\n            div = div // div_cnt\n            div_cnt = 1\n        if div_cnt == 1:\n            div_cnt = 2\n    return div\n\n",
+          "duplicate": false,
+          "failure_category": "timeout",
+          "selected_candidate_index": null,
+          "candidates": []
+        },
+        {
+          "iteration": 1,
+          "passed": false,
+          "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 16, in <module>\n  File \"<string>\", line 10, in check\nAssertionError\n",
+          "failure_category": "assertion_error",
+          "code": "def largest_divisor(n: int) -> int:\n    \"\"\" For a given number n, find the largest number that divides n evenly, smaller than n\n    >>> largest_divisor(15)\n    5\n    \"\"\"\n    for i in range(n-1, 1, -1):\n        if n % i == 0:\n            return i\n",
+          "duplicate": false,
+          "selected_candidate_index": 0,
+          "ranking_score": [
+            0,
+            3,
+            1,
+            1,
+            0
+          ],
+          "candidates": [
+            {
+              "candidate_index": 0,
+              "seed": 42,
+              "passed": false,
+              "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 16, in <module>\n  File \"<string>\", line 10, in check\nAssertionError\n",
+              "failure_category": "assertion_error",
+              "code": "def largest_divisor(n: int) -> int:\n    \"\"\" For a given number n, find the largest number that divides n evenly, smaller than n\n    >>> largest_divisor(15)\n    5\n    \"\"\"\n    for i in range(n-1, 1, -1):\n        if n % i == 0:\n            return i\n",
+              "duplicate": false,
+              "ranking_score": [
+                0,
+                3,
+                1,
+                1,
+                0
+              ]
+            },
+            {
+              "candidate_index": 1,
+              "seed": 43,
+              "passed": false,
+              "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 16, in <module>\n  File \"<string>\", line 10, in check\nAssertionError\n",
+              "failure_category": "assertion_error",
+              "code": "def largest_divisor(n: int) -> int:\n    \"\"\" For a given number n, find the largest number that divides n evenly, smaller than n\n    >>> largest_divisor(15)\n    5\n    \"\"\"\n    for i in range(n-1, 1, -1):\n        if n % i == 0:\n            return i\n",
+              "duplicate": true,
+              "ranking_score": [
+                0,
+                3,
+                0,
+                1,
+                -1
+              ]
+            },
+            {
+              "candidate_index": 2,
+              "seed": 44,
+              "passed": false,
+              "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 16, in <module>\n  File \"<string>\", line 10, in check\nAssertionError\n",
+              "failure_category": "assertion_error",
+              "code": "def largest_divisor(n: int) -> int:\n    \"\"\" For a given number n, find the largest number that divides n evenly, smaller than n\n    >>> largest_divisor(15)\n    5\n    \"\"\"\n    for i in range(n-1, 1, -1):\n        if n % i == 0:\n            return i\n",
+              "duplicate": true,
+              "ranking_score": [
+                0,
+                3,
+                0,
+                1,
+                -2
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "task_id": "HumanEval/3",
+      "sample_index": 5,
+      "initial_code": "from typing import List\n\n\ndef below_zero(operations: List[int]) -> bool:\n    \"\"\" You're given a list of deposit and withdrawal operations on a bank account that starts with\n    zero balance. Your task is to detect if at any point the balance of account fallls below zero, and\n    at that point function should return True. Otherwise it should return False.\n    >>> below_zero([1, 2, 3])\n    False\n    >>> below_zero([1, 2, -4, 5])\n    True\n    \"\"\"\n    # First we get the first operation, if any in the list is a negative number, we need to add a negative\n    # as well.\n    operations = operations[:len(operations) - 1]\n    # If the first operation is a negative number, we need to find the absolute value of the operation\n    # in the list.\n    operations = abs(operations)\n    # If there is a negative number, we need to find the absolute value of the operation in the list\n    # we'll find the minimum value, which is -1.\n    operations = min(operations)\n    # Remember that the absolute value of the value of the operation in the list is -1\n    # So we can find the absolute value of the operations in the list.\n    # We'll now find the absolute value of the minimum value we have found.\n    operations = abs(operations)\n    # First we need to find out if there is a number below zero.\n    # For example, if the first operation is -1, and the minimum value in the list is -1, then the\n    # balance is 0.\n    if operations < 0",
+      "initial_error_message": "Traceback (most recent call last):\n  File \"/Users/melih/Desktop/stajsal/Internship Resources \u2013 AI For SE/src/evaluation.py\", line 75, in run_code\n    exec(code, exec_globals)  # TODO: SANDBOX\n    ~~~~^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 29\n    if operations < 0\n                     ^\nSyntaxError: expected ':'\n",
+      "initial_failure_category": "syntax_error",
+      "attempts_used": 1,
+      "repair_rounds_used": 1,
+      "repair_model_calls": 3,
+      "duplicate_candidates": 0,
+      "oracle_candidate_passed": false,
+      "oracle_success_iteration": null,
+      "selected_candidate_indices": [
+        0
+      ],
+      "success_iteration": null,
+      "final_passed": false,
+      "final_code": "from typing import List\n\n\ndef below_zero(operations: List[int]) -> bool:\n    \"\"\" You're given a list of deposit and withdrawal operations on a bank account that starts with\n    zero balance. Your task is to detect if at any point the balance of account fallls below zero, and\n    at that point function should return True. Otherwise it should return False.\n    >>> below_zero([1, 2, 3])\n    False\n    >>> below_zero([1, 2, -4, 5])\n    True\n    \"\"\"\n```python\nfrom typing import List\n\n\ndef below_zero(operations: List[int]) -> bool:\n    \"\"\" You're given a list of deposit and withdrawal operations on a bank account that starts with\n    zero balance. Your task is to detect if at any point the balance of account falls below zero, and\n    at that point function should return True. Otherwise it should return False.\n    >>> below_zero([1, 2, 3])\n    False\n    >>> below_zero([1, 2, -4, 5])\n    True\n    \"\"\"\n    # First we get the first operation, if any in the list is a negative number, we need to add a negative\n    # as well.\n    operations = operations[:len(operations) - 1]\n    # If the first operation is a negative number, we need to find the absolute value of the operation\n    # in the list.\n    operations = abs(operations)\n    # If there is a negative number, we need to find the absolute value of the operation in the list\n    # we'll find the minimum value, which is -1.\n    operations = min(operations)\n    # Remember that the absolute value of the value of the operation in the list is -\n",
+      "final_error_message": "Traceback (most recent call last):\n  File \"<string>\", line 9, in <module>\n    exec(payload[\"code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 13\n    ```python\n    ^\nSyntaxError: invalid syntax\n",
+      "final_failure_category": "syntax_error",
+      "trace": [
+        {
+          "iteration": 0,
+          "passed": false,
+          "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 9, in <module>\n    exec(payload[\"code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 29\n    if operations < 0\n                     ^\nSyntaxError: expected ':'\n",
+          "code": "from typing import List\n\n\ndef below_zero(operations: List[int]) -> bool:\n    \"\"\" You're given a list of deposit and withdrawal operations on a bank account that starts with\n    zero balance. Your task is to detect if at any point the balance of account fallls below zero, and\n    at that point function should return True. Otherwise it should return False.\n    >>> below_zero([1, 2, 3])\n    False\n    >>> below_zero([1, 2, -4, 5])\n    True\n    \"\"\"\n    # First we get the first operation, if any in the list is a negative number, we need to add a negative\n    # as well.\n    operations = operations[:len(operations) - 1]\n    # If the first operation is a negative number, we need to find the absolute value of the operation\n    # in the list.\n    operations = abs(operations)\n    # If there is a negative number, we need to find the absolute value of the operation in the list\n    # we'll find the minimum value, which is -1.\n    operations = min(operations)\n    # Remember that the absolute value of the value of the operation in the list is -1\n    # So we can find the absolute value of the operations in the list.\n    # We'll now find the absolute value of the minimum value we have found.\n    operations = abs(operations)\n    # First we need to find out if there is a number below zero.\n    # For example, if the first operation is -1, and the minimum value in the list is -1, then the\n    # balance is 0.\n    if operations < 0",
+          "duplicate": false,
+          "failure_category": "syntax_error",
+          "selected_candidate_index": null,
+          "candidates": []
+        },
+        {
+          "iteration": 1,
+          "passed": false,
+          "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 9, in <module>\n    exec(payload[\"code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 13\n    ```python\n    ^\nSyntaxError: invalid syntax\n",
+          "failure_category": "syntax_error",
+          "code": "from typing import List\n\n\ndef below_zero(operations: List[int]) -> bool:\n    \"\"\" You're given a list of deposit and withdrawal operations on a bank account that starts with\n    zero balance. Your task is to detect if at any point the balance of account fallls below zero, and\n    at that point function should return True. Otherwise it should return False.\n    >>> below_zero([1, 2, 3])\n    False\n    >>> below_zero([1, 2, -4, 5])\n    True\n    \"\"\"\n```python\nfrom typing import List\n\n\ndef below_zero(operations: List[int]) -> bool:\n    \"\"\" You're given a list of deposit and withdrawal operations on a bank account that starts with\n    zero balance. Your task is to detect if at any point the balance of account falls below zero, and\n    at that point function should return True. Otherwise it should return False.\n    >>> below_zero([1, 2, 3])\n    False\n    >>> below_zero([1, 2, -4, 5])\n    True\n    \"\"\"\n    # First we get the first operation, if any in the list is a negative number, we need to add a negative\n    # as well.\n    operations = operations[:len(operations) - 1]\n    # If the first operation is a negative number, we need to find the absolute value of the operation\n    # in the list.\n    operations = abs(operations)\n    # If there is a negative number, we need to find the absolute value of the operation in the list\n    # we'll find the minimum value, which is -1.\n    operations = min(operations)\n    # Remember that the absolute value of the value of the operation in the list is -\n",
+          "duplicate": false,
+          "selected_candidate_index": 0,
+          "ranking_score": [
+            0,
+            0,
+            1,
+            1,
+            0
+          ],
+          "candidates": [
+            {
+              "candidate_index": 0,
+              "seed": 43,
+              "passed": false,
+              "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 9, in <module>\n    exec(payload[\"code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 13\n    ```python\n    ^\nSyntaxError: invalid syntax\n",
+              "failure_category": "syntax_error",
+              "code": "from typing import List\n\n\ndef below_zero(operations: List[int]) -> bool:\n    \"\"\" You're given a list of deposit and withdrawal operations on a bank account that starts with\n    zero balance. Your task is to detect if at any point the balance of account fallls below zero, and\n    at that point function should return True. Otherwise it should return False.\n    >>> below_zero([1, 2, 3])\n    False\n    >>> below_zero([1, 2, -4, 5])\n    True\n    \"\"\"\n```python\nfrom typing import List\n\n\ndef below_zero(operations: List[int]) -> bool:\n    \"\"\" You're given a list of deposit and withdrawal operations on a bank account that starts with\n    zero balance. Your task is to detect if at any point the balance of account falls below zero, and\n    at that point function should return True. Otherwise it should return False.\n    >>> below_zero([1, 2, 3])\n    False\n    >>> below_zero([1, 2, -4, 5])\n    True\n    \"\"\"\n    # First we get the first operation, if any in the list is a negative number, we need to add a negative\n    # as well.\n    operations = operations[:len(operations) - 1]\n    # If the first operation is a negative number, we need to find the absolute value of the operation\n    # in the list.\n    operations = abs(operations)\n    # If there is a negative number, we need to find the absolute value of the operation in the list\n    # we'll find the minimum value, which is -1.\n    operations = min(operations)\n    # Remember that the absolute value of the value of the operation in the list is -\n",
+              "duplicate": false,
+              "ranking_score": [
+                0,
+                0,
+                1,
+                1,
+                0
+              ]
+            },
+            {
+              "candidate_index": 1,
+              "seed": 44,
+              "passed": false,
+              "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 9, in <module>\n    exec(payload[\"code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 13\n    ```python\n    ^\nSyntaxError: invalid syntax\n",
+              "failure_category": "syntax_error",
+              "code": "from typing import List\n\n\ndef below_zero(operations: List[int]) -> bool:\n    \"\"\" You're given a list of deposit and withdrawal operations on a bank account that starts with\n    zero balance. Your task is to detect if at any point the balance of account fallls below zero, and\n    at that point function should return True. Otherwise it should return False.\n    >>> below_zero([1, 2, 3])\n    False\n    >>> below_zero([1, 2, -4, 5])\n    True\n    \"\"\"\n```python\nfrom typing import List\n\n\ndef below_zero(operations: List[int]) -> bool:\n    \"\"\" You're given a list of deposit and withdrawal operations on a bank account that starts with\n    zero balance. Your task is to detect if at any point the balance of account fallls below zero, and\n    at that point function should return True. Otherwise it should return False.\n    >>> below_zero([1, 2, 3])\n    False\n    >>> below_zero([1, 2, -4, 5])\n    True\n    \"\"\"\n    # First we get the first operation, if any in the list is a negative number, we need to add a negative\n    # as well.\n    operations = operations[:len(operations) - 1]\n    # If the first operation is a negative number, we need to find the absolute value of the operation\n    # in the list.\n    operations = abs(operations)\n    # If there is a negative number, we need to find the absolute value of the operation in the list\n    # we'll find the minimum value, which is -1.\n    operations = min(operations)\n    # Remember that the absolute value of the value of the operation in the list is\n",
+              "duplicate": false,
+              "ranking_score": [
+                0,
+                0,
+                1,
+                1,
+                -1
+              ]
+            },
+            {
+              "candidate_index": 2,
+              "seed": 45,
+              "passed": false,
+              "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 9, in <module>\n    exec(payload[\"code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 13\n    ```python\n    ^\nSyntaxError: invalid syntax\n",
+              "failure_category": "syntax_error",
+              "code": "from typing import List\n\n\ndef below_zero(operations: List[int]) -> bool:\n    \"\"\" You're given a list of deposit and withdrawal operations on a bank account that starts with\n    zero balance. Your task is to detect if at any point the balance of account fallls below zero, and\n    at that point function should return True. Otherwise it should return False.\n    >>> below_zero([1, 2, 3])\n    False\n    >>> below_zero([1, 2, -4, 5])\n    True\n    \"\"\"\n```python\nfrom typing import List\n\n\ndef below_zero(operations: List[int]) -> bool:\n    \"\"\" You're given a list of deposit and withdrawal operations on a bank account that starts with\n    zero balance. Your task is to detect if at any point the balance of account fallsls below zero, and\n    at that point function should return True. Otherwise it should return False.\n    >>> below_zero([1, 2, 3])\n    False\n    >>> below_zero([1, 2, -4, 5])\n    True\n    \"\"\"\n    # First we get the first operation, if any in the list is a negative number, we need to add a negative\n    # as well.\n    operations = operations[:len(operations) - 1]\n    # If the first operation is a negative number, we need to find the absolute value of the operation\n    # in the list.\n    operations = abs(operations)\n    # If there is a negative number, we need to find the absolute value of the operation in the list\n    # we'll find the minimum value, which is -1.\n    operations = min(operations)\n    # Remember that the absolute value of the value of the operation in the list is\n",
+              "duplicate": false,
+              "ranking_score": [
+                0,
+                0,
+                1,
+                1,
+                -2
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "task_id": "HumanEval/1",
+      "sample_index": 1,
+      "initial_code": "from typing import List\n\n\ndef separate_paren_groups(paren_string: str) -> List[str]:\n    \"\"\" Input to this function is a string containing multiple groups of nested parentheses. Your goal is to\n    separate those group into separate strings and return the list of those.\n    Separate groups are balanced (each open brace is properly closed) and not nested within each other\n    Ignore any spaces in the input string.\n    >>> separate_paren_groups('( ) (( )) (( )( ))')\n    ['()', '(())', '(()())']\n    \"\"\"\n    split_string = paren_string.split('(')\n    for i in range(len(split_string)):\n        for j in range(len(split_string[i])):\n            split_string[i][j] = split_string[i][j][0].lower() + split_string[i][j][1:]\n    return split_string\n\n",
+      "initial_error_message": "Traceback (most recent call last):\n  File \"/Users/melih/Desktop/stajsal/Internship Resources \u2013 AI For SE/src/evaluation.py\", line 76, in run_code\n    exec(test_code, exec_globals)  # TODO: SANDBOX\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 21, in <module>\n  File \"<string>\", line 10, in check\n  File \"<string>\", line 15, in separate_paren_groups\nTypeError: 'str' object does not support item assignment\n",
+      "initial_failure_category": "type_error",
+      "attempts_used": 1,
+      "repair_rounds_used": 1,
+      "repair_model_calls": 3,
+      "duplicate_candidates": 0,
+      "oracle_candidate_passed": false,
+      "oracle_success_iteration": null,
+      "selected_candidate_indices": [
+        0
+      ],
+      "success_iteration": null,
+      "final_passed": false,
+      "final_code": "from typing import List\n\n\ndef separate_paren_groups(paren_string: str) -> List[str]:\n    \"\"\" Input to this function is a string containing multiple groups of nested parentheses. Your goal is to\n    separate those group into separate strings and return the list of those.\n    Separate groups are balanced (each open brace is properly closed) and not nested within each other\n    Ignore any spaces in the input string.\n    >>> separate_paren_groups('( ) (( )) (( )( ))')\n    ['()', '(())', '(()())']\n    \"\"\"\n    split_string = paren_string.replace(' ', '').split('(')\n    result = []\n    for s in split_string:\n        if s:\n            result.append(s[0])\n    return result\n",
+      "final_error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 21, in <module>\n  File \"<string>\", line 10, in check\nAssertionError\n",
+      "final_failure_category": "assertion_error",
+      "trace": [
+        {
+          "iteration": 0,
+          "passed": false,
+          "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 21, in <module>\n  File \"<string>\", line 10, in check\n  File \"<string>\", line 15, in separate_paren_groups\nTypeError: 'str' object does not support item assignment\n",
+          "code": "from typing import List\n\n\ndef separate_paren_groups(paren_string: str) -> List[str]:\n    \"\"\" Input to this function is a string containing multiple groups of nested parentheses. Your goal is to\n    separate those group into separate strings and return the list of those.\n    Separate groups are balanced (each open brace is properly closed) and not nested within each other\n    Ignore any spaces in the input string.\n    >>> separate_paren_groups('( ) (( )) (( )( ))')\n    ['()', '(())', '(()())']\n    \"\"\"\n    split_string = paren_string.split('(')\n    for i in range(len(split_string)):\n        for j in range(len(split_string[i])):\n            split_string[i][j] = split_string[i][j][0].lower() + split_string[i][j][1:]\n    return split_string\n\n",
+          "duplicate": false,
+          "failure_category": "type_error",
+          "selected_candidate_index": null,
+          "candidates": []
+        },
+        {
+          "iteration": 1,
+          "passed": false,
+          "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 21, in <module>\n  File \"<string>\", line 10, in check\nAssertionError\n",
+          "failure_category": "assertion_error",
+          "code": "from typing import List\n\n\ndef separate_paren_groups(paren_string: str) -> List[str]:\n    \"\"\" Input to this function is a string containing multiple groups of nested parentheses. Your goal is to\n    separate those group into separate strings and return the list of those.\n    Separate groups are balanced (each open brace is properly closed) and not nested within each other\n    Ignore any spaces in the input string.\n    >>> separate_paren_groups('( ) (( )) (( )( ))')\n    ['()', '(())', '(()())']\n    \"\"\"\n    split_string = paren_string.replace(' ', '').split('(')\n    result = []\n    for s in split_string:\n        if s:\n            result.append(s[0])\n    return result\n",
+          "duplicate": false,
+          "selected_candidate_index": 0,
+          "ranking_score": [
+            0,
+            3,
+            1,
+            1,
+            0
+          ],
+          "candidates": [
+            {
+              "candidate_index": 0,
+              "seed": 44,
+              "passed": false,
+              "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 21, in <module>\n  File \"<string>\", line 10, in check\nAssertionError\n",
+              "failure_category": "assertion_error",
+              "code": "from typing import List\n\n\ndef separate_paren_groups(paren_string: str) -> List[str]:\n    \"\"\" Input to this function is a string containing multiple groups of nested parentheses. Your goal is to\n    separate those group into separate strings and return the list of those.\n    Separate groups are balanced (each open brace is properly closed) and not nested within each other\n    Ignore any spaces in the input string.\n    >>> separate_paren_groups('( ) (( )) (( )( ))')\n    ['()', '(())', '(()())']\n    \"\"\"\n    split_string = paren_string.replace(' ', '').split('(')\n    result = []\n    for s in split_string:\n        if s:\n            result.append(s[0])\n    return result\n",
+              "duplicate": false,
+              "ranking_score": [
+                0,
+                3,
+                1,
+                1,
+                0
+              ]
+            },
+            {
+              "candidate_index": 1,
+              "seed": 45,
+              "passed": false,
+              "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 21, in <module>\n  File \"<string>\", line 10, in check\nAssertionError\n",
+              "failure_category": "assertion_error",
+              "code": "from typing import List\n\n\ndef separate_paren_groups(paren_string: str) -> List[str]:\n    \"\"\" Input to this function is a string containing multiple groups of nested parentheses. Your goal is to\n    separate those group into separate strings and return the list of those.\n    Separate groups are balanced (each open brace is properly closed) and not nested within each other\n    Ignore any spaces in the input string.\n    >>> separate_paren_groups('( ) (( )) (( )( ))')\n    ['()', '(())', '(()())']\n    \"\"\"\n    split_string = paren_string.replace(' ', '').split('(')\n    result = []\n    current_group = ''\n    for char in split_string[0]:\n        if char == '(':\n            current_group += char\n        elif char == ')':\n            current_group += char\n            result.append(current_group)\n            current_group = ''\n    return result\n",
+              "duplicate": false,
+              "ranking_score": [
+                0,
+                3,
+                1,
+                1,
+                -1
+              ]
+            },
+            {
+              "candidate_index": 2,
+              "seed": 46,
+              "passed": false,
+              "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 21, in <module>\n  File \"<string>\", line 10, in check\nAssertionError\n",
+              "failure_category": "assertion_error",
+              "code": "from typing import List\n\n\ndef separate_paren_groups(paren_string: str) -> List[str]:\n    \"\"\" Input to this function is a string containing multiple groups of nested parentheses. Your goal is to\n    separate those group into separate strings and return the list of those.\n    Separate groups are balanced (each open brace is properly closed) and not nested within each other\n    Ignore any spaces in the input string.\n    >>> separate_paren_groups('( ) (( )) (( )( ))')\n    ['()', '(())', '(()())']\n    \"\"\"\n    split_string = paren_string.replace(' ', '').split('(')\n    result = []\n    for group in split_string:\n        if group:\n            result.append(group[0])\n    return result\n",
+              "duplicate": false,
+              "ranking_score": [
+                0,
+                3,
+                1,
+                1,
+                -2
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "task_id": "HumanEval/2",
+      "sample_index": 2,
+      "initial_code": "\n\ndef truncate_number(number: float) -> float:\n    \"\"\" Given a positive floating point number, it can be decomposed into\n    and integer part (largest integer smaller than given number) and decimals\n    (leftover part always smaller than 1).\n\n    Return the decimal part of the number.\n    >>> truncate_number(3.5)\n    0.5\n    \"\"\"\n    \n    return truncate(number, -1)\n\n",
+      "initial_error_message": "Traceback (most recent call last):\n  File \"/Users/melih/Desktop/stajsal/Internship Resources \u2013 AI For SE/src/evaluation.py\", line 76, in run_code\n    exec(test_code, exec_globals)  # TODO: SANDBOX\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 14, in <module>\n  File \"<string>\", line 10, in check\n  File \"<string>\", line 13, in truncate_number\nNameError: name 'truncate' is not defined\n",
+      "initial_failure_category": "name_error",
+      "attempts_used": 1,
+      "repair_rounds_used": 1,
+      "repair_model_calls": 3,
+      "duplicate_candidates": 2,
+      "oracle_candidate_passed": false,
+      "oracle_success_iteration": null,
+      "selected_candidate_indices": [
+        0
+      ],
+      "success_iteration": null,
+      "final_passed": false,
+      "final_code": "import json\n\ndef truncate_number(number: float) -> float:\n    \"\"\" Given a positive floating point number, it can be decomposed into\n    and integer part (largest integer smaller than given number) and decimals\n    (leftover part always smaller than 1).\n\n    Return the decimal part of the number.\n    >>> truncate_number(3.5)\n    0.5\n    \"\"\"\n    \n    return number % 1\n\nresult = truncate_number(3.5)\nprint(json.dumps(result))\n",
+      "final_error_message": "Traceback (most recent call last):\nRuntimeError: execution subprocess exited with code 0\n",
+      "final_failure_category": "runtime_error",
+      "trace": [
+        {
+          "iteration": 0,
+          "passed": false,
+          "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 14, in <module>\n    print(json.dumps(result))\n    ^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 10, in check\n  File \"<string>\", line 13, in truncate_number\nNameError: name 'truncate' is not defined\n",
+          "code": "\n\ndef truncate_number(number: float) -> float:\n    \"\"\" Given a positive floating point number, it can be decomposed into\n    and integer part (largest integer smaller than given number) and decimals\n    (leftover part always smaller than 1).\n\n    Return the decimal part of the number.\n    >>> truncate_number(3.5)\n    0.5\n    \"\"\"\n    \n    return truncate(number, -1)\n\n",
+          "duplicate": false,
+          "failure_category": "name_error",
+          "selected_candidate_index": null,
+          "candidates": []
+        },
+        {
+          "iteration": 1,
+          "passed": false,
+          "error_message": "Traceback (most recent call last):\nRuntimeError: execution subprocess exited with code 0\n",
+          "failure_category": "runtime_error",
+          "code": "import json\n\ndef truncate_number(number: float) -> float:\n    \"\"\" Given a positive floating point number, it can be decomposed into\n    and integer part (largest integer smaller than given number) and decimals\n    (leftover part always smaller than 1).\n\n    Return the decimal part of the number.\n    >>> truncate_number(3.5)\n    0.5\n    \"\"\"\n    \n    return number % 1\n\nresult = truncate_number(3.5)\nprint(json.dumps(result))\n",
+          "duplicate": false,
+          "selected_candidate_index": 0,
+          "ranking_score": [
+            0,
+            2,
+            1,
+            1,
+            0
+          ],
+          "candidates": [
+            {
+              "candidate_index": 0,
+              "seed": 45,
+              "passed": false,
+              "error_message": "Traceback (most recent call last):\nRuntimeError: execution subprocess exited with code 0\n",
+              "failure_category": "runtime_error",
+              "code": "import json\n\ndef truncate_number(number: float) -> float:\n    \"\"\" Given a positive floating point number, it can be decomposed into\n    and integer part (largest integer smaller than given number) and decimals\n    (leftover part always smaller than 1).\n\n    Return the decimal part of the number.\n    >>> truncate_number(3.5)\n    0.5\n    \"\"\"\n    \n    return number % 1\n\nresult = truncate_number(3.5)\nprint(json.dumps(result))\n",
+              "duplicate": false,
+              "ranking_score": [
+                0,
+                2,
+                1,
+                1,
+                0
+              ]
+            },
+            {
+              "candidate_index": 1,
+              "seed": 46,
+              "passed": false,
+              "error_message": "Traceback (most recent call last):\nRuntimeError: execution subprocess exited with code 0\n",
+              "failure_category": "runtime_error",
+              "code": "import json\n\ndef truncate_number(number: float) -> float:\n    \"\"\" Given a positive floating point number, it can be decomposed into\n    and integer part (largest integer smaller than given number) and decimals\n    (leftover part always smaller than 1).\n\n    Return the decimal part of the number.\n    >>> truncate_number(3.5)\n    0.5\n    \"\"\"\n    \n    return number % 1\n\nresult = truncate_number(3.5)\nprint(json.dumps(result))\n",
+              "duplicate": true,
+              "ranking_score": [
+                0,
+                2,
+                0,
+                1,
+                -1
+              ]
+            },
+            {
+              "candidate_index": 2,
+              "seed": 47,
+              "passed": false,
+              "error_message": "Traceback (most recent call last):\nRuntimeError: execution subprocess exited with code 0\n",
+              "failure_category": "runtime_error",
+              "code": "import json\n\ndef truncate_number(number: float) -> float:\n    \"\"\" Given a positive floating point number, it can be decomposed into\n    and integer part (largest integer smaller than given number) and decimals\n    (leftover part always smaller than 1).\n\n    Return the decimal part of the number.\n    >>> truncate_number(3.5)\n    0.5\n    \"\"\"\n    \n    return number % 1\n\nresult = truncate_number(3.5)\nprint(json.dumps(result))\n",
+              "duplicate": true,
+              "ranking_score": [
+                0,
+                2,
+                0,
+                1,
+                -2
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

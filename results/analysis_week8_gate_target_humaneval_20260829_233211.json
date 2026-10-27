@@ -1,0 +1,152 @@
+{
+  "analysis": "joint_gate_target_diagnosis",
+  "timestamp": "2026-08-29T23:32:11.272285",
+  "config": {
+    "source_results": "results/humaneval_uncertainty_merged164_20260711.json",
+    "source_run_id": "humaneval_uncertainty_merged164_20260711",
+    "repair_run_id": "humaneval_week8_repair_all_sample0_qwen15b",
+    "repair_model": "Qwen/Qwen2.5-Coder-1.5B-Instruct",
+    "predictor_feature_set": "self_consistency_plus_execution",
+    "predictor_model_type": "logistic",
+    "probability_kind": "out_of_fold_raw_rank_only",
+    "sample_index": 0,
+    "smart_coverage": 0.75,
+    "seed": 42,
+    "n_permutations": 10000,
+    "n_bootstrap": 10000
+  },
+  "cohort": {
+    "candidates": 164,
+    "initially_passing": 16,
+    "initially_failing": 148,
+    "repaired": 54
+  },
+  "gate_exclusion": {
+    "n_failures": 148,
+    "n_successes": 54,
+    "n_excluded_by_gate": 27,
+    "successes_excluded_observed": 18,
+    "successes_excluded_expected": 9.85135135135135,
+    "success_ranks_ascending_p_pass": [
+      6,
+      8,
+      11,
+      14,
+      25,
+      29,
+      32,
+      45,
+      48,
+      53,
+      55,
+      56,
+      59,
+      61,
+      70,
+      71,
+      73,
+      80,
+      82,
+      84,
+      85,
+      90,
+      91,
+      94,
+      98,
+      100,
+      102,
+      103,
+      104,
+      105,
+      110,
+      112,
+      113,
+      116,
+      118,
+      119,
+      121,
+      123,
+      124,
+      125,
+      126,
+      127,
+      128,
+      130,
+      132,
+      133,
+      135,
+      137,
+      139,
+      140,
+      141,
+      143,
+      145,
+      146
+    ],
+    "mean_success_rank": 92.9074074074074,
+    "midpoint_rank": 73.5,
+    "hypergeometric_p_upper": 0.00043891268687054174
+  },
+  "targets": [
+    {
+      "target": "initial_passed",
+      "n": 164,
+      "n_positive": 16,
+      "n_negative": 148,
+      "roc_auc": 0.9467905405405406,
+      "permutation_p": 9.999000099990002e-05,
+      "n_permutations": 10000,
+      "bootstrap_95": [
+        0.8821777575272641,
+        0.9933785726734053
+      ],
+      "n_bootstrap": 10000,
+      "mean_score_positive": 0.8300311107967049,
+      "mean_score_negative": 0.19535216241845202
+    },
+    {
+      "target": "repair_success",
+      "n": 148,
+      "n_positive": 54,
+      "n_negative": 94,
+      "roc_auc": 0.706461780929866,
+      "permutation_p": 9.999000099990002e-05,
+      "n_permutations": 10000,
+      "bootstrap_95": [
+        0.6163672793372041,
+        0.7932408781694495
+      ],
+      "n_bootstrap": 10000,
+      "mean_score_positive": 0.29244181537286357,
+      "mean_score_negative": 0.1395772554020879
+    }
+  ],
+  "target_gap": 0.24032875961067457,
+  "per_initial_failure_category": {
+    "assertion_error": {
+      "n": 116,
+      "repaired": 46,
+      "repair_rate": 0.39655172413793105
+    },
+    "name_error": {
+      "n": 15,
+      "repaired": 2,
+      "repair_rate": 0.13333333333333333
+    },
+    "runtime_error": {
+      "n": 8,
+      "repaired": 5,
+      "repair_rate": 0.625
+    },
+    "syntax_error": {
+      "n": 5,
+      "repaired": 0,
+      "repair_rate": 0.0
+    },
+    "type_error": {
+      "n": 4,
+      "repaired": 1,
+      "repair_rate": 0.25
+    }
+  }
+}

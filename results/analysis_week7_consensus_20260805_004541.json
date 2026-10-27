@@ -1,0 +1,142 @@
+{
+  "analysis": "week7_consensus_deciles",
+  "source_results_file": "results/humaneval_deepseek60_merged_20260712.json",
+  "source_run_id": "humaneval_deepseek60_merged_20260712",
+  "config": {
+    "seed": 42,
+    "representation": "full",
+    "execution_features": true,
+    "probe_source": "evalplus",
+    "probe_cap": 12
+  },
+  "source_config": {
+    "dataset": "humaneval",
+    "model": "deepseek-ai/deepseek-coder-1.3b-base",
+    "n_samples": 10,
+    "n_problems": 60,
+    "problem_offset": 0,
+    "seed": 42,
+    "mode": "uncertainty",
+    "codebert_model": null,
+    "use_error_context": false,
+    "max_repair_iterations": 1,
+    "temperature": 0.7,
+    "merged_from": [
+      "humaneval_uncertainty_20260711_042224",
+      "humaneval_uncertainty_20260712_061253"
+    ],
+    "note": "deepseek-coder-1.3b HumanEval 0-59, identical protocol both halves"
+  },
+  "n_problems": 60,
+  "overall_frac_solved": 0.7833333333333333,
+  "features": {
+    "ast_node_diversity": {
+      "quartiles": [
+        {
+          "group": 1,
+          "n_problems": 15,
+          "frac_solved": 0.9333333333333333,
+          "mean_pass_rate": 0.8733333333333334,
+          "task_ids_all_fail": [
+            "HumanEval/38"
+          ]
+        },
+        {
+          "group": 2,
+          "n_problems": 15,
+          "frac_solved": 0.9333333333333333,
+          "mean_pass_rate": 0.5133333333333333,
+          "task_ids_all_fail": [
+            "HumanEval/10"
+          ]
+        },
+        {
+          "group": 3,
+          "n_problems": 15,
+          "frac_solved": 0.8,
+          "mean_pass_rate": 0.42666666666666664,
+          "task_ids_all_fail": [
+            "HumanEval/20",
+            "HumanEval/36",
+            "HumanEval/17"
+          ]
+        },
+        {
+          "group": 4,
+          "n_problems": 15,
+          "frac_solved": 0.4666666666666667,
+          "mean_pass_rate": 0.16666666666666666,
+          "task_ids_all_fail": [
+            "HumanEval/33",
+            "HumanEval/39",
+            "HumanEval/32",
+            "HumanEval/6",
+            "HumanEval/1",
+            "HumanEval/37",
+            "HumanEval/41",
+            "HumanEval/19"
+          ]
+        }
+      ],
+      "confidently_wrong": {
+        "n_problems": 6,
+        "n_all_fail": 0,
+        "rate": 0.0,
+        "task_ids": []
+      }
+    },
+    "execution_behavior_diversity": {
+      "quartiles": [
+        {
+          "group": 1,
+          "n_problems": 15,
+          "frac_solved": 1.0,
+          "mean_pass_rate": 0.86,
+          "task_ids_all_fail": []
+        },
+        {
+          "group": 2,
+          "n_problems": 15,
+          "frac_solved": 1.0,
+          "mean_pass_rate": 0.5999999999999999,
+          "task_ids_all_fail": []
+        },
+        {
+          "group": 3,
+          "n_problems": 15,
+          "frac_solved": 0.8,
+          "mean_pass_rate": 0.43333333333333335,
+          "task_ids_all_fail": [
+            "HumanEval/17",
+            "HumanEval/36",
+            "HumanEval/20"
+          ]
+        },
+        {
+          "group": 4,
+          "n_problems": 15,
+          "frac_solved": 0.3333333333333333,
+          "mean_pass_rate": 0.08666666666666667,
+          "task_ids_all_fail": [
+            "HumanEval/39",
+            "HumanEval/41",
+            "HumanEval/1",
+            "HumanEval/38",
+            "HumanEval/6",
+            "HumanEval/32",
+            "HumanEval/19",
+            "HumanEval/37",
+            "HumanEval/10",
+            "HumanEval/33"
+          ]
+        }
+      ],
+      "confidently_wrong": {
+        "n_problems": 6,
+        "n_all_fail": 0,
+        "rate": 0.0,
+        "task_ids": []
+      }
+    }
+  }
+}

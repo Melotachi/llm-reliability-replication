@@ -1,0 +1,253 @@
+{
+  "run_id": "mbpp_uncertainty_20260726_230817",
+  "timestamp": "2026-07-26T23:08:17.548032",
+  "config": {
+    "dataset": "mbpp",
+    "model": "Salesforce/codegen-350M-mono",
+    "n_samples": 1,
+    "n_problems": 8,
+    "seed": 42,
+    "mode": "uncertainty",
+    "use_error_context": false,
+    "max_repair_iterations": 3
+  },
+  "summary": {
+    "mean_pass_at_1": 0.125,
+    "mean_pass_at_5": null,
+    "mean_initial_pass_rate": 0.125,
+    "mean_post_repair_pass_rate": null,
+    "repair_success_rate": null
+  },
+  "per_problem": [
+    {
+      "task_id": "MBPP/11",
+      "prompt_length": 126,
+      "uncertainty": {
+        "lexical_diversity": 1.0,
+        "token_jaccard_diversity": 0.0,
+        "ast_node_diversity": 0.0,
+        "pairwise_distance": 0.0,
+        "parse_failure_rate": 0.0
+      },
+      "samples": [
+        {
+          "code": "\"\"\"Write a python function to remove first and last occurrence of a given character from the string.\"\"\"\ndef remove_Occ(s,ch):\n    if ch in s:\n        s = s.replace(ch,'')\n        s = s.replace(ch,'')\n        return s\n    else:\n        return s\n",
+          "passed": true,
+          "error_message": "",
+          "failure_category": ""
+        }
+      ],
+      "initial_pass_rate": 1.0,
+      "post_repair_pass_rate": null,
+      "failure_types": [],
+      "pass_at_1": 1.0,
+      "pass_at_5": null,
+      "n_samples": 1,
+      "n_initial_pass": 1,
+      "n_post_repair_pass": null
+    },
+    {
+      "task_id": "MBPP/12",
+      "prompt_length": 119,
+      "uncertainty": {
+        "lexical_diversity": 1.0,
+        "token_jaccard_diversity": 0.0,
+        "ast_node_diversity": 0.0,
+        "pairwise_distance": 0.0,
+        "parse_failure_rate": 0.0
+      },
+      "samples": [
+        {
+          "code": "\"\"\"Write a function to sort a given matrix in ascending order according to the sum of its rows.\"\"\"\ndef sort_matrix(M):\n    \"\"\"Sort a given matrix in ascending order according to the sum of its rows.\n\n    Args:\n        M (list): Matrix to sort.\n\n    Returns:\n        list: Matrix sorted according to the sum of its rows.\n    \"\"\"\n    n = len(M)\n    for i in range(n):\n        for j in range(n-i-1):\n            if M[j][i] > M[j+1][i]:\n                M[j], M[j+1] = M[j+1], M[j]\n    return M\n",
+          "passed": false,
+          "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 2, in <module>\n    import json\n           ^^^^\nAssertionError\n",
+          "failure_category": "assertion_error"
+        }
+      ],
+      "initial_pass_rate": 0.0,
+      "post_repair_pass_rate": null,
+      "failure_types": [
+        "assertion_error"
+      ],
+      "pass_at_1": 0.0,
+      "pass_at_5": null,
+      "n_samples": 1,
+      "n_initial_pass": 0,
+      "n_post_repair_pass": null
+    },
+    {
+      "task_id": "MBPP/13",
+      "prompt_length": 96,
+      "uncertainty": {
+        "lexical_diversity": 1.0,
+        "token_jaccard_diversity": 0.0,
+        "ast_node_diversity": 0.0,
+        "pairwise_distance": 0.0,
+        "parse_failure_rate": 0.0
+      },
+      "samples": [
+        {
+          "code": "\"\"\"Write a function to count the most common words in a dictionary.\"\"\"\ndef count_common(words):\n    \"\"\"Count the most common words in a dictionary.\"\"\"\n    counts = {}\n    for word in words:\n        if word in counts:\n            counts[word] += 1\n        else:\n            counts[word] = 1\n    return counts\n",
+          "passed": false,
+          "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\nAssertionError\n",
+          "failure_category": "assertion_error"
+        }
+      ],
+      "initial_pass_rate": 0.0,
+      "post_repair_pass_rate": null,
+      "failure_types": [
+        "assertion_error"
+      ],
+      "pass_at_1": 0.0,
+      "pass_at_5": null,
+      "n_samples": 1,
+      "n_initial_pass": 0,
+      "n_post_repair_pass": null
+    },
+    {
+      "task_id": "MBPP/14",
+      "prompt_length": 94,
+      "uncertainty": {
+        "lexical_diversity": 1.0,
+        "token_jaccard_diversity": 0.0,
+        "ast_node_diversity": 0.0,
+        "pairwise_distance": 0.0,
+        "parse_failure_rate": 1.0
+      },
+      "samples": [
+        {
+          "code": "\"\"\"Write a python function to find the volume of a triangular prism.\"\"\"\ndef find_Volume(...):\n    \"\"\"Find the volume of a triangular prism.\"\"\"\n    pass\n",
+          "passed": false,
+          "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 9, in <module>\n    exec(payload[\"code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 2\n    def find_Volume(...):\n                    ^^^\nSyntaxError: invalid syntax\n",
+          "failure_category": "syntax_error"
+        }
+      ],
+      "initial_pass_rate": 0.0,
+      "post_repair_pass_rate": null,
+      "failure_types": [
+        "syntax_error"
+      ],
+      "pass_at_1": 0.0,
+      "pass_at_5": null,
+      "n_samples": 1,
+      "n_initial_pass": 0,
+      "n_post_repair_pass": null
+    },
+    {
+      "task_id": "MBPP/15",
+      "prompt_length": 92,
+      "uncertainty": {
+        "lexical_diversity": 1.0,
+        "token_jaccard_diversity": 0.0,
+        "ast_node_diversity": 0.0,
+        "pairwise_distance": 0.0,
+        "parse_failure_rate": 0.0
+      },
+      "samples": [
+        {
+          "code": "\"\"\"Write a function to split a string at lowercase letters.\"\"\"\ndef split_lowerstring(text):\n    \"\"\"Split a string at lowercase letters.\n\n    >>> split_lowerstring('The quick brown fox jumps over the lazy dog.')\n    ['The', 'quick', 'brown', 'fox', 'jumps', 'over', 'the', 'lazy', 'dog.']\n    \"\"\"\n    return [word.lower() for word in text.split()]\n",
+          "passed": false,
+          "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\nAssertionError\n",
+          "failure_category": "assertion_error"
+        }
+      ],
+      "initial_pass_rate": 0.0,
+      "post_repair_pass_rate": null,
+      "failure_types": [
+        "assertion_error"
+      ],
+      "pass_at_1": 0.0,
+      "pass_at_5": null,
+      "n_samples": 1,
+      "n_initial_pass": 0,
+      "n_post_repair_pass": null
+    },
+    {
+      "task_id": "MBPP/16",
+      "prompt_length": 126,
+      "uncertainty": {
+        "lexical_diversity": 1.0,
+        "token_jaccard_diversity": 0.0,
+        "ast_node_diversity": 0.0,
+        "pairwise_distance": 0.0,
+        "parse_failure_rate": 0.0
+      },
+      "samples": [
+        {
+          "code": "\"\"\"Write a function to find sequences of lowercase letters joined with an underscore.\"\"\"\ndef text_lowercase_underscore(text):\n    \"\"\"Return a list of all lowercase and underscore sequences in text.\"\"\"\n    return [word.lower() for word in text.split()]\n",
+          "passed": false,
+          "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\nAssertionError\n",
+          "failure_category": "assertion_error"
+        }
+      ],
+      "initial_pass_rate": 0.0,
+      "post_repair_pass_rate": null,
+      "failure_types": [
+        "assertion_error"
+      ],
+      "pass_at_1": 0.0,
+      "pass_at_5": null,
+      "n_samples": 1,
+      "n_initial_pass": 0,
+      "n_post_repair_pass": null
+    },
+    {
+      "task_id": "MBPP/17",
+      "prompt_length": 83,
+      "uncertainty": {
+        "lexical_diversity": 1.0,
+        "token_jaccard_diversity": 0.0,
+        "ast_node_diversity": 0.0,
+        "pairwise_distance": 0.0,
+        "parse_failure_rate": 0.0
+      },
+      "samples": [
+        {
+          "code": "\"\"\"Write a function to find the perimeter of a square.\"\"\"\ndef square_perimeter(a):\n    \"\"\"Return the perimeter of a square.\"\"\"\n    return (a[0] + a[1] + a[2]) * 2\n",
+          "passed": false,
+          "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 4, in square_perimeter\nTypeError: 'int' object is not subscriptable\n",
+          "failure_category": "type_error"
+        }
+      ],
+      "initial_pass_rate": 0.0,
+      "post_repair_pass_rate": null,
+      "failure_types": [
+        "type_error"
+      ],
+      "pass_at_1": 0.0,
+      "pass_at_5": null,
+      "n_samples": 1,
+      "n_initial_pass": 0,
+      "n_post_repair_pass": null
+    },
+    {
+      "task_id": "MBPP/18",
+      "prompt_length": 131,
+      "uncertainty": {
+        "lexical_diversity": 1.0,
+        "token_jaccard_diversity": 0.0,
+        "ast_node_diversity": 0.0,
+        "pairwise_distance": 0.0,
+        "parse_failure_rate": 0.0
+      },
+      "samples": [
+        {
+          "code": "\"\"\"Write a function to remove characters from the first string which are present in the second string.\"\"\"\ndef str_to_list(string):\n    \"\"\"Convert string to list of characters.\"\"\"\n    return list(string)\n",
+          "passed": false,
+          "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\nNameError: name 'remove_dirty_chars' is not defined\n",
+          "failure_category": "name_error"
+        }
+      ],
+      "initial_pass_rate": 0.0,
+      "post_repair_pass_rate": null,
+      "failure_types": [
+        "name_error"
+      ],
+      "pass_at_1": 0.0,
+      "pass_at_5": null,
+      "n_samples": 1,
+      "n_initial_pass": 0,
+      "n_post_repair_pass": null
+    }
+  ]
+}

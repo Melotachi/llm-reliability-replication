@@ -1,0 +1,1606 @@
+{
+  "run_id": "mbpp_week6_dev_temp05_accept",
+  "timestamp": "2026-08-10T20:27:44.147400",
+  "config": {
+    "dataset": "mbpp",
+    "model": "Qwen/Qwen2.5-Coder-1.5B-Instruct",
+    "source_results": "results\\mbpp_week6_failure_pool_seed42.json",
+    "available_source_failures": 62,
+    "selected_failures": 12,
+    "failure_split": "development",
+    "selection_mode": "frozen_split",
+    "selection_sha256": "59f09faafade3a4e87a4927f2b9a31f586ac2a547541adacf34a505ae7cb3235",
+    "selected_failure_coordinates": [
+      {
+        "task_id": "MBPP/210",
+        "sample_index": 0
+      },
+      {
+        "task_id": "MBPP/48",
+        "sample_index": 0
+      },
+      {
+        "task_id": "MBPP/142",
+        "sample_index": 0
+      },
+      {
+        "task_id": "MBPP/308",
+        "sample_index": 0
+      },
+      {
+        "task_id": "MBPP/131",
+        "sample_index": 0
+      },
+      {
+        "task_id": "MBPP/369",
+        "sample_index": 0
+      },
+      {
+        "task_id": "MBPP/191",
+        "sample_index": 0
+      },
+      {
+        "task_id": "MBPP/171",
+        "sample_index": 0
+      },
+      {
+        "task_id": "MBPP/15",
+        "sample_index": 0
+      },
+      {
+        "task_id": "MBPP/104",
+        "sample_index": 0
+      },
+      {
+        "task_id": "MBPP/315",
+        "sample_index": 0
+      },
+      {
+        "task_id": "MBPP/199",
+        "sample_index": 0
+      }
+    ],
+    "max_repair_iterations": 1,
+    "repair_candidates": 3,
+    "duplicate_policy": "accept",
+    "max_candidate_calls": 3,
+    "stop_on_pass": false,
+    "max_consecutive_duplicates": null,
+    "temperature": 0.5,
+    "seed": 42,
+    "candidate_seed_policy": "record_seed=seed+record_index; candidate_seed=record_seed+model_call_index",
+    "ranking_strategy": "pass>failure_progress>unique>changed>lower_candidate_index",
+    "use_error_context": true
+  },
+  "summary": {
+    "completed_failures": 12,
+    "successful_repairs": 2,
+    "repair_success_rate": 0.16666666666666666,
+    "repair_success_wilson_95": [
+      0.04696414761482223,
+      0.44803635738467273
+    ],
+    "success_after_one_iteration": 2,
+    "additional_successes_from_iteration_2_plus": 0,
+    "repair_model_calls": 36,
+    "duplicate_candidates": 2,
+    "duplicate_candidate_rate": 0.05555555555555555,
+    "unique_candidates_executed": 34,
+    "model_calls_per_failure": 3.0,
+    "model_calls_per_success": 18.0,
+    "oracle_candidate_successes": 2,
+    "ranking_oracle_gap": 0,
+    "stagnation_stops": 3,
+    "candidate_generation_stop_reasons": {
+      "candidate_count_reached": 12
+    },
+    "repair_stop_reasons": {
+      "max_iterations": 7,
+      "no_improvement": 3,
+      "success": 2
+    },
+    "initial_failure_categories": {
+      "name_error": 1,
+      "runtime_error": 1,
+      "syntax_error": 1,
+      "assertion_error": 9
+    },
+    "final_failure_categories": {
+      "assertion_error": 8,
+      "runtime_error": 1,
+      "type_error": 1
+    },
+    "per_initial_failure_category": {
+      "assertion_error": {
+        "failures": 9,
+        "successful_repairs": 2,
+        "repair_success_rate": 0.2222222222222222,
+        "repair_success_wilson_95": [
+          0.06322376231222723,
+          0.5474166563271946
+        ],
+        "repair_model_calls": 27,
+        "duplicate_candidates": 1,
+        "duplicate_candidate_rate": 0.037037037037037035,
+        "unique_candidates_executed": 26,
+        "model_calls_per_failure": 3.0,
+        "model_calls_per_success": 13.5
+      },
+      "name_error": {
+        "failures": 1,
+        "successful_repairs": 0,
+        "repair_success_rate": 0.0,
+        "repair_success_wilson_95": [
+          0.0,
+          0.7934567085261071
+        ],
+        "repair_model_calls": 3,
+        "duplicate_candidates": 1,
+        "duplicate_candidate_rate": 0.3333333333333333,
+        "unique_candidates_executed": 2,
+        "model_calls_per_failure": 3.0,
+        "model_calls_per_success": null
+      },
+      "runtime_error": {
+        "failures": 1,
+        "successful_repairs": 0,
+        "repair_success_rate": 0.0,
+        "repair_success_wilson_95": [
+          0.0,
+          0.7934567085261071
+        ],
+        "repair_model_calls": 3,
+        "duplicate_candidates": 0,
+        "duplicate_candidate_rate": 0.0,
+        "unique_candidates_executed": 3,
+        "model_calls_per_failure": 3.0,
+        "model_calls_per_success": null
+      },
+      "syntax_error": {
+        "failures": 1,
+        "successful_repairs": 0,
+        "repair_success_rate": 0.0,
+        "repair_success_wilson_95": [
+          0.0,
+          0.7934567085261071
+        ],
+        "repair_model_calls": 3,
+        "duplicate_candidates": 0,
+        "duplicate_candidate_rate": 0.0,
+        "unique_candidates_executed": 3,
+        "model_calls_per_failure": 3.0,
+        "model_calls_per_success": null
+      }
+    }
+  },
+  "records": [
+    {
+      "task_id": "MBPP/210",
+      "sample_index": 0,
+      "initial_code": "\"\"\"Write a function to check that the given string contains only a certain set of characters(in this case a-z, a-z and 0-9) by using regex.\"\"\"\ndef is_allowed_specific_char(string):\n    pattern = r'[^a-zA-Z0-9\\_]'\n    return re.search(pattern, string) is not None\n\n",
+      "initial_error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 4, in is_allowed_specific_char\nNameError: name 're' is not defined. Did you forget to import 're'?\n",
+      "initial_failure_category": "name_error",
+      "attempts_used": 1,
+      "repair_rounds_used": 1,
+      "repair_model_calls": 3,
+      "duplicate_candidates": 1,
+      "unique_candidates_executed": 2,
+      "candidate_generation_stop_reasons": [
+        "candidate_count_reached"
+      ],
+      "repair_stop_reason": "max_iterations",
+      "oracle_candidate_passed": false,
+      "oracle_success_iteration": null,
+      "selected_candidate_indices": [
+        0
+      ],
+      "success_iteration": null,
+      "final_passed": false,
+      "final_code": "import re\n\ndef is_allowed_specific_char(string):\n    pattern = r'[^a-zA-Z0-9_]'\n    return re.search(pattern, string) is not None\n",
+      "final_error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\nAssertionError\n",
+      "final_failure_category": "assertion_error",
+      "trace": [
+        {
+          "iteration": 0,
+          "passed": false,
+          "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 4, in is_allowed_specific_char\nNameError: name 're' is not defined. Did you forget to import 're'?\n",
+          "code": "\"\"\"Write a function to check that the given string contains only a certain set of characters(in this case a-z, a-z and 0-9) by using regex.\"\"\"\ndef is_allowed_specific_char(string):\n    pattern = r'[^a-zA-Z0-9\\_]'\n    return re.search(pattern, string) is not None\n\n",
+          "duplicate": false,
+          "failure_category": "name_error",
+          "selected_candidate_index": null,
+          "selected_current": true,
+          "model_calls": 0,
+          "unique_candidates_executed": 0,
+          "duplicate_candidates": 0,
+          "candidate_generation_stop_reason": "not_started",
+          "repair_stop_reason": null,
+          "candidates": []
+        },
+        {
+          "iteration": 1,
+          "passed": false,
+          "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\nAssertionError\n",
+          "failure_category": "assertion_error",
+          "code": "import re\n\ndef is_allowed_specific_char(string):\n    pattern = r'[^a-zA-Z0-9_]'\n    return re.search(pattern, string) is not None\n",
+          "duplicate": false,
+          "selected_current": false,
+          "selected_candidate_index": 0,
+          "ranking_score": [
+            0,
+            3,
+            1,
+            1,
+            0
+          ],
+          "model_calls": 3,
+          "unique_candidates_executed": 2,
+          "duplicate_candidates": 1,
+          "candidate_generation_stop_reason": "candidate_count_reached",
+          "repair_stop_reason": "max_iterations",
+          "candidates": [
+            {
+              "candidate_index": 0,
+              "model_call_index": 0,
+              "seed": 42,
+              "passed": false,
+              "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\nAssertionError\n",
+              "failure_category": "assertion_error",
+              "code": "import re\n\ndef is_allowed_specific_char(string):\n    pattern = r'[^a-zA-Z0-9_]'\n    return re.search(pattern, string) is not None\n",
+              "duplicate": false,
+              "ranking_score": [
+                0,
+                3,
+                1,
+                1,
+                0
+              ]
+            },
+            {
+              "candidate_index": 1,
+              "model_call_index": 1,
+              "seed": 43,
+              "passed": false,
+              "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\nAssertionError\n",
+              "failure_category": "assertion_error",
+              "code": "import re\n\ndef is_allowed_specific_char(string):\n    pattern = r'[^a-zA-Z0-9_]'\n    return bool(re.search(pattern, string))\n",
+              "duplicate": false,
+              "ranking_score": [
+                0,
+                3,
+                1,
+                1,
+                -1
+              ]
+            },
+            {
+              "candidate_index": 2,
+              "model_call_index": 2,
+              "seed": 44,
+              "passed": false,
+              "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\nAssertionError\n",
+              "failure_category": "assertion_error",
+              "code": "import re\n\ndef is_allowed_specific_char(string):\n    pattern = r'[^a-zA-Z0-9_]'\n    return re.search(pattern, string) is not None\n",
+              "duplicate": true,
+              "ranking_score": [
+                0,
+                3,
+                0,
+                1,
+                -2
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "task_id": "MBPP/48",
+      "sample_index": 0,
+      "initial_code": "\"\"\"Write a python function to set all odd bits of a given number.\"\"\"\ndef odd_bit_set_number(n):\n    if n % 2 == 0:\n        print(chr(ord('0')+1))\n    else:\n        print(chr(ord('1')+1))\n\nodd_bit_set_number(2)\nodd_bit_set_number(4)\nodd_bit_set_number(6)\nodd_bit_set_number(8)\nodd_bit_set_number(10)\nodd_bit_set_number(12)\nodd_bit_set_number(14)\nodd_bit_set_number(16)\nodd_bit_set_number(18)\nodd_bit_set_number(20)\nodd_bit_set_number(22)\nodd_bit_set_number(24)\nodd_bit_set_number(26)\nodd_bit_set_number(28)\nodd_bit_set_number(30)\nodd_bit_set_number(32)\nodd_bit_set_number(34)\nodd_bit_set_number(36)\nodd_bit_set_number(38)\nodd_bit_set",
+      "initial_error_message": "Traceback (most recent call last):\nRuntimeError: execution subprocess exited with code 0\n",
+      "initial_failure_category": "runtime_error",
+      "attempts_used": 1,
+      "repair_rounds_used": 1,
+      "repair_model_calls": 3,
+      "duplicate_candidates": 0,
+      "unique_candidates_executed": 3,
+      "candidate_generation_stop_reasons": [
+        "candidate_count_reached"
+      ],
+      "repair_stop_reason": "max_iterations",
+      "oracle_candidate_passed": false,
+      "oracle_success_iteration": null,
+      "selected_candidate_indices": [
+        0
+      ],
+      "success_iteration": null,
+      "final_passed": false,
+      "final_code": "def odd_bit_set_number(n):\n    return n | 0xAAAAAAAA\n\nprint(odd_bit_set_number(2))\nprint(odd_bit_set_number(4))\nprint(odd_bit_set_number(6))\nprint(odd_bit_set_number(8))\nprint(odd_bit_set_number(10))\nprint(odd_bit_set_number(12))\nprint(odd_bit_set_number(14))\nprint(odd_bit_set_number(16))\nprint(odd_bit_set_number(18))\nprint(odd_bit_set_number(20))\nprint(odd_bit_set_number(22))\nprint(odd_bit_set_number(24))\nprint(odd_bit_set_number(26))\nprint(odd_bit_set_number(28))\nprint(odd_bit_set_number(30))\nprint(odd_bit_set_number(32))\nprint(odd_bit_set_number(34))\nprint(odd_bit_set_number(36))\nprint(odd_bit_set_number(38))\nprint(odd_bit_set_number(40))\n",
+      "final_error_message": "Traceback (most recent call last):\nRuntimeError: execution subprocess exited with code 0\n",
+      "final_failure_category": "runtime_error",
+      "trace": [
+        {
+          "iteration": 0,
+          "passed": false,
+          "error_message": "Traceback (most recent call last):\nRuntimeError: execution subprocess exited with code 0\n",
+          "code": "\"\"\"Write a python function to set all odd bits of a given number.\"\"\"\ndef odd_bit_set_number(n):\n    if n % 2 == 0:\n        print(chr(ord('0')+1))\n    else:\n        print(chr(ord('1')+1))\n\nodd_bit_set_number(2)\nodd_bit_set_number(4)\nodd_bit_set_number(6)\nodd_bit_set_number(8)\nodd_bit_set_number(10)\nodd_bit_set_number(12)\nodd_bit_set_number(14)\nodd_bit_set_number(16)\nodd_bit_set_number(18)\nodd_bit_set_number(20)\nodd_bit_set_number(22)\nodd_bit_set_number(24)\nodd_bit_set_number(26)\nodd_bit_set_number(28)\nodd_bit_set_number(30)\nodd_bit_set_number(32)\nodd_bit_set_number(34)\nodd_bit_set_number(36)\nodd_bit_set_number(38)\nodd_bit_set",
+          "duplicate": false,
+          "failure_category": "runtime_error",
+          "selected_candidate_index": null,
+          "selected_current": true,
+          "model_calls": 0,
+          "unique_candidates_executed": 0,
+          "duplicate_candidates": 0,
+          "candidate_generation_stop_reason": "not_started",
+          "repair_stop_reason": null,
+          "candidates": []
+        },
+        {
+          "iteration": 1,
+          "passed": false,
+          "error_message": "Traceback (most recent call last):\nRuntimeError: execution subprocess exited with code 0\n",
+          "failure_category": "runtime_error",
+          "code": "def odd_bit_set_number(n):\n    return n | 0xAAAAAAAA\n\nprint(odd_bit_set_number(2))\nprint(odd_bit_set_number(4))\nprint(odd_bit_set_number(6))\nprint(odd_bit_set_number(8))\nprint(odd_bit_set_number(10))\nprint(odd_bit_set_number(12))\nprint(odd_bit_set_number(14))\nprint(odd_bit_set_number(16))\nprint(odd_bit_set_number(18))\nprint(odd_bit_set_number(20))\nprint(odd_bit_set_number(22))\nprint(odd_bit_set_number(24))\nprint(odd_bit_set_number(26))\nprint(odd_bit_set_number(28))\nprint(odd_bit_set_number(30))\nprint(odd_bit_set_number(32))\nprint(odd_bit_set_number(34))\nprint(odd_bit_set_number(36))\nprint(odd_bit_set_number(38))\nprint(odd_bit_set_number(40))\n",
+          "duplicate": false,
+          "selected_current": false,
+          "selected_candidate_index": 0,
+          "ranking_score": [
+            0,
+            2,
+            1,
+            1,
+            0
+          ],
+          "model_calls": 3,
+          "unique_candidates_executed": 3,
+          "duplicate_candidates": 0,
+          "candidate_generation_stop_reason": "candidate_count_reached",
+          "repair_stop_reason": "max_iterations",
+          "candidates": [
+            {
+              "candidate_index": 0,
+              "model_call_index": 0,
+              "seed": 43,
+              "passed": false,
+              "error_message": "Traceback (most recent call last):\nRuntimeError: execution subprocess exited with code 0\n",
+              "failure_category": "runtime_error",
+              "code": "def odd_bit_set_number(n):\n    return n | 0xAAAAAAAA\n\nprint(odd_bit_set_number(2))\nprint(odd_bit_set_number(4))\nprint(odd_bit_set_number(6))\nprint(odd_bit_set_number(8))\nprint(odd_bit_set_number(10))\nprint(odd_bit_set_number(12))\nprint(odd_bit_set_number(14))\nprint(odd_bit_set_number(16))\nprint(odd_bit_set_number(18))\nprint(odd_bit_set_number(20))\nprint(odd_bit_set_number(22))\nprint(odd_bit_set_number(24))\nprint(odd_bit_set_number(26))\nprint(odd_bit_set_number(28))\nprint(odd_bit_set_number(30))\nprint(odd_bit_set_number(32))\nprint(odd_bit_set_number(34))\nprint(odd_bit_set_number(36))\nprint(odd_bit_set_number(38))\nprint(odd_bit_set_number(40))\n",
+              "duplicate": false,
+              "ranking_score": [
+                0,
+                2,
+                1,
+                1,
+                0
+              ]
+            },
+            {
+              "candidate_index": 1,
+              "model_call_index": 1,
+              "seed": 44,
+              "passed": false,
+              "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 9, in <module>\n    exec(payload[\"code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 3\n    ```python\n    ^\nIndentationError: expected an indented block after function definition on line 2\n",
+              "failure_category": "syntax_error",
+              "code": "\"\"\"Write a python function to set all odd bits of a given number.\"\"\"\ndef odd_bit_set_number(n):\n```python\ndef odd_bit_set_number(n):\n    result = 0\n    for i in range(1, 33):  # Loop through all bits from 1 to 32\n        if i % 2 != 0:  # Check if the bit is odd\n            result |= (1 << i)  # Set the corresponding bit in the result\n    return result\n\nprint(odd_bit_set_number(2))  # Output: 3\nprint(odd_bit_set_number(4))  # Output: 7\nprint(odd_bit_set_number(6))  # Output: 15\nprint(odd_bit_set_number(8))  # Output: 31\nprint(odd_bit_set_number(10))  # Output: 39\nprint(odd_bit_set_number(12))  # Output: 47\nprint(odd_bit_set_number(14))  # Output: 55\nprint(odd_bit_set_number(16))  # Output: 63\nprint(odd_bit_set_number(18))  # Output: 71\nprint(odd_bit_set_number(20))  # Output: 79\n",
+              "duplicate": false,
+              "ranking_score": [
+                0,
+                0,
+                1,
+                1,
+                -1
+              ]
+            },
+            {
+              "candidate_index": 2,
+              "model_call_index": 2,
+              "seed": 45,
+              "passed": false,
+              "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 9, in <module>\n    exec(payload[\"code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 3\n    ```python\n    ^\nIndentationError: expected an indented block after function definition on line 2\n",
+              "failure_category": "syntax_error",
+              "code": "\"\"\"Write a python function to set all odd bits of a given number.\"\"\"\ndef odd_bit_set_number(n):\n```python\ndef odd_bit_set_number(n):\n    result = 0\n    for i in range(32):\n        if i % 2 != 0:\n            result |= (1 << i)\n    return result\n\nprint(odd_bit_set_number(2)) # Output: 3\nprint(odd_bit_set_number(4)) # Output: 7\nprint(odd_bit_set_number(6)) # Output: 15\nprint(odd_bit_set_number(8)) # Output: 31\nprint(odd_bit_set_number(10)) # Output: 39\nprint(odd_bit_set_number(12)) # Output: 47\nprint(odd_bit_set_number(14)) # Output: 55\nprint(odd_bit_set_number(16)) # Output: 63\nprint(odd_bit_set_number(18)) # Output: 71\nprint(odd_bit_set_number(20)) # Output: 79\nprint(odd_bit_set_number(22)) # Output: 87\nprint(odd_bit_set_number(24)) # Output: 95\nprint(odd_bit_set_number(26)) #\n",
+              "duplicate": false,
+              "ranking_score": [
+                0,
+                0,
+                1,
+                1,
+                -2
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "task_id": "MBPP/142",
+      "sample_index": 0,
+      "initial_code": "\"\"\"Write a function to count the same pair in three given lists.\"\"\"\ndef count_samepair(list1,list2,list3):\n    # print(list1,list2,list3)\n    # same_pairs = []\n    # for i in range(len(list1)):\n    #     same_pairs.append([list1[i],list2[i],list3[i]])\n    same_pairs = []\n    for i in range(len(list1)):\n        for j in range(len(list2)):\n            for k in range(len(list3)):\n                if list1[i][0] == list2[j][0] and list1[i][1] == list2[j][1] and list1[i][2] == list3[k][0] and list1[i][0] != list2[j][1] and list1[i][0] != list2[j][2] and list1[i][1] != list2[j][0] and list1[i][1] != list2[j][2] and list1[i][2] != list3[k][1] and list1[i][2] != list3[k][0]:",
+      "initial_error_message": "Traceback (most recent call last):\n  File \"<string>\", line 9, in <module>\n    exec(payload[\"code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 11\n    if list1[i][0] == list2[j][0] and list1[i][1] == list2[j][1] and list1[i][2] == list3[k][0] and list1[i][0] != list2[j][1] and list1[i][0] != list2[j][2] and list1[i][1] != list2[j][0] and list1[i][1] != list2[j][2] and list1[i][2] != list3[k][1] and list1[i][2] != list3[k][0]:\n                                                                                                                                                                                                                                                                                          ^\nIndentationError: expected an indented block after 'if' statement on line 11\n",
+      "initial_failure_category": "syntax_error",
+      "attempts_used": 1,
+      "repair_rounds_used": 1,
+      "repair_model_calls": 3,
+      "duplicate_candidates": 0,
+      "unique_candidates_executed": 3,
+      "candidate_generation_stop_reasons": [
+        "candidate_count_reached"
+      ],
+      "repair_stop_reason": "max_iterations",
+      "oracle_candidate_passed": false,
+      "oracle_success_iteration": null,
+      "selected_candidate_indices": [
+        0
+      ],
+      "success_iteration": null,
+      "final_passed": false,
+      "final_code": "def count_samepair(list1,list2,list3):\n    same_pairs = []\n    for i in range(len(list1)):\n        for j in range(len(list2)):\n            for k in range(len(list3)):\n                if list1[i][0] == list2[j][0] and list1[i][1] == list2[j][1] and list1[i][2] == list3[k][0] and list1[i][0] != list2[j][1] and list1[i][0] != list2[j][2] and list1[i][1] != list2[j][0] and list1[i][1] != list2[j][2] and list1[i][2] != list3[k][1] and list1[i][2] != list3[k][0]:\n                    same_pairs.append((list1[i],list2[j],list3[k]))\n    return len(same_pairs)\n",
+      "final_error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 6, in count_samepair\nTypeError: 'int' object is not subscriptable\n",
+      "final_failure_category": "type_error",
+      "trace": [
+        {
+          "iteration": 0,
+          "passed": false,
+          "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 9, in <module>\n    exec(payload[\"code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 11\n    if list1[i][0] == list2[j][0] and list1[i][1] == list2[j][1] and list1[i][2] == list3[k][0] and list1[i][0] != list2[j][1] and list1[i][0] != list2[j][2] and list1[i][1] != list2[j][0] and list1[i][1] != list2[j][2] and list1[i][2] != list3[k][1] and list1[i][2] != list3[k][0]:\n                                                                                                                                                                                                                                                                                          ^\nIndentationError: expected an indented block after 'if' statement on line 11\n",
+          "code": "\"\"\"Write a function to count the same pair in three given lists.\"\"\"\ndef count_samepair(list1,list2,list3):\n    # print(list1,list2,list3)\n    # same_pairs = []\n    # for i in range(len(list1)):\n    #     same_pairs.append([list1[i],list2[i],list3[i]])\n    same_pairs = []\n    for i in range(len(list1)):\n        for j in range(len(list2)):\n            for k in range(len(list3)):\n                if list1[i][0] == list2[j][0] and list1[i][1] == list2[j][1] and list1[i][2] == list3[k][0] and list1[i][0] != list2[j][1] and list1[i][0] != list2[j][2] and list1[i][1] != list2[j][0] and list1[i][1] != list2[j][2] and list1[i][2] != list3[k][1] and list1[i][2] != list3[k][0]:",
+          "duplicate": false,
+          "failure_category": "syntax_error",
+          "selected_candidate_index": null,
+          "selected_current": true,
+          "model_calls": 0,
+          "unique_candidates_executed": 0,
+          "duplicate_candidates": 0,
+          "candidate_generation_stop_reason": "not_started",
+          "repair_stop_reason": null,
+          "candidates": []
+        },
+        {
+          "iteration": 1,
+          "passed": false,
+          "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 6, in count_samepair\nTypeError: 'int' object is not subscriptable\n",
+          "failure_category": "type_error",
+          "code": "def count_samepair(list1,list2,list3):\n    same_pairs = []\n    for i in range(len(list1)):\n        for j in range(len(list2)):\n            for k in range(len(list3)):\n                if list1[i][0] == list2[j][0] and list1[i][1] == list2[j][1] and list1[i][2] == list3[k][0] and list1[i][0] != list2[j][1] and list1[i][0] != list2[j][2] and list1[i][1] != list2[j][0] and list1[i][1] != list2[j][2] and list1[i][2] != list3[k][1] and list1[i][2] != list3[k][0]:\n                    same_pairs.append((list1[i],list2[j],list3[k]))\n    return len(same_pairs)\n",
+          "duplicate": false,
+          "selected_current": false,
+          "selected_candidate_index": 0,
+          "ranking_score": [
+            0,
+            2,
+            1,
+            1,
+            0
+          ],
+          "model_calls": 3,
+          "unique_candidates_executed": 3,
+          "duplicate_candidates": 0,
+          "candidate_generation_stop_reason": "candidate_count_reached",
+          "repair_stop_reason": "max_iterations",
+          "candidates": [
+            {
+              "candidate_index": 0,
+              "model_call_index": 0,
+              "seed": 44,
+              "passed": false,
+              "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 6, in count_samepair\nTypeError: 'int' object is not subscriptable\n",
+              "failure_category": "type_error",
+              "code": "def count_samepair(list1,list2,list3):\n    same_pairs = []\n    for i in range(len(list1)):\n        for j in range(len(list2)):\n            for k in range(len(list3)):\n                if list1[i][0] == list2[j][0] and list1[i][1] == list2[j][1] and list1[i][2] == list3[k][0] and list1[i][0] != list2[j][1] and list1[i][0] != list2[j][2] and list1[i][1] != list2[j][0] and list1[i][1] != list2[j][2] and list1[i][2] != list3[k][1] and list1[i][2] != list3[k][0]:\n                    same_pairs.append((list1[i],list2[j],list3[k]))\n    return len(same_pairs)\n",
+              "duplicate": false,
+              "ranking_score": [
+                0,
+                2,
+                1,
+                1,
+                0
+              ]
+            },
+            {
+              "candidate_index": 1,
+              "model_call_index": 1,
+              "seed": 45,
+              "passed": false,
+              "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 9, in <module>\n    exec(payload[\"code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 3\n    \"\"\"Write a function to count the same pair in three given lists.\"\"\"\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nIndentationError: expected an indented block after function definition on line 2\n",
+              "failure_category": "syntax_error",
+              "code": "\"\"\"Write a function to count the same pair in three given lists.\"\"\"\ndef count_samepair(list1,list2,list3):\n\"\"\"Write a function to count the same pair in three given lists.\"\"\"\ndef count_samepair(list1,list2,list3):\n    same_pairs = []\n    for i in range(len(list1)):\n        for j in range(len(list2)):\n            for k in range(len(list3)):\n                if list1[i][0] == list2[j][0] and list1[i][1] == list2[j][1] and list1[i][2] == list3[k][0] and list1[i][0] != list2[j][1] and list1[i][0] != list2[j][2] and list1[i][1] != list2[j][0] and list1[i][1] != list2[j][2] and list1[i][2] != list3[k][1] and list1[i][2] != list3[k][0]:\n                    same_pairs.append((list1[i], list2[j], list3[k]))\n    return len(same_pairs)\n",
+              "duplicate": false,
+              "ranking_score": [
+                0,
+                0,
+                1,
+                1,
+                -1
+              ]
+            },
+            {
+              "candidate_index": 2,
+              "model_call_index": 2,
+              "seed": 46,
+              "passed": false,
+              "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 6, in count_samepair\nTypeError: 'int' object is not subscriptable\n",
+              "failure_category": "type_error",
+              "code": "def count_samepair(list1,list2,list3):\n    same_pairs = []\n    for i in range(len(list1)):\n        for j in range(len(list2)):\n            for k in range(len(list3)):\n                if list1[i][0] == list2[j][0] and list1[i][1] == list2[j][1] and list1[i][2] == list3[k][0] and list1[i][0] != list2[j][1] and list1[i][0] != list2[j][2] and list1[i][1] != list2[j][0] and list1[i][1] != list2[j][2] and list1[i][2] != list3[k][1] and list1[i][2] != list3[k][0]:\n                    same_pairs.append((list1[i], list2[j], list3[k]))\n    return len(same_pairs)\n",
+              "duplicate": false,
+              "ranking_score": [
+                0,
+                2,
+                1,
+                1,
+                -2
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "task_id": "MBPP/308",
+      "sample_index": 0,
+      "initial_code": "\"\"\"Write a function to find the specified number of largest products from two given lists.\"\"\"\ndef large_product(nums1, nums2, N):\n    # first, sort the numbers in the ascending order\n    nums1.sort()\n    nums2.sort()\n\n    for i in range(N):\n        # find the index of the number with largest odd number\n        for j in range(N):\n            # if the even numbers are larger, then the index of the num is the index\n            if nums1[i] > nums2[j] and nums1[i] % 2 == 0:\n                return nums1[i]\n            elif nums2[j] > nums1[i] and nums2[j] % 2 == 0:\n                return nums2[j]\n",
+      "initial_error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\nAssertionError\n",
+      "initial_failure_category": "assertion_error",
+      "attempts_used": 1,
+      "repair_rounds_used": 1,
+      "repair_model_calls": 3,
+      "duplicate_candidates": 0,
+      "unique_candidates_executed": 3,
+      "candidate_generation_stop_reasons": [
+        "candidate_count_reached"
+      ],
+      "repair_stop_reason": "max_iterations",
+      "oracle_candidate_passed": false,
+      "oracle_success_iteration": null,
+      "selected_candidate_indices": [
+        1
+      ],
+      "success_iteration": null,
+      "final_passed": false,
+      "final_code": "def large_product(nums1, nums2, N):\n    # first, sort the numbers in the ascending order\n    nums1.sort()\n    nums2.sort()\n\n    for i in range(N):\n        # find the index of the number with largest odd number\n        for j in range(N):\n            # if the even numbers are larger, then the index of the num is the index\n            if nums1[i] > nums2[j] and nums1[i] % 2 == 0:\n                return nums1[i]\n            elif nums2[j] > nums1[i] and nums2[j] % 2 == 0:\n                return nums2[j]\n",
+      "final_error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\nAssertionError\n",
+      "final_failure_category": "assertion_error",
+      "trace": [
+        {
+          "iteration": 0,
+          "passed": false,
+          "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\nAssertionError\n",
+          "code": "\"\"\"Write a function to find the specified number of largest products from two given lists.\"\"\"\ndef large_product(nums1, nums2, N):\n    # first, sort the numbers in the ascending order\n    nums1.sort()\n    nums2.sort()\n\n    for i in range(N):\n        # find the index of the number with largest odd number\n        for j in range(N):\n            # if the even numbers are larger, then the index of the num is the index\n            if nums1[i] > nums2[j] and nums1[i] % 2 == 0:\n                return nums1[i]\n            elif nums2[j] > nums1[i] and nums2[j] % 2 == 0:\n                return nums2[j]\n",
+          "duplicate": false,
+          "failure_category": "assertion_error",
+          "selected_candidate_index": null,
+          "selected_current": true,
+          "model_calls": 0,
+          "unique_candidates_executed": 0,
+          "duplicate_candidates": 0,
+          "candidate_generation_stop_reason": "not_started",
+          "repair_stop_reason": null,
+          "candidates": []
+        },
+        {
+          "iteration": 1,
+          "passed": false,
+          "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\nAssertionError\n",
+          "failure_category": "assertion_error",
+          "code": "def large_product(nums1, nums2, N):\n    # first, sort the numbers in the ascending order\n    nums1.sort()\n    nums2.sort()\n\n    for i in range(N):\n        # find the index of the number with largest odd number\n        for j in range(N):\n            # if the even numbers are larger, then the index of the num is the index\n            if nums1[i] > nums2[j] and nums1[i] % 2 == 0:\n                return nums1[i]\n            elif nums2[j] > nums1[i] and nums2[j] % 2 == 0:\n                return nums2[j]\n",
+          "duplicate": false,
+          "selected_current": false,
+          "selected_candidate_index": 1,
+          "ranking_score": [
+            0,
+            3,
+            1,
+            1,
+            -1
+          ],
+          "model_calls": 3,
+          "unique_candidates_executed": 3,
+          "duplicate_candidates": 0,
+          "candidate_generation_stop_reason": "candidate_count_reached",
+          "repair_stop_reason": "max_iterations",
+          "candidates": [
+            {
+              "candidate_index": 0,
+              "model_call_index": 0,
+              "seed": 45,
+              "passed": false,
+              "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 9, in <module>\n    exec(payload[\"code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 3\n    \"\"\"Write a function to find the specified number of largest products from two given lists.\"\"\"\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nIndentationError: expected an indented block after function definition on line 2\n",
+              "failure_category": "syntax_error",
+              "code": "\"\"\"Write a function to find the specified number of largest products from two given lists.\"\"\"\ndef large_product(nums1, nums2, N):\n\"\"\"Write a function to find the specified number of largest products from two given lists.\"\"\"\ndef large_product(nums1, nums2, N):\n    # first, sort the numbers in the ascending order\n    nums1.sort()\n    nums2.sort()\n\n    for i in range(N):\n        # find the index of the number with largest odd number\n        for j in range(N):\n            # if the even numbers are larger, then the index of the num is the index\n            if nums1[i] > nums2[j] and nums1[i] % 2 == 0:\n                return nums1[i]\n            elif nums2[j] > nums1[i] and nums2[j] % 2 == 0:\n                return nums2[j]\n",
+              "duplicate": false,
+              "ranking_score": [
+                0,
+                0,
+                1,
+                1,
+                0
+              ]
+            },
+            {
+              "candidate_index": 1,
+              "model_call_index": 1,
+              "seed": 46,
+              "passed": false,
+              "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\nAssertionError\n",
+              "failure_category": "assertion_error",
+              "code": "def large_product(nums1, nums2, N):\n    # first, sort the numbers in the ascending order\n    nums1.sort()\n    nums2.sort()\n\n    for i in range(N):\n        # find the index of the number with largest odd number\n        for j in range(N):\n            # if the even numbers are larger, then the index of the num is the index\n            if nums1[i] > nums2[j] and nums1[i] % 2 == 0:\n                return nums1[i]\n            elif nums2[j] > nums1[i] and nums2[j] % 2 == 0:\n                return nums2[j]\n",
+              "duplicate": false,
+              "ranking_score": [
+                0,
+                3,
+                1,
+                1,
+                -1
+              ]
+            },
+            {
+              "candidate_index": 2,
+              "model_call_index": 2,
+              "seed": 47,
+              "passed": false,
+              "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 9, in <module>\n    exec(payload[\"code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 3\n    \"\"\"Write a function to find the specified number of largest products from two given lists.\"\"\"\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nIndentationError: expected an indented block after function definition on line 2\n",
+              "failure_category": "syntax_error",
+              "code": "\"\"\"Write a function to find the specified number of largest products from two given lists.\"\"\"\ndef large_product(nums1, nums2, N):\n\"\"\"Write a function to find the specified number of largest products from two given lists.\"\"\"\ndef large_product(nums1, nums2, N):\n    # first, sort the numbers in the ascending order\n    nums1.sort()\n    nums2.sort()\n\n    # reverse the lists to get the largest numbers at the beginning\n    nums1.reverse()\n    nums2.reverse()\n\n    for i in range(N):\n        # find the index of the number with largest odd number\n        for j in range(N):\n            # if the even numbers are larger, then the index of the num is the index\n            if nums1[i] > nums2[j] and nums1[i] % 2 == 0:\n                return nums1[i]\n            elif nums2[j] > nums1[i] and nums2[j] % 2 == 0:\n                return nums2[j]\n",
+              "duplicate": false,
+              "ranking_score": [
+                0,
+                0,
+                1,
+                1,
+                -2
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "task_id": "MBPP/131",
+      "sample_index": 0,
+      "initial_code": "\"\"\"Write a python function to reverse only the vowels of a given string.\"\"\"\ndef reverse_vowels(str1):\n    vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']\n    l = []\n    for i in range(len(str1)):\n        if str1[i] in vowels:\n            l.append(str1[i])\n    str_rev = ''.join(l)\n    return str_rev\n",
+      "initial_error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\nAssertionError\n",
+      "initial_failure_category": "assertion_error",
+      "attempts_used": 1,
+      "repair_rounds_used": 1,
+      "repair_model_calls": 3,
+      "duplicate_candidates": 1,
+      "unique_candidates_executed": 2,
+      "candidate_generation_stop_reasons": [
+        "candidate_count_reached"
+      ],
+      "repair_stop_reason": "max_iterations",
+      "oracle_candidate_passed": false,
+      "oracle_success_iteration": null,
+      "selected_candidate_indices": [
+        0
+      ],
+      "success_iteration": null,
+      "final_passed": false,
+      "final_code": "def reverse_vowels(str1):\n    vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']\n    l = []\n    for i in range(len(str1)):\n        if str1[i] in vowels:\n            l.append(str1[i])\n    str_rev = ''.join(l[::-1])\n    return str1[:i] + str_rev + str1[i+1:]\n",
+      "final_error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\nAssertionError\n",
+      "final_failure_category": "assertion_error",
+      "trace": [
+        {
+          "iteration": 0,
+          "passed": false,
+          "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\nAssertionError\n",
+          "code": "\"\"\"Write a python function to reverse only the vowels of a given string.\"\"\"\ndef reverse_vowels(str1):\n    vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']\n    l = []\n    for i in range(len(str1)):\n        if str1[i] in vowels:\n            l.append(str1[i])\n    str_rev = ''.join(l)\n    return str_rev\n",
+          "duplicate": false,
+          "failure_category": "assertion_error",
+          "selected_candidate_index": null,
+          "selected_current": true,
+          "model_calls": 0,
+          "unique_candidates_executed": 0,
+          "duplicate_candidates": 0,
+          "candidate_generation_stop_reason": "not_started",
+          "repair_stop_reason": null,
+          "candidates": []
+        },
+        {
+          "iteration": 1,
+          "passed": false,
+          "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\nAssertionError\n",
+          "failure_category": "assertion_error",
+          "code": "def reverse_vowels(str1):\n    vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']\n    l = []\n    for i in range(len(str1)):\n        if str1[i] in vowels:\n            l.append(str1[i])\n    str_rev = ''.join(l[::-1])\n    return str1[:i] + str_rev + str1[i+1:]\n",
+          "duplicate": false,
+          "selected_current": false,
+          "selected_candidate_index": 0,
+          "ranking_score": [
+            0,
+            3,
+            1,
+            1,
+            0
+          ],
+          "model_calls": 3,
+          "unique_candidates_executed": 2,
+          "duplicate_candidates": 1,
+          "candidate_generation_stop_reason": "candidate_count_reached",
+          "repair_stop_reason": "max_iterations",
+          "candidates": [
+            {
+              "candidate_index": 0,
+              "model_call_index": 0,
+              "seed": 46,
+              "passed": false,
+              "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\nAssertionError\n",
+              "failure_category": "assertion_error",
+              "code": "def reverse_vowels(str1):\n    vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']\n    l = []\n    for i in range(len(str1)):\n        if str1[i] in vowels:\n            l.append(str1[i])\n    str_rev = ''.join(l[::-1])\n    return str1[:i] + str_rev + str1[i+1:]\n",
+              "duplicate": false,
+              "ranking_score": [
+                0,
+                3,
+                1,
+                1,
+                0
+              ]
+            },
+            {
+              "candidate_index": 1,
+              "model_call_index": 1,
+              "seed": 47,
+              "passed": false,
+              "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 9, in <module>\n    exec(payload[\"code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 3\n    \"\"\"Write a python function to reverse only the vowels of a given string.\"\"\"\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nIndentationError: expected an indented block after function definition on line 2\n",
+              "failure_category": "syntax_error",
+              "code": "\"\"\"Write a python function to reverse only the vowels of a given string.\"\"\"\ndef reverse_vowels(str1):\n\"\"\"Write a python function to reverse only the vowels of a given string.\"\"\"\ndef reverse_vowels(str1):\n    vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']\n    l = []\n    for i in range(len(str1)):\n        if str1[i] in vowels:\n            l.append(str1[i])\n    str_rev = ''.join(l[::-1])\n    return str1[:i] + str_rev + str1[i+1:]\n",
+              "duplicate": false,
+              "ranking_score": [
+                0,
+                0,
+                1,
+                1,
+                -1
+              ]
+            },
+            {
+              "candidate_index": 2,
+              "model_call_index": 2,
+              "seed": 48,
+              "passed": false,
+              "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\nAssertionError\n",
+              "failure_category": "assertion_error",
+              "code": "def reverse_vowels(str1):\n    vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']\n    l = []\n    for i in range(len(str1)):\n        if str1[i] in vowels:\n            l.append(str1[i])\n    str_rev = ''.join(l[::-1])\n    return str1[:i] + str_rev + str1[i+1:]\n",
+              "duplicate": true,
+              "ranking_score": [
+                0,
+                3,
+                0,
+                1,
+                -2
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "task_id": "MBPP/369",
+      "sample_index": 0,
+      "initial_code": "\"\"\"Write a function to find the lateral surface area of cuboid\"\"\"\ndef lateralsurface_cuboid(l,w,h):\n    return (l*w*h)\n    \n\n\"\"\"Write a function to find the area of polygon, inscribed a polygon\"\"\"",
+      "initial_error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\nAssertionError\n",
+      "initial_failure_category": "assertion_error",
+      "attempts_used": 1,
+      "repair_rounds_used": 1,
+      "repair_model_calls": 3,
+      "duplicate_candidates": 0,
+      "unique_candidates_executed": 3,
+      "candidate_generation_stop_reasons": [
+        "candidate_count_reached"
+      ],
+      "repair_stop_reason": "no_improvement",
+      "oracle_candidate_passed": false,
+      "oracle_success_iteration": null,
+      "selected_candidate_indices": [
+        null
+      ],
+      "success_iteration": null,
+      "final_passed": false,
+      "final_code": "\"\"\"Write a function to find the lateral surface area of cuboid\"\"\"\ndef lateralsurface_cuboid(l,w,h):\n    return (l*w*h)\n    \n\n\"\"\"Write a function to find the area of polygon, inscribed a polygon\"\"\"",
+      "final_error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\nAssertionError\n",
+      "final_failure_category": "assertion_error",
+      "trace": [
+        {
+          "iteration": 0,
+          "passed": false,
+          "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\nAssertionError\n",
+          "code": "\"\"\"Write a function to find the lateral surface area of cuboid\"\"\"\ndef lateralsurface_cuboid(l,w,h):\n    return (l*w*h)\n    \n\n\"\"\"Write a function to find the area of polygon, inscribed a polygon\"\"\"",
+          "duplicate": false,
+          "failure_category": "assertion_error",
+          "selected_candidate_index": null,
+          "selected_current": true,
+          "model_calls": 0,
+          "unique_candidates_executed": 0,
+          "duplicate_candidates": 0,
+          "candidate_generation_stop_reason": "not_started",
+          "repair_stop_reason": null,
+          "candidates": []
+        },
+        {
+          "iteration": 1,
+          "passed": false,
+          "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\nAssertionError\n",
+          "failure_category": "assertion_error",
+          "code": "\"\"\"Write a function to find the lateral surface area of cuboid\"\"\"\ndef lateralsurface_cuboid(l,w,h):\n    return (l*w*h)\n    \n\n\"\"\"Write a function to find the area of polygon, inscribed a polygon\"\"\"",
+          "duplicate": true,
+          "selected_current": true,
+          "selected_candidate_index": null,
+          "ranking_score": [
+            0,
+            3,
+            1,
+            0,
+            1
+          ],
+          "model_calls": 3,
+          "unique_candidates_executed": 3,
+          "duplicate_candidates": 0,
+          "candidate_generation_stop_reason": "candidate_count_reached",
+          "repair_stop_reason": "no_improvement",
+          "candidates": [
+            {
+              "candidate_index": 0,
+              "model_call_index": 0,
+              "seed": 47,
+              "passed": false,
+              "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 9, in <module>\n    exec(payload[\"code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 3\n    \"\"\"Write a function to find the lateral surface area of cuboid\"\"\"\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nIndentationError: expected an indented block after function definition on line 2\n",
+              "failure_category": "syntax_error",
+              "code": "\"\"\"Write a function to find the lateral surface area of cuboid\"\"\"\ndef lateralsurface_cuboid(l,w,h):\n\"\"\"Write a function to find the lateral surface area of cuboid\"\"\"\ndef lateralsurface_cuboid(l,w,h):\n    return 2 * l * h\n\n\"\"\"Write a function to find the area of polygon, inscribed a polygon\"\"\"\n",
+              "duplicate": false,
+              "ranking_score": [
+                0,
+                0,
+                1,
+                1,
+                0
+              ]
+            },
+            {
+              "candidate_index": 1,
+              "model_call_index": 1,
+              "seed": 48,
+              "passed": false,
+              "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 9, in <module>\n    exec(payload[\"code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 3\n    \"\"\"Write a function to find the lateral surface area of cuboid\"\"\"\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nIndentationError: expected an indented block after function definition on line 2\n",
+              "failure_category": "syntax_error",
+              "code": "\"\"\"Write a function to find the lateral surface area of cuboid\"\"\"\ndef lateralsurface_cuboid(l,w,h):\n\"\"\"Write a function to find the lateral surface area of cuboid\"\"\"\ndef lateralsurface_cuboid(l,w,h):\n    return 2*(l*w + l*h + w*h)\n\n\"\"\"Write a function to find the area of polygon, inscribed a polygon\"\"\"\n",
+              "duplicate": false,
+              "ranking_score": [
+                0,
+                0,
+                1,
+                1,
+                -1
+              ]
+            },
+            {
+              "candidate_index": 2,
+              "model_call_index": 2,
+              "seed": 49,
+              "passed": false,
+              "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 9, in <module>\n    exec(payload[\"code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 3\n    \"\"\"Write a function to find the lateral surface area of cuboid\"\"\"\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nIndentationError: expected an indented block after function definition on line 2\n",
+              "failure_category": "syntax_error",
+              "code": "\"\"\"Write a function to find the lateral surface area of cuboid\"\"\"\ndef lateralsurface_cuboid(l,w,h):\n\"\"\"Write a function to find the lateral surface area of cuboid\"\"\"\ndef lateralsurface_cuboid(l,w,h):\n    return 2 * l * h\n\n\n\"\"\"Write a function to find the area of polygon, inscribed a polygon\"\"\"\n",
+              "duplicate": false,
+              "ranking_score": [
+                0,
+                0,
+                1,
+                1,
+                -2
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "task_id": "MBPP/191",
+      "sample_index": 0,
+      "initial_code": "\"\"\"Write a function to check whether the given month name contains 30 days or not.\"\"\"\ndef check_monthnumber(monthname3):\n    monthnum=12\n    for i in range(1,monthnum):\n        if monthname3[i]=='3':\n            return True\n        else:\n            return False\n        ",
+      "initial_error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 2, in <module>\n    import json\n           ^^^^\nAssertionError\n",
+      "initial_failure_category": "assertion_error",
+      "attempts_used": 1,
+      "repair_rounds_used": 1,
+      "repair_model_calls": 3,
+      "duplicate_candidates": 0,
+      "unique_candidates_executed": 3,
+      "candidate_generation_stop_reasons": [
+        "candidate_count_reached"
+      ],
+      "repair_stop_reason": "no_improvement",
+      "oracle_candidate_passed": false,
+      "oracle_success_iteration": null,
+      "selected_candidate_indices": [
+        null
+      ],
+      "success_iteration": null,
+      "final_passed": false,
+      "final_code": "\"\"\"Write a function to check whether the given month name contains 30 days or not.\"\"\"\ndef check_monthnumber(monthname3):\n    monthnum=12\n    for i in range(1,monthnum):\n        if monthname3[i]=='3':\n            return True\n        else:\n            return False\n        ",
+      "final_error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 2, in <module>\n    import json\n           ^^^^\nAssertionError\n",
+      "final_failure_category": "assertion_error",
+      "trace": [
+        {
+          "iteration": 0,
+          "passed": false,
+          "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 2, in <module>\n    import json\n           ^^^^\nAssertionError\n",
+          "code": "\"\"\"Write a function to check whether the given month name contains 30 days or not.\"\"\"\ndef check_monthnumber(monthname3):\n    monthnum=12\n    for i in range(1,monthnum):\n        if monthname3[i]=='3':\n            return True\n        else:\n            return False\n        ",
+          "duplicate": false,
+          "failure_category": "assertion_error",
+          "selected_candidate_index": null,
+          "selected_current": true,
+          "model_calls": 0,
+          "unique_candidates_executed": 0,
+          "duplicate_candidates": 0,
+          "candidate_generation_stop_reason": "not_started",
+          "repair_stop_reason": null,
+          "candidates": []
+        },
+        {
+          "iteration": 1,
+          "passed": false,
+          "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 2, in <module>\n    import json\n           ^^^^\nAssertionError\n",
+          "failure_category": "assertion_error",
+          "code": "\"\"\"Write a function to check whether the given month name contains 30 days or not.\"\"\"\ndef check_monthnumber(monthname3):\n    monthnum=12\n    for i in range(1,monthnum):\n        if monthname3[i]=='3':\n            return True\n        else:\n            return False\n        ",
+          "duplicate": true,
+          "selected_current": true,
+          "selected_candidate_index": null,
+          "ranking_score": [
+            0,
+            3,
+            1,
+            0,
+            1
+          ],
+          "model_calls": 3,
+          "unique_candidates_executed": 3,
+          "duplicate_candidates": 0,
+          "candidate_generation_stop_reason": "candidate_count_reached",
+          "repair_stop_reason": "no_improvement",
+          "candidates": [
+            {
+              "candidate_index": 0,
+              "model_call_index": 0,
+              "seed": 48,
+              "passed": false,
+              "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 6, in check_monthnumber\nIndexError: string index out of range\n",
+              "failure_category": "runtime_error",
+              "code": "import json\n\ndef check_monthnumber(monthname3):\n    monthnum = 12\n    for i in range(1, monthnum):\n        if monthname3[i] == '3':\n            return True\n        elif monthname3[i] == '2':  # Corrected condition to check for February\n            return False\n        else:\n            continue\n    return False\n",
+              "duplicate": false,
+              "ranking_score": [
+                0,
+                2,
+                1,
+                1,
+                0
+              ]
+            },
+            {
+              "candidate_index": 1,
+              "model_call_index": 1,
+              "seed": 49,
+              "passed": false,
+              "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 6, in check_monthnumber\nIndexError: string index out of range\n",
+              "failure_category": "runtime_error",
+              "code": "import json\n\ndef check_monthnumber(monthname3):\n    monthnum = 12\n    for i in range(1, monthnum):\n        if monthname3[i] == '3':\n            return True\n        else:\n            continue\n    return False\n",
+              "duplicate": false,
+              "ranking_score": [
+                0,
+                2,
+                1,
+                1,
+                -1
+              ]
+            },
+            {
+              "candidate_index": 2,
+              "model_call_index": 2,
+              "seed": 50,
+              "passed": false,
+              "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 9, in <module>\n    exec(payload[\"code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 29, in <module>\nNameError: name 'exec_globals' is not defined\n",
+              "failure_category": "name_error",
+              "code": "import json\n\ndef check_monthnumber(monthname3):\n    monthnum = 12\n    for i in range(1, monthnum):\n        if monthname3[i] == '3':\n            return True\n        else:\n            continue\n    return False\n\npayload = {\n    \"test_code\": \"\"\"\n    import json\n\n    def check_monthnumber(monthname3):\n        monthnum = 12\n        for i in range(1, monthnum):\n            if monthname3[i] == '3':\n                return True\n            else:\n                continue\n        return False\n\n    print(check_monthnumber(\"January\"))\n    \"\"\"\n}\n\nexec(payload[\"test_code\"], exec_globals)\n",
+              "duplicate": false,
+              "ranking_score": [
+                0,
+                2,
+                1,
+                1,
+                -2
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "task_id": "MBPP/171",
+      "sample_index": 0,
+      "initial_code": "\"\"\"Write a function to find the perimeter of a pentagon.\"\"\"\ndef perimeter_pentagon(a):\n    \"\"\"Given a square of a side of a polygon, return the perimeter.\"\"\"\n    return a * 4\n",
+      "initial_error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\nAssertionError\n",
+      "initial_failure_category": "assertion_error",
+      "attempts_used": 1,
+      "repair_rounds_used": 1,
+      "repair_model_calls": 3,
+      "duplicate_candidates": 0,
+      "unique_candidates_executed": 3,
+      "candidate_generation_stop_reasons": [
+        "candidate_count_reached"
+      ],
+      "repair_stop_reason": "success",
+      "oracle_candidate_passed": true,
+      "oracle_success_iteration": 1,
+      "selected_candidate_indices": [
+        1
+      ],
+      "success_iteration": 1,
+      "final_passed": true,
+      "final_code": "def perimeter_pentagon(a):\n    \"\"\"Given a pentagon with side length 'a', return the perimeter.\"\"\"\n    return 5 * a\n",
+      "final_error_message": "",
+      "final_failure_category": "",
+      "trace": [
+        {
+          "iteration": 0,
+          "passed": false,
+          "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\nAssertionError\n",
+          "code": "\"\"\"Write a function to find the perimeter of a pentagon.\"\"\"\ndef perimeter_pentagon(a):\n    \"\"\"Given a square of a side of a polygon, return the perimeter.\"\"\"\n    return a * 4\n",
+          "duplicate": false,
+          "failure_category": "assertion_error",
+          "selected_candidate_index": null,
+          "selected_current": true,
+          "model_calls": 0,
+          "unique_candidates_executed": 0,
+          "duplicate_candidates": 0,
+          "candidate_generation_stop_reason": "not_started",
+          "repair_stop_reason": null,
+          "candidates": []
+        },
+        {
+          "iteration": 1,
+          "passed": true,
+          "error_message": "",
+          "failure_category": "",
+          "code": "def perimeter_pentagon(a):\n    \"\"\"Given a pentagon with side length 'a', return the perimeter.\"\"\"\n    return 5 * a\n",
+          "duplicate": false,
+          "selected_current": false,
+          "selected_candidate_index": 1,
+          "ranking_score": [
+            1,
+            4,
+            1,
+            1,
+            -1
+          ],
+          "model_calls": 3,
+          "unique_candidates_executed": 3,
+          "duplicate_candidates": 0,
+          "candidate_generation_stop_reason": "candidate_count_reached",
+          "repair_stop_reason": "success",
+          "candidates": [
+            {
+              "candidate_index": 0,
+              "model_call_index": 0,
+              "seed": 49,
+              "passed": false,
+              "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 9, in <module>\n    exec(payload[\"code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 3\n    \"\"\"Write a function to find the perimeter of a pentagon.\"\"\"\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nIndentationError: expected an indented block after function definition on line 2\n",
+              "failure_category": "syntax_error",
+              "code": "\"\"\"Write a function to find the perimeter of a pentagon.\"\"\"\ndef perimeter_pentagon(a):\n\"\"\"Write a function to find the perimeter of a pentagon.\"\"\"\ndef perimeter_pentagon(a):\n    \"\"\"Given a side length of a pentagon, return the perimeter.\"\"\"\n    return 5 * a\n",
+              "duplicate": false,
+              "ranking_score": [
+                0,
+                0,
+                1,
+                1,
+                0
+              ]
+            },
+            {
+              "candidate_index": 1,
+              "model_call_index": 1,
+              "seed": 50,
+              "passed": true,
+              "error_message": "",
+              "failure_category": "",
+              "code": "def perimeter_pentagon(a):\n    \"\"\"Given a pentagon with side length 'a', return the perimeter.\"\"\"\n    return 5 * a\n",
+              "duplicate": false,
+              "ranking_score": [
+                1,
+                4,
+                1,
+                1,
+                -1
+              ]
+            },
+            {
+              "candidate_index": 2,
+              "model_call_index": 2,
+              "seed": 51,
+              "passed": false,
+              "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 9, in <module>\n    exec(payload[\"code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 3\n    \"\"\"Write a function to find the perimeter of a pentagon.\"\"\"\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nIndentationError: expected an indented block after function definition on line 2\n",
+              "failure_category": "syntax_error",
+              "code": "\"\"\"Write a function to find the perimeter of a pentagon.\"\"\"\ndef perimeter_pentagon(a):\n\"\"\"Write a function to find the perimeter of a pentagon.\"\"\"\ndef perimeter_pentagon(a):\n    \"\"\"Given a pentagon with side length 'a', return its perimeter.\"\"\"\n    return 5 * a\n",
+              "duplicate": false,
+              "ranking_score": [
+                0,
+                0,
+                1,
+                1,
+                -2
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "task_id": "MBPP/15",
+      "sample_index": 0,
+      "initial_code": "\"\"\"Write a function to split a string at lowercase letters.\"\"\"\ndef split_lowerstring(text):\n    \"\"\"Split a string at lowercase letters.\"\"\"\n    if not text:\n        return []\n    splited = text.split()\n    return splited\n",
+      "initial_error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\nAssertionError\n",
+      "initial_failure_category": "assertion_error",
+      "attempts_used": 1,
+      "repair_rounds_used": 1,
+      "repair_model_calls": 3,
+      "duplicate_candidates": 0,
+      "unique_candidates_executed": 3,
+      "candidate_generation_stop_reasons": [
+        "candidate_count_reached"
+      ],
+      "repair_stop_reason": "max_iterations",
+      "oracle_candidate_passed": false,
+      "oracle_success_iteration": null,
+      "selected_candidate_indices": [
+        0
+      ],
+      "success_iteration": null,
+      "final_passed": false,
+      "final_code": "def split_lowerstring(text):\n    \"\"\"Split a string at lowercase letters.\"\"\"\n    if not text:\n        return []\n    splited = [word for word in text.split() if word.islower()]\n    return splited\n",
+      "final_error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\nAssertionError\n",
+      "final_failure_category": "assertion_error",
+      "trace": [
+        {
+          "iteration": 0,
+          "passed": false,
+          "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\nAssertionError\n",
+          "code": "\"\"\"Write a function to split a string at lowercase letters.\"\"\"\ndef split_lowerstring(text):\n    \"\"\"Split a string at lowercase letters.\"\"\"\n    if not text:\n        return []\n    splited = text.split()\n    return splited\n",
+          "duplicate": false,
+          "failure_category": "assertion_error",
+          "selected_candidate_index": null,
+          "selected_current": true,
+          "model_calls": 0,
+          "unique_candidates_executed": 0,
+          "duplicate_candidates": 0,
+          "candidate_generation_stop_reason": "not_started",
+          "repair_stop_reason": null,
+          "candidates": []
+        },
+        {
+          "iteration": 1,
+          "passed": false,
+          "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\nAssertionError\n",
+          "failure_category": "assertion_error",
+          "code": "def split_lowerstring(text):\n    \"\"\"Split a string at lowercase letters.\"\"\"\n    if not text:\n        return []\n    splited = [word for word in text.split() if word.islower()]\n    return splited\n",
+          "duplicate": false,
+          "selected_current": false,
+          "selected_candidate_index": 0,
+          "ranking_score": [
+            0,
+            3,
+            1,
+            1,
+            0
+          ],
+          "model_calls": 3,
+          "unique_candidates_executed": 3,
+          "duplicate_candidates": 0,
+          "candidate_generation_stop_reason": "candidate_count_reached",
+          "repair_stop_reason": "max_iterations",
+          "candidates": [
+            {
+              "candidate_index": 0,
+              "model_call_index": 0,
+              "seed": 50,
+              "passed": false,
+              "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\nAssertionError\n",
+              "failure_category": "assertion_error",
+              "code": "def split_lowerstring(text):\n    \"\"\"Split a string at lowercase letters.\"\"\"\n    if not text:\n        return []\n    splited = [word for word in text.split() if word.islower()]\n    return splited\n",
+              "duplicate": false,
+              "ranking_score": [
+                0,
+                3,
+                1,
+                1,
+                0
+              ]
+            },
+            {
+              "candidate_index": 1,
+              "model_call_index": 1,
+              "seed": 51,
+              "passed": false,
+              "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 9, in <module>\n    exec(payload[\"code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 3\n    \"\"\"Write a function to split a string at lowercase letters.\"\"\"\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nIndentationError: expected an indented block after function definition on line 2\n",
+              "failure_category": "syntax_error",
+              "code": "\"\"\"Write a function to split a string at lowercase letters.\"\"\"\ndef split_lowerstring(text):\n\"\"\"Write a function to split a string at lowercase letters.\"\"\"\ndef split_lowerstring(text):\n    \"\"\"Split a string at lowercase letters.\"\"\"\n    if not text:\n        return []\n    splited = [text[i] for i in range(len(text)) if text[i].islower()]\n    return splited\n",
+              "duplicate": false,
+              "ranking_score": [
+                0,
+                0,
+                1,
+                1,
+                -1
+              ]
+            },
+            {
+              "candidate_index": 2,
+              "model_call_index": 2,
+              "seed": 52,
+              "passed": false,
+              "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 9, in <module>\n    exec(payload[\"code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 3\n    \"\"\"Write a function to split a string at lowercase letters.\"\"\"\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nIndentationError: expected an indented block after function definition on line 2\n",
+              "failure_category": "syntax_error",
+              "code": "\"\"\"Write a function to split a string at lowercase letters.\"\"\"\ndef split_lowerstring(text):\n\"\"\"Write a function to split a string at lowercase letters.\"\"\"\ndef split_lowerstring(text):\n    \"\"\"Split a string at lowercase letters.\"\"\"\n    if not text:\n        return []\n    splited = [text[i:j] for i in range(len(text)) for j in range(i+1, len(text)+1) if text[i].islower() and text[j].isupper()]\n    return splited\n",
+              "duplicate": false,
+              "ranking_score": [
+                0,
+                0,
+                1,
+                1,
+                -2
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "task_id": "MBPP/104",
+      "sample_index": 0,
+      "initial_code": "\"\"\"Write a function to sort each sublist of strings in a given list of lists using lambda function.\"\"\"\ndef sort_sublists(input_list):\n    # iterate through the list\n    for i in range(len(input_list)):\n        # iterate through each element and append to the sorted list\n        for j in range(len(input_list[i])):\n            input_list[i][j] = str(input_list[i][j])\n    # return the sorted list\n    return input_list\n\n\"\"\"Sort the given list of lists using the lambda function and return it.\"\"\"",
+      "initial_error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\nAssertionError\n",
+      "initial_failure_category": "assertion_error",
+      "attempts_used": 1,
+      "repair_rounds_used": 1,
+      "repair_model_calls": 3,
+      "duplicate_candidates": 0,
+      "unique_candidates_executed": 3,
+      "candidate_generation_stop_reasons": [
+        "candidate_count_reached"
+      ],
+      "repair_stop_reason": "no_improvement",
+      "oracle_candidate_passed": false,
+      "oracle_success_iteration": null,
+      "selected_candidate_indices": [
+        null
+      ],
+      "success_iteration": null,
+      "final_passed": false,
+      "final_code": "\"\"\"Write a function to sort each sublist of strings in a given list of lists using lambda function.\"\"\"\ndef sort_sublists(input_list):\n    # iterate through the list\n    for i in range(len(input_list)):\n        # iterate through each element and append to the sorted list\n        for j in range(len(input_list[i])):\n            input_list[i][j] = str(input_list[i][j])\n    # return the sorted list\n    return input_list\n\n\"\"\"Sort the given list of lists using the lambda function and return it.\"\"\"",
+      "final_error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\nAssertionError\n",
+      "final_failure_category": "assertion_error",
+      "trace": [
+        {
+          "iteration": 0,
+          "passed": false,
+          "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\nAssertionError\n",
+          "code": "\"\"\"Write a function to sort each sublist of strings in a given list of lists using lambda function.\"\"\"\ndef sort_sublists(input_list):\n    # iterate through the list\n    for i in range(len(input_list)):\n        # iterate through each element and append to the sorted list\n        for j in range(len(input_list[i])):\n            input_list[i][j] = str(input_list[i][j])\n    # return the sorted list\n    return input_list\n\n\"\"\"Sort the given list of lists using the lambda function and return it.\"\"\"",
+          "duplicate": false,
+          "failure_category": "assertion_error",
+          "selected_candidate_index": null,
+          "selected_current": true,
+          "model_calls": 0,
+          "unique_candidates_executed": 0,
+          "duplicate_candidates": 0,
+          "candidate_generation_stop_reason": "not_started",
+          "repair_stop_reason": null,
+          "candidates": []
+        },
+        {
+          "iteration": 1,
+          "passed": false,
+          "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\nAssertionError\n",
+          "failure_category": "assertion_error",
+          "code": "\"\"\"Write a function to sort each sublist of strings in a given list of lists using lambda function.\"\"\"\ndef sort_sublists(input_list):\n    # iterate through the list\n    for i in range(len(input_list)):\n        # iterate through each element and append to the sorted list\n        for j in range(len(input_list[i])):\n            input_list[i][j] = str(input_list[i][j])\n    # return the sorted list\n    return input_list\n\n\"\"\"Sort the given list of lists using the lambda function and return it.\"\"\"",
+          "duplicate": true,
+          "selected_current": true,
+          "selected_candidate_index": null,
+          "ranking_score": [
+            0,
+            3,
+            1,
+            0,
+            1
+          ],
+          "model_calls": 3,
+          "unique_candidates_executed": 3,
+          "duplicate_candidates": 0,
+          "candidate_generation_stop_reason": "candidate_count_reached",
+          "repair_stop_reason": "no_improvement",
+          "candidates": [
+            {
+              "candidate_index": 0,
+              "model_call_index": 0,
+              "seed": 51,
+              "passed": false,
+              "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 9, in <module>\n    exec(payload[\"code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 3\n    \"\"\"Write a function to sort each sublist of strings in a given list of lists using lambda function.\"\"\"\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nIndentationError: expected an indented block after function definition on line 2\n",
+              "failure_category": "syntax_error",
+              "code": "\"\"\"Write a function to sort each sublist of strings in a given list of lists using lambda function.\"\"\"\ndef sort_sublists(input_list):\n\"\"\"Write a function to sort each sublist of strings in a given list of lists using lambda function.\"\"\"\ndef sort_sublists(input_list):\n    # iterate through the list\n    for i in range(len(input_list)):\n        # sort each sublist using lambda function\n        input_list[i].sort(key=lambda x: x.lower())\n    # return the sorted list\n    return input_list\n\n\"\"\"Sort the given list of lists using the lambda function and return it.\"\"\"\n",
+              "duplicate": false,
+              "ranking_score": [
+                0,
+                0,
+                1,
+                1,
+                0
+              ]
+            },
+            {
+              "candidate_index": 1,
+              "model_call_index": 1,
+              "seed": 52,
+              "passed": false,
+              "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 9, in <module>\n    exec(payload[\"code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 3\n    \"\"\"Write a function to sort each sublist of strings in a given list of lists using lambda function.\"\"\"\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nIndentationError: expected an indented block after function definition on line 2\n",
+              "failure_category": "syntax_error",
+              "code": "\"\"\"Write a function to sort each sublist of strings in a given list of lists using lambda function.\"\"\"\ndef sort_sublists(input_list):\n\"\"\"Write a function to sort each sublist of strings in a given list of lists using lambda function.\"\"\"\ndef sort_sublists(input_list):\n    # iterate through the list\n    for i in range(len(input_list)):\n        # iterate through each element and append to the sorted list\n        for j in range(len(input_list[i])):\n            input_list[i][j] = str(input_list[i][j])\n    # return the sorted list\n    return sorted(input_list)\n\n\"\"\"Sort the given list of lists using the lambda function and return it.\"\"\"\nprint(sort_sublists([['apple', 'banana'], ['dog', 'cat'], ['elephant']]))\n",
+              "duplicate": false,
+              "ranking_score": [
+                0,
+                0,
+                1,
+                1,
+                -1
+              ]
+            },
+            {
+              "candidate_index": 2,
+              "model_call_index": 2,
+              "seed": 53,
+              "passed": false,
+              "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 9, in <module>\n    exec(payload[\"code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 3\n    \"\"\"Write a function to sort each sublist of strings in a given list of lists using lambda function.\"\"\"\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nIndentationError: expected an indented block after function definition on line 2\n",
+              "failure_category": "syntax_error",
+              "code": "\"\"\"Write a function to sort each sublist of strings in a given list of lists using lambda function.\"\"\"\ndef sort_sublists(input_list):\n\"\"\"Write a function to sort each sublist of strings in a given list of lists using lambda function.\"\"\"\ndef sort_sublists(input_list):\n    # iterate through the list\n    for i in range(len(input_list)):\n        # sort the sublist using lambda function\n        input_list[i].sort(key=lambda x: x.lower())\n    # return the sorted list\n    return input_list\n\n\"\"\"Sort the given list of lists using the lambda function and return it.\"\"\"\n",
+              "duplicate": false,
+              "ranking_score": [
+                0,
+                0,
+                1,
+                1,
+                -2
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "task_id": "MBPP/315",
+      "sample_index": 0,
+      "initial_code": "\"\"\"Write a python function to find the first maximum length of even word.\"\"\"\ndef find_Max_Len_Even(str):\n    even_index = 0\n    max_len = 0\n    for char in str:\n        if char =='a' or char =='e' or char =='i' or char =='o' or char =='u':\n            if char == 'a':\n                even_index += 1\n            else:\n                even_index -= 1\n            if even_index < 0 :\n                max_len = char\n                break \n            else:\n                max_len = char\n    if max_len == 0:\n        max_len = 'The string has no even length'\n    else:\n        max_len = max_len.upper()\n    return max_len\n",
+      "initial_error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\nAssertionError\n",
+      "initial_failure_category": "assertion_error",
+      "attempts_used": 1,
+      "repair_rounds_used": 1,
+      "repair_model_calls": 3,
+      "duplicate_candidates": 0,
+      "unique_candidates_executed": 3,
+      "candidate_generation_stop_reasons": [
+        "candidate_count_reached"
+      ],
+      "repair_stop_reason": "max_iterations",
+      "oracle_candidate_passed": false,
+      "oracle_success_iteration": null,
+      "selected_candidate_indices": [
+        2
+      ],
+      "success_iteration": null,
+      "final_passed": false,
+      "final_code": "def find_Max_Len_Even(str):\n    even_index = 0\n    max_len = 0\n    for i, char in enumerate(str):\n        if char.lower() in 'aeiou':\n            even_index += 1\n        else:\n            even_index -= 1\n        if even_index > 0:\n            max_len = max(max_len, len(str[i:]))\n    if max_len == 0:\n        max_len = 'The string has no even length'\n    else:\n        max_len = max_len.upper()\n    return max_len\n",
+      "final_error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\nAssertionError\n",
+      "final_failure_category": "assertion_error",
+      "trace": [
+        {
+          "iteration": 0,
+          "passed": false,
+          "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\nAssertionError\n",
+          "code": "\"\"\"Write a python function to find the first maximum length of even word.\"\"\"\ndef find_Max_Len_Even(str):\n    even_index = 0\n    max_len = 0\n    for char in str:\n        if char =='a' or char =='e' or char =='i' or char =='o' or char =='u':\n            if char == 'a':\n                even_index += 1\n            else:\n                even_index -= 1\n            if even_index < 0 :\n                max_len = char\n                break \n            else:\n                max_len = char\n    if max_len == 0:\n        max_len = 'The string has no even length'\n    else:\n        max_len = max_len.upper()\n    return max_len\n",
+          "duplicate": false,
+          "failure_category": "assertion_error",
+          "selected_candidate_index": null,
+          "selected_current": true,
+          "model_calls": 0,
+          "unique_candidates_executed": 0,
+          "duplicate_candidates": 0,
+          "candidate_generation_stop_reason": "not_started",
+          "repair_stop_reason": null,
+          "candidates": []
+        },
+        {
+          "iteration": 1,
+          "passed": false,
+          "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\nAssertionError\n",
+          "failure_category": "assertion_error",
+          "code": "def find_Max_Len_Even(str):\n    even_index = 0\n    max_len = 0\n    for i, char in enumerate(str):\n        if char.lower() in 'aeiou':\n            even_index += 1\n        else:\n            even_index -= 1\n        if even_index > 0:\n            max_len = max(max_len, len(str[i:]))\n    if max_len == 0:\n        max_len = 'The string has no even length'\n    else:\n        max_len = max_len.upper()\n    return max_len\n",
+          "duplicate": false,
+          "selected_current": false,
+          "selected_candidate_index": 2,
+          "ranking_score": [
+            0,
+            3,
+            1,
+            1,
+            -2
+          ],
+          "model_calls": 3,
+          "unique_candidates_executed": 3,
+          "duplicate_candidates": 0,
+          "candidate_generation_stop_reason": "candidate_count_reached",
+          "repair_stop_reason": "max_iterations",
+          "candidates": [
+            {
+              "candidate_index": 0,
+              "model_call_index": 0,
+              "seed": 52,
+              "passed": false,
+              "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 9, in <module>\n    exec(payload[\"code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 3\n    \"\"\"Write a python function to find the first maximum length of even word.\"\"\"\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nIndentationError: expected an indented block after function definition on line 2\n",
+              "failure_category": "syntax_error",
+              "code": "\"\"\"Write a python function to find the first maximum length of even word.\"\"\"\ndef find_Max_Len_Even(str):\n\"\"\"Write a python function to find the first maximum length of even word.\"\"\"\ndef find_Max_Len_Even(str):\n    even_index = 0\n    max_len = 0\n    for char in str:\n        if char.lower() in 'aeiou':\n            if char.islower():\n                even_index += 1\n            else:\n                even_index -= 1\n            if even_index < 0 :\n                max_len = char\n                break \n            else:\n                max_len = char\n    if max_len == 0:\n        max_len = 'The string has no even length'\n    else:\n        max_len = max_len.upper()\n    return max_len\n",
+              "duplicate": false,
+              "ranking_score": [
+                0,
+                0,
+                1,
+                1,
+                0
+              ]
+            },
+            {
+              "candidate_index": 1,
+              "model_call_index": 1,
+              "seed": 53,
+              "passed": false,
+              "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 9, in <module>\n    exec(payload[\"code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 3\n    \"\"\"Write a python function to find the first maximum length of even word.\"\"\"\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nIndentationError: expected an indented block after function definition on line 2\n",
+              "failure_category": "syntax_error",
+              "code": "\"\"\"Write a python function to find the first maximum length of even word.\"\"\"\ndef find_Max_Len_Even(str):\n\"\"\"Write a python function to find the first maximum length of even word.\"\"\"\ndef find_Max_Len_Even(str):\n    even_index = 0\n    max_len = 0\n    for i in range(len(str)):\n        if str[i] == 'a' or str[i] == 'e' or str[i] == 'i' or str[i] == 'o' or str[i] == 'u':\n            if str[i].lower() == 'a':\n                even_index += 1\n            else:\n                even_index -= 1\n            if even_index < 0 :\n                max_len = str[i]\n                break \n            else:\n                max_len = str[i]\n    if max_len == '':\n        max_len = 'The string has no even length'\n    else:\n        max_len = max_len.upper()\n    return max_len\n",
+              "duplicate": false,
+              "ranking_score": [
+                0,
+                0,
+                1,
+                1,
+                -1
+              ]
+            },
+            {
+              "candidate_index": 2,
+              "model_call_index": 2,
+              "seed": 54,
+              "passed": false,
+              "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\nAssertionError\n",
+              "failure_category": "assertion_error",
+              "code": "def find_Max_Len_Even(str):\n    even_index = 0\n    max_len = 0\n    for i, char in enumerate(str):\n        if char.lower() in 'aeiou':\n            even_index += 1\n        else:\n            even_index -= 1\n        if even_index > 0:\n            max_len = max(max_len, len(str[i:]))\n    if max_len == 0:\n        max_len = 'The string has no even length'\n    else:\n        max_len = max_len.upper()\n    return max_len\n",
+              "duplicate": false,
+              "ranking_score": [
+                0,
+                3,
+                1,
+                1,
+                -2
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "task_id": "MBPP/199",
+      "sample_index": 0,
+      "initial_code": "\"\"\"Write a python function to find highest power of 2 less than or equal to given number.\"\"\"\ndef highest_Power_of_2(n):\n    \"\"\"Return the highest power of 2 less than or equal to given number, n.\"\"\"\n    if n == 0:\n        return 0\n    elif n == 1:\n        return 1\n    elif n == 2:\n        return 2\n    else:\n        return highest_Power_of_2(n - 1) + highest_Power_of_2(n - 2)\n\n",
+      "initial_error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\nAssertionError\n",
+      "initial_failure_category": "assertion_error",
+      "attempts_used": 1,
+      "repair_rounds_used": 1,
+      "repair_model_calls": 3,
+      "duplicate_candidates": 0,
+      "unique_candidates_executed": 3,
+      "candidate_generation_stop_reasons": [
+        "candidate_count_reached"
+      ],
+      "repair_stop_reason": "success",
+      "oracle_candidate_passed": true,
+      "oracle_success_iteration": 1,
+      "selected_candidate_indices": [
+        2
+      ],
+      "success_iteration": 1,
+      "final_passed": true,
+      "final_code": "def highest_Power_of_2(n):\n    \"\"\"Return the highest power of 2 less than or equal to given number, n.\"\"\"\n    if n == 0:\n        return 0\n    elif n == 1:\n        return 1\n    elif n == 2:\n        return 2\n    else:\n        return highest_Power_of_2(n // 2) * 2\n",
+      "final_error_message": "",
+      "final_failure_category": "",
+      "trace": [
+        {
+          "iteration": 0,
+          "passed": false,
+          "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\nAssertionError\n",
+          "code": "\"\"\"Write a python function to find highest power of 2 less than or equal to given number.\"\"\"\ndef highest_Power_of_2(n):\n    \"\"\"Return the highest power of 2 less than or equal to given number, n.\"\"\"\n    if n == 0:\n        return 0\n    elif n == 1:\n        return 1\n    elif n == 2:\n        return 2\n    else:\n        return highest_Power_of_2(n - 1) + highest_Power_of_2(n - 2)\n\n",
+          "duplicate": false,
+          "failure_category": "assertion_error",
+          "selected_candidate_index": null,
+          "selected_current": true,
+          "model_calls": 0,
+          "unique_candidates_executed": 0,
+          "duplicate_candidates": 0,
+          "candidate_generation_stop_reason": "not_started",
+          "repair_stop_reason": null,
+          "candidates": []
+        },
+        {
+          "iteration": 1,
+          "passed": true,
+          "error_message": "",
+          "failure_category": "",
+          "code": "def highest_Power_of_2(n):\n    \"\"\"Return the highest power of 2 less than or equal to given number, n.\"\"\"\n    if n == 0:\n        return 0\n    elif n == 1:\n        return 1\n    elif n == 2:\n        return 2\n    else:\n        return highest_Power_of_2(n // 2) * 2\n",
+          "duplicate": false,
+          "selected_current": false,
+          "selected_candidate_index": 2,
+          "ranking_score": [
+            1,
+            4,
+            1,
+            1,
+            -2
+          ],
+          "model_calls": 3,
+          "unique_candidates_executed": 3,
+          "duplicate_candidates": 0,
+          "candidate_generation_stop_reason": "candidate_count_reached",
+          "repair_stop_reason": "success",
+          "candidates": [
+            {
+              "candidate_index": 0,
+              "model_call_index": 0,
+              "seed": 53,
+              "passed": false,
+              "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 10, in highest_Power_of_2\nNameError: name 'math' is not defined. Did you forget to import 'math'?\n",
+              "failure_category": "name_error",
+              "code": "def highest_Power_of_2(n):\n    \"\"\"Return the highest power of 2 less than or equal to given number, n.\"\"\"\n    if n == 0:\n        return 0\n    elif n == 1:\n        return 1\n    elif n == 2:\n        return 2\n    else:\n        return max(1, 2**(int(math.log2(n))))\n",
+              "duplicate": false,
+              "ranking_score": [
+                0,
+                2,
+                1,
+                1,
+                0
+              ]
+            },
+            {
+              "candidate_index": 1,
+              "model_call_index": 1,
+              "seed": 54,
+              "passed": false,
+              "error_message": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n    exec(payload[\"test_code\"], exec_globals)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 10, in highest_Power_of_2\nNameError: name 'math' is not defined. Did you forget to import 'math'?\n",
+              "failure_category": "name_error",
+              "code": "def highest_Power_of_2(n):\n    \"\"\"Return the highest power of 2 less than or equal to given number, n.\"\"\"\n    if n == 0:\n        return 0\n    elif n == 1:\n        return 1\n    elif n == 2:\n        return 2\n    else:\n        return 2**int(math.log2(n))\n",
+              "duplicate": false,
+              "ranking_score": [
+                0,
+                2,
+                1,
+                1,
+                -1
+              ]
+            },
+            {
+              "candidate_index": 2,
+              "model_call_index": 2,
+              "seed": 55,
+              "passed": true,
+              "error_message": "",
+              "failure_category": "",
+              "code": "def highest_Power_of_2(n):\n    \"\"\"Return the highest power of 2 less than or equal to given number, n.\"\"\"\n    if n == 0:\n        return 0\n    elif n == 1:\n        return 1\n    elif n == 2:\n        return 2\n    else:\n        return highest_Power_of_2(n // 2) * 2\n",
+              "duplicate": false,
+              "ranking_score": [
+                1,
+                4,
+                1,
+                1,
+                -2
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

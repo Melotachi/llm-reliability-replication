@@ -1,0 +1,1498 @@
+{
+  "config": {
+    "repair_pool": "results/humaneval_week8_repair_all_sample0_qwen15b.json",
+    "source_results": "results/humaneval_uncertainty_merged164_20260711.json",
+    "dataset": "humaneval",
+    "timeout_s": 30.0,
+    "seed": 42,
+    "excluded_tasks": [
+      "HumanEval/32"
+    ],
+    "repair_model": "Qwen/Qwen2.5-Coder-1.5B-Instruct",
+    "generation_model": "Salesforce/codegen-350M-mono",
+    "repaired_sample_index": 0,
+    "skipped_task_ids": []
+  },
+  "harness_validation": {
+    "n_scored": 147,
+    "n_passing": 147,
+    "failing_task_ids": []
+  },
+  "patch_candidate_equals_patch_selected": true,
+  "populations": {
+    "patch_selected": {
+      "n_units": 54,
+      "n_base_pass": 54,
+      "confusion": {
+        "base_pass_plus_pass": 49,
+        "base_pass_plus_fail": 5,
+        "base_fail_plus_pass": 0,
+        "base_fail_plus_fail": 0
+      },
+      "false_positive_rate": 0.09259259259259259,
+      "false_positive_wilson_95": [
+        0.040200542070567336,
+        0.1991012753065453
+      ],
+      "base_fail_plus_pass_rate": 0.0,
+      "plus_failure_categories": {
+        "assertion_error": 4,
+        "timeout": 1
+      }
+    },
+    "patch_candidate": {
+      "n_units": 365,
+      "n_base_pass": 54,
+      "confusion": {
+        "base_pass_plus_pass": 49,
+        "base_pass_plus_fail": 5,
+        "base_fail_plus_pass": 0,
+        "base_fail_plus_fail": 311
+      },
+      "false_positive_rate": 0.09259259259259259,
+      "false_positive_wilson_95": [
+        0.040200542070567336,
+        0.1991012753065453
+      ],
+      "base_fail_plus_pass_rate": 0.0,
+      "plus_failure_categories": {
+        "assertion_error": 4,
+        "timeout": 1
+      }
+    },
+    "unrepaired_sibling": {
+      "n_units": 1323,
+      "n_base_pass": 50,
+      "confusion": {
+        "base_pass_plus_pass": 40,
+        "base_pass_plus_fail": 10,
+        "base_fail_plus_pass": 0,
+        "base_fail_plus_fail": 1273
+      },
+      "false_positive_rate": 0.2,
+      "false_positive_wilson_95": [
+        0.11243629945973886,
+        0.3303737210448524
+      ],
+      "base_fail_plus_pass_rate": 0.0,
+      "plus_failure_categories": {
+        "assertion_error": 6,
+        "timeout": 3,
+        "runtime_error": 1
+      }
+    },
+    "initial_failure": {
+      "n_units": 147,
+      "n_base_pass": 0,
+      "confusion": {
+        "base_pass_plus_pass": 0,
+        "base_pass_plus_fail": 0,
+        "base_fail_plus_pass": 0,
+        "base_fail_plus_fail": 147
+      },
+      "false_positive_rate": null,
+      "false_positive_wilson_95": null,
+      "base_fail_plus_pass_rate": 0.0,
+      "plus_failure_categories": {}
+    }
+  },
+  "contrasts": [
+    {
+      "a": "patch_selected",
+      "b": "unrepaired_sibling",
+      "table": [
+        [
+          5,
+          49
+        ],
+        [
+          10,
+          40
+        ]
+      ],
+      "fpr_a": 0.09259259259259259,
+      "fpr_b": 0.2,
+      "fpr_difference": -0.10740740740740742,
+      "odds_ratio": 0.40816326530612246,
+      "fisher_p": 0.16384146103831188
+    }
+  ],
+  "selection_channel": {
+    "n_decidable_coordinates": 0,
+    "n_returned_plus_failing": 0,
+    "rate_returned_plus_failing": null,
+    "coordinates": []
+  },
+  "repair_success": {
+    "n_failures_scored": 147,
+    "base_label": 54,
+    "plus_label": 49,
+    "base_rate": 0.3673469387755102,
+    "plus_rate": 0.3333333333333333,
+    "base_rate_wilson_95": [
+      0.29371749239857664,
+      0.4477331419092006
+    ],
+    "plus_rate_wilson_95": [
+      0.2622286259058324,
+      0.41292729925009275
+    ]
+  },
+  "by_initial_failure_category": {
+    "assertion_error": {
+      "n": 116,
+      "base_success": 46,
+      "plus_success": 43,
+      "false_positive_rate": 0.06521739130434782
+    },
+    "runtime_error": {
+      "n": 8,
+      "base_success": 5,
+      "plus_success": 3,
+      "false_positive_rate": 0.4
+    },
+    "type_error": {
+      "n": 3,
+      "base_success": 1,
+      "plus_success": 1,
+      "false_positive_rate": 0.0
+    },
+    "name_error": {
+      "n": 15,
+      "base_success": 2,
+      "plus_success": 2,
+      "false_positive_rate": 0.0
+    },
+    "syntax_error": {
+      "n": 5,
+      "base_success": 0,
+      "plus_success": 0,
+      "false_positive_rate": null
+    }
+  },
+  "coordinates": [
+    {
+      "task_id": "HumanEval/0",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": true,
+      "repair_success_plus": true,
+      "repair_model_calls": 2,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/1",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/2",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": true,
+      "repair_success_plus": true,
+      "repair_model_calls": 1,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/3",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": true,
+      "repair_success_plus": true,
+      "repair_model_calls": 2,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/4",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": true,
+      "repair_success_plus": true,
+      "repair_model_calls": 1,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/5",
+      "sample_index": 0,
+      "initial_failure_category": "runtime_error",
+      "repair_success_base": true,
+      "repair_success_plus": true,
+      "repair_model_calls": 1,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/6",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/8",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/9",
+      "sample_index": 0,
+      "initial_failure_category": "runtime_error",
+      "repair_success_base": true,
+      "repair_success_plus": true,
+      "repair_model_calls": 1,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/10",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/11",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/12",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": true,
+      "repair_success_plus": true,
+      "repair_model_calls": 2,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/13",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": true,
+      "repair_success_plus": true,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/14",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": true,
+      "repair_success_plus": true,
+      "repair_model_calls": 1,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/15",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": true,
+      "repair_success_plus": true,
+      "repair_model_calls": 2,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/16",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": true,
+      "repair_success_plus": true,
+      "repair_model_calls": 1,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/17",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/18",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": true,
+      "repair_success_plus": true,
+      "repair_model_calls": 1,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/19",
+      "sample_index": 0,
+      "initial_failure_category": "runtime_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/20",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/21",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": true,
+      "repair_success_plus": true,
+      "repair_model_calls": 1,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/24",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": true,
+      "repair_success_plus": true,
+      "repair_model_calls": 2,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/25",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": true,
+      "repair_success_plus": false,
+      "repair_model_calls": 2,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/26",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/31",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": true,
+      "repair_success_plus": true,
+      "repair_model_calls": 2,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/33",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/36",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": true,
+      "repair_success_plus": true,
+      "repair_model_calls": 1,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/37",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/38",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/39",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": true,
+      "repair_success_plus": true,
+      "repair_model_calls": 1,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/40",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": true,
+      "repair_success_plus": true,
+      "repair_model_calls": 2,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/41",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": true,
+      "repair_success_plus": true,
+      "repair_model_calls": 1,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/43",
+      "sample_index": 0,
+      "initial_failure_category": "type_error",
+      "repair_success_base": true,
+      "repair_success_plus": true,
+      "repair_model_calls": 1,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/44",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": true,
+      "repair_success_plus": true,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/46",
+      "sample_index": 0,
+      "initial_failure_category": "runtime_error",
+      "repair_success_base": true,
+      "repair_success_plus": false,
+      "repair_model_calls": 2,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/47",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": true,
+      "repair_success_plus": true,
+      "repair_model_calls": 1,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/49",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/50",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/51",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": true,
+      "repair_success_plus": false,
+      "repair_model_calls": 1,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/52",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/55",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": true,
+      "repair_success_plus": true,
+      "repair_model_calls": 1,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/56",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/57",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": true,
+      "repair_success_plus": true,
+      "repair_model_calls": 2,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/58",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": true,
+      "repair_success_plus": false,
+      "repair_model_calls": 1,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/59",
+      "sample_index": 0,
+      "initial_failure_category": "name_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/61",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": true,
+      "repair_success_plus": true,
+      "repair_model_calls": 1,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/62",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": true,
+      "repair_success_plus": true,
+      "repair_model_calls": 1,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/63",
+      "sample_index": 0,
+      "initial_failure_category": "runtime_error",
+      "repair_success_base": true,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/64",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/65",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/67",
+      "sample_index": 0,
+      "initial_failure_category": "name_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/68",
+      "sample_index": 0,
+      "initial_failure_category": "name_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/69",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/70",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/71",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": true,
+      "repair_success_plus": true,
+      "repair_model_calls": 1,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/72",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/73",
+      "sample_index": 0,
+      "initial_failure_category": "name_error",
+      "repair_success_base": true,
+      "repair_success_plus": true,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/74",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/75",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/76",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/77",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": true,
+      "repair_success_plus": true,
+      "repair_model_calls": 1,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/78",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/79",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": true,
+      "repair_success_plus": true,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/80",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/81",
+      "sample_index": 0,
+      "initial_failure_category": "name_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/82",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": true,
+      "repair_success_plus": true,
+      "repair_model_calls": 1,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/83",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": true,
+      "repair_success_plus": true,
+      "repair_model_calls": 2,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/84",
+      "sample_index": 0,
+      "initial_failure_category": "runtime_error",
+      "repair_success_base": true,
+      "repair_success_plus": true,
+      "repair_model_calls": 1,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/85",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/86",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/87",
+      "sample_index": 0,
+      "initial_failure_category": "type_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/88",
+      "sample_index": 0,
+      "initial_failure_category": "name_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/89",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/90",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/91",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/92",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/93",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/94",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/95",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": true,
+      "repair_success_plus": true,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/96",
+      "sample_index": 0,
+      "initial_failure_category": "name_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/97",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/98",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": true,
+      "repair_success_plus": true,
+      "repair_model_calls": 1,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/99",
+      "sample_index": 0,
+      "initial_failure_category": "runtime_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/100",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/101",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": true,
+      "repair_success_plus": true,
+      "repair_model_calls": 2,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/102",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/103",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/104",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": true,
+      "repair_success_plus": true,
+      "repair_model_calls": 1,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/105",
+      "sample_index": 0,
+      "initial_failure_category": "name_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/106",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/107",
+      "sample_index": 0,
+      "initial_failure_category": "name_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/108",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/109",
+      "sample_index": 0,
+      "initial_failure_category": "name_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/110",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/111",
+      "sample_index": 0,
+      "initial_failure_category": "name_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/112",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/113",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/114",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/115",
+      "sample_index": 0,
+      "initial_failure_category": "syntax_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/116",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": true,
+      "repair_success_plus": true,
+      "repair_model_calls": 2,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/117",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/118",
+      "sample_index": 0,
+      "initial_failure_category": "name_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/119",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/120",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/121",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": true,
+      "repair_success_plus": true,
+      "repair_model_calls": 2,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/122",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/123",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/124",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/125",
+      "sample_index": 0,
+      "initial_failure_category": "name_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/126",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/127",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/128",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": true,
+      "repair_success_plus": true,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/129",
+      "sample_index": 0,
+      "initial_failure_category": "syntax_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/130",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/131",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/132",
+      "sample_index": 0,
+      "initial_failure_category": "runtime_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/133",
+      "sample_index": 0,
+      "initial_failure_category": "name_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/134",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/135",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/136",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/137",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/138",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/139",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/140",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/141",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/142",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/143",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/144",
+      "sample_index": 0,
+      "initial_failure_category": "syntax_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/145",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/146",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": true,
+      "repair_success_plus": true,
+      "repair_model_calls": 1,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/147",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": true,
+      "repair_success_plus": true,
+      "repair_model_calls": 2,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/148",
+      "sample_index": 0,
+      "initial_failure_category": "syntax_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/149",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": true,
+      "repair_success_plus": true,
+      "repair_model_calls": 2,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/150",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": true,
+      "repair_success_plus": true,
+      "repair_model_calls": 1,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/151",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": true,
+      "repair_success_plus": true,
+      "repair_model_calls": 2,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/152",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/153",
+      "sample_index": 0,
+      "initial_failure_category": "type_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/154",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/155",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/156",
+      "sample_index": 0,
+      "initial_failure_category": "syntax_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/157",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": true,
+      "repair_success_plus": true,
+      "repair_model_calls": 1,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/158",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": true,
+      "repair_success_plus": true,
+      "repair_model_calls": 1,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/159",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/160",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/161",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": true,
+      "repair_success_plus": true,
+      "repair_model_calls": 2,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/162",
+      "sample_index": 0,
+      "initial_failure_category": "name_error",
+      "repair_success_base": true,
+      "repair_success_plus": true,
+      "repair_model_calls": 1,
+      "initial_plus_passed": false
+    },
+    {
+      "task_id": "HumanEval/163",
+      "sample_index": 0,
+      "initial_failure_category": "assertion_error",
+      "repair_success_base": false,
+      "repair_success_plus": false,
+      "repair_model_calls": 3,
+      "initial_plus_passed": false
+    }
+  ]
+}

@@ -224,7 +224,7 @@ Arithmetic on the rows above it, `(best − random) / (oracle − random)`:
 | CG/HE164 | 0.140 | 0.091 | 0.220 | 0.049/0.129 = 0.380 → **0.38** |
 | DS/HE60 | 0.700 | 0.495 | 0.783 | 0.205/0.288 = 0.712 → **0.71** |
 | CG/MBPP | 0.250 | 0.153 | 0.383 | 0.097/0.230 = 0.422 → **0.42** |
-| DS/MBPP | 0.367 | 0.262 | 0.550 | 0.105/0.288 = 0.365 → **0.37** |
+| DS/MBPP | 0.367 | 0.262 | 0.550 | 0.10500/0.28833 = 0.364 → **0.36** (corrected 2026-10-27; 0.105/0.288 on rounded inputs gave 0.365 and was mis-rounded to 0.37) |
 
 No new source file. The row is labelled "(derived)" in the table.
 

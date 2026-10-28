@@ -7,10 +7,10 @@ repository-code: "https://github.com/Melotachi/llm-reliability-replication"
 authors:
   - family-names: Elibol
     given-names: Melih
-    affiliation: "Sabancı University; University of Groningen"
+    affiliation: "Sabancı University"
   - family-names: Gönül
     given-names: Ayşenur
-    affiliation: "Sabancı University; University of Groningen"
+    affiliation: "Sabancı University"
   - family-names: Pandey
     given-names: Sushant Kumar
     affiliation: "University of Groningen"

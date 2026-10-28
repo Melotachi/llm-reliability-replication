@@ -21,7 +21,7 @@ benchmarks. No paid API and no closed-weight model is used anywhere.
 |---|---|
 | `src/` | Library modules: `generation` (model loading, multi-sample generation), `uncertainty` (all uncertainty metrics, predictors, calibration), `selective` (risk-coverage / AUGRC), `evaluation` (execution engine, pass@k, behavior signatures, McNemar mid-p), `repair` (repair prompts and candidate ranking), `utils` (seeding, I/O, dataset loading). |
 | `scripts/` | One command-line entry point per experiment or analysis. Every reported number is produced by one of these. |
-| `results/` | 240 persisted JSON records: per-sample generations, per-candidate repair traces and every analysis output. **This is the core of the package.** All analyses in the paper read these records and need no model. |
+| `results/` | 241 persisted JSON records: per-sample generations, per-candidate repair traces and every analysis output. **This is the core of the package.** All analyses in the paper read these records and need no model. |
 | `data/` | Pinned task-identifier lists (`mbppplus_member_task_ids.txt`, `bigcodebench_cell_task_ids.txt`, `bigcodebench_eligible_task_ids.txt`), the cached BigCodeBench release used for the BigCodeBench cell, and the SQLite fixtures some BigCodeBench tests need (`task_func/`). HumanEval, MBPP, HumanEval+ and MBPP+ are downloaded into the empty `data/*/` folders on first use. |
 | `notebooks/` | The Kaggle drivers used for the GPU runs (generation ladder, 7B rung, repair arms, BigCodeBench cell, EvalPlus relabel). |
 | `tests/` | Unit tests (pytest). Model loading is mocked, so the suite runs on CPU. |
@@ -57,7 +57,7 @@ Run all commands from the repository root.
 python -m pytest tests/ -q -m "not slow"
 ```
 
-Expected: `612 passed, 1 skipped, 5 deselected`. The `slow` tests load the real
+Expected: `622 passed, 1 skipped, 5 deselected`. The `slow` tests load the real
 CodeBERT encoder (about 500 MB download).
 
 ### Tier 1: every analysis in the paper (CPU only, minutes)
@@ -158,6 +158,11 @@ python scripts/diagnose_arm_allocation.py         # analysis_week12_arm_allocati
 # Figure 4 and Supplementary Table S7: allocation under call caps
 python scripts/pilot_gate_direction.py            # analysis_week12_pilot_direction_20260907_222814
 
+# Supplementary Table S8: significance tests for the RQ1 tables (cluster bootstrap,
+# DeLong, exact Poisson-binomial) and the Monte Carlo ranks of the gate among the
+# 200 random replays
+python scripts/analyze_significance.py            # analysis_ist_significance_20261028_160159
+
 # Paper figures from the reported aggregates
 cd paper && python make_figures.py && cd ..
 ```
@@ -177,6 +182,7 @@ JSON with the stored one except `run_id`/`timestamp`:
 | `diagnose_gate_target.py`, MBPP and HumanEval | identical | seconds |
 | `diagnose_arm_allocation.py` | identical | seconds |
 | `pilot_gate_direction.py` | identical | seconds |
+| `analyze_significance.py` | identical | 20 s |
 | `calibrate_predictor.py`, merged-164 (`calibration_humaneval_20260713_155535`) | identical | 20 min |
 | `paper/make_figures.py` | both figures regenerated | seconds |
 | `compare_representations.py`, seven cells (`analysis_week7_representations_20260804_221056`) | identical | 2 h 15 min (tree edit distance over every sample pair) |
@@ -231,6 +237,7 @@ by the LaTeX label given here).
 | Table S5, paired context comparisons (`tab:s-pairs`) | `analyze_context_mode_ladder.py`, `rescore_evalplus_labels.py --repair-results` | `analysis_week9_context_mode_ladder_humaneval_{base,plus}_*.json` |
 | Table S6, random replays (`tab:s-random`) | `sweep_random_gate.py` | `analysis_week8_random_gate_sweep_20260829_211142.json`, `analysis_week8_random_gate_sweep_humaneval_20260830_100905.json` |
 | Table S7, gains at call caps (`tab:s-caps`) | `pilot_gate_direction.py` | `analysis_week12_pilot_direction_20260907_222814.json` |
+| Table S8, significance tests (`tab:s-signif`) | `analyze_significance.py` | `analysis_ist_significance_20261028_160159.json` |
 
 The generation records these analyses start from:
 

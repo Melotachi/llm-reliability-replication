@@ -324,6 +324,42 @@ This is a statement about the replay distribution over one frozen pool, as the
 manuscript says in both §4.2 and §5.3.1. It is not a population test, and the
 82.5% / 97.5% dominance percentages remain the primary summary.
 
+## A8. Significance tests added for the 2026-10-28 supervisor round
+
+New script `scripts/analyze_significance.py` (tests: `tests/test_significance.py`, 10),
+output `results/analysis_ist_significance_20261028_160159.json`, seed 42, 10,000
+cluster-bootstrap resamples. Inputs are the four predictor and four selection files of
+§1/§2 and the two random-gate sweeps (`analysis_week8_random_gate_sweep_20260829_211142`,
+`..._humaneval_20260830_100905`). Before any test the script asserts that every
+configuration's stored `oof_y` equals the source run's labels in row order, which is what
+makes `index // n_samples` a valid problem id for the cluster bootstrap.
+
+Every number quoted in the manuscript is read from that JSON:
+
+| Manuscript claim | JSON field(s) | Values |
+|---|---|---|
+| fusion > text, all four cells, `p_BH <= 0.013` | `sample_level[0].p_bh` | .0072 / .0030 / .0129 / .0008 |
+| execution > crash, all four, `p_BH <= 0.016` | `sample_level[2].p_bh` | .0008 / .0008 / .0155 / .0053 |
+| fusion > execution only CG/HE164, `0.011`; 0.068-0.82 elsewhere | `sample_level[1].p_bh` | .0113 / .0923 / .0682 / .8207 |
+| DeLong 7 of 8 n.s., `p_BH >= 0.070`; DS/HE60 crash `0.017` | `problem_level[*].p_bh` | min n.s. .0696; .0173 |
+| consensus vs random (exact Poisson-binomial mid-p), `1.9e-5` to `0.025` | `selection[2].p_bh` | .0053 / 1.85e-5 / .0247 / .0110 |
+| fused classifier significant in 3, text in 1 | `selection[1/0].p_bh` | fused .058/.0023/.0094/.0110; text .678/.131/.0094/.353 |
+| McNemar consensus vs fused `p_BH >= 0.139` | `stored_mcnemar_fused_vs_heuristic.p_bh` (BH over the run's 10 pairs) | .179 / .139 / .833 / 1.0 |
+| gate cost Monte Carlo `p = 0.010 / 0.005` | `random_replays.*.p_gate_costs_more` | 2/201, 1/201 |
+| gate shortfall `p = 0.44 / 0.075` | `random_replays.*.p_gate_adds_fewer` | 88/201, 15/201 |
+
+Wilson intervals quoted with Figure 3 (53.5-68.9% for 91/148; MBPP task-only
+[0.371, 0.629] against code-only [0.161, 0.389]) recomputed from the counts.
+
+**Selection test choice.** A Wilcoxon signed-rank test on d_i = 1{pass} - pass_rate_i was run first and dropped: under a uniform draw d_i is not symmetric about 0, and simulating uniform picks over the stored CG/HE164 and CG/MBPP pass rates it rejected 7.45% and 7.3% at alpha = 0.05 (2,000 draws each). The exact Poisson-binomial test is pinned to nominal size by a unit test.
+
+**Supersedes A6.** The one-sample t-tests (t(199) = 6.66 / 23.57) are removed from the
+manuscript. Their statistic grows with the number of replays drawn from one frozen pool,
+and they made the gate's pass shortfall look decisive (p = 2.7e-10 on MBPP) when the
+gate's added-pass count sits at the 44th percentile of the replays (Monte Carlo p = 0.44).
+The cost axis is where the gate differs significantly. The t computation remains in
+`compare_regeneration_baseline.py` for continuity but no longer feeds the paper.
+
 ## A7. What this addendum does not cover
 
 - The shading in Tables 3–7 and 10 encodes only the ordering of values already

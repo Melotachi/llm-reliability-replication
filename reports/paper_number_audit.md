@@ -384,3 +384,20 @@ $91 \times 4.88 = 444$ and $54 \times 8.22 = 444$, which is the fixed-budget
 arithmetic; the 368 figure is the stop-on-pass replay recorded in
 `analysis_week12_arm_allocation_20260907_212130.json` under
 `arms.error.call_renormalization`.
+
+
+---
+
+## Addendum (2026-10-29): pre-submission clarifications
+
+Four sentences were added to `main_joint.tex` before submission. They restate stored values; no experiment was re-run and no existing number changed.
+
+| Sentence (location) | Value | Stored source |
+|---|---|---|
+| RQ3 coverage-matched paragraph (`sec:rq3`): gate fills 44 of its 45 slots with failures | 44 | `results/analysis_week8_random_gate_sweep_20260829_211142.json` → `smart.attempted_repairs` |
+| same: random mean failures selected | 40.5 | same file, mean of `draws[].attempted_repairs` over 200 draws = 40.49 |
+| same: gate vs random at half the HumanEval Repair-All budget | 14 vs 26.8 | already audited for the call-cap paragraph of `sec:caps` (50% cap) |
+| Conclusion ¶2: positives behind the initial-pass AUCs | 16 (HumanEval), 6 (MBPP) | `tab:targets` (`n / positives` column) |
+| `sec:features`: graded execution costs 0.6 / 0.8 | He et al., arXiv 2605.09023, Eq. 2 (`a`=1.0, `b`=0.8, `c`=0.6) | citation, not a measured value |
+
+The abstract, the RQ2 answer box and Conclusion ¶1 also gained a qualifier (the replacement model is larger than the generator); it carries no number.
